@@ -1,4 +1,56 @@
 .container {
-  max-height: 100vh;
-  overflow-y: auto;
+}
+
+.header {
+}
+
+.section {
+}
+
+.section__header {
+}
+
+.section__title {
+}
+
+.section__content {
+}
+
+.section__group {
+}
+
+.section__list {
+}
+
+.section__list-item {
+}
+
+.section__link {
+}
+
+.navigation {
+}
+
+.navigation__header {
+}
+
+.navigation__title {
+}
+
+.navigation__content {
+}
+
+.navigation__group {
+}
+
+.navigation__list {
+}
+
+.navigation__list-item {
+}
+
+.navigation__link {
+}
+
+.home {
 }
