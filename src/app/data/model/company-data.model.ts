@@ -1,13 +1,13 @@
 export namespace CompanyData {
-  enum KindEnum {
+  enum Enum {
     aprSystem = 'aprSystem',
     primaris = 'primaris',
   }
 
-  interface Model {
+  export interface Model {
     name: string;
     url: string;
   }
 
-  export type Type = Record<KindEnum, Model>;
+  export type Type = Record<Enum, Model>;
 }
