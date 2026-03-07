@@ -25,11 +25,13 @@ export const experienceDataConst: ArrayType<ExperienceDataModel> = [
     company: companyDataConst.primaris,
     startDate: new Date(2025, 6, 1),
     endDate: 'Present',
-    role: 'RPA Developer',
+    role: 'Automation Engineer',
     experiences: [
-      'Developed business process automations using UiPath.',
-      'Worked with Microsoft SQL Server (MSSQL) and SQL to interact with databases.',
-      'Communicated effectively in English within a professional work environment.',
+      'Developed robotic process automation (RPA) solutions using UiPath to automate business workflows.',
+      'Built data integration pipelines using SnapLogic, utilizing JavaScript for transformation logic.',
+      'Queried and managed data using SQL and Microsoft SQL Server (MSSQL).',
+      'Provided consulting and implementation support for GoSmart solutions while communicating with stakeholders in English.',
+      'Collaborated with cross-functional teams to analyze requirements and deliver automation and integration solutions.',
     ],
   },
 ];
