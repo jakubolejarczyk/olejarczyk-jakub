@@ -6,4 +6,5 @@ export interface ExperienceDataModel {
   endDate: Date | 'Present';
   role: string;
   experiences: string[];
+  // TODO: Add technologies used in the experience
 }

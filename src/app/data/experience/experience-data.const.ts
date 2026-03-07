@@ -25,7 +25,9 @@ export const experienceDataConst: ArrayType<ExperienceDataModel> = [
     company: companyDataConst.primaris,
     startDate: new Date(2025, 6, 1),
     endDate: 'Present',
+    // TODO: Add role at Primaris
     role: '',
+    // TODO: Add experiences at Primaris
     experiences: [],
   },
 ];
