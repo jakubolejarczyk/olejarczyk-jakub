@@ -25,9 +25,11 @@ export const experienceDataConst: ArrayType<ExperienceDataModel> = [
     company: companyDataConst.primaris,
     startDate: new Date(2025, 6, 1),
     endDate: 'Present',
-    // TODO: Add role at Primaris
-    role: '',
-    // TODO: Add experiences at Primaris
-    experiences: [],
+    role: 'RPA Developer',
+    experiences: [
+      'Developed business process automations using UiPath.',
+      'Worked with Microsoft SQL Server (MSSQL) and SQL to interact with databases.',
+      'Communicated effectively in English within a professional work environment.',
+    ],
   },
 ];
