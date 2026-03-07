@@ -1,62 +1,61 @@
 export enum TechnologyKindDataEnum {
-  // Programming Languages
-  javascript = 'javascript',
-  typescript = 'typescript',
-  // Frontend
+  // Language
   html = 'html',
   css = 'css',
   sass = 'sass',
+  javascript = 'javascript',
+  typescript = 'typescript',
+  // Framework
   angular = 'angular',
+  // Library
   rxjs = 'rxjs',
   ngxs = 'ngxs',
-  storybook = 'storybook',
   primeng = 'primeng',
-  // Backend
-  nodejs = 'nodejs',
-  // DevOps
-  // AI
-  // VCS
+  // Test
+  jest = 'jest',
+  postman = 'postman',
+  // Containerization
+  docker = 'docker',
+  // Version Control System
   git = 'git',
   github = 'github',
   gitlab = 'gitlab',
   // Package Manager
   npm = 'npm',
   pnpm = 'pnpm',
-  // Containerization
-  docker = 'docker',
   // Code Quality
   eslint = 'eslint',
   prettier = 'prettier',
   stylelint = 'stylelint',
+  // Runtime
+  nodejs = 'nodejs',
   // Build System
   nx = 'nx',
-  // Test
-  jest = 'jest',
-  postman = 'postman',
-  // Operating System
-  windows = 'windows',
-  linux = 'linux',
-  // Architecture
-  enterpriseArchitecture = 'enterpriseArchitecture',
-  visualParadigm = 'visualParadigm',
+  // Tool
+  storybook = 'storybook',
   // IDE
   webstorm = 'webstorm',
   visualStudioCode = 'visualStudioCode',
+  // Architecture
+  visualParadigm = 'visualParadigm',
+  // Operating System
+  windows = 'windows',
+  linux = 'linux',
 }
 
 export enum TechnologyGroupDataEnum {
-  programmingLanguage = 'programmingLanguage',
-  frontend = 'frontend',
-  backend = 'backend',
-  devops = 'devops',
-  ai = 'ai',
-  vcs = 'vcs',
-  packageManager = 'packageManager',
-  containerization = 'containerization',
-  codeQuality = 'codeQuality',
-  buildSystem = 'buildSystem',
+  language = 'language',
+  framework = 'framework',
+  library = 'library',
   test = 'test',
-  operatingSystem = 'operatingSystem',
-  architecture = 'architecture',
+  containerization = 'containerization',
+  versionControlSystem = 'versionControlSystem',
+  packageManager = 'packageManager',
+  codeQuality = 'codeQuality',
+  runtime = 'runtime',
+  buildSystem = 'buildSystem',
+  tool = 'tool',
   ide = 'ide',
+  architecture = 'architecture',
+  operatingSystem = 'operatingSystem',
 }

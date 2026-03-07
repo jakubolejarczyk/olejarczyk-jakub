@@ -3,94 +3,100 @@ import { TechnologyGroupDataEnum, TechnologyKindDataEnum } from './technology-da
 import { TechnologyDataModel } from './technology-data.model';
 
 export const technologyDataConst: RecordType<TechnologyKindDataEnum, TechnologyDataModel> = {
-  // Programming Languages
-  javascript: {
-    name: 'JavaScript',
-    order: 0,
-    group: TechnologyGroupDataEnum.programmingLanguage,
-    devicon: 'devicon-javascript-plain',
-  },
-  typescript: {
-    name: 'TypeScript',
-    order: 1,
-    group: TechnologyGroupDataEnum.programmingLanguage,
-    devicon: 'devicon-typescript-plain',
-  },
-  // Frontend
+  // Language
   html: {
     name: 'HTML',
     order: 0,
-    group: TechnologyGroupDataEnum.frontend,
+    group: TechnologyGroupDataEnum.language,
     devicon: 'devicon-html5-plain',
   },
   css: {
     name: 'CSS',
     order: 1,
-    group: TechnologyGroupDataEnum.frontend,
+    group: TechnologyGroupDataEnum.language,
     devicon: 'devicon-css3-plain',
   },
   sass: {
     name: 'SASS',
     order: 2,
-    group: TechnologyGroupDataEnum.frontend,
+    group: TechnologyGroupDataEnum.language,
     devicon: 'devicon-sass-original',
   },
+  javascript: {
+    name: 'JavaScript',
+    order: 3,
+    group: TechnologyGroupDataEnum.language,
+    devicon: 'devicon-javascript-plain',
+  },
+  typescript: {
+    name: 'TypeScript',
+    order: 4,
+    group: TechnologyGroupDataEnum.language,
+    devicon: 'devicon-typescript-plain',
+  },
+  // Framework
   angular: {
     name: 'Angular',
-    order: 3,
-    group: TechnologyGroupDataEnum.frontend,
+    order: 0,
+    group: TechnologyGroupDataEnum.framework,
     devicon: 'devicon-angular-plain',
   },
+  // Library
   rxjs: {
     name: 'RxJS',
-    order: 4,
-    group: TechnologyGroupDataEnum.frontend,
+    order: 0,
+    group: TechnologyGroupDataEnum.library,
     devicon: 'devicon-rxjs-plain',
   },
   ngxs: {
     name: 'NGXS',
-    order: 5,
-    group: TechnologyGroupDataEnum.frontend,
+    order: 1,
+    group: TechnologyGroupDataEnum.library,
     devicon: '',
-  },
-  storybook: {
-    name: 'Storybook',
-    order: 6,
-    group: TechnologyGroupDataEnum.frontend,
-    devicon: 'devicon-storybook-plain',
   },
   primeng: {
     name: 'PrimeNG',
-    order: 7,
-    group: TechnologyGroupDataEnum.frontend,
+    order: 2,
+    group: TechnologyGroupDataEnum.library,
     devicon: 'devicon-primeng-plain',
   },
-  // Backend
-  nodejs: {
-    name: 'Node.js',
+  // Test
+  jest: {
+    name: 'Jest',
     order: 0,
-    group: TechnologyGroupDataEnum.backend,
-    devicon: 'devicon-nodejs-plain',
+    group: TechnologyGroupDataEnum.test,
+    devicon: 'devicon-jest-plain',
   },
-  // DevOps
-  // AI
-  // VCS
+  postman: {
+    name: 'Postman',
+    order: 1,
+    group: TechnologyGroupDataEnum.test,
+    devicon: 'devicon-postman-plain',
+  },
+  // Containerization
+  docker: {
+    name: 'Docker',
+    order: 0,
+    group: TechnologyGroupDataEnum.containerization,
+    devicon: 'devicon-docker-plain',
+  },
+  // Version Control System
   git: {
     name: 'Git',
     order: 0,
-    group: TechnologyGroupDataEnum.vcs,
+    group: TechnologyGroupDataEnum.versionControlSystem,
     devicon: 'devicon-git-plain',
   },
   github: {
     name: 'GitHub',
     order: 1,
-    group: TechnologyGroupDataEnum.vcs,
+    group: TechnologyGroupDataEnum.versionControlSystem,
     devicon: 'devicon-github-original',
   },
   gitlab: {
     name: 'GitLab',
     order: 2,
-    group: TechnologyGroupDataEnum.vcs,
+    group: TechnologyGroupDataEnum.versionControlSystem,
     devicon: 'devicon-gitlab-plain',
   },
   // Package Manager
@@ -105,13 +111,6 @@ export const technologyDataConst: RecordType<TechnologyKindDataEnum, TechnologyD
     order: 1,
     group: TechnologyGroupDataEnum.packageManager,
     devicon: 'devicon-pnpm-plain',
-  },
-  // Containerization
-  docker: {
-    name: 'Docker',
-    order: 0,
-    group: TechnologyGroupDataEnum.containerization,
-    devicon: 'devicon-docker-plain',
   },
   // Code Quality
   eslint: {
@@ -132,6 +131,13 @@ export const technologyDataConst: RecordType<TechnologyKindDataEnum, TechnologyD
     group: TechnologyGroupDataEnum.codeQuality,
     devicon: '',
   },
+  // Runtime
+  nodejs: {
+    name: 'Node.js',
+    order: 0,
+    group: TechnologyGroupDataEnum.runtime,
+    devicon: 'devicon-nodejs-plain',
+  },
   // Build System
   nx: {
     name: 'Nx',
@@ -139,44 +145,12 @@ export const technologyDataConst: RecordType<TechnologyKindDataEnum, TechnologyD
     group: TechnologyGroupDataEnum.buildSystem,
     devicon: '',
   },
-  // Test
-  jest: {
-    name: 'Jest',
+  // Tool
+  storybook: {
+    name: 'Storybook',
     order: 0,
-    group: TechnologyGroupDataEnum.test,
-    devicon: 'devicon-jest-plain',
-  },
-  postman: {
-    name: 'Postman',
-    order: 1,
-    group: TechnologyGroupDataEnum.test,
-    devicon: 'devicon-postman-plain',
-  },
-  // Operations System
-  windows: {
-    name: 'Windows',
-    order: 0,
-    group: TechnologyGroupDataEnum.operatingSystem,
-    devicon: 'devicon-windows11-original',
-  },
-  linux: {
-    name: 'Linux',
-    order: 1,
-    group: TechnologyGroupDataEnum.operatingSystem,
-    devicon: 'devicon-linux-plain',
-  },
-  // Architecture
-  enterpriseArchitecture: {
-    name: 'Enterprise Architecture',
-    order: 0,
-    group: TechnologyGroupDataEnum.architecture,
-    devicon: '',
-  },
-  visualParadigm: {
-    name: 'Visual Paradigm',
-    order: 1,
-    group: TechnologyGroupDataEnum.architecture,
-    devicon: '',
+    group: TechnologyGroupDataEnum.tool,
+    devicon: 'devicon-storybook-plain',
   },
   // IDE
   webstorm: {
@@ -190,5 +164,25 @@ export const technologyDataConst: RecordType<TechnologyKindDataEnum, TechnologyD
     order: 1,
     group: TechnologyGroupDataEnum.ide,
     devicon: 'devicon-vscode-plain',
+  },
+  // Architecture
+  visualParadigm: {
+    name: 'Visual Paradigm',
+    order: 0,
+    group: TechnologyGroupDataEnum.architecture,
+    devicon: '',
+  },
+  // Operating System
+  windows: {
+    name: 'Windows',
+    order: 0,
+    group: TechnologyGroupDataEnum.operatingSystem,
+    devicon: 'devicon-windows11-original',
+  },
+  linux: {
+    name: 'Linux',
+    order: 1,
+    group: TechnologyGroupDataEnum.operatingSystem,
+    devicon: 'devicon-linux-plain',
   },
 };
