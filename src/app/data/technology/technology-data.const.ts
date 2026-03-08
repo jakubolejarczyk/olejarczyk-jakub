@@ -60,6 +60,19 @@ export const technologyDataConst: RecordType<TechnologyKindDataEnum, TechnologyD
     group: TechnologyGroupDataEnum.library,
     devicon: 'devicon-primeng-plain',
   },
+  // Database
+  sql: {
+    name: 'SQL',
+    order: 0,
+    group: TechnologyGroupDataEnum.database,
+    devicon: 'devicon-azuresqldatabase-plain',
+  },
+  microsoftSqlServer: {
+    name: 'Microsoft SQL Server',
+    order: 1,
+    group: TechnologyGroupDataEnum.database,
+    devicon: 'devicon-microsoftsqlserver-plain',
+  },
   // Test
   jest: {
     name: 'Jest',
@@ -184,5 +197,26 @@ export const technologyDataConst: RecordType<TechnologyKindDataEnum, TechnologyD
     order: 1,
     group: TechnologyGroupDataEnum.operatingSystem,
     devicon: 'devicon-linux-plain',
+  },
+  // iPaaS
+  snapLogic: {
+    name: 'SnapLogic',
+    order: 0,
+    group: TechnologyGroupDataEnum.ipaas,
+    devicon: '',
+  },
+  // RPA
+  uiPath: {
+    name: 'UIPath',
+    order: 0,
+    group: TechnologyGroupDataEnum.rpa,
+    devicon: '',
+  },
+  // Document Generation
+  goSmartDesigner: {
+    name: 'goSmart Designer',
+    order: 0,
+    group: TechnologyGroupDataEnum.documentGeneration,
+    devicon: '',
   },
 };

@@ -11,6 +11,9 @@ export enum TechnologyKindDataEnum {
   rxjs = 'rxjs',
   ngxs = 'ngxs',
   primeng = 'primeng',
+  // Database
+  sql = 'sql',
+  microsoftSqlServer = 'microsoftSqlServer',
   // Test
   jest = 'jest',
   postman = 'postman',
@@ -41,12 +44,19 @@ export enum TechnologyKindDataEnum {
   // Operating System
   windows = 'windows',
   linux = 'linux',
+  // iPaaS
+  snapLogic = 'snapLogic',
+  // RPA
+  uiPath = 'uiPath',
+  // Document Generation
+  goSmart = 'goSmartDesigner',
 }
 
 export enum TechnologyGroupDataEnum {
   language = 'language',
   framework = 'framework',
   library = 'library',
+  database = 'database',
   test = 'test',
   containerization = 'containerization',
   versionControlSystem = 'versionControlSystem',
@@ -58,4 +68,7 @@ export enum TechnologyGroupDataEnum {
   ide = 'ide',
   architecture = 'architecture',
   operatingSystem = 'operatingSystem',
+  ipaas = 'ipaas',
+  rpa = 'rpa',
+  documentGeneration = 'documentGeneration',
 }
