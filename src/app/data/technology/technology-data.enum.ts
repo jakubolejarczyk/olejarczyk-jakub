@@ -17,6 +17,7 @@ export enum TechnologyKindDataEnum {
   // Test
   jest = 'jest',
   postman = 'postman',
+  soapui = 'soapui',
   // Containerization
   docker = 'docker',
   // Version Control System
@@ -40,7 +41,7 @@ export enum TechnologyKindDataEnum {
   webstorm = 'webstorm',
   visualStudioCode = 'visualStudioCode',
   // Architecture
-  visualParadigm = 'visualParadigm',
+  enterpriseArchitect = 'enterpriseArchitect',
   // Operating System
   windows = 'windows',
   linux = 'linux',

@@ -1,5 +1,6 @@
 import { ArrayType } from '../../common/common.type';
 import { companyDataConst } from '../company/company-data.const';
+import { technologyDataConst } from '../technology/technology-data.const';
 import { ExperienceDataModel } from './experience-data.model';
 
 export const experienceDataConst: ArrayType<ExperienceDataModel> = [
@@ -20,6 +21,34 @@ export const experienceDataConst: ArrayType<ExperienceDataModel> = [
       'Developed internal NPM packages to support workflow automation and CI/CD within the GitLab ecosystem.',
       'Modeled system architecture and business processes using UML.',
     ],
+    technologies: [
+      technologyDataConst.html,
+      technologyDataConst.css,
+      technologyDataConst.sass,
+      technologyDataConst.javascript,
+      technologyDataConst.typescript,
+      technologyDataConst.angular,
+      technologyDataConst.rxjs,
+      technologyDataConst.ngxs,
+      technologyDataConst.primeng,
+      technologyDataConst.jest,
+      technologyDataConst.postman,
+      technologyDataConst.docker,
+      technologyDataConst.git,
+      technologyDataConst.gitlab,
+      technologyDataConst.npm,
+      technologyDataConst.pnpm,
+      technologyDataConst.eslint,
+      technologyDataConst.prettier,
+      technologyDataConst.stylelint,
+      technologyDataConst.nodejs,
+      technologyDataConst.nx,
+      technologyDataConst.storybook,
+      technologyDataConst.webstorm,
+      technologyDataConst.visualStudioCode,
+      technologyDataConst.enterpriseArchitect,
+      technologyDataConst.windows,
+    ],
   },
   {
     company: companyDataConst.primaris,
@@ -32,6 +61,16 @@ export const experienceDataConst: ArrayType<ExperienceDataModel> = [
       'Queried and managed data using SQL and Microsoft SQL Server (MSSQL).',
       'Provided consulting and implementation support for GoSmart solutions while communicating with stakeholders in English.',
       'Collaborated with cross-functional teams to analyze requirements and deliver automation and integration solutions.',
+    ],
+    technologies: [
+      technologyDataConst.javascript,
+      technologyDataConst.sql,
+      technologyDataConst.microsoftSqlServer,
+      technologyDataConst.soapui,
+      technologyDataConst.github,
+      technologyDataConst.snapLogic,
+      technologyDataConst.uiPath,
+      technologyDataConst.goSmartDesigner,
     ],
   },
 ];

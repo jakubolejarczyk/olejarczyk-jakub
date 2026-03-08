@@ -86,6 +86,12 @@ export const technologyDataConst: RecordType<TechnologyKindDataEnum, TechnologyD
     group: TechnologyGroupDataEnum.test,
     devicon: 'devicon-postman-plain',
   },
+  soapui: {
+    name: 'SoapUI',
+    order: 2,
+    group: TechnologyGroupDataEnum.test,
+    devicon: '',
+  },
   // Containerization
   docker: {
     name: 'Docker',
@@ -179,8 +185,8 @@ export const technologyDataConst: RecordType<TechnologyKindDataEnum, TechnologyD
     devicon: 'devicon-vscode-plain',
   },
   // Architecture
-  visualParadigm: {
-    name: 'Visual Paradigm',
+  enterpriseArchitect: {
+    name: 'Enterprise Architect',
     order: 0,
     group: TechnologyGroupDataEnum.architecture,
     devicon: '',
