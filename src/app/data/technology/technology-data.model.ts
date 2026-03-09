@@ -4,5 +4,4 @@ export interface TechnologyDataModel {
   name: string;
   order: number;
   group: TechnologyGroupDataEnum;
-  devicon: string;
 }
