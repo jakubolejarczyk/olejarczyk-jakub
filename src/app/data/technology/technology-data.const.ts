@@ -1,6 +1,6 @@
 import { RecordType } from '../../common/common.type';
 import { TechnologyGroupDataEnum, TechnologyKindDataEnum } from './technology-data.enum';
-import { TechnologyDataModel } from './technology-data.model';
+import { TechnologyDataModel, TechnologyGroupDataModel } from './technology-data.model';
 
 export const technologyDataConst: RecordType<TechnologyKindDataEnum, TechnologyDataModel> = {
   // Language
@@ -190,5 +190,83 @@ export const technologyDataConst: RecordType<TechnologyKindDataEnum, TechnologyD
     name: 'goSmart Designer',
     order: 0,
     group: TechnologyGroupDataEnum.documentGeneration,
+  },
+};
+
+export const technologyGroupDataConst: RecordType<
+  TechnologyGroupDataEnum,
+  TechnologyGroupDataModel
+> = {
+  language: {
+    label: 'Language',
+    order: 0,
+  },
+  framework: {
+    label: 'Framework',
+    order: 1,
+  },
+  library: {
+    label: 'Library',
+    order: 2,
+  },
+  database: {
+    label: 'Database',
+    order: 3,
+  },
+  test: {
+    label: 'Test',
+    order: 4,
+  },
+  containerization: {
+    label: 'Containerization',
+    order: 5,
+  },
+  versionControlSystem: {
+    label: 'Version Control System',
+    order: 6,
+  },
+  packageManager: {
+    label: 'Package Manager',
+    order: 7,
+  },
+  codeQuality: {
+    label: 'Code Quality',
+    order: 8,
+  },
+  runtime: {
+    label: 'Runtime',
+    order: 9,
+  },
+  buildSystem: {
+    label: 'Build System',
+    order: 10,
+  },
+  tool: {
+    label: 'Tool',
+    order: 11,
+  },
+  ide: {
+    label: 'IDE',
+    order: 12,
+  },
+  architecture: {
+    label: 'Architecture',
+    order: 13,
+  },
+  operatingSystem: {
+    label: 'Operating System',
+    order: 14,
+  },
+  ipaas: {
+    label: 'iPaaS',
+    order: 15,
+  },
+  rpa: {
+    label: 'RPA',
+    order: 16,
+  },
+  documentGeneration: {
+    label: 'Document Generation',
+    order: 17,
   },
 };

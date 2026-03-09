@@ -5,3 +5,8 @@ export interface TechnologyDataModel {
   order: number;
   group: TechnologyGroupDataEnum;
 }
+
+export interface TechnologyGroupDataModel {
+  label: string;
+  order: number;
+}
