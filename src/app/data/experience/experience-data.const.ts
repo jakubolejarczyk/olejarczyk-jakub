@@ -1,5 +1,6 @@
 import { ArrayType } from '../../common/common.type';
 import { companyDataConst } from '../company/company-data.const';
+import { skillDataConst } from '../skill/skill-data.const';
 import { technologyDataConst } from '../technology/technology-data.const';
 import { ExperienceDataModel } from './experience-data.model';
 
@@ -49,6 +50,7 @@ export const experienceDataConst: ArrayType<ExperienceDataModel> = [
       technologyDataConst.enterpriseArchitect,
       technologyDataConst.windows,
     ],
+    skills: [skillDataConst.english, skillDataConst.polish],
   },
   {
     company: companyDataConst.primaris,
@@ -72,5 +74,6 @@ export const experienceDataConst: ArrayType<ExperienceDataModel> = [
       technologyDataConst.uiPath,
       technologyDataConst.goSmartDesigner,
     ],
+    skills: [skillDataConst.english, skillDataConst.polish],
   },
 ];

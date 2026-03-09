@@ -1,4 +1,5 @@
 import { CompanyDataModel } from '../company/company-data.model';
+import { SkillDataModel } from '../skill/skill-data.model';
 import { TechnologyDataModel } from '../technology/technology-data.model';
 
 export interface ExperienceDataModel {
@@ -8,5 +9,5 @@ export interface ExperienceDataModel {
   role: string;
   experiences: string[];
   technologies: TechnologyDataModel[];
-  // TODO: Add skills in the experience
+  skills: SkillDataModel[];
 }
