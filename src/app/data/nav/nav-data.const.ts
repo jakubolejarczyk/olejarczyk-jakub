@@ -35,10 +35,6 @@ export const navDataConst: ArrayType<NavDataModel> = [
     label: 'Education',
   },
   {
-    href: '#blog',
-    label: 'Blog',
-  },
-  {
     href: '#contact',
     label: 'Contact',
   },

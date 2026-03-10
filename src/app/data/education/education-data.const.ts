@@ -4,7 +4,8 @@ import { EducationDataModel } from './education-data.model';
 export const educationDataConst: ArrayType<EducationDataModel> = [
   {
     university: 'Jan Kochanowski University of Kielce',
-    degree: 'Computer Science - Bachelor of Engineering',
+    major: 'Computer Science',
+    degree: 'Bachelor of Engineering',
     year: '2021',
   },
 ];
