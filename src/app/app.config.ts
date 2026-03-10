@@ -6,6 +6,7 @@ import { provideStore } from '@ngrx/store';
 import { provideStoreDevtools } from '@ngrx/store-devtools';
 import { personalReducer } from './state/personal/personal.reducer';
 import { sectionReducer } from './state/section/section.reducer';
+import { homeReducer } from './state/home/home.reducer';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -14,6 +15,7 @@ export const appConfig: ApplicationConfig = {
     provideStore({
       personal: personalReducer,
       section: sectionReducer,
+      home: homeReducer,
     }),
     provideStoreDevtools({ maxAge: 25, logOnly: !isDevMode() }),
   ],

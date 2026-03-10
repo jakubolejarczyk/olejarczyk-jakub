@@ -1,3 +1,4 @@
+import { personalDataConst } from '../personal/personal-data.const';
 import { SectionGroupDataEnum } from './section-data.enum';
 import { SectionDataModel } from './section-data.model';
 
@@ -5,7 +6,7 @@ export const sectionDataConst: SectionDataModel[] = [
   {
     group: SectionGroupDataEnum.header,
     id: 'navigation',
-    label: 'Navigation',
+    label: `${personalDataConst.lastname} ${personalDataConst.firstname}`,
     route: {
       routable: false,
     },
