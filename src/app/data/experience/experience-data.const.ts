@@ -1,10 +1,9 @@
-import { ArrayType } from '../../common/common.type';
 import { companyDataConst } from '../company/company-data.const';
 import { skillDataConst } from '../skill/skill-data.const';
 import { technologyDataConst } from '../technology/technology-data.const';
 import { ExperienceDataModel } from './experience-data.model';
 
-export const experienceDataConst: ArrayType<ExperienceDataModel> = [
+export const experienceDataConst: ExperienceDataModel[] = [
   {
     company: companyDataConst.aprSystem,
     startDate: new Date(2020, 8, 1),
@@ -26,14 +25,17 @@ export const experienceDataConst: ArrayType<ExperienceDataModel> = [
       technologyDataConst.html,
       technologyDataConst.css,
       technologyDataConst.sass,
+      technologyDataConst.storybook,
       technologyDataConst.javascript,
       technologyDataConst.typescript,
       technologyDataConst.angular,
+      technologyDataConst.ngrx,
       technologyDataConst.rxjs,
-      // technologyDataConst.ngxs,
       technologyDataConst.primeng,
       technologyDataConst.jest,
       technologyDataConst.postman,
+      technologyDataConst.nodejs,
+      technologyDataConst.nx,
       technologyDataConst.docker,
       technologyDataConst.git,
       technologyDataConst.gitlab,
@@ -42,15 +44,16 @@ export const experienceDataConst: ArrayType<ExperienceDataModel> = [
       technologyDataConst.eslint,
       technologyDataConst.prettier,
       technologyDataConst.stylelint,
-      technologyDataConst.nodejs,
-      technologyDataConst.nx,
-      technologyDataConst.storybook,
       technologyDataConst.webstorm,
       technologyDataConst.visualStudioCode,
-      technologyDataConst.enterpriseArchitect,
       technologyDataConst.windows,
+      technologyDataConst.enterpriseArchitect,
     ],
-    skills: [skillDataConst.english, skillDataConst.polish],
+    skills: [
+      skillDataConst.dataStructuresAndAlgorithms,
+      skillDataConst.english,
+      skillDataConst.polish,
+    ],
   },
   {
     company: companyDataConst.primaris,
@@ -70,6 +73,7 @@ export const experienceDataConst: ArrayType<ExperienceDataModel> = [
       technologyDataConst.microsoftSqlServer,
       technologyDataConst.soapui,
       technologyDataConst.github,
+      technologyDataConst.windows,
       technologyDataConst.snapLogic,
       technologyDataConst.uiPath,
       technologyDataConst.goSmartDesigner,
