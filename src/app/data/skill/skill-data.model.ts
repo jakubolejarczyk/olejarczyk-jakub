@@ -1,4 +1,4 @@
 export interface SkillDataModel {
-  name: string;
+  label: string;
   order: number;
 }

@@ -1,14 +1,17 @@
-import { RecordType } from '../../common/common.type';
 import { SkillKindDataEnum } from './skill-data.enum';
 import { SkillDataModel } from './skill-data.model';
 
-export const skillDataConst: RecordType<SkillKindDataEnum, SkillDataModel> = {
-  english: {
-    name: 'English - B2',
+export const skillDataConst: Record<SkillKindDataEnum, SkillDataModel> = {
+  dataStructuresAndAlgorithms: {
+    label: 'Data Structures and Algorithms',
     order: 0,
   },
-  polish: {
-    name: 'Polish - Native',
+  english: {
+    label: 'English - B2',
     order: 1,
+  },
+  polish: {
+    label: 'Polish - Native',
+    order: 2,
   },
 };
