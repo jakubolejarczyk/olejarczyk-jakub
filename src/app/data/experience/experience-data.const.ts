@@ -30,7 +30,7 @@ export const experienceDataConst: ArrayType<ExperienceDataModel> = [
       technologyDataConst.typescript,
       technologyDataConst.angular,
       technologyDataConst.rxjs,
-      technologyDataConst.ngxs,
+      // technologyDataConst.ngxs,
       technologyDataConst.primeng,
       technologyDataConst.jest,
       technologyDataConst.postman,

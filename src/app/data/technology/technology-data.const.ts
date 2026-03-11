@@ -1,272 +1,238 @@
-import { RecordType } from '../../common/common.type';
 import { TechnologyGroupDataEnum, TechnologyKindDataEnum } from './technology-data.enum';
 import { TechnologyDataModel, TechnologyGroupDataModel } from './technology-data.model';
 
-export const technologyDataConst: RecordType<TechnologyKindDataEnum, TechnologyDataModel> = {
-  // Language
-  html: {
-    name: 'HTML',
+export const technologyGroupDataConst: Record<TechnologyGroupDataEnum, TechnologyGroupDataModel> = {
+  frontend: {
+    label: 'Frontend',
     order: 0,
-    group: TechnologyGroupDataEnum.language,
+  },
+  programmingLanguage: {
+    label: 'Programming Language',
+    order: 1,
+  },
+  framework: {
+    label: 'Framework',
+    order: 2,
+  },
+  library: {
+    label: 'Library',
+    order: 3,
+  },
+  database: {
+    label: 'Database',
+    order: 4,
+  },
+  test: {
+    label: 'Test',
+    order: 5,
+  },
+  tool: {
+    label: 'Tool',
+    order: 6,
+  },
+  operatingSystem: {
+    label: 'Operating System',
+    order: 7,
+  },
+  architecture: {
+    label: 'Architecture',
+    order: 8,
+  },
+  ipaas: {
+    label: 'iPaaS',
+    order: 9,
+  },
+  rpa: {
+    label: 'RPA',
+    order: 10,
+  },
+  documentGeneration: {
+    label: 'Document Generation',
+    order: 11,
+  },
+};
+
+export const technologyDataConst: Record<TechnologyKindDataEnum, TechnologyDataModel> = {
+  // Frontend
+  html: {
+    label: 'HTML',
+    order: 0,
+    group: TechnologyGroupDataEnum.frontend,
   },
   css: {
-    name: 'CSS',
+    label: 'CSS',
     order: 1,
-    group: TechnologyGroupDataEnum.language,
+    group: TechnologyGroupDataEnum.frontend,
   },
   sass: {
-    name: 'SASS',
+    label: 'SASS',
     order: 2,
-    group: TechnologyGroupDataEnum.language,
+    group: TechnologyGroupDataEnum.frontend,
   },
-  javascript: {
-    name: 'JavaScript',
+  storybook: {
+    label: 'Storybook',
     order: 3,
-    group: TechnologyGroupDataEnum.language,
+    group: TechnologyGroupDataEnum.frontend,
+  },
+  // Programming Language
+  javascript: {
+    label: 'JavaScript',
+    order: 0,
+    group: TechnologyGroupDataEnum.programmingLanguage,
   },
   typescript: {
-    name: 'TypeScript',
-    order: 4,
-    group: TechnologyGroupDataEnum.language,
+    label: 'TypeScript',
+    order: 1,
+    group: TechnologyGroupDataEnum.programmingLanguage,
   },
   // Framework
   angular: {
-    name: 'Angular',
+    label: 'Angular',
     order: 0,
     group: TechnologyGroupDataEnum.framework,
   },
   // Library
-  rxjs: {
-    name: 'RxJS',
+  ngrx: {
+    label: 'NgRx',
     order: 0,
     group: TechnologyGroupDataEnum.library,
   },
-  ngxs: {
-    name: 'NGXS',
+  rxjs: {
+    label: 'RxJS',
     order: 1,
     group: TechnologyGroupDataEnum.library,
   },
   primeng: {
-    name: 'PrimeNG',
+    label: 'PrimeNG',
     order: 2,
     group: TechnologyGroupDataEnum.library,
   },
   // Database
   sql: {
-    name: 'SQL',
+    label: 'SQL',
     order: 0,
     group: TechnologyGroupDataEnum.database,
   },
   microsoftSqlServer: {
-    name: 'Microsoft SQL Server',
+    label: 'Microsoft SQL Server',
     order: 1,
     group: TechnologyGroupDataEnum.database,
   },
   // Test
   jest: {
-    name: 'Jest',
+    label: 'Jest',
     order: 0,
     group: TechnologyGroupDataEnum.test,
   },
   postman: {
-    name: 'Postman',
+    label: 'Postman',
     order: 1,
     group: TechnologyGroupDataEnum.test,
   },
   soapui: {
-    name: 'SoapUI',
+    label: 'SoapUI',
     order: 2,
     group: TechnologyGroupDataEnum.test,
   },
-  // Containerization
-  docker: {
-    name: 'Docker',
-    order: 0,
-    group: TechnologyGroupDataEnum.containerization,
-  },
-  // Version Control System
-  git: {
-    name: 'Git',
-    order: 0,
-    group: TechnologyGroupDataEnum.versionControlSystem,
-  },
-  github: {
-    name: 'GitHub',
-    order: 1,
-    group: TechnologyGroupDataEnum.versionControlSystem,
-  },
-  gitlab: {
-    name: 'GitLab',
-    order: 2,
-    group: TechnologyGroupDataEnum.versionControlSystem,
-  },
-  // Package Manager
-  npm: {
-    name: 'npm',
-    order: 0,
-    group: TechnologyGroupDataEnum.packageManager,
-  },
-  pnpm: {
-    name: 'pnpm',
-    order: 1,
-    group: TechnologyGroupDataEnum.packageManager,
-  },
-  // Code Quality
-  eslint: {
-    name: 'ESLint',
-    order: 0,
-    group: TechnologyGroupDataEnum.codeQuality,
-  },
-  prettier: {
-    name: 'Prettier',
-    order: 1,
-    group: TechnologyGroupDataEnum.codeQuality,
-  },
-  stylelint: {
-    name: 'Stylelint',
-    order: 2,
-    group: TechnologyGroupDataEnum.codeQuality,
-  },
-  // Runtime
-  nodejs: {
-    name: 'Node.js',
-    order: 0,
-    group: TechnologyGroupDataEnum.runtime,
-  },
-  // Build System
-  nx: {
-    name: 'Nx',
-    order: 0,
-    group: TechnologyGroupDataEnum.buildSystem,
-  },
   // Tool
-  storybook: {
-    name: 'Storybook',
+  nodejs: {
+    label: 'Node.js',
     order: 0,
     group: TechnologyGroupDataEnum.tool,
   },
-  // IDE
+  nx: {
+    label: 'Nx',
+    order: 1,
+    group: TechnologyGroupDataEnum.tool,
+  },
+  docker: {
+    label: 'Docker',
+    order: 2,
+    group: TechnologyGroupDataEnum.tool,
+  },
+  git: {
+    label: 'Git',
+    order: 3,
+    group: TechnologyGroupDataEnum.tool,
+  },
+  github: {
+    label: 'GitHub',
+    order: 4,
+    group: TechnologyGroupDataEnum.tool,
+  },
+  gitlab: {
+    label: 'GitLab',
+    order: 5,
+    group: TechnologyGroupDataEnum.tool,
+  },
+  npm: {
+    label: 'npm',
+    order: 6,
+    group: TechnologyGroupDataEnum.tool,
+  },
+  pnpm: {
+    label: 'pnpm',
+    order: 7,
+    group: TechnologyGroupDataEnum.tool,
+  },
+  eslint: {
+    label: 'ESLint',
+    order: 8,
+    group: TechnologyGroupDataEnum.tool,
+  },
+  prettier: {
+    label: 'Prettier',
+    order: 9,
+    group: TechnologyGroupDataEnum.tool,
+  },
+  stylelint: {
+    label: 'Stylelint',
+    order: 10,
+    group: TechnologyGroupDataEnum.tool,
+  },
   webstorm: {
-    name: 'WebStorm',
-    order: 0,
-    group: TechnologyGroupDataEnum.ide,
+    label: 'WebStorm',
+    order: 11,
+    group: TechnologyGroupDataEnum.tool,
   },
   visualStudioCode: {
-    name: 'Visual Studio Code',
-    order: 1,
-    group: TechnologyGroupDataEnum.ide,
-  },
-  // Architecture
-  enterpriseArchitect: {
-    name: 'Enterprise Architect',
-    order: 0,
-    group: TechnologyGroupDataEnum.architecture,
+    label: 'Visual Studio Code',
+    order: 12,
+    group: TechnologyGroupDataEnum.tool,
   },
   // Operating System
   windows: {
-    name: 'Windows',
+    label: 'Windows',
     order: 0,
     group: TechnologyGroupDataEnum.operatingSystem,
   },
   linux: {
-    name: 'Linux',
+    label: 'Linux',
     order: 1,
     group: TechnologyGroupDataEnum.operatingSystem,
   },
+  // Architecture
+  enterpriseArchitect: {
+    label: 'Enterprise Architect',
+    order: 0,
+    group: TechnologyGroupDataEnum.architecture,
+  },
   // iPaaS
   snapLogic: {
-    name: 'SnapLogic',
+    label: 'SnapLogic',
     order: 0,
     group: TechnologyGroupDataEnum.ipaas,
   },
   // RPA
   uiPath: {
-    name: 'UIPath',
+    label: 'UIPath',
     order: 0,
     group: TechnologyGroupDataEnum.rpa,
   },
   // Document Generation
   goSmartDesigner: {
-    name: 'goSmart Designer',
+    label: 'goSmart Designer',
     order: 0,
     group: TechnologyGroupDataEnum.documentGeneration,
-  },
-};
-
-export const technologyGroupDataConst: RecordType<
-  TechnologyGroupDataEnum,
-  TechnologyGroupDataModel
-> = {
-  language: {
-    label: 'Language',
-    order: 0,
-  },
-  framework: {
-    label: 'Framework',
-    order: 1,
-  },
-  library: {
-    label: 'Library',
-    order: 2,
-  },
-  database: {
-    label: 'Database',
-    order: 3,
-  },
-  test: {
-    label: 'Test',
-    order: 4,
-  },
-  containerization: {
-    label: 'Containerization',
-    order: 5,
-  },
-  versionControlSystem: {
-    label: 'Version Control System',
-    order: 6,
-  },
-  packageManager: {
-    label: 'Package Manager',
-    order: 7,
-  },
-  codeQuality: {
-    label: 'Code Quality',
-    order: 8,
-  },
-  runtime: {
-    label: 'Runtime',
-    order: 9,
-  },
-  buildSystem: {
-    label: 'Build System',
-    order: 10,
-  },
-  tool: {
-    label: 'Tool',
-    order: 11,
-  },
-  ide: {
-    label: 'IDE',
-    order: 12,
-  },
-  architecture: {
-    label: 'Architecture',
-    order: 13,
-  },
-  operatingSystem: {
-    label: 'Operating System',
-    order: 14,
-  },
-  ipaas: {
-    label: 'iPaaS',
-    order: 15,
-  },
-  rpa: {
-    label: 'RPA',
-    order: 16,
-  },
-  documentGeneration: {
-    label: 'Document Generation',
-    order: 17,
   },
 };

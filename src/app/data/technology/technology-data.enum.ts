@@ -1,15 +1,32 @@
+export enum TechnologyGroupDataEnum {
+  frontend = 'frontend',
+  programmingLanguage = 'programmingLanguage',
+  framework = 'framework',
+  library = 'library',
+  database = 'database',
+  test = 'test',
+  tool = 'tool',
+  operatingSystem = 'operatingSystem',
+  architecture = 'architecture',
+  ipaas = 'ipaas',
+  rpa = 'rpa',
+  documentGeneration = 'documentGeneration',
+}
+
 export enum TechnologyKindDataEnum {
-  // Language
+  // Frontend
   html = 'html',
   css = 'css',
   sass = 'sass',
+  storybook = 'storybook',
+  // Programming Language
   javascript = 'javascript',
   typescript = 'typescript',
   // Framework
   angular = 'angular',
   // Library
+  ngrx = 'ngrx',
   rxjs = 'rxjs',
-  ngxs = 'ngxs',
   primeng = 'primeng',
   // Database
   sql = 'sql',
@@ -18,58 +35,29 @@ export enum TechnologyKindDataEnum {
   jest = 'jest',
   postman = 'postman',
   soapui = 'soapui',
-  // Containerization
+  // Tool
+  nodejs = 'nodejs',
+  nx = 'nx',
   docker = 'docker',
-  // Version Control System
   git = 'git',
   github = 'github',
   gitlab = 'gitlab',
-  // Package Manager
   npm = 'npm',
   pnpm = 'pnpm',
-  // Code Quality
   eslint = 'eslint',
   prettier = 'prettier',
   stylelint = 'stylelint',
-  // Runtime
-  nodejs = 'nodejs',
-  // Build System
-  nx = 'nx',
-  // Tool
-  storybook = 'storybook',
-  // IDE
   webstorm = 'webstorm',
   visualStudioCode = 'visualStudioCode',
-  // Architecture
-  enterpriseArchitect = 'enterpriseArchitect',
   // Operating System
   windows = 'windows',
   linux = 'linux',
+  // Architecture
+  enterpriseArchitect = 'enterpriseArchitect',
   // iPaaS
   snapLogic = 'snapLogic',
   // RPA
   uiPath = 'uiPath',
   // Document Generation
-  goSmart = 'goSmartDesigner',
-}
-
-export enum TechnologyGroupDataEnum {
-  language = 'language',
-  framework = 'framework',
-  library = 'library',
-  database = 'database',
-  test = 'test',
-  containerization = 'containerization',
-  versionControlSystem = 'versionControlSystem',
-  packageManager = 'packageManager',
-  codeQuality = 'codeQuality',
-  runtime = 'runtime',
-  buildSystem = 'buildSystem',
-  tool = 'tool',
-  ide = 'ide',
-  architecture = 'architecture',
-  operatingSystem = 'operatingSystem',
-  ipaas = 'ipaas',
-  rpa = 'rpa',
-  documentGeneration = 'documentGeneration',
+  goSmartDesigner = 'goSmartDesigner',
 }

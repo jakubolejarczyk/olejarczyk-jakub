@@ -8,6 +8,7 @@ import { personalReducer } from './state/personal/personal.reducer';
 import { sectionReducer } from './state/section/section.reducer';
 import { homeReducer } from './state/home/home.reducer';
 import { aboutMeReducer } from './state/about-me/about-me.reducer';
+import { technologyGroupReducer, technologyReducer } from './state/technology/technology.reducer';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -18,6 +19,8 @@ export const appConfig: ApplicationConfig = {
       section: sectionReducer,
       home: homeReducer,
       aboutMe: aboutMeReducer,
+      technologyGroup: technologyGroupReducer,
+      technology: technologyReducer,
     }),
     provideStoreDevtools({ maxAge: 25, logOnly: !isDevMode() }),
   ],
