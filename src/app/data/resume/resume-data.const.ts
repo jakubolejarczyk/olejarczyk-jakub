@@ -1,18 +1,17 @@
-import { ArrayType } from '../../common/common.type';
-import { ResumeLangDataModel } from './resume-data.enum';
+import { ResumeLangDataEnum } from './resume-data.enum';
 import { ResumeDataModel } from './resume-data.model';
 
-export const resumeDataConst: ArrayType<ResumeDataModel> = [
+export const resumeDataConst: ResumeDataModel[] = [
   {
-    filePath: 'files/olejarczyk_jakub_en.pdf',
+    resumeFile: 'assets/files/olejarczyk_jakub_eng.pdf',
     label: 'Download (English)',
-    lang: ResumeLangDataModel.polish,
+    lang: ResumeLangDataEnum.english,
     order: 0,
   },
   {
-    filePath: 'files/olejarczyk_jakub_pl.pdf',
+    resumeFile: 'assets/files/olejarczyk_jakub_pl.pdf',
     label: 'Download (Polish)',
-    lang: ResumeLangDataModel.polish,
+    lang: ResumeLangDataEnum.polish,
     order: 1,
   },
 ];

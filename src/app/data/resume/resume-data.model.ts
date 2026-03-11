@@ -1,8 +1,8 @@
-import { ResumeLangDataModel } from './resume-data.enum';
+import { ResumeLangDataEnum } from './resume-data.enum';
 
 export interface ResumeDataModel {
-  filePath: string;
+  resumeFile: string;
   label: string;
-  lang: ResumeLangDataModel;
+  lang: ResumeLangDataEnum;
   order: number;
 }
