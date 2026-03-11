@@ -1,7 +1,6 @@
-import { ArrayType } from '../../common/common.type';
 import { EducationDataModel } from './education-data.model';
 
-export const educationDataConst: ArrayType<EducationDataModel> = [
+export const educationDataConst: EducationDataModel[] = [
   {
     university: 'Jan Kochanowski University of Kielce',
     major: 'Computer Science',

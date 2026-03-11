@@ -12,6 +12,7 @@ import { technologyGroupReducer, technologyReducer } from './state/technology/te
 import { skillReducer } from './state/skill/skill.reducer';
 import { experienceReducer } from './state/experience/experience.reducer';
 import { resumeReducer } from './state/resume/resume.reducer';
+import { educationReducer } from './state/education/education.reducer';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -27,6 +28,7 @@ export const appConfig: ApplicationConfig = {
       skill: skillReducer,
       experience: experienceReducer,
       resume: resumeReducer,
+      education: educationReducer,
     }),
     provideStoreDevtools({ maxAge: 25, logOnly: !isDevMode() }),
   ],

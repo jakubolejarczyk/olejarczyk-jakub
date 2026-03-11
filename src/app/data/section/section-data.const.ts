@@ -93,16 +93,6 @@ export const sectionDataConst: SectionDataModel[] = [
     order: 6,
   },
   {
-    group: SectionGroupDataEnum.main,
-    id: 'blog',
-    label: 'Blog',
-    route: {
-      routable: true,
-      href: '#blog',
-    },
-    order: 7,
-  },
-  {
     group: SectionGroupDataEnum.footer,
     id: 'contact',
     label: 'Contact',
