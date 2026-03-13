@@ -670,7 +670,7 @@
     "components": [
         {
             "name": "App",
-            "id": "component-App-641c57f06004eff64aee243be3f40ac01b8481135363005b55e2d1013c2d8119a636aaec1c5e196679ec6ff346e97a91684902de19fd02d390699b429fb8b89e",
+            "id": "component-App-ddd683606129dbc1b7ce878ccfed037b342a0d1ff3d9184ff453633fc5475dc3d2cc726ab57bc9af5913cc06f3792319e1d4f6ab2a55ea2b20ed02055f2183df",
             "file": "src/app/app.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -694,11 +694,24 @@
             "hostBindings": [],
             "hostListeners": [],
             "standalone": false,
-            "imports": [],
+            "imports": [
+                {
+                    "name": "HeaderComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "MainComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "FooterComponent",
+                    "type": "component"
+                }
+            ],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-root',\r\n  templateUrl: './app.html',\r\n  styleUrl: './app.scss',\r\n})\r\nexport class App {}\r\n",
+            "sourceCode": "import { Component } from '@angular/core';\r\nimport { HeaderComponent } from './component/header/header.component';\r\nimport { MainComponent } from './component/main/main.component';\r\nimport { FooterComponent } from './component/footer/footer.component';\r\n\r\n@Component({\r\n  selector: 'app-root',\r\n  templateUrl: './app.html',\r\n  styleUrl: './app.scss',\r\n  imports: [HeaderComponent, MainComponent, FooterComponent],\r\n})\r\nexport class App {}\r\n",
             "styleUrl": "./app.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
@@ -708,7 +721,7 @@
         },
         {
             "name": "FooterComponent",
-            "id": "component-FooterComponent-850ec8031d60c75319c3ff521e064d68261213d9dfa1a6aa868d289b084b7ae22be1d8b57ee7a31697aaab7cfb3676f5245fdde8c90119a9b82350d3b8ca3a1f",
+            "id": "component-FooterComponent-e1d86ca5ab9353e2a1f653ffd2e1196f076cdda6d61ef0899494c43ffadff337d701a490c9140f7e6d0d6e7bd0c3b3996b49092cb9cee20a12f0f8b1e2eb1070",
             "file": "src/app/component/footer/footer.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -725,28 +738,45 @@
             "hostDirectives": [],
             "inputsClass": [],
             "outputsClass": [],
-            "propertiesClass": [],
+            "propertiesClass": [
+                {
+                    "name": "group",
+                    "defaultValue": "SectionGroupDataEnum.footer",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "unknown",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 12
+                }
+            ],
             "methodsClass": [],
             "deprecated": false,
             "deprecationMessage": "",
             "hostBindings": [],
             "hostListeners": [],
             "standalone": false,
-            "imports": [],
+            "imports": [
+                {
+                    "name": "SectionsComponent",
+                    "type": "component"
+                }
+            ],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'footer-component',\r\n  templateUrl: './footer.component.html',\r\n  styleUrl: './footer.component.scss',\r\n})\r\nexport class FooterComponent {}\r\n",
+            "sourceCode": "import { Component } from '@angular/core';\r\nimport { SectionsComponent } from '../sections/sections.component';\r\nimport { SectionGroupDataEnum } from '../../data/section/section-data.enum';\r\n\r\n@Component({\r\n  selector: 'footer-component',\r\n  templateUrl: './footer.component.html',\r\n  styleUrl: './footer.component.scss',\r\n  imports: [SectionsComponent],\r\n})\r\nexport class FooterComponent {\r\n  group = SectionGroupDataEnum.footer;\r\n}\r\n",
             "styleUrl": "./footer.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<footer>\r\n  <p>footer works!</p>\r\n</footer>\r\n"
+            "templateData": "<footer>\r\n  <sections-component [group]=\"group\"></sections-component>\r\n</footer>\r\n"
         },
         {
             "name": "HeaderComponent",
-            "id": "component-HeaderComponent-dc33421d91b732d0353e0498ea99f03d3c4c9bcdfced9479b8786dbb3ffda364a04dd0173d7576f4eac9eeccf87cd37b3ad0d7fd155cc24f3e59d821904f55ec",
+            "id": "component-HeaderComponent-8f56cca21f4fd76d9727650eabdd0971c69da0d3486b04e85bdc1202376fd944598ece36216a6bc78248e64eaac508773a641435976bea8372470cde6526cbc3",
             "file": "src/app/component/header/header.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -763,28 +793,45 @@
             "hostDirectives": [],
             "inputsClass": [],
             "outputsClass": [],
-            "propertiesClass": [],
+            "propertiesClass": [
+                {
+                    "name": "group",
+                    "defaultValue": "SectionGroupDataEnum.header",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "unknown",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 12
+                }
+            ],
             "methodsClass": [],
             "deprecated": false,
             "deprecationMessage": "",
             "hostBindings": [],
             "hostListeners": [],
             "standalone": false,
-            "imports": [],
+            "imports": [
+                {
+                    "name": "SectionsComponent",
+                    "type": "component"
+                }
+            ],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'header-component',\r\n  templateUrl: './header.component.html',\r\n  styleUrl: './header.component.scss',\r\n})\r\nexport class HeaderComponent {}\r\n",
+            "sourceCode": "import { Component } from '@angular/core';\r\nimport { SectionsComponent } from '../sections/sections.component';\r\nimport { SectionGroupDataEnum } from '../../data/section/section-data.enum';\r\n\r\n@Component({\r\n  selector: 'header-component',\r\n  templateUrl: './header.component.html',\r\n  styleUrl: './header.component.scss',\r\n  imports: [SectionsComponent],\r\n})\r\nexport class HeaderComponent {\r\n  group = SectionGroupDataEnum.header;\r\n}\r\n",
             "styleUrl": "./header.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<header>\r\n  <p>header works!</p>\r\n</header>\r\n"
+            "templateData": "<header>\r\n  <sections-component [group]=\"group\"></sections-component>\r\n</header>\r\n"
         },
         {
             "name": "MainComponent",
-            "id": "component-MainComponent-1aea1689ecfb8053d9a8aaa6f3fc30c1490623ab32c45d4b9c460d0574168e976c557affeee2a1f8791361c8c48c94eebaf28c72e295f10488e581202a4cd0c2",
+            "id": "component-MainComponent-e02b33d26aab5b89d47aa9d2586fe4147b4da66324edfc63a3aaf1b73536897b5faefcf2d19385b32988eb1124381a999a62992f9f87aa4653e74a78e0cedf77",
             "file": "src/app/component/main/main.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -801,6 +848,73 @@
             "hostDirectives": [],
             "inputsClass": [],
             "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "group",
+                    "defaultValue": "SectionGroupDataEnum.main",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "unknown",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 12
+                }
+            ],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [
+                {
+                    "name": "SectionsComponent",
+                    "type": "component"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\r\nimport { SectionsComponent } from '../sections/sections.component';\r\nimport { SectionGroupDataEnum } from '../../data/section/section-data.enum';\r\n\r\n@Component({\r\n  selector: 'main-component',\r\n  templateUrl: './main.component.html',\r\n  styleUrl: './main.component.scss',\r\n  imports: [SectionsComponent],\r\n})\r\nexport class MainComponent {\r\n  group = SectionGroupDataEnum.main;\r\n}\r\n",
+            "styleUrl": "./main.component.scss",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<main>\r\n  <sections-component [group]=\"group\"></sections-component>\r\n</main>\r\n"
+        },
+        {
+            "name": "SectionComponent",
+            "id": "component-SectionComponent-46c4474bcb835529df56c08ae4bcc0737f498485145932fa36378435c56e09a8653b50344b044c7c91007eb3e2e9fa91a16a990b4e4b6254d499411abb78b46c",
+            "file": "src/app/component/section/section.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "section-component",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./section.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "section",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "SectionDataModel",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 10,
+                    "required": true
+                }
+            ],
+            "outputsClass": [],
             "propertiesClass": [],
             "methodsClass": [],
             "deprecated": false,
@@ -812,13 +926,95 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'main-component',\r\n  templateUrl: './main.component.html',\r\n  styleUrl: './main.component.scss',\r\n})\r\nexport class MainComponent {}\r\n",
-            "styleUrl": "./main.component.scss",
+            "sourceCode": "import { Component, input } from '@angular/core';\r\nimport { SectionDataModel } from '../../data/section/section-data.model';\r\n\r\n@Component({\r\n  selector: 'section-component',\r\n  templateUrl: './section.component.html',\r\n  styleUrl: './section.component.scss',\r\n})\r\nexport class SectionComponent {\r\n  section = input.required<SectionDataModel>();\r\n}\r\n",
+            "styleUrl": "./section.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<main>\r\n  <p>main works!</p>\r\n</main>\r\n"
+            "templateData": "<section [id]=\"section().id\">\r\n  <p>{{ section().label }}</p>\r\n</section>\r\n"
+        },
+        {
+            "name": "SectionsComponent",
+            "id": "component-SectionsComponent-bd695acd2f811afed7b9d5b209e0d10f59eacf6cb177c2203fd22f16725fcc9b64158788b73d5f53fca13965e67a2945a5fd496cc79e67ebfe461ed303c2544d",
+            "file": "src/app/component/sections/sections.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "sections-component",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./sections.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "group",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "SectionGroupDataEnum",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 16,
+                    "required": true
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "sections",
+                    "defaultValue": "this.store.selectSignal((state) => {\r\n    return state.section\r\n      .filter((section) => section.group == this.group())\r\n      .sort((left, right) => left.order - right.order);\r\n  })",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "unknown",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 18
+                },
+                {
+                    "name": "store",
+                    "defaultValue": "inject(Store)",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Store<literal type>",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 14,
+                    "modifierKind": [
+                        123,
+                        148
+                    ]
+                }
+            ],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [
+                {
+                    "name": "SectionComponent",
+                    "type": "component"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, inject, input } from '@angular/core';\r\nimport { SectionComponent } from '../section/section.component';\r\nimport { Store } from '@ngrx/store';\r\nimport { SectionDataModel } from '../../data/section/section-data.model';\r\nimport { SectionGroupDataEnum } from '../../data/section/section-data.enum';\r\n\r\n@Component({\r\n  selector: 'sections-component',\r\n  templateUrl: './sections.component.html',\r\n  styleUrl: './sections.component.scss',\r\n  imports: [SectionComponent],\r\n})\r\nexport class SectionsComponent {\r\n  private readonly store: Store<{ section: SectionDataModel[] }> = inject(Store);\r\n\r\n  group = input.required<SectionGroupDataEnum>();\r\n\r\n  sections = this.store.selectSignal((state) => {\r\n    return state.section\r\n      .filter((section) => section.group == this.group())\r\n      .sort((left, right) => left.order - right.order);\r\n  });\r\n}\r\n",
+            "styleUrl": "./sections.component.scss",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "@for (section of sections(); track section.id) {\r\n  <section-component [section]=\"section\"></section-component>\r\n}\r\n"
         }
     ],
     "modules": [],
@@ -2196,7 +2392,7 @@
                 "linktype": "component",
                 "name": "FooterComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/1",
+                "coverageCount": "0/2",
                 "status": "low"
             },
             {
@@ -2205,7 +2401,7 @@
                 "linktype": "component",
                 "name": "HeaderComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/1",
+                "coverageCount": "0/2",
                 "status": "low"
             },
             {
@@ -2214,7 +2410,25 @@
                 "linktype": "component",
                 "name": "MainComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/1",
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/component/section/section.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "SectionComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/component/sections/sections.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "SectionsComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
                 "status": "low"
             },
             {
