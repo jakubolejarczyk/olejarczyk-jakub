@@ -772,7 +772,7 @@
         {
             "name": "AboutMeComponent",
             "id": "component-AboutMeComponent-950b063312c09d5a31f76eebbc6f501f8f3cc781e0aac167f07ed9fb0a5db48155395b9a90a11cccd4c3e5187e924910080ea586a574986b91eaf585b7716b24",
-            "file": "src/view/component/about-me/about-me.component.ts",
+            "file": "src/component/about-me/about-me.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -810,7 +810,7 @@
         {
             "name": "ContactComponent",
             "id": "component-ContactComponent-c71fd95baab326474098f929866ec9ef2d8fe1e0a23de79ff182f68bfb6c4f316334f05aa7d44ed1ea0fb556fab68eb3f1b04f8525624bc52a6b29336c5e1f82",
-            "file": "src/view/component/contact/contact.component.ts",
+            "file": "src/component/contact/contact.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -847,8 +847,8 @@
         },
         {
             "name": "CopyrightComponent",
-            "id": "component-CopyrightComponent-f2bfea03433a041decb7a4eb23b7330752ad88b2d1cb0662eee4520c2150367e6012d4532ebfd1f6ab85e5e2ef4379cd282e15cb0a095aad177b7f5a6a915cec",
-            "file": "src/view/component/copyright/copyright.component.ts",
+            "id": "component-CopyrightComponent-1602237629f445588806e394497101c8cf8f618be0923078fc9c0aa68ec73c662ef64e67d037e5580c5d3dfafa182e26123cf2e82530b75a1a2e2b6d4b582bb7",
+            "file": "src/component/copyright/copyright.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -916,7 +916,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\r\nimport { StoreCore } from '../../../core/store.core';\r\nimport { DateUtils } from '../../../utils/date.utils';\r\n\r\n@Component({\r\n  selector: 'copyright-component',\r\n  templateUrl: './copyright.component.html',\r\n  styleUrl: './copyright.component.scss',\r\n})\r\nexport class CopyrightComponent extends StoreCore {\r\n  year = DateUtils.getYear();\r\n\r\n  fullname = this.store.selectSignal((state) => {\r\n    const { firstname, lastname } = state.personal;\r\n    return `${firstname} ${lastname}`;\r\n  });\r\n}\r\n",
+            "sourceCode": "import { Component } from '@angular/core';\r\nimport { StoreCore } from '../../core/store.core';\r\nimport { DateUtils } from '../../utils/date.utils';\r\n\r\n@Component({\r\n  selector: 'copyright-component',\r\n  templateUrl: './copyright.component.html',\r\n  styleUrl: './copyright.component.scss',\r\n})\r\nexport class CopyrightComponent extends StoreCore {\r\n  year = DateUtils.getYear();\r\n\r\n  fullname = this.store.selectSignal((state) => {\r\n    const { firstname, lastname } = state.personal;\r\n    return `${firstname} ${lastname}`;\r\n  });\r\n}\r\n",
             "styleUrl": "./copyright.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
@@ -929,7 +929,7 @@
         {
             "name": "EducationComponent",
             "id": "component-EducationComponent-45db79c45ca4eff1c77c97823547efed992a87d8b36c2732ef13ed362cf8dc40bd0d1defea22d81d5cec476ec2ab45e4dabc195f77fe9a62589a880dc9d8b364",
-            "file": "src/view/component/education/education.component.ts",
+            "file": "src/component/education/education.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -967,7 +967,7 @@
         {
             "name": "ExperienceComponent",
             "id": "component-ExperienceComponent-e4682994e90ef37d33bceeef70b4cfe425d13ed50c24013ffe8d63ff4377457a5616669bd17f246f5989b5d4f803b1a0c34ac5863b26f326019d99830efaf981",
-            "file": "src/view/component/experience/experience.component.ts",
+            "file": "src/component/experience/experience.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -1003,119 +1003,85 @@
             "templateData": "<p>experience works!</p>\r\n"
         },
         {
-            "name": "FooterComponent",
-            "id": "component-FooterComponent-74d1b1a0fa036bcca1938568575e65a9d313894d9d7ca67a91d241b3357253e42bf488562bab04c76565e2bce66c62c18401f110a5ebb7d42fcb01aab1b11bad",
-            "file": "src/view/component/footer/footer.component.ts",
+            "name": "FooterView",
+            "id": "component-FooterView-3a9b1961d951e94dbed76b3a522f0f84d07f08d5aa74e1b81ec78c31f60d00cde2f3fcf690c42a183ea7c86c0615209b45b9d00f6b7c2c5a0671a76c973e62b6",
+            "file": "src/view/footer/footer.view.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
             "providers": [],
-            "selector": "footer-component",
+            "selector": "footer-view",
             "styleUrls": [],
             "styles": [],
             "templateUrl": [
-                "./footer.component.html"
+                "./footer.view.html"
             ],
             "viewProviders": [],
             "hostDirectives": [],
             "inputsClass": [],
             "outputsClass": [],
-            "propertiesClass": [
-                {
-                    "name": "group",
-                    "defaultValue": "SectionGroupDataEnum.footer",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "unknown",
-                    "indexKey": "",
-                    "optional": false,
-                    "description": "",
-                    "line": 12
-                }
-            ],
+            "propertiesClass": [],
             "methodsClass": [],
             "deprecated": false,
             "deprecationMessage": "",
             "hostBindings": [],
             "hostListeners": [],
             "standalone": false,
-            "imports": [
-                {
-                    "name": "SectionsComponent",
-                    "type": "component"
-                }
-            ],
+            "imports": [],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\r\nimport { SectionsComponent } from '../sections/sections.component';\r\nimport { SectionGroupDataEnum } from '../../../data/section/section-data.enum';\r\n\r\n@Component({\r\n  selector: 'footer-component',\r\n  templateUrl: './footer.component.html',\r\n  styleUrl: './footer.component.scss',\r\n  imports: [SectionsComponent],\r\n})\r\nexport class FooterComponent {\r\n  group = SectionGroupDataEnum.footer;\r\n}\r\n",
-            "styleUrl": "./footer.component.scss",
+            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'footer-view',\r\n  templateUrl: './footer.view.html',\r\n  styleUrl: './footer.view.scss',\r\n})\r\nexport class FooterView {}\r\n",
+            "styleUrl": "./footer.view.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<footer>\r\n  <sections-component [group]=\"group\"></sections-component>\r\n</footer>\r\n"
+            "templateData": "<p>footer-view works!</p>\r\n"
         },
         {
-            "name": "HeaderComponent",
-            "id": "component-HeaderComponent-5ba74d756d304c6816e5446c617d65686b946682300b84dfb940aea6d0af36f31e57f912f8e65a89606ec1fa4d98030d6e13d336ab4863b403374a0be43371e3",
-            "file": "src/view/component/header/header.component.ts",
+            "name": "HeaderView",
+            "id": "component-HeaderView-89c6a3c6b0761f403c34b7be537c076370368109e1d19bbff7caf07ccb82064b8acf0741a80450c2ec27934c1b0ae1c898ad40e612b7611f1749ae3bfed7649b",
+            "file": "src/view/header/header.view.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
             "providers": [],
-            "selector": "header-component",
+            "selector": "header-view",
             "styleUrls": [],
             "styles": [],
             "templateUrl": [
-                "./header.component.html"
+                "./header.view.html"
             ],
             "viewProviders": [],
             "hostDirectives": [],
             "inputsClass": [],
             "outputsClass": [],
-            "propertiesClass": [
-                {
-                    "name": "group",
-                    "defaultValue": "SectionGroupDataEnum.header",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "unknown",
-                    "indexKey": "",
-                    "optional": false,
-                    "description": "",
-                    "line": 12
-                }
-            ],
+            "propertiesClass": [],
             "methodsClass": [],
             "deprecated": false,
             "deprecationMessage": "",
             "hostBindings": [],
             "hostListeners": [],
             "standalone": false,
-            "imports": [
-                {
-                    "name": "SectionsComponent",
-                    "type": "component"
-                }
-            ],
+            "imports": [],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\r\nimport { SectionsComponent } from '../sections/sections.component';\r\nimport { SectionGroupDataEnum } from '../../../data/section/section-data.enum';\r\n\r\n@Component({\r\n  selector: 'header-component',\r\n  templateUrl: './header.component.html',\r\n  styleUrl: './header.component.scss',\r\n  imports: [SectionsComponent],\r\n})\r\nexport class HeaderComponent {\r\n  group = SectionGroupDataEnum.header;\r\n}\r\n",
-            "styleUrl": "./header.component.scss",
+            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'header-view',\r\n  templateUrl: './header.view.html',\r\n  styleUrl: './header.view.scss',\r\n})\r\nexport class HeaderView {}\r\n",
+            "styleUrl": "./header.view.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<header>\r\n  <sections-component [group]=\"group\"></sections-component>\r\n</header>\r\n"
+            "templateData": "<p>header-view works!</p>\r\n"
         },
         {
             "name": "HomeComponent",
             "id": "component-HomeComponent-e0433dd69fa5c63803956b32451df96dcc1d0aa69a37f322fb022e4a2e0711ebbe881d54745106079c39abc39e089929fe21a3bd7fb9280d754a6a99494fb46c",
-            "file": "src/view/component/home/home.component.ts",
+            "file": "src/component/home/home.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -1151,64 +1117,9 @@
             "templateData": "<p>home works!</p>\r\n"
         },
         {
-            "name": "MainComponent",
-            "id": "component-MainComponent-f930094c850cf625412ec0995198c144a4134db67d5008bb18a629bf5ecf42c6904bd56240b932797d059f7b0b84dad29e9bf0378cee1c66526e4244e99d4576",
-            "file": "src/view/component/main/main.component.ts",
-            "encapsulation": [],
-            "entryComponents": [],
-            "inputs": [],
-            "outputs": [],
-            "providers": [],
-            "selector": "main-component",
-            "styleUrls": [],
-            "styles": [],
-            "templateUrl": [
-                "./main.component.html"
-            ],
-            "viewProviders": [],
-            "hostDirectives": [],
-            "inputsClass": [],
-            "outputsClass": [],
-            "propertiesClass": [
-                {
-                    "name": "group",
-                    "defaultValue": "SectionGroupDataEnum.main",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "unknown",
-                    "indexKey": "",
-                    "optional": false,
-                    "description": "",
-                    "line": 12
-                }
-            ],
-            "methodsClass": [],
-            "deprecated": false,
-            "deprecationMessage": "",
-            "hostBindings": [],
-            "hostListeners": [],
-            "standalone": false,
-            "imports": [
-                {
-                    "name": "SectionsComponent",
-                    "type": "component"
-                }
-            ],
-            "description": "",
-            "rawdescription": "\n",
-            "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\r\nimport { SectionsComponent } from '../sections/sections.component';\r\nimport { SectionGroupDataEnum } from '../../../data/section/section-data.enum';\r\n\r\n@Component({\r\n  selector: 'main-component',\r\n  templateUrl: './main.component.html',\r\n  styleUrl: './main.component.scss',\r\n  imports: [SectionsComponent],\r\n})\r\nexport class MainComponent {\r\n  group = SectionGroupDataEnum.main;\r\n}\r\n",
-            "styleUrl": "./main.component.scss",
-            "assetsDirs": [],
-            "styleUrlsData": "",
-            "stylesData": "",
-            "extends": [],
-            "templateData": "<main>\r\n  <sections-component [group]=\"group\"></sections-component>\r\n</main>\r\n"
-        },
-        {
             "name": "MainView",
             "id": "component-MainView-2c8f69198a89a8358e5904bc0b5e5cad526bd0d63e6766535efa33fb95e46a7fc9443dadbdf8897af9e047c584210c6a182d62408c6cde1b57413a6ed3955ee5",
-            "file": "src/view/main.view.ts",
+            "file": "src/view/main/main.view.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -1246,7 +1157,7 @@
         {
             "name": "NavigationComponent",
             "id": "component-NavigationComponent-7fe29c1942643464043908c4645b9bd621facff5b1f1d8675112022378235972eddbc21d7126e704722ed0ca04f2607e2c657bc25e2b2494bc63dc29dbb42272",
-            "file": "src/view/component/navigation/navigation.component.ts",
+            "file": "src/component/navigation/navigation.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -1284,7 +1195,7 @@
         {
             "name": "ProjectsComponent",
             "id": "component-ProjectsComponent-2ae425b9bb149239d0c5e7f212adc00e9d480bebf5129c3eb88eb6a2dc4ddf60415fca35a38b99008f36df3ed913f5d66874e158045d2fbba92ae9ec07ec7c25",
-            "file": "src/view/component/projects/projects.component.ts",
+            "file": "src/component/projects/projects.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -1322,7 +1233,7 @@
         {
             "name": "ResumeComponent",
             "id": "component-ResumeComponent-effe52a76d7159cea74ab3882d6b6af36ececc0616f08c266f98d16470ec10653395084de01c47db6ea40f54409c907f0310ea77e6afbea37e89861bd1c170a4",
-            "file": "src/view/component/resume/resume.component.ts",
+            "file": "src/component/resume/resume.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -1359,8 +1270,8 @@
         },
         {
             "name": "SectionComponent",
-            "id": "component-SectionComponent-f863a48a5a6c158753f47498917fd5cb2b47da543f24ec3091418d441e927fa6a17d0c24eaea49a6eef9b2baf08fd383e0fac6e7ba182e49d7de62971b8ed966",
-            "file": "src/view/component/section/section.component.ts",
+            "id": "component-SectionComponent-45c53a7f6bad45e0149fe0fed1a7bde55355d5e69edec689496221dd2d98f8420baf0f92c7ddb9c579ee936746741f3e82f4ebf484aaf843c9717aee5f6c8e23",
+            "file": "src/component/section/section.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -1415,7 +1326,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, input } from '@angular/core';\r\nimport { NgComponentOutlet } from '@angular/common';\r\nimport { SectionDataModel } from '../../../data/section/section-data.model';\r\n\r\n@Component({\r\n  selector: 'section-component',\r\n  templateUrl: './section.component.html',\r\n  styleUrl: './section.component.scss',\r\n  imports: [NgComponentOutlet],\r\n})\r\nexport class SectionComponent {\r\n  section = input.required<SectionDataModel>();\r\n\r\n  getComponent() {\r\n    return this.section().component;\r\n  }\r\n}\r\n",
+            "sourceCode": "import { Component, input } from '@angular/core';\r\nimport { NgComponentOutlet } from '@angular/common';\r\nimport { SectionDataModel } from '../../data/section/section-data.model';\r\n\r\n@Component({\r\n  selector: 'section-component',\r\n  templateUrl: './section.component.html',\r\n  styleUrl: './section.component.scss',\r\n  imports: [NgComponentOutlet],\r\n})\r\nexport class SectionComponent {\r\n  section = input.required<SectionDataModel>();\r\n\r\n  getComponent() {\r\n    return this.section().component;\r\n  }\r\n}\r\n",
             "styleUrl": "./section.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
@@ -1425,8 +1336,8 @@
         },
         {
             "name": "SectionsComponent",
-            "id": "component-SectionsComponent-3acf00675eb6b77bf33f0beb659f375aaadcbcd537b6b9ea8b5e30c0c82eeb16fc91494724fa078703945af41b8831d0f9cdb555066e0c5e77065f69bdef1a78",
-            "file": "src/view/component/sections/sections.component.ts",
+            "id": "component-SectionsComponent-4ba15c6704b67d11b6d530bf6334915f9973d36e970486d8e85ae082e518ef2fd89b2f49c1e5539368a2132a673b08465274eef479c849f359b5e5dbd5a92754",
+            "file": "src/component/sections/sections.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -1497,7 +1408,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, inject, input } from '@angular/core';\r\nimport { SectionComponent } from '../section/section.component';\r\nimport { Store } from '@ngrx/store';\r\nimport { SectionGroupDataEnum } from '../../../data/section/section-data.enum';\r\nimport { SectionDataModel } from '../../../data/section/section-data.model';\r\n\r\n@Component({\r\n  selector: 'sections-component',\r\n  templateUrl: './sections.component.html',\r\n  styleUrl: './sections.component.scss',\r\n  imports: [SectionComponent],\r\n})\r\nexport class SectionsComponent {\r\n  private readonly store: Store<{ section: SectionDataModel[] }> = inject(Store);\r\n\r\n  group = input.required<SectionGroupDataEnum>();\r\n\r\n  sections = this.store.selectSignal((state) => {\r\n    return state.section\r\n      .filter((section) => section.group == this.group())\r\n      .sort((left, right) => left.order - right.order);\r\n  });\r\n}\r\n",
+            "sourceCode": "import { Component, inject, input } from '@angular/core';\r\nimport { SectionComponent } from '../section/section.component';\r\nimport { Store } from '@ngrx/store';\r\nimport { SectionGroupDataEnum } from '../../data/section/section-data.enum';\r\nimport { SectionDataModel } from '../../data/section/section-data.model';\r\n\r\n@Component({\r\n  selector: 'sections-component',\r\n  templateUrl: './sections.component.html',\r\n  styleUrl: './sections.component.scss',\r\n  imports: [SectionComponent],\r\n})\r\nexport class SectionsComponent {\r\n  private readonly store: Store<{ section: SectionDataModel[] }> = inject(Store);\r\n\r\n  group = input.required<SectionGroupDataEnum>();\r\n\r\n  sections = this.store.selectSignal((state) => {\r\n    return state.section\r\n      .filter((section) => section.group == this.group())\r\n      .sort((left, right) => left.order - right.order);\r\n  });\r\n}\r\n",
             "styleUrl": "./sections.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
@@ -1508,7 +1419,7 @@
         {
             "name": "SkillsComponent",
             "id": "component-SkillsComponent-d9c5538432a319a33cb92687b9360fabc0fe62b3159670938a1b61e68bf5542831c8484dba65c0f0fbbefe24a4c4a7baaa791cd671f75ac20c92ee8decf3db91",
-            "file": "src/view/component/skills/skills.component.ts",
+            "file": "src/component/skills/skills.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -1546,7 +1457,7 @@
         {
             "name": "TechnologiesComponent",
             "id": "component-TechnologiesComponent-1492c74c7417d6b3b839fe3990bb7eb6e2b5a32b583777caf56a8b2c72b6485eae14bdebcc91b745e4ad058d085e21a865f9521df8b832e9e46fff9c80847148",
-            "file": "src/view/component/technologies/technologies.component.ts",
+            "file": "src/component/technologies/technologies.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -1580,6 +1491,44 @@
             "stylesData": "",
             "extends": [],
             "templateData": "<p>technologies works!</p>\r\n"
+        },
+        {
+            "name": "View",
+            "id": "component-View-3acb091c3ae7e673897a8aa594e8a66a5e526efd2e8612c4848aa378452c293d8a42673ca6d6b73ed5dff6c9b78c61c9d8a88d95343edbd2419c54ad381a7c5f",
+            "file": "src/view/view.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "view",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./view.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'view',\r\n  templateUrl: './view.html',\r\n  styleUrl: './view.scss',\r\n})\r\nexport class View {}\r\n",
+            "styleUrl": "./view.scss",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<p>view works!</p>\r\n"
         }
     ],
     "modules": [],
@@ -2927,6 +2876,123 @@
         "status": "low",
         "files": [
             {
+                "filePath": "src/component/about-me/about-me.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "AboutMeComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/component/contact/contact.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ContactComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/component/copyright/copyright.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "CopyrightComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/component/education/education.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "EducationComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/component/experience/experience.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ExperienceComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/component/home/home.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "HomeComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/component/navigation/navigation.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "NavigationComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/component/projects/projects.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ProjectsComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/component/resume/resume.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ResumeComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/component/section/section.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "SectionComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/component/sections/sections.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "SectionsComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/component/skills/skills.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "SkillsComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/component/technologies/technologies.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "TechnologiesComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
                 "filePath": "src/config/app.config.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
@@ -3310,154 +3376,37 @@
                 "status": "low"
             },
             {
-                "filePath": "src/view/component/about-me/about-me.component.ts",
+                "filePath": "src/view/footer/footer.view.ts",
                 "type": "component",
                 "linktype": "component",
-                "name": "AboutMeComponent",
+                "name": "FooterView",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
             },
             {
-                "filePath": "src/view/component/contact/contact.component.ts",
+                "filePath": "src/view/header/header.view.ts",
                 "type": "component",
                 "linktype": "component",
-                "name": "ContactComponent",
+                "name": "HeaderView",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
             },
             {
-                "filePath": "src/view/component/copyright/copyright.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "CopyrightComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/4",
-                "status": "low"
-            },
-            {
-                "filePath": "src/view/component/education/education.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "EducationComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/view/component/experience/experience.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "ExperienceComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/view/component/footer/footer.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "FooterComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/2",
-                "status": "low"
-            },
-            {
-                "filePath": "src/view/component/header/header.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "HeaderComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/2",
-                "status": "low"
-            },
-            {
-                "filePath": "src/view/component/home/home.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "HomeComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/view/component/main/main.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "MainComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/2",
-                "status": "low"
-            },
-            {
-                "filePath": "src/view/component/navigation/navigation.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "NavigationComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/view/component/projects/projects.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "ProjectsComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/view/component/resume/resume.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "ResumeComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/view/component/section/section.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "SectionComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/3",
-                "status": "low"
-            },
-            {
-                "filePath": "src/view/component/sections/sections.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "SectionsComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/4",
-                "status": "low"
-            },
-            {
-                "filePath": "src/view/component/skills/skills.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "SkillsComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/view/component/technologies/technologies.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "TechnologiesComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/view/main.view.ts",
+                "filePath": "src/view/main/main.view.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "MainView",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/view/view.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "View",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
