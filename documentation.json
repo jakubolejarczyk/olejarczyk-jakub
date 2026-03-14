@@ -703,7 +703,7 @@
         },
         {
             "name": "StorybookUtils",
-            "id": "injectable-StorybookUtils-d7a0f599f00a5405f0c4b91d45a5fc370053b1a30353735369f1fdc2767a341b9694cc237e2b1a210f152caca3c98219a37af0c403d13eeffcc2b718bb8df9f9",
+            "id": "injectable-StorybookUtils-6b4eb85087ed514f10eb87a64620352bfd461bf2e4def03882223db23a46a676b579186834c6132ac4776efae5a949d4426ae1d3392bb93c830a403e78d539b1",
             "file": "src/utils/storybook.utils.ts",
             "properties": [],
             "methods": [
@@ -725,7 +725,7 @@
             "deprecationMessage": "",
             "description": "",
             "rawdescription": "\n",
-            "sourceCode": "import { Injectable } from '@angular/core';\r\nimport { applicationConfig, Meta } from '@storybook/angular';\r\nimport { appConfig } from '../app/app.config';\r\n\r\n@Injectable({ providedIn: 'root' })\r\nexport class StorybookUtils {\r\n  static getDecorators(): Meta['decorators'] {\r\n    return [\r\n      applicationConfig({\r\n        providers: appConfig.providers,\r\n      }),\r\n    ];\r\n  }\r\n}\r\n",
+            "sourceCode": "import { Injectable } from '@angular/core';\r\nimport { applicationConfig, Meta } from '@storybook/angular';\r\nimport { appConfig } from '../config/app.config';\r\n\r\n@Injectable({ providedIn: 'root' })\r\nexport class StorybookUtils {\r\n  static getDecorators(): Meta['decorators'] {\r\n    return [\r\n      applicationConfig({\r\n        providers: appConfig.providers,\r\n      }),\r\n    ];\r\n  }\r\n}\r\n",
             "extends": [],
             "type": "injectable"
         }
@@ -772,7 +772,7 @@
         {
             "name": "AboutMeComponent",
             "id": "component-AboutMeComponent-950b063312c09d5a31f76eebbc6f501f8f3cc781e0aac167f07ed9fb0a5db48155395b9a90a11cccd4c3e5187e924910080ea586a574986b91eaf585b7716b24",
-            "file": "src/app/component/about-me/about-me.component.ts",
+            "file": "src/view/component/about-me/about-me.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -808,60 +808,9 @@
             "templateData": "<p>about-me works!</p>\r\n"
         },
         {
-            "name": "App",
-            "id": "component-App-ddd683606129dbc1b7ce878ccfed037b342a0d1ff3d9184ff453633fc5475dc3d2cc726ab57bc9af5913cc06f3792319e1d4f6ab2a55ea2b20ed02055f2183df",
-            "file": "src/app/app.ts",
-            "encapsulation": [],
-            "entryComponents": [],
-            "inputs": [],
-            "outputs": [],
-            "providers": [],
-            "selector": "app-root",
-            "styleUrls": [],
-            "styles": [],
-            "templateUrl": [
-                "./app.html"
-            ],
-            "viewProviders": [],
-            "hostDirectives": [],
-            "inputsClass": [],
-            "outputsClass": [],
-            "propertiesClass": [],
-            "methodsClass": [],
-            "deprecated": false,
-            "deprecationMessage": "",
-            "hostBindings": [],
-            "hostListeners": [],
-            "standalone": false,
-            "imports": [
-                {
-                    "name": "HeaderComponent",
-                    "type": "component"
-                },
-                {
-                    "name": "MainComponent",
-                    "type": "component"
-                },
-                {
-                    "name": "FooterComponent",
-                    "type": "component"
-                }
-            ],
-            "description": "",
-            "rawdescription": "\n",
-            "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\r\nimport { HeaderComponent } from './component/header/header.component';\r\nimport { MainComponent } from './component/main/main.component';\r\nimport { FooterComponent } from './component/footer/footer.component';\r\n\r\n@Component({\r\n  selector: 'app-root',\r\n  templateUrl: './app.html',\r\n  styleUrl: './app.scss',\r\n  imports: [HeaderComponent, MainComponent, FooterComponent],\r\n})\r\nexport class App {}\r\n",
-            "styleUrl": "./app.scss",
-            "assetsDirs": [],
-            "styleUrlsData": "",
-            "stylesData": "",
-            "extends": [],
-            "templateData": "<header-component></header-component>\r\n<main-component></main-component>\r\n<footer-component></footer-component>\r\n"
-        },
-        {
             "name": "ContactComponent",
             "id": "component-ContactComponent-c71fd95baab326474098f929866ec9ef2d8fe1e0a23de79ff182f68bfb6c4f316334f05aa7d44ed1ea0fb556fab68eb3f1b04f8525624bc52a6b29336c5e1f82",
-            "file": "src/app/component/contact/contact.component.ts",
+            "file": "src/view/component/contact/contact.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -899,7 +848,7 @@
         {
             "name": "CopyrightComponent",
             "id": "component-CopyrightComponent-f2bfea03433a041decb7a4eb23b7330752ad88b2d1cb0662eee4520c2150367e6012d4532ebfd1f6ab85e5e2ef4379cd282e15cb0a095aad177b7f5a6a915cec",
-            "file": "src/app/component/copyright/copyright.component.ts",
+            "file": "src/view/component/copyright/copyright.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -980,7 +929,7 @@
         {
             "name": "EducationComponent",
             "id": "component-EducationComponent-45db79c45ca4eff1c77c97823547efed992a87d8b36c2732ef13ed362cf8dc40bd0d1defea22d81d5cec476ec2ab45e4dabc195f77fe9a62589a880dc9d8b364",
-            "file": "src/app/component/education/education.component.ts",
+            "file": "src/view/component/education/education.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -1018,7 +967,7 @@
         {
             "name": "ExperienceComponent",
             "id": "component-ExperienceComponent-e4682994e90ef37d33bceeef70b4cfe425d13ed50c24013ffe8d63ff4377457a5616669bd17f246f5989b5d4f803b1a0c34ac5863b26f326019d99830efaf981",
-            "file": "src/app/component/experience/experience.component.ts",
+            "file": "src/view/component/experience/experience.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -1056,7 +1005,7 @@
         {
             "name": "FooterComponent",
             "id": "component-FooterComponent-74d1b1a0fa036bcca1938568575e65a9d313894d9d7ca67a91d241b3357253e42bf488562bab04c76565e2bce66c62c18401f110a5ebb7d42fcb01aab1b11bad",
-            "file": "src/app/component/footer/footer.component.ts",
+            "file": "src/view/component/footer/footer.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -1111,7 +1060,7 @@
         {
             "name": "HeaderComponent",
             "id": "component-HeaderComponent-5ba74d756d304c6816e5446c617d65686b946682300b84dfb940aea6d0af36f31e57f912f8e65a89606ec1fa4d98030d6e13d336ab4863b403374a0be43371e3",
-            "file": "src/app/component/header/header.component.ts",
+            "file": "src/view/component/header/header.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -1166,7 +1115,7 @@
         {
             "name": "HomeComponent",
             "id": "component-HomeComponent-e0433dd69fa5c63803956b32451df96dcc1d0aa69a37f322fb022e4a2e0711ebbe881d54745106079c39abc39e089929fe21a3bd7fb9280d754a6a99494fb46c",
-            "file": "src/app/component/home/home.component.ts",
+            "file": "src/view/component/home/home.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -1204,7 +1153,7 @@
         {
             "name": "MainComponent",
             "id": "component-MainComponent-f930094c850cf625412ec0995198c144a4134db67d5008bb18a629bf5ecf42c6904bd56240b932797d059f7b0b84dad29e9bf0378cee1c66526e4244e99d4576",
-            "file": "src/app/component/main/main.component.ts",
+            "file": "src/view/component/main/main.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -1257,9 +1206,47 @@
             "templateData": "<main>\r\n  <sections-component [group]=\"group\"></sections-component>\r\n</main>\r\n"
         },
         {
+            "name": "MainView",
+            "id": "component-MainView-2c8f69198a89a8358e5904bc0b5e5cad526bd0d63e6766535efa33fb95e46a7fc9443dadbdf8897af9e047c584210c6a182d62408c6cde1b57413a6ed3955ee5",
+            "file": "src/view/main.view.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "main-view",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./main.view.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'main-view',\r\n  templateUrl: './main.view.html',\r\n  styleUrl: './main.view.scss',\r\n})\r\nexport class MainView {}\r\n",
+            "styleUrl": "./main.view.scss",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<p>main-view works!</p>\r\n"
+        },
+        {
             "name": "NavigationComponent",
             "id": "component-NavigationComponent-7fe29c1942643464043908c4645b9bd621facff5b1f1d8675112022378235972eddbc21d7126e704722ed0ca04f2607e2c657bc25e2b2494bc63dc29dbb42272",
-            "file": "src/app/component/navigation/navigation.component.ts",
+            "file": "src/view/component/navigation/navigation.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -1297,7 +1284,7 @@
         {
             "name": "ProjectsComponent",
             "id": "component-ProjectsComponent-2ae425b9bb149239d0c5e7f212adc00e9d480bebf5129c3eb88eb6a2dc4ddf60415fca35a38b99008f36df3ed913f5d66874e158045d2fbba92ae9ec07ec7c25",
-            "file": "src/app/component/projects/projects.component.ts",
+            "file": "src/view/component/projects/projects.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -1335,7 +1322,7 @@
         {
             "name": "ResumeComponent",
             "id": "component-ResumeComponent-effe52a76d7159cea74ab3882d6b6af36ececc0616f08c266f98d16470ec10653395084de01c47db6ea40f54409c907f0310ea77e6afbea37e89861bd1c170a4",
-            "file": "src/app/component/resume/resume.component.ts",
+            "file": "src/view/component/resume/resume.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -1373,7 +1360,7 @@
         {
             "name": "SectionComponent",
             "id": "component-SectionComponent-f863a48a5a6c158753f47498917fd5cb2b47da543f24ec3091418d441e927fa6a17d0c24eaea49a6eef9b2baf08fd383e0fac6e7ba182e49d7de62971b8ed966",
-            "file": "src/app/component/section/section.component.ts",
+            "file": "src/view/component/section/section.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -1439,7 +1426,7 @@
         {
             "name": "SectionsComponent",
             "id": "component-SectionsComponent-3acf00675eb6b77bf33f0beb659f375aaadcbcd537b6b9ea8b5e30c0c82eeb16fc91494724fa078703945af41b8831d0f9cdb555066e0c5e77065f69bdef1a78",
-            "file": "src/app/component/sections/sections.component.ts",
+            "file": "src/view/component/sections/sections.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -1521,7 +1508,7 @@
         {
             "name": "SkillsComponent",
             "id": "component-SkillsComponent-d9c5538432a319a33cb92687b9360fabc0fe62b3159670938a1b61e68bf5542831c8484dba65c0f0fbbefe24a4c4a7baaa791cd671f75ac20c92ee8decf3db91",
-            "file": "src/app/component/skills/skills.component.ts",
+            "file": "src/view/component/skills/skills.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -1559,7 +1546,7 @@
         {
             "name": "TechnologiesComponent",
             "id": "component-TechnologiesComponent-1492c74c7417d6b3b839fe3990bb7eb6e2b5a32b583777caf56a8b2c72b6485eae14bdebcc91b745e4ad058d085e21a865f9521df8b832e9e46fff9c80847148",
-            "file": "src/app/component/technologies/technologies.component.ts",
+            "file": "src/view/component/technologies/technologies.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -1622,11 +1609,11 @@
                 "name": "appConfig",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/app.config.ts",
+                "file": "src/config/app.config.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "ApplicationConfig",
-                "defaultValue": "{\n  providers: [\n    provideBrowserGlobalErrorListeners(),\n    provideRouter(routes),\n    provideStore(\n      {\n        personal: personalReducer,\n        section: sectionReducer,\n        home: homeReducer,\n        aboutMe: aboutMeReducer,\n        technologyGroup: technologyGroupReducer,\n        technology: technologyReducer,\n        skill: skillReducer,\n        experience: experienceReducer,\n        resume: resumeReducer,\n        education: educationReducer,\n      },\n      {\n        runtimeChecks: {\n          strictStateImmutability: false,\n        },\n      },\n    ),\n    provideStoreDevtools({ maxAge: 25, logOnly: !isDevMode() }),\n  ],\n}"
+                "defaultValue": "{\n  providers: [\n    provideBrowserGlobalErrorListeners(),\n    provideStore(\n      {\n        personal: personalReducer,\n        section: sectionReducer,\n        home: homeReducer,\n        aboutMe: aboutMeReducer,\n        technologyGroup: technologyGroupReducer,\n        technology: technologyReducer,\n        skill: skillReducer,\n        experience: experienceReducer,\n        resume: resumeReducer,\n        education: educationReducer,\n      },\n      {\n        runtimeChecks: {\n          strictStateImmutability: false,\n        },\n      },\n    ),\n    provideStoreDevtools({ maxAge: 25, logOnly: !isDevMode() }),\n  ],\n}"
             },
             {
                 "name": "companyDataConst",
@@ -1737,16 +1724,6 @@
                 "deprecationMessage": "",
                 "type": "unknown",
                 "defaultValue": "createReducer(resumeDataConst)"
-            },
-            {
-                "name": "routes",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/app.routes.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Routes",
-                "defaultValue": "[]"
             },
             {
                 "name": "sectionDataConst",
@@ -2272,16 +2249,16 @@
                     "defaultValue": "createReducer(aboutMeDataConst)"
                 }
             ],
-            "src/app/app.config.ts": [
+            "src/config/app.config.ts": [
                 {
                     "name": "appConfig",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/app.config.ts",
+                    "file": "src/config/app.config.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "ApplicationConfig",
-                    "defaultValue": "{\n  providers: [\n    provideBrowserGlobalErrorListeners(),\n    provideRouter(routes),\n    provideStore(\n      {\n        personal: personalReducer,\n        section: sectionReducer,\n        home: homeReducer,\n        aboutMe: aboutMeReducer,\n        technologyGroup: technologyGroupReducer,\n        technology: technologyReducer,\n        skill: skillReducer,\n        experience: experienceReducer,\n        resume: resumeReducer,\n        education: educationReducer,\n      },\n      {\n        runtimeChecks: {\n          strictStateImmutability: false,\n        },\n      },\n    ),\n    provideStoreDevtools({ maxAge: 25, logOnly: !isDevMode() }),\n  ],\n}"
+                    "defaultValue": "{\n  providers: [\n    provideBrowserGlobalErrorListeners(),\n    provideStore(\n      {\n        personal: personalReducer,\n        section: sectionReducer,\n        home: homeReducer,\n        aboutMe: aboutMeReducer,\n        technologyGroup: technologyGroupReducer,\n        technology: technologyReducer,\n        skill: skillReducer,\n        experience: experienceReducer,\n        resume: resumeReducer,\n        education: educationReducer,\n      },\n      {\n        runtimeChecks: {\n          strictStateImmutability: false,\n        },\n      },\n    ),\n    provideStoreDevtools({ maxAge: 25, logOnly: !isDevMode() }),\n  ],\n}"
                 }
             ],
             "src/data/company/company-data.const.ts": [
@@ -2414,18 +2391,6 @@
                     "deprecationMessage": "",
                     "type": "unknown",
                     "defaultValue": "createReducer(resumeDataConst)"
-                }
-            ],
-            "src/app/app.routes.ts": [
-                {
-                    "name": "routes",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/app.routes.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Routes",
-                    "defaultValue": "[]"
                 }
             ],
             "src/data/section/section-data.const.ts": [
@@ -2962,174 +2927,11 @@
         "status": "low",
         "files": [
             {
-                "filePath": "src/app/app.config.ts",
+                "filePath": "src/config/app.config.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "appConfig",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/app.routes.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "routes",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/app.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "App",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/component/about-me/about-me.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "AboutMeComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/component/contact/contact.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "ContactComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/component/copyright/copyright.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "CopyrightComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/4",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/component/education/education.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "EducationComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/component/experience/experience.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "ExperienceComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/component/footer/footer.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "FooterComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/2",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/component/header/header.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "HeaderComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/2",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/component/home/home.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "HomeComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/component/main/main.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "MainComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/2",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/component/navigation/navigation.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "NavigationComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/component/projects/projects.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "ProjectsComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/component/resume/resume.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "ResumeComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/component/section/section.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "SectionComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/3",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/component/sections/sections.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "SectionsComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/4",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/component/skills/skills.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "SkillsComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/component/technologies/technologies.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "TechnologiesComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -3505,6 +3307,159 @@
                 "name": "StorybookUtils",
                 "coveragePercent": 0,
                 "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/view/component/about-me/about-me.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "AboutMeComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/view/component/contact/contact.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ContactComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/view/component/copyright/copyright.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "CopyrightComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/view/component/education/education.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "EducationComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/view/component/experience/experience.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ExperienceComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/view/component/footer/footer.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "FooterComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/view/component/header/header.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "HeaderComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/view/component/home/home.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "HomeComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/view/component/main/main.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "MainComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/view/component/navigation/navigation.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "NavigationComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/view/component/projects/projects.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ProjectsComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/view/component/resume/resume.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ResumeComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/view/component/section/section.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "SectionComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/view/component/sections/sections.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "SectionsComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/view/component/skills/skills.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "SkillsComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/view/component/technologies/technologies.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "TechnologiesComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/view/main.view.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "MainView",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
                 "status": "low"
             }
         ]
