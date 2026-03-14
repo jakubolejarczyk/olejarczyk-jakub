@@ -1,3 +1,14 @@
+import { AboutMeComponent } from '../../component/about-me/about-me.component';
+import { ContactComponent } from '../../component/contact/contact.component';
+import { CopyrightComponent } from '../../component/copyright/copyright.component';
+import { EducationComponent } from '../../component/education/education.component';
+import { ExperienceComponent } from '../../component/experience/experience.component';
+import { HomeComponent } from '../../component/home/home.component';
+import { NavigationComponent } from '../../component/navigation/navigation.component';
+import { ProjectsComponent } from '../../component/projects/projects.component';
+import { ResumeComponent } from '../../component/resume/resume.component';
+import { SkillsComponent } from '../../component/skills/skills.component';
+import { TechnologiesComponent } from '../../component/technologies/technologies.component';
 import { personalDataConst } from '../personal/personal-data.const';
 import { SectionGroupDataEnum } from './section-data.enum';
 import { SectionDataModel } from './section-data.model';
@@ -10,6 +21,7 @@ export const sectionDataConst: SectionDataModel[] = [
     route: {
       routable: false,
     },
+    component: NavigationComponent,
     order: 0,
   },
   {
@@ -20,6 +32,7 @@ export const sectionDataConst: SectionDataModel[] = [
       routable: true,
       href: '#home',
     },
+    component: HomeComponent,
     order: 1,
   },
   {
@@ -30,6 +43,7 @@ export const sectionDataConst: SectionDataModel[] = [
       routable: true,
       href: '#about-me',
     },
+    component: AboutMeComponent,
     order: 0,
   },
   {
@@ -40,6 +54,7 @@ export const sectionDataConst: SectionDataModel[] = [
       routable: true,
       href: '#technologies',
     },
+    component: TechnologiesComponent,
     order: 1,
   },
   {
@@ -50,6 +65,7 @@ export const sectionDataConst: SectionDataModel[] = [
       routable: true,
       href: '#skills',
     },
+    component: SkillsComponent,
     order: 2,
   },
   {
@@ -60,6 +76,7 @@ export const sectionDataConst: SectionDataModel[] = [
       routable: true,
       href: '#experience',
     },
+    component: ExperienceComponent,
     order: 3,
   },
   {
@@ -70,6 +87,7 @@ export const sectionDataConst: SectionDataModel[] = [
       routable: true,
       href: '#resume',
     },
+    component: ResumeComponent,
     order: 4,
   },
   {
@@ -80,6 +98,7 @@ export const sectionDataConst: SectionDataModel[] = [
       routable: true,
       href: '#projects',
     },
+    component: ProjectsComponent,
     order: 5,
   },
   {
@@ -90,6 +109,7 @@ export const sectionDataConst: SectionDataModel[] = [
       routable: true,
       href: '#education',
     },
+    component: EducationComponent,
     order: 6,
   },
   {
@@ -100,6 +120,7 @@ export const sectionDataConst: SectionDataModel[] = [
       routable: true,
       href: '#contact',
     },
+    component: ContactComponent,
     order: 0,
   },
   {
@@ -109,6 +130,7 @@ export const sectionDataConst: SectionDataModel[] = [
     route: {
       routable: false,
     },
+    component: CopyrightComponent,
     order: 1,
   },
 ];

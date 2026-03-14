@@ -18,18 +18,25 @@ export const appConfig: ApplicationConfig = {
   providers: [
     provideBrowserGlobalErrorListeners(),
     provideRouter(routes),
-    provideStore({
-      personal: personalReducer,
-      section: sectionReducer,
-      home: homeReducer,
-      aboutMe: aboutMeReducer,
-      technologyGroup: technologyGroupReducer,
-      technology: technologyReducer,
-      skill: skillReducer,
-      experience: experienceReducer,
-      resume: resumeReducer,
-      education: educationReducer,
-    }),
+    provideStore(
+      {
+        personal: personalReducer,
+        section: sectionReducer,
+        home: homeReducer,
+        aboutMe: aboutMeReducer,
+        technologyGroup: technologyGroupReducer,
+        technology: technologyReducer,
+        skill: skillReducer,
+        experience: experienceReducer,
+        resume: resumeReducer,
+        education: educationReducer,
+      },
+      {
+        runtimeChecks: {
+          strictStateImmutability: false,
+        },
+      },
+    ),
     provideStoreDevtools({ maxAge: 25, logOnly: !isDevMode() }),
   ],
 };

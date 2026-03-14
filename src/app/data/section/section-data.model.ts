@@ -14,5 +14,6 @@ export interface SectionDataModel {
   id: string;
   label: string;
   route: SectionRoutableDataModel | SectionNotRoutableDataModel;
+  component: any;
   order: number;
 }
