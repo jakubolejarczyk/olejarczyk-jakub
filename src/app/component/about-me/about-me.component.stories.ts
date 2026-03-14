@@ -1,6 +1,6 @@
 import { applicationConfig, Meta, StoryObj } from '@storybook/angular';
 import { AboutMeComponent } from './about-me.component';
-import { appConfig } from '../../app.config';
+import { appConfig } from '../../../config/app.config';
 
 const meta: Meta<AboutMeComponent> = {
   title: 'AboutMeComponent',

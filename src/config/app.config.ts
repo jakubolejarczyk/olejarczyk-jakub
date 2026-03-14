@@ -1,7 +1,5 @@
 import { ApplicationConfig, provideBrowserGlobalErrorListeners, isDevMode } from '@angular/core';
-import { provideRouter } from '@angular/router';
 
-import { routes } from './app.routes';
 import { provideStore } from '@ngrx/store';
 import { provideStoreDevtools } from '@ngrx/store-devtools';
 import { aboutMeReducer } from '../state/about-me/about-me.reducer';
@@ -17,7 +15,6 @@ import { technologyGroupReducer, technologyReducer } from '../state/technology/t
 export const appConfig: ApplicationConfig = {
   providers: [
     provideBrowserGlobalErrorListeners(),
-    provideRouter(routes),
     provideStore(
       {
         personal: personalReducer,

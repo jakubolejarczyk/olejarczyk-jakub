@@ -1,5 +1,5 @@
 import { applicationConfig, Meta, StoryObj } from '@storybook/angular';
-import { appConfig } from '../../app.config';
+import { appConfig } from '../../../config/app.config';
 import { SkillsComponent } from './skills.component';
 
 const meta: Meta<SkillsComponent> = {

@@ -1,6 +1,6 @@
 import { applicationConfig, Meta, StoryObj } from '@storybook/angular';
 import { App } from './app';
-import { appConfig } from './app.config';
+import { appConfig } from '../config/app.config';
 
 const meta: Meta<App> = {
   title: 'App',

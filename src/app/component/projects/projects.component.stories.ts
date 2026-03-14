@@ -1,5 +1,5 @@
 import { applicationConfig, Meta, StoryObj } from '@storybook/angular';
-import { appConfig } from '../../app.config';
+import { appConfig } from '../../../config/app.config';
 import { ProjectsComponent } from './projects.component';
 
 const meta: Meta<ProjectsComponent> = {

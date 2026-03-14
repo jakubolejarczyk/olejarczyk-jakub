@@ -1,5 +1,5 @@
 import { applicationConfig, Meta, StoryObj } from '@storybook/angular';
-import { appConfig } from '../../app.config';
+import { appConfig } from '../../../config/app.config';
 import { NavigationComponent } from './navigation.component';
 
 const meta: Meta<NavigationComponent> = {

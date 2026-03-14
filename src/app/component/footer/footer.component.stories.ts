@@ -1,6 +1,6 @@
 import { applicationConfig, Meta, StoryObj } from '@storybook/angular';
 import { FooterComponent } from './footer.component';
-import { appConfig } from '../../app.config';
+import { appConfig } from '../../../config/app.config';
 
 const meta: Meta<FooterComponent> = {
   title: 'FooterComponent',
