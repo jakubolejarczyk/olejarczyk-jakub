@@ -672,10 +672,101 @@
             "extends": []
         }
     ],
-    "injectables": [],
+    "injectables": [
+        {
+            "name": "DateUtils",
+            "id": "injectable-DateUtils-ece1c480b2b7c091efb337bbd9d35abfba0cec5094c8fa79a6ec58f586d605778a25d5026ac01d33719fb1fa20c8d05f4f55d145686b9da018dc9920ebf9bc91",
+            "file": "src/app/utils/date.utils.ts",
+            "properties": [],
+            "methods": [
+                {
+                    "name": "getYear",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "number",
+                    "typeParameters": [],
+                    "line": 5,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        126
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "description": "",
+            "rawdescription": "\n",
+            "sourceCode": "import { Injectable } from '@angular/core';\r\n\r\n@Injectable({ providedIn: 'root' })\r\nexport class DateUtils {\r\n  static getYear(): number {\r\n    const currentDate = new Date();\r\n    return currentDate.getFullYear();\r\n  }\r\n}\r\n",
+            "extends": [],
+            "type": "injectable"
+        },
+        {
+            "name": "StorybookUtils",
+            "id": "injectable-StorybookUtils-a07fe032e9d017cd2decf82c63a7f8fdbfe9788eecd49dc9194dc94f529c6b96b68fa266457a0e01cacb3c981bbc9f34540e62a517ccbff875ffc2e75b8b1f4a",
+            "file": "src/app/utils/storybook.utils.ts",
+            "properties": [],
+            "methods": [
+                {
+                    "name": "getDecorators",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "unknown",
+                    "typeParameters": [],
+                    "line": 8,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        126
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "description": "",
+            "rawdescription": "\n",
+            "sourceCode": "import { Injectable } from '@angular/core';\r\nimport { applicationConfig, Meta } from '@storybook/angular';\r\n\r\nimport { appConfig } from '../app.config';\r\n\r\n@Injectable({ providedIn: 'root' })\r\nexport class StorybookUtils {\r\n  static getDecorators(): Meta['decorators'] {\r\n    return [\r\n      applicationConfig({\r\n        providers: appConfig.providers,\r\n      }),\r\n    ];\r\n  }\r\n}\r\n",
+            "extends": [],
+            "type": "injectable"
+        }
+    ],
     "guards": [],
     "interceptors": [],
-    "classes": [],
+    "classes": [
+        {
+            "name": "StoreCore",
+            "id": "class-StoreCore-36549cb1c29ce5d2fab336a5d785886f0d866f64d28ba9605cd4dd1cc69e5e418af1e54b2ff4ba33d5679de3e4d35b87b58f25de9586fd46b78254aceec8719a",
+            "file": "src/app/core/store.core.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "class",
+            "sourceCode": "import { inject } from '@angular/core';\r\nimport { Store } from '@ngrx/store';\r\nimport { PersonalDataModel } from '../data/personal/personal-data.model';\r\nimport { SectionDataModel } from '../data/section/section-data.model';\r\nimport { HomeDataModel } from '../data/home/home-data.model';\r\nimport { AboutMeDataModel } from '../data/about-me/about-me-data.model';\r\nimport {\r\n  TechnologyDataModel,\r\n  TechnologyGroupDataModel,\r\n} from '../data/technology/technology-data.model';\r\nimport { SkillDataModel } from '../data/skill/skill-data.model';\r\nimport { ExperienceDataModel } from '../data/experience/experience-data.model';\r\nimport { ResumeDataModel } from '../data/resume/resume-data.model';\r\nimport { EducationDataModel } from '../data/education/education-data.model';\r\n\r\ntype StoreType = {\r\n  personal: PersonalDataModel;\r\n  section: SectionDataModel;\r\n  home: HomeDataModel;\r\n  aboutMe: AboutMeDataModel;\r\n  technologyGroup: TechnologyGroupDataModel;\r\n  technology: TechnologyDataModel;\r\n  skill: SkillDataModel;\r\n  experience: ExperienceDataModel;\r\n  resume: ResumeDataModel;\r\n  education: EducationDataModel;\r\n};\r\n\r\nexport class StoreCore {\r\n  protected readonly store: Store<StoreType> = inject(Store);\r\n}\r\n",
+            "inputsClass": [],
+            "outputsClass": [],
+            "properties": [
+                {
+                    "name": "store",
+                    "defaultValue": "inject(Store)",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Store<StoreType>",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 30,
+                    "modifierKind": [
+                        124,
+                        148
+                    ]
+                }
+            ],
+            "methods": [],
+            "indexSignatures": [],
+            "extends": [],
+            "hostBindings": [],
+            "hostListeners": []
+        }
+    ],
     "directives": [],
     "components": [
         {
@@ -807,7 +898,7 @@
         },
         {
             "name": "CopyrightComponent",
-            "id": "component-CopyrightComponent-876c07cebd93f8fa47cf416d15d2250196867e025c10b9119bac7889bbe50434580e8ff7f742bf198bab84664bde7e88c34b328485d6938f5c789552986f1220",
+            "id": "component-CopyrightComponent-7d48510f029088a9c1cb7cc7c79e22a103c1a996207f779a560dccc308ddb1db984a46854ed7ddeb3d6d22e6589cfa64c1d04eec2ce853bd62a707cd93b75d41",
             "file": "src/app/component/copyright/copyright.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -824,7 +915,48 @@
             "hostDirectives": [],
             "inputsClass": [],
             "outputsClass": [],
-            "propertiesClass": [],
+            "propertiesClass": [
+                {
+                    "name": "fullname",
+                    "defaultValue": "this.store.selectSignal((state) => {\r\n    const { firstname, lastname } = state.personal;\r\n    return `${firstname} ${lastname}`;\r\n  })",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "unknown",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 14
+                },
+                {
+                    "name": "year",
+                    "defaultValue": "DateUtils.getYear()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "unknown",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 12
+                },
+                {
+                    "name": "store",
+                    "defaultValue": "inject(Store)",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Store<StoreType>",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 30,
+                    "modifierKind": [
+                        124,
+                        148
+                    ],
+                    "inheritance": {
+                        "file": "StoreCore"
+                    }
+                }
+            ],
             "methodsClass": [],
             "deprecated": false,
             "deprecationMessage": "",
@@ -835,13 +967,15 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'copyright-component',\r\n  templateUrl: './copyright.component.html',\r\n  styleUrl: './copyright.component.scss',\r\n})\r\nexport class CopyrightComponent {}\r\n",
+            "sourceCode": "import { Component } from '@angular/core';\r\n\r\nimport { StoreCore } from '../../core/store.core';\r\nimport { DateUtils } from '../../utils/date.utils';\r\n\r\n@Component({\r\n  selector: 'copyright-component',\r\n  templateUrl: './copyright.component.html',\r\n  styleUrl: './copyright.component.scss',\r\n})\r\nexport class CopyrightComponent extends StoreCore {\r\n  year = DateUtils.getYear();\r\n\r\n  fullname = this.store.selectSignal((state) => {\r\n    const { firstname, lastname } = state.personal;\r\n    return `${firstname} ${lastname}`;\r\n  });\r\n}\r\n",
             "styleUrl": "./copyright.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
-            "extends": [],
-            "templateData": "<p>copyright works!</p>\r\n"
+            "extends": [
+                "StoreCore"
+            ],
+            "templateData": "<div class=\"copyright\">\r\n  <p class=\"copyright__paragraph\">&copy; {{ year }} {{ fullname() }}</p>\r\n  <p class=\"copyright__paragraph\">All rights reserved.</p>\r\n</div>\r\n"
         },
         {
             "name": "EducationComponent",
@@ -1696,7 +1830,19 @@
             }
         ],
         "functions": [],
-        "typealiases": [],
+        "typealiases": [
+            {
+                "name": "StoreType",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "literal type",
+                "file": "src/app/core/store.core.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 188
+            }
+        ],
         "enumerations": [
             {
                 "name": "CompanyDataKindEnum",
@@ -2790,7 +2936,21 @@
                 }
             ]
         },
-        "groupedTypeAliases": {}
+        "groupedTypeAliases": {
+            "src/app/core/store.core.ts": [
+                {
+                    "name": "StoreType",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "literal type",
+                    "file": "src/app/core/store.core.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 188
+                }
+            ]
+        }
     },
     "routes": {
         "name": "<root>",
@@ -2854,7 +3014,7 @@
                 "linktype": "component",
                 "name": "CopyrightComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/1",
+                "coverageCount": "0/4",
                 "status": "low"
             },
             {
@@ -2970,6 +3130,25 @@
                 "type": "component",
                 "linktype": "component",
                 "name": "TechnologiesComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/core/store.core.ts",
+                "type": "class",
+                "linktype": "classe",
+                "name": "StoreCore",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/core/store.core.ts",
+                "type": "type alias",
+                "linktype": "miscellaneous",
+                "linksubtype": "typealias",
+                "name": "StoreType",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -3308,6 +3487,24 @@
                 "name": "technologyReducer",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/utils/date.utils.ts",
+                "type": "injectable",
+                "linktype": "injectable",
+                "name": "DateUtils",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/utils/storybook.utils.ts",
+                "type": "injectable",
+                "linktype": "injectable",
+                "name": "StorybookUtils",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
                 "status": "low"
             }
         ]

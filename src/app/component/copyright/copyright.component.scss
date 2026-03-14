@@ -1,5 +1,21 @@
 .copyright {
+  padding: var(--size-md);
+  background-color: var(--color-primary);
+  text-align: center;
+
   &__paragraph {
-    text-align: center;
+    @media screen and (max-width: 359px) {
+      &:first-child {
+        margin-bottom: var(--size-xs);
+      }
+    }
+
+    @media screen and (min-width: 360px) {
+      display: inline-block;
+
+      &:first-child {
+        margin-right: var(--size-xs);
+      }
+    }
   }
 }
