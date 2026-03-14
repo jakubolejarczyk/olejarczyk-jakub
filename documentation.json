@@ -808,19 +808,19 @@
             "templateData": "<p>about-me works!</p>\r\n"
         },
         {
-            "name": "ContactComponent",
-            "id": "component-ContactComponent-c71fd95baab326474098f929866ec9ef2d8fe1e0a23de79ff182f68bfb6c4f316334f05aa7d44ed1ea0fb556fab68eb3f1b04f8525624bc52a6b29336c5e1f82",
-            "file": "src/component/contact/contact.component.ts",
+            "name": "ContactView",
+            "id": "component-ContactView-7c7551dff0c9226c841c6cd92ad86e64f2b71e6943bd0f0dae600c94a72d55b7c9e43a6af3a62128b29911bf37b08b388f75cd9447d16443693cbb549b3319ab",
+            "file": "src/view/footer/contact/contact.view.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
             "providers": [],
-            "selector": "contact-component",
+            "selector": "contact-view",
             "styleUrls": [],
             "styles": [],
             "templateUrl": [
-                "./contact.component.html"
+                "./contact.view.html"
             ],
             "viewProviders": [],
             "hostDirectives": [],
@@ -837,75 +837,34 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'contact-component',\r\n  templateUrl: './contact.component.html',\r\n  styleUrl: './contact.component.scss',\r\n})\r\nexport class ContactComponent {}\r\n",
-            "styleUrl": "./contact.component.scss",
+            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'contact-view',\r\n  templateUrl: './contact.view.html',\r\n  styleUrl: './contact.view.scss',\r\n})\r\nexport class ContactView {}\r\n",
+            "styleUrl": "./contact.view.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<p>contact works!</p>\r\n"
+            "templateData": "<p>contact-view works!</p>\r\n"
         },
         {
-            "name": "CopyrightComponent",
-            "id": "component-CopyrightComponent-1602237629f445588806e394497101c8cf8f618be0923078fc9c0aa68ec73c662ef64e67d037e5580c5d3dfafa182e26123cf2e82530b75a1a2e2b6d4b582bb7",
-            "file": "src/component/copyright/copyright.component.ts",
+            "name": "CopyrightView",
+            "id": "component-CopyrightView-2cf0d5df27fbdac4853e9c2e1c0affe147fe536b95482a2fe45c668691dd619263313a1b1362dcf8bfc3f65db15a9d1a530559f7a71e6ad90c1894a25c2fe59b",
+            "file": "src/view/footer/copyright/copyright.view.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
             "providers": [],
-            "selector": "copyright-component",
+            "selector": "copyright-view",
             "styleUrls": [],
             "styles": [],
             "templateUrl": [
-                "./copyright.component.html"
+                "./copyright.view.html"
             ],
             "viewProviders": [],
             "hostDirectives": [],
             "inputsClass": [],
             "outputsClass": [],
-            "propertiesClass": [
-                {
-                    "name": "fullname",
-                    "defaultValue": "this.store.selectSignal((state) => {\r\n    const { firstname, lastname } = state.personal;\r\n    return `${firstname} ${lastname}`;\r\n  })",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "unknown",
-                    "indexKey": "",
-                    "optional": false,
-                    "description": "",
-                    "line": 13
-                },
-                {
-                    "name": "year",
-                    "defaultValue": "DateUtils.getYear()",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "unknown",
-                    "indexKey": "",
-                    "optional": false,
-                    "description": "",
-                    "line": 11
-                },
-                {
-                    "name": "store",
-                    "defaultValue": "inject(Store)",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Store<StoreType>",
-                    "indexKey": "",
-                    "optional": false,
-                    "description": "",
-                    "line": 30,
-                    "modifierKind": [
-                        124,
-                        148
-                    ],
-                    "inheritance": {
-                        "file": "StoreCore"
-                    }
-                }
-            ],
+            "propertiesClass": [],
             "methodsClass": [],
             "deprecated": false,
             "deprecationMessage": "",
@@ -916,15 +875,13 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\r\nimport { StoreCore } from '../../core/store.core';\r\nimport { DateUtils } from '../../utils/date.utils';\r\n\r\n@Component({\r\n  selector: 'copyright-component',\r\n  templateUrl: './copyright.component.html',\r\n  styleUrl: './copyright.component.scss',\r\n})\r\nexport class CopyrightComponent extends StoreCore {\r\n  year = DateUtils.getYear();\r\n\r\n  fullname = this.store.selectSignal((state) => {\r\n    const { firstname, lastname } = state.personal;\r\n    return `${firstname} ${lastname}`;\r\n  });\r\n}\r\n",
-            "styleUrl": "./copyright.component.scss",
+            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'copyright-view',\r\n  templateUrl: './copyright.view.html',\r\n  styleUrl: './copyright.view.scss',\r\n})\r\nexport class CopyrightView {}\r\n",
+            "styleUrl": "./copyright.view.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
-            "extends": [
-                "StoreCore"
-            ],
-            "templateData": "<div class=\"copyright\">\r\n  <p class=\"copyright__paragraph\">&copy; {{ year }} {{ fullname() }}.</p>\r\n  <p class=\"copyright__paragraph\">All rights reserved.</p>\r\n</div>\r\n"
+            "extends": [],
+            "templateData": "<p>copyright-view works!</p>\r\n"
         },
         {
             "name": "EducationComponent",
@@ -1004,7 +961,7 @@
         },
         {
             "name": "FooterView",
-            "id": "component-FooterView-3a9b1961d951e94dbed76b3a522f0f84d07f08d5aa74e1b81ec78c31f60d00cde2f3fcf690c42a183ea7c86c0615209b45b9d00f6b7c2c5a0671a76c973e62b6",
+            "id": "component-FooterView-310b366f627aac20bcf2e9ba137c39f780fe3cdc510f7353d31ff7a34bd3a4467839ed4cafece4e8c1cabd46563e48fa0460f6f05d66710fbe000642a962e5ea",
             "file": "src/view/footer/footer.view.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1028,17 +985,24 @@
             "hostBindings": [],
             "hostListeners": [],
             "standalone": false,
-            "imports": [],
+            "imports": [
+                {
+                    "name": "CopyrightView"
+                },
+                {
+                    "name": "ContactView"
+                }
+            ],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'footer-view',\r\n  templateUrl: './footer.view.html',\r\n  styleUrl: './footer.view.scss',\r\n})\r\nexport class FooterView {}\r\n",
+            "sourceCode": "import { Component } from '@angular/core';\r\n\r\nimport { CopyrightView } from './copyright/copyright.view';\r\nimport { ContactView } from './contact/contact.view';\r\n\r\n@Component({\r\n  selector: 'footer-view',\r\n  templateUrl: './footer.view.html',\r\n  styleUrl: './footer.view.scss',\r\n  imports: [CopyrightView, ContactView],\r\n})\r\nexport class FooterView {}\r\n",
             "styleUrl": "./footer.view.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<p>footer-view works!</p>\r\n"
+            "templateData": "<footer>\r\n  <contact-view></contact-view>\r\n  <copyright-view></copyright-view>\r\n</footer>\r\n"
         },
         {
             "name": "HeaderView",
@@ -1494,7 +1458,7 @@
         },
         {
             "name": "View",
-            "id": "component-View-3acb091c3ae7e673897a8aa594e8a66a5e526efd2e8612c4848aa378452c293d8a42673ca6d6b73ed5dff6c9b78c61c9d8a88d95343edbd2419c54ad381a7c5f",
+            "id": "component-View-9bf9e3e203661ba9625a38c91bb6a17c6acf1edc40b429f7b45e6ae56b3b69570b1a33d5d7a9ee852d7e63bebfb4817972c64ed9d1e86fc315eb05f3bfe25813",
             "file": "src/view/view.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1518,17 +1482,27 @@
             "hostBindings": [],
             "hostListeners": [],
             "standalone": false,
-            "imports": [],
+            "imports": [
+                {
+                    "name": "HeaderView"
+                },
+                {
+                    "name": "MainView"
+                },
+                {
+                    "name": "FooterView"
+                }
+            ],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'view',\r\n  templateUrl: './view.html',\r\n  styleUrl: './view.scss',\r\n})\r\nexport class View {}\r\n",
+            "sourceCode": "import { Component } from '@angular/core';\r\n\r\nimport { HeaderView } from './header/header.view';\r\nimport { MainView } from './main/main.view';\r\nimport { FooterView } from './footer/footer.view';\r\n\r\n@Component({\r\n  selector: 'view',\r\n  templateUrl: './view.html',\r\n  styleUrl: './view.scss',\r\n  imports: [HeaderView, MainView, FooterView],\r\n})\r\nexport class View {}\r\n",
             "styleUrl": "./view.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<p>view works!</p>\r\n"
+            "templateData": "<header-view></header-view>\r\n<main-view></main-view>\r\n<footer-view></footer-view>\r\n"
         }
     ],
     "modules": [],
@@ -1682,7 +1656,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "SectionDataModel[]",
-                "defaultValue": "[\r\n  {\r\n    group: SectionGroupDataEnum.header,\r\n    id: 'navigation',\r\n    label: `${personalDataConst.lastname} ${personalDataConst.firstname}`,\r\n    route: {\r\n      routable: false,\r\n    },\r\n    component: NavigationComponent,\r\n    order: 0,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.header,\r\n    id: 'home',\r\n    label: 'Home',\r\n    route: {\r\n      routable: true,\r\n      href: '#home',\r\n    },\r\n    component: HomeComponent,\r\n    order: 1,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.main,\r\n    id: 'about-me',\r\n    label: 'About me',\r\n    route: {\r\n      routable: true,\r\n      href: '#about-me',\r\n    },\r\n    component: AboutMeComponent,\r\n    order: 0,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.main,\r\n    id: 'technologies',\r\n    label: 'Technologies',\r\n    route: {\r\n      routable: true,\r\n      href: '#technologies',\r\n    },\r\n    component: TechnologiesComponent,\r\n    order: 1,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.main,\r\n    id: 'skills',\r\n    label: 'Skills',\r\n    route: {\r\n      routable: true,\r\n      href: '#skills',\r\n    },\r\n    component: SkillsComponent,\r\n    order: 2,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.main,\r\n    id: 'experience',\r\n    label: 'Experience',\r\n    route: {\r\n      routable: true,\r\n      href: '#experience',\r\n    },\r\n    component: ExperienceComponent,\r\n    order: 3,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.main,\r\n    id: 'resume',\r\n    label: 'Resume',\r\n    route: {\r\n      routable: true,\r\n      href: '#resume',\r\n    },\r\n    component: ResumeComponent,\r\n    order: 4,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.main,\r\n    id: 'projects',\r\n    label: 'Projects',\r\n    route: {\r\n      routable: true,\r\n      href: '#projects',\r\n    },\r\n    component: ProjectsComponent,\r\n    order: 5,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.main,\r\n    id: 'education',\r\n    label: 'Education',\r\n    route: {\r\n      routable: true,\r\n      href: '#education',\r\n    },\r\n    component: EducationComponent,\r\n    order: 6,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.footer,\r\n    id: 'contact',\r\n    label: 'Contact',\r\n    route: {\r\n      routable: true,\r\n      href: '#contact',\r\n    },\r\n    component: ContactComponent,\r\n    order: 0,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.footer,\r\n    id: 'copyright',\r\n    label: 'Copyright',\r\n    route: {\r\n      routable: false,\r\n    },\r\n    component: CopyrightComponent,\r\n    order: 1,\r\n  },\r\n]"
+                "defaultValue": "[\r\n  {\r\n    group: SectionGroupDataEnum.header,\r\n    id: 'navigation',\r\n    label: `${personalDataConst.lastname} ${personalDataConst.firstname}`,\r\n    route: {\r\n      routable: false,\r\n    },\r\n    component: NavigationComponent,\r\n    order: 0,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.header,\r\n    id: 'home',\r\n    label: 'Home',\r\n    route: {\r\n      routable: true,\r\n      href: '#home',\r\n    },\r\n    component: HomeComponent,\r\n    order: 1,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.main,\r\n    id: 'about-me',\r\n    label: 'About me',\r\n    route: {\r\n      routable: true,\r\n      href: '#about-me',\r\n    },\r\n    component: AboutMeComponent,\r\n    order: 0,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.main,\r\n    id: 'technologies',\r\n    label: 'Technologies',\r\n    route: {\r\n      routable: true,\r\n      href: '#technologies',\r\n    },\r\n    component: TechnologiesComponent,\r\n    order: 1,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.main,\r\n    id: 'skills',\r\n    label: 'Skills',\r\n    route: {\r\n      routable: true,\r\n      href: '#skills',\r\n    },\r\n    component: SkillsComponent,\r\n    order: 2,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.main,\r\n    id: 'experience',\r\n    label: 'Experience',\r\n    route: {\r\n      routable: true,\r\n      href: '#experience',\r\n    },\r\n    component: ExperienceComponent,\r\n    order: 3,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.main,\r\n    id: 'resume',\r\n    label: 'Resume',\r\n    route: {\r\n      routable: true,\r\n      href: '#resume',\r\n    },\r\n    component: ResumeComponent,\r\n    order: 4,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.main,\r\n    id: 'projects',\r\n    label: 'Projects',\r\n    route: {\r\n      routable: true,\r\n      href: '#projects',\r\n    },\r\n    component: ProjectsComponent,\r\n    order: 5,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.main,\r\n    id: 'education',\r\n    label: 'Education',\r\n    route: {\r\n      routable: true,\r\n      href: '#education',\r\n    },\r\n    component: EducationComponent,\r\n    order: 6,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.footer,\r\n    id: 'contact',\r\n    label: 'Contact',\r\n    route: {\r\n      routable: true,\r\n      href: '#contact',\r\n    },\r\n    component: undefined,\r\n    order: 0,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.footer,\r\n    id: 'copyright',\r\n    label: 'Copyright',\r\n    route: {\r\n      routable: false,\r\n    },\r\n    component: undefined,\r\n    order: 1,\r\n  },\r\n]"
             },
             {
                 "name": "sectionReducer",
@@ -2351,7 +2325,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "SectionDataModel[]",
-                    "defaultValue": "[\r\n  {\r\n    group: SectionGroupDataEnum.header,\r\n    id: 'navigation',\r\n    label: `${personalDataConst.lastname} ${personalDataConst.firstname}`,\r\n    route: {\r\n      routable: false,\r\n    },\r\n    component: NavigationComponent,\r\n    order: 0,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.header,\r\n    id: 'home',\r\n    label: 'Home',\r\n    route: {\r\n      routable: true,\r\n      href: '#home',\r\n    },\r\n    component: HomeComponent,\r\n    order: 1,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.main,\r\n    id: 'about-me',\r\n    label: 'About me',\r\n    route: {\r\n      routable: true,\r\n      href: '#about-me',\r\n    },\r\n    component: AboutMeComponent,\r\n    order: 0,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.main,\r\n    id: 'technologies',\r\n    label: 'Technologies',\r\n    route: {\r\n      routable: true,\r\n      href: '#technologies',\r\n    },\r\n    component: TechnologiesComponent,\r\n    order: 1,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.main,\r\n    id: 'skills',\r\n    label: 'Skills',\r\n    route: {\r\n      routable: true,\r\n      href: '#skills',\r\n    },\r\n    component: SkillsComponent,\r\n    order: 2,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.main,\r\n    id: 'experience',\r\n    label: 'Experience',\r\n    route: {\r\n      routable: true,\r\n      href: '#experience',\r\n    },\r\n    component: ExperienceComponent,\r\n    order: 3,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.main,\r\n    id: 'resume',\r\n    label: 'Resume',\r\n    route: {\r\n      routable: true,\r\n      href: '#resume',\r\n    },\r\n    component: ResumeComponent,\r\n    order: 4,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.main,\r\n    id: 'projects',\r\n    label: 'Projects',\r\n    route: {\r\n      routable: true,\r\n      href: '#projects',\r\n    },\r\n    component: ProjectsComponent,\r\n    order: 5,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.main,\r\n    id: 'education',\r\n    label: 'Education',\r\n    route: {\r\n      routable: true,\r\n      href: '#education',\r\n    },\r\n    component: EducationComponent,\r\n    order: 6,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.footer,\r\n    id: 'contact',\r\n    label: 'Contact',\r\n    route: {\r\n      routable: true,\r\n      href: '#contact',\r\n    },\r\n    component: ContactComponent,\r\n    order: 0,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.footer,\r\n    id: 'copyright',\r\n    label: 'Copyright',\r\n    route: {\r\n      routable: false,\r\n    },\r\n    component: CopyrightComponent,\r\n    order: 1,\r\n  },\r\n]"
+                    "defaultValue": "[\r\n  {\r\n    group: SectionGroupDataEnum.header,\r\n    id: 'navigation',\r\n    label: `${personalDataConst.lastname} ${personalDataConst.firstname}`,\r\n    route: {\r\n      routable: false,\r\n    },\r\n    component: NavigationComponent,\r\n    order: 0,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.header,\r\n    id: 'home',\r\n    label: 'Home',\r\n    route: {\r\n      routable: true,\r\n      href: '#home',\r\n    },\r\n    component: HomeComponent,\r\n    order: 1,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.main,\r\n    id: 'about-me',\r\n    label: 'About me',\r\n    route: {\r\n      routable: true,\r\n      href: '#about-me',\r\n    },\r\n    component: AboutMeComponent,\r\n    order: 0,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.main,\r\n    id: 'technologies',\r\n    label: 'Technologies',\r\n    route: {\r\n      routable: true,\r\n      href: '#technologies',\r\n    },\r\n    component: TechnologiesComponent,\r\n    order: 1,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.main,\r\n    id: 'skills',\r\n    label: 'Skills',\r\n    route: {\r\n      routable: true,\r\n      href: '#skills',\r\n    },\r\n    component: SkillsComponent,\r\n    order: 2,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.main,\r\n    id: 'experience',\r\n    label: 'Experience',\r\n    route: {\r\n      routable: true,\r\n      href: '#experience',\r\n    },\r\n    component: ExperienceComponent,\r\n    order: 3,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.main,\r\n    id: 'resume',\r\n    label: 'Resume',\r\n    route: {\r\n      routable: true,\r\n      href: '#resume',\r\n    },\r\n    component: ResumeComponent,\r\n    order: 4,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.main,\r\n    id: 'projects',\r\n    label: 'Projects',\r\n    route: {\r\n      routable: true,\r\n      href: '#projects',\r\n    },\r\n    component: ProjectsComponent,\r\n    order: 5,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.main,\r\n    id: 'education',\r\n    label: 'Education',\r\n    route: {\r\n      routable: true,\r\n      href: '#education',\r\n    },\r\n    component: EducationComponent,\r\n    order: 6,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.footer,\r\n    id: 'contact',\r\n    label: 'Contact',\r\n    route: {\r\n      routable: true,\r\n      href: '#contact',\r\n    },\r\n    component: undefined,\r\n    order: 0,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.footer,\r\n    id: 'copyright',\r\n    label: 'Copyright',\r\n    route: {\r\n      routable: false,\r\n    },\r\n    component: undefined,\r\n    order: 1,\r\n  },\r\n]"
                 }
             ],
             "src/state/section/section.reducer.ts": [
@@ -2885,24 +2859,6 @@
                 "status": "low"
             },
             {
-                "filePath": "src/component/contact/contact.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "ContactComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/component/copyright/copyright.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "CopyrightComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/4",
-                "status": "low"
-            },
-            {
                 "filePath": "src/component/education/education.component.ts",
                 "type": "component",
                 "linktype": "component",
@@ -3373,6 +3329,24 @@
                 "name": "StorybookUtils",
                 "coveragePercent": 0,
                 "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/view/footer/contact/contact.view.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ContactView",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/view/footer/copyright/copyright.view.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "CopyrightView",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
                 "status": "low"
             },
             {

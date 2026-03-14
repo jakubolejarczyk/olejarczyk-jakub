@@ -1,5 +1,5 @@
 import { AboutMeComponent } from '../../component/about-me/about-me.component';
-import { ContactComponent } from '../../component/contact/contact.component';
+// import { ContactComponent } from '../../component/contact/contact.component';
 // import { CopyrightComponent } from '../../component/copyright/copyright.component';
 import { EducationComponent } from '../../component/education/education.component';
 import { ExperienceComponent } from '../../component/experience/experience.component';
@@ -120,7 +120,7 @@ export const sectionDataConst: SectionDataModel[] = [
       routable: true,
       href: '#contact',
     },
-    component: ContactComponent,
+    component: undefined,
     order: 0,
   },
   {
