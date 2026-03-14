@@ -1,8 +1,8 @@
 import { Component, inject, input } from '@angular/core';
 import { SectionComponent } from '../section/section.component';
 import { Store } from '@ngrx/store';
-import { SectionDataModel } from '../../data/section/section-data.model';
-import { SectionGroupDataEnum } from '../../data/section/section-data.enum';
+import { SectionGroupDataEnum } from '../../../data/section/section-data.enum';
+import { SectionDataModel } from '../../../data/section/section-data.model';
 
 @Component({
   selector: 'sections-component',

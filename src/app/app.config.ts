@@ -4,15 +4,15 @@ import { provideRouter } from '@angular/router';
 import { routes } from './app.routes';
 import { provideStore } from '@ngrx/store';
 import { provideStoreDevtools } from '@ngrx/store-devtools';
-import { personalReducer } from './state/personal/personal.reducer';
-import { sectionReducer } from './state/section/section.reducer';
-import { homeReducer } from './state/home/home.reducer';
-import { aboutMeReducer } from './state/about-me/about-me.reducer';
-import { technologyGroupReducer, technologyReducer } from './state/technology/technology.reducer';
-import { skillReducer } from './state/skill/skill.reducer';
-import { experienceReducer } from './state/experience/experience.reducer';
-import { resumeReducer } from './state/resume/resume.reducer';
-import { educationReducer } from './state/education/education.reducer';
+import { aboutMeReducer } from '../state/about-me/about-me.reducer';
+import { educationReducer } from '../state/education/education.reducer';
+import { experienceReducer } from '../state/experience/experience.reducer';
+import { homeReducer } from '../state/home/home.reducer';
+import { personalReducer } from '../state/personal/personal.reducer';
+import { resumeReducer } from '../state/resume/resume.reducer';
+import { sectionReducer } from '../state/section/section.reducer';
+import { skillReducer } from '../state/skill/skill.reducer';
+import { technologyGroupReducer, technologyReducer } from '../state/technology/technology.reducer';
 
 export const appConfig: ApplicationConfig = {
   providers: [

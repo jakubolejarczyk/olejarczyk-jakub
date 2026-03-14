@@ -1,7 +1,7 @@
 import { Meta, StoryObj } from '@storybook/angular';
 
 import { CopyrightComponent } from './copyright.component';
-import { StorybookUtils } from '../../utils/storybook.utils';
+import { StorybookUtils } from '../../../utils/storybook.utils';
 
 const meta: Meta<CopyrightComponent> = {
   title: 'CopyrightComponent',

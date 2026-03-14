@@ -1,6 +1,6 @@
 import { Component, input } from '@angular/core';
-import { SectionDataModel } from '../../data/section/section-data.model';
 import { NgComponentOutlet } from '@angular/common';
+import { SectionDataModel } from '../../../data/section/section-data.model';
 
 @Component({
   selector: 'section-component',

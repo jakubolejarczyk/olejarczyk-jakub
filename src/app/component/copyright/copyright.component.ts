@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
-
-import { StoreCore } from '../../core/store.core';
-import { DateUtils } from '../../utils/date.utils';
+import { StoreCore } from '../../../core/store.core';
+import { DateUtils } from '../../../utils/date.utils';
 
 @Component({
   selector: 'copyright-component',
