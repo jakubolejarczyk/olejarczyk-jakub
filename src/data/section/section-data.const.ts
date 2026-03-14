@@ -1,6 +1,6 @@
 import { AboutMeComponent } from '../../component/about-me/about-me.component';
 import { ContactComponent } from '../../component/contact/contact.component';
-import { CopyrightComponent } from '../../component/copyright/copyright.component';
+// import { CopyrightComponent } from '../../component/copyright/copyright.component';
 import { EducationComponent } from '../../component/education/education.component';
 import { ExperienceComponent } from '../../component/experience/experience.component';
 import { HomeComponent } from '../../component/home/home.component';
@@ -130,7 +130,7 @@ export const sectionDataConst: SectionDataModel[] = [
     route: {
       routable: false,
     },
-    component: CopyrightComponent,
+    component: undefined,
     order: 1,
   },
 ];
