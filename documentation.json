@@ -884,19 +884,19 @@
             "templateData": "<p>copyright-view works!</p>\r\n"
         },
         {
-            "name": "EducationComponent",
-            "id": "component-EducationComponent-45db79c45ca4eff1c77c97823547efed992a87d8b36c2732ef13ed362cf8dc40bd0d1defea22d81d5cec476ec2ab45e4dabc195f77fe9a62589a880dc9d8b364",
-            "file": "src/component/education/education.component.ts",
+            "name": "EducationView",
+            "id": "component-EducationView-af1a6a8ab68ec6ea84e93c2d841ed3568043ddb23c0becf31636f869364c94d99506cc16383fe3f7d9d6958ab1f914eb27bd9a9d8f48920eecf30408505ba66a",
+            "file": "src/view/main/education/education.view.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
             "providers": [],
-            "selector": "education-component",
+            "selector": "education-view",
             "styleUrls": [],
             "styles": [],
             "templateUrl": [
-                "./education.component.html"
+                "./education.view.html"
             ],
             "viewProviders": [],
             "hostDirectives": [],
@@ -913,28 +913,28 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'education-component',\r\n  templateUrl: './education.component.html',\r\n  styleUrl: './education.component.scss',\r\n})\r\nexport class EducationComponent {}\r\n",
-            "styleUrl": "./education.component.scss",
+            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'education-view',\r\n  templateUrl: './education.view.html',\r\n  styleUrl: './education.view.scss',\r\n})\r\nexport class EducationView {}\r\n",
+            "styleUrl": "./education.view.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<p>education works!</p>\r\n"
+            "templateData": "<p>education-view works!</p>\r\n"
         },
         {
-            "name": "ExperienceComponent",
-            "id": "component-ExperienceComponent-e4682994e90ef37d33bceeef70b4cfe425d13ed50c24013ffe8d63ff4377457a5616669bd17f246f5989b5d4f803b1a0c34ac5863b26f326019d99830efaf981",
-            "file": "src/component/experience/experience.component.ts",
+            "name": "ExperienceView",
+            "id": "component-ExperienceView-630e948f836b937d6d137b8dcb45011e881ad8e268330e6c09f05f9eecf4dca7d6896cc7713acf3c176a62521496be5c9a383aa3812f21ead6e523dea4dab87f",
+            "file": "src/view/main/experience/experience.view.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
             "providers": [],
-            "selector": "experience-component",
+            "selector": "experience-view",
             "styleUrls": [],
             "styles": [],
             "templateUrl": [
-                "./experience.component.html"
+                "./experience.view.html"
             ],
             "viewProviders": [],
             "hostDirectives": [],
@@ -951,13 +951,13 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'experience-component',\r\n  templateUrl: './experience.component.html',\r\n  styleUrl: './experience.component.scss',\r\n})\r\nexport class ExperienceComponent {}\r\n",
-            "styleUrl": "./experience.component.scss",
+            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'experience-view',\r\n  templateUrl: './experience.view.html',\r\n  styleUrl: './experience.view.scss',\r\n})\r\nexport class ExperienceView {}\r\n",
+            "styleUrl": "./experience.view.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<p>experience works!</p>\r\n"
+            "templateData": "<p>experience-view works!</p>\r\n"
         },
         {
             "name": "FooterView",
@@ -1006,7 +1006,7 @@
         },
         {
             "name": "HeaderView",
-            "id": "component-HeaderView-89c6a3c6b0761f403c34b7be537c076370368109e1d19bbff7caf07ccb82064b8acf0741a80450c2ec27934c1b0ae1c898ad40e612b7611f1749ae3bfed7649b",
+            "id": "component-HeaderView-32ed71986164ff1aecc09b94bb0b2dc42b009028ad4275c5c2cb2a5a155245e8bce839e18a7b1d5ffdf2f277f3603b4e5175c9f7e7fe0791e7ea691819cd303b",
             "file": "src/view/header/header.view.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1030,32 +1030,39 @@
             "hostBindings": [],
             "hostListeners": [],
             "standalone": false,
-            "imports": [],
+            "imports": [
+                {
+                    "name": "HomeView"
+                },
+                {
+                    "name": "NavigationView"
+                }
+            ],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'header-view',\r\n  templateUrl: './header.view.html',\r\n  styleUrl: './header.view.scss',\r\n})\r\nexport class HeaderView {}\r\n",
+            "sourceCode": "import { Component } from '@angular/core';\r\n\r\nimport { HomeView } from './home/home.view';\r\nimport { NavigationView } from './navigation/navigation.view';\r\n\r\n@Component({\r\n  selector: 'header-view',\r\n  templateUrl: './header.view.html',\r\n  styleUrl: './header.view.scss',\r\n  imports: [HomeView, NavigationView],\r\n})\r\nexport class HeaderView {}\r\n",
             "styleUrl": "./header.view.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<p>header-view works!</p>\r\n"
+            "templateData": "<header>\r\n  <navigation-view></navigation-view>\r\n  <home-view></home-view>\r\n</header>\r\n"
         },
         {
-            "name": "HomeComponent",
-            "id": "component-HomeComponent-e0433dd69fa5c63803956b32451df96dcc1d0aa69a37f322fb022e4a2e0711ebbe881d54745106079c39abc39e089929fe21a3bd7fb9280d754a6a99494fb46c",
-            "file": "src/component/home/home.component.ts",
+            "name": "HomeView",
+            "id": "component-HomeView-69e75ec9bef620950b2963d6e88a2bc22992230734a229051f1deeb57faee1eb57dc4ac14a31655475000f6dfed9d96e517a12fe1ccc86b7503e588b90335ef0",
+            "file": "src/view/header/home/home.view.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
             "providers": [],
-            "selector": "home-component",
+            "selector": "home-view",
             "styleUrls": [],
             "styles": [],
             "templateUrl": [
-                "./home.component.html"
+                "./home.view.html"
             ],
             "viewProviders": [],
             "hostDirectives": [],
@@ -1072,17 +1079,17 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'home-component',\r\n  templateUrl: './home.component.html',\r\n  styleUrl: './home.component.scss',\r\n})\r\nexport class HomeComponent {}\r\n",
-            "styleUrl": "./home.component.scss",
+            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'home-view',\r\n  templateUrl: './home.view.html',\r\n  styleUrl: './home.view.scss',\r\n})\r\nexport class HomeView {}\r\n",
+            "styleUrl": "./home.view.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<p>home works!</p>\r\n"
+            "templateData": "<p>home-view works!</p>\r\n"
         },
         {
             "name": "MainView",
-            "id": "component-MainView-4a4b796062a5479a4ed1ca2b91e8e163c9f6d0a2d216062994488d3ed0aa556fd395e8028394f1996a4eceb3c5c7a0f3a74639fc82c0042a8111716e66f88783",
+            "id": "component-MainView-4abe9a3416df2ac155d6ec2533568eb7beee5f5f010454d3c3f14cf5f9df8f1682ac14646f1fcaffa9a1c76a50c887f92d1b92810d1a89df7578424de15ade3e",
             "file": "src/view/main/main.view.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1115,33 +1122,45 @@
                 },
                 {
                     "name": "SkillsView"
+                },
+                {
+                    "name": "ExperienceView"
+                },
+                {
+                    "name": "ResumeView"
+                },
+                {
+                    "name": "ProjectsView"
+                },
+                {
+                    "name": "EducationView"
                 }
             ],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\r\n\r\nimport { AboutMeView } from './about-me/about-me.view';\r\nimport { TechnologiesView } from './technologies/technologies.view';\r\nimport { SkillsView } from './skills/skills.view';\r\n\r\n@Component({\r\n  selector: 'main-view',\r\n  templateUrl: './main.view.html',\r\n  styleUrl: './main.view.scss',\r\n  imports: [AboutMeView, TechnologiesView, SkillsView],\r\n})\r\nexport class MainView {}\r\n",
+            "sourceCode": "import { Component } from '@angular/core';\r\n\r\nimport { AboutMeView } from './about-me/about-me.view';\r\nimport { TechnologiesView } from './technologies/technologies.view';\r\nimport { SkillsView } from './skills/skills.view';\r\nimport { ExperienceView } from './experience/experience.view';\r\nimport { ResumeView } from './resume/resume.view';\r\nimport { ProjectsView } from './projects/projects.view';\r\nimport { EducationView } from './education/education.view';\r\n\r\n@Component({\r\n  selector: 'main-view',\r\n  templateUrl: './main.view.html',\r\n  styleUrl: './main.view.scss',\r\n  imports: [\r\n    AboutMeView,\r\n    TechnologiesView,\r\n    SkillsView,\r\n    ExperienceView,\r\n    ResumeView,\r\n    ProjectsView,\r\n    EducationView,\r\n  ],\r\n})\r\nexport class MainView {}\r\n",
             "styleUrl": "./main.view.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<about-me-view></about-me-view>\r\n<technologies-view></technologies-view>\r\n<skills-view></skills-view>\r\n"
+            "templateData": "<main>\r\n  <about-me-view></about-me-view>\r\n  <technologies-view></technologies-view>\r\n  <skills-view></skills-view>\r\n  <experience-view></experience-view>\r\n  <resume-view></resume-view>\r\n  <projects-view></projects-view>\r\n  <education-view></education-view>\r\n</main>\r\n"
         },
         {
-            "name": "NavigationComponent",
-            "id": "component-NavigationComponent-7fe29c1942643464043908c4645b9bd621facff5b1f1d8675112022378235972eddbc21d7126e704722ed0ca04f2607e2c657bc25e2b2494bc63dc29dbb42272",
-            "file": "src/component/navigation/navigation.component.ts",
+            "name": "NavigationView",
+            "id": "component-NavigationView-328eb45331f8506a5621005418161b08c94fe73c268e1634a659ff5a069c68cd0c59039272363fa09fcd7a3ba6555aca835f05a104a8416e32ff95ce80c1f35f",
+            "file": "src/view/header/navigation/navigation.view.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
             "providers": [],
-            "selector": "navigation-component",
+            "selector": "navigation-view",
             "styleUrls": [],
             "styles": [],
             "templateUrl": [
-                "./navigation.component.html"
+                "./navigation.view.html"
             ],
             "viewProviders": [],
             "hostDirectives": [],
@@ -1158,28 +1177,28 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'navigation-component',\r\n  templateUrl: './navigation.component.html',\r\n  styleUrl: './navigation.component.scss',\r\n})\r\nexport class NavigationComponent {}\r\n",
-            "styleUrl": "./navigation.component.scss",
+            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'navigation-view',\r\n  templateUrl: './navigation.view.html',\r\n  styleUrl: './navigation.view.scss',\r\n})\r\nexport class NavigationView {}\r\n",
+            "styleUrl": "./navigation.view.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<p>navigation works!</p>\r\n"
+            "templateData": "<p>navigation-view works!</p>\r\n"
         },
         {
-            "name": "ProjectsComponent",
-            "id": "component-ProjectsComponent-2ae425b9bb149239d0c5e7f212adc00e9d480bebf5129c3eb88eb6a2dc4ddf60415fca35a38b99008f36df3ed913f5d66874e158045d2fbba92ae9ec07ec7c25",
-            "file": "src/component/projects/projects.component.ts",
+            "name": "ProjectsView",
+            "id": "component-ProjectsView-b97c54d7c6af8a47b5c9ed60dbd421e64743480a553a7dc7e4a5e7faa1a21fb65f2822947fea612371303fe190102b529794817fa9ec01c9ac585262bd9c6d2e",
+            "file": "src/view/main/projects/projects.view.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
             "providers": [],
-            "selector": "projects-component",
+            "selector": "projects-view",
             "styleUrls": [],
             "styles": [],
             "templateUrl": [
-                "./projects.component.html"
+                "./projects.view.html"
             ],
             "viewProviders": [],
             "hostDirectives": [],
@@ -1196,28 +1215,28 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'projects-component',\r\n  templateUrl: './projects.component.html',\r\n  styleUrl: './projects.component.scss',\r\n})\r\nexport class ProjectsComponent {}\r\n",
-            "styleUrl": "./projects.component.scss",
+            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'projects-view',\r\n  templateUrl: './projects.view.html',\r\n  styleUrl: './projects.view.scss',\r\n})\r\nexport class ProjectsView {}\r\n",
+            "styleUrl": "./projects.view.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<p>projects works!</p>\r\n"
+            "templateData": "<p>projects-view works!</p>\r\n"
         },
         {
-            "name": "ResumeComponent",
-            "id": "component-ResumeComponent-effe52a76d7159cea74ab3882d6b6af36ececc0616f08c266f98d16470ec10653395084de01c47db6ea40f54409c907f0310ea77e6afbea37e89861bd1c170a4",
-            "file": "src/component/resume/resume.component.ts",
+            "name": "ResumeView",
+            "id": "component-ResumeView-f2bb69525a014e436295cad9a7f51bfe5c2f76ad501455035852910e32e6555f041bf0ec58bad328ede57bf213bdf0e481b824c9131101a3fcc920eecb135186",
+            "file": "src/view/main/resume/resume.view.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
             "providers": [],
-            "selector": "resume-component",
+            "selector": "resume-view",
             "styleUrls": [],
             "styles": [],
             "templateUrl": [
-                "./resume.component.html"
+                "./resume.view.html"
             ],
             "viewProviders": [],
             "hostDirectives": [],
@@ -1234,13 +1253,13 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'resume-component',\r\n  templateUrl: './resume.component.html',\r\n  styleUrl: './resume.component.scss',\r\n})\r\nexport class ResumeComponent {}\r\n",
-            "styleUrl": "./resume.component.scss",
+            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'resume-view',\r\n  templateUrl: './resume.view.html',\r\n  styleUrl: './resume.view.scss',\r\n})\r\nexport class ResumeView {}\r\n",
+            "styleUrl": "./resume.view.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<p>resume works!</p>\r\n"
+            "templateData": "<p>resume-view works!</p>\r\n"
         },
         {
             "name": "SectionComponent",
@@ -1666,7 +1685,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "SectionDataModel[]",
-                "defaultValue": "[\r\n  {\r\n    group: SectionGroupDataEnum.header,\r\n    id: 'navigation',\r\n    label: `${personalDataConst.lastname} ${personalDataConst.firstname}`,\r\n    route: {\r\n      routable: false,\r\n    },\r\n    component: NavigationComponent,\r\n    order: 0,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.header,\r\n    id: 'home',\r\n    label: 'Home',\r\n    route: {\r\n      routable: true,\r\n      href: '#home',\r\n    },\r\n    component: HomeComponent,\r\n    order: 1,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.main,\r\n    id: 'about-me',\r\n    label: 'About me',\r\n    route: {\r\n      routable: true,\r\n      href: '#about-me',\r\n    },\r\n    component: undefined,\r\n    order: 0,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.main,\r\n    id: 'technologies',\r\n    label: 'Technologies',\r\n    route: {\r\n      routable: true,\r\n      href: '#technologies',\r\n    },\r\n    component: undefined,\r\n    order: 1,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.main,\r\n    id: 'skills',\r\n    label: 'Skills',\r\n    route: {\r\n      routable: true,\r\n      href: '#skills',\r\n    },\r\n    component: undefined,\r\n    order: 2,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.main,\r\n    id: 'experience',\r\n    label: 'Experience',\r\n    route: {\r\n      routable: true,\r\n      href: '#experience',\r\n    },\r\n    component: ExperienceComponent,\r\n    order: 3,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.main,\r\n    id: 'resume',\r\n    label: 'Resume',\r\n    route: {\r\n      routable: true,\r\n      href: '#resume',\r\n    },\r\n    component: ResumeComponent,\r\n    order: 4,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.main,\r\n    id: 'projects',\r\n    label: 'Projects',\r\n    route: {\r\n      routable: true,\r\n      href: '#projects',\r\n    },\r\n    component: ProjectsComponent,\r\n    order: 5,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.main,\r\n    id: 'education',\r\n    label: 'Education',\r\n    route: {\r\n      routable: true,\r\n      href: '#education',\r\n    },\r\n    component: EducationComponent,\r\n    order: 6,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.footer,\r\n    id: 'contact',\r\n    label: 'Contact',\r\n    route: {\r\n      routable: true,\r\n      href: '#contact',\r\n    },\r\n    component: undefined,\r\n    order: 0,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.footer,\r\n    id: 'copyright',\r\n    label: 'Copyright',\r\n    route: {\r\n      routable: false,\r\n    },\r\n    component: undefined,\r\n    order: 1,\r\n  },\r\n]"
+                "defaultValue": "[\r\n  {\r\n    group: SectionGroupDataEnum.header,\r\n    id: 'navigation',\r\n    label: `${personalDataConst.lastname} ${personalDataConst.firstname}`,\r\n    route: {\r\n      routable: false,\r\n    },\r\n    component: undefined,\r\n    order: 0,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.header,\r\n    id: 'home',\r\n    label: 'Home',\r\n    route: {\r\n      routable: true,\r\n      href: '#home',\r\n    },\r\n    component: undefined,\r\n    order: 1,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.main,\r\n    id: 'about-me',\r\n    label: 'About me',\r\n    route: {\r\n      routable: true,\r\n      href: '#about-me',\r\n    },\r\n    component: undefined,\r\n    order: 0,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.main,\r\n    id: 'technologies',\r\n    label: 'Technologies',\r\n    route: {\r\n      routable: true,\r\n      href: '#technologies',\r\n    },\r\n    component: undefined,\r\n    order: 1,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.main,\r\n    id: 'skills',\r\n    label: 'Skills',\r\n    route: {\r\n      routable: true,\r\n      href: '#skills',\r\n    },\r\n    component: undefined,\r\n    order: 2,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.main,\r\n    id: 'experience',\r\n    label: 'Experience',\r\n    route: {\r\n      routable: true,\r\n      href: '#experience',\r\n    },\r\n    component: undefined,\r\n    order: 3,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.main,\r\n    id: 'resume',\r\n    label: 'Resume',\r\n    route: {\r\n      routable: true,\r\n      href: '#resume',\r\n    },\r\n    component: undefined,\r\n    order: 4,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.main,\r\n    id: 'projects',\r\n    label: 'Projects',\r\n    route: {\r\n      routable: true,\r\n      href: '#projects',\r\n    },\r\n    component: undefined,\r\n    order: 5,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.main,\r\n    id: 'education',\r\n    label: 'Education',\r\n    route: {\r\n      routable: true,\r\n      href: '#education',\r\n    },\r\n    component: undefined,\r\n    order: 6,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.footer,\r\n    id: 'contact',\r\n    label: 'Contact',\r\n    route: {\r\n      routable: true,\r\n      href: '#contact',\r\n    },\r\n    component: undefined,\r\n    order: 0,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.footer,\r\n    id: 'copyright',\r\n    label: 'Copyright',\r\n    route: {\r\n      routable: false,\r\n    },\r\n    component: undefined,\r\n    order: 1,\r\n  },\r\n]"
             },
             {
                 "name": "sectionReducer",
@@ -2335,7 +2354,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "SectionDataModel[]",
-                    "defaultValue": "[\r\n  {\r\n    group: SectionGroupDataEnum.header,\r\n    id: 'navigation',\r\n    label: `${personalDataConst.lastname} ${personalDataConst.firstname}`,\r\n    route: {\r\n      routable: false,\r\n    },\r\n    component: NavigationComponent,\r\n    order: 0,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.header,\r\n    id: 'home',\r\n    label: 'Home',\r\n    route: {\r\n      routable: true,\r\n      href: '#home',\r\n    },\r\n    component: HomeComponent,\r\n    order: 1,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.main,\r\n    id: 'about-me',\r\n    label: 'About me',\r\n    route: {\r\n      routable: true,\r\n      href: '#about-me',\r\n    },\r\n    component: undefined,\r\n    order: 0,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.main,\r\n    id: 'technologies',\r\n    label: 'Technologies',\r\n    route: {\r\n      routable: true,\r\n      href: '#technologies',\r\n    },\r\n    component: undefined,\r\n    order: 1,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.main,\r\n    id: 'skills',\r\n    label: 'Skills',\r\n    route: {\r\n      routable: true,\r\n      href: '#skills',\r\n    },\r\n    component: undefined,\r\n    order: 2,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.main,\r\n    id: 'experience',\r\n    label: 'Experience',\r\n    route: {\r\n      routable: true,\r\n      href: '#experience',\r\n    },\r\n    component: ExperienceComponent,\r\n    order: 3,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.main,\r\n    id: 'resume',\r\n    label: 'Resume',\r\n    route: {\r\n      routable: true,\r\n      href: '#resume',\r\n    },\r\n    component: ResumeComponent,\r\n    order: 4,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.main,\r\n    id: 'projects',\r\n    label: 'Projects',\r\n    route: {\r\n      routable: true,\r\n      href: '#projects',\r\n    },\r\n    component: ProjectsComponent,\r\n    order: 5,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.main,\r\n    id: 'education',\r\n    label: 'Education',\r\n    route: {\r\n      routable: true,\r\n      href: '#education',\r\n    },\r\n    component: EducationComponent,\r\n    order: 6,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.footer,\r\n    id: 'contact',\r\n    label: 'Contact',\r\n    route: {\r\n      routable: true,\r\n      href: '#contact',\r\n    },\r\n    component: undefined,\r\n    order: 0,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.footer,\r\n    id: 'copyright',\r\n    label: 'Copyright',\r\n    route: {\r\n      routable: false,\r\n    },\r\n    component: undefined,\r\n    order: 1,\r\n  },\r\n]"
+                    "defaultValue": "[\r\n  {\r\n    group: SectionGroupDataEnum.header,\r\n    id: 'navigation',\r\n    label: `${personalDataConst.lastname} ${personalDataConst.firstname}`,\r\n    route: {\r\n      routable: false,\r\n    },\r\n    component: undefined,\r\n    order: 0,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.header,\r\n    id: 'home',\r\n    label: 'Home',\r\n    route: {\r\n      routable: true,\r\n      href: '#home',\r\n    },\r\n    component: undefined,\r\n    order: 1,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.main,\r\n    id: 'about-me',\r\n    label: 'About me',\r\n    route: {\r\n      routable: true,\r\n      href: '#about-me',\r\n    },\r\n    component: undefined,\r\n    order: 0,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.main,\r\n    id: 'technologies',\r\n    label: 'Technologies',\r\n    route: {\r\n      routable: true,\r\n      href: '#technologies',\r\n    },\r\n    component: undefined,\r\n    order: 1,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.main,\r\n    id: 'skills',\r\n    label: 'Skills',\r\n    route: {\r\n      routable: true,\r\n      href: '#skills',\r\n    },\r\n    component: undefined,\r\n    order: 2,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.main,\r\n    id: 'experience',\r\n    label: 'Experience',\r\n    route: {\r\n      routable: true,\r\n      href: '#experience',\r\n    },\r\n    component: undefined,\r\n    order: 3,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.main,\r\n    id: 'resume',\r\n    label: 'Resume',\r\n    route: {\r\n      routable: true,\r\n      href: '#resume',\r\n    },\r\n    component: undefined,\r\n    order: 4,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.main,\r\n    id: 'projects',\r\n    label: 'Projects',\r\n    route: {\r\n      routable: true,\r\n      href: '#projects',\r\n    },\r\n    component: undefined,\r\n    order: 5,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.main,\r\n    id: 'education',\r\n    label: 'Education',\r\n    route: {\r\n      routable: true,\r\n      href: '#education',\r\n    },\r\n    component: undefined,\r\n    order: 6,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.footer,\r\n    id: 'contact',\r\n    label: 'Contact',\r\n    route: {\r\n      routable: true,\r\n      href: '#contact',\r\n    },\r\n    component: undefined,\r\n    order: 0,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.footer,\r\n    id: 'copyright',\r\n    label: 'Copyright',\r\n    route: {\r\n      routable: false,\r\n    },\r\n    component: undefined,\r\n    order: 1,\r\n  },\r\n]"
                 }
             ],
             "src/state/section/section.reducer.ts": [
@@ -2860,60 +2879,6 @@
         "status": "low",
         "files": [
             {
-                "filePath": "src/component/education/education.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "EducationComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/component/experience/experience.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "ExperienceComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/component/home/home.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "HomeComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/component/navigation/navigation.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "NavigationComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/component/projects/projects.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "ProjectsComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/component/resume/resume.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "ResumeComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
                 "filePath": "src/component/section/section.component.ts",
                 "type": "component",
                 "linktype": "component",
@@ -3351,6 +3316,24 @@
                 "status": "low"
             },
             {
+                "filePath": "src/view/header/home/home.view.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "HomeView",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/view/header/navigation/navigation.view.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "NavigationView",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
                 "filePath": "src/view/main/about-me/about-me.view.ts",
                 "type": "component",
                 "linktype": "component",
@@ -3360,10 +3343,46 @@
                 "status": "low"
             },
             {
+                "filePath": "src/view/main/education/education.view.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "EducationView",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/view/main/experience/experience.view.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ExperienceView",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
                 "filePath": "src/view/main/main.view.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "MainView",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/view/main/projects/projects.view.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ProjectsView",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/view/main/resume/resume.view.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ResumeView",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"

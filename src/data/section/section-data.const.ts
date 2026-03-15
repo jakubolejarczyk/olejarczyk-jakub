@@ -3,8 +3,8 @@
 // import { CopyrightComponent } from '../../component/copyright/copyright.component';
 // import { EducationComponent } from '../../view/main/education/education.view';
 // import { ExperienceComponent } from '../../view/main/experience/experience.view';
-import { HomeComponent } from '../../component/home/home.component';
-import { NavigationComponent } from '../../component/navigation/navigation.component';
+// import { HomeComponent } from '../../view/header/home/home.view';
+// import { NavigationComponent } from '../../view/header/navigation/navigation.view';
 // import { ProjectsComponent } from '../../view/main/projects/projects.view';
 // import { ResumeComponent } from '../../component/resume/resume.component';
 // import { SkillsComponent } from '../../view/main/skills/skills.view';
@@ -21,7 +21,7 @@ export const sectionDataConst: SectionDataModel[] = [
     route: {
       routable: false,
     },
-    component: NavigationComponent,
+    component: undefined,
     order: 0,
   },
   {
@@ -32,7 +32,7 @@ export const sectionDataConst: SectionDataModel[] = [
       routable: true,
       href: '#home',
     },
-    component: HomeComponent,
+    component: undefined,
     order: 1,
   },
   {
