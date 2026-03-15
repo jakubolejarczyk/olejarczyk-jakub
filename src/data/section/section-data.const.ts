@@ -1,12 +1,12 @@
 // import { AboutMeComponent } from '../../view/main/about-me/about-me.view';
 // import { ContactComponent } from '../../component/contact/contact.component';
 // import { CopyrightComponent } from '../../component/copyright/copyright.component';
-import { EducationComponent } from '../../component/education/education.component';
-import { ExperienceComponent } from '../../component/experience/experience.component';
+// import { EducationComponent } from '../../view/main/education/education.view';
+// import { ExperienceComponent } from '../../view/main/experience/experience.view';
 import { HomeComponent } from '../../component/home/home.component';
 import { NavigationComponent } from '../../component/navigation/navigation.component';
-import { ProjectsComponent } from '../../component/projects/projects.component';
-import { ResumeComponent } from '../../component/resume/resume.component';
+// import { ProjectsComponent } from '../../view/main/projects/projects.view';
+// import { ResumeComponent } from '../../component/resume/resume.component';
 // import { SkillsComponent } from '../../view/main/skills/skills.view';
 // import { TechnologiesComponent } from '../../view/main/technologies/technologies.view';
 import { personalDataConst } from '../personal/personal-data.const';
@@ -76,7 +76,7 @@ export const sectionDataConst: SectionDataModel[] = [
       routable: true,
       href: '#experience',
     },
-    component: ExperienceComponent,
+    component: undefined,
     order: 3,
   },
   {
@@ -87,7 +87,7 @@ export const sectionDataConst: SectionDataModel[] = [
       routable: true,
       href: '#resume',
     },
-    component: ResumeComponent,
+    component: undefined,
     order: 4,
   },
   {
@@ -98,7 +98,7 @@ export const sectionDataConst: SectionDataModel[] = [
       routable: true,
       href: '#projects',
     },
-    component: ProjectsComponent,
+    component: undefined,
     order: 5,
   },
   {
@@ -109,7 +109,7 @@ export const sectionDataConst: SectionDataModel[] = [
       routable: true,
       href: '#education',
     },
-    component: EducationComponent,
+    component: undefined,
     order: 6,
   },
   {
