@@ -8,10 +8,10 @@ import {
   TechnologyDataModel,
   TechnologyGroupDataModel,
 } from '../data/technology/technology-data.model';
-import { SkillDataModel } from '../view/main/skill/skill-data.model';
 import { ExperienceDataModel } from '../data/experience/experience-data.model';
 import { ResumeDataModel } from '../data/resume/resume-data.model';
 import { EducationDataModel } from '../data/education/education-data.model';
+import { SkillDataModel } from '../data/skill/skill-data.model';
 
 type StoreType = {
   personal: PersonalDataModel;

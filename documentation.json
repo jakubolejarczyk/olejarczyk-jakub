@@ -735,12 +735,12 @@
     "classes": [
         {
             "name": "StoreCore",
-            "id": "class-StoreCore-20c3a2de960191c0063998995218fe173e4a862d90a67398da12a9d4d5eb89e79c6aadb26cbb72679355e732aa708cde8ef897ae79cd9d9709afd6a14dd8f00f",
+            "id": "class-StoreCore-fd50428604eb1820bc53736b0339a059355c69d2884628e79bb57019d67eec7b9a1e3e0e072f671b216ae2a3b4c7526eadbdd107eaca5c7eabf45f368059238f",
             "file": "src/core/store.core.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "class",
-            "sourceCode": "import { inject } from '@angular/core';\r\nimport { Store } from '@ngrx/store';\r\nimport { PersonalDataModel } from '../data/personal/personal-data.model';\r\nimport { SectionDataModel } from '../data/section/section-data.model';\r\nimport { HomeDataModel } from '../data/home/home-data.model';\r\nimport { AboutMeDataModel } from '../data/about-me/about-me-data.model';\r\nimport {\r\n  TechnologyDataModel,\r\n  TechnologyGroupDataModel,\r\n} from '../data/technology/technology-data.model';\r\nimport { SkillDataModel } from '../view/main/skill/skill-data.model';\r\nimport { ExperienceDataModel } from '../data/experience/experience-data.model';\r\nimport { ResumeDataModel } from '../data/resume/resume-data.model';\r\nimport { EducationDataModel } from '../data/education/education-data.model';\r\n\r\ntype StoreType = {\r\n  personal: PersonalDataModel;\r\n  section: SectionDataModel;\r\n  home: HomeDataModel;\r\n  aboutMe: AboutMeDataModel;\r\n  technologyGroup: TechnologyGroupDataModel;\r\n  technology: TechnologyDataModel;\r\n  skill: SkillDataModel;\r\n  experience: ExperienceDataModel;\r\n  resume: ResumeDataModel;\r\n  education: EducationDataModel;\r\n};\r\n\r\nexport class StoreCore {\r\n  protected readonly store: Store<StoreType> = inject(Store);\r\n}\r\n",
+            "sourceCode": "import { inject } from '@angular/core';\r\nimport { Store } from '@ngrx/store';\r\nimport { PersonalDataModel } from '../data/personal/personal-data.model';\r\nimport { SectionDataModel } from '../data/section/section-data.model';\r\nimport { HomeDataModel } from '../data/home/home-data.model';\r\nimport { AboutMeDataModel } from '../data/about-me/about-me-data.model';\r\nimport {\r\n  TechnologyDataModel,\r\n  TechnologyGroupDataModel,\r\n} from '../data/technology/technology-data.model';\r\nimport { ExperienceDataModel } from '../data/experience/experience-data.model';\r\nimport { ResumeDataModel } from '../data/resume/resume-data.model';\r\nimport { EducationDataModel } from '../data/education/education-data.model';\r\nimport { SkillDataModel } from '../data/skill/skill-data.model';\r\n\r\ntype StoreType = {\r\n  personal: PersonalDataModel;\r\n  section: SectionDataModel;\r\n  home: HomeDataModel;\r\n  aboutMe: AboutMeDataModel;\r\n  technologyGroup: TechnologyGroupDataModel;\r\n  technology: TechnologyDataModel;\r\n  skill: SkillDataModel;\r\n  experience: ExperienceDataModel;\r\n  resume: ResumeDataModel;\r\n  education: EducationDataModel;\r\n};\r\n\r\nexport class StoreCore {\r\n  protected readonly store: Store<StoreType> = inject(Store);\r\n}\r\n",
             "inputsClass": [],
             "outputsClass": [],
             "properties": [
@@ -847,7 +847,7 @@
         },
         {
             "name": "CopyrightView",
-            "id": "component-CopyrightView-2cf0d5df27fbdac4853e9c2e1c0affe147fe536b95482a2fe45c668691dd619263313a1b1362dcf8bfc3f65db15a9d1a530559f7a71e6ad90c1894a25c2fe59b",
+            "id": "component-CopyrightView-f6fa5934aba560cd88d0a4e7df1c9a4cdcb24302a87c55ad431bb8bf7e176654075219fe79b672c1b6f042841ca4c2925f99ab2dfccb88d6a111d5d28d7bedf5",
             "file": "src/view/footer/copyright/copyright.view.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -871,17 +871,22 @@
             "hostBindings": [],
             "hostListeners": [],
             "standalone": false,
-            "imports": [],
+            "imports": [
+                {
+                    "name": "TextComponent",
+                    "type": "component"
+                }
+            ],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'copyright-view',\r\n  templateUrl: './copyright.view.html',\r\n  styleUrl: './copyright.view.scss',\r\n})\r\nexport class CopyrightView {}\r\n",
+            "sourceCode": "import { Component } from '@angular/core';\r\n\r\nimport { TextComponent } from '../../../component/text/text.component';\r\n\r\n@Component({\r\n  selector: 'copyright-view',\r\n  templateUrl: './copyright.view.html',\r\n  styleUrl: './copyright.view.scss',\r\n  imports: [TextComponent],\r\n})\r\nexport class CopyrightView {}\r\n",
             "styleUrl": "./copyright.view.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<p>copyright-view works!</p>\r\n"
+            "templateData": "<text-component></text-component>\r\n"
         },
         {
             "name": "EducationView",
@@ -1262,154 +1267,6 @@
             "templateData": "<p>resume-view works!</p>\r\n"
         },
         {
-            "name": "SectionComponent",
-            "id": "component-SectionComponent-45c53a7f6bad45e0149fe0fed1a7bde55355d5e69edec689496221dd2d98f8420baf0f92c7ddb9c579ee936746741f3e82f4ebf484aaf843c9717aee5f6c8e23",
-            "file": "src/component/section/section.component.ts",
-            "encapsulation": [],
-            "entryComponents": [],
-            "inputs": [],
-            "outputs": [],
-            "providers": [],
-            "selector": "section-component",
-            "styleUrls": [],
-            "styles": [],
-            "templateUrl": [
-                "./section.component.html"
-            ],
-            "viewProviders": [],
-            "hostDirectives": [],
-            "inputsClass": [
-                {
-                    "name": "section",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "SectionDataModel",
-                    "indexKey": "",
-                    "optional": false,
-                    "description": "",
-                    "line": 12,
-                    "required": true
-                }
-            ],
-            "outputsClass": [],
-            "propertiesClass": [],
-            "methodsClass": [
-                {
-                    "name": "getComponent",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "any",
-                    "typeParameters": [],
-                    "line": 14,
-                    "deprecated": false,
-                    "deprecationMessage": ""
-                }
-            ],
-            "deprecated": false,
-            "deprecationMessage": "",
-            "hostBindings": [],
-            "hostListeners": [],
-            "standalone": false,
-            "imports": [
-                {
-                    "name": "NgComponentOutlet",
-                    "type": "component"
-                }
-            ],
-            "description": "",
-            "rawdescription": "\n",
-            "type": "component",
-            "sourceCode": "import { Component, input } from '@angular/core';\r\nimport { NgComponentOutlet } from '@angular/common';\r\nimport { SectionDataModel } from '../../data/section/section-data.model';\r\n\r\n@Component({\r\n  selector: 'section-component',\r\n  templateUrl: './section.component.html',\r\n  styleUrl: './section.component.scss',\r\n  imports: [NgComponentOutlet],\r\n})\r\nexport class SectionComponent {\r\n  section = input.required<SectionDataModel>();\r\n\r\n  getComponent() {\r\n    return this.section().component;\r\n  }\r\n}\r\n",
-            "styleUrl": "./section.component.scss",
-            "assetsDirs": [],
-            "styleUrlsData": "",
-            "stylesData": "",
-            "extends": [],
-            "templateData": "<section [id]=\"section().id\">\r\n  <ng-container *ngComponentOutlet=\"getComponent()\"></ng-container>\r\n</section>\r\n"
-        },
-        {
-            "name": "SectionsComponent",
-            "id": "component-SectionsComponent-4ba15c6704b67d11b6d530bf6334915f9973d36e970486d8e85ae082e518ef2fd89b2f49c1e5539368a2132a673b08465274eef479c849f359b5e5dbd5a92754",
-            "file": "src/component/sections/sections.component.ts",
-            "encapsulation": [],
-            "entryComponents": [],
-            "inputs": [],
-            "outputs": [],
-            "providers": [],
-            "selector": "sections-component",
-            "styleUrls": [],
-            "styles": [],
-            "templateUrl": [
-                "./sections.component.html"
-            ],
-            "viewProviders": [],
-            "hostDirectives": [],
-            "inputsClass": [
-                {
-                    "name": "group",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "SectionGroupDataEnum",
-                    "indexKey": "",
-                    "optional": false,
-                    "description": "",
-                    "line": 16,
-                    "required": true
-                }
-            ],
-            "outputsClass": [],
-            "propertiesClass": [
-                {
-                    "name": "sections",
-                    "defaultValue": "this.store.selectSignal((state) => {\r\n    return state.section\r\n      .filter((section) => section.group == this.group())\r\n      .sort((left, right) => left.order - right.order);\r\n  })",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "unknown",
-                    "indexKey": "",
-                    "optional": false,
-                    "description": "",
-                    "line": 18
-                },
-                {
-                    "name": "store",
-                    "defaultValue": "inject(Store)",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Store<literal type>",
-                    "indexKey": "",
-                    "optional": false,
-                    "description": "",
-                    "line": 14,
-                    "modifierKind": [
-                        123,
-                        148
-                    ]
-                }
-            ],
-            "methodsClass": [],
-            "deprecated": false,
-            "deprecationMessage": "",
-            "hostBindings": [],
-            "hostListeners": [],
-            "standalone": false,
-            "imports": [
-                {
-                    "name": "SectionComponent",
-                    "type": "component"
-                }
-            ],
-            "description": "",
-            "rawdescription": "\n",
-            "type": "component",
-            "sourceCode": "import { Component, inject, input } from '@angular/core';\r\nimport { SectionComponent } from '../section/section.component';\r\nimport { Store } from '@ngrx/store';\r\nimport { SectionGroupDataEnum } from '../../data/section/section-data.enum';\r\nimport { SectionDataModel } from '../../data/section/section-data.model';\r\n\r\n@Component({\r\n  selector: 'sections-component',\r\n  templateUrl: './sections.component.html',\r\n  styleUrl: './sections.component.scss',\r\n  imports: [SectionComponent],\r\n})\r\nexport class SectionsComponent {\r\n  private readonly store: Store<{ section: SectionDataModel[] }> = inject(Store);\r\n\r\n  group = input.required<SectionGroupDataEnum>();\r\n\r\n  sections = this.store.selectSignal((state) => {\r\n    return state.section\r\n      .filter((section) => section.group == this.group())\r\n      .sort((left, right) => left.order - right.order);\r\n  });\r\n}\r\n",
-            "styleUrl": "./sections.component.scss",
-            "assetsDirs": [],
-            "styleUrlsData": "",
-            "stylesData": "",
-            "extends": [],
-            "templateData": "@for (section of sections(); track section.id) {\r\n  <section-component [section]=\"section\"></section-component>\r\n}\r\n"
-        },
-        {
             "name": "SkillsView",
             "id": "component-SkillsView-1351f3ec99fa0fa5a6919bf19b2d651d7b6da847f8c37891aa4475c535ac48678fa48128d9be5d49ab7a4fa0ac44230895bd089770d0e612fd3b37d717ef6a16",
             "file": "src/view/main/skills/skills.view.ts",
@@ -1484,6 +1341,44 @@
             "stylesData": "",
             "extends": [],
             "templateData": "<p>technologies-view works!</p>\r\n"
+        },
+        {
+            "name": "TextComponent",
+            "id": "component-TextComponent-ba685f9bfd399be7d4b6ddd5cfdfd5dfd4be38f66a55b2e932cfa7f020666a696d699a418def796d0c8d9ece14b31d923a6ea2fbef97a29fe6c4648668900417",
+            "file": "src/component/text/text.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "text-component",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./text.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'text-component',\r\n  templateUrl: './text.component.html',\r\n  styleUrl: './text.component.scss',\r\n})\r\nexport class TextComponent {}\r\n",
+            "styleUrl": "./text.component.scss",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<p>text-component works!</p>\r\n"
         },
         {
             "name": "View",
@@ -2879,21 +2774,12 @@
         "status": "low",
         "files": [
             {
-                "filePath": "src/component/section/section.component.ts",
+                "filePath": "src/component/text/text.component.ts",
                 "type": "component",
                 "linktype": "component",
-                "name": "SectionComponent",
+                "name": "TextComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/3",
-                "status": "low"
-            },
-            {
-                "filePath": "src/component/sections/sections.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "SectionsComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/4",
+                "coverageCount": "0/1",
                 "status": "low"
             },
             {
