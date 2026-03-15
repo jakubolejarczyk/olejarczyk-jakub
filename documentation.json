@@ -1344,7 +1344,7 @@
         },
         {
             "name": "TextComponent",
-            "id": "component-TextComponent-ba685f9bfd399be7d4b6ddd5cfdfd5dfd4be38f66a55b2e932cfa7f020666a696d699a418def796d0c8d9ece14b31d923a6ea2fbef97a29fe6c4648668900417",
+            "id": "component-TextComponent-df2d164062bb4703ce668b0aa2096be8826aae1d7d1da948fcb5f0218705daf6291676c1e6b6c1f98bb07f40cf04b52871a143ec71616bb93f15f786f4c7ce29",
             "file": "src/component/text/text.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1359,7 +1359,19 @@
             ],
             "viewProviders": [],
             "hostDirectives": [],
-            "inputsClass": [],
+            "inputsClass": [
+                {
+                    "name": "value",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 9,
+                    "required": true
+                }
+            ],
             "outputsClass": [],
             "propertiesClass": [],
             "methodsClass": [],
@@ -1372,7 +1384,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'text-component',\r\n  templateUrl: './text.component.html',\r\n  styleUrl: './text.component.scss',\r\n})\r\nexport class TextComponent {}\r\n",
+            "sourceCode": "import { Component, input } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'text-component',\r\n  templateUrl: './text.component.html',\r\n  styleUrl: './text.component.scss',\r\n})\r\nexport class TextComponent {\r\n  value = input.required<string>();\r\n}\r\n",
             "styleUrl": "./text.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
@@ -2779,7 +2791,7 @@
                 "linktype": "component",
                 "name": "TextComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/1",
+                "coverageCount": "0/2",
                 "status": "low"
             },
             {

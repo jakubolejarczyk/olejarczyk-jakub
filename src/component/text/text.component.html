@@ -1,1 +1,14 @@
-<p>text-component works!</p>
+@switch (type()) {
+  @case ('paragraph') {
+    <p class="text paragraph">{{ value() }}</p>
+  }
+  @case ('header_1') {
+    <h1 class="text header header_1">{{ value() }}</h1>
+  }
+  @case ('header_2') {
+    <h2 class="text header header_2">{{ value() }}</h2>
+  }
+  @case ('header_3') {
+    <h3 class="text header header_3">{{ value() }}</h3>
+  }
+}

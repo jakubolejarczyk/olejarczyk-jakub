@@ -1,0 +1,1 @@
+export type TextType = 'paragraph' | 'header_1' | 'header_2' | 'header_3';
