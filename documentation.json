@@ -735,12 +735,12 @@
     "classes": [
         {
             "name": "StoreCore",
-            "id": "class-StoreCore-36549cb1c29ce5d2fab336a5d785886f0d866f64d28ba9605cd4dd1cc69e5e418af1e54b2ff4ba33d5679de3e4d35b87b58f25de9586fd46b78254aceec8719a",
+            "id": "class-StoreCore-20c3a2de960191c0063998995218fe173e4a862d90a67398da12a9d4d5eb89e79c6aadb26cbb72679355e732aa708cde8ef897ae79cd9d9709afd6a14dd8f00f",
             "file": "src/core/store.core.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "class",
-            "sourceCode": "import { inject } from '@angular/core';\r\nimport { Store } from '@ngrx/store';\r\nimport { PersonalDataModel } from '../data/personal/personal-data.model';\r\nimport { SectionDataModel } from '../data/section/section-data.model';\r\nimport { HomeDataModel } from '../data/home/home-data.model';\r\nimport { AboutMeDataModel } from '../data/about-me/about-me-data.model';\r\nimport {\r\n  TechnologyDataModel,\r\n  TechnologyGroupDataModel,\r\n} from '../data/technology/technology-data.model';\r\nimport { SkillDataModel } from '../data/skill/skill-data.model';\r\nimport { ExperienceDataModel } from '../data/experience/experience-data.model';\r\nimport { ResumeDataModel } from '../data/resume/resume-data.model';\r\nimport { EducationDataModel } from '../data/education/education-data.model';\r\n\r\ntype StoreType = {\r\n  personal: PersonalDataModel;\r\n  section: SectionDataModel;\r\n  home: HomeDataModel;\r\n  aboutMe: AboutMeDataModel;\r\n  technologyGroup: TechnologyGroupDataModel;\r\n  technology: TechnologyDataModel;\r\n  skill: SkillDataModel;\r\n  experience: ExperienceDataModel;\r\n  resume: ResumeDataModel;\r\n  education: EducationDataModel;\r\n};\r\n\r\nexport class StoreCore {\r\n  protected readonly store: Store<StoreType> = inject(Store);\r\n}\r\n",
+            "sourceCode": "import { inject } from '@angular/core';\r\nimport { Store } from '@ngrx/store';\r\nimport { PersonalDataModel } from '../data/personal/personal-data.model';\r\nimport { SectionDataModel } from '../data/section/section-data.model';\r\nimport { HomeDataModel } from '../data/home/home-data.model';\r\nimport { AboutMeDataModel } from '../data/about-me/about-me-data.model';\r\nimport {\r\n  TechnologyDataModel,\r\n  TechnologyGroupDataModel,\r\n} from '../data/technology/technology-data.model';\r\nimport { SkillDataModel } from '../view/main/skill/skill-data.model';\r\nimport { ExperienceDataModel } from '../data/experience/experience-data.model';\r\nimport { ResumeDataModel } from '../data/resume/resume-data.model';\r\nimport { EducationDataModel } from '../data/education/education-data.model';\r\n\r\ntype StoreType = {\r\n  personal: PersonalDataModel;\r\n  section: SectionDataModel;\r\n  home: HomeDataModel;\r\n  aboutMe: AboutMeDataModel;\r\n  technologyGroup: TechnologyGroupDataModel;\r\n  technology: TechnologyDataModel;\r\n  skill: SkillDataModel;\r\n  experience: ExperienceDataModel;\r\n  resume: ResumeDataModel;\r\n  education: EducationDataModel;\r\n};\r\n\r\nexport class StoreCore {\r\n  protected readonly store: Store<StoreType> = inject(Store);\r\n}\r\n",
             "inputsClass": [],
             "outputsClass": [],
             "properties": [
@@ -770,19 +770,19 @@
     "directives": [],
     "components": [
         {
-            "name": "AboutMeComponent",
-            "id": "component-AboutMeComponent-950b063312c09d5a31f76eebbc6f501f8f3cc781e0aac167f07ed9fb0a5db48155395b9a90a11cccd4c3e5187e924910080ea586a574986b91eaf585b7716b24",
-            "file": "src/component/about-me/about-me.component.ts",
+            "name": "AboutMeView",
+            "id": "component-AboutMeView-069cc5ada71faee530e945378c67608c72bf70bf6f560e567391a13ea1ca18ddb2b3d7f73b6828d1b26d758579d3618d97f1ce489a275cb2816fece453bd98fb",
+            "file": "src/view/main/about-me/about-me.view.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
             "providers": [],
-            "selector": "about-me-component",
+            "selector": "about-me-view",
             "styleUrls": [],
             "styles": [],
             "templateUrl": [
-                "./about-me.component.html"
+                "./about-me.view.html"
             ],
             "viewProviders": [],
             "hostDirectives": [],
@@ -799,13 +799,13 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'about-me-component',\r\n  templateUrl: './about-me.component.html',\r\n  styleUrl: './about-me.component.scss',\r\n})\r\nexport class AboutMeComponent {}\r\n",
-            "styleUrl": "./about-me.component.scss",
+            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'about-me-view',\r\n  templateUrl: './about-me.view.html',\r\n  styleUrl: './about-me.view.scss',\r\n})\r\nexport class AboutMeView {}\r\n",
+            "styleUrl": "./about-me.view.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<p>about-me works!</p>\r\n"
+            "templateData": "<p>about-me-view works!</p>\r\n"
         },
         {
             "name": "ContactView",
@@ -1082,7 +1082,7 @@
         },
         {
             "name": "MainView",
-            "id": "component-MainView-2c8f69198a89a8358e5904bc0b5e5cad526bd0d63e6766535efa33fb95e46a7fc9443dadbdf8897af9e047c584210c6a182d62408c6cde1b57413a6ed3955ee5",
+            "id": "component-MainView-4a4b796062a5479a4ed1ca2b91e8e163c9f6d0a2d216062994488d3ed0aa556fd395e8028394f1996a4eceb3c5c7a0f3a74639fc82c0042a8111716e66f88783",
             "file": "src/view/main/main.view.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1106,17 +1106,27 @@
             "hostBindings": [],
             "hostListeners": [],
             "standalone": false,
-            "imports": [],
+            "imports": [
+                {
+                    "name": "AboutMeView"
+                },
+                {
+                    "name": "TechnologiesView"
+                },
+                {
+                    "name": "SkillsView"
+                }
+            ],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'main-view',\r\n  templateUrl: './main.view.html',\r\n  styleUrl: './main.view.scss',\r\n})\r\nexport class MainView {}\r\n",
+            "sourceCode": "import { Component } from '@angular/core';\r\n\r\nimport { AboutMeView } from './about-me/about-me.view';\r\nimport { TechnologiesView } from './technologies/technologies.view';\r\nimport { SkillsView } from './skills/skills.view';\r\n\r\n@Component({\r\n  selector: 'main-view',\r\n  templateUrl: './main.view.html',\r\n  styleUrl: './main.view.scss',\r\n  imports: [AboutMeView, TechnologiesView, SkillsView],\r\n})\r\nexport class MainView {}\r\n",
             "styleUrl": "./main.view.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<p>main-view works!</p>\r\n"
+            "templateData": "<about-me-view></about-me-view>\r\n<technologies-view></technologies-view>\r\n<skills-view></skills-view>\r\n"
         },
         {
             "name": "NavigationComponent",
@@ -1381,19 +1391,19 @@
             "templateData": "@for (section of sections(); track section.id) {\r\n  <section-component [section]=\"section\"></section-component>\r\n}\r\n"
         },
         {
-            "name": "SkillsComponent",
-            "id": "component-SkillsComponent-d9c5538432a319a33cb92687b9360fabc0fe62b3159670938a1b61e68bf5542831c8484dba65c0f0fbbefe24a4c4a7baaa791cd671f75ac20c92ee8decf3db91",
-            "file": "src/component/skills/skills.component.ts",
+            "name": "SkillsView",
+            "id": "component-SkillsView-1351f3ec99fa0fa5a6919bf19b2d651d7b6da847f8c37891aa4475c535ac48678fa48128d9be5d49ab7a4fa0ac44230895bd089770d0e612fd3b37d717ef6a16",
+            "file": "src/view/main/skills/skills.view.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
             "providers": [],
-            "selector": "skills-component",
+            "selector": "skills-view",
             "styleUrls": [],
             "styles": [],
             "templateUrl": [
-                "./skills.component.html"
+                "./skills.view.html"
             ],
             "viewProviders": [],
             "hostDirectives": [],
@@ -1410,28 +1420,28 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'skills-component',\r\n  templateUrl: './skills.component.html',\r\n  styleUrl: './skills.component.scss',\r\n})\r\nexport class SkillsComponent {}\r\n",
-            "styleUrl": "./skills.component.scss",
+            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'skills-view',\r\n  templateUrl: './skills.view.html',\r\n  styleUrl: './skills.view.scss',\r\n})\r\nexport class SkillsView {}\r\n",
+            "styleUrl": "./skills.view.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<p>skills works!</p>\r\n"
+            "templateData": "<p>skills-view works!</p>\r\n"
         },
         {
-            "name": "TechnologiesComponent",
-            "id": "component-TechnologiesComponent-1492c74c7417d6b3b839fe3990bb7eb6e2b5a32b583777caf56a8b2c72b6485eae14bdebcc91b745e4ad058d085e21a865f9521df8b832e9e46fff9c80847148",
-            "file": "src/component/technologies/technologies.component.ts",
+            "name": "TechnologiesView",
+            "id": "component-TechnologiesView-0f721965400271ecfefd63e6148a69bdc74c0c55c8f992073185448daaea2c8c30c7aca67e2831e194f64625de930ed4d870be183c55b71c0c2d1dfc1646f2c5",
+            "file": "src/view/main/technologies/technologies.view.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
             "providers": [],
-            "selector": "technologies-component",
+            "selector": "technologies-view",
             "styleUrls": [],
             "styles": [],
             "templateUrl": [
-                "./technologies.component.html"
+                "./technologies.view.html"
             ],
             "viewProviders": [],
             "hostDirectives": [],
@@ -1448,13 +1458,13 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'technologies-component',\r\n  templateUrl: './technologies.component.html',\r\n  styleUrl: './technologies.component.scss',\r\n})\r\nexport class TechnologiesComponent {}\r\n",
-            "styleUrl": "./technologies.component.scss",
+            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'technologies-view',\r\n  templateUrl: './technologies.view.html',\r\n  styleUrl: './technologies.view.scss',\r\n})\r\nexport class TechnologiesView {}\r\n",
+            "styleUrl": "./technologies.view.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<p>technologies works!</p>\r\n"
+            "templateData": "<p>technologies-view works!</p>\r\n"
         },
         {
             "name": "View",
@@ -1656,7 +1666,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "SectionDataModel[]",
-                "defaultValue": "[\r\n  {\r\n    group: SectionGroupDataEnum.header,\r\n    id: 'navigation',\r\n    label: `${personalDataConst.lastname} ${personalDataConst.firstname}`,\r\n    route: {\r\n      routable: false,\r\n    },\r\n    component: NavigationComponent,\r\n    order: 0,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.header,\r\n    id: 'home',\r\n    label: 'Home',\r\n    route: {\r\n      routable: true,\r\n      href: '#home',\r\n    },\r\n    component: HomeComponent,\r\n    order: 1,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.main,\r\n    id: 'about-me',\r\n    label: 'About me',\r\n    route: {\r\n      routable: true,\r\n      href: '#about-me',\r\n    },\r\n    component: AboutMeComponent,\r\n    order: 0,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.main,\r\n    id: 'technologies',\r\n    label: 'Technologies',\r\n    route: {\r\n      routable: true,\r\n      href: '#technologies',\r\n    },\r\n    component: TechnologiesComponent,\r\n    order: 1,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.main,\r\n    id: 'skills',\r\n    label: 'Skills',\r\n    route: {\r\n      routable: true,\r\n      href: '#skills',\r\n    },\r\n    component: SkillsComponent,\r\n    order: 2,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.main,\r\n    id: 'experience',\r\n    label: 'Experience',\r\n    route: {\r\n      routable: true,\r\n      href: '#experience',\r\n    },\r\n    component: ExperienceComponent,\r\n    order: 3,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.main,\r\n    id: 'resume',\r\n    label: 'Resume',\r\n    route: {\r\n      routable: true,\r\n      href: '#resume',\r\n    },\r\n    component: ResumeComponent,\r\n    order: 4,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.main,\r\n    id: 'projects',\r\n    label: 'Projects',\r\n    route: {\r\n      routable: true,\r\n      href: '#projects',\r\n    },\r\n    component: ProjectsComponent,\r\n    order: 5,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.main,\r\n    id: 'education',\r\n    label: 'Education',\r\n    route: {\r\n      routable: true,\r\n      href: '#education',\r\n    },\r\n    component: EducationComponent,\r\n    order: 6,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.footer,\r\n    id: 'contact',\r\n    label: 'Contact',\r\n    route: {\r\n      routable: true,\r\n      href: '#contact',\r\n    },\r\n    component: undefined,\r\n    order: 0,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.footer,\r\n    id: 'copyright',\r\n    label: 'Copyright',\r\n    route: {\r\n      routable: false,\r\n    },\r\n    component: undefined,\r\n    order: 1,\r\n  },\r\n]"
+                "defaultValue": "[\r\n  {\r\n    group: SectionGroupDataEnum.header,\r\n    id: 'navigation',\r\n    label: `${personalDataConst.lastname} ${personalDataConst.firstname}`,\r\n    route: {\r\n      routable: false,\r\n    },\r\n    component: NavigationComponent,\r\n    order: 0,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.header,\r\n    id: 'home',\r\n    label: 'Home',\r\n    route: {\r\n      routable: true,\r\n      href: '#home',\r\n    },\r\n    component: HomeComponent,\r\n    order: 1,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.main,\r\n    id: 'about-me',\r\n    label: 'About me',\r\n    route: {\r\n      routable: true,\r\n      href: '#about-me',\r\n    },\r\n    component: undefined,\r\n    order: 0,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.main,\r\n    id: 'technologies',\r\n    label: 'Technologies',\r\n    route: {\r\n      routable: true,\r\n      href: '#technologies',\r\n    },\r\n    component: undefined,\r\n    order: 1,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.main,\r\n    id: 'skills',\r\n    label: 'Skills',\r\n    route: {\r\n      routable: true,\r\n      href: '#skills',\r\n    },\r\n    component: undefined,\r\n    order: 2,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.main,\r\n    id: 'experience',\r\n    label: 'Experience',\r\n    route: {\r\n      routable: true,\r\n      href: '#experience',\r\n    },\r\n    component: ExperienceComponent,\r\n    order: 3,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.main,\r\n    id: 'resume',\r\n    label: 'Resume',\r\n    route: {\r\n      routable: true,\r\n      href: '#resume',\r\n    },\r\n    component: ResumeComponent,\r\n    order: 4,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.main,\r\n    id: 'projects',\r\n    label: 'Projects',\r\n    route: {\r\n      routable: true,\r\n      href: '#projects',\r\n    },\r\n    component: ProjectsComponent,\r\n    order: 5,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.main,\r\n    id: 'education',\r\n    label: 'Education',\r\n    route: {\r\n      routable: true,\r\n      href: '#education',\r\n    },\r\n    component: EducationComponent,\r\n    order: 6,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.footer,\r\n    id: 'contact',\r\n    label: 'Contact',\r\n    route: {\r\n      routable: true,\r\n      href: '#contact',\r\n    },\r\n    component: undefined,\r\n    order: 0,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.footer,\r\n    id: 'copyright',\r\n    label: 'Copyright',\r\n    route: {\r\n      routable: false,\r\n    },\r\n    component: undefined,\r\n    order: 1,\r\n  },\r\n]"
             },
             {
                 "name": "sectionReducer",
@@ -2325,7 +2335,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "SectionDataModel[]",
-                    "defaultValue": "[\r\n  {\r\n    group: SectionGroupDataEnum.header,\r\n    id: 'navigation',\r\n    label: `${personalDataConst.lastname} ${personalDataConst.firstname}`,\r\n    route: {\r\n      routable: false,\r\n    },\r\n    component: NavigationComponent,\r\n    order: 0,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.header,\r\n    id: 'home',\r\n    label: 'Home',\r\n    route: {\r\n      routable: true,\r\n      href: '#home',\r\n    },\r\n    component: HomeComponent,\r\n    order: 1,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.main,\r\n    id: 'about-me',\r\n    label: 'About me',\r\n    route: {\r\n      routable: true,\r\n      href: '#about-me',\r\n    },\r\n    component: AboutMeComponent,\r\n    order: 0,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.main,\r\n    id: 'technologies',\r\n    label: 'Technologies',\r\n    route: {\r\n      routable: true,\r\n      href: '#technologies',\r\n    },\r\n    component: TechnologiesComponent,\r\n    order: 1,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.main,\r\n    id: 'skills',\r\n    label: 'Skills',\r\n    route: {\r\n      routable: true,\r\n      href: '#skills',\r\n    },\r\n    component: SkillsComponent,\r\n    order: 2,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.main,\r\n    id: 'experience',\r\n    label: 'Experience',\r\n    route: {\r\n      routable: true,\r\n      href: '#experience',\r\n    },\r\n    component: ExperienceComponent,\r\n    order: 3,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.main,\r\n    id: 'resume',\r\n    label: 'Resume',\r\n    route: {\r\n      routable: true,\r\n      href: '#resume',\r\n    },\r\n    component: ResumeComponent,\r\n    order: 4,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.main,\r\n    id: 'projects',\r\n    label: 'Projects',\r\n    route: {\r\n      routable: true,\r\n      href: '#projects',\r\n    },\r\n    component: ProjectsComponent,\r\n    order: 5,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.main,\r\n    id: 'education',\r\n    label: 'Education',\r\n    route: {\r\n      routable: true,\r\n      href: '#education',\r\n    },\r\n    component: EducationComponent,\r\n    order: 6,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.footer,\r\n    id: 'contact',\r\n    label: 'Contact',\r\n    route: {\r\n      routable: true,\r\n      href: '#contact',\r\n    },\r\n    component: undefined,\r\n    order: 0,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.footer,\r\n    id: 'copyright',\r\n    label: 'Copyright',\r\n    route: {\r\n      routable: false,\r\n    },\r\n    component: undefined,\r\n    order: 1,\r\n  },\r\n]"
+                    "defaultValue": "[\r\n  {\r\n    group: SectionGroupDataEnum.header,\r\n    id: 'navigation',\r\n    label: `${personalDataConst.lastname} ${personalDataConst.firstname}`,\r\n    route: {\r\n      routable: false,\r\n    },\r\n    component: NavigationComponent,\r\n    order: 0,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.header,\r\n    id: 'home',\r\n    label: 'Home',\r\n    route: {\r\n      routable: true,\r\n      href: '#home',\r\n    },\r\n    component: HomeComponent,\r\n    order: 1,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.main,\r\n    id: 'about-me',\r\n    label: 'About me',\r\n    route: {\r\n      routable: true,\r\n      href: '#about-me',\r\n    },\r\n    component: undefined,\r\n    order: 0,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.main,\r\n    id: 'technologies',\r\n    label: 'Technologies',\r\n    route: {\r\n      routable: true,\r\n      href: '#technologies',\r\n    },\r\n    component: undefined,\r\n    order: 1,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.main,\r\n    id: 'skills',\r\n    label: 'Skills',\r\n    route: {\r\n      routable: true,\r\n      href: '#skills',\r\n    },\r\n    component: undefined,\r\n    order: 2,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.main,\r\n    id: 'experience',\r\n    label: 'Experience',\r\n    route: {\r\n      routable: true,\r\n      href: '#experience',\r\n    },\r\n    component: ExperienceComponent,\r\n    order: 3,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.main,\r\n    id: 'resume',\r\n    label: 'Resume',\r\n    route: {\r\n      routable: true,\r\n      href: '#resume',\r\n    },\r\n    component: ResumeComponent,\r\n    order: 4,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.main,\r\n    id: 'projects',\r\n    label: 'Projects',\r\n    route: {\r\n      routable: true,\r\n      href: '#projects',\r\n    },\r\n    component: ProjectsComponent,\r\n    order: 5,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.main,\r\n    id: 'education',\r\n    label: 'Education',\r\n    route: {\r\n      routable: true,\r\n      href: '#education',\r\n    },\r\n    component: EducationComponent,\r\n    order: 6,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.footer,\r\n    id: 'contact',\r\n    label: 'Contact',\r\n    route: {\r\n      routable: true,\r\n      href: '#contact',\r\n    },\r\n    component: undefined,\r\n    order: 0,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.footer,\r\n    id: 'copyright',\r\n    label: 'Copyright',\r\n    route: {\r\n      routable: false,\r\n    },\r\n    component: undefined,\r\n    order: 1,\r\n  },\r\n]"
                 }
             ],
             "src/state/section/section.reducer.ts": [
@@ -2850,15 +2860,6 @@
         "status": "low",
         "files": [
             {
-                "filePath": "src/component/about-me/about-me.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "AboutMeComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
                 "filePath": "src/component/education/education.component.ts",
                 "type": "component",
                 "linktype": "component",
@@ -2928,24 +2929,6 @@
                 "name": "SectionsComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/4",
-                "status": "low"
-            },
-            {
-                "filePath": "src/component/skills/skills.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "SkillsComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/component/technologies/technologies.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "TechnologiesComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
                 "status": "low"
             },
             {
@@ -3368,10 +3351,37 @@
                 "status": "low"
             },
             {
+                "filePath": "src/view/main/about-me/about-me.view.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "AboutMeView",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
                 "filePath": "src/view/main/main.view.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "MainView",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/view/main/skills/skills.view.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "SkillsView",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/view/main/technologies/technologies.view.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "TechnologiesView",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"

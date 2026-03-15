@@ -1,4 +1,4 @@
-import { AboutMeComponent } from '../../component/about-me/about-me.component';
+// import { AboutMeComponent } from '../../view/main/about-me/about-me.view';
 // import { ContactComponent } from '../../component/contact/contact.component';
 // import { CopyrightComponent } from '../../component/copyright/copyright.component';
 import { EducationComponent } from '../../component/education/education.component';
@@ -7,8 +7,8 @@ import { HomeComponent } from '../../component/home/home.component';
 import { NavigationComponent } from '../../component/navigation/navigation.component';
 import { ProjectsComponent } from '../../component/projects/projects.component';
 import { ResumeComponent } from '../../component/resume/resume.component';
-import { SkillsComponent } from '../../component/skills/skills.component';
-import { TechnologiesComponent } from '../../component/technologies/technologies.component';
+// import { SkillsComponent } from '../../view/main/skills/skills.view';
+// import { TechnologiesComponent } from '../../view/main/technologies/technologies.view';
 import { personalDataConst } from '../personal/personal-data.const';
 import { SectionGroupDataEnum } from './section-data.enum';
 import { SectionDataModel } from './section-data.model';
@@ -43,7 +43,7 @@ export const sectionDataConst: SectionDataModel[] = [
       routable: true,
       href: '#about-me',
     },
-    component: AboutMeComponent,
+    component: undefined,
     order: 0,
   },
   {
@@ -54,7 +54,7 @@ export const sectionDataConst: SectionDataModel[] = [
       routable: true,
       href: '#technologies',
     },
-    component: TechnologiesComponent,
+    component: undefined,
     order: 1,
   },
   {
@@ -65,7 +65,7 @@ export const sectionDataConst: SectionDataModel[] = [
       routable: true,
       href: '#skills',
     },
-    component: SkillsComponent,
+    component: undefined,
     order: 2,
   },
   {
