@@ -1,4 +1,13 @@
-import { SectionGroupDataEnum } from './section-data.enum';
+interface SectionHeaderDataModel {
+  show: true;
+  label: string;
+}
+
+interface SectionNotHeaderDataModel {
+  show: false;
+}
+
+type SectionHeaderType = SectionHeaderDataModel | SectionNotHeaderDataModel;
 
 interface SectionRoutableDataModel {
   routable: true;
@@ -9,11 +18,10 @@ interface SectionNotRoutableDataModel {
   routable: false;
 }
 
+type SectionRouteType = SectionRoutableDataModel | SectionNotRoutableDataModel;
+
 export interface SectionDataModel {
-  group: SectionGroupDataEnum;
   id: string;
-  label: string;
-  route: SectionRoutableDataModel | SectionNotRoutableDataModel;
-  component: any;
-  order: number;
+  header: SectionHeaderType;
+  route: SectionRouteType;
 }

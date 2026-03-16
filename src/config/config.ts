@@ -1,5 +1,4 @@
 import { ApplicationConfig, provideBrowserGlobalErrorListeners, isDevMode } from '@angular/core';
-
 import { provideStore } from '@ngrx/store';
 import { provideStoreDevtools } from '@ngrx/store-devtools';
 import { aboutMeReducer } from '../state/about-me/about-me.reducer';
@@ -12,28 +11,21 @@ import { sectionReducer } from '../state/section/section.reducer';
 import { skillReducer } from '../state/skill/skill.reducer';
 import { technologyGroupReducer, technologyReducer } from '../state/technology/technology.reducer';
 
-export const appConfig: ApplicationConfig = {
+export const config: ApplicationConfig = {
   providers: [
     provideBrowserGlobalErrorListeners(),
-    provideStore(
-      {
-        personal: personalReducer,
-        section: sectionReducer,
-        home: homeReducer,
-        aboutMe: aboutMeReducer,
-        technologyGroup: technologyGroupReducer,
-        technology: technologyReducer,
-        skill: skillReducer,
-        experience: experienceReducer,
-        resume: resumeReducer,
-        education: educationReducer,
-      },
-      {
-        runtimeChecks: {
-          strictStateImmutability: false,
-        },
-      },
-    ),
+    provideStore({
+      aboutMe: aboutMeReducer,
+      education: educationReducer,
+      experience: experienceReducer,
+      home: homeReducer,
+      personal: personalReducer,
+      resume: resumeReducer,
+      section: sectionReducer,
+      skill: skillReducer,
+      technologyGroup: technologyGroupReducer,
+      technology: technologyReducer,
+    }),
     provideStoreDevtools({ maxAge: 25, logOnly: !isDevMode() }),
   ],
 };

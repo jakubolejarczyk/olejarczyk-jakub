@@ -423,32 +423,22 @@
         },
         {
             "name": "SectionDataModel",
-            "id": "interface-SectionDataModel-30ab465973693bf5dccb1cd01da931634a4f094090ecf2827978454e0af5df6e8acaf6d9de52e5005e5a9bbd4a0837045fd4fe31250683eb26836b260b65a576",
+            "id": "interface-SectionDataModel-a169eeceb27bdaaafbddb2d3a663d5a50b6bb467f8443ce0a17d765f4ecd58ff04d57276cd189aa3010467c8c454a340f0c25f3f81759862797addd0ce1d31a2",
             "file": "src/data/section/section-data.model.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "import { SectionGroupDataEnum } from './section-data.enum';\r\n\r\ninterface SectionRoutableDataModel {\r\n  routable: true;\r\n  href: string;\r\n}\r\n\r\ninterface SectionNotRoutableDataModel {\r\n  routable: false;\r\n}\r\n\r\nexport interface SectionDataModel {\r\n  group: SectionGroupDataEnum;\r\n  id: string;\r\n  label: string;\r\n  route: SectionRoutableDataModel | SectionNotRoutableDataModel;\r\n  component: any;\r\n  order: number;\r\n}\r\n",
+            "sourceCode": "interface SectionHeaderDataModel {\r\n  show: true;\r\n  label: string;\r\n}\r\n\r\ninterface SectionNotHeaderDataModel {\r\n  show: false;\r\n}\r\n\r\ntype SectionHeaderType = SectionHeaderDataModel | SectionNotHeaderDataModel;\r\n\r\ninterface SectionRoutableDataModel {\r\n  routable: true;\r\n  href: string;\r\n}\r\n\r\ninterface SectionNotRoutableDataModel {\r\n  routable: false;\r\n}\r\n\r\ntype SectionRouteType = SectionRoutableDataModel | SectionNotRoutableDataModel;\r\n\r\nexport interface SectionDataModel {\r\n  id: string;\r\n  header: SectionHeaderType;\r\n  route: SectionRouteType;\r\n}\r\n",
             "properties": [
                 {
-                    "name": "component",
+                    "name": "header",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "any",
+                    "type": "SectionHeaderType",
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 17
-                },
-                {
-                    "name": "group",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "SectionGroupDataEnum",
-                    "indexKey": "",
-                    "optional": false,
-                    "description": "",
-                    "line": 13
+                    "line": 25
                 },
                 {
                     "name": "id",
@@ -458,8 +448,33 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 14
+                    "line": 24
                 },
+                {
+                    "name": "route",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "SectionRouteType",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 26
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 172,
+            "methods": [],
+            "extends": []
+        },
+        {
+            "name": "SectionHeaderDataModel",
+            "id": "interface-SectionHeaderDataModel-a169eeceb27bdaaafbddb2d3a663d5a50b6bb467f8443ce0a17d765f4ecd58ff04d57276cd189aa3010467c8c454a340f0c25f3f81759862797addd0ce1d31a2",
+            "file": "src/data/section/section-data.model.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "interface SectionHeaderDataModel {\r\n  show: true;\r\n  label: string;\r\n}\r\n\r\ninterface SectionNotHeaderDataModel {\r\n  show: false;\r\n}\r\n\r\ntype SectionHeaderType = SectionHeaderDataModel | SectionNotHeaderDataModel;\r\n\r\ninterface SectionRoutableDataModel {\r\n  routable: true;\r\n  href: string;\r\n}\r\n\r\ninterface SectionNotRoutableDataModel {\r\n  routable: false;\r\n}\r\n\r\ntype SectionRouteType = SectionRoutableDataModel | SectionNotRoutableDataModel;\r\n\r\nexport interface SectionDataModel {\r\n  id: string;\r\n  header: SectionHeaderType;\r\n  route: SectionRouteType;\r\n}\r\n",
+            "properties": [
                 {
                     "name": "label",
                     "deprecated": false,
@@ -468,27 +483,42 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 15
+                    "line": 3
                 },
                 {
-                    "name": "order",
+                    "name": "show",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "number",
+                    "type": "unknown",
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 18
-                },
+                    "line": 2
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 172,
+            "methods": [],
+            "extends": []
+        },
+        {
+            "name": "SectionNotHeaderDataModel",
+            "id": "interface-SectionNotHeaderDataModel-a169eeceb27bdaaafbddb2d3a663d5a50b6bb467f8443ce0a17d765f4ecd58ff04d57276cd189aa3010467c8c454a340f0c25f3f81759862797addd0ce1d31a2",
+            "file": "src/data/section/section-data.model.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "interface SectionHeaderDataModel {\r\n  show: true;\r\n  label: string;\r\n}\r\n\r\ninterface SectionNotHeaderDataModel {\r\n  show: false;\r\n}\r\n\r\ntype SectionHeaderType = SectionHeaderDataModel | SectionNotHeaderDataModel;\r\n\r\ninterface SectionRoutableDataModel {\r\n  routable: true;\r\n  href: string;\r\n}\r\n\r\ninterface SectionNotRoutableDataModel {\r\n  routable: false;\r\n}\r\n\r\ntype SectionRouteType = SectionRoutableDataModel | SectionNotRoutableDataModel;\r\n\r\nexport interface SectionDataModel {\r\n  id: string;\r\n  header: SectionHeaderType;\r\n  route: SectionRouteType;\r\n}\r\n",
+            "properties": [
                 {
-                    "name": "route",
+                    "name": "show",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "SectionRoutableDataModel | SectionNotRoutableDataModel",
+                    "type": "unknown",
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 16
+                    "line": 7
                 }
             ],
             "indexSignatures": [],
@@ -498,12 +528,12 @@
         },
         {
             "name": "SectionNotRoutableDataModel",
-            "id": "interface-SectionNotRoutableDataModel-30ab465973693bf5dccb1cd01da931634a4f094090ecf2827978454e0af5df6e8acaf6d9de52e5005e5a9bbd4a0837045fd4fe31250683eb26836b260b65a576",
+            "id": "interface-SectionNotRoutableDataModel-a169eeceb27bdaaafbddb2d3a663d5a50b6bb467f8443ce0a17d765f4ecd58ff04d57276cd189aa3010467c8c454a340f0c25f3f81759862797addd0ce1d31a2",
             "file": "src/data/section/section-data.model.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "import { SectionGroupDataEnum } from './section-data.enum';\r\n\r\ninterface SectionRoutableDataModel {\r\n  routable: true;\r\n  href: string;\r\n}\r\n\r\ninterface SectionNotRoutableDataModel {\r\n  routable: false;\r\n}\r\n\r\nexport interface SectionDataModel {\r\n  group: SectionGroupDataEnum;\r\n  id: string;\r\n  label: string;\r\n  route: SectionRoutableDataModel | SectionNotRoutableDataModel;\r\n  component: any;\r\n  order: number;\r\n}\r\n",
+            "sourceCode": "interface SectionHeaderDataModel {\r\n  show: true;\r\n  label: string;\r\n}\r\n\r\ninterface SectionNotHeaderDataModel {\r\n  show: false;\r\n}\r\n\r\ntype SectionHeaderType = SectionHeaderDataModel | SectionNotHeaderDataModel;\r\n\r\ninterface SectionRoutableDataModel {\r\n  routable: true;\r\n  href: string;\r\n}\r\n\r\ninterface SectionNotRoutableDataModel {\r\n  routable: false;\r\n}\r\n\r\ntype SectionRouteType = SectionRoutableDataModel | SectionNotRoutableDataModel;\r\n\r\nexport interface SectionDataModel {\r\n  id: string;\r\n  header: SectionHeaderType;\r\n  route: SectionRouteType;\r\n}\r\n",
             "properties": [
                 {
                     "name": "routable",
@@ -513,7 +543,7 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 9
+                    "line": 18
                 }
             ],
             "indexSignatures": [],
@@ -523,12 +553,12 @@
         },
         {
             "name": "SectionRoutableDataModel",
-            "id": "interface-SectionRoutableDataModel-30ab465973693bf5dccb1cd01da931634a4f094090ecf2827978454e0af5df6e8acaf6d9de52e5005e5a9bbd4a0837045fd4fe31250683eb26836b260b65a576",
+            "id": "interface-SectionRoutableDataModel-a169eeceb27bdaaafbddb2d3a663d5a50b6bb467f8443ce0a17d765f4ecd58ff04d57276cd189aa3010467c8c454a340f0c25f3f81759862797addd0ce1d31a2",
             "file": "src/data/section/section-data.model.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "import { SectionGroupDataEnum } from './section-data.enum';\r\n\r\ninterface SectionRoutableDataModel {\r\n  routable: true;\r\n  href: string;\r\n}\r\n\r\ninterface SectionNotRoutableDataModel {\r\n  routable: false;\r\n}\r\n\r\nexport interface SectionDataModel {\r\n  group: SectionGroupDataEnum;\r\n  id: string;\r\n  label: string;\r\n  route: SectionRoutableDataModel | SectionNotRoutableDataModel;\r\n  component: any;\r\n  order: number;\r\n}\r\n",
+            "sourceCode": "interface SectionHeaderDataModel {\r\n  show: true;\r\n  label: string;\r\n}\r\n\r\ninterface SectionNotHeaderDataModel {\r\n  show: false;\r\n}\r\n\r\ntype SectionHeaderType = SectionHeaderDataModel | SectionNotHeaderDataModel;\r\n\r\ninterface SectionRoutableDataModel {\r\n  routable: true;\r\n  href: string;\r\n}\r\n\r\ninterface SectionNotRoutableDataModel {\r\n  routable: false;\r\n}\r\n\r\ntype SectionRouteType = SectionRoutableDataModel | SectionNotRoutableDataModel;\r\n\r\nexport interface SectionDataModel {\r\n  id: string;\r\n  header: SectionHeaderType;\r\n  route: SectionRouteType;\r\n}\r\n",
             "properties": [
                 {
                     "name": "href",
@@ -538,7 +568,7 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 5
+                    "line": 14
                 },
                 {
                     "name": "routable",
@@ -548,7 +578,7 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 4
+                    "line": 13
                 }
             ],
             "indexSignatures": [],
@@ -703,7 +733,7 @@
         },
         {
             "name": "StorybookUtils",
-            "id": "injectable-StorybookUtils-6b4eb85087ed514f10eb87a64620352bfd461bf2e4def03882223db23a46a676b579186834c6132ac4776efae5a949d4426ae1d3392bb93c830a403e78d539b1",
+            "id": "injectable-StorybookUtils-51e23aabc389667048880e81da001d24a415775b7417a7ec174d3936cc7bd4a9d465a388f55289a57228649a2abcc2b5ad2b4272e5280824a3d5266830caeaa6",
             "file": "src/utils/storybook.utils.ts",
             "properties": [],
             "methods": [
@@ -725,7 +755,7 @@
             "deprecationMessage": "",
             "description": "",
             "rawdescription": "\n",
-            "sourceCode": "import { Injectable } from '@angular/core';\r\nimport { applicationConfig, Meta } from '@storybook/angular';\r\nimport { appConfig } from '../config/app.config';\r\n\r\n@Injectable({ providedIn: 'root' })\r\nexport class StorybookUtils {\r\n  static getDecorators(): Meta['decorators'] {\r\n    return [\r\n      applicationConfig({\r\n        providers: appConfig.providers,\r\n      }),\r\n    ];\r\n  }\r\n}\r\n",
+            "sourceCode": "import { Injectable } from '@angular/core';\r\nimport { applicationConfig, Meta } from '@storybook/angular';\r\nimport { config } from '../config/config';\r\n\r\n@Injectable({ providedIn: 'root' })\r\nexport class StorybookUtils {\r\n  static getDecorators(): Meta['decorators'] {\r\n    return [\r\n      applicationConfig({\r\n        providers: config.providers,\r\n      }),\r\n    ];\r\n  }\r\n}\r\n",
             "extends": [],
             "type": "injectable"
         }
@@ -735,12 +765,12 @@
     "classes": [
         {
             "name": "StoreCore",
-            "id": "class-StoreCore-fd50428604eb1820bc53736b0339a059355c69d2884628e79bb57019d67eec7b9a1e3e0e072f671b216ae2a3b4c7526eadbdd107eaca5c7eabf45f368059238f",
+            "id": "class-StoreCore-2cf907d7ba9cfa537171ecbb180bd82c7a2911e38fb4508470e140a57ed8104656dc048546d8623ea413e27f9b35e203ed8ac0b1c68b98089d682d194f5a18b2",
             "file": "src/core/store.core.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "class",
-            "sourceCode": "import { inject } from '@angular/core';\r\nimport { Store } from '@ngrx/store';\r\nimport { PersonalDataModel } from '../data/personal/personal-data.model';\r\nimport { SectionDataModel } from '../data/section/section-data.model';\r\nimport { HomeDataModel } from '../data/home/home-data.model';\r\nimport { AboutMeDataModel } from '../data/about-me/about-me-data.model';\r\nimport {\r\n  TechnologyDataModel,\r\n  TechnologyGroupDataModel,\r\n} from '../data/technology/technology-data.model';\r\nimport { ExperienceDataModel } from '../data/experience/experience-data.model';\r\nimport { ResumeDataModel } from '../data/resume/resume-data.model';\r\nimport { EducationDataModel } from '../data/education/education-data.model';\r\nimport { SkillDataModel } from '../data/skill/skill-data.model';\r\n\r\ntype StoreType = {\r\n  personal: PersonalDataModel;\r\n  section: SectionDataModel;\r\n  home: HomeDataModel;\r\n  aboutMe: AboutMeDataModel;\r\n  technologyGroup: TechnologyGroupDataModel;\r\n  technology: TechnologyDataModel;\r\n  skill: SkillDataModel;\r\n  experience: ExperienceDataModel;\r\n  resume: ResumeDataModel;\r\n  education: EducationDataModel;\r\n};\r\n\r\nexport class StoreCore {\r\n  protected readonly store: Store<StoreType> = inject(Store);\r\n}\r\n",
+            "sourceCode": "import { inject } from '@angular/core';\r\nimport { Store } from '@ngrx/store';\r\nimport { AboutMeDataModel } from '../data/about-me/about-me-data.model';\r\nimport { EducationDataModel } from '../data/education/education-data.model';\r\nimport { ExperienceDataModel } from '../data/experience/experience-data.model';\r\nimport { HomeDataModel } from '../data/home/home-data.model';\r\nimport { PersonalDataModel } from '../data/personal/personal-data.model';\r\nimport { ResumeDataModel } from '../data/resume/resume-data.model';\r\nimport { SectionDataModel } from '../data/section/section-data.model';\r\nimport { SkillDataModel } from '../data/skill/skill-data.model';\r\nimport {\r\n  TechnologyGroupDataModel,\r\n  TechnologyDataModel,\r\n} from '../data/technology/technology-data.model';\r\n\r\ntype StoreType = {\r\n  aboutMe: AboutMeDataModel;\r\n  education: EducationDataModel;\r\n  experience: ExperienceDataModel;\r\n  home: HomeDataModel;\r\n  personal: PersonalDataModel;\r\n  resume: ResumeDataModel;\r\n  section: SectionDataModel;\r\n  skill: SkillDataModel;\r\n  technologyGroup: TechnologyGroupDataModel;\r\n  technology: TechnologyDataModel;\r\n};\r\n\r\nexport class StoreCore {\r\n  protected readonly store: Store<StoreType> = inject(Store);\r\n}\r\n",
             "inputsClass": [],
             "outputsClass": [],
             "properties": [
@@ -847,7 +877,7 @@
         },
         {
             "name": "CopyrightView",
-            "id": "component-CopyrightView-f6fa5934aba560cd88d0a4e7df1c9a4cdcb24302a87c55ad431bb8bf7e176654075219fe79b672c1b6f042841ca4c2925f99ab2dfccb88d6a111d5d28d7bedf5",
+            "id": "component-CopyrightView-6fc9f32b6a5953afd8f652fad3927b3af0243425273eae654b9cd1b44f83fce823024f567109051358a8a0ff30939b1199e8528d693609917359a1766abac739",
             "file": "src/view/footer/copyright/copyright.view.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -864,7 +894,37 @@
             "hostDirectives": [],
             "inputsClass": [],
             "outputsClass": [],
-            "propertiesClass": [],
+            "propertiesClass": [
+                {
+                    "name": "fullname",
+                    "defaultValue": "this.store.selectSignal((state) => {\r\n    const { firstname, lastname } = state.personal;\r\n    return `&copy; 2026 ${firstname} ${lastname}.`;\r\n  })",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "unknown",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 12
+                },
+                {
+                    "name": "store",
+                    "defaultValue": "inject(Store)",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Store<StoreType>",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 30,
+                    "modifierKind": [
+                        124,
+                        148
+                    ],
+                    "inheritance": {
+                        "file": "StoreCore"
+                    }
+                }
+            ],
             "methodsClass": [],
             "deprecated": false,
             "deprecationMessage": "",
@@ -880,13 +940,15 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\r\n\r\nimport { TextComponent } from '../../../component/text/text.component';\r\n\r\n@Component({\r\n  selector: 'copyright-view',\r\n  templateUrl: './copyright.view.html',\r\n  styleUrl: './copyright.view.scss',\r\n  imports: [TextComponent],\r\n})\r\nexport class CopyrightView {}\r\n",
+            "sourceCode": "import { Component } from '@angular/core';\r\nimport { TextComponent } from '../../../component/text/text.component';\r\nimport { StoreCore } from '../../../core/store.core';\r\n\r\n@Component({\r\n  selector: 'copyright-view',\r\n  templateUrl: './copyright.view.html',\r\n  styleUrl: './copyright.view.scss',\r\n  imports: [TextComponent],\r\n})\r\nexport class CopyrightView extends StoreCore {\r\n  fullname = this.store.selectSignal((state) => {\r\n    const { firstname, lastname } = state.personal;\r\n    return `&copy; 2026 ${firstname} ${lastname}.`;\r\n  });\r\n}\r\n",
             "styleUrl": "./copyright.view.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
-            "extends": [],
-            "templateData": "<text-component></text-component>\r\n"
+            "extends": [
+                "StoreCore"
+            ],
+            "templateData": "<text-component [value]=\"fullname()\"></text-component>\r\n<text-component value=\"All Rights Reserved.\"></text-component>\r\n"
         },
         {
             "name": "EducationView",
@@ -1344,7 +1406,7 @@
         },
         {
             "name": "TextComponent",
-            "id": "component-TextComponent-df2d164062bb4703ce668b0aa2096be8826aae1d7d1da948fcb5f0218705daf6291676c1e6b6c1f98bb07f40cf04b52871a143ec71616bb93f15f786f4c7ce29",
+            "id": "component-TextComponent-94ea078557bfa81c53a98d5496344512a5cf1acb1807e524ee62c81ff3ecd41d1c2f582c867e1d2265d39062bc461012081cd2264c54661e6301b249c1a3aa13",
             "file": "src/component/text/text.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1361,6 +1423,18 @@
             "hostDirectives": [],
             "inputsClass": [
                 {
+                    "name": "type",
+                    "defaultValue": "'paragraph'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "TextType",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 11,
+                    "required": false
+                },
+                {
                     "name": "value",
                     "deprecated": false,
                     "deprecationMessage": "",
@@ -1368,7 +1442,7 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 9,
+                    "line": 13,
                     "required": true
                 }
             ],
@@ -1384,13 +1458,13 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, input } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'text-component',\r\n  templateUrl: './text.component.html',\r\n  styleUrl: './text.component.scss',\r\n})\r\nexport class TextComponent {\r\n  value = input.required<string>();\r\n}\r\n",
+            "sourceCode": "import { Component, input } from '@angular/core';\r\n\r\nimport { TextType } from './text.type';\r\n\r\n@Component({\r\n  selector: 'text-component',\r\n  templateUrl: './text.component.html',\r\n  styleUrl: './text.component.scss',\r\n})\r\nexport class TextComponent {\r\n  type = input<TextType>('paragraph');\r\n\r\n  value = input.required<string>();\r\n}\r\n",
             "styleUrl": "./text.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<p>text-component works!</p>\r\n"
+            "templateData": "@switch (type()) {\r\n  @case ('paragraph') {\r\n    <p class=\"text paragraph\">{{ value() }}</p>\r\n  }\r\n  @case ('header_1') {\r\n    <h1 class=\"text header header_1\">{{ value() }}</h1>\r\n  }\r\n  @case ('header_2') {\r\n    <h2 class=\"text header header_2\">{{ value() }}</h2>\r\n  }\r\n  @case ('header_3') {\r\n    <h3 class=\"text header header_3\">{{ value() }}</h3>\r\n  }\r\n}\r\n"
         },
         {
             "name": "View",
@@ -1465,16 +1539,6 @@
                 "defaultValue": "createReducer(aboutMeDataConst)"
             },
             {
-                "name": "appConfig",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/config/app.config.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "ApplicationConfig",
-                "defaultValue": "{\n  providers: [\n    provideBrowserGlobalErrorListeners(),\n    provideStore(\n      {\n        personal: personalReducer,\n        section: sectionReducer,\n        home: homeReducer,\n        aboutMe: aboutMeReducer,\n        technologyGroup: technologyGroupReducer,\n        technology: technologyReducer,\n        skill: skillReducer,\n        experience: experienceReducer,\n        resume: resumeReducer,\n        education: educationReducer,\n      },\n      {\n        runtimeChecks: {\n          strictStateImmutability: false,\n        },\n      },\n    ),\n    provideStoreDevtools({ maxAge: 25, logOnly: !isDevMode() }),\n  ],\n}"
-            },
-            {
                 "name": "companyDataConst",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -1483,6 +1547,16 @@
                 "deprecationMessage": "",
                 "type": "Record<CompanyDataKindEnum, CompanyDataModel>",
                 "defaultValue": "{\r\n  aprSystem: {\r\n    name: 'APR System',\r\n    url: 'https://www.apr.pl',\r\n  },\r\n  primaris: {\r\n    name: 'Primaris',\r\n    url: 'https://primaris.eu',\r\n  },\r\n}"
+            },
+            {
+                "name": "config",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/config/config.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "ApplicationConfig",
+                "defaultValue": "{\n  providers: [\n    provideBrowserGlobalErrorListeners(),\n    provideStore({\n      aboutMe: aboutMeReducer,\n      education: educationReducer,\n      experience: experienceReducer,\n      home: homeReducer,\n      personal: personalReducer,\n      resume: resumeReducer,\n      section: sectionReducer,\n      skill: skillReducer,\n      technologyGroup: technologyGroupReducer,\n      technology: technologyReducer,\n    }),\n    provideStoreDevtools({ maxAge: 25, logOnly: !isDevMode() }),\n  ],\n}"
             },
             {
                 "name": "educationDataConst",
@@ -1591,8 +1665,8 @@
                 "file": "src/data/section/section-data.const.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "SectionDataModel[]",
-                "defaultValue": "[\r\n  {\r\n    group: SectionGroupDataEnum.header,\r\n    id: 'navigation',\r\n    label: `${personalDataConst.lastname} ${personalDataConst.firstname}`,\r\n    route: {\r\n      routable: false,\r\n    },\r\n    component: undefined,\r\n    order: 0,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.header,\r\n    id: 'home',\r\n    label: 'Home',\r\n    route: {\r\n      routable: true,\r\n      href: '#home',\r\n    },\r\n    component: undefined,\r\n    order: 1,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.main,\r\n    id: 'about-me',\r\n    label: 'About me',\r\n    route: {\r\n      routable: true,\r\n      href: '#about-me',\r\n    },\r\n    component: undefined,\r\n    order: 0,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.main,\r\n    id: 'technologies',\r\n    label: 'Technologies',\r\n    route: {\r\n      routable: true,\r\n      href: '#technologies',\r\n    },\r\n    component: undefined,\r\n    order: 1,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.main,\r\n    id: 'skills',\r\n    label: 'Skills',\r\n    route: {\r\n      routable: true,\r\n      href: '#skills',\r\n    },\r\n    component: undefined,\r\n    order: 2,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.main,\r\n    id: 'experience',\r\n    label: 'Experience',\r\n    route: {\r\n      routable: true,\r\n      href: '#experience',\r\n    },\r\n    component: undefined,\r\n    order: 3,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.main,\r\n    id: 'resume',\r\n    label: 'Resume',\r\n    route: {\r\n      routable: true,\r\n      href: '#resume',\r\n    },\r\n    component: undefined,\r\n    order: 4,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.main,\r\n    id: 'projects',\r\n    label: 'Projects',\r\n    route: {\r\n      routable: true,\r\n      href: '#projects',\r\n    },\r\n    component: undefined,\r\n    order: 5,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.main,\r\n    id: 'education',\r\n    label: 'Education',\r\n    route: {\r\n      routable: true,\r\n      href: '#education',\r\n    },\r\n    component: undefined,\r\n    order: 6,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.footer,\r\n    id: 'contact',\r\n    label: 'Contact',\r\n    route: {\r\n      routable: true,\r\n      href: '#contact',\r\n    },\r\n    component: undefined,\r\n    order: 0,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.footer,\r\n    id: 'copyright',\r\n    label: 'Copyright',\r\n    route: {\r\n      routable: false,\r\n    },\r\n    component: undefined,\r\n    order: 1,\r\n  },\r\n]"
+                "type": "Record<SectionDataEnum, SectionDataModel>",
+                "defaultValue": "{\r\n  navigation: {\r\n    id: 'navigation',\r\n    header: {\r\n      show: true,\r\n      label: `${personalDataConst.lastname} ${personalDataConst.firstname}`,\r\n    },\r\n    route: {\r\n      routable: false,\r\n    },\r\n  },\r\n  home: {\r\n    id: 'home',\r\n    header: {\r\n      show: true,\r\n      label: 'Home',\r\n    },\r\n    route: {\r\n      routable: true,\r\n      href: '#home',\r\n    },\r\n  },\r\n  aboutMe: {\r\n    id: 'about-me',\r\n    header: {\r\n      show: true,\r\n      label: 'About me',\r\n    },\r\n    route: {\r\n      routable: true,\r\n      href: '#about-me',\r\n    },\r\n  },\r\n  technologies: {\r\n    id: 'technologies',\r\n    header: {\r\n      show: true,\r\n      label: 'Technologies',\r\n    },\r\n    route: {\r\n      routable: true,\r\n      href: '#technologies',\r\n    },\r\n  },\r\n  skills: {\r\n    id: 'skills',\r\n    header: {\r\n      show: true,\r\n      label: 'Skills',\r\n    },\r\n    route: {\r\n      routable: true,\r\n      href: '#skills',\r\n    },\r\n  },\r\n  experience: {\r\n    id: 'experience',\r\n    header: {\r\n      show: true,\r\n      label: 'Experience',\r\n    },\r\n    route: {\r\n      routable: true,\r\n      href: '#experience',\r\n    },\r\n  },\r\n  resume: {\r\n    id: 'resume',\r\n    header: {\r\n      show: true,\r\n      label: 'Resume',\r\n    },\r\n    route: {\r\n      routable: true,\r\n      href: '#resume',\r\n    },\r\n  },\r\n  projects: {\r\n    id: 'projects',\r\n    header: {\r\n      show: true,\r\n      label: 'Projects',\r\n    },\r\n    route: {\r\n      routable: true,\r\n      href: '#projects',\r\n    },\r\n  },\r\n  education: {\r\n    id: 'education',\r\n    header: {\r\n      show: true,\r\n      label: 'Education',\r\n    },\r\n    route: {\r\n      routable: true,\r\n      href: '#education',\r\n    },\r\n  },\r\n  contact: {\r\n    id: 'contact',\r\n    header: {\r\n      show: true,\r\n      label: 'Contact',\r\n    },\r\n    route: {\r\n      routable: true,\r\n      href: '#contact',\r\n    },\r\n  },\r\n  copyright: {\r\n    id: 'copyright',\r\n    header: {\r\n      show: false,\r\n    },\r\n    route: {\r\n      routable: false,\r\n    },\r\n  },\r\n}"
             },
             {
                 "name": "sectionReducer",
@@ -1668,6 +1742,28 @@
         "functions": [],
         "typealiases": [
             {
+                "name": "SectionHeaderType",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "SectionHeaderDataModel | SectionNotHeaderDataModel",
+                "file": "src/data/section/section-data.model.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 193
+            },
+            {
+                "name": "SectionRouteType",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "SectionRoutableDataModel | SectionNotRoutableDataModel",
+                "file": "src/data/section/section-data.model.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 193
+            },
+            {
                 "name": "StoreType",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
@@ -1677,6 +1773,17 @@
                 "deprecationMessage": "",
                 "description": "",
                 "kind": 188
+            },
+            {
+                "name": "TextType",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "\"paragraph\" | \"header_1\" | \"header_2\" | \"header_3\"",
+                "file": "src/component/text/text.type.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 193
             }
         ],
         "enumerations": [
@@ -1727,25 +1834,73 @@
                 "file": "src/data/resume/resume-data.enum.ts"
             },
             {
-                "name": "SectionGroupDataEnum",
+                "name": "SectionDataEnum",
                 "childs": [
                     {
-                        "name": "header",
+                        "name": "navigation",
                         "deprecated": false,
                         "deprecationMessage": "",
-                        "value": "header"
+                        "value": "navigation"
                     },
                     {
-                        "name": "main",
+                        "name": "home",
                         "deprecated": false,
                         "deprecationMessage": "",
-                        "value": "main"
+                        "value": "home"
                     },
                     {
-                        "name": "footer",
+                        "name": "aboutMe",
                         "deprecated": false,
                         "deprecationMessage": "",
-                        "value": "footer"
+                        "value": "aboutMe"
+                    },
+                    {
+                        "name": "technologies",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "value": "technologies"
+                    },
+                    {
+                        "name": "skills",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "value": "skills"
+                    },
+                    {
+                        "name": "experience",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "value": "experience"
+                    },
+                    {
+                        "name": "resume",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "value": "resume"
+                    },
+                    {
+                        "name": "projects",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "value": "projects"
+                    },
+                    {
+                        "name": "education",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "value": "education"
+                    },
+                    {
+                        "name": "contact",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "value": "contact"
+                    },
+                    {
+                        "name": "copyright",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "value": "copyright"
                     }
                 ],
                 "ctype": "miscellaneous",
@@ -2108,18 +2263,6 @@
                     "defaultValue": "createReducer(aboutMeDataConst)"
                 }
             ],
-            "src/config/app.config.ts": [
-                {
-                    "name": "appConfig",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/config/app.config.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "ApplicationConfig",
-                    "defaultValue": "{\n  providers: [\n    provideBrowserGlobalErrorListeners(),\n    provideStore(\n      {\n        personal: personalReducer,\n        section: sectionReducer,\n        home: homeReducer,\n        aboutMe: aboutMeReducer,\n        technologyGroup: technologyGroupReducer,\n        technology: technologyReducer,\n        skill: skillReducer,\n        experience: experienceReducer,\n        resume: resumeReducer,\n        education: educationReducer,\n      },\n      {\n        runtimeChecks: {\n          strictStateImmutability: false,\n        },\n      },\n    ),\n    provideStoreDevtools({ maxAge: 25, logOnly: !isDevMode() }),\n  ],\n}"
-                }
-            ],
             "src/data/company/company-data.const.ts": [
                 {
                     "name": "companyDataConst",
@@ -2130,6 +2273,18 @@
                     "deprecationMessage": "",
                     "type": "Record<CompanyDataKindEnum, CompanyDataModel>",
                     "defaultValue": "{\r\n  aprSystem: {\r\n    name: 'APR System',\r\n    url: 'https://www.apr.pl',\r\n  },\r\n  primaris: {\r\n    name: 'Primaris',\r\n    url: 'https://primaris.eu',\r\n  },\r\n}"
+                }
+            ],
+            "src/config/config.ts": [
+                {
+                    "name": "config",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/config/config.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "ApplicationConfig",
+                    "defaultValue": "{\n  providers: [\n    provideBrowserGlobalErrorListeners(),\n    provideStore({\n      aboutMe: aboutMeReducer,\n      education: educationReducer,\n      experience: experienceReducer,\n      home: homeReducer,\n      personal: personalReducer,\n      resume: resumeReducer,\n      section: sectionReducer,\n      skill: skillReducer,\n      technologyGroup: technologyGroupReducer,\n      technology: technologyReducer,\n    }),\n    provideStoreDevtools({ maxAge: 25, logOnly: !isDevMode() }),\n  ],\n}"
                 }
             ],
             "src/data/education/education-data.const.ts": [
@@ -2260,8 +2415,8 @@
                     "file": "src/data/section/section-data.const.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "SectionDataModel[]",
-                    "defaultValue": "[\r\n  {\r\n    group: SectionGroupDataEnum.header,\r\n    id: 'navigation',\r\n    label: `${personalDataConst.lastname} ${personalDataConst.firstname}`,\r\n    route: {\r\n      routable: false,\r\n    },\r\n    component: undefined,\r\n    order: 0,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.header,\r\n    id: 'home',\r\n    label: 'Home',\r\n    route: {\r\n      routable: true,\r\n      href: '#home',\r\n    },\r\n    component: undefined,\r\n    order: 1,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.main,\r\n    id: 'about-me',\r\n    label: 'About me',\r\n    route: {\r\n      routable: true,\r\n      href: '#about-me',\r\n    },\r\n    component: undefined,\r\n    order: 0,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.main,\r\n    id: 'technologies',\r\n    label: 'Technologies',\r\n    route: {\r\n      routable: true,\r\n      href: '#technologies',\r\n    },\r\n    component: undefined,\r\n    order: 1,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.main,\r\n    id: 'skills',\r\n    label: 'Skills',\r\n    route: {\r\n      routable: true,\r\n      href: '#skills',\r\n    },\r\n    component: undefined,\r\n    order: 2,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.main,\r\n    id: 'experience',\r\n    label: 'Experience',\r\n    route: {\r\n      routable: true,\r\n      href: '#experience',\r\n    },\r\n    component: undefined,\r\n    order: 3,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.main,\r\n    id: 'resume',\r\n    label: 'Resume',\r\n    route: {\r\n      routable: true,\r\n      href: '#resume',\r\n    },\r\n    component: undefined,\r\n    order: 4,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.main,\r\n    id: 'projects',\r\n    label: 'Projects',\r\n    route: {\r\n      routable: true,\r\n      href: '#projects',\r\n    },\r\n    component: undefined,\r\n    order: 5,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.main,\r\n    id: 'education',\r\n    label: 'Education',\r\n    route: {\r\n      routable: true,\r\n      href: '#education',\r\n    },\r\n    component: undefined,\r\n    order: 6,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.footer,\r\n    id: 'contact',\r\n    label: 'Contact',\r\n    route: {\r\n      routable: true,\r\n      href: '#contact',\r\n    },\r\n    component: undefined,\r\n    order: 0,\r\n  },\r\n  {\r\n    group: SectionGroupDataEnum.footer,\r\n    id: 'copyright',\r\n    label: 'Copyright',\r\n    route: {\r\n      routable: false,\r\n    },\r\n    component: undefined,\r\n    order: 1,\r\n  },\r\n]"
+                    "type": "Record<SectionDataEnum, SectionDataModel>",
+                    "defaultValue": "{\r\n  navigation: {\r\n    id: 'navigation',\r\n    header: {\r\n      show: true,\r\n      label: `${personalDataConst.lastname} ${personalDataConst.firstname}`,\r\n    },\r\n    route: {\r\n      routable: false,\r\n    },\r\n  },\r\n  home: {\r\n    id: 'home',\r\n    header: {\r\n      show: true,\r\n      label: 'Home',\r\n    },\r\n    route: {\r\n      routable: true,\r\n      href: '#home',\r\n    },\r\n  },\r\n  aboutMe: {\r\n    id: 'about-me',\r\n    header: {\r\n      show: true,\r\n      label: 'About me',\r\n    },\r\n    route: {\r\n      routable: true,\r\n      href: '#about-me',\r\n    },\r\n  },\r\n  technologies: {\r\n    id: 'technologies',\r\n    header: {\r\n      show: true,\r\n      label: 'Technologies',\r\n    },\r\n    route: {\r\n      routable: true,\r\n      href: '#technologies',\r\n    },\r\n  },\r\n  skills: {\r\n    id: 'skills',\r\n    header: {\r\n      show: true,\r\n      label: 'Skills',\r\n    },\r\n    route: {\r\n      routable: true,\r\n      href: '#skills',\r\n    },\r\n  },\r\n  experience: {\r\n    id: 'experience',\r\n    header: {\r\n      show: true,\r\n      label: 'Experience',\r\n    },\r\n    route: {\r\n      routable: true,\r\n      href: '#experience',\r\n    },\r\n  },\r\n  resume: {\r\n    id: 'resume',\r\n    header: {\r\n      show: true,\r\n      label: 'Resume',\r\n    },\r\n    route: {\r\n      routable: true,\r\n      href: '#resume',\r\n    },\r\n  },\r\n  projects: {\r\n    id: 'projects',\r\n    header: {\r\n      show: true,\r\n      label: 'Projects',\r\n    },\r\n    route: {\r\n      routable: true,\r\n      href: '#projects',\r\n    },\r\n  },\r\n  education: {\r\n    id: 'education',\r\n    header: {\r\n      show: true,\r\n      label: 'Education',\r\n    },\r\n    route: {\r\n      routable: true,\r\n      href: '#education',\r\n    },\r\n  },\r\n  contact: {\r\n    id: 'contact',\r\n    header: {\r\n      show: true,\r\n      label: 'Contact',\r\n    },\r\n    route: {\r\n      routable: true,\r\n      href: '#contact',\r\n    },\r\n  },\r\n  copyright: {\r\n    id: 'copyright',\r\n    header: {\r\n      show: false,\r\n    },\r\n    route: {\r\n      routable: false,\r\n    },\r\n  },\r\n}"
                 }
             ],
             "src/state/section/section.reducer.ts": [
@@ -2399,25 +2554,73 @@
             ],
             "src/data/section/section-data.enum.ts": [
                 {
-                    "name": "SectionGroupDataEnum",
+                    "name": "SectionDataEnum",
                     "childs": [
                         {
-                            "name": "header",
+                            "name": "navigation",
                             "deprecated": false,
                             "deprecationMessage": "",
-                            "value": "header"
+                            "value": "navigation"
                         },
                         {
-                            "name": "main",
+                            "name": "home",
                             "deprecated": false,
                             "deprecationMessage": "",
-                            "value": "main"
+                            "value": "home"
                         },
                         {
-                            "name": "footer",
+                            "name": "aboutMe",
                             "deprecated": false,
                             "deprecationMessage": "",
-                            "value": "footer"
+                            "value": "aboutMe"
+                        },
+                        {
+                            "name": "technologies",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "value": "technologies"
+                        },
+                        {
+                            "name": "skills",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "value": "skills"
+                        },
+                        {
+                            "name": "experience",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "value": "experience"
+                        },
+                        {
+                            "name": "resume",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "value": "resume"
+                        },
+                        {
+                            "name": "projects",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "value": "projects"
+                        },
+                        {
+                            "name": "education",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "value": "education"
+                        },
+                        {
+                            "name": "contact",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "value": "contact"
+                        },
+                        {
+                            "name": "copyright",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "value": "copyright"
                         }
                     ],
                     "ctype": "miscellaneous",
@@ -2761,6 +2964,30 @@
             ]
         },
         "groupedTypeAliases": {
+            "src/data/section/section-data.model.ts": [
+                {
+                    "name": "SectionHeaderType",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "SectionHeaderDataModel | SectionNotHeaderDataModel",
+                    "file": "src/data/section/section-data.model.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 193
+                },
+                {
+                    "name": "SectionRouteType",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "SectionRoutableDataModel | SectionNotRoutableDataModel",
+                    "file": "src/data/section/section-data.model.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 193
+                }
+            ],
             "src/core/store.core.ts": [
                 {
                     "name": "StoreType",
@@ -2772,6 +2999,19 @@
                     "deprecationMessage": "",
                     "description": "",
                     "kind": 188
+                }
+            ],
+            "src/component/text/text.type.ts": [
+                {
+                    "name": "TextType",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "\"paragraph\" | \"header_1\" | \"header_2\" | \"header_3\"",
+                    "file": "src/component/text/text.type.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 193
                 }
             ]
         }
@@ -2791,15 +3031,25 @@
                 "linktype": "component",
                 "name": "TextComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/2",
+                "coverageCount": "0/3",
                 "status": "low"
             },
             {
-                "filePath": "src/config/app.config.ts",
+                "filePath": "src/component/text/text.type.ts",
+                "type": "type alias",
+                "linktype": "miscellaneous",
+                "linksubtype": "typealias",
+                "name": "TextType",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/config/config.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "appConfig",
+                "name": "config",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -2981,7 +3231,25 @@
                 "linktype": "interface",
                 "name": "SectionDataModel",
                 "coveragePercent": 0,
-                "coverageCount": "0/7",
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/data/section/section-data.model.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "SectionHeaderDataModel",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/data/section/section-data.model.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "SectionNotHeaderDataModel",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
                 "status": "low"
             },
             {
@@ -3000,6 +3268,26 @@
                 "name": "SectionRoutableDataModel",
                 "coveragePercent": 0,
                 "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/data/section/section-data.model.ts",
+                "type": "type alias",
+                "linktype": "miscellaneous",
+                "linksubtype": "typealias",
+                "name": "SectionHeaderType",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/data/section/section-data.model.ts",
+                "type": "type alias",
+                "linktype": "miscellaneous",
+                "linksubtype": "typealias",
+                "name": "SectionRouteType",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
                 "status": "low"
             },
             {
@@ -3192,7 +3480,7 @@
                 "linktype": "component",
                 "name": "CopyrightView",
                 "coveragePercent": 0,
-                "coverageCount": "0/1",
+                "coverageCount": "0/3",
                 "status": "low"
             },
             {
