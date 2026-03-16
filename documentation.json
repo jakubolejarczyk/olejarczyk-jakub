@@ -877,7 +877,7 @@
         },
         {
             "name": "CopyrightView",
-            "id": "component-CopyrightView-6fc9f32b6a5953afd8f652fad3927b3af0243425273eae654b9cd1b44f83fce823024f567109051358a8a0ff30939b1199e8528d693609917359a1766abac739",
+            "id": "component-CopyrightView-09d16057c83bd6f5e76ce99c52dd3f8c5328c73a712022604864c101b6825e321a8c2ad5c3f136b0efe80e27c32aec1f3119736d7072e89a4888992ef5806449",
             "file": "src/view/footer/copyright/copyright.view.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -897,14 +897,25 @@
             "propertiesClass": [
                 {
                     "name": "fullname",
-                    "defaultValue": "this.store.selectSignal((state) => {\r\n    const { firstname, lastname } = state.personal;\r\n    return `&copy; 2026 ${firstname} ${lastname}.`;\r\n  })",
+                    "defaultValue": "this.store.selectSignal((state) => {\r\n    const { firstname, lastname } = state.personal;\r\n    return `${firstname} ${lastname}`;\r\n  })",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "unknown",
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 12
+                    "line": 16
+                },
+                {
+                    "name": "year",
+                    "defaultValue": "DateUtils.getYear()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "unknown",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 14
                 },
                 {
                     "name": "store",
@@ -935,12 +946,16 @@
                 {
                     "name": "TextComponent",
                     "type": "component"
+                },
+                {
+                    "name": "FlexComponent",
+                    "type": "component"
                 }
             ],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\r\nimport { TextComponent } from '../../../component/text/text.component';\r\nimport { StoreCore } from '../../../core/store.core';\r\n\r\n@Component({\r\n  selector: 'copyright-view',\r\n  templateUrl: './copyright.view.html',\r\n  styleUrl: './copyright.view.scss',\r\n  imports: [TextComponent],\r\n})\r\nexport class CopyrightView extends StoreCore {\r\n  fullname = this.store.selectSignal((state) => {\r\n    const { firstname, lastname } = state.personal;\r\n    return `&copy; 2026 ${firstname} ${lastname}.`;\r\n  });\r\n}\r\n",
+            "sourceCode": "import { Component } from '@angular/core';\r\nimport { TextComponent } from '../../../component/text/text.component';\r\nimport { StoreCore } from '../../../core/store.core';\r\nimport { DateUtils } from '../../../utils/date.utils';\r\nimport { FlexComponent } from '../../../component/flex/flex.component';\r\n\r\n@Component({\r\n  selector: 'copyright-view',\r\n  templateUrl: './copyright.view.html',\r\n  styleUrl: './copyright.view.scss',\r\n  imports: [TextComponent, FlexComponent],\r\n})\r\nexport class CopyrightView extends StoreCore {\r\n  year = DateUtils.getYear();\r\n\r\n  fullname = this.store.selectSignal((state) => {\r\n    const { firstname, lastname } = state.personal;\r\n    return `${firstname} ${lastname}`;\r\n  });\r\n}\r\n",
             "styleUrl": "./copyright.view.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
@@ -948,7 +963,7 @@
             "extends": [
                 "StoreCore"
             ],
-            "templateData": "<text-component [value]=\"fullname()\"></text-component>\r\n<text-component value=\"All Rights Reserved.\"></text-component>\r\n"
+            "templateData": "<flex-component>\r\n  <text-component [value]=\"'&copy; ' + year + ' ' + fullname() + '.'\"></text-component>\r\n  <text-component value=\"All Rights Reserved.\"></text-component>\r\n</flex-component>\r\n"
         },
         {
             "name": "EducationView",
@@ -1025,6 +1040,44 @@
             "stylesData": "",
             "extends": [],
             "templateData": "<p>experience-view works!</p>\r\n"
+        },
+        {
+            "name": "FlexComponent",
+            "id": "component-FlexComponent-f4a39f2faacf05a90d1120b28d6d3002c1109d89aa6f0ea746343701e7462c7d47b11bdf817a062d7e66188eb1f028bf46b10b34078c8ebe063a850475c1028f",
+            "file": "src/component/flex/flex.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "flex-component",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./flex.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'flex-component',\r\n  templateUrl: './flex.component.html',\r\n  styleUrl: './flex.component.scss',\r\n})\r\nexport class FlexComponent {}\r\n",
+            "styleUrl": "./flex.component.scss",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<div class=\"flex\">\r\n  <ng-content></ng-content>\r\n</div>\r\n"
         },
         {
             "name": "FooterView",
@@ -3026,6 +3079,15 @@
         "status": "low",
         "files": [
             {
+                "filePath": "src/component/flex/flex.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "FlexComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
                 "filePath": "src/component/text/text.component.ts",
                 "type": "component",
                 "linktype": "component",
@@ -3480,7 +3542,7 @@
                 "linktype": "component",
                 "name": "CopyrightView",
                 "coveragePercent": 0,
-                "coverageCount": "0/3",
+                "coverageCount": "0/4",
                 "status": "low"
             },
             {
