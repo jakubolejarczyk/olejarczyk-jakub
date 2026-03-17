@@ -1,0 +1,9 @@
+@use '../../abstracts/variables';
+@use '../../abstracts/mixins';
+
+@mixin copyright {
+  @include mixins.flex(640px, 0.25rem);
+  @include mixins.section();
+  background-color: variables.$color_primary;
+  color: lightcyan;
+}

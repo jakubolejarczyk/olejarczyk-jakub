@@ -1,0 +1,5 @@
+@use '../../../style/view/footer/contact';
+
+.contact {
+  @include contact.contact();
+}
