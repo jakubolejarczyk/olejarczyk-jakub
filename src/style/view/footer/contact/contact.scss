@@ -1,44 +1,40 @@
+@use '../../../abstracts/mixins';
+
+:host {
+  display: contents;
+}
+
 .contact {
-  margin: 1rem;
-  padding: 1rem;
-  border: 1px solid red;
+  @include mixins.column_layout(1rem);
+
+  @media screen and (min-width: 550px) {
+    flex-direction: row;
+  }
 
   &__line {
-    margin: 1rem 0;
   }
 
   &__column {
-    margin: 1rem;
+    @include mixins.column_layout(0.5rem);
+    border: 1px solid white;
     padding: 1rem;
-    border: 1px solid red;
+  }
+
+  &__fullname {
+    @media screen and (min-width: 550px) {
+      flex: 100%;
+    }
+
+    @media screen and (min-width: 768px) {
+      flex: 2;
+    }
+  }
+
+  &__contact {
+    flex: 1;
+  }
+
+  &__social-media {
+    flex: 1;
   }
 }
-
-// .contact {
-//   display: flex;
-//   flex-direction: column;
-//   @media screen and (min-width: 525px) {
-//     flex-direction: row;
-//     flex-wrap: wrap;
-//   }
-//   &__column {
-//     padding: 1rem;
-//     border: 1px solid lightgray;
-//     @media screen and (min-width: 525px) {
-//       &--resume {
-//         width: 100%;
-//       }
-//       &--social_media {
-//         flex: 1;
-//       }
-//       &--contact {
-//         flex: 1;
-//       }
-//     }
-//     @media screen and (min-width: 1024px) {
-//       &--resume {
-//         flex: 2;
-//       }
-//     }
-//   }
-// }

@@ -1,0 +1,16 @@
+@mixin section_shape {
+  padding: 3rem 1.5rem;
+}
+
+@mixin column_layout($gap) {
+  display: flex;
+  flex-direction: column;
+  gap: $gap;
+  flex-wrap: wrap;
+}
+
+@mixin row_layout($gap) {
+  display: flex;
+  gap: $gap;
+  flex-wrap: wrap;
+}

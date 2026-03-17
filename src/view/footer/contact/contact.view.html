@@ -1,8 +1,8 @@
 <section class="contact">
-  <div class="contact__column">
+  <div class="contact__column contact__fullname">
     <text-component type="h2" [value]="fullname()"></text-component>
   </div>
-  <div class="contact__column">
+  <div class="contact__column contact__social-media">
     <text-component type="h2" value="Social media"></text-component>
     <hr class="contact__line" />
     @for (socialMedia of socialMedias(); track socialMedia.label) {
@@ -14,7 +14,7 @@
       ></link-component>
     }
   </div>
-  <div class="contact__column">
+  <div class="contact__column contact__contact">
     <text-component type="h2" value="Contact"></text-component>
     <hr class="contact__line" />
     <link-component
