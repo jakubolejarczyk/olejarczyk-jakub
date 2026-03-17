@@ -2,4 +2,35 @@
 
 .contact {
   @include contact.contact();
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+    @media screen and (min-width: 1200px) {
+      justify-content: space-around;
+    }
+
+    @media screen and (min-width: 800px) {
+      flex-direction: row;
+    }
+  }
+
+  &__section {
+    @media screen and (min-width: 800px) {
+      width: calc(50% - 10px);
+    }
+
+    @media screen and (min-width: 1200px) {
+      flex: 1;
+      width: 100%;
+    }
+  }
 }

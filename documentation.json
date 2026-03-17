@@ -839,7 +839,7 @@
         },
         {
             "name": "ContactView",
-            "id": "component-ContactView-7c7551dff0c9226c841c6cd92ad86e64f2b71e6943bd0f0dae600c94a72d55b7c9e43a6af3a62128b29911bf37b08b388f75cd9447d16443693cbb549b3319ab",
+            "id": "component-ContactView-765de0d0a7b6759242dcbf954712843ca33567bd93342c3e66cdb040baa10fcfbaca6345105a7e345da101a3e71eb66e1f07371bf14a8fba5bb192bed100d536",
             "file": "src/view/footer/contact/contact.view.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -863,17 +863,22 @@
             "hostBindings": [],
             "hostListeners": [],
             "standalone": false,
-            "imports": [],
+            "imports": [
+                {
+                    "name": "TextComponent",
+                    "type": "component"
+                }
+            ],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'contact-view',\r\n  templateUrl: './contact.view.html',\r\n  styleUrl: './contact.view.scss',\r\n})\r\nexport class ContactView {}\r\n",
+            "sourceCode": "import { Component } from '@angular/core';\r\nimport { TextComponent } from '../../../component/text/text.component';\r\n\r\n@Component({\r\n  selector: 'contact-view',\r\n  templateUrl: './contact.view.html',\r\n  styleUrl: './contact.view.scss',\r\n  imports: [TextComponent],\r\n})\r\nexport class ContactView {}\r\n",
             "styleUrl": "./contact.view.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<p>contact-view works!</p>\r\n"
+            "templateData": "<section class=\"contact\">\r\n  <text-component\r\n    type=\"paragraph\"\r\n    value=\"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, dolores voluptatum sapiente beatae, sint illum labore doloribus tempora cum quia vero officia architecto minima neque quis voluptatem est provident! Temporibus laudantium quis eos, optio adipisci maiores tempore facilis iure reiciendis est assumenda commodi accusamus eaque sit nisi labore ipsam odio possimus facere praesentium culpa! Voluptatibus perspiciatis, quidem obcaecati ex dolore beatae provident ut dignissimos neque non officia sunt hic est aperiam, sit facilis eveniet. Ab suscipit, consectetur quam odio expedita iste natus harum perspiciatis aspernatur eius nobis veritatis molestiae error aliquam ea earum, est velit voluptatibus voluptates aut. Ex, et! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, dolores voluptatum sapiente beatae, sint illum labore doloribus tempora cum quia vero officia architecto minima neque quis voluptatem est provident! Temporibus laudantium quis eos, optio adipisci maiores tempore facilis iure reiciendis est assumenda commodi accusamus eaque sit nisi labore ipsam odio possimus facere praesentium culpa! Voluptatibus perspiciatis, quidem obcaecati ex dolore beatae provident ut dignissimos neque non officia sunt hic est aperiam, sit facilis eveniet. Ab suscipit, consectetur quam odio expedita iste natus harum perspiciatis aspernatur eius nobis veritatis molestiae error aliquam ea earum, est velit voluptatibus voluptates aut. Ex, et! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, dolores voluptatum sapiente beatae, sint illum labore doloribus tempora cum quia vero officia architecto minima neque quis voluptatem est provident! Temporibus laudantium quis eos, optio adipisci maiores tempore facilis iure reiciendis est assumenda commodi accusamus eaque sit nisi labore ipsam odio possimus facere praesentium culpa! Voluptatibus perspiciatis, quidem obcaecati ex dolore beatae provident ut dignissimos neque non officia sunt hic est aperiam, sit facilis eveniet. Ab suscipit, consectetur quam odio expedita iste natus harum perspiciatis aspernatur eius nobis veritatis molestiae error aliquam ea earum, est velit voluptatibus voluptates aut. Ex, et! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, dolores voluptatum sapiente beatae, sint illum labore doloribus tempora cum quia vero officia architecto minima neque quis voluptatem est provident! Temporibus laudantium quis eos, optio adipisci maiores tempore facilis iure reiciendis est assumenda commodi accusamus eaque sit nisi labore ipsam odio possimus facere praesentium culpa! Voluptatibus perspiciatis, quidem obcaecati ex dolore beatae provident ut dignissimos neque non officia sunt hic est aperiam, sit facilis eveniet. Ab suscipit, consectetur quam odio expedita iste natus harum perspiciatis aspernatur eius nobis veritatis molestiae error aliquam ea earum, est velit voluptatibus voluptates aut. Ex, et!\"\r\n  ></text-component>\r\n</section>\r\n"
         },
         {
             "name": "CopyrightView",
