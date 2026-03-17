@@ -11,17 +11,14 @@ export const personalDataConst: PersonalDataModel = {
     {
       label: 'LinkedIn',
       url: 'https://www.linkedin.com/in/jakub-olejarczyk',
-      order: 0,
     },
     {
       label: 'GitHub',
       url: 'https://github.com/jakubolejarczyk',
-      order: 1,
     },
     {
       label: 'LeetCode',
       url: 'https://leetcode.com/u/JakubOlejarczyk',
-      order: 2,
     },
   ],
 };

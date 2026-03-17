@@ -3,38 +3,32 @@
     <text-component type="h2" value="Column 1"></text-component>
   </div>
   <div class="contact__column">
-    <text-component type="h2" value="Column 2"></text-component>
-  </div>
-  <div class="contact__column">
-    <text-component type="h2" value="Column 3"></text-component>
-  </div>
-</section>
-
-<!-- <section class="contact">
-  <div class="contact__column contact__column--resume">
-    <text-component type="header_2" [value]="fullname()"></text-component>
-    <text-component type="paragraph" value="Discover the value I bring"></text-component>
-    <link-component
-      label="Resume"
-      href="https://pdfobject.com/pdf/sample.pdf"
-      type="file"
-      [newTab]="true"
-    ></link-component>
-  </div>
-  <div class="contact__column contact__column--social_media">
-    <text-component type="header_3" value="Social media"></text-component>
+    <text-component type="h2" value="Social media"></text-component>
+    <hr class="contact__line" />
     @for (socialMedia of socialMedias(); track socialMedia.label) {
       <link-component
         [label]="socialMedia.label"
-        [href]="socialMedia.url"
-        [newTab]="true"
+        [url]="socialMedia.url"
+        type="page"
+        [externalLink]="true"
       ></link-component>
     }
   </div>
-  <div class="contact__column contact__column--contact">
-    <text-component type="header_3" value="Contact"></text-component>
-    <link-component [label]="email()" [href]="email()" type="email"></link-component>
-    <link-component [label]="phone()" [href]="phone()" type="phone"></link-component>
-    <text-component type="paragraph" [value]="location()"></text-component>
+  <div class="contact__column">
+    <text-component type="h2" value="Contact"></text-component>
+    <hr class="contact__line" />
+    <link-component
+      [label]="email()"
+      [url]="email()"
+      type="email"
+      [externalLink]="true"
+    ></link-component>
+    <link-component
+      [label]="phone()"
+      [url]="phone()"
+      type="phone"
+      [externalLink]="true"
+    ></link-component>
+    <text-component type="p" [value]="location()"></text-component>
   </div>
-</section> -->
+</section>

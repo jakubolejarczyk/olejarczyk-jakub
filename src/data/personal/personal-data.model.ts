@@ -1,7 +1,6 @@
 interface PersonalSocialMediaDataModel {
   label: string;
   url: string;
-  order: number;
 }
 
 export interface PersonalDataModel {

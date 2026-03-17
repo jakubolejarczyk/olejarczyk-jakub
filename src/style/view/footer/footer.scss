@@ -1,6 +1,12 @@
 .footer {
+  margin: 1rem;
+  padding: 1rem;
+  border: 1px solid red;
+
   &__content {
-    display: contents;
+    margin: 1rem;
+    padding: 1rem;
+    border: 1px solid red;
   }
 }
 

@@ -1,8 +1,16 @@
 .contact {
-  display: contents;
+  margin: 1rem;
+  padding: 1rem;
+  border: 1px solid red;
+
+  &__line {
+    margin: 1rem 0;
+  }
 
   &__column {
-    display: contents;
+    margin: 1rem;
+    padding: 1rem;
+    border: 1px solid red;
   }
 }
 
