@@ -1,40 +1,41 @@
 import { Component, input } from '@angular/core';
 import { TextComponent } from '../text/text.component';
-import { CommonModule } from '@angular/common';
 import { LinkType } from './link.type';
 
 @Component({
   selector: 'link-component',
   templateUrl: './link.component.html',
   styleUrl: './link.component.scss',
-  imports: [TextComponent, CommonModule],
+  imports: [TextComponent],
 })
 export class LinkComponent {
-  href = input.required<string>();
-
   label = input.required<string>();
 
-  newTab = input(false);
+  url = input.required<string>();
 
-  type = input<LinkType>('link');
+  type = input<LinkType>('page');
 
-  getHref() {
-    switch (this.type()) {
-      case 'link':
-      case 'file':
-        return this.href();
-      case 'email':
-        return `mailto:${this.href()}`;
-      case 'phone':
-        return `tel:${this.href()}`;
+  externalLink = input(false);
+
+  onClick() {
+    const path = this.url();
+    if (path.startsWith('#')) {
+      const element = document.getElementById(this.url());
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
     }
   }
 
-  getTarget() {
-    return this.newTab() ? '_blank' : '_self';
-  }
-
-  getDownload() {
-    return this.type() === 'file';
+  getUrl() {
+    switch (this.type()) {
+      case 'page':
+      case 'file':
+        return this.url();
+      case 'email':
+        return `mailto:${this.url()}`;
+      case 'phone':
+        return `tel:${this.url()}`;
+    }
   }
 }

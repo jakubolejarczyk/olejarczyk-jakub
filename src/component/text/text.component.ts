@@ -1,5 +1,4 @@
 import { Component, input } from '@angular/core';
-
 import { TextType } from './text.type';
 
 @Component({
@@ -8,7 +7,7 @@ import { TextType } from './text.type';
   styleUrl: './text.component.scss',
 })
 export class TextComponent {
-  type = input<TextType>('paragraph');
+  type = input.required<TextType>();
 
   value = input.required<string>();
 }

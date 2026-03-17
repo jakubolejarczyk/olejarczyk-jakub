@@ -1,3 +1,9 @@
-<a class="link" [href]="getHref()" [target]="getTarget()" [download]="getDownload()">
-  <text-component type="paragraph" [value]="label()"></text-component>
-</a>
+@if (externalLink()) {
+  <a class="link" [href]="getUrl()" target="_blank">
+    <text-component type="p" [value]="label()"></text-component>
+  </a>
+} @else {
+  <a class="link" (click)="onClick()">
+    <text-component type="p" [value]="label()"></text-component>
+  </a>
+}

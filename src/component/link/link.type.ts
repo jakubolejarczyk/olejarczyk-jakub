@@ -1,1 +1,1 @@
-export type LinkType = 'link' | 'file' | 'phone' | 'email';
+export type LinkType = 'page' | 'email' | 'phone' | 'file';
