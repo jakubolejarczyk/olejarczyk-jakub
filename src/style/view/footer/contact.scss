@@ -1,8 +1,0 @@
-@use '../../abstracts/variables';
-@use '../../abstracts/mixins';
-
-@mixin contact {
-  @include mixins.section();
-  background-color: variables.$color_primary;
-  color: lightcyan;
-}

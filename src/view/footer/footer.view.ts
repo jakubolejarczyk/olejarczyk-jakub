@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-
 import { CopyrightView } from './copyright/copyright.view';
 import { ContactView } from './contact/contact.view';
 

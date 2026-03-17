@@ -1,0 +1,12 @@
+// @use '../../abstracts/variables';
+// @use '../../abstracts/mixins';
+
+.copyright {
+  margin: 1rem;
+  border: 2px solid orange;
+  padding: 1rem;
+  // @include mixins.flex(640px, 0.25rem);
+  // @include mixins.section();
+  // background-color: variables.$color_primary;
+  // color: lightcyan;
+}

@@ -1,5 +1,1 @@
-@use '../../../style/view/footer/copyright';
-
-.copyright {
-  @include copyright.copyright();
-}
+@forward '../../../style/view/footer/copyright/copyright';

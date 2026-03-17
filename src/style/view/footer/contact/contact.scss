@@ -1,0 +1,16 @@
+// @use '../../abstracts/variables';
+// @use '../../abstracts/mixins';
+
+.contact {
+  margin: 1rem;
+  border: 2px solid purple;
+
+  &__column {
+    margin: 1rem;
+    padding: 1rem;
+    border: 1px solid lightgray;
+  }
+  // @include mixins.section();
+  // background-color: variables.$color_primary;
+  // color: lightcyan;
+}

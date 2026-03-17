@@ -1,32 +1,28 @@
 <section class="contact">
-  <div class="contact__content">
-    <div class="contact__section">
-      <text-component type="paragraph" value="About me"></text-component>
-      <text-component
-        type="paragraph"
-        value="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsam, voluptas?"
-      ></text-component>
-    </div>
-    <div class="contact__section">
-      <text-component type="paragraph" value="Projects"></text-component>
-      <text-component
-        type="paragraph"
-        value="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsam, voluptas?"
-      ></text-component>
-    </div>
-    <div class="contact__section">
-      <text-component type="paragraph" value="Social media"></text-component>
-      <text-component
-        type="paragraph"
-        value="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsam, voluptas?"
-      ></text-component>
-    </div>
-    <div class="contact__section">
-      <text-component type="paragraph" value="Contact"></text-component>
-      <text-component
-        type="paragraph"
-        value="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsam, voluptas?"
-      ></text-component>
-    </div>
+  <div class="contact__column">
+    <text-component type="header_3" [value]="fullname()"></text-component>
+    <text-component type="header_2" value="Discover the value I bring"></text-component>
+    <link-component
+      label="Resume"
+      href="https://pdfobject.com/pdf/sample.pdf"
+      type="file"
+      [newTab]="true"
+    ></link-component>
+  </div>
+  <div class="contact__column">
+    <text-component type="header_3" value="Social media"></text-component>
+    @for (socialMedia of socialMedias(); track socialMedia.label) {
+      <link-component
+        [label]="socialMedia.label"
+        [href]="socialMedia.url"
+        [newTab]="true"
+      ></link-component>
+    }
+  </div>
+  <div class="contact__column">
+    <text-component type="header_3" value="Contact"></text-component>
+    <link-component [label]="email()" [href]="email()" type="email"></link-component>
+    <link-component [label]="phone()" [href]="phone()" type="phone"></link-component>
+    <text-component type="paragraph" [value]="location()"></text-component>
   </div>
 </section>
