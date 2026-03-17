@@ -1,34 +1,32 @@
 .contact {
-  display: flex;
-  flex-direction: column;
-
-  @media screen and (min-width: 525px) {
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
-
-  &__column {
-    padding: 1rem;
-    border: 1px solid lightgray;
-
-    @media screen and (min-width: 525px) {
-      &--resume {
-        width: 100%;
-      }
-
-      &--social_media {
-        flex: 1;
-      }
-
-      &--contact {
-        flex: 1;
-      }
-    }
-
-    @media screen and (min-width: 1024px) {
-      &--resume {
-        flex: 2;
-      }
-    }
-  }
+  display: contents;
 }
+
+// .contact {
+//   display: flex;
+//   flex-direction: column;
+//   @media screen and (min-width: 525px) {
+//     flex-direction: row;
+//     flex-wrap: wrap;
+//   }
+//   &__column {
+//     padding: 1rem;
+//     border: 1px solid lightgray;
+//     @media screen and (min-width: 525px) {
+//       &--resume {
+//         width: 100%;
+//       }
+//       &--social_media {
+//         flex: 1;
+//       }
+//       &--contact {
+//         flex: 1;
+//       }
+//     }
+//     @media screen and (min-width: 1024px) {
+//       &--resume {
+//         flex: 2;
+//       }
+//     }
+//   }
+// }
