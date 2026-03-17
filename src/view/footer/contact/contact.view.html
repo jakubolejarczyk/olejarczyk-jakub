@@ -1,7 +1,7 @@
 <section class="contact">
-  <div class="contact__column">
-    <text-component type="header_3" [value]="fullname()"></text-component>
-    <text-component type="header_2" value="Discover the value I bring"></text-component>
+  <div class="contact__column contact__column--resume">
+    <text-component type="header_2" [value]="fullname()"></text-component>
+    <text-component type="paragraph" value="Discover the value I bring"></text-component>
     <link-component
       label="Resume"
       href="https://pdfobject.com/pdf/sample.pdf"
@@ -9,7 +9,7 @@
       [newTab]="true"
     ></link-component>
   </div>
-  <div class="contact__column">
+  <div class="contact__column contact__column--social_media">
     <text-component type="header_3" value="Social media"></text-component>
     @for (socialMedia of socialMedias(); track socialMedia.label) {
       <link-component
@@ -19,7 +19,7 @@
       ></link-component>
     }
   </div>
-  <div class="contact__column">
+  <div class="contact__column contact__column--contact">
     <text-component type="header_3" value="Contact"></text-component>
     <link-component [label]="email()" [href]="email()" type="email"></link-component>
     <link-component [label]="phone()" [href]="phone()" type="phone"></link-component>
