@@ -10,6 +10,11 @@ import { LinkComponent } from '../../../component/link/link.component';
   imports: [TextComponent, LinkComponent],
 })
 export class ContactView extends StoreCore {
+  fullname = this.store.selectSignal((state) => {
+    const { firstname, lastname } = state.personal;
+    return `${firstname} ${lastname}`;
+  });
+
   socialMedias = this.store.selectSignal((state) => state.personal.socialMedias);
 
   email = this.store.selectSignal((state) => state.personal.email);
