@@ -1,37 +1,36 @@
+@use '../../../abstracts/variables';
 @use '../../../abstracts/mixins';
 
-:host {
-  display: contents;
-}
-
 .contact {
-  @include mixins.column_layout(1rem);
+  @include mixins.flex(2rem);
+  @include mixins.flex-column();
 
-  @media screen and (min-width: 550px) {
-    flex-direction: row;
-  }
-
-  &__line {
+  @media screen and (min-width: variables.$screen-size--tablet) {
+    @include mixins.flex-row();
   }
 
   &__column {
-    @include mixins.column_layout(0.5rem);
-    border: 1px solid white;
-    padding: 1rem;
+    @include mixins.flex(0.5rem);
+    @include mixins.flex-column();
   }
 
   &__fullname {
-    @media screen and (min-width: 550px) {
-      flex: 100%;
+    @media screen and (min-width: variables.$screen-size--tablet) {
+      flex: 0 0 100%;
     }
 
-    @media screen and (min-width: 768px) {
-      flex: 2;
+    @media screen and (min-width: variables.$screen-size--laptop) {
+      flex: 3;
     }
   }
 
   &__contact {
     flex: 1;
+  }
+
+  &__items {
+    @include mixins.flex();
+    @include mixins.flex-column();
   }
 
   &__social-media {

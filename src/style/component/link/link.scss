@@ -1,2 +1,13 @@
+@use '../../abstracts/variables';
+
 .link {
+  display: inline-block;
+  color: variables.$color__link--light;
+  text-decoration: none;
+
+  &:hover {
+    color: variables.$color__text--light;
+    text-decoration: underline;
+    transition: all variables.$animation_speed ease-in-out;
+  }
 }

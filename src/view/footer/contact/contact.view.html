@@ -1,34 +1,40 @@
 <section class="contact">
   <div class="contact__column contact__fullname">
     <text-component type="h2" [value]="fullname()"></text-component>
+    <div class="contact__items">
+      <text-component type="p" value="I write code that works today"></text-component>
+      <text-component type="p" value="and won't fail tomorrow."></text-component>
+    </div>
   </div>
   <div class="contact__column contact__social-media">
-    <text-component type="h2" value="Social media"></text-component>
-    <hr class="contact__line" />
-    @for (socialMedia of socialMedias(); track socialMedia.label) {
-      <link-component
-        [label]="socialMedia.label"
-        [url]="socialMedia.url"
-        type="page"
-        [externalLink]="true"
-      ></link-component>
-    }
+    <text-component type="h3" value="Social media"></text-component>
+    <div class="contact__items">
+      @for (socialMedia of socialMedias(); track socialMedia.label) {
+        <link-component
+          [label]="socialMedia.label"
+          [url]="socialMedia.url"
+          type="page"
+          [externalLink]="true"
+        ></link-component>
+      }
+    </div>
   </div>
   <div class="contact__column contact__contact">
-    <text-component type="h2" value="Contact"></text-component>
-    <hr class="contact__line" />
-    <link-component
-      [label]="email()"
-      [url]="email()"
-      type="email"
-      [externalLink]="true"
-    ></link-component>
-    <link-component
-      [label]="phone()"
-      [url]="phone()"
-      type="phone"
-      [externalLink]="true"
-    ></link-component>
-    <text-component type="p" [value]="location()"></text-component>
+    <text-component type="h3" value="Contact"></text-component>
+    <div class="contact__items">
+      <link-component
+        [label]="email()"
+        [url]="email()"
+        type="email"
+        [externalLink]="true"
+      ></link-component>
+      <link-component
+        [label]="phone()"
+        [url]="phone()"
+        type="phone"
+        [externalLink]="true"
+      ></link-component>
+      <text-component type="p" [value]="location()"></text-component>
+    </div>
   </div>
 </section>

@@ -1,7 +1,12 @@
-:host {
-  display: contents;
-}
+@use '../../../abstracts/variables';
+@use '../../../abstracts/mixins';
 
 .copyright {
-  border: 1px solid red;
+  @include mixins.flex(0.25rem);
+  @include mixins.flex-column();
+  @include mixins.flex-center();
+
+  @media screen and (min-width: variables.$screen-size--tablet) {
+    @include mixins.flex-row();
+  }
 }

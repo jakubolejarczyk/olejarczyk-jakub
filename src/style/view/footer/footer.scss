@@ -1,15 +1,16 @@
+@use '../../abstracts/variables';
 @use '../../abstracts/mixins';
 
 .footer {
   @include mixins.section_shape;
-  background-color: blue;
+  background-color: variables.$color__primary;
 
   &__content {
-    @include mixins.column_layout(1rem);
-    margin: auto;
-    max-width: 960px;
+    @include mixins.flex-column();
   }
 
-  // &__line {
-  // }
+  &__line {
+    margin: 2rem 0;
+    opacity: variables.$line--opacity;
+  }
 }
