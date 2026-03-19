@@ -1,27 +1,33 @@
-interface SectionHeaderDataModel {
-  show: true;
+import { SectionDataEnum } from './section-data.enum';
+
+interface HeaderEnabledModel {
+  enable: true;
   label: string;
 }
 
-interface SectionNotHeaderDataModel {
-  show: false;
+interface HeaderDisabledModel {
+  enable: false;
 }
 
-type SectionHeaderType = SectionHeaderDataModel | SectionNotHeaderDataModel;
+type HeaderType = HeaderEnabledModel | HeaderDisabledModel;
 
-interface SectionRoutableDataModel {
-  routable: true;
+interface RoutableEnabledModel {
+  enable: true;
   href: string;
 }
 
-interface SectionNotRoutableDataModel {
-  routable: false;
+interface RoutableDisabledModel {
+  enable: false;
 }
 
-type SectionRouteType = SectionRoutableDataModel | SectionNotRoutableDataModel;
+type SectionRouteType = RoutableEnabledModel | RoutableDisabledModel;
 
-export interface SectionDataModel {
+interface SectionModel {
   id: string;
-  header: SectionHeaderType;
-  route: SectionRouteType;
+  header: HeaderType;
+  routable: SectionRouteType;
+  group: string;
+  order: number;
 }
+
+export type SectionDataModel = Record<SectionDataEnum, SectionModel>;

@@ -1,124 +1,141 @@
-import { personalDataConst } from '../personal/personal-data.const';
-import { SectionDataEnum } from './section-data.enum';
 import { SectionDataModel } from './section-data.model';
 
-export const sectionDataConst: Record<SectionDataEnum, SectionDataModel> = {
+export const sectionDataConst: SectionDataModel = {
   navigation: {
     id: 'navigation',
     header: {
-      show: true,
-      label: `${personalDataConst.lastname} ${personalDataConst.firstname}`,
+      enable: false,
     },
-    route: {
-      routable: false,
+    routable: {
+      enable: false,
     },
+    group: 'header',
+    order: 0,
   },
   home: {
     id: 'home',
     header: {
-      show: true,
-      label: 'Home',
+      enable: false,
     },
-    route: {
-      routable: true,
+    routable: {
+      enable: true,
       href: '#home',
     },
+    group: 'header',
+    order: 1,
   },
   aboutMe: {
     id: 'about-me',
     header: {
-      show: true,
+      enable: true,
       label: 'About me',
     },
-    route: {
-      routable: true,
+    routable: {
+      enable: true,
       href: '#about-me',
     },
+    group: 'main',
+    order: 0,
   },
   technologies: {
     id: 'technologies',
     header: {
-      show: true,
+      enable: true,
       label: 'Technologies',
     },
-    route: {
-      routable: true,
+    routable: {
+      enable: true,
       href: '#technologies',
     },
+    group: 'main',
+    order: 1,
   },
   skills: {
     id: 'skills',
     header: {
-      show: true,
+      enable: true,
       label: 'Skills',
     },
-    route: {
-      routable: true,
+    routable: {
+      enable: true,
       href: '#skills',
     },
+    group: 'main',
+    order: 2,
   },
   experience: {
     id: 'experience',
     header: {
-      show: true,
+      enable: true,
       label: 'Experience',
     },
-    route: {
-      routable: true,
+    routable: {
+      enable: true,
       href: '#experience',
     },
+    group: 'main',
+    order: 3,
   },
   resume: {
     id: 'resume',
     header: {
-      show: true,
+      enable: true,
       label: 'Resume',
     },
-    route: {
-      routable: true,
+    routable: {
+      enable: true,
       href: '#resume',
     },
+    group: 'main',
+    order: 4,
   },
   projects: {
     id: 'projects',
     header: {
-      show: true,
+      enable: true,
       label: 'Projects',
     },
-    route: {
-      routable: true,
+    routable: {
+      enable: true,
       href: '#projects',
     },
+    group: 'main',
+    order: 5,
   },
   education: {
     id: 'education',
     header: {
-      show: true,
+      enable: true,
       label: 'Education',
     },
-    route: {
-      routable: true,
+    routable: {
+      enable: true,
       href: '#education',
     },
+    group: 'main',
+    order: 6,
   },
   contact: {
     id: 'contact',
     header: {
-      show: true,
-      label: 'Contact',
+      enable: false,
     },
-    route: {
-      routable: true,
+    routable: {
+      enable: true,
       href: '#contact',
     },
+    group: 'footer',
+    order: 0,
   },
   copyright: {
     id: 'copyright',
     header: {
-      show: false,
+      enable: false,
     },
-    route: {
-      routable: false,
+    routable: {
+      enable: false,
     },
+    group: 'footer',
+    order: 1,
   },
 };
