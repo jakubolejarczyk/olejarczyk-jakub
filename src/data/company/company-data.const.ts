@@ -1,7 +1,6 @@
-import { CompanyDataKindEnum } from './company-data.enum';
 import { CompanyDataModel } from './company-data.model';
 
-export const companyDataConst: Record<CompanyDataKindEnum, CompanyDataModel> = {
+export const companyDataConst: CompanyDataModel = {
   aprSystem: {
     name: 'APR System',
     url: 'https://www.apr.pl',

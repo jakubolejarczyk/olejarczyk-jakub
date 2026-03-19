@@ -5,7 +5,7 @@ import { ExperienceDataModel } from './experience-data.model';
 
 export const experienceDataConst: ExperienceDataModel[] = [
   {
-    company: companyDataConst.aprSystem,
+    // company: companyDataConst.aprSystem,
     startDate: new Date(2020, 8, 1),
     endDate: new Date(2025, 3, 1),
     role: 'Frontend Software Engineer',
@@ -56,7 +56,7 @@ export const experienceDataConst: ExperienceDataModel[] = [
     ],
   },
   {
-    company: companyDataConst.primaris,
+    // company: companyDataConst.primaris,
     startDate: new Date(2025, 6, 1),
     endDate: 'Present',
     role: 'Automation Engineer',

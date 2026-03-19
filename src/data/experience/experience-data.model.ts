@@ -1,9 +1,9 @@
-import { CompanyDataModel } from '../company/company-data.model';
+// import { CompanyModel } from '../company/company-data.model';
 import { SkillDataModel } from '../skill/skill-data.model';
 import { TechnologyDataModel } from '../technology/technology-data.model';
 
 export interface ExperienceDataModel {
-  company: CompanyDataModel;
+  // company: CompanyModel;
   startDate: Date;
   endDate: Date | 'Present';
   role: string;

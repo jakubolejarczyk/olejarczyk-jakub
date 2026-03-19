@@ -1,4 +1,4 @@
-export enum CompanyDataKindEnum {
+export enum CompanyDataEnum {
   aprSystem = 'aprSystem',
   primaris = 'primaris',
 }
