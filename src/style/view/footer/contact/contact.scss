@@ -23,12 +23,13 @@
     }
   }
 
-  &__social-media {
-    flex: 1;
-  }
-
+  &__social-media,
   &__contact {
     flex: 1;
+
+    @media screen and (min-width: variables.$screen__size--laptop) {
+      flex: 0 0 200px;
+    }
   }
 
   &__items {
