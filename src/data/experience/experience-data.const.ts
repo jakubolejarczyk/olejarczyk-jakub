@@ -1,11 +1,11 @@
-import { companyDataConst } from '../company/company-data.const';
+import { CompanyDataEnum } from '../company/company-data.enum';
 import { skillDataConst } from '../skill/skill-data.const';
 import { technologyDataConst } from '../technology/technology-data.const';
 import { ExperienceDataModel } from './experience-data.model';
 
-export const experienceDataConst: ExperienceDataModel[] = [
+export const experienceDataConst: ExperienceDataModel = [
   {
-    // company: companyDataConst.aprSystem,
+    company: CompanyDataEnum.aprSystem,
     startDate: new Date(2020, 8, 1),
     endDate: new Date(2025, 3, 1),
     role: 'Frontend Software Engineer',
@@ -56,7 +56,7 @@ export const experienceDataConst: ExperienceDataModel[] = [
     ],
   },
   {
-    // company: companyDataConst.primaris,
+    company: CompanyDataEnum.primaris,
     startDate: new Date(2025, 6, 1),
     endDate: 'Present',
     role: 'Automation Engineer',
