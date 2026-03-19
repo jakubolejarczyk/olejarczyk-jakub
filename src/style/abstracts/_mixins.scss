@@ -1,5 +1,21 @@
 @use 'variables';
 
+@function get_size($size) {
+  @if ($size == 'xs') {
+    @return variables.$space--xs;
+  } @else if ($size == 'sm') {
+    @return variables.$space--sm;
+  } @else if ($size == 'md') {
+    @return variables.$space--md;
+  } @else if ($size == 'lg') {
+    @return variables.$space--lg;
+  } @else if ($size == 'none') {
+    @return 0;
+  } @else {
+    @error "Invalid size. Possible values ​​are: sm, md, lg, and none!";
+  }
+}
+
 @mixin section($color: 'primary') {
   padding: 4rem 2rem;
   @if ($color == 'primary') {
@@ -18,7 +34,9 @@
   @if ($column == 'true') {
     flex-direction: column;
   }
-  @if ($gap == 'sm') {
+  @if ($gap == 'xs') {
+    gap: variables.$space--xs;
+  } @else if ($gap == 'sm') {
     gap: variables.$space--sm;
   } @else if ($gap == 'md') {
     gap: variables.$space--md;
@@ -31,37 +49,13 @@
   }
 }
 
+@mixin flex--center {
+  align-items: center;
+  justify-content: center;
+}
+
 @mixin margin($vertical: 'none', $horizontal: 'none') {
-  @if ($vertical == 'sm') {
-    margin-top: variables.$space--sm;
-    margin-bottom: variables.$space--sm;
-  } @else if ($vertical == 'md') {
-    margin-top: variables.$space--md;
-    margin-bottom: variables.$space--md;
-  } @else if ($vertical == 'lg') {
-    margin-top: variables.$space--lg;
-    margin-bottom: variables.$space--lg;
-  } @else if ($vertical == 'none') {
-    margin-top: 0;
-    margin-bottom: 0;
-  } @else {
-    @error "Invalid vertical. Possible values ​​are: sm, md, lg, and none!";
-  }
-  @if ($horizontal == 'sm') {
-    margin-left: variables.$space--sm;
-    margin-right: variables.$space--sm;
-  } @else if ($horizontal == 'md') {
-    margin-left: variables.$space--md;
-    margin-right: variables.$space--md;
-  } @else if ($horizontal == 'lg') {
-    margin-left: variables.$space--lg;
-    margin-right: variables.$space--lg;
-  } @else if ($horizontal == 'none') {
-    margin-left: 0;
-    margin-right: 0;
-  } @else {
-    @error "Invalid horizontal. Possible values ​​are: sm, md, lg, and none!";
-  }
+  margin: get_size($vertical) get_size($horizontal);
 }
 
 @mixin divide-line {
@@ -69,22 +63,3 @@
   height: 2px;
   background-color: variables.$color__primary--dark;
 }
-
-// @mixin flex($gap: 0) {
-//   display: flex;
-//   gap: $gap;
-//   flex-wrap: wrap;
-// }
-
-// @mixin flex-column() {
-//   flex-direction: column;
-// }
-
-// @mixin flex-row() {
-//   flex-direction: row;
-// }
-
-// @mixin flex-center() {
-//   align-items: center;
-//   justify-content: center;
-// }

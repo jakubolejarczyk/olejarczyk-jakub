@@ -2,11 +2,12 @@
 @use '../../../abstracts/mixins';
 
 .copyright {
-  // @include mixins.flex(0.25rem);
-  // @include mixins.flex-column();
-  // @include mixins.flex-center();
+  @include mixins.flex($column: 'true');
+  @include mixins.flex--center;
+  color: variables.$color__text--inverse;
 
   @media screen and (min-width: variables.$screen__size--tablet) {
-    // @include mixins.flex-row();
+    gap: variables.$space--xs;
+    flex-direction: row;
   }
 }

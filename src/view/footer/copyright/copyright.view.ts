@@ -10,10 +10,9 @@ import { DateUtils } from '../../../utils/date.utils';
   imports: [TextComponent],
 })
 export class CopyrightView extends StoreCore {
-  year = DateUtils.getYear();
-
-  fullname = this.store.selectSignal((state) => {
+  yearAndFullname = this.store.selectSignal((state) => {
     const { firstname, lastname } = state.personal;
-    return `${firstname} ${lastname}`;
+    const year = DateUtils.getYear();
+    return `${year} ${firstname} ${lastname}`;
   });
 }
