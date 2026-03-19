@@ -1,18 +1,18 @@
 import { ApplicationConfig, provideBrowserGlobalErrorListeners, isDevMode } from '@angular/core';
 import { provideStore } from '@ngrx/store';
 import { provideStoreDevtools } from '@ngrx/store-devtools';
-import { homeReducer } from '../state/home/home.reducer';
-import { personalReducer } from '../state/personal/personal.reducer';
-import { resumeReducer } from '../state/resume/resume.reducer';
 import {
   aboutMeReducer,
   companyReducer,
   educationReducer,
   experienceReducer,
   groupReducer,
+  homeReducer,
+  personalReducer,
+  resumeReducer,
   sectionReducer,
+  skillReducer,
 } from '../store/store.reducer';
-import { skillReducer } from '../state/skill/skill.reducer';
 import { technologyGroupReducer, technologyReducer } from '../state/technology/technology.reducer';
 
 export const config: ApplicationConfig = {

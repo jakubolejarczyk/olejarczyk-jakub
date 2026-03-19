@@ -1,7 +1,7 @@
 import { ResumeLangDataEnum } from './resume-data.enum';
 import { ResumeDataModel } from './resume-data.model';
 
-export const resumeDataConst: ResumeDataModel[] = [
+export const resumeDataConst: ResumeDataModel = [
   {
     resumeFile: 'assets/files/olejarczyk_jakub_eng.pdf',
     label: 'Download (English)',

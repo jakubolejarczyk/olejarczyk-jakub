@@ -1,5 +1,6 @@
 import { CompanyDataEnum } from '../company/company-data.enum';
 import { skillDataConst } from '../skill/skill-data.const';
+import { SkillKindDataEnum } from '../skill/skill-data.enum';
 import { technologyDataConst } from '../technology/technology-data.const';
 import { ExperienceDataModel } from './experience-data.model';
 
@@ -50,9 +51,9 @@ export const experienceDataConst: ExperienceDataModel = [
       technologyDataConst.enterpriseArchitect,
     ],
     skills: [
-      skillDataConst.dataStructuresAndAlgorithms,
-      skillDataConst.english,
-      skillDataConst.polish,
+      SkillKindDataEnum.dataStructuresAndAlgorithms,
+      SkillKindDataEnum.english,
+      SkillKindDataEnum.polish,
     ],
   },
   {
@@ -78,6 +79,6 @@ export const experienceDataConst: ExperienceDataModel = [
       technologyDataConst.uiPath,
       technologyDataConst.goSmartDesigner,
     ],
-    skills: [skillDataConst.english, skillDataConst.polish],
+    skills: [SkillKindDataEnum.english, SkillKindDataEnum.polish],
   },
 ];

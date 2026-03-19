@@ -1,4 +1,4 @@
-interface PersonalSocialMediaDataModel {
+interface SocialMediaModel {
   label: string;
   url: string;
 }
@@ -10,5 +10,5 @@ export interface PersonalDataModel {
   phone: string;
   city: string;
   country: string;
-  socialMedias: PersonalSocialMediaDataModel[];
+  socialMedias: SocialMediaModel[];
 }

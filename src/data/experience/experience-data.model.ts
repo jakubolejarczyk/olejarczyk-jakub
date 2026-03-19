@@ -1,5 +1,5 @@
 import { CompanyDataEnum } from '../company/company-data.enum';
-import { SkillDataModel } from '../skill/skill-data.model';
+import { SkillKindDataEnum } from '../skill/skill-data.enum';
 import { TechnologyDataModel } from '../technology/technology-data.model';
 
 interface ExperienceModel {
@@ -9,7 +9,7 @@ interface ExperienceModel {
   role: string;
   experiences: string[];
   technologies: TechnologyDataModel[];
-  skills: SkillDataModel[];
+  skills: SkillKindDataEnum[];
 }
 
 export type ExperienceDataModel = ExperienceModel[];

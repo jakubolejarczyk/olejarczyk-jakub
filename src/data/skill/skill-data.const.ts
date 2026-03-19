@@ -1,7 +1,6 @@
-import { SkillKindDataEnum } from './skill-data.enum';
 import { SkillDataModel } from './skill-data.model';
 
-export const skillDataConst: Record<SkillKindDataEnum, SkillDataModel> = {
+export const skillDataConst: SkillDataModel = {
   dataStructuresAndAlgorithms: {
     label: 'Data Structures and Algorithms',
     order: 0,
