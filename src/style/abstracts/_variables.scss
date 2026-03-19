@@ -1,7 +1,42 @@
-$color__primary: #5409da;
-$color__text--light: #ffffff;
-$color__link--light: #cccccc;
-$animation_speed: 0.5s;
-$line--opacity: 0.25;
-$screen-size--tablet: 768px;
-$screen-size--laptop: 1024px;
+@use 'sass:color';
+
+// Primary colors
+$color__primary--default: #5409da;
+$color__primary--light: color.scale($color__primary--default, $lightness: +20%);
+$color__primary--dark: color.scale($color__primary--default, $lightness: -20%);
+
+// Accent color
+$color__accent--default: #f59e0b;
+
+// Neutrals
+$color__background--main: #f8f9fc;
+$color__background--surface: #ffffff;
+
+// Borders
+$color__border: #e5e7eb;
+
+// Text colors
+$color__text--primary: #111827;
+$color__text--secondary: #6b7280;
+$color__text--muted: #9ca3af;
+$color__text--inverse: #ffffff;
+
+// Status colors
+$color__success: #22c55e;
+$color__warning: #f59e0b;
+$color__error: #ef4444;
+
+// Shadows
+$shadow--sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+$shadow--md: 0 4px 6px rgba(0, 0, 0, 0.1);
+$shadow--lg: 0 10px 15px rgba(0, 0, 0, 0.15);
+
+// Animation speed
+$animation-speed: 0.5s;
+
+// Opacity
+$divite-line__opacity: 0.25;
+
+// Screen sizes
+$screen__size--tablet: 768px;
+$screen__size--laptop: 1024px;

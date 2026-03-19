@@ -6,7 +6,7 @@
   @include mixins.flex-column();
   @include mixins.flex-center();
 
-  @media screen and (min-width: variables.$screen-size--tablet) {
+  @media screen and (min-width: variables.$screen__size--tablet) {
     @include mixins.flex-row();
   }
 }

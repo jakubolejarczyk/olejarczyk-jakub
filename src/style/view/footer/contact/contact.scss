@@ -5,7 +5,7 @@
   @include mixins.flex(2rem);
   @include mixins.flex-column();
 
-  @media screen and (min-width: variables.$screen-size--tablet) {
+  @media screen and (min-width: variables.$screen__size--tablet) {
     @include mixins.flex-row();
   }
 
@@ -15,11 +15,11 @@
   }
 
   &__fullname {
-    @media screen and (min-width: variables.$screen-size--tablet) {
+    @media screen and (min-width: variables.$screen__size--tablet) {
       flex: 0 0 100%;
     }
 
-    @media screen and (min-width: variables.$screen-size--laptop) {
+    @media screen and (min-width: variables.$screen__size--laptop) {
       flex: 3;
     }
   }
