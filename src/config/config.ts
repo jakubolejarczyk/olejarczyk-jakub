@@ -7,7 +7,7 @@ import { experienceReducer } from '../state/experience/experience.reducer';
 import { homeReducer } from '../state/home/home.reducer';
 import { personalReducer } from '../state/personal/personal.reducer';
 import { resumeReducer } from '../state/resume/resume.reducer';
-import { sectionReducer } from '../state/section/section.reducer';
+import { groupReducer, sectionReducer } from '../store/store.reducer';
 import { skillReducer } from '../state/skill/skill.reducer';
 import { technologyGroupReducer, technologyReducer } from '../state/technology/technology.reducer';
 
@@ -21,6 +21,7 @@ export const config: ApplicationConfig = {
       home: homeReducer,
       personal: personalReducer,
       resume: resumeReducer,
+      group: groupReducer,
       section: sectionReducer,
       skill: skillReducer,
       technologyGroup: technologyGroupReducer,

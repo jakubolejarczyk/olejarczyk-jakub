@@ -18,6 +18,7 @@ import {
   TechnologyGroupDataEnum,
   TechnologyKindDataEnum,
 } from '../data/technology/technology-data.enum';
+import { GroupDataModel } from '../data/group/group-data.model';
 
 type StoreType = {
   aboutMe: AboutMeDataModel;
@@ -26,6 +27,7 @@ type StoreType = {
   home: HomeDataModel;
   personal: PersonalDataModel;
   resume: ResumeDataModel[];
+  group: GroupDataModel;
   section: Record<SectionDataEnum, SectionDataModel>;
   skill: Record<SkillKindDataEnum, SkillDataModel>;
   technologyGroup: Record<TechnologyGroupDataEnum, TechnologyGroupDataModel>;
