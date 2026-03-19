@@ -1,7 +1,6 @@
 import { ApplicationConfig, provideBrowserGlobalErrorListeners, isDevMode } from '@angular/core';
 import { provideStore } from '@ngrx/store';
 import { provideStoreDevtools } from '@ngrx/store-devtools';
-import { educationReducer } from '../state/education/education.reducer';
 import { experienceReducer } from '../state/experience/experience.reducer';
 import { homeReducer } from '../state/home/home.reducer';
 import { personalReducer } from '../state/personal/personal.reducer';
@@ -9,6 +8,7 @@ import { resumeReducer } from '../state/resume/resume.reducer';
 import {
   aboutMeReducer,
   companyReducer,
+  educationReducer,
   groupReducer,
   sectionReducer,
 } from '../store/store.reducer';

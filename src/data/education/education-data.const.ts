@@ -1,6 +1,6 @@
 import { EducationDataModel } from './education-data.model';
 
-export const educationDataConst: EducationDataModel[] = [
+export const educationDataConst: EducationDataModel = [
   {
     university: 'Jan Kochanowski University of Kielce',
     major: 'Computer Science',
