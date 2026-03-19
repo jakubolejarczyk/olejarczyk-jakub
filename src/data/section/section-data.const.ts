@@ -1,3 +1,4 @@
+import { GroupDataEnum } from '../group/group-data.enum';
 import { SectionDataModel } from './section-data.model';
 
 export const sectionDataConst: SectionDataModel = {
@@ -9,7 +10,7 @@ export const sectionDataConst: SectionDataModel = {
     routable: {
       enable: false,
     },
-    group: 'header',
+    group: GroupDataEnum.header,
     order: 0,
   },
   home: {
@@ -21,7 +22,7 @@ export const sectionDataConst: SectionDataModel = {
       enable: true,
       href: '#home',
     },
-    group: 'header',
+    group: GroupDataEnum.header,
     order: 1,
   },
   aboutMe: {
@@ -34,7 +35,7 @@ export const sectionDataConst: SectionDataModel = {
       enable: true,
       href: '#about-me',
     },
-    group: 'main',
+    group: GroupDataEnum.main,
     order: 0,
   },
   technologies: {
@@ -47,7 +48,7 @@ export const sectionDataConst: SectionDataModel = {
       enable: true,
       href: '#technologies',
     },
-    group: 'main',
+    group: GroupDataEnum.main,
     order: 1,
   },
   skills: {
@@ -60,7 +61,7 @@ export const sectionDataConst: SectionDataModel = {
       enable: true,
       href: '#skills',
     },
-    group: 'main',
+    group: GroupDataEnum.main,
     order: 2,
   },
   experience: {
@@ -73,7 +74,7 @@ export const sectionDataConst: SectionDataModel = {
       enable: true,
       href: '#experience',
     },
-    group: 'main',
+    group: GroupDataEnum.main,
     order: 3,
   },
   resume: {
@@ -86,7 +87,7 @@ export const sectionDataConst: SectionDataModel = {
       enable: true,
       href: '#resume',
     },
-    group: 'main',
+    group: GroupDataEnum.main,
     order: 4,
   },
   projects: {
@@ -99,7 +100,7 @@ export const sectionDataConst: SectionDataModel = {
       enable: true,
       href: '#projects',
     },
-    group: 'main',
+    group: GroupDataEnum.main,
     order: 5,
   },
   education: {
@@ -112,7 +113,7 @@ export const sectionDataConst: SectionDataModel = {
       enable: true,
       href: '#education',
     },
-    group: 'main',
+    group: GroupDataEnum.main,
     order: 6,
   },
   contact: {
@@ -124,7 +125,7 @@ export const sectionDataConst: SectionDataModel = {
       enable: true,
       href: '#contact',
     },
-    group: 'footer',
+    group: GroupDataEnum.footer,
     order: 0,
   },
   copyright: {
@@ -135,7 +136,7 @@ export const sectionDataConst: SectionDataModel = {
     routable: {
       enable: false,
     },
-    group: 'footer',
+    group: GroupDataEnum.footer,
     order: 1,
   },
 };

@@ -1,3 +1,4 @@
+import { GroupDataEnum } from '../group/group-data.enum';
 import { SectionDataEnum } from './section-data.enum';
 
 interface HeaderEnabledModel {
@@ -26,7 +27,7 @@ interface SectionModel {
   id: string;
   header: HeaderType;
   routable: SectionRouteType;
-  group: string;
+  group: GroupDataEnum;
   order: number;
 }
 
