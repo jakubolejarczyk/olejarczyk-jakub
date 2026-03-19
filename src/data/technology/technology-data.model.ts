@@ -1,12 +1,10 @@
-import { TechnologyGroupDataEnum } from './technology-data.enum';
+import { TechnologyGroupDataEnum } from '../technology-group/technology-group-data.enum';
+import { TechnologyDataEnum } from './technology-data.enum';
 
-export interface TechnologyGroupDataModel {
+interface TechnologyModel {
   label: string;
-  order: number;
-}
-
-export interface TechnologyDataModel {
-  label: string;
-  order: number;
   group: TechnologyGroupDataEnum;
+  order: number;
 }
+
+export type TechnologyDataModel = Record<TechnologyDataEnum, TechnologyModel>;

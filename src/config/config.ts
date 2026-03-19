@@ -6,14 +6,15 @@ import {
   companyReducer,
   educationReducer,
   experienceReducer,
-  groupReducer,
   homeReducer,
   personalReducer,
   resumeReducer,
+  groupReducer,
   sectionReducer,
   skillReducer,
+  technologyGroupReducer,
+  technologyReducer,
 } from '../store/store.reducer';
-import { technologyGroupReducer, technologyReducer } from '../state/technology/technology.reducer';
 
 export const config: ApplicationConfig = {
   providers: [
