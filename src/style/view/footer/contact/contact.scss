@@ -2,16 +2,15 @@
 @use '../../../abstracts/mixins';
 
 .contact {
-  // @include mixins.flex(2rem);
-  // @include mixins.flex-column();
+  @include mixins.flex($column: 'true', $gap: 'lg');
+  color: variables.$color__text--inverse;
 
   @media screen and (min-width: variables.$screen__size--tablet) {
-    // @include mixins.flex-row();
+    flex-direction: row;
   }
 
   &__column {
-    // @include mixins.flex(0.5rem);
-    // @include mixins.flex-column();
+    @include mixins.flex($column: 'true', $gap: 'xs');
   }
 
   &__fullname {
@@ -24,16 +23,16 @@
     }
   }
 
+  &__social-media {
+    flex: 1;
+  }
+
   &__contact {
     flex: 1;
   }
 
   &__items {
-    // @include mixins.flex();
-    // @include mixins.flex-column();
-  }
-
-  &__social-media {
-    flex: 1;
+    @include mixins.flex($column: 'true');
+    color: variables.$color__text--inverse;
   }
 }
