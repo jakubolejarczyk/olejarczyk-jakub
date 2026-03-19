@@ -3,15 +3,9 @@
 .footer {
   @include mixins.section;
   @include mixins.flex($column: 'true');
+
+  &__divide-line {
+    @include mixins.margin($vertical: 'lg');
+    @include mixins.divide-line;
+  }
 }
-
-// .footer {
-// &__content {
-// @include mixins.flex-column();
-// }
-
-//   &__line {
-//     margin: 2rem 0;
-//     opacity: variables.$divite-line__opacity;
-//   }
-// }
