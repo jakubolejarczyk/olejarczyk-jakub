@@ -1,19 +1,20 @@
 <section class="education">
   <div class="education__content">
     <header class="education__header">
-      <h2>Education</h2>
+      <text-component type="h2" value="Education"></text-component>
     </header>
     <div class="education__items">
       @for (education of education(); track education.year) {
         <div class="education__item">
-          <div class="education__item-line">
-            <div class="education__item-circle"></div>
-          </div>
           <div class="education__item-content">
-            <p>{{ education.year }}</p>
-            <p>{{ education.degree }}</p>
-            <p>{{ education.university }}</p>
-            <p>{{ education.major }}</p>
+            <text-component type="p" [value]="education.year"></text-component>
+            <text-component type="h3" [value]="education.degree"></text-component>
+            <text-component
+              type="p"
+              color="secondary"
+              [value]="education.university"
+            ></text-component>
+            <text-component type="p" color="secondary" [value]="education.major"></text-component>
           </div>
         </div>
       }

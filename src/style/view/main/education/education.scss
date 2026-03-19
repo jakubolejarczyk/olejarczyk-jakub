@@ -1,25 +1,24 @@
 @use '../../../abstracts/mixins';
+@use '../../../abstracts/variables';
 
 .education {
   @include mixins.section($color: 'surface');
 
   &__content {
-  }
-
-  &__header {
-  }
-
-  &__items {
+    margin: auto;
+    max-width: 960px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
   }
 
   &__item {
-    &-line {
-    }
-
-    &-circle {
-    }
-
     &-content {
+      flex: 1;
+      background-color: variables.$color__background--main;
+      box-shadow: variables.$shadow--md;
+      border: 1px solid variables.$color__border;
+      padding: 1rem;
     }
   }
 }
