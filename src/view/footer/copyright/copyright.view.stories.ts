@@ -1,11 +1,11 @@
 import { Meta, StoryObj } from '@storybook/angular';
 import { CopyrightView } from './copyright.view';
-import { StorybookUtils } from '../../../utils/storybook.utils';
+import { StorybookUtil } from '../../../util/storybook.util';
 
 const meta: Meta<CopyrightView> = {
   title: 'View/Footer/Copyright',
   component: CopyrightView,
-  decorators: StorybookUtils.getDecorators(),
+  decorators: StorybookUtil.getDecorators(),
 };
 export default meta;
 type Story = StoryObj<CopyrightView>;

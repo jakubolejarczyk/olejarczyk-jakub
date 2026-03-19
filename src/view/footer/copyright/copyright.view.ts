@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { TextComponent } from '../../../component/text/text.component';
 import { StoreCore } from '../../../store/store.core';
-import { DateUtils } from '../../../utils/date.utils';
+import { DateUtil } from '../../../util/date.util';
 
 @Component({
   selector: 'copyright-view',
@@ -12,7 +12,7 @@ import { DateUtils } from '../../../utils/date.utils';
 export class CopyrightView extends StoreCore {
   yearAndFullname = this.store.selectSignal((state) => {
     const { firstname, lastname } = state.personal;
-    const year = DateUtils.getYear();
+    const year = DateUtil.getYear();
     return `${year} ${firstname} ${lastname}`;
   });
 }

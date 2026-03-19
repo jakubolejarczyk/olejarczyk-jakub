@@ -1,11 +1,11 @@
 import { Meta, StoryObj } from '@storybook/angular';
 import { ProjectsView } from './projects.view';
-import { StorybookUtils } from '../../../utils/storybook.utils';
+import { StorybookUtil } from '../../../util/storybook.util';
 
 const meta: Meta<ProjectsView> = {
   title: 'View/Main/Projects',
   component: ProjectsView,
-  decorators: StorybookUtils.getDecorators(),
+  decorators: StorybookUtil.getDecorators(),
 };
 export default meta;
 type Story = StoryObj<ProjectsView>;
