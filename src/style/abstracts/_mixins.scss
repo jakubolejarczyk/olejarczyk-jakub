@@ -1,15 +1,22 @@
 @use 'variables';
 
-@mixin section($mode: 'primary') {
+@mixin section($color: 'primary') {
   padding: 4rem 2rem;
-  @if ($mode == 'primary') {
+  @if ($color == 'primary') {
     background-color: variables.$color__primary--default;
-  } @else if ($mode == 'main') {
+  } @else if ($color == 'main') {
     background-color: variables.$color__background--main;
-  } @else if ($mode == 'surface') {
+  } @else if ($color == 'surface') {
     background-color: variables.$color__background--surface;
   } @else {
     @error "Invalid mode. Possible values ​​are: base, main, and surface!";
+  }
+}
+
+@mixin flex($column: 'false') {
+  display: flex;
+  @if ($column == 'true') {
+    flex-direction: column;
   }
 }
 

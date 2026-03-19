@@ -1,7 +1,7 @@
 @use '../../../abstracts/mixins';
 
 .education {
-  @include mixins.section('surface');
+  @include mixins.section($color: 'surface');
 
   &__content {
   }

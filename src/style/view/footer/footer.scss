@@ -2,6 +2,7 @@
 
 .footer {
   @include mixins.section;
+  @include mixins.flex($column: 'true');
 }
 
 // .footer {
