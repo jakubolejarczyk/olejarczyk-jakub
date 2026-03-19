@@ -1,13 +1,37 @@
 @use '../../abstracts/variables';
 
-.text,
-.text_for_link {
+.text {
   font-family: 'Lato', sans-serif;
   font-style: normal;
 }
 
-.text {
-  // color: variables.$color__text--light;
+.color {
+  &__primary {
+    color: variables.$color__text--primary;
+  }
+
+  &__secondary {
+    color: variables.$color__text--secondary;
+  }
+
+  &__muted {
+    color: variables.$color__text--muted;
+  }
+
+  &__inverse {
+    color: variables.$color__text--inverse;
+  }
+
+  &__inverse-secondary {
+    color: variables.$color__text--inverse-secondary;
+  }
+}
+
+.link {
+  &__inverse-secondary:hover {
+    color: variables.$color__text--inverse;
+    text-decoration: underline;
+  }
 }
 
 .paragraph {

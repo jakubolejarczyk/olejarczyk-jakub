@@ -4,7 +4,6 @@
 .copyright {
   @include mixins.flex($column: 'true');
   @include mixins.flex--center;
-  color: variables.$color__text--inverse;
 
   @media screen and (min-width: variables.$screen__size--tablet) {
     gap: variables.$space--xs;

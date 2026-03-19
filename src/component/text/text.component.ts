@@ -1,6 +1,6 @@
 import { Component, input } from '@angular/core';
 import { NgClass } from '@angular/common';
-import { TextType } from './text.type';
+import { ColorType, TextType } from './text.type';
 
 @Component({
   selector: 'text-component',
@@ -13,9 +13,13 @@ export class TextComponent {
 
   value = input.required<string>();
 
+  color = input<ColorType>('primary');
+
   isLink = input(false);
 
   getTextClassName() {
-    return this.isLink() ? 'text_for_link' : 'text';
+    const color = `color__${this.color()}`;
+    const link = this.isLink() ? `link__${this.color()}` : '';
+    return [color, link];
   }
 }

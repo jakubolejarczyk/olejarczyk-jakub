@@ -3,7 +3,6 @@
 
 .contact {
   @include mixins.flex($column: 'true', $gap: 'lg');
-  color: variables.$color__text--inverse;
 
   @media screen and (min-width: variables.$screen__size--tablet) {
     flex-direction: row;

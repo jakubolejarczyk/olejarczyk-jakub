@@ -1,13 +1,4 @@
-@use '../../abstracts/variables';
-
 .link {
   display: inline-block;
-  color: variables.$color__text--inverse-secondary;
   text-decoration: none;
-
-  &:hover {
-    color: variables.$color__text--inverse;
-    text-decoration: underline;
-    transition: all variables.$animation_speed ease-in-out;
-  }
 }
