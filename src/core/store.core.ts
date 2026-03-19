@@ -12,18 +12,24 @@ import {
   TechnologyGroupDataModel,
   TechnologyDataModel,
 } from '../data/technology/technology-data.model';
+import { SectionDataEnum } from '../data/section/section-data.enum';
+import { SkillKindDataEnum } from '../data/skill/skill-data.enum';
+import {
+  TechnologyGroupDataEnum,
+  TechnologyKindDataEnum,
+} from '../data/technology/technology-data.enum';
 
 type StoreType = {
   aboutMe: AboutMeDataModel;
-  education: EducationDataModel;
-  experience: ExperienceDataModel;
+  education: EducationDataModel[];
+  experience: ExperienceDataModel[];
   home: HomeDataModel;
   personal: PersonalDataModel;
-  resume: ResumeDataModel;
-  section: SectionDataModel;
-  skill: SkillDataModel;
-  technologyGroup: TechnologyGroupDataModel;
-  technology: TechnologyDataModel;
+  resume: ResumeDataModel[];
+  section: Record<SectionDataEnum, SectionDataModel>;
+  skill: Record<SkillKindDataEnum, SkillDataModel>;
+  technologyGroup: Record<TechnologyGroupDataEnum, TechnologyGroupDataModel>;
+  technology: Record<TechnologyKindDataEnum, TechnologyDataModel>;
 };
 
 export class StoreCore {

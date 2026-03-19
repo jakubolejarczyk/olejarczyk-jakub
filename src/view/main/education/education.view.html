@@ -1,1 +1,22 @@
-<p>education-view works!</p>
+<section class="education">
+  <div class="education__content">
+    <header class="education__header">
+      <h2>Education</h2>
+    </header>
+    <div class="education__items">
+      @for (education of education(); track education.year) {
+        <div class="education__item">
+          <div class="education__item-line">
+            <div class="education__item-circle"></div>
+          </div>
+          <div class="education__item-content">
+            <p>{{ education.year }}</p>
+            <p>{{ education.degree }}</p>
+            <p>{{ education.university }}</p>
+            <p>{{ education.major }}</p>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>
