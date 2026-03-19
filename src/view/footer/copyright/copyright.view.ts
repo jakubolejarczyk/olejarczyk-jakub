@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { TextComponent } from '../../../component/text/text.component';
-import { StoreCore } from '../../../core/store.core';
+import { StoreCore } from '../../../store/store.core';
 import { DateUtils } from '../../../utils/date.utils';
 
 @Component({

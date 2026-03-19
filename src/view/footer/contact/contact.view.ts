@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { StoreCore } from '../../../core/store.core';
+import { StoreCore } from '../../../store/store.core';
 import { TextComponent } from '../../../component/text/text.component';
 import { LinkComponent } from '../../../component/link/link.component';
 
