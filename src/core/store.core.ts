@@ -8,17 +8,13 @@ import { PersonalDataModel } from '../data/personal/personal-data.model';
 import { ResumeDataModel } from '../data/resume/resume-data.model';
 import { SectionDataModel } from '../data/section/section-data.model';
 import { SkillDataModel } from '../data/skill/skill-data.model';
-import {
-  TechnologyGroupDataModel,
-  TechnologyDataModel,
-} from '../data/technology/technology-data.model';
+import { GroupDataModel } from '../data/group/group-data.model';
 import { SectionDataEnum } from '../data/section/section-data.enum';
 import { SkillKindDataEnum } from '../data/skill/skill-data.enum';
-import {
-  TechnologyGroupDataEnum,
-  TechnologyKindDataEnum,
-} from '../data/technology/technology-data.enum';
-import { GroupDataModel } from '../data/group/group-data.model';
+import { TechnologyGroupDataEnum } from '../data/technology-group/technology-group-data.enum';
+import { TechnologyGroupDataModel } from '../data/technology-group/technology-group-data.model';
+import { TechnologyDataModel } from '../data/technology/technology-data.model';
+import { TechnologyDataEnum } from '../data/technology/technology-data.enum';
 
 type StoreType = {
   aboutMe: AboutMeDataModel;
@@ -31,7 +27,7 @@ type StoreType = {
   section: Record<SectionDataEnum, SectionDataModel>;
   skill: Record<SkillKindDataEnum, SkillDataModel>;
   technologyGroup: Record<TechnologyGroupDataEnum, TechnologyGroupDataModel>;
-  technology: Record<TechnologyKindDataEnum, TechnologyDataModel>;
+  technology: Record<TechnologyDataEnum, TechnologyDataModel>;
 };
 
 export class StoreCore {

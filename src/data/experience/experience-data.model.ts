@@ -1,6 +1,6 @@
 import { CompanyDataEnum } from '../company/company-data.enum';
 import { SkillKindDataEnum } from '../skill/skill-data.enum';
-import { TechnologyDataModel } from '../technology/technology-data.model';
+import { TechnologyDataEnum } from '../technology/technology-data.enum';
 
 interface ExperienceModel {
   company: CompanyDataEnum;
@@ -8,7 +8,7 @@ interface ExperienceModel {
   endDate: Date | 'Present';
   role: string;
   experiences: string[];
-  technologies: TechnologyDataModel[];
+  technologies: TechnologyDataEnum[];
   skills: SkillKindDataEnum[];
 }
 
