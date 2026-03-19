@@ -1,7 +1,8 @@
-@use '../../../abstracts/variables';
 @use '../../../abstracts/mixins';
 
 .education {
+  @include mixins.section('surface');
+
   &__content {
   }
 

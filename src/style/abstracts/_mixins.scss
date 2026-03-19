@@ -1,22 +1,33 @@
-@mixin section_shape {
+@use 'variables';
+
+@mixin section($mode: 'primary') {
   padding: 4rem 2rem;
+  @if ($mode == 'primary') {
+    background-color: variables.$color__primary--default;
+  } @else if ($mode == 'main') {
+    background-color: variables.$color__background--main;
+  } @else if ($mode == 'surface') {
+    background-color: variables.$color__background--surface;
+  } @else {
+    @error "Invalid mode. Possible values ​​are: base, main, and surface!";
+  }
 }
 
-@mixin flex($gap: 0) {
-  display: flex;
-  gap: $gap;
-  flex-wrap: wrap;
-}
+// @mixin flex($gap: 0) {
+//   display: flex;
+//   gap: $gap;
+//   flex-wrap: wrap;
+// }
 
-@mixin flex-column() {
-  flex-direction: column;
-}
+// @mixin flex-column() {
+//   flex-direction: column;
+// }
 
-@mixin flex-row() {
-  flex-direction: row;
-}
+// @mixin flex-row() {
+//   flex-direction: row;
+// }
 
-@mixin flex-center() {
-  align-items: center;
-  justify-content: center;
-}
+// @mixin flex-center() {
+//   align-items: center;
+//   justify-content: center;
+// }

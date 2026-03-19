@@ -1,16 +1,16 @@
-@use '../../abstracts/variables';
 @use '../../abstracts/mixins';
 
 .footer {
-  @include mixins.section_shape;
-  // background-color: variables.$color__primary;
-
-  &__content {
-    @include mixins.flex-column();
-  }
-
-  &__line {
-    margin: 2rem 0;
-    opacity: variables.$divite-line__opacity;
-  }
+  @include mixins.section;
 }
+
+// .footer {
+// &__content {
+// @include mixins.flex-column();
+// }
+
+//   &__line {
+//     margin: 2rem 0;
+//     opacity: variables.$divite-line__opacity;
+//   }
+// }
