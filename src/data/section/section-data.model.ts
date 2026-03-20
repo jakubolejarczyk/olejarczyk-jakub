@@ -1,6 +1,10 @@
 import { GroupDataEnum } from '../group/group-data.enum';
 import { SectionDataEnum, SectionPaletteEnum } from './section-data.enum';
 
+interface StyleModel {
+  palette: SectionPaletteEnum;
+}
+
 interface HeaderModel {
   enable: boolean;
   label: string;
@@ -24,7 +28,7 @@ interface SectionModel {
   routable: SectionRouteType;
   group: GroupDataEnum;
   view: any;
-  palette: SectionPaletteEnum;
+  style: StyleModel;
   order: number;
 }
 

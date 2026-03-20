@@ -13,7 +13,8 @@ export class SectionComponent extends StoreCore {
   section = input.required<SectionDataModel[keyof SectionDataModel]>();
 
   buildSectionClassList() {
-    const sectionPalette = `section--${this.section().palette}`;
+    const { palette } = this.section().style;
+    const sectionPalette = `section--${palette}`;
     return [sectionPalette];
   }
 }

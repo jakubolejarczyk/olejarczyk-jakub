@@ -26,7 +26,9 @@ export const sectionDataConst: SectionDataModel = {
     },
     group: GroupDataEnum.header,
     view: NavigationView,
-    palette: SectionPaletteEnum.primary,
+    style: {
+      palette: SectionPaletteEnum.primary,
+    },
     order: 0,
   },
   home: {
@@ -42,7 +44,9 @@ export const sectionDataConst: SectionDataModel = {
     },
     group: GroupDataEnum.header,
     view: HomeView,
-    palette: SectionPaletteEnum.primary,
+    style: {
+      palette: SectionPaletteEnum.primary,
+    },
     order: 1,
   },
   aboutMe: {
@@ -58,7 +62,9 @@ export const sectionDataConst: SectionDataModel = {
     },
     group: GroupDataEnum.main,
     view: AboutMeView,
-    palette: SectionPaletteEnum.surface,
+    style: {
+      palette: SectionPaletteEnum.surface,
+    },
     order: 0,
   },
   technologies: {
@@ -74,7 +80,9 @@ export const sectionDataConst: SectionDataModel = {
     },
     group: GroupDataEnum.main,
     view: TechnologiesView,
-    palette: SectionPaletteEnum.surface,
+    style: {
+      palette: SectionPaletteEnum.surface,
+    },
     order: 1,
   },
   skills: {
@@ -90,7 +98,9 @@ export const sectionDataConst: SectionDataModel = {
     },
     group: GroupDataEnum.main,
     view: SkillsView,
-    palette: SectionPaletteEnum.surface,
+    style: {
+      palette: SectionPaletteEnum.surface,
+    },
     order: 2,
   },
   experience: {
@@ -106,7 +116,9 @@ export const sectionDataConst: SectionDataModel = {
     },
     group: GroupDataEnum.main,
     view: ExperienceView,
-    palette: SectionPaletteEnum.surface,
+    style: {
+      palette: SectionPaletteEnum.surface,
+    },
     order: 3,
   },
   resume: {
@@ -122,7 +134,9 @@ export const sectionDataConst: SectionDataModel = {
     },
     group: GroupDataEnum.main,
     view: ResumeView,
-    palette: SectionPaletteEnum.surface,
+    style: {
+      palette: SectionPaletteEnum.surface,
+    },
     order: 4,
   },
   projects: {
@@ -138,7 +152,9 @@ export const sectionDataConst: SectionDataModel = {
     },
     group: GroupDataEnum.main,
     view: ProjectsView,
-    palette: SectionPaletteEnum.surface,
+    style: {
+      palette: SectionPaletteEnum.surface,
+    },
     order: 5,
   },
   education: {
@@ -153,7 +169,9 @@ export const sectionDataConst: SectionDataModel = {
       href: '#education',
     },
     group: GroupDataEnum.main,
-    palette: SectionPaletteEnum.surface,
+    style: {
+      palette: SectionPaletteEnum.surface,
+    },
     view: EducationView,
     order: 6,
   },
@@ -170,7 +188,9 @@ export const sectionDataConst: SectionDataModel = {
     },
     group: GroupDataEnum.footer,
     view: ContactView,
-    palette: SectionPaletteEnum.primary,
+    style: {
+      palette: SectionPaletteEnum.primary,
+    },
     order: 0,
   },
   copyright: {
@@ -185,7 +205,9 @@ export const sectionDataConst: SectionDataModel = {
     },
     group: GroupDataEnum.footer,
     view: CopyrightView,
-    palette: SectionPaletteEnum.primary,
+    style: {
+      palette: SectionPaletteEnum.primary,
+    },
     order: 1,
   },
 };
