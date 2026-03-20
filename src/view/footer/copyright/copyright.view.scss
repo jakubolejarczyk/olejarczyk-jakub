@@ -1,0 +1,13 @@
+@use '../../../style/abstracts/variables';
+
+.copyright {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: variables.$size--xs;
+
+  @media screen and (min-width: variables.$screen__size--tablet) {
+    flex-direction: row;
+  }
+}
