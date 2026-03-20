@@ -1,0 +1,33 @@
+@use '../../../style/abstracts/variables';
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: variables.$size--lg;
+  padding: variables.$size--xl variables.$size--lg;
+
+  &__column {
+    flex: 1;
+  }
+
+  @media screen and (min-width: variables.$screen__size--tablet) {
+    flex-direction: row;
+    justify-content: space-between;
+
+    &__column:first-child {
+      flex: 0 0 100%;
+    }
+  }
+
+  @media screen and (min-width: variables.$screen__size--laptop) {
+    &__column {
+      flex: 0 0 200px;
+
+      &:first-child {
+        flex: 3;
+      }
+    }
+  }
+}

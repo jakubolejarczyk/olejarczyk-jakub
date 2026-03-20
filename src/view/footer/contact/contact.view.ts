@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { StoreCore } from '../../../store/store.core';
 import { TextComponent } from '../../../component/text/text.component';
+import { StoreCore } from '../../../store/store.core';
 
 @Component({
   selector: 'contact-view',
@@ -9,19 +9,16 @@ import { TextComponent } from '../../../component/text/text.component';
   imports: [TextComponent],
 })
 export class ContactView extends StoreCore {
-  fullname = this.store.selectSignal((state) => {
-    const { firstname, lastname } = state.personal;
-    return `${firstname} ${lastname}`;
-  });
-
-  socialMedias = this.store.selectSignal((state) => state.personal.socialMedias);
-
-  email = this.store.selectSignal((state) => state.personal.email);
-
-  phone = this.store.selectSignal((state) => state.personal.phone);
-
-  location = this.store.selectSignal((state) => {
-    const { country, city } = state.personal;
-    return `${country}, ${city}`;
+  contact = this.store.selectSignal((state) => {
+    const { firstname, lastname, email, phone, city, country, socialMedias } = state.personal;
+    const fullname = `${firstname} ${lastname}`;
+    const location = `${country}, ${city}`;
+    return {
+      fullname,
+      email,
+      phone,
+      location,
+      socialMedias,
+    };
   });
 }
