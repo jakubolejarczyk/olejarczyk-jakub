@@ -19,6 +19,7 @@ export const sectionDataConst: SectionDataModel = {
     type: SectionDataEnum.navigation,
     header: {
       enable: false,
+      label: '',
     },
     routable: {
       enable: false,
@@ -32,6 +33,7 @@ export const sectionDataConst: SectionDataModel = {
     type: SectionDataEnum.home,
     header: {
       enable: false,
+      label: '',
     },
     routable: {
       enable: true,
@@ -151,6 +153,7 @@ export const sectionDataConst: SectionDataModel = {
     type: SectionDataEnum.contact,
     header: {
       enable: false,
+      label: '',
     },
     routable: {
       enable: true,
@@ -165,6 +168,7 @@ export const sectionDataConst: SectionDataModel = {
     type: SectionDataEnum.copyright,
     header: {
       enable: false,
+      label: '',
     },
     routable: {
       enable: false,

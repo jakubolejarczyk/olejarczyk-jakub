@@ -1,4 +1,12 @@
-<section>
-  <p>section type: {{ type() }} welcome!</p>
-  <ng-content></ng-content>
+<section [id]="section().id" class="section">
+  <div class="section__wrapper">
+    <header class="section__header">
+      @if (section().header.enable) {
+        <h2>{{ section().header.label }}</h2>
+      }
+    </header>
+    <div class="section__content">
+      <ng-container *ngComponentOutlet="section().view"></ng-container>
+    </div>
+  </div>
 </section>

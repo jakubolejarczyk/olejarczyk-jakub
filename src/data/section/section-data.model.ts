@@ -1,16 +1,10 @@
 import { GroupDataEnum } from '../group/group-data.enum';
 import { SectionDataEnum } from './section-data.enum';
 
-interface HeaderEnabledModel {
-  enable: true;
+interface HeaderModel {
+  enable: boolean;
   label: string;
 }
-
-interface HeaderDisabledModel {
-  enable: false;
-}
-
-type HeaderType = HeaderEnabledModel | HeaderDisabledModel;
 
 interface RoutableEnabledModel {
   enable: true;
@@ -26,7 +20,7 @@ type SectionRouteType = RoutableEnabledModel | RoutableDisabledModel;
 interface SectionModel {
   id: string;
   type: SectionDataEnum;
-  header: HeaderType;
+  header: HeaderModel;
   routable: SectionRouteType;
   group: GroupDataEnum;
   view: any;

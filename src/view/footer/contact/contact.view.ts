@@ -1,13 +1,9 @@
 import { Component } from '@angular/core';
 import { StoreCore } from '../../../store/store.core';
-import { TextComponent } from '../../../component/text/text.component';
-import { LinkComponent } from '../../../component/link/link.component';
 
 @Component({
   selector: 'contact-view',
   templateUrl: './contact.view.html',
-  styleUrl: './contact.view.scss',
-  imports: [TextComponent, LinkComponent],
 })
 export class ContactView extends StoreCore {
   fullname = this.store.selectSignal((state) => {
