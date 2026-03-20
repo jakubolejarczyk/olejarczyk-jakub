@@ -1,12 +1,10 @@
 import { Component, input } from '@angular/core';
-import { TextComponent } from '../text/text.component';
 import { LinkType } from './link.type';
 
 @Component({
   selector: 'link-component',
   templateUrl: './link.component.html',
   styleUrl: './link.component.scss',
-  imports: [TextComponent],
 })
 export class LinkComponent {
   label = input.required<string>();

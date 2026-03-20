@@ -2,7 +2,7 @@
   <div class="section__wrapper">
     @if (section().header.enable) {
       <header class="section__header">
-        <h2>{{ section().header.label }}</h2>
+        <text-component type="h2" [value]="section().header.label"></text-component>
       </header>
     }
     <div class="section__content">

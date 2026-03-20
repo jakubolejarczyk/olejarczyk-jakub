@@ -250,7 +250,7 @@ export const sectionDataConst: SectionDataModel = {
     style: {
       color: ColorEnum.primary,
       padding: {
-        vertical: SizeEnum.md,
+        vertical: SizeEnum.xl,
         horizontal: SizeEnum.md,
       },
     },
