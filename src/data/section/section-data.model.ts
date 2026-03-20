@@ -6,8 +6,14 @@ import { SectionDataEnum } from './section-data.enum';
 interface StyleModel {
   color: ColorEnum;
   padding: {
-    vertical: SizeEnum;
-    horizontal: SizeEnum;
+    vertical: {
+      top: SizeEnum;
+      bottom: SizeEnum;
+    };
+    horizontal: {
+      left: SizeEnum;
+      right: SizeEnum;
+    };
   };
 }
 

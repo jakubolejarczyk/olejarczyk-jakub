@@ -18,8 +18,16 @@ export class SectionComponent extends StoreCore {
     const { color, padding } = this.section().style;
     const { vertical, horizontal } = padding;
     const sectionColor = Bem.build('section', 'color', color);
-    const sectionPaddingVertical = Bem.build('section', 'padding', `vertical-${vertical}`);
-    const sectionPaddingHorizontal = Bem.build('section', 'padding', `horizontal-${horizontal}`);
-    return [sectionColor, sectionPaddingVertical, sectionPaddingHorizontal];
+    const sectionPaddingTop = Bem.build('section', 'padding', `top-${vertical.top}`);
+    const sectionPaddingBottom = Bem.build('section', 'padding', `bottom-${vertical.bottom}`);
+    const sectionPaddingLeft = Bem.build('section', 'padding', `left-${horizontal.left}`);
+    const sectionPaddingRight = Bem.build('section', 'padding', `right-${horizontal.right}`);
+    return [
+      sectionColor,
+      sectionPaddingTop,
+      sectionPaddingBottom,
+      sectionPaddingLeft,
+      sectionPaddingRight,
+    ];
   }
 }

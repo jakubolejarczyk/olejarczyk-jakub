@@ -1,6 +1,4 @@
-<text-component type="p" value="contact works!"></text-component>
-
-<!-- <section class="contact">
+<section class="contact">
   <div class="contact__column contact__fullname">
     <text-component type="h2" color="inverse" [value]="fullname()"></text-component>
     <div class="contact__items">
@@ -16,31 +14,16 @@
     <text-component type="h3" color="inverse" value="Social media"></text-component>
     <div class="contact__items">
       @for (socialMedia of socialMedias(); track socialMedia.label) {
-        <link-component
-          [label]="socialMedia.label"
-          [url]="socialMedia.url"
-          type="page"
-          [externalLink]="true"
-        ></link-component>
+        <text-component type="p" [value]="socialMedia.label"></text-component>
       }
     </div>
   </div>
   <div class="contact__column contact__contact">
     <text-component type="h3" color="inverse" value="Contact"></text-component>
     <div class="contact__items">
-      <link-component
-        [label]="email()"
-        [url]="email()"
-        type="email"
-        [externalLink]="true"
-      ></link-component>
-      <link-component
-        [label]="phone()"
-        [url]="phone()"
-        type="phone"
-        [externalLink]="true"
-      ></link-component>
+      <text-component type="p" [value]="email()"></text-component>
+      <text-component type="p" [value]="phone()"></text-component>
       <text-component type="p" color="inverse" [value]="location()"></text-component>
     </div>
   </div>
-</section> -->
+</section>
