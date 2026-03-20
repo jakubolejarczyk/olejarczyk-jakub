@@ -25,6 +25,7 @@ type SectionRouteType = RoutableEnabledModel | RoutableDisabledModel;
 
 interface SectionModel {
   id: string;
+  type: SectionDataEnum;
   header: HeaderType;
   routable: SectionRouteType;
   group: GroupDataEnum;

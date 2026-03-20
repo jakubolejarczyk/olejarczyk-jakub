@@ -1,5 +1,7 @@
 <main>
   @for (section of sections(); track section) {
-    <ng-container *ngComponentOutlet="section"></ng-container>
+    <section-component [type]="section.type">
+      <ng-container *ngComponentOutlet="section.view"></ng-container>
+    </section-component>
   }
 </main>

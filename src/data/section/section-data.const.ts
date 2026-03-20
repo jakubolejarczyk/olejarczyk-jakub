@@ -10,11 +10,13 @@ import { ResumeView } from '../../view/main/resume/resume.view';
 import { SkillsView } from '../../view/main/skills/skills.view';
 import { TechnologiesView } from '../../view/main/technologies/technologies.view';
 import { GroupDataEnum } from '../group/group-data.enum';
+import { SectionDataEnum } from './section-data.enum';
 import { SectionDataModel } from './section-data.model';
 
 export const sectionDataConst: SectionDataModel = {
   navigation: {
     id: 'navigation',
+    type: SectionDataEnum.navigation,
     header: {
       enable: false,
     },
@@ -27,6 +29,7 @@ export const sectionDataConst: SectionDataModel = {
   },
   home: {
     id: 'home',
+    type: SectionDataEnum.home,
     header: {
       enable: false,
     },
@@ -40,6 +43,7 @@ export const sectionDataConst: SectionDataModel = {
   },
   aboutMe: {
     id: 'about-me',
+    type: SectionDataEnum.aboutMe,
     header: {
       enable: true,
       label: 'About me',
@@ -54,6 +58,7 @@ export const sectionDataConst: SectionDataModel = {
   },
   technologies: {
     id: 'technologies',
+    type: SectionDataEnum.technologies,
     header: {
       enable: true,
       label: 'Technologies',
@@ -68,6 +73,7 @@ export const sectionDataConst: SectionDataModel = {
   },
   skills: {
     id: 'skills',
+    type: SectionDataEnum.skills,
     header: {
       enable: true,
       label: 'Skills',
@@ -82,6 +88,7 @@ export const sectionDataConst: SectionDataModel = {
   },
   experience: {
     id: 'experience',
+    type: SectionDataEnum.experience,
     header: {
       enable: true,
       label: 'Experience',
@@ -96,6 +103,7 @@ export const sectionDataConst: SectionDataModel = {
   },
   resume: {
     id: 'resume',
+    type: SectionDataEnum.resume,
     header: {
       enable: true,
       label: 'Resume',
@@ -110,6 +118,7 @@ export const sectionDataConst: SectionDataModel = {
   },
   projects: {
     id: 'projects',
+    type: SectionDataEnum.projects,
     header: {
       enable: true,
       label: 'Projects',
@@ -124,6 +133,7 @@ export const sectionDataConst: SectionDataModel = {
   },
   education: {
     id: 'education',
+    type: SectionDataEnum.education,
     header: {
       enable: true,
       label: 'Education',
@@ -138,6 +148,7 @@ export const sectionDataConst: SectionDataModel = {
   },
   contact: {
     id: 'contact',
+    type: SectionDataEnum.contact,
     header: {
       enable: false,
     },
@@ -151,6 +162,7 @@ export const sectionDataConst: SectionDataModel = {
   },
   copyright: {
     id: 'copyright',
+    type: SectionDataEnum.copyright,
     header: {
       enable: false,
     },
