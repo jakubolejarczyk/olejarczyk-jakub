@@ -28,6 +28,7 @@ interface SectionModel {
   header: HeaderType;
   routable: SectionRouteType;
   group: GroupDataEnum;
+  view: any;
   order: number;
 }
 

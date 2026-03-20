@@ -1,1 +1,5 @@
-<p>main works!</p>
+<main>
+  @for (section of sections(); track section) {
+    <ng-container *ngComponentOutlet="section"></ng-container>
+  }
+</main>

@@ -1,3 +1,14 @@
+import { ContactView } from '../../view/footer/contact/contact.view';
+import { CopyrightView } from '../../view/footer/copyright/copyright.view';
+import { HomeView } from '../../view/header/home/home.view';
+import { NavigationView } from '../../view/header/navigation/navigation.view';
+import { AboutMeView } from '../../view/main/about-me/about-me.view';
+import { EducationView } from '../../view/main/education/education.view';
+import { ExperienceView } from '../../view/main/experience/experience.view';
+import { ProjectsView } from '../../view/main/projects/projects.view';
+import { ResumeView } from '../../view/main/resume/resume.view';
+import { SkillsView } from '../../view/main/skills/skills.view';
+import { TechnologiesView } from '../../view/main/technologies/technologies.view';
 import { GroupDataEnum } from '../group/group-data.enum';
 import { SectionDataModel } from './section-data.model';
 
@@ -11,6 +22,7 @@ export const sectionDataConst: SectionDataModel = {
       enable: false,
     },
     group: GroupDataEnum.header,
+    view: NavigationView,
     order: 0,
   },
   home: {
@@ -23,6 +35,7 @@ export const sectionDataConst: SectionDataModel = {
       href: '#home',
     },
     group: GroupDataEnum.header,
+    view: HomeView,
     order: 1,
   },
   aboutMe: {
@@ -36,6 +49,7 @@ export const sectionDataConst: SectionDataModel = {
       href: '#about-me',
     },
     group: GroupDataEnum.main,
+    view: AboutMeView,
     order: 0,
   },
   technologies: {
@@ -49,6 +63,7 @@ export const sectionDataConst: SectionDataModel = {
       href: '#technologies',
     },
     group: GroupDataEnum.main,
+    view: TechnologiesView,
     order: 1,
   },
   skills: {
@@ -62,6 +77,7 @@ export const sectionDataConst: SectionDataModel = {
       href: '#skills',
     },
     group: GroupDataEnum.main,
+    view: SkillsView,
     order: 2,
   },
   experience: {
@@ -75,6 +91,7 @@ export const sectionDataConst: SectionDataModel = {
       href: '#experience',
     },
     group: GroupDataEnum.main,
+    view: ExperienceView,
     order: 3,
   },
   resume: {
@@ -88,6 +105,7 @@ export const sectionDataConst: SectionDataModel = {
       href: '#resume',
     },
     group: GroupDataEnum.main,
+    view: ResumeView,
     order: 4,
   },
   projects: {
@@ -101,6 +119,7 @@ export const sectionDataConst: SectionDataModel = {
       href: '#projects',
     },
     group: GroupDataEnum.main,
+    view: ProjectsView,
     order: 5,
   },
   education: {
@@ -114,6 +133,7 @@ export const sectionDataConst: SectionDataModel = {
       href: '#education',
     },
     group: GroupDataEnum.main,
+    view: EducationView,
     order: 6,
   },
   contact: {
@@ -126,6 +146,7 @@ export const sectionDataConst: SectionDataModel = {
       href: '#contact',
     },
     group: GroupDataEnum.footer,
+    view: ContactView,
     order: 0,
   },
   copyright: {
@@ -137,6 +158,7 @@ export const sectionDataConst: SectionDataModel = {
       enable: false,
     },
     group: GroupDataEnum.footer,
+    view: CopyrightView,
     order: 1,
   },
 };

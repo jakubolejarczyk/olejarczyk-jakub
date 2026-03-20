@@ -1,1 +1,5 @@
-<p>footer works!</p>
+<footer>
+  @for (section of sections(); track section) {
+    <ng-container *ngComponentOutlet="section"></ng-container>
+  }
+</footer>

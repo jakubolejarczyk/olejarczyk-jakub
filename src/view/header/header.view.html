@@ -1,1 +1,5 @@
-<p>header works!</p>
+<header>
+  @for (section of sections(); track section) {
+    <ng-container *ngComponentOutlet="section"></ng-container>
+  }
+</header>
