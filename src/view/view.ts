@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
 import { NgComponentOutlet } from '@angular/common';
+import { Component } from '@angular/core';
 import { StoreCore } from '../store/store.core';
 
 @Component({
