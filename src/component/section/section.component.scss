@@ -1,0 +1,21 @@
+@use '../../style/abstracts/variables';
+
+.section {
+  &--primary {
+    background-color: variables.$color__primary--default;
+    color: variables.$color__text--inverse;
+  }
+
+  &--main {
+    background-color: variables.$color__background--main;
+  }
+
+  &--surface {
+    background-color: variables.$color__background--surface;
+  }
+
+  &--main,
+  &--surface {
+    color: variables.$color__text--primary;
+  }
+}

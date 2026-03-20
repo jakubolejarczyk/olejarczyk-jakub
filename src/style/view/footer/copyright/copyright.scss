@@ -1,12 +1,12 @@
-@use '../../../abstracts/variables';
-@use '../../../abstracts/mixins';
+// @use '../../../abstracts/variables';
+// @use '../../../abstracts/mixins';
 
-.copyright {
-  @include mixins.flex($column: 'true');
-  @include mixins.flex--center;
+// .copyright {
+//   @include mixins.flex($column: 'true');
+//   @include mixins.flex--center;
 
-  @media screen and (min-width: variables.$screen__size--tablet) {
-    gap: variables.$space--xs;
-    flex-direction: row;
-  }
-}
+//   @media screen and (min-width: variables.$screen__size--tablet) {
+//     gap: variables.$space--xs;
+//     flex-direction: row;
+//   }
+// }

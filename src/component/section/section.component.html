@@ -1,10 +1,10 @@
-<section [id]="section().id" class="section">
+<section [id]="section().id" class="section" [ngClass]="buildSectionClassList()">
   <div class="section__wrapper">
-    <header class="section__header">
-      @if (section().header.enable) {
+    @if (section().header.enable) {
+      <header class="section__header">
         <h2>{{ section().header.label }}</h2>
-      }
-    </header>
+      </header>
+    }
     <div class="section__content">
       <ng-container *ngComponentOutlet="section().view"></ng-container>
     </div>

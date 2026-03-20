@@ -11,3 +11,9 @@ export enum SectionDataEnum {
   contact = 'contact',
   copyright = 'copyright',
 }
+
+export enum SectionPaletteEnum {
+  primary = 'primary',
+  main = 'main',
+  surface = 'surface',
+}

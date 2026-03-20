@@ -1,12 +1,12 @@
-@use '../../abstracts/variables';
-@use '../../abstracts/mixins';
+// @use '../../abstracts/variables';
+// @use '../../abstracts/mixins';
 
-.footer {
-  @include mixins.section;
-  @include mixins.flex($column: 'true');
+// .footer {
+//   @include mixins.section;
+//   @include mixins.flex($column: 'true');
 
-  &__divide-line {
-    @include mixins.margin($vertical: 'lg');
-    @include mixins.divide-line;
-  }
-}
+//   &__divide-line {
+//     @include mixins.margin($vertical: 'lg');
+//     @include mixins.divide-line;
+//   }
+// }

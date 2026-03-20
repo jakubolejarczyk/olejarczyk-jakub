@@ -1,38 +1,38 @@
-@use '../../../abstracts/variables';
-@use '../../../abstracts/mixins';
+// @use '../../../abstracts/variables';
+// @use '../../../abstracts/mixins';
 
-.contact {
-  @include mixins.flex($column: 'true', $gap: 'lg');
+// .contact {
+//   @include mixins.flex($column: 'true', $gap: 'lg');
 
-  @media screen and (min-width: variables.$screen__size--tablet) {
-    flex-direction: row;
-  }
+//   @media screen and (min-width: variables.$screen__size--tablet) {
+//     flex-direction: row;
+//   }
 
-  &__column {
-    @include mixins.flex($column: 'true', $gap: 'xs');
-  }
+//   &__column {
+//     @include mixins.flex($column: 'true', $gap: 'xs');
+//   }
 
-  &__fullname {
-    @media screen and (min-width: variables.$screen__size--tablet) {
-      flex: 0 0 100%;
-    }
+//   &__fullname {
+//     @media screen and (min-width: variables.$screen__size--tablet) {
+//       flex: 0 0 100%;
+//     }
 
-    @media screen and (min-width: variables.$screen__size--laptop) {
-      flex: 3;
-    }
-  }
+//     @media screen and (min-width: variables.$screen__size--laptop) {
+//       flex: 3;
+//     }
+//   }
 
-  &__social-media,
-  &__contact {
-    flex: 1;
+//   &__social-media,
+//   &__contact {
+//     flex: 1;
 
-    @media screen and (min-width: variables.$screen__size--laptop) {
-      flex: 0 0 200px;
-    }
-  }
+//     @media screen and (min-width: variables.$screen__size--laptop) {
+//       flex: 0 0 200px;
+//     }
+//   }
 
-  &__items {
-    @include mixins.flex($column: 'true');
-    color: variables.$color__text--inverse;
-  }
-}
+//   &__items {
+//     @include mixins.flex($column: 'true');
+//     color: variables.$color__text--inverse;
+//   }
+// }
