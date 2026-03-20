@@ -13,6 +13,6 @@ export class CopyrightView extends StoreCore {
   yearAndFullname = this.store.selectSignal((state) => {
     const { firstname, lastname } = state.personal;
     const year = DateUtil.getYear();
-    return `${year} ${firstname} ${lastname}.`;
+    return `${year} ${firstname} ${lastname}`;
   });
 }

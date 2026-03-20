@@ -1,8 +1,6 @@
 @use '../../style/abstracts/variables';
 
 .section {
-  padding: 1rem;
-
   &__palette {
     &--primary {
       background-color: variables.$color__primary--default;

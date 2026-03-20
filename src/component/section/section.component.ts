@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgComponentOutlet } from '@angular/common';
 import { Component, input } from '@angular/core';
 import { TextComponent } from '../text/text.component';
 import { StoreCore } from '../../store/store.core';
@@ -9,7 +9,7 @@ import { BemUtil } from '../../util/bem.util';
   selector: 'section-component',
   templateUrl: './section.component.html',
   styleUrl: './section.component.scss',
-  imports: [CommonModule, TextComponent],
+  imports: [CommonModule, TextComponent, NgComponentOutlet],
 })
 export class SectionComponent extends StoreCore {
   section = input.required<SectionDataModel[keyof SectionDataModel]>();

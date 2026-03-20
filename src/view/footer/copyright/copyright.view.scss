@@ -1,0 +1,15 @@
+@use '../../../style/abstracts/variables';
+
+.copyright {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: variables.$size--lg;
+  border-top: 1px solid variables.$color__primary--dark;
+
+  @media screen and (min-width: variables.$screen__size--tablet) {
+    flex-direction: row;
+    gap: variables.$size--xs;
+  }
+}
