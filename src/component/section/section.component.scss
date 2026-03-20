@@ -1,21 +1,76 @@
 @use '../../style/abstracts/variables';
 
 .section {
-  &--primary {
-    background-color: variables.$color__primary--default;
-    color: variables.$color__text--inverse;
+  &__color {
+    &--primary {
+      background-color: variables.$color__primary--default;
+      color: variables.$color__text--inverse;
+    }
+
+    &--main {
+      background-color: variables.$color__background--main;
+      color: variables.$color__text--primary;
+    }
+
+    &--surface {
+      background-color: variables.$color__background--surface;
+      color: variables.$color__text--primary;
+    }
   }
 
-  &--main {
-    background-color: variables.$color__background--main;
-  }
+  &__padding {
+    &--vertical {
+      &-xs {
+        padding-top: variables.$size--xs;
+        padding-bottom: variables.$size--xs;
+      }
 
-  &--surface {
-    background-color: variables.$color__background--surface;
-  }
+      &-sm {
+        padding-top: variables.$size--sm;
+        padding-bottom: variables.$size--sm;
+      }
 
-  &--main,
-  &--surface {
-    color: variables.$color__text--primary;
+      &-md {
+        padding-top: variables.$size--md;
+        padding-bottom: variables.$size--md;
+      }
+
+      &-lg {
+        padding-top: variables.$size--lg;
+        padding-bottom: variables.$size--lg;
+      }
+
+      &-xl {
+        padding-top: variables.$size--xl;
+        padding-bottom: variables.$size--xl;
+      }
+    }
+
+    &--horizontal {
+      &-xs {
+        padding-left: variables.$size--xs;
+        padding-right: variables.$size--xs;
+      }
+
+      &-sm {
+        padding-left: variables.$size--sm;
+        padding-right: variables.$size--sm;
+      }
+
+      &-md {
+        padding-left: variables.$size--md;
+        padding-right: variables.$size--md;
+      }
+
+      &-lg {
+        padding-left: variables.$size--lg;
+        padding-right: variables.$size--lg;
+      }
+
+      &-xl {
+        padding-left: variables.$size--xl;
+        padding-right: variables.$size--xl;
+      }
+    }
   }
 }

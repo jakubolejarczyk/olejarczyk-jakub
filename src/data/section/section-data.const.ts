@@ -1,3 +1,5 @@
+import { ColorEnum } from '../../enum/color.enum';
+import { SizeEnum } from '../../enum/size.enum';
 import { ContactView } from '../../view/footer/contact/contact.view';
 import { CopyrightView } from '../../view/footer/copyright/copyright.view';
 import { HomeView } from '../../view/header/home/home.view';
@@ -10,7 +12,7 @@ import { ResumeView } from '../../view/main/resume/resume.view';
 import { SkillsView } from '../../view/main/skills/skills.view';
 import { TechnologiesView } from '../../view/main/technologies/technologies.view';
 import { GroupDataEnum } from '../group/group-data.enum';
-import { SectionDataEnum, SectionPaletteEnum } from './section-data.enum';
+import { SectionDataEnum } from './section-data.enum';
 import { SectionDataModel } from './section-data.model';
 
 export const sectionDataConst: SectionDataModel = {
@@ -27,7 +29,11 @@ export const sectionDataConst: SectionDataModel = {
     group: GroupDataEnum.header,
     view: NavigationView,
     style: {
-      palette: SectionPaletteEnum.primary,
+      color: ColorEnum.primary,
+      padding: {
+        vertical: SizeEnum.md,
+        horizontal: SizeEnum.md,
+      },
     },
     order: 0,
   },
@@ -45,7 +51,11 @@ export const sectionDataConst: SectionDataModel = {
     group: GroupDataEnum.header,
     view: HomeView,
     style: {
-      palette: SectionPaletteEnum.primary,
+      color: ColorEnum.primary,
+      padding: {
+        vertical: SizeEnum.xl,
+        horizontal: SizeEnum.md,
+      },
     },
     order: 1,
   },
@@ -63,7 +73,11 @@ export const sectionDataConst: SectionDataModel = {
     group: GroupDataEnum.main,
     view: AboutMeView,
     style: {
-      palette: SectionPaletteEnum.surface,
+      color: ColorEnum.surface,
+      padding: {
+        vertical: SizeEnum.xl,
+        horizontal: SizeEnum.md,
+      },
     },
     order: 0,
   },
@@ -81,7 +95,11 @@ export const sectionDataConst: SectionDataModel = {
     group: GroupDataEnum.main,
     view: TechnologiesView,
     style: {
-      palette: SectionPaletteEnum.surface,
+      color: ColorEnum.surface,
+      padding: {
+        vertical: SizeEnum.xl,
+        horizontal: SizeEnum.md,
+      },
     },
     order: 1,
   },
@@ -99,7 +117,11 @@ export const sectionDataConst: SectionDataModel = {
     group: GroupDataEnum.main,
     view: SkillsView,
     style: {
-      palette: SectionPaletteEnum.surface,
+      color: ColorEnum.surface,
+      padding: {
+        vertical: SizeEnum.xl,
+        horizontal: SizeEnum.md,
+      },
     },
     order: 2,
   },
@@ -117,7 +139,11 @@ export const sectionDataConst: SectionDataModel = {
     group: GroupDataEnum.main,
     view: ExperienceView,
     style: {
-      palette: SectionPaletteEnum.surface,
+      color: ColorEnum.surface,
+      padding: {
+        vertical: SizeEnum.xl,
+        horizontal: SizeEnum.md,
+      },
     },
     order: 3,
   },
@@ -135,7 +161,11 @@ export const sectionDataConst: SectionDataModel = {
     group: GroupDataEnum.main,
     view: ResumeView,
     style: {
-      palette: SectionPaletteEnum.surface,
+      color: ColorEnum.surface,
+      padding: {
+        vertical: SizeEnum.xl,
+        horizontal: SizeEnum.md,
+      },
     },
     order: 4,
   },
@@ -153,7 +183,11 @@ export const sectionDataConst: SectionDataModel = {
     group: GroupDataEnum.main,
     view: ProjectsView,
     style: {
-      palette: SectionPaletteEnum.surface,
+      color: ColorEnum.surface,
+      padding: {
+        vertical: SizeEnum.xl,
+        horizontal: SizeEnum.md,
+      },
     },
     order: 5,
   },
@@ -170,7 +204,11 @@ export const sectionDataConst: SectionDataModel = {
     },
     group: GroupDataEnum.main,
     style: {
-      palette: SectionPaletteEnum.surface,
+      color: ColorEnum.surface,
+      padding: {
+        vertical: SizeEnum.xl,
+        horizontal: SizeEnum.md,
+      },
     },
     view: EducationView,
     order: 6,
@@ -189,7 +227,11 @@ export const sectionDataConst: SectionDataModel = {
     group: GroupDataEnum.footer,
     view: ContactView,
     style: {
-      palette: SectionPaletteEnum.primary,
+      color: ColorEnum.primary,
+      padding: {
+        vertical: SizeEnum.xl,
+        horizontal: SizeEnum.md,
+      },
     },
     order: 0,
   },
@@ -206,7 +248,11 @@ export const sectionDataConst: SectionDataModel = {
     group: GroupDataEnum.footer,
     view: CopyrightView,
     style: {
-      palette: SectionPaletteEnum.primary,
+      color: ColorEnum.primary,
+      padding: {
+        vertical: SizeEnum.md,
+        horizontal: SizeEnum.md,
+      },
     },
     order: 1,
   },

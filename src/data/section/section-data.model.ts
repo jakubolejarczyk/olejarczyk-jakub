@@ -1,8 +1,14 @@
+import { ColorEnum } from '../../enum/color.enum';
+import { SizeEnum } from '../../enum/size.enum';
 import { GroupDataEnum } from '../group/group-data.enum';
-import { SectionDataEnum, SectionPaletteEnum } from './section-data.enum';
+import { SectionDataEnum } from './section-data.enum';
 
 interface StyleModel {
-  palette: SectionPaletteEnum;
+  color: ColorEnum;
+  padding: {
+    vertical: SizeEnum;
+    horizontal: SizeEnum;
+  };
 }
 
 interface HeaderModel {
