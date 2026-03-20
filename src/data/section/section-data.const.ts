@@ -31,14 +31,10 @@ export const sectionDataConst: SectionDataModel = {
     style: {
       color: ColorEnum.primary,
       padding: {
-        vertical: {
-          top: SizeEnum.md,
-          bottom: SizeEnum.md,
-        },
-        horizontal: {
-          left: SizeEnum.md,
-          right: SizeEnum.md,
-        },
+        top: SizeEnum.md,
+        bottom: SizeEnum.md,
+        left: SizeEnum.md,
+        right: SizeEnum.md,
       },
     },
     order: 0,
@@ -59,14 +55,10 @@ export const sectionDataConst: SectionDataModel = {
     style: {
       color: ColorEnum.primary,
       padding: {
-        vertical: {
-          top: SizeEnum.xl,
-          bottom: SizeEnum.xl,
-        },
-        horizontal: {
-          left: SizeEnum.md,
-          right: SizeEnum.md,
-        },
+        top: SizeEnum.xl,
+        bottom: SizeEnum.xl,
+        left: SizeEnum.md,
+        right: SizeEnum.md,
       },
     },
     order: 1,
@@ -87,14 +79,10 @@ export const sectionDataConst: SectionDataModel = {
     style: {
       color: ColorEnum.surface,
       padding: {
-        vertical: {
-          top: SizeEnum.xl,
-          bottom: SizeEnum.xl,
-        },
-        horizontal: {
-          left: SizeEnum.md,
-          right: SizeEnum.md,
-        },
+        top: SizeEnum.xl,
+        bottom: SizeEnum.xl,
+        left: SizeEnum.md,
+        right: SizeEnum.md,
       },
     },
     order: 0,
@@ -115,14 +103,10 @@ export const sectionDataConst: SectionDataModel = {
     style: {
       color: ColorEnum.surface,
       padding: {
-        vertical: {
-          top: SizeEnum.xl,
-          bottom: SizeEnum.xl,
-        },
-        horizontal: {
-          left: SizeEnum.md,
-          right: SizeEnum.md,
-        },
+        top: SizeEnum.xl,
+        bottom: SizeEnum.xl,
+        left: SizeEnum.md,
+        right: SizeEnum.md,
       },
     },
     order: 1,
@@ -143,14 +127,10 @@ export const sectionDataConst: SectionDataModel = {
     style: {
       color: ColorEnum.surface,
       padding: {
-        vertical: {
-          top: SizeEnum.xl,
-          bottom: SizeEnum.xl,
-        },
-        horizontal: {
-          left: SizeEnum.md,
-          right: SizeEnum.md,
-        },
+        top: SizeEnum.xl,
+        bottom: SizeEnum.xl,
+        left: SizeEnum.md,
+        right: SizeEnum.md,
       },
     },
     order: 2,
@@ -171,14 +151,10 @@ export const sectionDataConst: SectionDataModel = {
     style: {
       color: ColorEnum.surface,
       padding: {
-        vertical: {
-          top: SizeEnum.xl,
-          bottom: SizeEnum.xl,
-        },
-        horizontal: {
-          left: SizeEnum.md,
-          right: SizeEnum.md,
-        },
+        top: SizeEnum.xl,
+        bottom: SizeEnum.xl,
+        left: SizeEnum.md,
+        right: SizeEnum.md,
       },
     },
     order: 3,
@@ -199,14 +175,10 @@ export const sectionDataConst: SectionDataModel = {
     style: {
       color: ColorEnum.surface,
       padding: {
-        vertical: {
-          top: SizeEnum.xl,
-          bottom: SizeEnum.xl,
-        },
-        horizontal: {
-          left: SizeEnum.md,
-          right: SizeEnum.md,
-        },
+        top: SizeEnum.xl,
+        bottom: SizeEnum.xl,
+        left: SizeEnum.md,
+        right: SizeEnum.md,
       },
     },
     order: 4,
@@ -227,14 +199,10 @@ export const sectionDataConst: SectionDataModel = {
     style: {
       color: ColorEnum.surface,
       padding: {
-        vertical: {
-          top: SizeEnum.xl,
-          bottom: SizeEnum.xl,
-        },
-        horizontal: {
-          left: SizeEnum.md,
-          right: SizeEnum.md,
-        },
+        top: SizeEnum.xl,
+        bottom: SizeEnum.xl,
+        left: SizeEnum.md,
+        right: SizeEnum.md,
       },
     },
     order: 5,
@@ -254,14 +222,10 @@ export const sectionDataConst: SectionDataModel = {
     style: {
       color: ColorEnum.surface,
       padding: {
-        vertical: {
-          top: SizeEnum.xl,
-          bottom: SizeEnum.xl,
-        },
-        horizontal: {
-          left: SizeEnum.md,
-          right: SizeEnum.md,
-        },
+        top: SizeEnum.xl,
+        bottom: SizeEnum.xl,
+        left: SizeEnum.md,
+        right: SizeEnum.md,
       },
     },
     view: EducationView,
@@ -283,14 +247,10 @@ export const sectionDataConst: SectionDataModel = {
     style: {
       color: ColorEnum.primary,
       padding: {
-        vertical: {
-          top: SizeEnum.xl,
-          bottom: SizeEnum.lg,
-        },
-        horizontal: {
-          left: SizeEnum.md,
-          right: SizeEnum.md,
-        },
+        top: SizeEnum.xl,
+        bottom: SizeEnum.lg,
+        left: SizeEnum.md,
+        right: SizeEnum.md,
       },
     },
     order: 0,
@@ -310,14 +270,10 @@ export const sectionDataConst: SectionDataModel = {
     style: {
       color: ColorEnum.primary,
       padding: {
-        vertical: {
-          top: SizeEnum.lg,
-          bottom: SizeEnum.xl,
-        },
-        horizontal: {
-          left: SizeEnum.md,
-          right: SizeEnum.md,
-        },
+        top: SizeEnum.lg,
+        bottom: SizeEnum.xl,
+        left: SizeEnum.md,
+        right: SizeEnum.md,
       },
     },
     order: 1,

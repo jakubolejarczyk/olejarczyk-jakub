@@ -20,6 +20,10 @@
 
   &__padding {
     &--top {
+      &-none {
+        padding-top: variables.$size--none;
+      }
+
       &-xs {
         padding-top: variables.$size--xs;
       }
@@ -42,6 +46,10 @@
     }
 
     &--bottom {
+      &-none {
+        padding-bottom: variables.$size--none;
+      }
+
       &-xs {
         padding-bottom: variables.$size--xs;
       }
@@ -64,6 +72,10 @@
     }
 
     &--left {
+      &-none {
+        padding-left: variables.$size--none;
+      }
+
       &-xs {
         padding-left: variables.$size--xs;
       }
@@ -86,6 +98,10 @@
     }
 
     &--right {
+      &-none {
+        padding-right: variables.$size--none;
+      }
+
       &-xs {
         padding-right: variables.$size--xs;
       }

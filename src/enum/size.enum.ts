@@ -1,4 +1,5 @@
 export enum SizeEnum {
+  none = 'none',
   xs = 'xs',
   sm = 'sm',
   md = 'md',
