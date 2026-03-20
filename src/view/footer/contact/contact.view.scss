@@ -9,7 +9,18 @@
   padding: variables.$size--xl variables.$size--lg;
 
   &__column {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: variables.$size--sm;
     flex: 1;
+  }
+
+  &__items {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
   }
 
   @media screen and (min-width: variables.$screen__size--tablet) {

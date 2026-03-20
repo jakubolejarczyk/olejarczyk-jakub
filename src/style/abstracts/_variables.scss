@@ -20,6 +20,7 @@ $color__text--primary: #111827;
 $color__text--secondary: #6b7280;
 $color__text--muted: #9ca3af;
 $color__text--inverse: #ffffff;
+$color__text--inverse-secondary: #d9d9d9;
 
 // Status colors
 $color__success: #22c55e;
@@ -32,10 +33,7 @@ $shadow--md: 0 4px 6px rgba(0, 0, 0, 0.1);
 $shadow--lg: 0 10px 15px rgba(0, 0, 0, 0.15);
 
 // Animation speed
-$animation-speed: 0.5s;
-
-// Opacity
-$divite-line__opacity: 0.4;
+$animation-speed: 0.25s;
 
 // Screen sizes
 $screen__size--tablet: 768px;

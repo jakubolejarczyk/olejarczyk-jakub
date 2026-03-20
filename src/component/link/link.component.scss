@@ -1,1 +1,23 @@
-@forward '../../style/component/link/link';
+@use '../../style/abstracts/variables';
+
+.link {
+  color: inherit;
+  text-decoration: none;
+  display: inline-block;
+  transition: color variables.$animation-speed ease-in-out;
+
+  &__palette {
+    &--primary {
+      color: variables.$color__text--inverse-secondary;
+    }
+
+    &--main {
+      color: variables.$color__text--secondary;
+    }
+  }
+
+  &:hover {
+    color: inherit;
+    text-decoration: underline;
+  }
+}

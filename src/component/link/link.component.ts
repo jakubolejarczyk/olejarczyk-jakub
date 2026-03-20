@@ -1,39 +1,40 @@
 import { Component, input } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { LinkType } from './link.type';
+import { TextComponent } from '../text/text.component';
+import { PaletteEnum } from '../../enum/palette.enum';
+import { BemUtil } from '../../util/bem.util';
 
 @Component({
   selector: 'link-component',
   templateUrl: './link.component.html',
   styleUrl: './link.component.scss',
+  imports: [TextComponent, CommonModule],
 })
 export class LinkComponent {
   label = input.required<string>();
 
-  url = input.required<string>();
+  href = input.required<string>();
 
-  type = input<LinkType>('page');
+  type = input.required<LinkType>();
 
-  externalLink = input(false);
+  palette = input.required<keyof typeof PaletteEnum>();
 
-  onClick() {
-    const path = this.url();
-    if (path.startsWith('#')) {
-      const element = document.getElementById(this.url());
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }
+  external = input(true);
+
+  buildHref() {
+    switch (this.type()) {
+      case 'page':
+        return this.href();
+      case 'email':
+        return 'mailto:'.concat(this.href());
+      case 'phone':
+        return 'tel:'.concat(this.href());
     }
   }
 
-  getUrl() {
-    switch (this.type()) {
-      case 'page':
-      case 'file':
-        return this.url();
-      case 'email':
-        return `mailto:${this.url()}`;
-      case 'phone':
-        return `tel:${this.url()}`;
-    }
+  buildSectionClassList() {
+    const textPalette = BemUtil.build('link', 'palette', this.palette());
+    return [textPalette];
   }
 }
