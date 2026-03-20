@@ -1,6 +1,7 @@
 import { GroupDataEnum } from './group-data.enum';
 
 interface GroupModel {
+  view: any;
   order: number;
 }
 

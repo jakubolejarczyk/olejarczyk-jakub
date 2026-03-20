@@ -1,3 +1,3 @@
-@for (item of group(); track item.order) {
-  <p>{{ item.order }}</p>
+@for (view of views(); track view) {
+  <ng-container *ngComponentOutlet="view"></ng-container>
 }

@@ -19,20 +19,27 @@ import {
 export const config: ApplicationConfig = {
   providers: [
     provideBrowserGlobalErrorListeners(),
-    provideStore({
-      aboutMe: aboutMeReducer,
-      company: companyReducer,
-      education: educationReducer,
-      experience: experienceReducer,
-      home: homeReducer,
-      personal: personalReducer,
-      resume: resumeReducer,
-      group: groupReducer,
-      section: sectionReducer,
-      skill: skillReducer,
-      technologyGroup: technologyGroupReducer,
-      technology: technologyReducer,
-    }),
+    provideStore(
+      {
+        aboutMe: aboutMeReducer,
+        company: companyReducer,
+        education: educationReducer,
+        experience: experienceReducer,
+        home: homeReducer,
+        personal: personalReducer,
+        resume: resumeReducer,
+        group: groupReducer,
+        section: sectionReducer,
+        skill: skillReducer,
+        technologyGroup: technologyGroupReducer,
+        technology: technologyReducer,
+      },
+      {
+        runtimeChecks: {
+          strictStateImmutability: false,
+        },
+      },
+    ),
     provideStoreDevtools({ maxAge: 25, logOnly: !isDevMode() }),
   ],
 };
