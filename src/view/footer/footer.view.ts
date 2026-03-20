@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
+import { SectionComponent } from '../../component/section/section.component';
 import { StoreCore } from '../../store/store.core';
 import { GroupDataEnum } from '../../data/group/group-data.enum';
-import { SectionComponent } from '../../component/section/section.component';
 
 @Component({
   selector: 'footer-view',
