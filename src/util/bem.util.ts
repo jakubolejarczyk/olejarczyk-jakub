@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
 @Injectable({ providedIn: 'root' })
-export class Bem {
+export class BemUtil {
   static build(block: string, element: string, modifier: string) {
     if (block !== '' && element === '' && modifier === '') {
       return block;

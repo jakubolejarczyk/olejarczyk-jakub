@@ -238,12 +238,12 @@
         },
         {
             "name": "HeaderModel",
-            "id": "interface-HeaderModel-30fe7d4517bb185a942dad5e2d5e8c5c9c77b9f810b1c21515a9f6f2428df0fd1c1a076400fea6cd545713cba0292dd12daacf68ac3fc92c8db895d9731d922c",
+            "id": "interface-HeaderModel-bb4e556fb395978d813c379b7c220de44360d6f21c10c371b5e51c82a178d47a52c1ab91df448ebdc1064979eeb8b579b9fef6f0f863458ce1c477901ce174d9",
             "file": "src/data/section/section-data.model.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "import { ColorEnum } from '../../enum/color.enum';\r\nimport { SizeEnum } from '../../enum/size.enum';\r\nimport { GroupDataEnum } from '../group/group-data.enum';\r\nimport { SectionDataEnum } from './section-data.enum';\r\n\r\ninterface StyleModel {\r\n  color: ColorEnum;\r\n  padding: {\r\n    top: SizeEnum;\r\n    bottom: SizeEnum;\r\n    left: SizeEnum;\r\n    right: SizeEnum;\r\n  };\r\n}\r\n\r\ninterface HeaderModel {\r\n  enable: boolean;\r\n  label: string;\r\n}\r\n\r\ninterface RoutableEnabledModel {\r\n  enable: true;\r\n  href: string;\r\n}\r\n\r\ninterface RoutableDisabledModel {\r\n  enable: false;\r\n}\r\n\r\ntype SectionRouteType = RoutableEnabledModel | RoutableDisabledModel;\r\n\r\ninterface SectionModel {\r\n  id: string;\r\n  type: SectionDataEnum;\r\n  header: HeaderModel;\r\n  routable: SectionRouteType;\r\n  group: GroupDataEnum;\r\n  view: any;\r\n  style: StyleModel;\r\n  order: number;\r\n}\r\n\r\nexport type SectionDataModel = Record<SectionDataEnum, SectionModel>;\r\n",
+            "sourceCode": "import { PaletteEnum } from '../../enum/palette.enum';\r\nimport { GroupDataEnum } from '../group/group-data.enum';\r\nimport { SectionDataEnum } from './section-data.enum';\r\n\r\ninterface StyleModel {\r\n  palette: PaletteEnum;\r\n}\r\n\r\ninterface HeaderModel {\r\n  enable: boolean;\r\n  label: string;\r\n}\r\n\r\ninterface RoutableEnabledModel {\r\n  enable: true;\r\n  href: string;\r\n}\r\n\r\ninterface RoutableDisabledModel {\r\n  enable: false;\r\n}\r\n\r\ntype SectionRouteType = RoutableEnabledModel | RoutableDisabledModel;\r\n\r\ninterface SectionModel {\r\n  id: string;\r\n  type: SectionDataEnum;\r\n  header: HeaderModel;\r\n  routable: SectionRouteType;\r\n  group: GroupDataEnum;\r\n  view: any;\r\n  style: StyleModel;\r\n  order: number;\r\n}\r\n\r\nexport type SectionDataModel = Record<SectionDataEnum, SectionModel>;\r\n",
             "properties": [
                 {
                     "name": "enable",
@@ -253,7 +253,7 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 17
+                    "line": 10
                 },
                 {
                     "name": "label",
@@ -263,7 +263,7 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 18
+                    "line": 11
                 }
             ],
             "indexSignatures": [],
@@ -448,12 +448,12 @@
         },
         {
             "name": "RoutableDisabledModel",
-            "id": "interface-RoutableDisabledModel-30fe7d4517bb185a942dad5e2d5e8c5c9c77b9f810b1c21515a9f6f2428df0fd1c1a076400fea6cd545713cba0292dd12daacf68ac3fc92c8db895d9731d922c",
+            "id": "interface-RoutableDisabledModel-bb4e556fb395978d813c379b7c220de44360d6f21c10c371b5e51c82a178d47a52c1ab91df448ebdc1064979eeb8b579b9fef6f0f863458ce1c477901ce174d9",
             "file": "src/data/section/section-data.model.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "import { ColorEnum } from '../../enum/color.enum';\r\nimport { SizeEnum } from '../../enum/size.enum';\r\nimport { GroupDataEnum } from '../group/group-data.enum';\r\nimport { SectionDataEnum } from './section-data.enum';\r\n\r\ninterface StyleModel {\r\n  color: ColorEnum;\r\n  padding: {\r\n    top: SizeEnum;\r\n    bottom: SizeEnum;\r\n    left: SizeEnum;\r\n    right: SizeEnum;\r\n  };\r\n}\r\n\r\ninterface HeaderModel {\r\n  enable: boolean;\r\n  label: string;\r\n}\r\n\r\ninterface RoutableEnabledModel {\r\n  enable: true;\r\n  href: string;\r\n}\r\n\r\ninterface RoutableDisabledModel {\r\n  enable: false;\r\n}\r\n\r\ntype SectionRouteType = RoutableEnabledModel | RoutableDisabledModel;\r\n\r\ninterface SectionModel {\r\n  id: string;\r\n  type: SectionDataEnum;\r\n  header: HeaderModel;\r\n  routable: SectionRouteType;\r\n  group: GroupDataEnum;\r\n  view: any;\r\n  style: StyleModel;\r\n  order: number;\r\n}\r\n\r\nexport type SectionDataModel = Record<SectionDataEnum, SectionModel>;\r\n",
+            "sourceCode": "import { PaletteEnum } from '../../enum/palette.enum';\r\nimport { GroupDataEnum } from '../group/group-data.enum';\r\nimport { SectionDataEnum } from './section-data.enum';\r\n\r\ninterface StyleModel {\r\n  palette: PaletteEnum;\r\n}\r\n\r\ninterface HeaderModel {\r\n  enable: boolean;\r\n  label: string;\r\n}\r\n\r\ninterface RoutableEnabledModel {\r\n  enable: true;\r\n  href: string;\r\n}\r\n\r\ninterface RoutableDisabledModel {\r\n  enable: false;\r\n}\r\n\r\ntype SectionRouteType = RoutableEnabledModel | RoutableDisabledModel;\r\n\r\ninterface SectionModel {\r\n  id: string;\r\n  type: SectionDataEnum;\r\n  header: HeaderModel;\r\n  routable: SectionRouteType;\r\n  group: GroupDataEnum;\r\n  view: any;\r\n  style: StyleModel;\r\n  order: number;\r\n}\r\n\r\nexport type SectionDataModel = Record<SectionDataEnum, SectionModel>;\r\n",
             "properties": [
                 {
                     "name": "enable",
@@ -463,7 +463,7 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 27
+                    "line": 20
                 }
             ],
             "indexSignatures": [],
@@ -473,12 +473,12 @@
         },
         {
             "name": "RoutableEnabledModel",
-            "id": "interface-RoutableEnabledModel-30fe7d4517bb185a942dad5e2d5e8c5c9c77b9f810b1c21515a9f6f2428df0fd1c1a076400fea6cd545713cba0292dd12daacf68ac3fc92c8db895d9731d922c",
+            "id": "interface-RoutableEnabledModel-bb4e556fb395978d813c379b7c220de44360d6f21c10c371b5e51c82a178d47a52c1ab91df448ebdc1064979eeb8b579b9fef6f0f863458ce1c477901ce174d9",
             "file": "src/data/section/section-data.model.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "import { ColorEnum } from '../../enum/color.enum';\r\nimport { SizeEnum } from '../../enum/size.enum';\r\nimport { GroupDataEnum } from '../group/group-data.enum';\r\nimport { SectionDataEnum } from './section-data.enum';\r\n\r\ninterface StyleModel {\r\n  color: ColorEnum;\r\n  padding: {\r\n    top: SizeEnum;\r\n    bottom: SizeEnum;\r\n    left: SizeEnum;\r\n    right: SizeEnum;\r\n  };\r\n}\r\n\r\ninterface HeaderModel {\r\n  enable: boolean;\r\n  label: string;\r\n}\r\n\r\ninterface RoutableEnabledModel {\r\n  enable: true;\r\n  href: string;\r\n}\r\n\r\ninterface RoutableDisabledModel {\r\n  enable: false;\r\n}\r\n\r\ntype SectionRouteType = RoutableEnabledModel | RoutableDisabledModel;\r\n\r\ninterface SectionModel {\r\n  id: string;\r\n  type: SectionDataEnum;\r\n  header: HeaderModel;\r\n  routable: SectionRouteType;\r\n  group: GroupDataEnum;\r\n  view: any;\r\n  style: StyleModel;\r\n  order: number;\r\n}\r\n\r\nexport type SectionDataModel = Record<SectionDataEnum, SectionModel>;\r\n",
+            "sourceCode": "import { PaletteEnum } from '../../enum/palette.enum';\r\nimport { GroupDataEnum } from '../group/group-data.enum';\r\nimport { SectionDataEnum } from './section-data.enum';\r\n\r\ninterface StyleModel {\r\n  palette: PaletteEnum;\r\n}\r\n\r\ninterface HeaderModel {\r\n  enable: boolean;\r\n  label: string;\r\n}\r\n\r\ninterface RoutableEnabledModel {\r\n  enable: true;\r\n  href: string;\r\n}\r\n\r\ninterface RoutableDisabledModel {\r\n  enable: false;\r\n}\r\n\r\ntype SectionRouteType = RoutableEnabledModel | RoutableDisabledModel;\r\n\r\ninterface SectionModel {\r\n  id: string;\r\n  type: SectionDataEnum;\r\n  header: HeaderModel;\r\n  routable: SectionRouteType;\r\n  group: GroupDataEnum;\r\n  view: any;\r\n  style: StyleModel;\r\n  order: number;\r\n}\r\n\r\nexport type SectionDataModel = Record<SectionDataEnum, SectionModel>;\r\n",
             "properties": [
                 {
                     "name": "enable",
@@ -488,7 +488,7 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 22
+                    "line": 15
                 },
                 {
                     "name": "href",
@@ -498,7 +498,7 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 23
+                    "line": 16
                 }
             ],
             "indexSignatures": [],
@@ -508,12 +508,12 @@
         },
         {
             "name": "SectionModel",
-            "id": "interface-SectionModel-30fe7d4517bb185a942dad5e2d5e8c5c9c77b9f810b1c21515a9f6f2428df0fd1c1a076400fea6cd545713cba0292dd12daacf68ac3fc92c8db895d9731d922c",
+            "id": "interface-SectionModel-bb4e556fb395978d813c379b7c220de44360d6f21c10c371b5e51c82a178d47a52c1ab91df448ebdc1064979eeb8b579b9fef6f0f863458ce1c477901ce174d9",
             "file": "src/data/section/section-data.model.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "import { ColorEnum } from '../../enum/color.enum';\r\nimport { SizeEnum } from '../../enum/size.enum';\r\nimport { GroupDataEnum } from '../group/group-data.enum';\r\nimport { SectionDataEnum } from './section-data.enum';\r\n\r\ninterface StyleModel {\r\n  color: ColorEnum;\r\n  padding: {\r\n    top: SizeEnum;\r\n    bottom: SizeEnum;\r\n    left: SizeEnum;\r\n    right: SizeEnum;\r\n  };\r\n}\r\n\r\ninterface HeaderModel {\r\n  enable: boolean;\r\n  label: string;\r\n}\r\n\r\ninterface RoutableEnabledModel {\r\n  enable: true;\r\n  href: string;\r\n}\r\n\r\ninterface RoutableDisabledModel {\r\n  enable: false;\r\n}\r\n\r\ntype SectionRouteType = RoutableEnabledModel | RoutableDisabledModel;\r\n\r\ninterface SectionModel {\r\n  id: string;\r\n  type: SectionDataEnum;\r\n  header: HeaderModel;\r\n  routable: SectionRouteType;\r\n  group: GroupDataEnum;\r\n  view: any;\r\n  style: StyleModel;\r\n  order: number;\r\n}\r\n\r\nexport type SectionDataModel = Record<SectionDataEnum, SectionModel>;\r\n",
+            "sourceCode": "import { PaletteEnum } from '../../enum/palette.enum';\r\nimport { GroupDataEnum } from '../group/group-data.enum';\r\nimport { SectionDataEnum } from './section-data.enum';\r\n\r\ninterface StyleModel {\r\n  palette: PaletteEnum;\r\n}\r\n\r\ninterface HeaderModel {\r\n  enable: boolean;\r\n  label: string;\r\n}\r\n\r\ninterface RoutableEnabledModel {\r\n  enable: true;\r\n  href: string;\r\n}\r\n\r\ninterface RoutableDisabledModel {\r\n  enable: false;\r\n}\r\n\r\ntype SectionRouteType = RoutableEnabledModel | RoutableDisabledModel;\r\n\r\ninterface SectionModel {\r\n  id: string;\r\n  type: SectionDataEnum;\r\n  header: HeaderModel;\r\n  routable: SectionRouteType;\r\n  group: GroupDataEnum;\r\n  view: any;\r\n  style: StyleModel;\r\n  order: number;\r\n}\r\n\r\nexport type SectionDataModel = Record<SectionDataEnum, SectionModel>;\r\n",
             "properties": [
                 {
                     "name": "group",
@@ -523,7 +523,7 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 37
+                    "line": 30
                 },
                 {
                     "name": "header",
@@ -533,7 +533,7 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 35
+                    "line": 28
                 },
                 {
                     "name": "id",
@@ -543,7 +543,7 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 33
+                    "line": 26
                 },
                 {
                     "name": "order",
@@ -553,7 +553,7 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 40
+                    "line": 33
                 },
                 {
                     "name": "routable",
@@ -563,7 +563,7 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 36
+                    "line": 29
                 },
                 {
                     "name": "style",
@@ -573,7 +573,7 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 39
+                    "line": 32
                 },
                 {
                     "name": "type",
@@ -583,7 +583,7 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 34
+                    "line": 27
                 },
                 {
                     "name": "view",
@@ -593,7 +593,7 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 38
+                    "line": 31
                 }
             ],
             "indexSignatures": [],
@@ -673,32 +673,22 @@
         },
         {
             "name": "StyleModel",
-            "id": "interface-StyleModel-30fe7d4517bb185a942dad5e2d5e8c5c9c77b9f810b1c21515a9f6f2428df0fd1c1a076400fea6cd545713cba0292dd12daacf68ac3fc92c8db895d9731d922c",
+            "id": "interface-StyleModel-bb4e556fb395978d813c379b7c220de44360d6f21c10c371b5e51c82a178d47a52c1ab91df448ebdc1064979eeb8b579b9fef6f0f863458ce1c477901ce174d9",
             "file": "src/data/section/section-data.model.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "import { ColorEnum } from '../../enum/color.enum';\r\nimport { SizeEnum } from '../../enum/size.enum';\r\nimport { GroupDataEnum } from '../group/group-data.enum';\r\nimport { SectionDataEnum } from './section-data.enum';\r\n\r\ninterface StyleModel {\r\n  color: ColorEnum;\r\n  padding: {\r\n    top: SizeEnum;\r\n    bottom: SizeEnum;\r\n    left: SizeEnum;\r\n    right: SizeEnum;\r\n  };\r\n}\r\n\r\ninterface HeaderModel {\r\n  enable: boolean;\r\n  label: string;\r\n}\r\n\r\ninterface RoutableEnabledModel {\r\n  enable: true;\r\n  href: string;\r\n}\r\n\r\ninterface RoutableDisabledModel {\r\n  enable: false;\r\n}\r\n\r\ntype SectionRouteType = RoutableEnabledModel | RoutableDisabledModel;\r\n\r\ninterface SectionModel {\r\n  id: string;\r\n  type: SectionDataEnum;\r\n  header: HeaderModel;\r\n  routable: SectionRouteType;\r\n  group: GroupDataEnum;\r\n  view: any;\r\n  style: StyleModel;\r\n  order: number;\r\n}\r\n\r\nexport type SectionDataModel = Record<SectionDataEnum, SectionModel>;\r\n",
+            "sourceCode": "import { PaletteEnum } from '../../enum/palette.enum';\r\nimport { GroupDataEnum } from '../group/group-data.enum';\r\nimport { SectionDataEnum } from './section-data.enum';\r\n\r\ninterface StyleModel {\r\n  palette: PaletteEnum;\r\n}\r\n\r\ninterface HeaderModel {\r\n  enable: boolean;\r\n  label: string;\r\n}\r\n\r\ninterface RoutableEnabledModel {\r\n  enable: true;\r\n  href: string;\r\n}\r\n\r\ninterface RoutableDisabledModel {\r\n  enable: false;\r\n}\r\n\r\ntype SectionRouteType = RoutableEnabledModel | RoutableDisabledModel;\r\n\r\ninterface SectionModel {\r\n  id: string;\r\n  type: SectionDataEnum;\r\n  header: HeaderModel;\r\n  routable: SectionRouteType;\r\n  group: GroupDataEnum;\r\n  view: any;\r\n  style: StyleModel;\r\n  order: number;\r\n}\r\n\r\nexport type SectionDataModel = Record<SectionDataEnum, SectionModel>;\r\n",
             "properties": [
                 {
-                    "name": "color",
+                    "name": "palette",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "ColorEnum",
+                    "type": "PaletteEnum",
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 7
-                },
-                {
-                    "name": "padding",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "literal type",
-                    "indexKey": "",
-                    "optional": false,
-                    "description": "",
-                    "line": 8
+                    "line": 6
                 }
             ],
             "indexSignatures": [],
@@ -789,8 +779,8 @@
     ],
     "injectables": [
         {
-            "name": "Bem",
-            "id": "injectable-Bem-dc93c1833c630949704532c1df3a7041ab912769b32c6f4ff30dfb97b50be702103874ff33b53f76e1479ff79238e5a346bfffd01d870bbd500830fd714afb8e",
+            "name": "BemUtil",
+            "id": "injectable-BemUtil-47450ae3d02fcd9e08d35657dc4ca37e49ac5dc3329e9f6b392c0222858d1cdbbfd8e0664cb5dbacf0f4563dd7d44cae3782995af883eebf1a1eae9482b5713f",
             "file": "src/util/bem.util.ts",
             "properties": [],
             "methods": [
@@ -872,7 +862,7 @@
             "deprecationMessage": "",
             "description": "",
             "rawdescription": "\n",
-            "sourceCode": "import { Injectable } from '@angular/core';\r\n\r\n@Injectable({ providedIn: 'root' })\r\nexport class Bem {\r\n  static build(block: string, element: string, modifier: string) {\r\n    if (block !== '' && element === '' && modifier === '') {\r\n      return block;\r\n    }\r\n    if (block !== '' && element !== '' && modifier === '') {\r\n      return `${block}__${element}`;\r\n    }\r\n    return `${block}__${element}--${modifier}`;\r\n  }\r\n}\r\n",
+            "sourceCode": "import { Injectable } from '@angular/core';\r\n\r\n@Injectable({ providedIn: 'root' })\r\nexport class BemUtil {\r\n  static build(block: string, element: string, modifier: string) {\r\n    if (block !== '' && element === '' && modifier === '') {\r\n      return block;\r\n    }\r\n    if (block !== '' && element !== '' && modifier === '') {\r\n      return `${block}__${element}`;\r\n    }\r\n    return `${block}__${element}--${modifier}`;\r\n  }\r\n}\r\n",
             "extends": [],
             "type": "injectable"
         },
@@ -1294,7 +1284,7 @@
         },
         {
             "name": "FooterView",
-            "id": "component-FooterView-4c0d644027f94454193dd9a84790122d33282b12a4917ae4857c3c8117786b10877a5e6721a3564afd1188f2cb4d91c7c39bec9418526d837fcb37d2f397d749",
+            "id": "component-FooterView-825b31e587a3fa02361c9b478cb683854d9f9def639fde8ec90fe1fa2267df12548214f710c6a61f4720b743cb4c29e90d9bab93a3c07839a2d861b2ad945852",
             "file": "src/view/footer/footer.view.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1357,7 +1347,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\r\nimport { StoreCore } from '../../store/store.core';\r\nimport { GroupDataEnum } from '../../data/group/group-data.enum';\r\nimport { SectionComponent } from '../../component/section/section.component';\r\n\r\n@Component({\r\n  selector: 'footer-view',\r\n  templateUrl: './footer.view.html',\r\n  imports: [SectionComponent],\r\n})\r\nexport class FooterView extends StoreCore {\r\n  sections = this.store.selectSignal((state) => {\r\n    return Object.values(state.section)\r\n      .filter((section) => section.group === GroupDataEnum.footer)\r\n      .sort((prev, next) => prev.order - next.order);\r\n  });\r\n}\r\n",
+            "sourceCode": "import { Component } from '@angular/core';\r\nimport { SectionComponent } from '../../component/section/section.component';\r\nimport { StoreCore } from '../../store/store.core';\r\nimport { GroupDataEnum } from '../../data/group/group-data.enum';\r\n\r\n@Component({\r\n  selector: 'footer-view',\r\n  templateUrl: './footer.view.html',\r\n  imports: [SectionComponent],\r\n})\r\nexport class FooterView extends StoreCore {\r\n  sections = this.store.selectSignal((state) => {\r\n    return Object.values(state.section)\r\n      .filter((section) => section.group === GroupDataEnum.footer)\r\n      .sort((prev, next) => prev.order - next.order);\r\n  });\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
@@ -1789,7 +1779,7 @@
         },
         {
             "name": "SectionComponent",
-            "id": "component-SectionComponent-d7cc813222cbf828259d3753c01b9a017491712c5d6f51925ee82ea04bd4545b83830f39deb62279f9d6054bd280f7b0dee79a8bbd07e590ba12fa930a31fc9a",
+            "id": "component-SectionComponent-ebb65b9a640a8706591c714baa5e68d9c97e39e2f509fd5b360a239d81887ff944f44a4ae7db266633a17f6bedccd495b8adce40681b927e3cd7cc010d6b1e01",
             "file": "src/component/section/section.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1857,10 +1847,6 @@
             "standalone": false,
             "imports": [
                 {
-                    "name": "NgComponentOutlet",
-                    "type": "component"
-                },
-                {
                     "name": "CommonModule",
                     "type": "module"
                 },
@@ -1872,7 +1858,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, input } from '@angular/core';\r\nimport { NgComponentOutlet, CommonModule } from '@angular/common';\r\nimport { StoreCore } from '../../store/store.core';\r\nimport { SectionDataModel } from '../../data/section/section-data.model';\r\nimport { Bem } from '../../util/bem.util';\r\nimport { TextComponent } from '../text/text.component';\r\n\r\n@Component({\r\n  selector: 'section-component',\r\n  templateUrl: './section.component.html',\r\n  styleUrl: './section.component.scss',\r\n  imports: [NgComponentOutlet, CommonModule, TextComponent],\r\n})\r\nexport class SectionComponent extends StoreCore {\r\n  section = input.required<SectionDataModel[keyof SectionDataModel]>();\r\n\r\n  buildSectionClassList() {\r\n    const { color, padding } = this.section().style;\r\n    const { top, bottom, left, right } = padding;\r\n    const sectionColor = Bem.build('section', 'color', color);\r\n    const sectionPaddingTop = Bem.build('section', 'padding', `top-${top}`);\r\n    const sectionPaddingBottom = Bem.build('section', 'padding', `bottom-${bottom}`);\r\n    const sectionPaddingLeft = Bem.build('section', 'padding', `left-${left}`);\r\n    const sectionPaddingRight = Bem.build('section', 'padding', `right-${right}`);\r\n    return [\r\n      sectionColor,\r\n      sectionPaddingTop,\r\n      sectionPaddingBottom,\r\n      sectionPaddingLeft,\r\n      sectionPaddingRight,\r\n    ];\r\n  }\r\n}\r\n",
+            "sourceCode": "import { CommonModule } from '@angular/common';\r\nimport { Component, input } from '@angular/core';\r\nimport { TextComponent } from '../text/text.component';\r\nimport { StoreCore } from '../../store/store.core';\r\nimport { SectionDataModel } from '../../data/section/section-data.model';\r\nimport { BemUtil } from '../../util/bem.util';\r\n\r\n@Component({\r\n  selector: 'section-component',\r\n  templateUrl: './section.component.html',\r\n  styleUrl: './section.component.scss',\r\n  imports: [CommonModule, TextComponent],\r\n})\r\nexport class SectionComponent extends StoreCore {\r\n  section = input.required<SectionDataModel[keyof SectionDataModel]>();\r\n\r\n  buildSectionClassList() {\r\n    const { palette } = this.section().style;\r\n    const sectionPalette = BemUtil.build('section', 'palette', palette);\r\n    return [sectionPalette];\r\n  }\r\n}\r\n",
             "styleUrl": "./section.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
@@ -1880,7 +1866,7 @@
             "extends": [
                 "StoreCore"
             ],
-            "templateData": "<section [id]=\"section().id\" class=\"section\" [ngClass]=\"buildSectionClassList()\">\r\n  <div class=\"section__wrapper\">\r\n    @if (section().header.enable) {\r\n      <header class=\"section__header\">\r\n        <text-component type=\"h2\" [value]=\"section().header.label\"></text-component>\r\n      </header>\r\n    }\r\n    <div class=\"section__content\">\r\n      <ng-container *ngComponentOutlet=\"section().view\"></ng-container>\r\n    </div>\r\n  </div>\r\n</section>\r\n"
+            "templateData": "<section class=\"section\" [ngClass]=\"buildSectionClassList()\">\r\n  @if (section().header.enable) {\r\n    <header class=\"section__header\">\r\n      <text-component type=\"h2\" [value]=\"section().header.label\"></text-component>\r\n    </header>\r\n  }\r\n  <div class=\"section__content\">\r\n    <text-component type=\"p\" value=\"Content\"></text-component>\r\n  </div>\r\n</section>\r\n"
         },
         {
             "name": "SkillsView",
@@ -2029,7 +2015,7 @@
         },
         {
             "name": "View",
-            "id": "component-View-47867f4e811dd1ffb3837dfdbd48c1dd1210da4e7631dfc1ff631033dcfe7c00a00281cf1d2b1c1ed717dcc3e826641bd18d49a3d0f931c1dfb620b9400f3a97",
+            "id": "component-View-49bfeaac648461c98c6e71bd7d7229c4072d9fcef1acb4705710a04ecd2eedf847d27b3c2e71ab6a1db7d99af757245b49ed8c703ed65c9de9d25ac6cf8bf99b",
             "file": "src/view/view.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -2092,7 +2078,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\r\nimport { NgComponentOutlet } from '@angular/common';\r\nimport { StoreCore } from '../store/store.core';\r\n\r\n@Component({\r\n  selector: 'view',\r\n  templateUrl: './view.html',\r\n  imports: [NgComponentOutlet],\r\n})\r\nexport class View extends StoreCore {\r\n  views = this.store.selectSignal((state) => {\r\n    return Object.values(state.group)\r\n      .sort((prev, next) => prev.order - next.order)\r\n      .map((item) => item.view);\r\n  });\r\n}\r\n",
+            "sourceCode": "import { NgComponentOutlet } from '@angular/common';\r\nimport { Component } from '@angular/core';\r\nimport { StoreCore } from '../store/store.core';\r\n\r\n@Component({\r\n  selector: 'view',\r\n  templateUrl: './view.html',\r\n  imports: [NgComponentOutlet],\r\n})\r\nexport class View extends StoreCore {\r\n  views = this.store.selectSignal((state) => {\r\n    return Object.values(state.group)\r\n      .sort((prev, next) => prev.order - next.order)\r\n      .map((item) => item.view);\r\n  });\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
@@ -2283,7 +2269,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "SectionDataModel",
-                "defaultValue": "{\r\n  navigation: {\r\n    id: 'navigation',\r\n    type: SectionDataEnum.navigation,\r\n    header: {\r\n      enable: false,\r\n      label: '',\r\n    },\r\n    routable: {\r\n      enable: false,\r\n    },\r\n    group: GroupDataEnum.header,\r\n    view: NavigationView,\r\n    style: {\r\n      color: ColorEnum.primary,\r\n      padding: {\r\n        top: SizeEnum.md,\r\n        bottom: SizeEnum.md,\r\n        left: SizeEnum.md,\r\n        right: SizeEnum.md,\r\n      },\r\n    },\r\n    order: 0,\r\n  },\r\n  home: {\r\n    id: 'home',\r\n    type: SectionDataEnum.home,\r\n    header: {\r\n      enable: false,\r\n      label: '',\r\n    },\r\n    routable: {\r\n      enable: true,\r\n      href: '#home',\r\n    },\r\n    group: GroupDataEnum.header,\r\n    view: HomeView,\r\n    style: {\r\n      color: ColorEnum.primary,\r\n      padding: {\r\n        top: SizeEnum.xl,\r\n        bottom: SizeEnum.xl,\r\n        left: SizeEnum.md,\r\n        right: SizeEnum.md,\r\n      },\r\n    },\r\n    order: 1,\r\n  },\r\n  aboutMe: {\r\n    id: 'about-me',\r\n    type: SectionDataEnum.aboutMe,\r\n    header: {\r\n      enable: true,\r\n      label: 'About me',\r\n    },\r\n    routable: {\r\n      enable: true,\r\n      href: '#about-me',\r\n    },\r\n    group: GroupDataEnum.main,\r\n    view: AboutMeView,\r\n    style: {\r\n      color: ColorEnum.surface,\r\n      padding: {\r\n        top: SizeEnum.xl,\r\n        bottom: SizeEnum.xl,\r\n        left: SizeEnum.md,\r\n        right: SizeEnum.md,\r\n      },\r\n    },\r\n    order: 0,\r\n  },\r\n  technologies: {\r\n    id: 'technologies',\r\n    type: SectionDataEnum.technologies,\r\n    header: {\r\n      enable: true,\r\n      label: 'Technologies',\r\n    },\r\n    routable: {\r\n      enable: true,\r\n      href: '#technologies',\r\n    },\r\n    group: GroupDataEnum.main,\r\n    view: TechnologiesView,\r\n    style: {\r\n      color: ColorEnum.surface,\r\n      padding: {\r\n        top: SizeEnum.xl,\r\n        bottom: SizeEnum.xl,\r\n        left: SizeEnum.md,\r\n        right: SizeEnum.md,\r\n      },\r\n    },\r\n    order: 1,\r\n  },\r\n  skills: {\r\n    id: 'skills',\r\n    type: SectionDataEnum.skills,\r\n    header: {\r\n      enable: true,\r\n      label: 'Skills',\r\n    },\r\n    routable: {\r\n      enable: true,\r\n      href: '#skills',\r\n    },\r\n    group: GroupDataEnum.main,\r\n    view: SkillsView,\r\n    style: {\r\n      color: ColorEnum.surface,\r\n      padding: {\r\n        top: SizeEnum.xl,\r\n        bottom: SizeEnum.xl,\r\n        left: SizeEnum.md,\r\n        right: SizeEnum.md,\r\n      },\r\n    },\r\n    order: 2,\r\n  },\r\n  experience: {\r\n    id: 'experience',\r\n    type: SectionDataEnum.experience,\r\n    header: {\r\n      enable: true,\r\n      label: 'Experience',\r\n    },\r\n    routable: {\r\n      enable: true,\r\n      href: '#experience',\r\n    },\r\n    group: GroupDataEnum.main,\r\n    view: ExperienceView,\r\n    style: {\r\n      color: ColorEnum.surface,\r\n      padding: {\r\n        top: SizeEnum.xl,\r\n        bottom: SizeEnum.xl,\r\n        left: SizeEnum.md,\r\n        right: SizeEnum.md,\r\n      },\r\n    },\r\n    order: 3,\r\n  },\r\n  resume: {\r\n    id: 'resume',\r\n    type: SectionDataEnum.resume,\r\n    header: {\r\n      enable: true,\r\n      label: 'Resume',\r\n    },\r\n    routable: {\r\n      enable: true,\r\n      href: '#resume',\r\n    },\r\n    group: GroupDataEnum.main,\r\n    view: ResumeView,\r\n    style: {\r\n      color: ColorEnum.surface,\r\n      padding: {\r\n        top: SizeEnum.xl,\r\n        bottom: SizeEnum.xl,\r\n        left: SizeEnum.md,\r\n        right: SizeEnum.md,\r\n      },\r\n    },\r\n    order: 4,\r\n  },\r\n  projects: {\r\n    id: 'projects',\r\n    type: SectionDataEnum.projects,\r\n    header: {\r\n      enable: true,\r\n      label: 'Projects',\r\n    },\r\n    routable: {\r\n      enable: true,\r\n      href: '#projects',\r\n    },\r\n    group: GroupDataEnum.main,\r\n    view: ProjectsView,\r\n    style: {\r\n      color: ColorEnum.surface,\r\n      padding: {\r\n        top: SizeEnum.xl,\r\n        bottom: SizeEnum.xl,\r\n        left: SizeEnum.md,\r\n        right: SizeEnum.md,\r\n      },\r\n    },\r\n    order: 5,\r\n  },\r\n  education: {\r\n    id: 'education',\r\n    type: SectionDataEnum.education,\r\n    header: {\r\n      enable: true,\r\n      label: 'Education',\r\n    },\r\n    routable: {\r\n      enable: true,\r\n      href: '#education',\r\n    },\r\n    group: GroupDataEnum.main,\r\n    style: {\r\n      color: ColorEnum.surface,\r\n      padding: {\r\n        top: SizeEnum.xl,\r\n        bottom: SizeEnum.xl,\r\n        left: SizeEnum.md,\r\n        right: SizeEnum.md,\r\n      },\r\n    },\r\n    view: EducationView,\r\n    order: 6,\r\n  },\r\n  contact: {\r\n    id: 'contact',\r\n    type: SectionDataEnum.contact,\r\n    header: {\r\n      enable: false,\r\n      label: '',\r\n    },\r\n    routable: {\r\n      enable: true,\r\n      href: '#contact',\r\n    },\r\n    group: GroupDataEnum.footer,\r\n    view: ContactView,\r\n    style: {\r\n      color: ColorEnum.primary,\r\n      padding: {\r\n        top: SizeEnum.xl,\r\n        bottom: SizeEnum.lg,\r\n        left: SizeEnum.md,\r\n        right: SizeEnum.md,\r\n      },\r\n    },\r\n    order: 0,\r\n  },\r\n  copyright: {\r\n    id: 'copyright',\r\n    type: SectionDataEnum.copyright,\r\n    header: {\r\n      enable: false,\r\n      label: '',\r\n    },\r\n    routable: {\r\n      enable: false,\r\n    },\r\n    group: GroupDataEnum.footer,\r\n    view: CopyrightView,\r\n    style: {\r\n      color: ColorEnum.primary,\r\n      padding: {\r\n        top: SizeEnum.lg,\r\n        bottom: SizeEnum.xl,\r\n        left: SizeEnum.md,\r\n        right: SizeEnum.md,\r\n      },\r\n    },\r\n    order: 1,\r\n  },\r\n}"
+                "defaultValue": "{\r\n  navigation: {\r\n    id: 'navigation',\r\n    type: SectionDataEnum.navigation,\r\n    header: {\r\n      enable: false,\r\n      label: '',\r\n    },\r\n    routable: {\r\n      enable: false,\r\n    },\r\n    group: GroupDataEnum.header,\r\n    view: NavigationView,\r\n    style: {\r\n      palette: PaletteEnum.primary,\r\n    },\r\n    order: 0,\r\n  },\r\n  home: {\r\n    id: 'home',\r\n    type: SectionDataEnum.home,\r\n    header: {\r\n      enable: false,\r\n      label: '',\r\n    },\r\n    routable: {\r\n      enable: true,\r\n      href: '#home',\r\n    },\r\n    group: GroupDataEnum.header,\r\n    view: HomeView,\r\n    style: {\r\n      palette: PaletteEnum.primary,\r\n    },\r\n    order: 1,\r\n  },\r\n  aboutMe: {\r\n    id: 'about-me',\r\n    type: SectionDataEnum.aboutMe,\r\n    header: {\r\n      enable: true,\r\n      label: 'About me',\r\n    },\r\n    routable: {\r\n      enable: true,\r\n      href: '#about-me',\r\n    },\r\n    group: GroupDataEnum.main,\r\n    view: AboutMeView,\r\n    style: {\r\n      palette: PaletteEnum.main,\r\n    },\r\n    order: 0,\r\n  },\r\n  technologies: {\r\n    id: 'technologies',\r\n    type: SectionDataEnum.technologies,\r\n    header: {\r\n      enable: true,\r\n      label: 'Technologies',\r\n    },\r\n    routable: {\r\n      enable: true,\r\n      href: '#technologies',\r\n    },\r\n    group: GroupDataEnum.main,\r\n    view: TechnologiesView,\r\n    style: {\r\n      palette: PaletteEnum.main,\r\n    },\r\n    order: 1,\r\n  },\r\n  skills: {\r\n    id: 'skills',\r\n    type: SectionDataEnum.skills,\r\n    header: {\r\n      enable: true,\r\n      label: 'Skills',\r\n    },\r\n    routable: {\r\n      enable: true,\r\n      href: '#skills',\r\n    },\r\n    group: GroupDataEnum.main,\r\n    view: SkillsView,\r\n    style: {\r\n      palette: PaletteEnum.main,\r\n    },\r\n    order: 2,\r\n  },\r\n  experience: {\r\n    id: 'experience',\r\n    type: SectionDataEnum.experience,\r\n    header: {\r\n      enable: true,\r\n      label: 'Experience',\r\n    },\r\n    routable: {\r\n      enable: true,\r\n      href: '#experience',\r\n    },\r\n    group: GroupDataEnum.main,\r\n    view: ExperienceView,\r\n    style: {\r\n      palette: PaletteEnum.main,\r\n    },\r\n    order: 3,\r\n  },\r\n  resume: {\r\n    id: 'resume',\r\n    type: SectionDataEnum.resume,\r\n    header: {\r\n      enable: true,\r\n      label: 'Resume',\r\n    },\r\n    routable: {\r\n      enable: true,\r\n      href: '#resume',\r\n    },\r\n    group: GroupDataEnum.main,\r\n    view: ResumeView,\r\n    style: {\r\n      palette: PaletteEnum.main,\r\n    },\r\n    order: 4,\r\n  },\r\n  projects: {\r\n    id: 'projects',\r\n    type: SectionDataEnum.projects,\r\n    header: {\r\n      enable: true,\r\n      label: 'Projects',\r\n    },\r\n    routable: {\r\n      enable: true,\r\n      href: '#projects',\r\n    },\r\n    group: GroupDataEnum.main,\r\n    view: ProjectsView,\r\n    style: {\r\n      palette: PaletteEnum.main,\r\n    },\r\n    order: 5,\r\n  },\r\n  education: {\r\n    id: 'education',\r\n    type: SectionDataEnum.education,\r\n    header: {\r\n      enable: true,\r\n      label: 'Education',\r\n    },\r\n    routable: {\r\n      enable: true,\r\n      href: '#education',\r\n    },\r\n    group: GroupDataEnum.main,\r\n    style: {\r\n      palette: PaletteEnum.main,\r\n    },\r\n    view: EducationView,\r\n    order: 6,\r\n  },\r\n  contact: {\r\n    id: 'contact',\r\n    type: SectionDataEnum.contact,\r\n    header: {\r\n      enable: false,\r\n      label: '',\r\n    },\r\n    routable: {\r\n      enable: true,\r\n      href: '#contact',\r\n    },\r\n    group: GroupDataEnum.footer,\r\n    view: ContactView,\r\n    style: {\r\n      palette: PaletteEnum.primary,\r\n    },\r\n    order: 0,\r\n  },\r\n  copyright: {\r\n    id: 'copyright',\r\n    type: SectionDataEnum.copyright,\r\n    header: {\r\n      enable: false,\r\n      label: '',\r\n    },\r\n    routable: {\r\n      enable: false,\r\n    },\r\n    group: GroupDataEnum.footer,\r\n    view: CopyrightView,\r\n    style: {\r\n      palette: PaletteEnum.primary,\r\n    },\r\n    order: 1,\r\n  },\r\n}"
             },
             {
                 "name": "sectionReducer",
@@ -2504,35 +2490,6 @@
         ],
         "enumerations": [
             {
-                "name": "ColorEnum",
-                "childs": [
-                    {
-                        "name": "primary",
-                        "deprecated": false,
-                        "deprecationMessage": "",
-                        "value": "primary"
-                    },
-                    {
-                        "name": "main",
-                        "deprecated": false,
-                        "deprecationMessage": "",
-                        "value": "main"
-                    },
-                    {
-                        "name": "surface",
-                        "deprecated": false,
-                        "deprecationMessage": "",
-                        "value": "surface"
-                    }
-                ],
-                "ctype": "miscellaneous",
-                "subtype": "enum",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "description": "",
-                "file": "src/enum/color.enum.ts"
-            },
-            {
                 "name": "CompanyDataEnum",
                 "childs": [
                     {
@@ -2583,6 +2540,29 @@
                 "deprecationMessage": "",
                 "description": "",
                 "file": "src/data/group/group-data.enum.ts"
+            },
+            {
+                "name": "PaletteEnum",
+                "childs": [
+                    {
+                        "name": "primary",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "value": "primary"
+                    },
+                    {
+                        "name": "main",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "value": "main"
+                    }
+                ],
+                "ctype": "miscellaneous",
+                "subtype": "enum",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "file": "src/enum/palette.enum.ts"
             },
             {
                 "name": "ResumeLangDataEnum",
@@ -2683,53 +2663,6 @@
                 "deprecationMessage": "",
                 "description": "",
                 "file": "src/data/section/section-data.enum.ts"
-            },
-            {
-                "name": "SizeEnum",
-                "childs": [
-                    {
-                        "name": "none",
-                        "deprecated": false,
-                        "deprecationMessage": "",
-                        "value": "none"
-                    },
-                    {
-                        "name": "xs",
-                        "deprecated": false,
-                        "deprecationMessage": "",
-                        "value": "xs"
-                    },
-                    {
-                        "name": "sm",
-                        "deprecated": false,
-                        "deprecationMessage": "",
-                        "value": "sm"
-                    },
-                    {
-                        "name": "md",
-                        "deprecated": false,
-                        "deprecationMessage": "",
-                        "value": "md"
-                    },
-                    {
-                        "name": "lg",
-                        "deprecated": false,
-                        "deprecationMessage": "",
-                        "value": "lg"
-                    },
-                    {
-                        "name": "xl",
-                        "deprecated": false,
-                        "deprecationMessage": "",
-                        "value": "xl"
-                    }
-                ],
-                "ctype": "miscellaneous",
-                "subtype": "enum",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "description": "",
-                "file": "src/enum/size.enum.ts"
             },
             {
                 "name": "SkillKindDataEnum",
@@ -3299,7 +3232,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "SectionDataModel",
-                    "defaultValue": "{\r\n  navigation: {\r\n    id: 'navigation',\r\n    type: SectionDataEnum.navigation,\r\n    header: {\r\n      enable: false,\r\n      label: '',\r\n    },\r\n    routable: {\r\n      enable: false,\r\n    },\r\n    group: GroupDataEnum.header,\r\n    view: NavigationView,\r\n    style: {\r\n      color: ColorEnum.primary,\r\n      padding: {\r\n        top: SizeEnum.md,\r\n        bottom: SizeEnum.md,\r\n        left: SizeEnum.md,\r\n        right: SizeEnum.md,\r\n      },\r\n    },\r\n    order: 0,\r\n  },\r\n  home: {\r\n    id: 'home',\r\n    type: SectionDataEnum.home,\r\n    header: {\r\n      enable: false,\r\n      label: '',\r\n    },\r\n    routable: {\r\n      enable: true,\r\n      href: '#home',\r\n    },\r\n    group: GroupDataEnum.header,\r\n    view: HomeView,\r\n    style: {\r\n      color: ColorEnum.primary,\r\n      padding: {\r\n        top: SizeEnum.xl,\r\n        bottom: SizeEnum.xl,\r\n        left: SizeEnum.md,\r\n        right: SizeEnum.md,\r\n      },\r\n    },\r\n    order: 1,\r\n  },\r\n  aboutMe: {\r\n    id: 'about-me',\r\n    type: SectionDataEnum.aboutMe,\r\n    header: {\r\n      enable: true,\r\n      label: 'About me',\r\n    },\r\n    routable: {\r\n      enable: true,\r\n      href: '#about-me',\r\n    },\r\n    group: GroupDataEnum.main,\r\n    view: AboutMeView,\r\n    style: {\r\n      color: ColorEnum.surface,\r\n      padding: {\r\n        top: SizeEnum.xl,\r\n        bottom: SizeEnum.xl,\r\n        left: SizeEnum.md,\r\n        right: SizeEnum.md,\r\n      },\r\n    },\r\n    order: 0,\r\n  },\r\n  technologies: {\r\n    id: 'technologies',\r\n    type: SectionDataEnum.technologies,\r\n    header: {\r\n      enable: true,\r\n      label: 'Technologies',\r\n    },\r\n    routable: {\r\n      enable: true,\r\n      href: '#technologies',\r\n    },\r\n    group: GroupDataEnum.main,\r\n    view: TechnologiesView,\r\n    style: {\r\n      color: ColorEnum.surface,\r\n      padding: {\r\n        top: SizeEnum.xl,\r\n        bottom: SizeEnum.xl,\r\n        left: SizeEnum.md,\r\n        right: SizeEnum.md,\r\n      },\r\n    },\r\n    order: 1,\r\n  },\r\n  skills: {\r\n    id: 'skills',\r\n    type: SectionDataEnum.skills,\r\n    header: {\r\n      enable: true,\r\n      label: 'Skills',\r\n    },\r\n    routable: {\r\n      enable: true,\r\n      href: '#skills',\r\n    },\r\n    group: GroupDataEnum.main,\r\n    view: SkillsView,\r\n    style: {\r\n      color: ColorEnum.surface,\r\n      padding: {\r\n        top: SizeEnum.xl,\r\n        bottom: SizeEnum.xl,\r\n        left: SizeEnum.md,\r\n        right: SizeEnum.md,\r\n      },\r\n    },\r\n    order: 2,\r\n  },\r\n  experience: {\r\n    id: 'experience',\r\n    type: SectionDataEnum.experience,\r\n    header: {\r\n      enable: true,\r\n      label: 'Experience',\r\n    },\r\n    routable: {\r\n      enable: true,\r\n      href: '#experience',\r\n    },\r\n    group: GroupDataEnum.main,\r\n    view: ExperienceView,\r\n    style: {\r\n      color: ColorEnum.surface,\r\n      padding: {\r\n        top: SizeEnum.xl,\r\n        bottom: SizeEnum.xl,\r\n        left: SizeEnum.md,\r\n        right: SizeEnum.md,\r\n      },\r\n    },\r\n    order: 3,\r\n  },\r\n  resume: {\r\n    id: 'resume',\r\n    type: SectionDataEnum.resume,\r\n    header: {\r\n      enable: true,\r\n      label: 'Resume',\r\n    },\r\n    routable: {\r\n      enable: true,\r\n      href: '#resume',\r\n    },\r\n    group: GroupDataEnum.main,\r\n    view: ResumeView,\r\n    style: {\r\n      color: ColorEnum.surface,\r\n      padding: {\r\n        top: SizeEnum.xl,\r\n        bottom: SizeEnum.xl,\r\n        left: SizeEnum.md,\r\n        right: SizeEnum.md,\r\n      },\r\n    },\r\n    order: 4,\r\n  },\r\n  projects: {\r\n    id: 'projects',\r\n    type: SectionDataEnum.projects,\r\n    header: {\r\n      enable: true,\r\n      label: 'Projects',\r\n    },\r\n    routable: {\r\n      enable: true,\r\n      href: '#projects',\r\n    },\r\n    group: GroupDataEnum.main,\r\n    view: ProjectsView,\r\n    style: {\r\n      color: ColorEnum.surface,\r\n      padding: {\r\n        top: SizeEnum.xl,\r\n        bottom: SizeEnum.xl,\r\n        left: SizeEnum.md,\r\n        right: SizeEnum.md,\r\n      },\r\n    },\r\n    order: 5,\r\n  },\r\n  education: {\r\n    id: 'education',\r\n    type: SectionDataEnum.education,\r\n    header: {\r\n      enable: true,\r\n      label: 'Education',\r\n    },\r\n    routable: {\r\n      enable: true,\r\n      href: '#education',\r\n    },\r\n    group: GroupDataEnum.main,\r\n    style: {\r\n      color: ColorEnum.surface,\r\n      padding: {\r\n        top: SizeEnum.xl,\r\n        bottom: SizeEnum.xl,\r\n        left: SizeEnum.md,\r\n        right: SizeEnum.md,\r\n      },\r\n    },\r\n    view: EducationView,\r\n    order: 6,\r\n  },\r\n  contact: {\r\n    id: 'contact',\r\n    type: SectionDataEnum.contact,\r\n    header: {\r\n      enable: false,\r\n      label: '',\r\n    },\r\n    routable: {\r\n      enable: true,\r\n      href: '#contact',\r\n    },\r\n    group: GroupDataEnum.footer,\r\n    view: ContactView,\r\n    style: {\r\n      color: ColorEnum.primary,\r\n      padding: {\r\n        top: SizeEnum.xl,\r\n        bottom: SizeEnum.lg,\r\n        left: SizeEnum.md,\r\n        right: SizeEnum.md,\r\n      },\r\n    },\r\n    order: 0,\r\n  },\r\n  copyright: {\r\n    id: 'copyright',\r\n    type: SectionDataEnum.copyright,\r\n    header: {\r\n      enable: false,\r\n      label: '',\r\n    },\r\n    routable: {\r\n      enable: false,\r\n    },\r\n    group: GroupDataEnum.footer,\r\n    view: CopyrightView,\r\n    style: {\r\n      color: ColorEnum.primary,\r\n      padding: {\r\n        top: SizeEnum.lg,\r\n        bottom: SizeEnum.xl,\r\n        left: SizeEnum.md,\r\n        right: SizeEnum.md,\r\n      },\r\n    },\r\n    order: 1,\r\n  },\r\n}"
+                    "defaultValue": "{\r\n  navigation: {\r\n    id: 'navigation',\r\n    type: SectionDataEnum.navigation,\r\n    header: {\r\n      enable: false,\r\n      label: '',\r\n    },\r\n    routable: {\r\n      enable: false,\r\n    },\r\n    group: GroupDataEnum.header,\r\n    view: NavigationView,\r\n    style: {\r\n      palette: PaletteEnum.primary,\r\n    },\r\n    order: 0,\r\n  },\r\n  home: {\r\n    id: 'home',\r\n    type: SectionDataEnum.home,\r\n    header: {\r\n      enable: false,\r\n      label: '',\r\n    },\r\n    routable: {\r\n      enable: true,\r\n      href: '#home',\r\n    },\r\n    group: GroupDataEnum.header,\r\n    view: HomeView,\r\n    style: {\r\n      palette: PaletteEnum.primary,\r\n    },\r\n    order: 1,\r\n  },\r\n  aboutMe: {\r\n    id: 'about-me',\r\n    type: SectionDataEnum.aboutMe,\r\n    header: {\r\n      enable: true,\r\n      label: 'About me',\r\n    },\r\n    routable: {\r\n      enable: true,\r\n      href: '#about-me',\r\n    },\r\n    group: GroupDataEnum.main,\r\n    view: AboutMeView,\r\n    style: {\r\n      palette: PaletteEnum.main,\r\n    },\r\n    order: 0,\r\n  },\r\n  technologies: {\r\n    id: 'technologies',\r\n    type: SectionDataEnum.technologies,\r\n    header: {\r\n      enable: true,\r\n      label: 'Technologies',\r\n    },\r\n    routable: {\r\n      enable: true,\r\n      href: '#technologies',\r\n    },\r\n    group: GroupDataEnum.main,\r\n    view: TechnologiesView,\r\n    style: {\r\n      palette: PaletteEnum.main,\r\n    },\r\n    order: 1,\r\n  },\r\n  skills: {\r\n    id: 'skills',\r\n    type: SectionDataEnum.skills,\r\n    header: {\r\n      enable: true,\r\n      label: 'Skills',\r\n    },\r\n    routable: {\r\n      enable: true,\r\n      href: '#skills',\r\n    },\r\n    group: GroupDataEnum.main,\r\n    view: SkillsView,\r\n    style: {\r\n      palette: PaletteEnum.main,\r\n    },\r\n    order: 2,\r\n  },\r\n  experience: {\r\n    id: 'experience',\r\n    type: SectionDataEnum.experience,\r\n    header: {\r\n      enable: true,\r\n      label: 'Experience',\r\n    },\r\n    routable: {\r\n      enable: true,\r\n      href: '#experience',\r\n    },\r\n    group: GroupDataEnum.main,\r\n    view: ExperienceView,\r\n    style: {\r\n      palette: PaletteEnum.main,\r\n    },\r\n    order: 3,\r\n  },\r\n  resume: {\r\n    id: 'resume',\r\n    type: SectionDataEnum.resume,\r\n    header: {\r\n      enable: true,\r\n      label: 'Resume',\r\n    },\r\n    routable: {\r\n      enable: true,\r\n      href: '#resume',\r\n    },\r\n    group: GroupDataEnum.main,\r\n    view: ResumeView,\r\n    style: {\r\n      palette: PaletteEnum.main,\r\n    },\r\n    order: 4,\r\n  },\r\n  projects: {\r\n    id: 'projects',\r\n    type: SectionDataEnum.projects,\r\n    header: {\r\n      enable: true,\r\n      label: 'Projects',\r\n    },\r\n    routable: {\r\n      enable: true,\r\n      href: '#projects',\r\n    },\r\n    group: GroupDataEnum.main,\r\n    view: ProjectsView,\r\n    style: {\r\n      palette: PaletteEnum.main,\r\n    },\r\n    order: 5,\r\n  },\r\n  education: {\r\n    id: 'education',\r\n    type: SectionDataEnum.education,\r\n    header: {\r\n      enable: true,\r\n      label: 'Education',\r\n    },\r\n    routable: {\r\n      enable: true,\r\n      href: '#education',\r\n    },\r\n    group: GroupDataEnum.main,\r\n    style: {\r\n      palette: PaletteEnum.main,\r\n    },\r\n    view: EducationView,\r\n    order: 6,\r\n  },\r\n  contact: {\r\n    id: 'contact',\r\n    type: SectionDataEnum.contact,\r\n    header: {\r\n      enable: false,\r\n      label: '',\r\n    },\r\n    routable: {\r\n      enable: true,\r\n      href: '#contact',\r\n    },\r\n    group: GroupDataEnum.footer,\r\n    view: ContactView,\r\n    style: {\r\n      palette: PaletteEnum.primary,\r\n    },\r\n    order: 0,\r\n  },\r\n  copyright: {\r\n    id: 'copyright',\r\n    type: SectionDataEnum.copyright,\r\n    header: {\r\n      enable: false,\r\n      label: '',\r\n    },\r\n    routable: {\r\n      enable: false,\r\n    },\r\n    group: GroupDataEnum.footer,\r\n    view: CopyrightView,\r\n    style: {\r\n      palette: PaletteEnum.primary,\r\n    },\r\n    order: 1,\r\n  },\r\n}"
                 }
             ],
             "src/data/skill/skill-data.const.ts": [
@@ -3341,37 +3274,6 @@
         },
         "groupedFunctions": {},
         "groupedEnumerations": {
-            "src/enum/color.enum.ts": [
-                {
-                    "name": "ColorEnum",
-                    "childs": [
-                        {
-                            "name": "primary",
-                            "deprecated": false,
-                            "deprecationMessage": "",
-                            "value": "primary"
-                        },
-                        {
-                            "name": "main",
-                            "deprecated": false,
-                            "deprecationMessage": "",
-                            "value": "main"
-                        },
-                        {
-                            "name": "surface",
-                            "deprecated": false,
-                            "deprecationMessage": "",
-                            "value": "surface"
-                        }
-                    ],
-                    "ctype": "miscellaneous",
-                    "subtype": "enum",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "file": "src/enum/color.enum.ts"
-                }
-            ],
             "src/data/company/company-data.enum.ts": [
                 {
                     "name": "CompanyDataEnum",
@@ -3426,6 +3328,31 @@
                     "deprecationMessage": "",
                     "description": "",
                     "file": "src/data/group/group-data.enum.ts"
+                }
+            ],
+            "src/enum/palette.enum.ts": [
+                {
+                    "name": "PaletteEnum",
+                    "childs": [
+                        {
+                            "name": "primary",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "value": "primary"
+                        },
+                        {
+                            "name": "main",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "value": "main"
+                        }
+                    ],
+                    "ctype": "miscellaneous",
+                    "subtype": "enum",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "file": "src/enum/palette.enum.ts"
                 }
             ],
             "src/data/resume/resume-data.enum.ts": [
@@ -3530,55 +3457,6 @@
                     "deprecationMessage": "",
                     "description": "",
                     "file": "src/data/section/section-data.enum.ts"
-                }
-            ],
-            "src/enum/size.enum.ts": [
-                {
-                    "name": "SizeEnum",
-                    "childs": [
-                        {
-                            "name": "none",
-                            "deprecated": false,
-                            "deprecationMessage": "",
-                            "value": "none"
-                        },
-                        {
-                            "name": "xs",
-                            "deprecated": false,
-                            "deprecationMessage": "",
-                            "value": "xs"
-                        },
-                        {
-                            "name": "sm",
-                            "deprecated": false,
-                            "deprecationMessage": "",
-                            "value": "sm"
-                        },
-                        {
-                            "name": "md",
-                            "deprecated": false,
-                            "deprecationMessage": "",
-                            "value": "md"
-                        },
-                        {
-                            "name": "lg",
-                            "deprecated": false,
-                            "deprecationMessage": "",
-                            "value": "lg"
-                        },
-                        {
-                            "name": "xl",
-                            "deprecated": false,
-                            "deprecationMessage": "",
-                            "value": "xl"
-                        }
-                    ],
-                    "ctype": "miscellaneous",
-                    "subtype": "enum",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "file": "src/enum/size.enum.ts"
                 }
             ],
             "src/data/skill/skill-data.enum.ts": [
@@ -4414,7 +4292,7 @@
                 "linktype": "interface",
                 "name": "StyleModel",
                 "coveragePercent": 0,
-                "coverageCount": "0/3",
+                "coverageCount": "0/2",
                 "status": "low"
             },
             {
@@ -4667,7 +4545,7 @@
                 "filePath": "src/util/bem.util.ts",
                 "type": "injectable",
                 "linktype": "injectable",
-                "name": "Bem",
+                "name": "BemUtil",
                 "coveragePercent": 0,
                 "coverageCount": "0/2",
                 "status": "low"
