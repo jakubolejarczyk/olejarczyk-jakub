@@ -1006,7 +1006,7 @@
         },
         {
             "name": "ContactView",
-            "id": "component-ContactView-965eef85d703864e99926abc2fa52a09b2597ec2804a0891240fe5cb76458cf9e60216de84c897de4041f1562e0bda27353501e3337f631157130f697215f512",
+            "id": "component-ContactView-31ea1891c4bc9c0513530a381a9964f37588e1869a17039e7e88e7bd3964e1bc724a8a5d06b9b506065a81c8d2968f4beed89e3fea109e0562ef46a8cc0c3c83",
             "file": "src/view/footer/contact/contact.view.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1025,59 +1025,15 @@
             "outputsClass": [],
             "propertiesClass": [
                 {
-                    "name": "email",
-                    "defaultValue": "this.store.selectSignal((state) => state.personal.email)",
+                    "name": "contact",
+                    "defaultValue": "this.store.selectSignal((state) => {\r\n    const { firstname, lastname, email, phone, city, country, socialMedias } = state.personal;\r\n    const fullname = `${firstname} ${lastname}`;\r\n    const location = `${country}, ${city}`;\r\n    return {\r\n      fullname,\r\n      email,\r\n      phone,\r\n      location,\r\n      socialMedias,\r\n    };\r\n  })",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "unknown",
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 19
-                },
-                {
-                    "name": "fullname",
-                    "defaultValue": "this.store.selectSignal((state) => {\r\n    const { firstname, lastname } = state.personal;\r\n    return `${firstname} ${lastname}`;\r\n  })",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "unknown",
-                    "indexKey": "",
-                    "optional": false,
-                    "description": "",
-                    "line": 12
-                },
-                {
-                    "name": "location",
-                    "defaultValue": "this.store.selectSignal((state) => {\r\n    const { country, city } = state.personal;\r\n    return `${country}, ${city}`;\r\n  })",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "unknown",
-                    "indexKey": "",
-                    "optional": false,
-                    "description": "",
-                    "line": 23
-                },
-                {
-                    "name": "phone",
-                    "defaultValue": "this.store.selectSignal((state) => state.personal.phone)",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "unknown",
-                    "indexKey": "",
-                    "optional": false,
-                    "description": "",
-                    "line": 21
-                },
-                {
-                    "name": "socialMedias",
-                    "defaultValue": "this.store.selectSignal((state) => state.personal.socialMedias)",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "unknown",
-                    "indexKey": "",
-                    "optional": false,
-                    "description": "",
-                    "line": 17
+                    "line": 13
                 },
                 {
                     "name": "store",
@@ -1108,12 +1064,16 @@
                 {
                     "name": "TextComponent",
                     "type": "component"
+                },
+                {
+                    "name": "LinkComponent",
+                    "type": "component"
                 }
             ],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\r\nimport { StoreCore } from '../../../store/store.core';\r\nimport { TextComponent } from '../../../component/text/text.component';\r\n\r\n@Component({\r\n  selector: 'contact-view',\r\n  templateUrl: './contact.view.html',\r\n  styleUrl: './contact.view.scss',\r\n  imports: [TextComponent],\r\n})\r\nexport class ContactView extends StoreCore {\r\n  fullname = this.store.selectSignal((state) => {\r\n    const { firstname, lastname } = state.personal;\r\n    return `${firstname} ${lastname}`;\r\n  });\r\n\r\n  socialMedias = this.store.selectSignal((state) => state.personal.socialMedias);\r\n\r\n  email = this.store.selectSignal((state) => state.personal.email);\r\n\r\n  phone = this.store.selectSignal((state) => state.personal.phone);\r\n\r\n  location = this.store.selectSignal((state) => {\r\n    const { country, city } = state.personal;\r\n    return `${country}, ${city}`;\r\n  });\r\n}\r\n",
+            "sourceCode": "import { Component } from '@angular/core';\r\nimport { TextComponent } from '../../../component/text/text.component';\r\nimport { StoreCore } from '../../../store/store.core';\r\nimport { LinkComponent } from '../../../component/link/link.component';\r\n\r\n@Component({\r\n  selector: 'contact-view',\r\n  templateUrl: './contact.view.html',\r\n  styleUrl: './contact.view.scss',\r\n  imports: [TextComponent, LinkComponent],\r\n})\r\nexport class ContactView extends StoreCore {\r\n  contact = this.store.selectSignal((state) => {\r\n    const { firstname, lastname, email, phone, city, country, socialMedias } = state.personal;\r\n    const fullname = `${firstname} ${lastname}`;\r\n    const location = `${country}, ${city}`;\r\n    return {\r\n      fullname,\r\n      email,\r\n      phone,\r\n      location,\r\n      socialMedias,\r\n    };\r\n  });\r\n}\r\n",
             "styleUrl": "./contact.view.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
@@ -1121,11 +1081,11 @@
             "extends": [
                 "StoreCore"
             ],
-            "templateData": "<section class=\"contact\">\r\n  <div class=\"contact__column contact__fullname\">\r\n    <text-component type=\"h2\" color=\"inverse\" [value]=\"fullname()\"></text-component>\r\n    <div class=\"contact__items\">\r\n      <text-component\r\n        type=\"p\"\r\n        color=\"inverse\"\r\n        value=\"I write code that works today\"\r\n      ></text-component>\r\n      <text-component type=\"p\" color=\"inverse\" value=\"and won't fail tomorrow.\"></text-component>\r\n    </div>\r\n  </div>\r\n  <div class=\"contact__column contact__social-media\">\r\n    <text-component type=\"h3\" color=\"inverse\" value=\"Social media\"></text-component>\r\n    <div class=\"contact__items\">\r\n      @for (socialMedia of socialMedias(); track socialMedia.label) {\r\n        <text-component type=\"p\" [value]=\"socialMedia.label\"></text-component>\r\n      }\r\n    </div>\r\n  </div>\r\n  <div class=\"contact__column contact__contact\">\r\n    <text-component type=\"h3\" color=\"inverse\" value=\"Contact\"></text-component>\r\n    <div class=\"contact__items\">\r\n      <text-component type=\"p\" [value]=\"email()\"></text-component>\r\n      <text-component type=\"p\" [value]=\"phone()\"></text-component>\r\n      <text-component type=\"p\" color=\"inverse\" [value]=\"location()\"></text-component>\r\n    </div>\r\n  </div>\r\n</section>\r\n"
+            "templateData": "<div class=\"contact\">\r\n  <div class=\"contact__column\">\r\n    <text-component type=\"h2\" [value]=\"contact().fullname\"></text-component>\r\n    <div class=\"contact__items\">\r\n      <text-component\r\n        type=\"p\"\r\n        color=\"inverse\"\r\n        value=\"I write code that works today\"\r\n      ></text-component>\r\n      <text-component type=\"p\" color=\"inverse\" value=\"and won't fail tomorrow.\"></text-component>\r\n    </div>\r\n  </div>\r\n  <div class=\"contact__column\">\r\n    <text-component type=\"h3\" value=\"Social media\"></text-component>\r\n    <div class=\"contact__items\">\r\n      @for (socialMedia of contact().socialMedias; track socialMedia.label) {\r\n        <link-component\r\n          [label]=\"socialMedia.label\"\r\n          [href]=\"socialMedia.url\"\r\n          type=\"page\"\r\n          palette=\"primary\"\r\n          [external]=\"true\"\r\n        ></link-component>\r\n      }\r\n    </div>\r\n  </div>\r\n  <div class=\"contact__column\">\r\n    <text-component type=\"h3\" value=\"Contact\"></text-component>\r\n    <div class=\"contact__items\">\r\n      <link-component\r\n        [label]=\"contact().email\"\r\n        [href]=\"contact().email\"\r\n        type=\"email\"\r\n        palette=\"primary\"\r\n        [external]=\"true\"\r\n      ></link-component>\r\n      <link-component\r\n        [label]=\"contact().phone\"\r\n        [href]=\"contact().phone\"\r\n        type=\"phone\"\r\n        palette=\"primary\"\r\n        [external]=\"true\"\r\n      ></link-component>\r\n      <text-component type=\"p\" color=\"inverse\" [value]=\"contact().location\"></text-component>\r\n    </div>\r\n  </div>\r\n</div>\r\n"
         },
         {
             "name": "CopyrightView",
-            "id": "component-CopyrightView-fdfb4c9bd74e1252b649f2125f2455ae6b41a34e5954a57ba78ae3519747e842dd676a97f460d11b7683660b7556b8e84b1420daf16942764133b88818e38a68",
+            "id": "component-CopyrightView-1be39537a2697c2cb6181c5d73c3913b439cd10606471caa90a50e750385be53be731f5d2d69c84048076480b27c2d40a7b0ca42b8ae3bc36ecc95c263dd9b45",
             "file": "src/view/footer/copyright/copyright.view.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1145,7 +1105,7 @@
             "propertiesClass": [
                 {
                     "name": "yearAndFullname",
-                    "defaultValue": "this.store.selectSignal((state) => {\r\n    const { firstname, lastname } = state.personal;\r\n    const year = DateUtil.getYear();\r\n    return `${year} ${firstname} ${lastname}.`;\r\n  })",
+                    "defaultValue": "this.store.selectSignal((state) => {\r\n    const { firstname, lastname } = state.personal;\r\n    const year = DateUtil.getYear();\r\n    return `${year} ${firstname} ${lastname}`;\r\n  })",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "unknown",
@@ -1188,7 +1148,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\r\nimport { TextComponent } from '../../../component/text/text.component';\r\nimport { StoreCore } from '../../../store/store.core';\r\nimport { DateUtil } from '../../../util/date.util';\r\n\r\n@Component({\r\n  selector: 'copyright-view',\r\n  templateUrl: './copyright.view.html',\r\n  styleUrl: './copyright.view.scss',\r\n  imports: [TextComponent],\r\n})\r\nexport class CopyrightView extends StoreCore {\r\n  yearAndFullname = this.store.selectSignal((state) => {\r\n    const { firstname, lastname } = state.personal;\r\n    const year = DateUtil.getYear();\r\n    return `${year} ${firstname} ${lastname}.`;\r\n  });\r\n}\r\n",
+            "sourceCode": "import { Component } from '@angular/core';\r\nimport { TextComponent } from '../../../component/text/text.component';\r\nimport { StoreCore } from '../../../store/store.core';\r\nimport { DateUtil } from '../../../util/date.util';\r\n\r\n@Component({\r\n  selector: 'copyright-view',\r\n  templateUrl: './copyright.view.html',\r\n  styleUrl: './copyright.view.scss',\r\n  imports: [TextComponent],\r\n})\r\nexport class CopyrightView extends StoreCore {\r\n  yearAndFullname = this.store.selectSignal((state) => {\r\n    const { firstname, lastname } = state.personal;\r\n    const year = DateUtil.getYear();\r\n    return `${year} ${firstname} ${lastname}`;\r\n  });\r\n}\r\n",
             "styleUrl": "./copyright.view.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
@@ -1196,11 +1156,11 @@
             "extends": [
                 "StoreCore"
             ],
-            "templateData": "<div class=\"copyright\">\r\n  <text-component type=\"p\" [value]=\"'&copy; ' + yearAndFullname()\"></text-component>\r\n  <text-component type=\"p\" value=\"All Rights Reserved.\"></text-component>\r\n</div>\r\n"
+            "templateData": "<div class=\"copyright\">\r\n  <text-component type=\"p\" [value]=\"'&copy; ' + yearAndFullname() + '.'\"></text-component>\r\n  <text-component type=\"p\" value=\"All Rights Reserved.\"></text-component>\r\n</div>\r\n"
         },
         {
             "name": "EducationView",
-            "id": "component-EducationView-f42c5de33d7a930d1acdb57ce11843456c812aaeee280c357d83ce41e6ccdf56353c17b6b6d14a28eeeabe39b7958beb5cd0809373d4294bcc8edbffe6472668",
+            "id": "component-EducationView-ba0f1694d1cc2a59bf7940a1b59e3a651fa1d660022a7d5b14a9905439bf39fdcb07c1addb94f4c9c652bd145483b8dc3787b13210cef1b24189f2310d120424",
             "file": "src/view/main/education/education.view.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1217,7 +1177,37 @@
             "hostDirectives": [],
             "inputsClass": [],
             "outputsClass": [],
-            "propertiesClass": [],
+            "propertiesClass": [
+                {
+                    "name": "educations",
+                    "defaultValue": "this.store.selectSignal((state) => state.education)",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "unknown",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 12
+                },
+                {
+                    "name": "store",
+                    "defaultValue": "inject(Store)",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Store<StoreType>",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 6,
+                    "modifierKind": [
+                        124,
+                        148
+                    ],
+                    "inheritance": {
+                        "file": "StoreCore"
+                    }
+                }
+            ],
             "methodsClass": [],
             "deprecated": false,
             "deprecationMessage": "",
@@ -1233,12 +1223,15 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\r\nimport { TextComponent } from '../../../component/text/text.component';\r\n\r\n@Component({\r\n  selector: 'education-view',\r\n  templateUrl: './education.view.html',\r\n  imports: [TextComponent],\r\n})\r\nexport class EducationView {}\r\n",
+            "sourceCode": "import { Component } from '@angular/core';\r\nimport { TextComponent } from '../../../component/text/text.component';\r\nimport { StoreCore } from '../../../store/store.core';\r\n\r\n@Component({\r\n  selector: 'education-view',\r\n  templateUrl: './education.view.html',\r\n  styleUrl: './education.view.scss',\r\n  imports: [TextComponent],\r\n})\r\nexport class EducationView extends StoreCore {\r\n  educations = this.store.selectSignal((state) => state.education);\r\n}\r\n",
+            "styleUrl": "./education.view.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
-            "extends": [],
-            "templateData": "<text-component type=\"p\" value=\"education works!\"></text-component>\r\n"
+            "extends": [
+                "StoreCore"
+            ],
+            "templateData": "<div class=\"education\">\r\n  @for (education of educations(); track education) {\r\n    <text-component type=\"p\" [value]=\"education.year\"></text-component>\r\n    <text-component type=\"p\" [value]=\"education.university\"></text-component>\r\n    <text-component type=\"p\" [value]=\"education.major\"></text-component>\r\n    <text-component type=\"p\" [value]=\"education.degree\"></text-component>\r\n  }\r\n</div>\r\n"
         },
         {
             "name": "ExperienceView",
@@ -1474,7 +1467,7 @@
         },
         {
             "name": "LinkComponent",
-            "id": "component-LinkComponent-0f7d575c50d331fe4d1fc9bf467eda192024e24bde040edf723c70aa5a8d9c34df68b18b7faa8b1282129189ffceaf3d75162987722fceb0438bf7b113fd1059",
+            "id": "component-LinkComponent-1ab30256ab271a96571fca1256302974e32f8048bf5ad889997c8c377730a0525545e601f5d036d636e3fe9c1b4c28f5fa659f615503e41a9126d6539ec3e13d",
             "file": "src/component/link/link.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1491,15 +1484,26 @@
             "hostDirectives": [],
             "inputsClass": [
                 {
-                    "name": "externalLink",
-                    "defaultValue": "false",
+                    "name": "external",
+                    "defaultValue": "true",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 16,
+                    "line": 23,
                     "required": false
+                },
+                {
+                    "name": "href",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 17,
+                    "required": true
                 },
                 {
                     "name": "label",
@@ -1509,30 +1513,29 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 10,
+                    "line": 15,
+                    "required": true
+                },
+                {
+                    "name": "palette",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "keyof typeof PaletteEnum",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 21,
                     "required": true
                 },
                 {
                     "name": "type",
-                    "defaultValue": "'page'",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "LinkType",
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 14,
-                    "required": false
-                },
-                {
-                    "name": "url",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "string",
-                    "indexKey": "",
-                    "optional": false,
-                    "description": "",
-                    "line": 12,
+                    "line": 19,
                     "required": true
                 }
             ],
@@ -1540,22 +1543,22 @@
             "propertiesClass": [],
             "methodsClass": [
                 {
-                    "name": "getUrl",
+                    "name": "buildHref",
                     "args": [],
                     "optional": false,
                     "returnType": "any",
                     "typeParameters": [],
-                    "line": 28,
+                    "line": 25,
                     "deprecated": false,
                     "deprecationMessage": ""
                 },
                 {
-                    "name": "onClick",
+                    "name": "buildSectionClassList",
                     "args": [],
                     "optional": false,
-                    "returnType": "void",
+                    "returnType": "{}",
                     "typeParameters": [],
-                    "line": 18,
+                    "line": 36,
                     "deprecated": false,
                     "deprecationMessage": ""
                 }
@@ -1565,17 +1568,26 @@
             "hostBindings": [],
             "hostListeners": [],
             "standalone": false,
-            "imports": [],
+            "imports": [
+                {
+                    "name": "TextComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                }
+            ],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, input } from '@angular/core';\r\nimport { LinkType } from './link.type';\r\n\r\n@Component({\r\n  selector: 'link-component',\r\n  templateUrl: './link.component.html',\r\n  styleUrl: './link.component.scss',\r\n})\r\nexport class LinkComponent {\r\n  label = input.required<string>();\r\n\r\n  url = input.required<string>();\r\n\r\n  type = input<LinkType>('page');\r\n\r\n  externalLink = input(false);\r\n\r\n  onClick() {\r\n    const path = this.url();\r\n    if (path.startsWith('#')) {\r\n      const element = document.getElementById(this.url());\r\n      if (element) {\r\n        element.scrollIntoView({ behavior: 'smooth' });\r\n      }\r\n    }\r\n  }\r\n\r\n  getUrl() {\r\n    switch (this.type()) {\r\n      case 'page':\r\n      case 'file':\r\n        return this.url();\r\n      case 'email':\r\n        return `mailto:${this.url()}`;\r\n      case 'phone':\r\n        return `tel:${this.url()}`;\r\n    }\r\n  }\r\n}\r\n",
+            "sourceCode": "import { Component, input } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { LinkType } from './link.type';\r\nimport { TextComponent } from '../text/text.component';\r\nimport { PaletteEnum } from '../../enum/palette.enum';\r\nimport { BemUtil } from '../../util/bem.util';\r\n\r\n@Component({\r\n  selector: 'link-component',\r\n  templateUrl: './link.component.html',\r\n  styleUrl: './link.component.scss',\r\n  imports: [TextComponent, CommonModule],\r\n})\r\nexport class LinkComponent {\r\n  label = input.required<string>();\r\n\r\n  href = input.required<string>();\r\n\r\n  type = input.required<LinkType>();\r\n\r\n  palette = input.required<keyof typeof PaletteEnum>();\r\n\r\n  external = input(true);\r\n\r\n  buildHref() {\r\n    switch (this.type()) {\r\n      case 'page':\r\n        return this.href();\r\n      case 'email':\r\n        return 'mailto:'.concat(this.href());\r\n      case 'phone':\r\n        return 'tel:'.concat(this.href());\r\n    }\r\n  }\r\n\r\n  buildSectionClassList() {\r\n    const textPalette = BemUtil.build('link', 'palette', this.palette());\r\n    return [textPalette];\r\n  }\r\n}\r\n",
             "styleUrl": "./link.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<!-- @if (externalLink()) {\r\n  <a class=\"link\" [href]=\"getUrl()\" target=\"_blank\">\r\n    <text-component\r\n      type=\"p\"\r\n      color=\"inverse-secondary\"\r\n      [value]=\"label()\"\r\n      [isLink]=\"true\"\r\n    ></text-component>\r\n  </a>\r\n} @else {\r\n  <a class=\"link\" (click)=\"onClick()\">\r\n    <text-component\r\n      type=\"p\"\r\n      color=\"inverse-secondary\"\r\n      [value]=\"label()\"\r\n      [isLink]=\"true\"\r\n    ></text-component>\r\n  </a>\r\n} -->\r\n"
+            "templateData": "@if (external()) {\r\n  <a class=\"link\" [ngClass]=\"buildSectionClassList()\" [href]=\"buildHref()\" target=\"_blank\">\r\n    <text-component type=\"p\" [value]=\"label()\"></text-component>\r\n  </a>\r\n}\r\n"
         },
         {
             "name": "MainView",
@@ -1779,7 +1791,7 @@
         },
         {
             "name": "SectionComponent",
-            "id": "component-SectionComponent-ebb65b9a640a8706591c714baa5e68d9c97e39e2f509fd5b360a239d81887ff944f44a4ae7db266633a17f6bedccd495b8adce40681b927e3cd7cc010d6b1e01",
+            "id": "component-SectionComponent-386adef14623cb8d1368a42a5ad96dfc44d4e8464abd2e1023ce3af9e0dbabd96e9e2090e97bf5af12da44583c36ea3a059b89a46e75fda241d5e0eaf9d32c7b",
             "file": "src/component/section/section.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1853,12 +1865,16 @@
                 {
                     "name": "TextComponent",
                     "type": "component"
+                },
+                {
+                    "name": "NgComponentOutlet",
+                    "type": "component"
                 }
             ],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { CommonModule } from '@angular/common';\r\nimport { Component, input } from '@angular/core';\r\nimport { TextComponent } from '../text/text.component';\r\nimport { StoreCore } from '../../store/store.core';\r\nimport { SectionDataModel } from '../../data/section/section-data.model';\r\nimport { BemUtil } from '../../util/bem.util';\r\n\r\n@Component({\r\n  selector: 'section-component',\r\n  templateUrl: './section.component.html',\r\n  styleUrl: './section.component.scss',\r\n  imports: [CommonModule, TextComponent],\r\n})\r\nexport class SectionComponent extends StoreCore {\r\n  section = input.required<SectionDataModel[keyof SectionDataModel]>();\r\n\r\n  buildSectionClassList() {\r\n    const { palette } = this.section().style;\r\n    const sectionPalette = BemUtil.build('section', 'palette', palette);\r\n    return [sectionPalette];\r\n  }\r\n}\r\n",
+            "sourceCode": "import { CommonModule, NgComponentOutlet } from '@angular/common';\r\nimport { Component, input } from '@angular/core';\r\nimport { TextComponent } from '../text/text.component';\r\nimport { StoreCore } from '../../store/store.core';\r\nimport { SectionDataModel } from '../../data/section/section-data.model';\r\nimport { BemUtil } from '../../util/bem.util';\r\n\r\n@Component({\r\n  selector: 'section-component',\r\n  templateUrl: './section.component.html',\r\n  styleUrl: './section.component.scss',\r\n  imports: [CommonModule, TextComponent, NgComponentOutlet],\r\n})\r\nexport class SectionComponent extends StoreCore {\r\n  section = input.required<SectionDataModel[keyof SectionDataModel]>();\r\n\r\n  buildSectionClassList() {\r\n    const { palette } = this.section().style;\r\n    const sectionPalette = BemUtil.build('section', 'palette', palette);\r\n    return [sectionPalette];\r\n  }\r\n}\r\n",
             "styleUrl": "./section.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
@@ -1866,7 +1882,7 @@
             "extends": [
                 "StoreCore"
             ],
-            "templateData": "<section class=\"section\" [ngClass]=\"buildSectionClassList()\">\r\n  @if (section().header.enable) {\r\n    <header class=\"section__header\">\r\n      <text-component type=\"h2\" [value]=\"section().header.label\"></text-component>\r\n    </header>\r\n  }\r\n  <div class=\"section__content\">\r\n    <text-component type=\"p\" value=\"Content\"></text-component>\r\n  </div>\r\n</section>\r\n"
+            "templateData": "<section class=\"section\" [ngClass]=\"buildSectionClassList()\">\r\n  @if (section().header.enable) {\r\n    <header class=\"section__header\">\r\n      <text-component type=\"h2\" [value]=\"section().header.label\"></text-component>\r\n    </header>\r\n  }\r\n  <div class=\"section__content\">\r\n    <ng-container *ngComponentOutlet=\"section().view\"></ng-container>\r\n  </div>\r\n</section>\r\n"
         },
         {
             "name": "SkillsView",
@@ -2392,7 +2408,7 @@
                 "name": "LinkType",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "\"page\" | \"email\" | \"phone\" | \"file\"",
+                "rawtype": "\"page\" | \"email\" | \"phone\"",
                 "file": "src/component/link/link.type.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -3851,7 +3867,7 @@
                     "name": "LinkType",
                     "ctype": "miscellaneous",
                     "subtype": "typealias",
-                    "rawtype": "\"page\" | \"email\" | \"phone\" | \"file\"",
+                    "rawtype": "\"page\" | \"email\" | \"phone\"",
                     "file": "src/component/link/link.type.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
@@ -3978,7 +3994,7 @@
                 "linktype": "component",
                 "name": "LinkComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/7",
+                "coverageCount": "0/8",
                 "status": "low"
             },
             {
@@ -4574,7 +4590,7 @@
                 "linktype": "component",
                 "name": "ContactView",
                 "coveragePercent": 0,
-                "coverageCount": "0/7",
+                "coverageCount": "0/3",
                 "status": "low"
             },
             {
@@ -4637,7 +4653,7 @@
                 "linktype": "component",
                 "name": "EducationView",
                 "coveragePercent": 0,
-                "coverageCount": "0/1",
+                "coverageCount": "0/3",
                 "status": "low"
             },
             {

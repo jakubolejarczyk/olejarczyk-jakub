@@ -2,7 +2,7 @@ interface EducationModel {
   university: string;
   major: string;
   degree: string;
-  year: string;
+  year: number;
 }
 
 export type EducationDataModel = EducationModel[];

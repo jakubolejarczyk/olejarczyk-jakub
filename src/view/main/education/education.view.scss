@@ -1,4 +1,31 @@
-@use '../../../style/abstracts/variables';
-
 .education {
+  padding: 1rem;
+
+  &__item {
+    display: flex;
+    gap: 1rem;
+  }
+
+  &__line {
+    background-color: gray;
+
+    flex: 0 0 2px;
+    position: relative;
+  }
+
+  &__circle {
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    border-radius: 100%;
+    position: absolute;
+    left: -9px;
+  }
+
+  &__content {
+    padding: 1rem;
+    border: 1px solid blue;
+
+    flex: 1;
+  }
 }

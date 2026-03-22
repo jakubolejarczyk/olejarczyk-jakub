@@ -9,5 +9,7 @@ import { StoreCore } from '../../../store/store.core';
   imports: [TextComponent],
 })
 export class EducationView extends StoreCore {
-  educations = this.store.selectSignal((state) => state.education);
+  educations = this.store.selectSignal((state) => {
+    return state.education.sort((prev, next) => next.year - prev.year);
+  });
 }

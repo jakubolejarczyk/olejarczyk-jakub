@@ -1,8 +1,15 @@
 <div class="education">
   @for (education of educations(); track education) {
-    <text-component type="p" [value]="education.year"></text-component>
-    <text-component type="p" [value]="education.university"></text-component>
-    <text-component type="p" [value]="education.major"></text-component>
-    <text-component type="p" [value]="education.degree"></text-component>
+    <div class="education__item">
+      <div class="education__line">
+        <div class="education__circle"></div>
+      </div>
+      <div class="education__content">
+        <text-component type="p" [value]="education.year.toString()"></text-component>
+        <text-component type="p" [value]="education.university"></text-component>
+        <text-component type="p" [value]="education.major"></text-component>
+        <text-component type="p" [value]="education.degree"></text-component>
+      </div>
+    </div>
   }
 </div>
