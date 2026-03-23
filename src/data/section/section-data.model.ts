@@ -6,11 +6,6 @@ interface StyleModel {
   palette: PaletteEnum;
 }
 
-interface HeaderModel {
-  enable: boolean;
-  label: string;
-}
-
 interface RoutableEnabledModel {
   enable: true;
   href: string;
@@ -25,7 +20,6 @@ type SectionRouteType = RoutableEnabledModel | RoutableDisabledModel;
 interface SectionModel {
   id: string;
   type: SectionDataEnum;
-  header: HeaderModel;
   routable: SectionRouteType;
   group: GroupDataEnum;
   view: any;

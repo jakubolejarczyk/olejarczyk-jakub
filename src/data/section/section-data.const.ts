@@ -18,10 +18,6 @@ export const sectionDataConst: SectionDataModel = {
   navigation: {
     id: 'navigation',
     type: SectionDataEnum.navigation,
-    header: {
-      enable: false,
-      label: '',
-    },
     routable: {
       enable: false,
     },
@@ -35,10 +31,6 @@ export const sectionDataConst: SectionDataModel = {
   home: {
     id: 'home',
     type: SectionDataEnum.home,
-    header: {
-      enable: false,
-      label: '',
-    },
     routable: {
       enable: true,
       href: '#home',
@@ -53,10 +45,6 @@ export const sectionDataConst: SectionDataModel = {
   aboutMe: {
     id: 'about-me',
     type: SectionDataEnum.aboutMe,
-    header: {
-      enable: true,
-      label: 'About me',
-    },
     routable: {
       enable: true,
       href: '#about-me',
@@ -71,10 +59,6 @@ export const sectionDataConst: SectionDataModel = {
   technologies: {
     id: 'technologies',
     type: SectionDataEnum.technologies,
-    header: {
-      enable: true,
-      label: 'Technologies',
-    },
     routable: {
       enable: true,
       href: '#technologies',
@@ -89,10 +73,6 @@ export const sectionDataConst: SectionDataModel = {
   skills: {
     id: 'skills',
     type: SectionDataEnum.skills,
-    header: {
-      enable: true,
-      label: 'Skills',
-    },
     routable: {
       enable: true,
       href: '#skills',
@@ -107,10 +87,6 @@ export const sectionDataConst: SectionDataModel = {
   experience: {
     id: 'experience',
     type: SectionDataEnum.experience,
-    header: {
-      enable: true,
-      label: 'Experience',
-    },
     routable: {
       enable: true,
       href: '#experience',
@@ -125,10 +101,6 @@ export const sectionDataConst: SectionDataModel = {
   resume: {
     id: 'resume',
     type: SectionDataEnum.resume,
-    header: {
-      enable: true,
-      label: 'Resume',
-    },
     routable: {
       enable: true,
       href: '#resume',
@@ -143,10 +115,6 @@ export const sectionDataConst: SectionDataModel = {
   projects: {
     id: 'projects',
     type: SectionDataEnum.projects,
-    header: {
-      enable: true,
-      label: 'Projects',
-    },
     routable: {
       enable: true,
       href: '#projects',
@@ -161,10 +129,6 @@ export const sectionDataConst: SectionDataModel = {
   education: {
     id: 'education',
     type: SectionDataEnum.education,
-    header: {
-      enable: false,
-      label: 'Education',
-    },
     routable: {
       enable: true,
       href: '#education',
@@ -179,10 +143,6 @@ export const sectionDataConst: SectionDataModel = {
   contact: {
     id: 'contact',
     type: SectionDataEnum.contact,
-    header: {
-      enable: false,
-      label: '',
-    },
     routable: {
       enable: true,
       href: '#contact',
@@ -197,10 +157,6 @@ export const sectionDataConst: SectionDataModel = {
   copyright: {
     id: 'copyright',
     type: SectionDataEnum.copyright,
-    header: {
-      enable: false,
-      label: '',
-    },
     routable: {
       enable: false,
     },

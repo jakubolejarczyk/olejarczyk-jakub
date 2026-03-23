@@ -2,6 +2,10 @@
 
 .custom {
   &__palette {
+    &--primary {
+      color: variables.$color__primary--default;
+    }
+
     &--secondary {
       color: variables.$color__text--secondary;
     }
