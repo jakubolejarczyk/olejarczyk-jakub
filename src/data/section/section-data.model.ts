@@ -1,9 +1,16 @@
 import { PaletteEnum } from '../../enum/palette.enum';
+import { SizeEnum } from '../../enum/size.enum';
 import { GroupDataEnum } from '../group/group-data.enum';
 import { SectionDataEnum } from './section-data.enum';
 
 interface StyleModel {
   palette: PaletteEnum;
+  padding: {
+    top: SizeEnum;
+    right: SizeEnum;
+    bottom: SizeEnum;
+    left: SizeEnum;
+  };
 }
 
 interface HeaderModel {

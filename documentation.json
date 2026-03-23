@@ -63,12 +63,12 @@
         },
         {
             "name": "EducationModel",
-            "id": "interface-EducationModel-5cc3c442758d1260c92b7c7a1470d56aa4715f1bc4f98fc047b66228c379595a46deef52af93c13d228ef8b294bcc84a9be657df4de1e50797fa5fe428c873d7",
+            "id": "interface-EducationModel-1d22336c180a28150a1e99df1c64f8e5261e88c12ac47d7dc697f7d7a55297f1b53c1d1c98d0760f7322ac2c6dbb4c8659ce97f6e4ec4855764a3926dfee2093",
             "file": "src/data/education/education-data.model.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "interface EducationModel {\r\n  university: string;\r\n  major: string;\r\n  degree: string;\r\n  year: string;\r\n}\r\n\r\nexport type EducationDataModel = EducationModel[];\r\n",
+            "sourceCode": "interface EducationModel {\r\n  university: string;\r\n  major: string;\r\n  degree: string;\r\n  year: number;\r\n}\r\n\r\nexport type EducationDataModel = EducationModel[];\r\n",
             "properties": [
                 {
                     "name": "degree",
@@ -104,7 +104,7 @@
                     "name": "year",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "string",
+                    "type": "number",
                     "indexKey": "",
                     "optional": false,
                     "description": "",
@@ -1160,7 +1160,7 @@
         },
         {
             "name": "EducationView",
-            "id": "component-EducationView-ba0f1694d1cc2a59bf7940a1b59e3a651fa1d660022a7d5b14a9905439bf39fdcb07c1addb94f4c9c652bd145483b8dc3787b13210cef1b24189f2310d120424",
+            "id": "component-EducationView-78a0fca16fd0c9c3575ae0b5dea787985bd929560a1237347c870276aeccf982b7f25d35af4d3a5798d316d71c381a65d3abe3573a37e2c17b4d6589bf3013d4",
             "file": "src/view/main/education/education.view.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1180,7 +1180,7 @@
             "propertiesClass": [
                 {
                     "name": "educations",
-                    "defaultValue": "this.store.selectSignal((state) => state.education)",
+                    "defaultValue": "this.store.selectSignal((state) => {\r\n    return state.education.sort((prev, next) => next.year - prev.year);\r\n  })",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "unknown",
@@ -1223,7 +1223,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\r\nimport { TextComponent } from '../../../component/text/text.component';\r\nimport { StoreCore } from '../../../store/store.core';\r\n\r\n@Component({\r\n  selector: 'education-view',\r\n  templateUrl: './education.view.html',\r\n  styleUrl: './education.view.scss',\r\n  imports: [TextComponent],\r\n})\r\nexport class EducationView extends StoreCore {\r\n  educations = this.store.selectSignal((state) => state.education);\r\n}\r\n",
+            "sourceCode": "import { Component } from '@angular/core';\r\nimport { TextComponent } from '../../../component/text/text.component';\r\nimport { StoreCore } from '../../../store/store.core';\r\n\r\n@Component({\r\n  selector: 'education-view',\r\n  templateUrl: './education.view.html',\r\n  styleUrl: './education.view.scss',\r\n  imports: [TextComponent],\r\n})\r\nexport class EducationView extends StoreCore {\r\n  educations = this.store.selectSignal((state) => {\r\n    return state.education.sort((prev, next) => next.year - prev.year);\r\n  });\r\n}\r\n",
             "styleUrl": "./education.view.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
@@ -1231,7 +1231,7 @@
             "extends": [
                 "StoreCore"
             ],
-            "templateData": "<div class=\"education\">\r\n  @for (education of educations(); track education) {\r\n    <text-component type=\"p\" [value]=\"education.year\"></text-component>\r\n    <text-component type=\"p\" [value]=\"education.university\"></text-component>\r\n    <text-component type=\"p\" [value]=\"education.major\"></text-component>\r\n    <text-component type=\"p\" [value]=\"education.degree\"></text-component>\r\n  }\r\n</div>\r\n"
+            "templateData": "<div class=\"education\">\r\n  @for (education of educations(); track education) {\r\n    <div class=\"education__item\">\r\n      <div class=\"education__line\">\r\n        <div class=\"education__circle\"></div>\r\n      </div>\r\n      <div class=\"education__content\">\r\n        <text-component type=\"p\" [value]=\"education.year.toString()\"></text-component>\r\n        <text-component type=\"p\" [value]=\"education.university\"></text-component>\r\n        <text-component type=\"p\" [value]=\"education.major\"></text-component>\r\n        <text-component type=\"p\" [value]=\"education.degree\"></text-component>\r\n      </div>\r\n    </div>\r\n  }\r\n</div>\r\n"
         },
         {
             "name": "ExperienceView",
@@ -2165,7 +2165,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "EducationDataModel",
-                "defaultValue": "[\r\n  {\r\n    university: 'Jan Kochanowski University of Kielce',\r\n    major: 'Computer Science',\r\n    degree: 'Bachelor of Engineering',\r\n    year: '2021',\r\n  },\r\n]"
+                "defaultValue": "[\r\n  {\r\n    university: 'Jan Kochanowski University of Kielce',\r\n    major: 'Computer Science',\r\n    degree: 'Bachelor of Engineering',\r\n    year: 2021,\r\n  },\r\n  {\r\n    university: 'Kielce University of Technology',\r\n    major: 'Computer Science (Information Systems)',\r\n    degree: \"Master's Degree\",\r\n    year: 2026,\r\n  },\r\n]"
             },
             {
                 "name": "educationReducer",
@@ -3176,7 +3176,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "EducationDataModel",
-                    "defaultValue": "[\r\n  {\r\n    university: 'Jan Kochanowski University of Kielce',\r\n    major: 'Computer Science',\r\n    degree: 'Bachelor of Engineering',\r\n    year: '2021',\r\n  },\r\n]"
+                    "defaultValue": "[\r\n  {\r\n    university: 'Jan Kochanowski University of Kielce',\r\n    major: 'Computer Science',\r\n    degree: 'Bachelor of Engineering',\r\n    year: 2021,\r\n  },\r\n  {\r\n    university: 'Kielce University of Technology',\r\n    major: 'Computer Science (Information Systems)',\r\n    degree: \"Master's Degree\",\r\n    year: 2026,\r\n  },\r\n]"
                 }
             ],
             "src/data/experience/experience-data.const.ts": [

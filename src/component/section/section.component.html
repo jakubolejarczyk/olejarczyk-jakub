@@ -1,10 +1,12 @@
 <section class="section" [ngClass]="buildSectionClassList()">
-  @if (section().header.enable) {
-    <header class="section__header">
-      <text-component type="h2" [value]="section().header.label"></text-component>
-    </header>
-  }
-  <div class="section__content">
-    <ng-container *ngComponentOutlet="section().view"></ng-container>
+  <div class="section__wrapper">
+    @if (section().header.enable) {
+      <header class="section__header">
+        <text-component type="h2" [value]="section().header.label"></text-component>
+      </header>
+    }
+    <div class="section__content">
+      <ng-container *ngComponentOutlet="section().view"></ng-container>
+    </div>
   </div>
 </section>

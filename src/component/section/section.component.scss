@@ -1,6 +1,112 @@
 @use '../../style/abstracts/variables';
 
 .section {
+  &__padding {
+    &-top {
+      &--none {
+        padding-top: variables.$size--none;
+      }
+
+      &--xs {
+        padding-top: variables.$size--xs;
+      }
+
+      &--sm {
+        padding-top: variables.$size--sm;
+      }
+
+      &--md {
+        padding-top: variables.$size--md;
+      }
+
+      &--lg {
+        padding-top: variables.$size--lg;
+      }
+
+      &--xl {
+        padding-top: variables.$size--xl;
+      }
+    }
+
+    &-right {
+      &--none {
+        padding-right: variables.$size--none;
+      }
+
+      &--xs {
+        padding-right: variables.$size--xs;
+      }
+
+      &--sm {
+        padding-right: variables.$size--sm;
+      }
+
+      &--md {
+        padding-right: variables.$size--md;
+      }
+
+      &--lg {
+        padding-right: variables.$size--lg;
+      }
+
+      &--xl {
+        padding-right: variables.$size--xl;
+      }
+    }
+
+    &-bottom {
+      &--none {
+        padding-bottom: variables.$size--none;
+      }
+
+      &--xs {
+        padding-bottom: variables.$size--xs;
+      }
+
+      &--sm {
+        padding-bottom: variables.$size--sm;
+      }
+
+      &--md {
+        padding-bottom: variables.$size--md;
+      }
+
+      &--lg {
+        padding-bottom: variables.$size--lg;
+      }
+
+      &--xl {
+        padding-bottom: variables.$size--xl;
+      }
+    }
+
+    &-left {
+      &--none {
+        padding-left: variables.$size--none;
+      }
+
+      &--xs {
+        padding-left: variables.$size--xs;
+      }
+
+      &--sm {
+        padding-left: variables.$size--sm;
+      }
+
+      &--md {
+        padding-left: variables.$size--md;
+      }
+
+      &--lg {
+        padding-left: variables.$size--lg;
+      }
+
+      &--xl {
+        padding-left: variables.$size--xl;
+      }
+    }
+  }
+
   &__palette {
     &--primary {
       background-color: variables.$color__primary--default;
