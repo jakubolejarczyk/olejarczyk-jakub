@@ -52,7 +52,7 @@ export const sectionDataConst: SectionDataModel = {
     group: GroupDataEnum.main,
     view: AboutMeView,
     style: {
-      palette: PaletteEnum.main,
+      palette: PaletteEnum.surface,
     },
     order: 0,
   },

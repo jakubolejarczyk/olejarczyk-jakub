@@ -7,6 +7,11 @@
       color: variables.$color__text--inverse;
     }
 
+    &--surface {
+      background-color: variables.$color__background--surface;
+      color: variables.$color__text--primary;
+    }
+
     &--main {
       background-color: variables.$color__background--main;
       color: variables.$color__text--primary;
