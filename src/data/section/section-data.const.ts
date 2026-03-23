@@ -1,5 +1,4 @@
 import { PaletteEnum } from '../../enum/palette.enum';
-import { SizeEnum } from '../../enum/size.enum';
 import { ContactView } from '../../view/footer/contact/contact.view';
 import { CopyrightView } from '../../view/footer/copyright/copyright.view';
 import { HomeView } from '../../view/header/home/home.view';
@@ -30,12 +29,6 @@ export const sectionDataConst: SectionDataModel = {
     view: NavigationView,
     style: {
       palette: PaletteEnum.primary,
-      padding: {
-        top: SizeEnum.none,
-        right: SizeEnum.none,
-        bottom: SizeEnum.none,
-        left: SizeEnum.none,
-      },
     },
     order: 0,
   },
@@ -54,12 +47,6 @@ export const sectionDataConst: SectionDataModel = {
     view: HomeView,
     style: {
       palette: PaletteEnum.primary,
-      padding: {
-        top: SizeEnum.none,
-        right: SizeEnum.none,
-        bottom: SizeEnum.none,
-        left: SizeEnum.none,
-      },
     },
     order: 1,
   },
@@ -78,12 +65,6 @@ export const sectionDataConst: SectionDataModel = {
     view: AboutMeView,
     style: {
       palette: PaletteEnum.main,
-      padding: {
-        top: SizeEnum.none,
-        right: SizeEnum.none,
-        bottom: SizeEnum.none,
-        left: SizeEnum.none,
-      },
     },
     order: 0,
   },
@@ -102,12 +83,6 @@ export const sectionDataConst: SectionDataModel = {
     view: TechnologiesView,
     style: {
       palette: PaletteEnum.main,
-      padding: {
-        top: SizeEnum.none,
-        right: SizeEnum.none,
-        bottom: SizeEnum.none,
-        left: SizeEnum.none,
-      },
     },
     order: 1,
   },
@@ -126,12 +101,6 @@ export const sectionDataConst: SectionDataModel = {
     view: SkillsView,
     style: {
       palette: PaletteEnum.main,
-      padding: {
-        top: SizeEnum.none,
-        right: SizeEnum.none,
-        bottom: SizeEnum.none,
-        left: SizeEnum.none,
-      },
     },
     order: 2,
   },
@@ -150,12 +119,6 @@ export const sectionDataConst: SectionDataModel = {
     view: ExperienceView,
     style: {
       palette: PaletteEnum.main,
-      padding: {
-        top: SizeEnum.none,
-        right: SizeEnum.none,
-        bottom: SizeEnum.none,
-        left: SizeEnum.none,
-      },
     },
     order: 3,
   },
@@ -174,12 +137,6 @@ export const sectionDataConst: SectionDataModel = {
     view: ResumeView,
     style: {
       palette: PaletteEnum.main,
-      padding: {
-        top: SizeEnum.none,
-        right: SizeEnum.none,
-        bottom: SizeEnum.none,
-        left: SizeEnum.none,
-      },
     },
     order: 4,
   },
@@ -198,12 +155,6 @@ export const sectionDataConst: SectionDataModel = {
     view: ProjectsView,
     style: {
       palette: PaletteEnum.main,
-      padding: {
-        top: SizeEnum.none,
-        right: SizeEnum.none,
-        bottom: SizeEnum.none,
-        left: SizeEnum.none,
-      },
     },
     order: 5,
   },
@@ -211,7 +162,7 @@ export const sectionDataConst: SectionDataModel = {
     id: 'education',
     type: SectionDataEnum.education,
     header: {
-      enable: true,
+      enable: false,
       label: 'Education',
     },
     routable: {
@@ -221,12 +172,6 @@ export const sectionDataConst: SectionDataModel = {
     group: GroupDataEnum.main,
     style: {
       palette: PaletteEnum.main,
-      padding: {
-        top: SizeEnum.xl,
-        right: SizeEnum.lg,
-        bottom: SizeEnum.xl,
-        left: SizeEnum.lg,
-      },
     },
     view: EducationView,
     order: 6,
@@ -246,12 +191,6 @@ export const sectionDataConst: SectionDataModel = {
     view: ContactView,
     style: {
       palette: PaletteEnum.primary,
-      padding: {
-        top: SizeEnum.xl,
-        right: SizeEnum.lg,
-        bottom: SizeEnum.xl,
-        left: SizeEnum.lg,
-      },
     },
     order: 0,
   },
@@ -269,12 +208,6 @@ export const sectionDataConst: SectionDataModel = {
     view: CopyrightView,
     style: {
       palette: PaletteEnum.primary,
-      padding: {
-        top: SizeEnum.none,
-        right: SizeEnum.lg,
-        bottom: SizeEnum.lg,
-        left: SizeEnum.lg,
-      },
     },
     order: 1,
   },

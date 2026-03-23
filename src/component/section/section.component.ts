@@ -16,18 +16,7 @@ export class SectionComponent extends StoreCore {
 
   buildSectionClassList() {
     const { palette } = this.section().style;
-    const { top, right, bottom, left } = this.section().style.padding;
     const sectionPalette = BemUtil.build('section', 'palette', palette);
-    const sectionPaddingTop = BemUtil.build('section', 'padding-top', top);
-    const sectionPaddingRight = BemUtil.build('section', 'padding-right', right);
-    const sectionPaddingBottom = BemUtil.build('section', 'padding-bottom', bottom);
-    const sectionPaddingLeft = BemUtil.build('section', 'padding-left', left);
-    return [
-      sectionPalette,
-      sectionPaddingTop,
-      sectionPaddingRight,
-      sectionPaddingBottom,
-      sectionPaddingLeft,
-    ];
+    return [sectionPalette];
   }
 }

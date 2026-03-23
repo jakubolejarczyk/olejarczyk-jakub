@@ -5,7 +5,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding-top: variables.$size--md;
+  padding: variables.$size--lg;
   border-top: 1px solid variables.$color__primary--dark;
 
   @media screen and (min-width: variables.$screen__size--tablet) {

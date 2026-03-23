@@ -1,29 +1,29 @@
+@use '../../../style/abstracts/variables';
+
 .education {
-  &__item {
-    display: flex;
-    gap: 1rem;
-  }
+  margin: auto;
+  max-width: 960px;
+  padding: variables.$size--xl variables.$size--lg;
 
-  &__line {
-    background-color: gray;
-
-    flex: 0 0 2px;
-    position: relative;
-  }
-
-  &__circle {
-    width: 20px;
-    height: 20px;
-    background-color: red;
-    border-radius: 100%;
-    position: absolute;
-    left: -9px;
+  &__header {
+    margin-bottom: variables.$size--md;
   }
 
   &__content {
-    padding: 1rem;
-    border: 1px solid blue;
+    display: flex;
+    flex-direction: column;
+    gap: variables.$size--md;
 
+    @media screen and (min-width: variables.$screen__size--laptop) {
+      flex-direction: row;
+    }
+  }
+
+  &__item {
+    padding: variables.$size--md;
+    background-color: variables.$color__background--surface;
+    border-radius: variables.$size--xs;
+    box-shadow: variables.$shadow--md;
     flex: 1;
   }
 }
