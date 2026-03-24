@@ -1,1 +1,1 @@
-export type TextType = 'p' | 'h1' | 'h2' | 'h3';
+export type TextType = 'small' | 'p' | 'h1' | 'h2' | 'h3';
