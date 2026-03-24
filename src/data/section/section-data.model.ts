@@ -19,6 +19,7 @@ type SectionRouteType = RoutableEnabledModel | RoutableDisabledModel;
 
 interface SectionModel {
   id: string;
+  label: string;
   type: SectionDataEnum;
   routable: SectionRouteType;
   group: GroupDataEnum;

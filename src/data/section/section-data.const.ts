@@ -26,7 +26,8 @@ export const sectionDataConst: SectionDataModel = {
     style: {
       palette: PaletteEnum.primary,
     },
-    enabled: false,
+    enabled: true,
+    label: 'Navigation',
     order: 0,
   },
   home: {
@@ -42,6 +43,7 @@ export const sectionDataConst: SectionDataModel = {
       palette: PaletteEnum.primary,
     },
     enabled: false,
+    label: 'Home',
     order: 1,
   },
   aboutMe: {
@@ -57,6 +59,7 @@ export const sectionDataConst: SectionDataModel = {
       palette: PaletteEnum.main,
     },
     enabled: true,
+    label: 'About me',
     order: 0,
   },
   technologies: {
@@ -72,6 +75,7 @@ export const sectionDataConst: SectionDataModel = {
       palette: PaletteEnum.surface,
     },
     enabled: true,
+    label: 'Technologies',
     order: 1,
   },
   skills: {
@@ -87,6 +91,7 @@ export const sectionDataConst: SectionDataModel = {
       palette: PaletteEnum.surface,
     },
     enabled: true,
+    label: 'Skills',
     order: 2,
   },
   experience: {
@@ -102,6 +107,7 @@ export const sectionDataConst: SectionDataModel = {
       palette: PaletteEnum.main,
     },
     enabled: false,
+    label: 'Experience',
     order: 3,
   },
   resume: {
@@ -117,6 +123,7 @@ export const sectionDataConst: SectionDataModel = {
       palette: PaletteEnum.main,
     },
     enabled: false,
+    label: 'Resume',
     order: 4,
   },
   projects: {
@@ -132,6 +139,7 @@ export const sectionDataConst: SectionDataModel = {
       palette: PaletteEnum.main,
     },
     enabled: false,
+    label: 'Projects',
     order: 5,
   },
   education: {
@@ -147,6 +155,7 @@ export const sectionDataConst: SectionDataModel = {
     },
     enabled: true,
     view: EducationView,
+    label: 'Education',
     order: 6,
   },
   contact: {
@@ -162,6 +171,7 @@ export const sectionDataConst: SectionDataModel = {
       palette: PaletteEnum.primary,
     },
     enabled: true,
+    label: 'Contact',
     order: 0,
   },
   copyright: {
@@ -176,6 +186,7 @@ export const sectionDataConst: SectionDataModel = {
       palette: PaletteEnum.primary,
     },
     enabled: true,
+    label: 'Copyright',
     order: 1,
   },
 };
