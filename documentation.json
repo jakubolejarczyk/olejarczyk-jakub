@@ -4,7 +4,7 @@
         {
             "name": "AboutMeDataModel",
             "id": "interface-AboutMeDataModel-7bfb3bb73af7c7391b1f6daab59cefad7a72e5b9d1961f5ddc9530a0fb0e6a908fe0db9d4a93975af0d796c73d8a5ec17d8c798fef10513e492e7f57e54f364b",
-            "file": "src/data/about-me/about-me-data.model.ts",
+            "file": "src/app/data/about-me/about-me-data.model.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
@@ -29,7 +29,7 @@
         {
             "name": "CompanyModel",
             "id": "interface-CompanyModel-e83fa6ae987410d78d5fdaf16c3147ee4a9c0d5047aa78675fd4cfedba17944ba3165de0e581eeb6a8b3d746d21a974be42f712bf628f94fdcd0401805140e91",
-            "file": "src/data/company/company-data.model.ts",
+            "file": "src/app/data/company/company-data.model.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
@@ -64,7 +64,7 @@
         {
             "name": "EducationModel",
             "id": "interface-EducationModel-1d22336c180a28150a1e99df1c64f8e5261e88c12ac47d7dc697f7d7a55297f1b53c1d1c98d0760f7322ac2c6dbb4c8659ce97f6e4ec4855764a3926dfee2093",
-            "file": "src/data/education/education-data.model.ts",
+            "file": "src/app/data/education/education-data.model.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
@@ -119,7 +119,7 @@
         {
             "name": "ExperienceModel",
             "id": "interface-ExperienceModel-712eaae7a5af6f3eba2382d1340bead59df6348d2f3c0dce73ff86f238148dc8234a83cf2406faa597ca793c659abce01e3d48d4adc126963ac2f6e9aa54a449",
-            "file": "src/data/experience/experience-data.model.ts",
+            "file": "src/app/data/experience/experience-data.model.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
@@ -204,7 +204,7 @@
         {
             "name": "GroupModel",
             "id": "interface-GroupModel-5eb3c0ea5f59e1fd095e5d735da8ae9bfbd3e415b737e84580634a47e8f0b19e0b31605523c1085c356143d6c5bd979ba40364aaa9c9be7341efb00cb0c119e4",
-            "file": "src/data/group/group-data.model.ts",
+            "file": "src/app/data/group/group-data.model.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
@@ -237,44 +237,9 @@
             "extends": []
         },
         {
-            "name": "HeaderModel",
-            "id": "interface-HeaderModel-bb4e556fb395978d813c379b7c220de44360d6f21c10c371b5e51c82a178d47a52c1ab91df448ebdc1064979eeb8b579b9fef6f0f863458ce1c477901ce174d9",
-            "file": "src/data/section/section-data.model.ts",
-            "deprecated": false,
-            "deprecationMessage": "",
-            "type": "interface",
-            "sourceCode": "import { PaletteEnum } from '../../enum/palette.enum';\r\nimport { GroupDataEnum } from '../group/group-data.enum';\r\nimport { SectionDataEnum } from './section-data.enum';\r\n\r\ninterface StyleModel {\r\n  palette: PaletteEnum;\r\n}\r\n\r\ninterface HeaderModel {\r\n  enable: boolean;\r\n  label: string;\r\n}\r\n\r\ninterface RoutableEnabledModel {\r\n  enable: true;\r\n  href: string;\r\n}\r\n\r\ninterface RoutableDisabledModel {\r\n  enable: false;\r\n}\r\n\r\ntype SectionRouteType = RoutableEnabledModel | RoutableDisabledModel;\r\n\r\ninterface SectionModel {\r\n  id: string;\r\n  type: SectionDataEnum;\r\n  header: HeaderModel;\r\n  routable: SectionRouteType;\r\n  group: GroupDataEnum;\r\n  view: any;\r\n  style: StyleModel;\r\n  order: number;\r\n}\r\n\r\nexport type SectionDataModel = Record<SectionDataEnum, SectionModel>;\r\n",
-            "properties": [
-                {
-                    "name": "enable",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "boolean",
-                    "indexKey": "",
-                    "optional": false,
-                    "description": "",
-                    "line": 10
-                },
-                {
-                    "name": "label",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "string",
-                    "indexKey": "",
-                    "optional": false,
-                    "description": "",
-                    "line": 11
-                }
-            ],
-            "indexSignatures": [],
-            "kind": 172,
-            "methods": [],
-            "extends": []
-        },
-        {
             "name": "HomeDataModel",
             "id": "interface-HomeDataModel-f66b17e50ad1e13467968677d8e66e1d329bf90a9e5d0d7398507c8c5305365c008e2e937f84a62791c465e66c9905b804df27fe004fd20217e20ac5a42207c2",
-            "file": "src/data/home/home-data.model.ts",
+            "file": "src/app/data/home/home-data.model.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
@@ -309,7 +274,7 @@
         {
             "name": "PersonalDataModel",
             "id": "interface-PersonalDataModel-8480e348d95543966e215ac9c44d529efa684a3a81aa8e8c45a697c27f2a0c2e5f4cf35c359523d51269e22822e3c5715151eed85be4a875eace31f231ba1370",
-            "file": "src/data/personal/personal-data.model.ts",
+            "file": "src/app/data/personal/personal-data.model.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
@@ -394,7 +359,7 @@
         {
             "name": "ResumeModel",
             "id": "interface-ResumeModel-75bbd72894b0da9eff3670b0934fcba30d10be92cf121032c4a200c0b5c096720ed9c461d2dfc1d51a4cbb876c30cc2d0ca27815ab7bccc4848fdfadc11c889a",
-            "file": "src/data/resume/resume-data.model.ts",
+            "file": "src/app/data/resume/resume-data.model.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
@@ -448,37 +413,12 @@
         },
         {
             "name": "RoutableDisabledModel",
-            "id": "interface-RoutableDisabledModel-bb4e556fb395978d813c379b7c220de44360d6f21c10c371b5e51c82a178d47a52c1ab91df448ebdc1064979eeb8b579b9fef6f0f863458ce1c477901ce174d9",
-            "file": "src/data/section/section-data.model.ts",
+            "id": "interface-RoutableDisabledModel-7a5a73a632c8a3a0bc71d36de43f07336191807ee4ce8abb220aff06e8281159441285459c8b13c82fa578942e4ead0923593dc2365b46dc01d6bfab9b27fe18",
+            "file": "src/app/data/section/section-data.model.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "import { PaletteEnum } from '../../enum/palette.enum';\r\nimport { GroupDataEnum } from '../group/group-data.enum';\r\nimport { SectionDataEnum } from './section-data.enum';\r\n\r\ninterface StyleModel {\r\n  palette: PaletteEnum;\r\n}\r\n\r\ninterface HeaderModel {\r\n  enable: boolean;\r\n  label: string;\r\n}\r\n\r\ninterface RoutableEnabledModel {\r\n  enable: true;\r\n  href: string;\r\n}\r\n\r\ninterface RoutableDisabledModel {\r\n  enable: false;\r\n}\r\n\r\ntype SectionRouteType = RoutableEnabledModel | RoutableDisabledModel;\r\n\r\ninterface SectionModel {\r\n  id: string;\r\n  type: SectionDataEnum;\r\n  header: HeaderModel;\r\n  routable: SectionRouteType;\r\n  group: GroupDataEnum;\r\n  view: any;\r\n  style: StyleModel;\r\n  order: number;\r\n}\r\n\r\nexport type SectionDataModel = Record<SectionDataEnum, SectionModel>;\r\n",
-            "properties": [
-                {
-                    "name": "enable",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "unknown",
-                    "indexKey": "",
-                    "optional": false,
-                    "description": "",
-                    "line": 20
-                }
-            ],
-            "indexSignatures": [],
-            "kind": 172,
-            "methods": [],
-            "extends": []
-        },
-        {
-            "name": "RoutableEnabledModel",
-            "id": "interface-RoutableEnabledModel-bb4e556fb395978d813c379b7c220de44360d6f21c10c371b5e51c82a178d47a52c1ab91df448ebdc1064979eeb8b579b9fef6f0f863458ce1c477901ce174d9",
-            "file": "src/data/section/section-data.model.ts",
-            "deprecated": false,
-            "deprecationMessage": "",
-            "type": "interface",
-            "sourceCode": "import { PaletteEnum } from '../../enum/palette.enum';\r\nimport { GroupDataEnum } from '../group/group-data.enum';\r\nimport { SectionDataEnum } from './section-data.enum';\r\n\r\ninterface StyleModel {\r\n  palette: PaletteEnum;\r\n}\r\n\r\ninterface HeaderModel {\r\n  enable: boolean;\r\n  label: string;\r\n}\r\n\r\ninterface RoutableEnabledModel {\r\n  enable: true;\r\n  href: string;\r\n}\r\n\r\ninterface RoutableDisabledModel {\r\n  enable: false;\r\n}\r\n\r\ntype SectionRouteType = RoutableEnabledModel | RoutableDisabledModel;\r\n\r\ninterface SectionModel {\r\n  id: string;\r\n  type: SectionDataEnum;\r\n  header: HeaderModel;\r\n  routable: SectionRouteType;\r\n  group: GroupDataEnum;\r\n  view: any;\r\n  style: StyleModel;\r\n  order: number;\r\n}\r\n\r\nexport type SectionDataModel = Record<SectionDataEnum, SectionModel>;\r\n",
+            "sourceCode": "import { PaletteEnum } from '../../enum/palette.enum';\r\nimport { GroupDataEnum } from '../group/group-data.enum';\r\nimport { SectionDataEnum } from './section-data.enum';\r\n\r\ninterface StyleModel {\r\n  palette: PaletteEnum;\r\n}\r\n\r\ninterface RoutableEnabledModel {\r\n  enable: true;\r\n  href: string;\r\n}\r\n\r\ninterface RoutableDisabledModel {\r\n  enable: false;\r\n}\r\n\r\ntype SectionRouteType = RoutableEnabledModel | RoutableDisabledModel;\r\n\r\ninterface SectionModel {\r\n  id: string;\r\n  label: string;\r\n  type: SectionDataEnum;\r\n  routable: SectionRouteType;\r\n  group: GroupDataEnum;\r\n  view: any;\r\n  style: StyleModel;\r\n  order: number;\r\n  enabled: boolean;\r\n}\r\n\r\nexport type SectionDataModel = Record<SectionDataEnum, SectionModel>;\r\n",
             "properties": [
                 {
                     "name": "enable",
@@ -489,6 +429,31 @@
                     "optional": false,
                     "description": "",
                     "line": 15
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 172,
+            "methods": [],
+            "extends": []
+        },
+        {
+            "name": "RoutableEnabledModel",
+            "id": "interface-RoutableEnabledModel-7a5a73a632c8a3a0bc71d36de43f07336191807ee4ce8abb220aff06e8281159441285459c8b13c82fa578942e4ead0923593dc2365b46dc01d6bfab9b27fe18",
+            "file": "src/app/data/section/section-data.model.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "import { PaletteEnum } from '../../enum/palette.enum';\r\nimport { GroupDataEnum } from '../group/group-data.enum';\r\nimport { SectionDataEnum } from './section-data.enum';\r\n\r\ninterface StyleModel {\r\n  palette: PaletteEnum;\r\n}\r\n\r\ninterface RoutableEnabledModel {\r\n  enable: true;\r\n  href: string;\r\n}\r\n\r\ninterface RoutableDisabledModel {\r\n  enable: false;\r\n}\r\n\r\ntype SectionRouteType = RoutableEnabledModel | RoutableDisabledModel;\r\n\r\ninterface SectionModel {\r\n  id: string;\r\n  label: string;\r\n  type: SectionDataEnum;\r\n  routable: SectionRouteType;\r\n  group: GroupDataEnum;\r\n  view: any;\r\n  style: StyleModel;\r\n  order: number;\r\n  enabled: boolean;\r\n}\r\n\r\nexport type SectionDataModel = Record<SectionDataEnum, SectionModel>;\r\n",
+            "properties": [
+                {
+                    "name": "enable",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "unknown",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 10
                 },
                 {
                     "name": "href",
@@ -498,7 +463,7 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 16
+                    "line": 11
                 }
             ],
             "indexSignatures": [],
@@ -508,13 +473,23 @@
         },
         {
             "name": "SectionModel",
-            "id": "interface-SectionModel-bb4e556fb395978d813c379b7c220de44360d6f21c10c371b5e51c82a178d47a52c1ab91df448ebdc1064979eeb8b579b9fef6f0f863458ce1c477901ce174d9",
-            "file": "src/data/section/section-data.model.ts",
+            "id": "interface-SectionModel-7a5a73a632c8a3a0bc71d36de43f07336191807ee4ce8abb220aff06e8281159441285459c8b13c82fa578942e4ead0923593dc2365b46dc01d6bfab9b27fe18",
+            "file": "src/app/data/section/section-data.model.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "import { PaletteEnum } from '../../enum/palette.enum';\r\nimport { GroupDataEnum } from '../group/group-data.enum';\r\nimport { SectionDataEnum } from './section-data.enum';\r\n\r\ninterface StyleModel {\r\n  palette: PaletteEnum;\r\n}\r\n\r\ninterface HeaderModel {\r\n  enable: boolean;\r\n  label: string;\r\n}\r\n\r\ninterface RoutableEnabledModel {\r\n  enable: true;\r\n  href: string;\r\n}\r\n\r\ninterface RoutableDisabledModel {\r\n  enable: false;\r\n}\r\n\r\ntype SectionRouteType = RoutableEnabledModel | RoutableDisabledModel;\r\n\r\ninterface SectionModel {\r\n  id: string;\r\n  type: SectionDataEnum;\r\n  header: HeaderModel;\r\n  routable: SectionRouteType;\r\n  group: GroupDataEnum;\r\n  view: any;\r\n  style: StyleModel;\r\n  order: number;\r\n}\r\n\r\nexport type SectionDataModel = Record<SectionDataEnum, SectionModel>;\r\n",
+            "sourceCode": "import { PaletteEnum } from '../../enum/palette.enum';\r\nimport { GroupDataEnum } from '../group/group-data.enum';\r\nimport { SectionDataEnum } from './section-data.enum';\r\n\r\ninterface StyleModel {\r\n  palette: PaletteEnum;\r\n}\r\n\r\ninterface RoutableEnabledModel {\r\n  enable: true;\r\n  href: string;\r\n}\r\n\r\ninterface RoutableDisabledModel {\r\n  enable: false;\r\n}\r\n\r\ntype SectionRouteType = RoutableEnabledModel | RoutableDisabledModel;\r\n\r\ninterface SectionModel {\r\n  id: string;\r\n  label: string;\r\n  type: SectionDataEnum;\r\n  routable: SectionRouteType;\r\n  group: GroupDataEnum;\r\n  view: any;\r\n  style: StyleModel;\r\n  order: number;\r\n  enabled: boolean;\r\n}\r\n\r\nexport type SectionDataModel = Record<SectionDataEnum, SectionModel>;\r\n",
             "properties": [
+                {
+                    "name": "enabled",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "boolean",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 29
+                },
                 {
                     "name": "group",
                     "deprecated": false,
@@ -523,17 +498,7 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 30
-                },
-                {
-                    "name": "header",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "HeaderModel",
-                    "indexKey": "",
-                    "optional": false,
-                    "description": "",
-                    "line": 28
+                    "line": 25
                 },
                 {
                     "name": "id",
@@ -543,7 +508,17 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 26
+                    "line": 21
+                },
+                {
+                    "name": "label",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 22
                 },
                 {
                     "name": "order",
@@ -553,7 +528,7 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 33
+                    "line": 28
                 },
                 {
                     "name": "routable",
@@ -563,7 +538,7 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 29
+                    "line": 24
                 },
                 {
                     "name": "style",
@@ -573,7 +548,7 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 32
+                    "line": 27
                 },
                 {
                     "name": "type",
@@ -583,7 +558,7 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 27
+                    "line": 23
                 },
                 {
                     "name": "view",
@@ -593,7 +568,7 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 31
+                    "line": 26
                 }
             ],
             "indexSignatures": [],
@@ -604,7 +579,7 @@
         {
             "name": "SkillModel",
             "id": "interface-SkillModel-6aee7a29942962453dcae7b17c244d26d16edc7d096208960885fc679d0826612ef7d5cd40ae86e58e601830c5b4b9d42c2bcf3e352e8e566ab706120375fba2",
-            "file": "src/data/skill/skill-data.model.ts",
+            "file": "src/app/data/skill/skill-data.model.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
@@ -639,7 +614,7 @@
         {
             "name": "SocialMediaModel",
             "id": "interface-SocialMediaModel-8480e348d95543966e215ac9c44d529efa684a3a81aa8e8c45a697c27f2a0c2e5f4cf35c359523d51269e22822e3c5715151eed85be4a875eace31f231ba1370",
-            "file": "src/data/personal/personal-data.model.ts",
+            "file": "src/app/data/personal/personal-data.model.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
@@ -673,12 +648,12 @@
         },
         {
             "name": "StyleModel",
-            "id": "interface-StyleModel-bb4e556fb395978d813c379b7c220de44360d6f21c10c371b5e51c82a178d47a52c1ab91df448ebdc1064979eeb8b579b9fef6f0f863458ce1c477901ce174d9",
-            "file": "src/data/section/section-data.model.ts",
+            "id": "interface-StyleModel-7a5a73a632c8a3a0bc71d36de43f07336191807ee4ce8abb220aff06e8281159441285459c8b13c82fa578942e4ead0923593dc2365b46dc01d6bfab9b27fe18",
+            "file": "src/app/data/section/section-data.model.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "import { PaletteEnum } from '../../enum/palette.enum';\r\nimport { GroupDataEnum } from '../group/group-data.enum';\r\nimport { SectionDataEnum } from './section-data.enum';\r\n\r\ninterface StyleModel {\r\n  palette: PaletteEnum;\r\n}\r\n\r\ninterface HeaderModel {\r\n  enable: boolean;\r\n  label: string;\r\n}\r\n\r\ninterface RoutableEnabledModel {\r\n  enable: true;\r\n  href: string;\r\n}\r\n\r\ninterface RoutableDisabledModel {\r\n  enable: false;\r\n}\r\n\r\ntype SectionRouteType = RoutableEnabledModel | RoutableDisabledModel;\r\n\r\ninterface SectionModel {\r\n  id: string;\r\n  type: SectionDataEnum;\r\n  header: HeaderModel;\r\n  routable: SectionRouteType;\r\n  group: GroupDataEnum;\r\n  view: any;\r\n  style: StyleModel;\r\n  order: number;\r\n}\r\n\r\nexport type SectionDataModel = Record<SectionDataEnum, SectionModel>;\r\n",
+            "sourceCode": "import { PaletteEnum } from '../../enum/palette.enum';\r\nimport { GroupDataEnum } from '../group/group-data.enum';\r\nimport { SectionDataEnum } from './section-data.enum';\r\n\r\ninterface StyleModel {\r\n  palette: PaletteEnum;\r\n}\r\n\r\ninterface RoutableEnabledModel {\r\n  enable: true;\r\n  href: string;\r\n}\r\n\r\ninterface RoutableDisabledModel {\r\n  enable: false;\r\n}\r\n\r\ntype SectionRouteType = RoutableEnabledModel | RoutableDisabledModel;\r\n\r\ninterface SectionModel {\r\n  id: string;\r\n  label: string;\r\n  type: SectionDataEnum;\r\n  routable: SectionRouteType;\r\n  group: GroupDataEnum;\r\n  view: any;\r\n  style: StyleModel;\r\n  order: number;\r\n  enabled: boolean;\r\n}\r\n\r\nexport type SectionDataModel = Record<SectionDataEnum, SectionModel>;\r\n",
             "properties": [
                 {
                     "name": "palette",
@@ -698,13 +673,23 @@
         },
         {
             "name": "TechnologyGroupModel",
-            "id": "interface-TechnologyGroupModel-c3bc260c9c29989d2b9d7db1bc889354bdcfe1cd0584c6933441f0a68cdbb5436a9e07cf2ece9b8aec46eedcf38ef1bd28962d02997019566c391cf1fd7a9851",
-            "file": "src/data/technology-group/technology-group-data.model.ts",
+            "id": "interface-TechnologyGroupModel-94dbe97a1bb6aae51909d8c0f2beb95f1364970ca1d041ca3553a827e433212479dc1e2da9b989f98f3aabf82d68c8b89a1393a8542d28c2c9618a20c6607b1f",
+            "file": "src/app/data/technology-group/technology-group-data.model.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "import { TechnologyGroupDataEnum } from './technology-group-data.enum';\r\n\r\ninterface TechnologyGroupModel {\r\n  label: string;\r\n  order: number;\r\n}\r\n\r\nexport type TechnologyGroupDataModel = Record<TechnologyGroupDataEnum, TechnologyGroupModel>;\r\n",
+            "sourceCode": "import { TechnologyGroupDataEnum } from './technology-group-data.enum';\r\n\r\ninterface TechnologyGroupModel {\r\n  group: TechnologyGroupDataEnum;\r\n  label: string;\r\n  order: number;\r\n}\r\n\r\nexport type TechnologyGroupDataModel = Record<TechnologyGroupDataEnum, TechnologyGroupModel>;\r\n",
             "properties": [
+                {
+                    "name": "group",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "TechnologyGroupDataEnum",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 4
+                },
                 {
                     "name": "label",
                     "deprecated": false,
@@ -713,7 +698,7 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 4
+                    "line": 5
                 },
                 {
                     "name": "order",
@@ -723,7 +708,7 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 5
+                    "line": 6
                 }
             ],
             "indexSignatures": [],
@@ -734,7 +719,7 @@
         {
             "name": "TechnologyModel",
             "id": "interface-TechnologyModel-3e6d54d0240c73555e8d2f775a993e20d864b39b428de9d4836bfb7cc268e25866a4d570d80c7c25c00894488b816b35af7124e12f88dac492fabe0a6bec44f6",
-            "file": "src/data/technology/technology-data.model.ts",
+            "file": "src/app/data/technology/technology-data.model.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
@@ -781,7 +766,7 @@
         {
             "name": "BemUtil",
             "id": "injectable-BemUtil-47450ae3d02fcd9e08d35657dc4ca37e49ac5dc3329e9f6b392c0222858d1cdbbfd8e0664cb5dbacf0f4563dd7d44cae3782995af883eebf1a1eae9482b5713f",
-            "file": "src/util/bem.util.ts",
+            "file": "src/app/util/bem.util.ts",
             "properties": [],
             "methods": [
                 {
@@ -869,7 +854,7 @@
         {
             "name": "DateUtil",
             "id": "injectable-DateUtil-098c2e9778ab832c586e31428cc8cc9a91b4cfcdeac3ecf47f4d661e20d3943ca802c7d8fd0fb6a0edb3998da6852e9353d4b29a46d158de741d81d15e3a9c65",
-            "file": "src/util/date.util.ts",
+            "file": "src/app/util/date.util.ts",
             "properties": [],
             "methods": [
                 {
@@ -897,7 +882,7 @@
         {
             "name": "StorybookUtil",
             "id": "injectable-StorybookUtil-8eb524ee279a9e54c23e71599ecb2a03d8ef64e20c2bef700c7f8507f45e6f2c5309100dbc0c3918d55995ec17eb4652e6e1261867d10f7c77757c0a54cd0e0a",
-            "file": "src/util/storybook.util.ts",
+            "file": "src/app/util/storybook.util.ts",
             "properties": [],
             "methods": [
                 {
@@ -929,7 +914,7 @@
         {
             "name": "StoreCore",
             "id": "class-StoreCore-9b9d00eb04e9c8f8ec0056a3db331b940e37b0296f05dd5a403fd6dbe295078c7ce68e60c1e68300f2c7b4b4bf5d072933fb9cd01c8af463adddb6a80acf0154",
-            "file": "src/store/store.core.ts",
+            "file": "src/app/store/store.core.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "class",
@@ -964,8 +949,8 @@
     "components": [
         {
             "name": "AboutMeView",
-            "id": "component-AboutMeView-61ca545a6a804e49b8afc22e7c4358f6fc58b069353f7976a08f4456abdbb9cfa382072e5276af2081adb3790d5501c907607916b24a5e451e5e946a0948288f",
-            "file": "src/view/main/about-me/about-me.view.ts",
+            "id": "component-AboutMeView-b545842d3128805be299e505e8273f4c3e90e94917116bb279d8b0b0b0aa3dee77a34ebc83abce5c42815b118cb6763730e6ae37d2bbec9214f11a76250f8c42",
+            "file": "src/app/view/main/about-me/about-me.view.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -981,7 +966,37 @@
             "hostDirectives": [],
             "inputsClass": [],
             "outputsClass": [],
-            "propertiesClass": [],
+            "propertiesClass": [
+                {
+                    "name": "descriptions",
+                    "defaultValue": "this.store.selectSignal((state) => state.aboutMe.description)",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "unknown",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 12
+                },
+                {
+                    "name": "store",
+                    "defaultValue": "inject(Store)",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Store<StoreType>",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 6,
+                    "modifierKind": [
+                        124,
+                        148
+                    ],
+                    "inheritance": {
+                        "file": "StoreCore"
+                    }
+                }
+            ],
             "methodsClass": [],
             "deprecated": false,
             "deprecationMessage": "",
@@ -997,17 +1012,20 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\r\nimport { TextComponent } from '../../../component/text/text.component';\r\n\r\n@Component({\r\n  selector: 'about-me-view',\r\n  templateUrl: './about-me.view.html',\r\n  imports: [TextComponent],\r\n})\r\nexport class AboutMeView {}\r\n",
+            "sourceCode": "import { Component } from '@angular/core';\r\nimport { TextComponent } from '../../../component/text/text.component';\r\nimport { StoreCore } from '../../../store/store.core';\r\n\r\n@Component({\r\n  selector: 'about-me-view',\r\n  templateUrl: './about-me.view.html',\r\n  styleUrl: './about-me.view.scss',\r\n  imports: [TextComponent],\r\n})\r\nexport class AboutMeView extends StoreCore {\r\n  descriptions = this.store.selectSignal((state) => state.aboutMe.description);\r\n}\r\n",
+            "styleUrl": "./about-me.view.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
-            "extends": [],
-            "templateData": "<text-component type=\"p\" value=\"about-me-view works!\"></text-component>\r\n"
+            "extends": [
+                "StoreCore"
+            ],
+            "templateData": "<div class=\"about-me\">\r\n  <header class=\"about-me__header\">\r\n    <text-component type=\"h2\" value=\"About me\"></text-component>\r\n  </header>\r\n  <div class=\"about-me__content\">\r\n    @for (description of descriptions(); track description) {\r\n      <text-component type=\"p\" [value]=\"description\" palette=\"secondary\"></text-component>\r\n    }\r\n  </div>\r\n</div>\r\n"
         },
         {
             "name": "ContactView",
             "id": "component-ContactView-31ea1891c4bc9c0513530a381a9964f37588e1869a17039e7e88e7bd3964e1bc724a8a5d06b9b506065a81c8d2968f4beed89e3fea109e0562ef46a8cc0c3c83",
-            "file": "src/view/footer/contact/contact.view.ts",
+            "file": "src/app/view/footer/contact/contact.view.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -1086,7 +1104,7 @@
         {
             "name": "CopyrightView",
             "id": "component-CopyrightView-1be39537a2697c2cb6181c5d73c3913b439cd10606471caa90a50e750385be53be731f5d2d69c84048076480b27c2d40a7b0ca42b8ae3bc36ecc95c263dd9b45",
-            "file": "src/view/footer/copyright/copyright.view.ts",
+            "file": "src/app/view/footer/copyright/copyright.view.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -1161,7 +1179,7 @@
         {
             "name": "EducationView",
             "id": "component-EducationView-78a0fca16fd0c9c3575ae0b5dea787985bd929560a1237347c870276aeccf982b7f25d35af4d3a5798d316d71c381a65d3abe3573a37e2c17b4d6589bf3013d4",
-            "file": "src/view/main/education/education.view.ts",
+            "file": "src/app/view/main/education/education.view.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -1231,12 +1249,12 @@
             "extends": [
                 "StoreCore"
             ],
-            "templateData": "<div class=\"education\">\r\n  @for (education of educations(); track education) {\r\n    <div class=\"education__item\">\r\n      <div class=\"education__line\">\r\n        <div class=\"education__circle\"></div>\r\n      </div>\r\n      <div class=\"education__content\">\r\n        <text-component type=\"p\" [value]=\"education.year.toString()\"></text-component>\r\n        <text-component type=\"p\" [value]=\"education.university\"></text-component>\r\n        <text-component type=\"p\" [value]=\"education.major\"></text-component>\r\n        <text-component type=\"p\" [value]=\"education.degree\"></text-component>\r\n      </div>\r\n    </div>\r\n  }\r\n</div>\r\n"
+            "templateData": "<div class=\"education\">\r\n  <header class=\"education__header\">\r\n    <text-component type=\"h2\" value=\"Education\"></text-component>\r\n  </header>\r\n  <div class=\"education__content\">\r\n    @for (education of educations(); track education) {\r\n      <div class=\"education__item\">\r\n        <text-component\r\n          type=\"p\"\r\n          [value]=\"education.year.toString()\"\r\n          palette=\"secondary\"\r\n        ></text-component>\r\n        <text-component type=\"h3\" [value]=\"education.university\"></text-component>\r\n        <text-component type=\"p\" [value]=\"education.major\" palette=\"secondary\"></text-component>\r\n        <text-component type=\"p\" [value]=\"education.degree\" palette=\"secondary\"></text-component>\r\n      </div>\r\n    }\r\n  </div>\r\n</div>\r\n"
         },
         {
             "name": "ExperienceView",
             "id": "component-ExperienceView-f0a801fa6367466fd487a2ff280655a8891deae17771bea9f6ef45bdbfec0923fab96999cfcd10fce06c62f797dfabbb2cd7f693d00125fc9a59186c97730edb",
-            "file": "src/view/main/experience/experience.view.ts",
+            "file": "src/app/view/main/experience/experience.view.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -1277,8 +1295,8 @@
         },
         {
             "name": "FooterView",
-            "id": "component-FooterView-825b31e587a3fa02361c9b478cb683854d9f9def639fde8ec90fe1fa2267df12548214f710c6a61f4720b743cb4c29e90d9bab93a3c07839a2d861b2ad945852",
-            "file": "src/view/footer/footer.view.ts",
+            "id": "component-FooterView-9d1306269de41b852f9a0ff90aa58d20f15f7f0163a4f8c9942ad209eb14271734b729fe172a3628ffc84ee9b34a0066abe2faa33343665bf8c96060b9150779",
+            "file": "src/app/view/footer/footer.view.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -1297,7 +1315,7 @@
             "propertiesClass": [
                 {
                     "name": "sections",
-                    "defaultValue": "this.store.selectSignal((state) => {\r\n    return Object.values(state.section)\r\n      .filter((section) => section.group === GroupDataEnum.footer)\r\n      .sort((prev, next) => prev.order - next.order);\r\n  })",
+                    "defaultValue": "this.store.selectSignal((state) => {\r\n    return Object.values(state.section)\r\n      .filter((section) => section.group === GroupDataEnum.footer)\r\n      .filter((section) => section.enabled)\r\n      .sort((prev, next) => prev.order - next.order);\r\n  })",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "unknown",
@@ -1340,7 +1358,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\r\nimport { SectionComponent } from '../../component/section/section.component';\r\nimport { StoreCore } from '../../store/store.core';\r\nimport { GroupDataEnum } from '../../data/group/group-data.enum';\r\n\r\n@Component({\r\n  selector: 'footer-view',\r\n  templateUrl: './footer.view.html',\r\n  imports: [SectionComponent],\r\n})\r\nexport class FooterView extends StoreCore {\r\n  sections = this.store.selectSignal((state) => {\r\n    return Object.values(state.section)\r\n      .filter((section) => section.group === GroupDataEnum.footer)\r\n      .sort((prev, next) => prev.order - next.order);\r\n  });\r\n}\r\n",
+            "sourceCode": "import { Component } from '@angular/core';\r\nimport { SectionComponent } from '../../component/section/section.component';\r\nimport { StoreCore } from '../../store/store.core';\r\nimport { GroupDataEnum } from '../../data/group/group-data.enum';\r\n\r\n@Component({\r\n  selector: 'footer-view',\r\n  templateUrl: './footer.view.html',\r\n  imports: [SectionComponent],\r\n})\r\nexport class FooterView extends StoreCore {\r\n  sections = this.store.selectSignal((state) => {\r\n    return Object.values(state.section)\r\n      .filter((section) => section.group === GroupDataEnum.footer)\r\n      .filter((section) => section.enabled)\r\n      .sort((prev, next) => prev.order - next.order);\r\n  });\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
@@ -1351,8 +1369,8 @@
         },
         {
             "name": "HeaderView",
-            "id": "component-HeaderView-da1f87ca4ee1659e3844f2f09d8a32159790ad203fcda63447693fd15f95cfa670f15bec12a59de1a8a3f4a13a1d46fe0c680ab996a70b6e77617660c34d1f07",
-            "file": "src/view/header/header.view.ts",
+            "id": "component-HeaderView-31c671a6a6badadf645ad34be3340da7cf18500d78559077a8fb5e9ca1ec5332906018d793b0d21c570df30682d9f89990a601942429178e25e72fdd212805bc",
+            "file": "src/app/view/header/header.view.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -1371,7 +1389,7 @@
             "propertiesClass": [
                 {
                     "name": "sections",
-                    "defaultValue": "this.store.selectSignal((state) => {\r\n    return Object.values(state.section)\r\n      .filter((section) => section.group === GroupDataEnum.header)\r\n      .sort((prev, next) => prev.order - next.order);\r\n  })",
+                    "defaultValue": "this.store.selectSignal((state) => {\r\n    return Object.values(state.section)\r\n      .filter((section) => section.group === GroupDataEnum.header)\r\n      .filter((section) => section.enabled)\r\n      .sort((prev, next) => prev.order - next.order);\r\n  })",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "unknown",
@@ -1414,7 +1432,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\r\nimport { StoreCore } from '../../store/store.core';\r\nimport { GroupDataEnum } from '../../data/group/group-data.enum';\r\nimport { SectionComponent } from '../../component/section/section.component';\r\n\r\n@Component({\r\n  selector: 'header-view',\r\n  templateUrl: './header.view.html',\r\n  imports: [SectionComponent],\r\n})\r\nexport class HeaderView extends StoreCore {\r\n  sections = this.store.selectSignal((state) => {\r\n    return Object.values(state.section)\r\n      .filter((section) => section.group === GroupDataEnum.header)\r\n      .sort((prev, next) => prev.order - next.order);\r\n  });\r\n}\r\n",
+            "sourceCode": "import { Component } from '@angular/core';\r\nimport { StoreCore } from '../../store/store.core';\r\nimport { GroupDataEnum } from '../../data/group/group-data.enum';\r\nimport { SectionComponent } from '../../component/section/section.component';\r\n\r\n@Component({\r\n  selector: 'header-view',\r\n  templateUrl: './header.view.html',\r\n  imports: [SectionComponent],\r\n})\r\nexport class HeaderView extends StoreCore {\r\n  sections = this.store.selectSignal((state) => {\r\n    return Object.values(state.section)\r\n      .filter((section) => section.group === GroupDataEnum.header)\r\n      .filter((section) => section.enabled)\r\n      .sort((prev, next) => prev.order - next.order);\r\n  });\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
@@ -1426,7 +1444,7 @@
         {
             "name": "HomeView",
             "id": "component-HomeView-63f37cedc69f0b2d9d4737f4d392a7787256b080ca51549ab894949baeb6285a876537332824f73c690bb9c9ffd473a925c3aaff2cfce3ed6108584fccaa5aa4",
-            "file": "src/view/header/home/home.view.ts",
+            "file": "src/app/view/header/home/home.view.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -1468,7 +1486,7 @@
         {
             "name": "LinkComponent",
             "id": "component-LinkComponent-1ab30256ab271a96571fca1256302974e32f8048bf5ad889997c8c377730a0525545e601f5d036d636e3fe9c1b4c28f5fa659f615503e41a9126d6539ec3e13d",
-            "file": "src/component/link/link.component.ts",
+            "file": "src/app/component/link/link.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -1591,8 +1609,8 @@
         },
         {
             "name": "MainView",
-            "id": "component-MainView-41beec84da563aff609ed1bae31aada8913e55156fab8d4c81fc2dc508033b145507223a7bf213ce398da6bfeb8657b24ad21978b94622c3f4bd466c88b58056",
-            "file": "src/view/main/main.view.ts",
+            "id": "component-MainView-ff5ea41e71a047caa4553146e07d0ed38caee1e9c07b9aa77ffd5e1fb30d113774698ffde924a41aa03ddac95cc6fa4c902f37d8c6ff630472737f094188d8a1",
+            "file": "src/app/view/main/main.view.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -1611,7 +1629,7 @@
             "propertiesClass": [
                 {
                     "name": "sections",
-                    "defaultValue": "this.store.selectSignal((state) => {\r\n    return Object.values(state.section)\r\n      .filter((section) => section.group === GroupDataEnum.main)\r\n      .sort((prev, next) => prev.order - next.order);\r\n  })",
+                    "defaultValue": "this.store.selectSignal((state) => {\r\n    return Object.values(state.section)\r\n      .filter((section) => section.group === GroupDataEnum.main)\r\n      .filter((section) => section.enabled)\r\n      .sort((prev, next) => prev.order - next.order);\r\n  })",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "unknown",
@@ -1654,7 +1672,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\r\nimport { StoreCore } from '../../store/store.core';\r\nimport { GroupDataEnum } from '../../data/group/group-data.enum';\r\nimport { SectionComponent } from '../../component/section/section.component';\r\n\r\n@Component({\r\n  selector: 'main-view',\r\n  templateUrl: './main.view.html',\r\n  imports: [SectionComponent],\r\n})\r\nexport class MainView extends StoreCore {\r\n  sections = this.store.selectSignal((state) => {\r\n    return Object.values(state.section)\r\n      .filter((section) => section.group === GroupDataEnum.main)\r\n      .sort((prev, next) => prev.order - next.order);\r\n  });\r\n}\r\n",
+            "sourceCode": "import { Component } from '@angular/core';\r\nimport { StoreCore } from '../../store/store.core';\r\nimport { GroupDataEnum } from '../../data/group/group-data.enum';\r\nimport { SectionComponent } from '../../component/section/section.component';\r\n\r\n@Component({\r\n  selector: 'main-view',\r\n  templateUrl: './main.view.html',\r\n  imports: [SectionComponent],\r\n})\r\nexport class MainView extends StoreCore {\r\n  sections = this.store.selectSignal((state) => {\r\n    return Object.values(state.section)\r\n      .filter((section) => section.group === GroupDataEnum.main)\r\n      .filter((section) => section.enabled)\r\n      .sort((prev, next) => prev.order - next.order);\r\n  });\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
@@ -1665,8 +1683,8 @@
         },
         {
             "name": "NavigationView",
-            "id": "component-NavigationView-8ee4f7a3c8aa81a5dcbbec38d8c69c19d7a815e77c0446f835fea1db2a4b667537c8f276d0b586d89f742fb02482c8a8ad975410407f0c769f447aa95ecc53d9",
-            "file": "src/view/header/navigation/navigation.view.ts",
+            "id": "component-NavigationView-1c48c61c686a2ca63a8e2da1f84ae3f5f9eb987f1680370cb2639ca0e5194b78494d427e15b8d741e064494bd451f36f5ddfea2f37bcef4364b6acef796db4b1",
+            "file": "src/app/view/header/navigation/navigation.view.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -1682,12 +1700,136 @@
             "hostDirectives": [],
             "inputsClass": [],
             "outputsClass": [],
-            "propertiesClass": [],
-            "methodsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "isMenu",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "unknown",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 16
+                },
+                {
+                    "name": "isMobile",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "unknown",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 18
+                },
+                {
+                    "name": "sections",
+                    "defaultValue": "this.store.selectSignal((state) => {\r\n    return Object.values(state.section).filter((section) => section.routable.enable);\r\n  })",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "unknown",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 12
+                },
+                {
+                    "name": "store",
+                    "defaultValue": "inject(Store)",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Store<StoreType>",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 6,
+                    "modifierKind": [
+                        124,
+                        148
+                    ],
+                    "inheritance": {
+                        "file": "StoreCore"
+                    }
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "onClick",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 20,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "onResize",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "Event",
+                            "optional": false,
+                            "dotDotDotToken": false,
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 25,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "decorators": [
+                        {
+                            "name": "HostListener",
+                            "stringifiedArguments": "'window:resize', ['$event']"
+                        }
+                    ],
+                    "modifierKind": [
+                        171
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "Event",
+                            "optional": false,
+                            "dotDotDotToken": false,
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
             "deprecated": false,
             "deprecationMessage": "",
             "hostBindings": [],
-            "hostListeners": [],
+            "hostListeners": [
+                {
+                    "name": "window:resize",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "Event",
+                            "optional": false,
+                            "dotDotDotToken": false,
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "argsDecorator": [
+                        "$event"
+                    ],
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 25
+                }
+            ],
             "standalone": false,
             "imports": [
                 {
@@ -1698,17 +1840,20 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\r\nimport { TextComponent } from '../../../component/text/text.component';\r\n\r\n@Component({\r\n  selector: 'navigation-view',\r\n  templateUrl: './navigation.view.html',\r\n  imports: [TextComponent],\r\n})\r\nexport class NavigationView {}\r\n",
+            "sourceCode": "import { Component, HostListener } from '@angular/core';\r\nimport { TextComponent } from '../../../component/text/text.component';\r\nimport { StoreCore } from '../../../store/store.core';\r\n\r\n@Component({\r\n  selector: 'navigation-view',\r\n  templateUrl: './navigation.view.html',\r\n  styleUrl: './navigation.view.scss',\r\n  imports: [TextComponent],\r\n})\r\nexport class NavigationView extends StoreCore {\r\n  sections = this.store.selectSignal((state) => {\r\n    return Object.values(state.section).filter((section) => section.routable.enable);\r\n  });\r\n\r\n  isMenu = false;\r\n\r\n  isMobile = false;\r\n\r\n  onClick() {\r\n    this.isMenu = !this.isMenu;\r\n  }\r\n\r\n  @HostListener('window:resize', ['$event'])\r\n  onResize(event: Event) {\r\n    const screenWidth = window.innerWidth;\r\n    if (screenWidth > 1024) {\r\n      this.isMobile = true;\r\n    } else {\r\n      this.isMobile = false;\r\n    }\r\n  }\r\n}\r\n",
+            "styleUrl": "./navigation.view.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
-            "extends": [],
-            "templateData": "<text-component type=\"p\" value=\"navigation-view works!\"></text-component>\r\n"
+            "extends": [
+                "StoreCore"
+            ],
+            "templateData": "<div class=\"navigation\">\r\n  <header class=\"navigation__header\">\r\n    <text-component type=\"h2\" value=\"Jakub Olejarczyk\"></text-component>\r\n  </header>\r\n  <div class=\"navigation__hamburger\" (click)=\"onClick()\">\r\n    <div class=\"navigation__line\"></div>\r\n    <div class=\"navigation__line\"></div>\r\n    <div class=\"navigation__line\"></div>\r\n  </div>\r\n  @if (isMenu || isMobile) {\r\n    <div class=\"navigation__menu\">\r\n      @for (section of sections(); track section) {\r\n        <text-component type=\"p\" [value]=\"section.label\"></text-component>\r\n      }\r\n    </div>\r\n  }\r\n</div>\r\n"
         },
         {
             "name": "ProjectsView",
             "id": "component-ProjectsView-3226cb1751053e63fb9b2a40635d1b4cac6450dbf8ca2a240b7e4169748258566761b598dde5dd8128a9cd369481c7bcfe986df7efe4b8e9c7f26a17ef5aa717",
-            "file": "src/view/main/projects/projects.view.ts",
+            "file": "src/app/view/main/projects/projects.view.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -1750,7 +1895,7 @@
         {
             "name": "ResumeView",
             "id": "component-ResumeView-06f6eac4acbbf613e5f9c3d1049ac9dbac2deb14002de3bac1722a02b579320ed38ff1f5dfb95aa997b61d3a94d1eca225c6d4cda7f546bb1e91f007098d998f",
-            "file": "src/view/main/resume/resume.view.ts",
+            "file": "src/app/view/main/resume/resume.view.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -1791,8 +1936,8 @@
         },
         {
             "name": "SectionComponent",
-            "id": "component-SectionComponent-386adef14623cb8d1368a42a5ad96dfc44d4e8464abd2e1023ce3af9e0dbabd96e9e2090e97bf5af12da44583c36ea3a059b89a46e75fda241d5e0eaf9d32c7b",
-            "file": "src/component/section/section.component.ts",
+            "id": "component-SectionComponent-e56e5c679992c7875b0c81bfba756d0a629929ba7c043ad6d1c2529ddb63e9b23e27cdbf4e32ba5242d1cbc396cc20d0161bccbf9a547bacd73fc861a74eb428",
+            "file": "src/app/component/section/section.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -1815,7 +1960,7 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 15,
+                    "line": 14,
                     "required": true
                 }
             ],
@@ -1847,7 +1992,7 @@
                     "optional": false,
                     "returnType": "{}",
                     "typeParameters": [],
-                    "line": 17,
+                    "line": 16,
                     "deprecated": false,
                     "deprecationMessage": ""
                 }
@@ -1863,10 +2008,6 @@
                     "type": "module"
                 },
                 {
-                    "name": "TextComponent",
-                    "type": "component"
-                },
-                {
                     "name": "NgComponentOutlet",
                     "type": "component"
                 }
@@ -1874,7 +2015,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { CommonModule, NgComponentOutlet } from '@angular/common';\r\nimport { Component, input } from '@angular/core';\r\nimport { TextComponent } from '../text/text.component';\r\nimport { StoreCore } from '../../store/store.core';\r\nimport { SectionDataModel } from '../../data/section/section-data.model';\r\nimport { BemUtil } from '../../util/bem.util';\r\n\r\n@Component({\r\n  selector: 'section-component',\r\n  templateUrl: './section.component.html',\r\n  styleUrl: './section.component.scss',\r\n  imports: [CommonModule, TextComponent, NgComponentOutlet],\r\n})\r\nexport class SectionComponent extends StoreCore {\r\n  section = input.required<SectionDataModel[keyof SectionDataModel]>();\r\n\r\n  buildSectionClassList() {\r\n    const { palette } = this.section().style;\r\n    const sectionPalette = BemUtil.build('section', 'palette', palette);\r\n    return [sectionPalette];\r\n  }\r\n}\r\n",
+            "sourceCode": "import { CommonModule, NgComponentOutlet } from '@angular/common';\r\nimport { Component, input } from '@angular/core';\r\nimport { StoreCore } from '../../store/store.core';\r\nimport { SectionDataModel } from '../../data/section/section-data.model';\r\nimport { BemUtil } from '../../util/bem.util';\r\n\r\n@Component({\r\n  selector: 'section-component',\r\n  templateUrl: './section.component.html',\r\n  styleUrl: './section.component.scss',\r\n  imports: [CommonModule, NgComponentOutlet],\r\n})\r\nexport class SectionComponent extends StoreCore {\r\n  section = input.required<SectionDataModel[keyof SectionDataModel]>();\r\n\r\n  buildSectionClassList() {\r\n    const { palette } = this.section().style;\r\n    const sectionPalette = BemUtil.build('section', 'palette', palette);\r\n    return [sectionPalette];\r\n  }\r\n}\r\n",
             "styleUrl": "./section.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
@@ -1882,12 +2023,12 @@
             "extends": [
                 "StoreCore"
             ],
-            "templateData": "<section class=\"section\" [ngClass]=\"buildSectionClassList()\">\r\n  @if (section().header.enable) {\r\n    <header class=\"section__header\">\r\n      <text-component type=\"h2\" [value]=\"section().header.label\"></text-component>\r\n    </header>\r\n  }\r\n  <div class=\"section__content\">\r\n    <ng-container *ngComponentOutlet=\"section().view\"></ng-container>\r\n  </div>\r\n</section>\r\n"
+            "templateData": "<section class=\"section\" [ngClass]=\"buildSectionClassList()\">\r\n  <div class=\"section__content\">\r\n    <ng-container *ngComponentOutlet=\"section().view\"></ng-container>\r\n  </div>\r\n</section>\r\n"
         },
         {
             "name": "SkillsView",
-            "id": "component-SkillsView-ed95e4d28eb8d66c8725e390862a94fc36f83927bdbb00efd41116afce41965cfdcddc08e759e6a3d9db4da715af0dd5d348cf56b528eaed1b7fc3208486ec9c",
-            "file": "src/view/main/skills/skills.view.ts",
+            "id": "component-SkillsView-54d00424690d9d2e71ec93eadd3ba996baa9cb906054be564df8109114d02ac3ab8b38320aa602734abeff753b0ea1c8a7674ef0e85942fc0f7b4d3c8213b530",
+            "file": "src/app/view/main/skills/skills.view.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -1903,7 +2044,37 @@
             "hostDirectives": [],
             "inputsClass": [],
             "outputsClass": [],
-            "propertiesClass": [],
+            "propertiesClass": [
+                {
+                    "name": "skills",
+                    "defaultValue": "this.store.selectSignal((state) => {\r\n    return Object.values(state.skill).sort((prev, next) => prev.order - next.order);\r\n  })",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "unknown",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 12
+                },
+                {
+                    "name": "store",
+                    "defaultValue": "inject(Store)",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Store<StoreType>",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 6,
+                    "modifierKind": [
+                        124,
+                        148
+                    ],
+                    "inheritance": {
+                        "file": "StoreCore"
+                    }
+                }
+            ],
             "methodsClass": [],
             "deprecated": false,
             "deprecationMessage": "",
@@ -1919,17 +2090,20 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\r\nimport { TextComponent } from '../../../component/text/text.component';\r\n\r\n@Component({\r\n  selector: 'skills-view',\r\n  templateUrl: './skills.view.html',\r\n  imports: [TextComponent],\r\n})\r\nexport class SkillsView {}\r\n",
+            "sourceCode": "import { Component } from '@angular/core';\r\nimport { TextComponent } from '../../../component/text/text.component';\r\nimport { StoreCore } from '../../../store/store.core';\r\n\r\n@Component({\r\n  selector: 'skills-view',\r\n  templateUrl: './skills.view.html',\r\n  styleUrl: './skills.view.scss',\r\n  imports: [TextComponent],\r\n})\r\nexport class SkillsView extends StoreCore {\r\n  skills = this.store.selectSignal((state) => {\r\n    return Object.values(state.skill).sort((prev, next) => prev.order - next.order);\r\n  });\r\n}\r\n",
+            "styleUrl": "./skills.view.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
-            "extends": [],
-            "templateData": "<text-component type=\"p\" value=\"skills-view works!\"></text-component>\r\n"
+            "extends": [
+                "StoreCore"
+            ],
+            "templateData": "<div class=\"skills\">\r\n  <header class=\"skills__header\">\r\n    <text-component type=\"h2\" value=\"Skills\"></text-component>\r\n  </header>\r\n  <div class=\"skills__content\">\r\n    @for (skill of skills(); track skill) {\r\n      <text-component type=\"p\" [value]=\"skill.label\" palette=\"secondary\"></text-component>\r\n    }\r\n  </div>\r\n</div>\r\n"
         },
         {
             "name": "TechnologiesView",
-            "id": "component-TechnologiesView-27bc8a2b6d92d0b65b6a81b40432cd16d863d2e75a5d9a6b1411ff5044591cb094abe912ae9b598d555f721f048f827c4622478be46767fbfba6de437b98ab3f",
-            "file": "src/view/main/technologies/technologies.view.ts",
+            "id": "component-TechnologiesView-3e2defdbef0389096f3b12b06832e640d2744e238faaf915a9fef4d1a7826d048dc022de23dba8bf30f56fd8383dbd868258434ba3a12fa2cb574b212e9de2ea",
+            "file": "src/app/view/main/technologies/technologies.view.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -1945,7 +2119,37 @@
             "hostDirectives": [],
             "inputsClass": [],
             "outputsClass": [],
-            "propertiesClass": [],
+            "propertiesClass": [
+                {
+                    "name": "groups",
+                    "defaultValue": "this.store.selectSignal((state) => {\r\n    return Object.values(state.technologyGroup)\r\n      .sort((prev, next) => prev.order - next.order)\r\n      .map((group) => ({\r\n        group,\r\n        technologies: Object.values(state.technology)\r\n          .filter((technology) => technology.group === group.group)\r\n          .sort((prev, next) => prev.order - next.order),\r\n      }));\r\n  })",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "unknown",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 12
+                },
+                {
+                    "name": "store",
+                    "defaultValue": "inject(Store)",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Store<StoreType>",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 6,
+                    "modifierKind": [
+                        124,
+                        148
+                    ],
+                    "inheritance": {
+                        "file": "StoreCore"
+                    }
+                }
+            ],
             "methodsClass": [],
             "deprecated": false,
             "deprecationMessage": "",
@@ -1961,17 +2165,20 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\r\nimport { TextComponent } from '../../../component/text/text.component';\r\n\r\n@Component({\r\n  selector: 'technologies-view',\r\n  templateUrl: './technologies.view.html',\r\n  imports: [TextComponent],\r\n})\r\nexport class TechnologiesView {}\r\n",
+            "sourceCode": "import { Component } from '@angular/core';\r\nimport { TextComponent } from '../../../component/text/text.component';\r\nimport { StoreCore } from '../../../store/store.core';\r\n\r\n@Component({\r\n  selector: 'technologies-view',\r\n  templateUrl: './technologies.view.html',\r\n  styleUrl: './technologies.view.scss',\r\n  imports: [TextComponent],\r\n})\r\nexport class TechnologiesView extends StoreCore {\r\n  groups = this.store.selectSignal((state) => {\r\n    return Object.values(state.technologyGroup)\r\n      .sort((prev, next) => prev.order - next.order)\r\n      .map((group) => ({\r\n        group,\r\n        technologies: Object.values(state.technology)\r\n          .filter((technology) => technology.group === group.group)\r\n          .sort((prev, next) => prev.order - next.order),\r\n      }));\r\n  });\r\n}\r\n",
+            "styleUrl": "./technologies.view.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
-            "extends": [],
-            "templateData": "<text-component type=\"p\" value=\"technologies-view works!\"></text-component>\r\n"
+            "extends": [
+                "StoreCore"
+            ],
+            "templateData": "<div class=\"technologies\">\r\n  <header class=\"technologies__header\">\r\n    <text-component type=\"h2\" value=\"Technologies\"></text-component>\r\n  </header>\r\n  <div class=\"technologies__content\">\r\n    @for (group of groups(); track group) {\r\n      <div class=\"technologies__group\">\r\n        <text-component type=\"h3\" [value]=\"group.group.label\"></text-component>\r\n        <div class=\"technologies__technologies\">\r\n          @for (technology of group.technologies; track technology) {\r\n            <div class=\"technologies__technology\">\r\n              <text-component\r\n                type=\"small\"\r\n                [value]=\"technology.label\"\r\n                palette=\"main\"\r\n              ></text-component>\r\n            </div>\r\n          }\r\n        </div>\r\n      </div>\r\n    }\r\n  </div>\r\n</div>\r\n"
         },
         {
             "name": "TextComponent",
-            "id": "component-TextComponent-3c3f2fba586aef0780b1fa3fa90ce2c4d550d9469849e89af21332ac65b25596098a435f060d9d1c2ea4dbb6772247d79247df921195ee0edb368e1cc0bb74b6",
-            "file": "src/component/text/text.component.ts",
+            "id": "component-TextComponent-c5f210ba6d17b8f9e2a0ed25a4a2111759547b562b1ce56b89c9b44fda5aaa000ed1478ab1b1541b6702b7e87c437d913032ac038f5c17f4cf56f85b4e09cbf1",
+            "file": "src/app/component/text/text.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -1987,6 +2194,18 @@
             "hostDirectives": [],
             "inputsClass": [
                 {
+                    "name": "palette",
+                    "defaultValue": "'none'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "keyof typeof PaletteEnum",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 18,
+                    "required": false
+                },
+                {
                     "name": "type",
                     "deprecated": false,
                     "deprecationMessage": "",
@@ -1994,7 +2213,7 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 10,
+                    "line": 14,
                     "required": true
                 },
                 {
@@ -2005,34 +2224,50 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 12,
+                    "line": 16,
                     "required": true
                 }
             ],
             "outputsClass": [],
             "propertiesClass": [],
-            "methodsClass": [],
+            "methodsClass": [
+                {
+                    "name": "buildTextClassList",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "{}",
+                    "typeParameters": [],
+                    "line": 20,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
             "deprecated": false,
             "deprecationMessage": "",
             "hostBindings": [],
             "hostListeners": [],
             "standalone": false,
-            "imports": [],
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                }
+            ],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, input } from '@angular/core';\r\nimport { TextType } from './text.type';\r\n\r\n@Component({\r\n  selector: 'text-component',\r\n  templateUrl: './text.component.html',\r\n  styleUrl: './text.component.scss',\r\n})\r\nexport class TextComponent {\r\n  type = input.required<TextType>();\r\n\r\n  value = input.required<string>();\r\n}\r\n",
+            "sourceCode": "import { Component, input } from '@angular/core';\r\nimport { TextType } from './text.type';\r\nimport { PaletteEnum } from '../../enum/palette.enum';\r\nimport { CommonModule } from '@angular/common';\r\nimport { BemUtil } from '../../util/bem.util';\r\n\r\n@Component({\r\n  selector: 'text-component',\r\n  templateUrl: './text.component.html',\r\n  styleUrl: './text.component.scss',\r\n  imports: [CommonModule],\r\n})\r\nexport class TextComponent {\r\n  type = input.required<TextType>();\r\n\r\n  value = input.required<string>();\r\n\r\n  palette = input<keyof typeof PaletteEnum>('none');\r\n\r\n  buildTextClassList() {\r\n    if (this.palette() == 'none') return [];\r\n    const textPalette = BemUtil.build('custom', 'palette', this.palette());\r\n    return [textPalette];\r\n  }\r\n}\r\n",
             "styleUrl": "./text.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "@switch (type()) {\r\n  @case ('p') {\r\n    <p class=\"text paragraph\">{{ value() }}</p>\r\n  }\r\n  @case ('h1') {\r\n    <h1 class=\"text header header__1\">{{ value() }}</h1>\r\n  }\r\n  @case ('h2') {\r\n    <h2 class=\"text header header__2\">{{ value() }}</h2>\r\n  }\r\n  @case ('h3') {\r\n    <h3 class=\"text header header__3\">{{ value() }}</h3>\r\n  }\r\n}\r\n"
+            "templateData": "@switch (type()) {\r\n  @case ('small') {\r\n    <p class=\"text small\" [ngClass]=\"buildTextClassList()\">{{ value() }}</p>\r\n  }\r\n  @case ('p') {\r\n    <p class=\"text paragraph\" [ngClass]=\"buildTextClassList()\">{{ value() }}</p>\r\n  }\r\n  @case ('h1') {\r\n    <h1 class=\"text header header__1\" [ngClass]=\"buildTextClassList()\">{{ value() }}</h1>\r\n  }\r\n  @case ('h2') {\r\n    <h2 class=\"text header header__2\" [ngClass]=\"buildTextClassList()\">{{ value() }}</h2>\r\n  }\r\n  @case ('h3') {\r\n    <h3 class=\"text header header__3\" [ngClass]=\"buildTextClassList()\">{{ value() }}</h3>\r\n  }\r\n}\r\n"
         },
         {
             "name": "View",
             "id": "component-View-49bfeaac648461c98c6e71bd7d7229c4072d9fcef1acb4705710a04ecd2eedf847d27b3c2e71ab6a1db7d99af757245b49ed8c703ed65c9de9d25ac6cf8bf99b",
-            "file": "src/view/view.ts",
+            "file": "src/app/view/view.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -2111,7 +2346,7 @@
                 "name": "aboutMeDataConst",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/data/about-me/about-me-data.const.ts",
+                "file": "src/app/data/about-me/about-me-data.const.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "AboutMeDataModel",
@@ -2121,7 +2356,7 @@
                 "name": "aboutMeReducer",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/store/store.reducer.ts",
+                "file": "src/app/store/store.reducer.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "unknown",
@@ -2131,7 +2366,7 @@
                 "name": "companyDataConst",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/data/company/company-data.const.ts",
+                "file": "src/app/data/company/company-data.const.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "CompanyDataModel",
@@ -2141,7 +2376,7 @@
                 "name": "companyReducer",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/store/store.reducer.ts",
+                "file": "src/app/store/store.reducer.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "unknown",
@@ -2151,7 +2386,7 @@
                 "name": "config",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/config/config.ts",
+                "file": "src/app/config/config.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "ApplicationConfig",
@@ -2161,7 +2396,7 @@
                 "name": "educationDataConst",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/data/education/education-data.const.ts",
+                "file": "src/app/data/education/education-data.const.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "EducationDataModel",
@@ -2171,7 +2406,7 @@
                 "name": "educationReducer",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/store/store.reducer.ts",
+                "file": "src/app/store/store.reducer.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "unknown",
@@ -2181,7 +2416,7 @@
                 "name": "experienceDataConst",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/data/experience/experience-data.const.ts",
+                "file": "src/app/data/experience/experience-data.const.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "ExperienceDataModel",
@@ -2191,7 +2426,7 @@
                 "name": "experienceReducer",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/store/store.reducer.ts",
+                "file": "src/app/store/store.reducer.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "unknown",
@@ -2201,7 +2436,7 @@
                 "name": "groupDataConst",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/data/group/group-data.const.ts",
+                "file": "src/app/data/group/group-data.const.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "GroupDataModel",
@@ -2211,7 +2446,7 @@
                 "name": "groupReducer",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/store/store.reducer.ts",
+                "file": "src/app/store/store.reducer.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "unknown",
@@ -2221,7 +2456,7 @@
                 "name": "homeDataConst",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/data/home/home-data.const.ts",
+                "file": "src/app/data/home/home-data.const.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "HomeDataModel",
@@ -2231,7 +2466,7 @@
                 "name": "homeReducer",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/store/store.reducer.ts",
+                "file": "src/app/store/store.reducer.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "unknown",
@@ -2241,7 +2476,7 @@
                 "name": "personalDataConst",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/data/personal/personal-data.const.ts",
+                "file": "src/app/data/personal/personal-data.const.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "PersonalDataModel",
@@ -2251,7 +2486,7 @@
                 "name": "personalReducer",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/store/store.reducer.ts",
+                "file": "src/app/store/store.reducer.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "unknown",
@@ -2261,7 +2496,7 @@
                 "name": "resumeDataConst",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/data/resume/resume-data.const.ts",
+                "file": "src/app/data/resume/resume-data.const.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "ResumeDataModel",
@@ -2271,7 +2506,7 @@
                 "name": "resumeReducer",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/store/store.reducer.ts",
+                "file": "src/app/store/store.reducer.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "unknown",
@@ -2281,17 +2516,17 @@
                 "name": "sectionDataConst",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/data/section/section-data.const.ts",
+                "file": "src/app/data/section/section-data.const.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "SectionDataModel",
-                "defaultValue": "{\r\n  navigation: {\r\n    id: 'navigation',\r\n    type: SectionDataEnum.navigation,\r\n    header: {\r\n      enable: false,\r\n      label: '',\r\n    },\r\n    routable: {\r\n      enable: false,\r\n    },\r\n    group: GroupDataEnum.header,\r\n    view: NavigationView,\r\n    style: {\r\n      palette: PaletteEnum.primary,\r\n    },\r\n    order: 0,\r\n  },\r\n  home: {\r\n    id: 'home',\r\n    type: SectionDataEnum.home,\r\n    header: {\r\n      enable: false,\r\n      label: '',\r\n    },\r\n    routable: {\r\n      enable: true,\r\n      href: '#home',\r\n    },\r\n    group: GroupDataEnum.header,\r\n    view: HomeView,\r\n    style: {\r\n      palette: PaletteEnum.primary,\r\n    },\r\n    order: 1,\r\n  },\r\n  aboutMe: {\r\n    id: 'about-me',\r\n    type: SectionDataEnum.aboutMe,\r\n    header: {\r\n      enable: true,\r\n      label: 'About me',\r\n    },\r\n    routable: {\r\n      enable: true,\r\n      href: '#about-me',\r\n    },\r\n    group: GroupDataEnum.main,\r\n    view: AboutMeView,\r\n    style: {\r\n      palette: PaletteEnum.main,\r\n    },\r\n    order: 0,\r\n  },\r\n  technologies: {\r\n    id: 'technologies',\r\n    type: SectionDataEnum.technologies,\r\n    header: {\r\n      enable: true,\r\n      label: 'Technologies',\r\n    },\r\n    routable: {\r\n      enable: true,\r\n      href: '#technologies',\r\n    },\r\n    group: GroupDataEnum.main,\r\n    view: TechnologiesView,\r\n    style: {\r\n      palette: PaletteEnum.main,\r\n    },\r\n    order: 1,\r\n  },\r\n  skills: {\r\n    id: 'skills',\r\n    type: SectionDataEnum.skills,\r\n    header: {\r\n      enable: true,\r\n      label: 'Skills',\r\n    },\r\n    routable: {\r\n      enable: true,\r\n      href: '#skills',\r\n    },\r\n    group: GroupDataEnum.main,\r\n    view: SkillsView,\r\n    style: {\r\n      palette: PaletteEnum.main,\r\n    },\r\n    order: 2,\r\n  },\r\n  experience: {\r\n    id: 'experience',\r\n    type: SectionDataEnum.experience,\r\n    header: {\r\n      enable: true,\r\n      label: 'Experience',\r\n    },\r\n    routable: {\r\n      enable: true,\r\n      href: '#experience',\r\n    },\r\n    group: GroupDataEnum.main,\r\n    view: ExperienceView,\r\n    style: {\r\n      palette: PaletteEnum.main,\r\n    },\r\n    order: 3,\r\n  },\r\n  resume: {\r\n    id: 'resume',\r\n    type: SectionDataEnum.resume,\r\n    header: {\r\n      enable: true,\r\n      label: 'Resume',\r\n    },\r\n    routable: {\r\n      enable: true,\r\n      href: '#resume',\r\n    },\r\n    group: GroupDataEnum.main,\r\n    view: ResumeView,\r\n    style: {\r\n      palette: PaletteEnum.main,\r\n    },\r\n    order: 4,\r\n  },\r\n  projects: {\r\n    id: 'projects',\r\n    type: SectionDataEnum.projects,\r\n    header: {\r\n      enable: true,\r\n      label: 'Projects',\r\n    },\r\n    routable: {\r\n      enable: true,\r\n      href: '#projects',\r\n    },\r\n    group: GroupDataEnum.main,\r\n    view: ProjectsView,\r\n    style: {\r\n      palette: PaletteEnum.main,\r\n    },\r\n    order: 5,\r\n  },\r\n  education: {\r\n    id: 'education',\r\n    type: SectionDataEnum.education,\r\n    header: {\r\n      enable: true,\r\n      label: 'Education',\r\n    },\r\n    routable: {\r\n      enable: true,\r\n      href: '#education',\r\n    },\r\n    group: GroupDataEnum.main,\r\n    style: {\r\n      palette: PaletteEnum.main,\r\n    },\r\n    view: EducationView,\r\n    order: 6,\r\n  },\r\n  contact: {\r\n    id: 'contact',\r\n    type: SectionDataEnum.contact,\r\n    header: {\r\n      enable: false,\r\n      label: '',\r\n    },\r\n    routable: {\r\n      enable: true,\r\n      href: '#contact',\r\n    },\r\n    group: GroupDataEnum.footer,\r\n    view: ContactView,\r\n    style: {\r\n      palette: PaletteEnum.primary,\r\n    },\r\n    order: 0,\r\n  },\r\n  copyright: {\r\n    id: 'copyright',\r\n    type: SectionDataEnum.copyright,\r\n    header: {\r\n      enable: false,\r\n      label: '',\r\n    },\r\n    routable: {\r\n      enable: false,\r\n    },\r\n    group: GroupDataEnum.footer,\r\n    view: CopyrightView,\r\n    style: {\r\n      palette: PaletteEnum.primary,\r\n    },\r\n    order: 1,\r\n  },\r\n}"
+                "defaultValue": "{\r\n  navigation: {\r\n    id: 'navigation',\r\n    type: SectionDataEnum.navigation,\r\n    routable: {\r\n      enable: false,\r\n    },\r\n    group: GroupDataEnum.header,\r\n    view: NavigationView,\r\n    style: {\r\n      palette: PaletteEnum.primary,\r\n    },\r\n    enabled: true,\r\n    label: 'Navigation',\r\n    order: 0,\r\n  },\r\n  home: {\r\n    id: 'home',\r\n    type: SectionDataEnum.home,\r\n    routable: {\r\n      enable: true,\r\n      href: '#home',\r\n    },\r\n    group: GroupDataEnum.header,\r\n    view: HomeView,\r\n    style: {\r\n      palette: PaletteEnum.primary,\r\n    },\r\n    enabled: false,\r\n    label: 'Home',\r\n    order: 1,\r\n  },\r\n  aboutMe: {\r\n    id: 'about-me',\r\n    type: SectionDataEnum.aboutMe,\r\n    routable: {\r\n      enable: true,\r\n      href: '#about-me',\r\n    },\r\n    group: GroupDataEnum.main,\r\n    view: AboutMeView,\r\n    style: {\r\n      palette: PaletteEnum.main,\r\n    },\r\n    enabled: true,\r\n    label: 'About me',\r\n    order: 0,\r\n  },\r\n  technologies: {\r\n    id: 'technologies',\r\n    type: SectionDataEnum.technologies,\r\n    routable: {\r\n      enable: true,\r\n      href: '#technologies',\r\n    },\r\n    group: GroupDataEnum.main,\r\n    view: TechnologiesView,\r\n    style: {\r\n      palette: PaletteEnum.surface,\r\n    },\r\n    enabled: true,\r\n    label: 'Technologies',\r\n    order: 1,\r\n  },\r\n  skills: {\r\n    id: 'skills',\r\n    type: SectionDataEnum.skills,\r\n    routable: {\r\n      enable: true,\r\n      href: '#skills',\r\n    },\r\n    group: GroupDataEnum.main,\r\n    view: SkillsView,\r\n    style: {\r\n      palette: PaletteEnum.surface,\r\n    },\r\n    enabled: true,\r\n    label: 'Skills',\r\n    order: 2,\r\n  },\r\n  experience: {\r\n    id: 'experience',\r\n    type: SectionDataEnum.experience,\r\n    routable: {\r\n      enable: true,\r\n      href: '#experience',\r\n    },\r\n    group: GroupDataEnum.main,\r\n    view: ExperienceView,\r\n    style: {\r\n      palette: PaletteEnum.main,\r\n    },\r\n    enabled: false,\r\n    label: 'Experience',\r\n    order: 3,\r\n  },\r\n  resume: {\r\n    id: 'resume',\r\n    type: SectionDataEnum.resume,\r\n    routable: {\r\n      enable: true,\r\n      href: '#resume',\r\n    },\r\n    group: GroupDataEnum.main,\r\n    view: ResumeView,\r\n    style: {\r\n      palette: PaletteEnum.main,\r\n    },\r\n    enabled: false,\r\n    label: 'Resume',\r\n    order: 4,\r\n  },\r\n  projects: {\r\n    id: 'projects',\r\n    type: SectionDataEnum.projects,\r\n    routable: {\r\n      enable: true,\r\n      href: '#projects',\r\n    },\r\n    group: GroupDataEnum.main,\r\n    view: ProjectsView,\r\n    style: {\r\n      palette: PaletteEnum.main,\r\n    },\r\n    enabled: false,\r\n    label: 'Projects',\r\n    order: 5,\r\n  },\r\n  education: {\r\n    id: 'education',\r\n    type: SectionDataEnum.education,\r\n    routable: {\r\n      enable: true,\r\n      href: '#education',\r\n    },\r\n    group: GroupDataEnum.main,\r\n    style: {\r\n      palette: PaletteEnum.main,\r\n    },\r\n    enabled: true,\r\n    view: EducationView,\r\n    label: 'Education',\r\n    order: 6,\r\n  },\r\n  contact: {\r\n    id: 'contact',\r\n    type: SectionDataEnum.contact,\r\n    routable: {\r\n      enable: true,\r\n      href: '#contact',\r\n    },\r\n    group: GroupDataEnum.footer,\r\n    view: ContactView,\r\n    style: {\r\n      palette: PaletteEnum.primary,\r\n    },\r\n    enabled: true,\r\n    label: 'Contact',\r\n    order: 0,\r\n  },\r\n  copyright: {\r\n    id: 'copyright',\r\n    type: SectionDataEnum.copyright,\r\n    routable: {\r\n      enable: false,\r\n    },\r\n    group: GroupDataEnum.footer,\r\n    view: CopyrightView,\r\n    style: {\r\n      palette: PaletteEnum.primary,\r\n    },\r\n    enabled: true,\r\n    label: 'Copyright',\r\n    order: 1,\r\n  },\r\n}"
             },
             {
                 "name": "sectionReducer",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/store/store.reducer.ts",
+                "file": "src/app/store/store.reducer.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "unknown",
@@ -2301,7 +2536,7 @@
                 "name": "skillDataConst",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/data/skill/skill-data.const.ts",
+                "file": "src/app/data/skill/skill-data.const.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "SkillDataModel",
@@ -2311,7 +2546,7 @@
                 "name": "skillReducer",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/store/store.reducer.ts",
+                "file": "src/app/store/store.reducer.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "unknown",
@@ -2321,7 +2556,7 @@
                 "name": "technologyDataConst",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/data/technology/technology-data.const.ts",
+                "file": "src/app/data/technology/technology-data.const.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "TechnologyDataModel",
@@ -2331,17 +2566,17 @@
                 "name": "technologyGroupDataConst",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/data/technology-group/technology-group-data.const.ts",
+                "file": "src/app/data/technology-group/technology-group-data.const.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "TechnologyGroupDataModel",
-                "defaultValue": "{\r\n  frontend: {\r\n    label: 'Frontend',\r\n    order: 0,\r\n  },\r\n  programmingLanguage: {\r\n    label: 'Programming Language',\r\n    order: 1,\r\n  },\r\n  framework: {\r\n    label: 'Framework',\r\n    order: 2,\r\n  },\r\n  library: {\r\n    label: 'Library',\r\n    order: 3,\r\n  },\r\n  database: {\r\n    label: 'Database',\r\n    order: 4,\r\n  },\r\n  test: {\r\n    label: 'Test',\r\n    order: 5,\r\n  },\r\n  tool: {\r\n    label: 'Tool',\r\n    order: 6,\r\n  },\r\n  operatingSystem: {\r\n    label: 'Operating System',\r\n    order: 7,\r\n  },\r\n  architecture: {\r\n    label: 'Architecture',\r\n    order: 8,\r\n  },\r\n  ipaas: {\r\n    label: 'iPaaS',\r\n    order: 9,\r\n  },\r\n  rpa: {\r\n    label: 'RPA',\r\n    order: 10,\r\n  },\r\n  documentGeneration: {\r\n    label: 'Document Generation',\r\n    order: 11,\r\n  },\r\n}"
+                "defaultValue": "{\r\n  frontend: {\r\n    group: TechnologyGroupDataEnum.frontend,\r\n    label: 'Frontend',\r\n    order: 0,\r\n  },\r\n  programmingLanguage: {\r\n    group: TechnologyGroupDataEnum.programmingLanguage,\r\n    label: 'Programming Language',\r\n    order: 1,\r\n  },\r\n  framework: {\r\n    group: TechnologyGroupDataEnum.framework,\r\n    label: 'Framework',\r\n    order: 2,\r\n  },\r\n  library: {\r\n    group: TechnologyGroupDataEnum.library,\r\n    label: 'Library',\r\n    order: 3,\r\n  },\r\n  database: {\r\n    group: TechnologyGroupDataEnum.database,\r\n    label: 'Database',\r\n    order: 4,\r\n  },\r\n  test: {\r\n    group: TechnologyGroupDataEnum.test,\r\n    label: 'Test',\r\n    order: 5,\r\n  },\r\n  tool: {\r\n    group: TechnologyGroupDataEnum.tool,\r\n    label: 'Tool',\r\n    order: 6,\r\n  },\r\n  operatingSystem: {\r\n    group: TechnologyGroupDataEnum.operatingSystem,\r\n    label: 'Operating System',\r\n    order: 7,\r\n  },\r\n  architecture: {\r\n    group: TechnologyGroupDataEnum.architecture,\r\n    label: 'Architecture',\r\n    order: 8,\r\n  },\r\n  ipaas: {\r\n    group: TechnologyGroupDataEnum.ipaas,\r\n    label: 'iPaaS',\r\n    order: 9,\r\n  },\r\n  rpa: {\r\n    group: TechnologyGroupDataEnum.rpa,\r\n    label: 'RPA',\r\n    order: 10,\r\n  },\r\n  documentGeneration: {\r\n    group: TechnologyGroupDataEnum.documentGeneration,\r\n    label: 'Document Generation',\r\n    order: 11,\r\n  },\r\n}"
             },
             {
                 "name": "technologyGroupReducer",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/store/store.reducer.ts",
+                "file": "src/app/store/store.reducer.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "unknown",
@@ -2351,7 +2586,7 @@
                 "name": "technologyReducer",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/store/store.reducer.ts",
+                "file": "src/app/store/store.reducer.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "unknown",
@@ -2365,7 +2600,7 @@
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
                 "rawtype": "Record<CompanyDataEnum | CompanyModel>",
-                "file": "src/data/company/company-data.model.ts",
+                "file": "src/app/data/company/company-data.model.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -2376,7 +2611,7 @@
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
                 "rawtype": "EducationModel[]",
-                "file": "src/data/education/education-data.model.ts",
+                "file": "src/app/data/education/education-data.model.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -2387,7 +2622,7 @@
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
                 "rawtype": "ExperienceModel[]",
-                "file": "src/data/experience/experience-data.model.ts",
+                "file": "src/app/data/experience/experience-data.model.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -2398,7 +2633,7 @@
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
                 "rawtype": "Record<GroupDataEnum | GroupModel>",
-                "file": "src/data/group/group-data.model.ts",
+                "file": "src/app/data/group/group-data.model.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -2409,7 +2644,7 @@
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
                 "rawtype": "\"page\" | \"email\" | \"phone\"",
-                "file": "src/component/link/link.type.ts",
+                "file": "src/app/component/link/link.type.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -2420,7 +2655,7 @@
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
                 "rawtype": "ResumeModel[]",
-                "file": "src/data/resume/resume-data.model.ts",
+                "file": "src/app/data/resume/resume-data.model.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -2431,7 +2666,7 @@
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
                 "rawtype": "Record<SectionDataEnum | SectionModel>",
-                "file": "src/data/section/section-data.model.ts",
+                "file": "src/app/data/section/section-data.model.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -2442,7 +2677,7 @@
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
                 "rawtype": "RoutableEnabledModel | RoutableDisabledModel",
-                "file": "src/data/section/section-data.model.ts",
+                "file": "src/app/data/section/section-data.model.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -2453,7 +2688,7 @@
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
                 "rawtype": "Record<SkillKindDataEnum | SkillModel>",
-                "file": "src/data/skill/skill-data.model.ts",
+                "file": "src/app/data/skill/skill-data.model.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -2464,7 +2699,7 @@
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
                 "rawtype": "literal type",
-                "file": "src/store/store.type.ts",
+                "file": "src/app/store/store.type.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -2475,7 +2710,7 @@
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
                 "rawtype": "Record<TechnologyDataEnum | TechnologyModel>",
-                "file": "src/data/technology/technology-data.model.ts",
+                "file": "src/app/data/technology/technology-data.model.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -2486,7 +2721,7 @@
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
                 "rawtype": "Record<TechnologyGroupDataEnum | TechnologyGroupModel>",
-                "file": "src/data/technology-group/technology-group-data.model.ts",
+                "file": "src/app/data/technology-group/technology-group-data.model.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -2496,8 +2731,8 @@
                 "name": "TextType",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "\"p\" | \"h1\" | \"h2\" | \"h3\"",
-                "file": "src/component/text/text.type.ts",
+                "rawtype": "\"small\" | \"p\" | \"h1\" | \"h2\" | \"h3\"",
+                "file": "src/app/component/text/text.type.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -2526,7 +2761,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
-                "file": "src/data/company/company-data.enum.ts"
+                "file": "src/app/data/company/company-data.enum.ts"
             },
             {
                 "name": "GroupDataEnum",
@@ -2555,11 +2790,17 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
-                "file": "src/data/group/group-data.enum.ts"
+                "file": "src/app/data/group/group-data.enum.ts"
             },
             {
                 "name": "PaletteEnum",
                 "childs": [
+                    {
+                        "name": "none",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "value": "none"
+                    },
                     {
                         "name": "primary",
                         "deprecated": false,
@@ -2571,6 +2812,24 @@
                         "deprecated": false,
                         "deprecationMessage": "",
                         "value": "main"
+                    },
+                    {
+                        "name": "surface",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "value": "surface"
+                    },
+                    {
+                        "name": "secondary",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "value": "secondary"
+                    },
+                    {
+                        "name": "muted",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "value": "muted"
                     }
                 ],
                 "ctype": "miscellaneous",
@@ -2578,7 +2837,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
-                "file": "src/enum/palette.enum.ts"
+                "file": "src/app/enum/palette.enum.ts"
             },
             {
                 "name": "ResumeLangDataEnum",
@@ -2601,7 +2860,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
-                "file": "src/data/resume/resume-data.enum.ts"
+                "file": "src/app/data/resume/resume-data.enum.ts"
             },
             {
                 "name": "SectionDataEnum",
@@ -2678,7 +2937,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
-                "file": "src/data/section/section-data.enum.ts"
+                "file": "src/app/data/section/section-data.enum.ts"
             },
             {
                 "name": "SkillKindDataEnum",
@@ -2707,7 +2966,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
-                "file": "src/data/skill/skill-data.enum.ts"
+                "file": "src/app/data/skill/skill-data.enum.ts"
             },
             {
                 "name": "TechnologyDataEnum",
@@ -2922,7 +3181,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
-                "file": "src/data/technology/technology-data.enum.ts"
+                "file": "src/app/data/technology/technology-data.enum.ts"
             },
             {
                 "name": "TechnologyGroupDataEnum",
@@ -3005,28 +3264,28 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
-                "file": "src/data/technology-group/technology-group-data.enum.ts"
+                "file": "src/app/data/technology-group/technology-group-data.enum.ts"
             }
         ],
         "groupedVariables": {
-            "src/data/about-me/about-me-data.const.ts": [
+            "src/app/data/about-me/about-me-data.const.ts": [
                 {
                     "name": "aboutMeDataConst",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/data/about-me/about-me-data.const.ts",
+                    "file": "src/app/data/about-me/about-me-data.const.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "AboutMeDataModel",
                     "defaultValue": "{\r\n  description: [\r\n    'I am a Software Engineer focused on building modern, scalable, and reliable software solutions. I specialize in designing and developing applications that solve real-world problems and help businesses grow.',\r\n    'In my work, I combine strong technical skills with a problem-solving mindset, which allows me to create solutions that are not only functional but also efficient, secure, and maintainable. I value clean code, well-designed architecture, and following best engineering practices.',\r\n    'I am passionate about technology and continuously improve my skills by exploring new tools, frameworks, and industry trends. I enjoy working on projects that challenge me and allow me to create meaningful digital products.',\r\n  ],\r\n}"
                 }
             ],
-            "src/store/store.reducer.ts": [
+            "src/app/store/store.reducer.ts": [
                 {
                     "name": "aboutMeReducer",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/store/store.reducer.ts",
+                    "file": "src/app/store/store.reducer.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "unknown",
@@ -3036,7 +3295,7 @@
                     "name": "companyReducer",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/store/store.reducer.ts",
+                    "file": "src/app/store/store.reducer.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "unknown",
@@ -3046,7 +3305,7 @@
                     "name": "educationReducer",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/store/store.reducer.ts",
+                    "file": "src/app/store/store.reducer.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "unknown",
@@ -3056,7 +3315,7 @@
                     "name": "experienceReducer",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/store/store.reducer.ts",
+                    "file": "src/app/store/store.reducer.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "unknown",
@@ -3066,7 +3325,7 @@
                     "name": "groupReducer",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/store/store.reducer.ts",
+                    "file": "src/app/store/store.reducer.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "unknown",
@@ -3076,7 +3335,7 @@
                     "name": "homeReducer",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/store/store.reducer.ts",
+                    "file": "src/app/store/store.reducer.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "unknown",
@@ -3086,7 +3345,7 @@
                     "name": "personalReducer",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/store/store.reducer.ts",
+                    "file": "src/app/store/store.reducer.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "unknown",
@@ -3096,7 +3355,7 @@
                     "name": "resumeReducer",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/store/store.reducer.ts",
+                    "file": "src/app/store/store.reducer.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "unknown",
@@ -3106,7 +3365,7 @@
                     "name": "sectionReducer",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/store/store.reducer.ts",
+                    "file": "src/app/store/store.reducer.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "unknown",
@@ -3116,7 +3375,7 @@
                     "name": "skillReducer",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/store/store.reducer.ts",
+                    "file": "src/app/store/store.reducer.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "unknown",
@@ -3126,7 +3385,7 @@
                     "name": "technologyGroupReducer",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/store/store.reducer.ts",
+                    "file": "src/app/store/store.reducer.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "unknown",
@@ -3136,161 +3395,161 @@
                     "name": "technologyReducer",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/store/store.reducer.ts",
+                    "file": "src/app/store/store.reducer.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "unknown",
                     "defaultValue": "createReducer(technologyDataConst)"
                 }
             ],
-            "src/data/company/company-data.const.ts": [
+            "src/app/data/company/company-data.const.ts": [
                 {
                     "name": "companyDataConst",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/data/company/company-data.const.ts",
+                    "file": "src/app/data/company/company-data.const.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "CompanyDataModel",
                     "defaultValue": "{\r\n  aprSystem: {\r\n    name: 'APR System',\r\n    url: 'https://www.apr.pl',\r\n  },\r\n  primaris: {\r\n    name: 'Primaris',\r\n    url: 'https://primaris.eu',\r\n  },\r\n}"
                 }
             ],
-            "src/config/config.ts": [
+            "src/app/config/config.ts": [
                 {
                     "name": "config",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/config/config.ts",
+                    "file": "src/app/config/config.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "ApplicationConfig",
                     "defaultValue": "{\n  providers: [\n    provideBrowserGlobalErrorListeners(),\n    provideStore(\n      {\n        aboutMe: aboutMeReducer,\n        company: companyReducer,\n        education: educationReducer,\n        experience: experienceReducer,\n        home: homeReducer,\n        personal: personalReducer,\n        resume: resumeReducer,\n        group: groupReducer,\n        section: sectionReducer,\n        skill: skillReducer,\n        technologyGroup: technologyGroupReducer,\n        technology: technologyReducer,\n      },\n      {\n        runtimeChecks: {\n          strictStateImmutability: false,\n        },\n      },\n    ),\n    provideStoreDevtools({ maxAge: 25, logOnly: !isDevMode() }),\n  ],\n}"
                 }
             ],
-            "src/data/education/education-data.const.ts": [
+            "src/app/data/education/education-data.const.ts": [
                 {
                     "name": "educationDataConst",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/data/education/education-data.const.ts",
+                    "file": "src/app/data/education/education-data.const.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "EducationDataModel",
                     "defaultValue": "[\r\n  {\r\n    university: 'Jan Kochanowski University of Kielce',\r\n    major: 'Computer Science',\r\n    degree: 'Bachelor of Engineering',\r\n    year: 2021,\r\n  },\r\n  {\r\n    university: 'Kielce University of Technology',\r\n    major: 'Computer Science (Information Systems)',\r\n    degree: \"Master's Degree\",\r\n    year: 2026,\r\n  },\r\n]"
                 }
             ],
-            "src/data/experience/experience-data.const.ts": [
+            "src/app/data/experience/experience-data.const.ts": [
                 {
                     "name": "experienceDataConst",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/data/experience/experience-data.const.ts",
+                    "file": "src/app/data/experience/experience-data.const.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "ExperienceDataModel",
                     "defaultValue": "[\r\n  {\r\n    company: CompanyDataEnum.aprSystem,\r\n    startDate: new Date(2020, 8, 1),\r\n    endDate: new Date(2025, 3, 1),\r\n    role: 'Frontend Software Engineer',\r\n    experiences: [\r\n      'Designed, developed, and maintained Angular-based web applications.',\r\n      'Built reusable metadata-driven Angular UI components with dynamic rendering.',\r\n      'Implemented application state management using NGXS, RxJS, and Redux DevTools.',\r\n      'Developed applications within an Nx monorepo architecture supporting a modular project structure.',\r\n      'Enforced code quality standards using ESLint, Prettier, and Stylelint.',\r\n      'Implemented unit testing using Jest.',\r\n      'Integrated REST API communication between frontend and backend services.',\r\n      'Containerized applications using Docker.',\r\n      'Developed internal NPM packages to support workflow automation and CI/CD within the GitLab ecosystem.',\r\n      'Modeled system architecture and business processes using UML.',\r\n    ],\r\n    technologies: [\r\n      TechnologyDataEnum.html,\r\n      TechnologyDataEnum.css,\r\n      TechnologyDataEnum.sass,\r\n      TechnologyDataEnum.storybook,\r\n      TechnologyDataEnum.javascript,\r\n      TechnologyDataEnum.typescript,\r\n      TechnologyDataEnum.angular,\r\n      TechnologyDataEnum.ngrx,\r\n      TechnologyDataEnum.rxjs,\r\n      TechnologyDataEnum.primeng,\r\n      TechnologyDataEnum.jest,\r\n      TechnologyDataEnum.postman,\r\n      TechnologyDataEnum.nodejs,\r\n      TechnologyDataEnum.nx,\r\n      TechnologyDataEnum.docker,\r\n      TechnologyDataEnum.git,\r\n      TechnologyDataEnum.gitlab,\r\n      TechnologyDataEnum.npm,\r\n      TechnologyDataEnum.pnpm,\r\n      TechnologyDataEnum.eslint,\r\n      TechnologyDataEnum.prettier,\r\n      TechnologyDataEnum.stylelint,\r\n      TechnologyDataEnum.webstorm,\r\n      TechnologyDataEnum.visualStudioCode,\r\n      TechnologyDataEnum.windows,\r\n      TechnologyDataEnum.enterpriseArchitect,\r\n    ],\r\n    skills: [\r\n      SkillKindDataEnum.dataStructuresAndAlgorithms,\r\n      SkillKindDataEnum.english,\r\n      SkillKindDataEnum.polish,\r\n    ],\r\n  },\r\n  {\r\n    company: CompanyDataEnum.primaris,\r\n    startDate: new Date(2025, 6, 1),\r\n    endDate: 'Present',\r\n    role: 'Automation Engineer',\r\n    experiences: [\r\n      'Developed robotic process automation (RPA) solutions using UiPath to automate business workflows.',\r\n      'Built data integration pipelines using SnapLogic, utilizing JavaScript for transformation logic.',\r\n      'Queried and managed data using SQL and Microsoft SQL Server (MSSQL).',\r\n      'Provided consulting and implementation support for GoSmart solutions while communicating with stakeholders in English.',\r\n      'Collaborated with cross-functional teams to analyze requirements and deliver automation and integration solutions.',\r\n    ],\r\n    technologies: [\r\n      TechnologyDataEnum.javascript,\r\n      TechnologyDataEnum.sql,\r\n      TechnologyDataEnum.microsoftSqlServer,\r\n      TechnologyDataEnum.soapui,\r\n      TechnologyDataEnum.github,\r\n      TechnologyDataEnum.windows,\r\n      TechnologyDataEnum.snapLogic,\r\n      TechnologyDataEnum.uiPath,\r\n      TechnologyDataEnum.goSmartDesigner,\r\n    ],\r\n    skills: [SkillKindDataEnum.english, SkillKindDataEnum.polish],\r\n  },\r\n]"
                 }
             ],
-            "src/data/group/group-data.const.ts": [
+            "src/app/data/group/group-data.const.ts": [
                 {
                     "name": "groupDataConst",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/data/group/group-data.const.ts",
+                    "file": "src/app/data/group/group-data.const.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "GroupDataModel",
                     "defaultValue": "{\r\n  header: {\r\n    view: HeaderView,\r\n    order: 0,\r\n  },\r\n  main: {\r\n    view: MainView,\r\n    order: 1,\r\n  },\r\n  footer: {\r\n    view: FooterView,\r\n    order: 2,\r\n  },\r\n}"
                 }
             ],
-            "src/data/home/home-data.const.ts": [
+            "src/app/data/home/home-data.const.ts": [
                 {
                     "name": "homeDataConst",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/data/home/home-data.const.ts",
+                    "file": "src/app/data/home/home-data.const.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "HomeDataModel",
                     "defaultValue": "{\r\n  motto:\r\n    'Hi, I am Jakub Olejarczyk, a Software Engineer building modern software and constantly exploring new technologies to create efficient and scalable solutions.',\r\n  profilePhoto: 'assets/images/olejarczyk_jakub.jpg',\r\n}"
                 }
             ],
-            "src/data/personal/personal-data.const.ts": [
+            "src/app/data/personal/personal-data.const.ts": [
                 {
                     "name": "personalDataConst",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/data/personal/personal-data.const.ts",
+                    "file": "src/app/data/personal/personal-data.const.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "PersonalDataModel",
                     "defaultValue": "{\r\n  firstname: 'Jakub',\r\n  lastname: 'Olejarczyk',\r\n  email: 'jakub.olejarczyk@outlook.com',\r\n  phone: '+48 501 007 197',\r\n  city: 'Kielce',\r\n  country: 'Poland',\r\n  socialMedias: [\r\n    {\r\n      label: 'LinkedIn',\r\n      url: 'https://www.linkedin.com/in/jakub-olejarczyk',\r\n    },\r\n    {\r\n      label: 'GitHub',\r\n      url: 'https://github.com/jakubolejarczyk',\r\n    },\r\n    {\r\n      label: 'LeetCode',\r\n      url: 'https://leetcode.com/u/JakubOlejarczyk',\r\n    },\r\n  ],\r\n}"
                 }
             ],
-            "src/data/resume/resume-data.const.ts": [
+            "src/app/data/resume/resume-data.const.ts": [
                 {
                     "name": "resumeDataConst",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/data/resume/resume-data.const.ts",
+                    "file": "src/app/data/resume/resume-data.const.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "ResumeDataModel",
                     "defaultValue": "[\r\n  {\r\n    resumeFile: 'assets/files/olejarczyk_jakub_eng.pdf',\r\n    label: 'Download (English)',\r\n    lang: ResumeLangDataEnum.english,\r\n    order: 0,\r\n  },\r\n  {\r\n    resumeFile: 'assets/files/olejarczyk_jakub_pl.pdf',\r\n    label: 'Download (Polish)',\r\n    lang: ResumeLangDataEnum.polish,\r\n    order: 1,\r\n  },\r\n]"
                 }
             ],
-            "src/data/section/section-data.const.ts": [
+            "src/app/data/section/section-data.const.ts": [
                 {
                     "name": "sectionDataConst",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/data/section/section-data.const.ts",
+                    "file": "src/app/data/section/section-data.const.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "SectionDataModel",
-                    "defaultValue": "{\r\n  navigation: {\r\n    id: 'navigation',\r\n    type: SectionDataEnum.navigation,\r\n    header: {\r\n      enable: false,\r\n      label: '',\r\n    },\r\n    routable: {\r\n      enable: false,\r\n    },\r\n    group: GroupDataEnum.header,\r\n    view: NavigationView,\r\n    style: {\r\n      palette: PaletteEnum.primary,\r\n    },\r\n    order: 0,\r\n  },\r\n  home: {\r\n    id: 'home',\r\n    type: SectionDataEnum.home,\r\n    header: {\r\n      enable: false,\r\n      label: '',\r\n    },\r\n    routable: {\r\n      enable: true,\r\n      href: '#home',\r\n    },\r\n    group: GroupDataEnum.header,\r\n    view: HomeView,\r\n    style: {\r\n      palette: PaletteEnum.primary,\r\n    },\r\n    order: 1,\r\n  },\r\n  aboutMe: {\r\n    id: 'about-me',\r\n    type: SectionDataEnum.aboutMe,\r\n    header: {\r\n      enable: true,\r\n      label: 'About me',\r\n    },\r\n    routable: {\r\n      enable: true,\r\n      href: '#about-me',\r\n    },\r\n    group: GroupDataEnum.main,\r\n    view: AboutMeView,\r\n    style: {\r\n      palette: PaletteEnum.main,\r\n    },\r\n    order: 0,\r\n  },\r\n  technologies: {\r\n    id: 'technologies',\r\n    type: SectionDataEnum.technologies,\r\n    header: {\r\n      enable: true,\r\n      label: 'Technologies',\r\n    },\r\n    routable: {\r\n      enable: true,\r\n      href: '#technologies',\r\n    },\r\n    group: GroupDataEnum.main,\r\n    view: TechnologiesView,\r\n    style: {\r\n      palette: PaletteEnum.main,\r\n    },\r\n    order: 1,\r\n  },\r\n  skills: {\r\n    id: 'skills',\r\n    type: SectionDataEnum.skills,\r\n    header: {\r\n      enable: true,\r\n      label: 'Skills',\r\n    },\r\n    routable: {\r\n      enable: true,\r\n      href: '#skills',\r\n    },\r\n    group: GroupDataEnum.main,\r\n    view: SkillsView,\r\n    style: {\r\n      palette: PaletteEnum.main,\r\n    },\r\n    order: 2,\r\n  },\r\n  experience: {\r\n    id: 'experience',\r\n    type: SectionDataEnum.experience,\r\n    header: {\r\n      enable: true,\r\n      label: 'Experience',\r\n    },\r\n    routable: {\r\n      enable: true,\r\n      href: '#experience',\r\n    },\r\n    group: GroupDataEnum.main,\r\n    view: ExperienceView,\r\n    style: {\r\n      palette: PaletteEnum.main,\r\n    },\r\n    order: 3,\r\n  },\r\n  resume: {\r\n    id: 'resume',\r\n    type: SectionDataEnum.resume,\r\n    header: {\r\n      enable: true,\r\n      label: 'Resume',\r\n    },\r\n    routable: {\r\n      enable: true,\r\n      href: '#resume',\r\n    },\r\n    group: GroupDataEnum.main,\r\n    view: ResumeView,\r\n    style: {\r\n      palette: PaletteEnum.main,\r\n    },\r\n    order: 4,\r\n  },\r\n  projects: {\r\n    id: 'projects',\r\n    type: SectionDataEnum.projects,\r\n    header: {\r\n      enable: true,\r\n      label: 'Projects',\r\n    },\r\n    routable: {\r\n      enable: true,\r\n      href: '#projects',\r\n    },\r\n    group: GroupDataEnum.main,\r\n    view: ProjectsView,\r\n    style: {\r\n      palette: PaletteEnum.main,\r\n    },\r\n    order: 5,\r\n  },\r\n  education: {\r\n    id: 'education',\r\n    type: SectionDataEnum.education,\r\n    header: {\r\n      enable: true,\r\n      label: 'Education',\r\n    },\r\n    routable: {\r\n      enable: true,\r\n      href: '#education',\r\n    },\r\n    group: GroupDataEnum.main,\r\n    style: {\r\n      palette: PaletteEnum.main,\r\n    },\r\n    view: EducationView,\r\n    order: 6,\r\n  },\r\n  contact: {\r\n    id: 'contact',\r\n    type: SectionDataEnum.contact,\r\n    header: {\r\n      enable: false,\r\n      label: '',\r\n    },\r\n    routable: {\r\n      enable: true,\r\n      href: '#contact',\r\n    },\r\n    group: GroupDataEnum.footer,\r\n    view: ContactView,\r\n    style: {\r\n      palette: PaletteEnum.primary,\r\n    },\r\n    order: 0,\r\n  },\r\n  copyright: {\r\n    id: 'copyright',\r\n    type: SectionDataEnum.copyright,\r\n    header: {\r\n      enable: false,\r\n      label: '',\r\n    },\r\n    routable: {\r\n      enable: false,\r\n    },\r\n    group: GroupDataEnum.footer,\r\n    view: CopyrightView,\r\n    style: {\r\n      palette: PaletteEnum.primary,\r\n    },\r\n    order: 1,\r\n  },\r\n}"
+                    "defaultValue": "{\r\n  navigation: {\r\n    id: 'navigation',\r\n    type: SectionDataEnum.navigation,\r\n    routable: {\r\n      enable: false,\r\n    },\r\n    group: GroupDataEnum.header,\r\n    view: NavigationView,\r\n    style: {\r\n      palette: PaletteEnum.primary,\r\n    },\r\n    enabled: true,\r\n    label: 'Navigation',\r\n    order: 0,\r\n  },\r\n  home: {\r\n    id: 'home',\r\n    type: SectionDataEnum.home,\r\n    routable: {\r\n      enable: true,\r\n      href: '#home',\r\n    },\r\n    group: GroupDataEnum.header,\r\n    view: HomeView,\r\n    style: {\r\n      palette: PaletteEnum.primary,\r\n    },\r\n    enabled: false,\r\n    label: 'Home',\r\n    order: 1,\r\n  },\r\n  aboutMe: {\r\n    id: 'about-me',\r\n    type: SectionDataEnum.aboutMe,\r\n    routable: {\r\n      enable: true,\r\n      href: '#about-me',\r\n    },\r\n    group: GroupDataEnum.main,\r\n    view: AboutMeView,\r\n    style: {\r\n      palette: PaletteEnum.main,\r\n    },\r\n    enabled: true,\r\n    label: 'About me',\r\n    order: 0,\r\n  },\r\n  technologies: {\r\n    id: 'technologies',\r\n    type: SectionDataEnum.technologies,\r\n    routable: {\r\n      enable: true,\r\n      href: '#technologies',\r\n    },\r\n    group: GroupDataEnum.main,\r\n    view: TechnologiesView,\r\n    style: {\r\n      palette: PaletteEnum.surface,\r\n    },\r\n    enabled: true,\r\n    label: 'Technologies',\r\n    order: 1,\r\n  },\r\n  skills: {\r\n    id: 'skills',\r\n    type: SectionDataEnum.skills,\r\n    routable: {\r\n      enable: true,\r\n      href: '#skills',\r\n    },\r\n    group: GroupDataEnum.main,\r\n    view: SkillsView,\r\n    style: {\r\n      palette: PaletteEnum.surface,\r\n    },\r\n    enabled: true,\r\n    label: 'Skills',\r\n    order: 2,\r\n  },\r\n  experience: {\r\n    id: 'experience',\r\n    type: SectionDataEnum.experience,\r\n    routable: {\r\n      enable: true,\r\n      href: '#experience',\r\n    },\r\n    group: GroupDataEnum.main,\r\n    view: ExperienceView,\r\n    style: {\r\n      palette: PaletteEnum.main,\r\n    },\r\n    enabled: false,\r\n    label: 'Experience',\r\n    order: 3,\r\n  },\r\n  resume: {\r\n    id: 'resume',\r\n    type: SectionDataEnum.resume,\r\n    routable: {\r\n      enable: true,\r\n      href: '#resume',\r\n    },\r\n    group: GroupDataEnum.main,\r\n    view: ResumeView,\r\n    style: {\r\n      palette: PaletteEnum.main,\r\n    },\r\n    enabled: false,\r\n    label: 'Resume',\r\n    order: 4,\r\n  },\r\n  projects: {\r\n    id: 'projects',\r\n    type: SectionDataEnum.projects,\r\n    routable: {\r\n      enable: true,\r\n      href: '#projects',\r\n    },\r\n    group: GroupDataEnum.main,\r\n    view: ProjectsView,\r\n    style: {\r\n      palette: PaletteEnum.main,\r\n    },\r\n    enabled: false,\r\n    label: 'Projects',\r\n    order: 5,\r\n  },\r\n  education: {\r\n    id: 'education',\r\n    type: SectionDataEnum.education,\r\n    routable: {\r\n      enable: true,\r\n      href: '#education',\r\n    },\r\n    group: GroupDataEnum.main,\r\n    style: {\r\n      palette: PaletteEnum.main,\r\n    },\r\n    enabled: true,\r\n    view: EducationView,\r\n    label: 'Education',\r\n    order: 6,\r\n  },\r\n  contact: {\r\n    id: 'contact',\r\n    type: SectionDataEnum.contact,\r\n    routable: {\r\n      enable: true,\r\n      href: '#contact',\r\n    },\r\n    group: GroupDataEnum.footer,\r\n    view: ContactView,\r\n    style: {\r\n      palette: PaletteEnum.primary,\r\n    },\r\n    enabled: true,\r\n    label: 'Contact',\r\n    order: 0,\r\n  },\r\n  copyright: {\r\n    id: 'copyright',\r\n    type: SectionDataEnum.copyright,\r\n    routable: {\r\n      enable: false,\r\n    },\r\n    group: GroupDataEnum.footer,\r\n    view: CopyrightView,\r\n    style: {\r\n      palette: PaletteEnum.primary,\r\n    },\r\n    enabled: true,\r\n    label: 'Copyright',\r\n    order: 1,\r\n  },\r\n}"
                 }
             ],
-            "src/data/skill/skill-data.const.ts": [
+            "src/app/data/skill/skill-data.const.ts": [
                 {
                     "name": "skillDataConst",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/data/skill/skill-data.const.ts",
+                    "file": "src/app/data/skill/skill-data.const.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "SkillDataModel",
                     "defaultValue": "{\r\n  dataStructuresAndAlgorithms: {\r\n    label: 'Data Structures and Algorithms',\r\n    order: 0,\r\n  },\r\n  english: {\r\n    label: 'English - B2',\r\n    order: 1,\r\n  },\r\n  polish: {\r\n    label: 'Polish - Native',\r\n    order: 2,\r\n  },\r\n}"
                 }
             ],
-            "src/data/technology/technology-data.const.ts": [
+            "src/app/data/technology/technology-data.const.ts": [
                 {
                     "name": "technologyDataConst",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/data/technology/technology-data.const.ts",
+                    "file": "src/app/data/technology/technology-data.const.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "TechnologyDataModel",
                     "defaultValue": "{\r\n  // Frontend\r\n  html: {\r\n    label: 'HTML',\r\n    order: 0,\r\n    group: TechnologyGroupDataEnum.frontend,\r\n  },\r\n  css: {\r\n    label: 'CSS',\r\n    order: 1,\r\n    group: TechnologyGroupDataEnum.frontend,\r\n  },\r\n  sass: {\r\n    label: 'SASS',\r\n    order: 2,\r\n    group: TechnologyGroupDataEnum.frontend,\r\n  },\r\n  storybook: {\r\n    label: 'Storybook',\r\n    order: 3,\r\n    group: TechnologyGroupDataEnum.frontend,\r\n  },\r\n  // Programming Language\r\n  javascript: {\r\n    label: 'JavaScript',\r\n    order: 0,\r\n    group: TechnologyGroupDataEnum.programmingLanguage,\r\n  },\r\n  typescript: {\r\n    label: 'TypeScript',\r\n    order: 1,\r\n    group: TechnologyGroupDataEnum.programmingLanguage,\r\n  },\r\n  // Framework\r\n  angular: {\r\n    label: 'Angular',\r\n    order: 0,\r\n    group: TechnologyGroupDataEnum.framework,\r\n  },\r\n  // Library\r\n  ngrx: {\r\n    label: 'NgRx',\r\n    order: 0,\r\n    group: TechnologyGroupDataEnum.library,\r\n  },\r\n  rxjs: {\r\n    label: 'RxJS',\r\n    order: 1,\r\n    group: TechnologyGroupDataEnum.library,\r\n  },\r\n  primeng: {\r\n    label: 'PrimeNG',\r\n    order: 2,\r\n    group: TechnologyGroupDataEnum.library,\r\n  },\r\n  // Database\r\n  sql: {\r\n    label: 'SQL',\r\n    order: 0,\r\n    group: TechnologyGroupDataEnum.database,\r\n  },\r\n  microsoftSqlServer: {\r\n    label: 'Microsoft SQL Server',\r\n    order: 1,\r\n    group: TechnologyGroupDataEnum.database,\r\n  },\r\n  // Test\r\n  jest: {\r\n    label: 'Jest',\r\n    order: 0,\r\n    group: TechnologyGroupDataEnum.test,\r\n  },\r\n  postman: {\r\n    label: 'Postman',\r\n    order: 1,\r\n    group: TechnologyGroupDataEnum.test,\r\n  },\r\n  soapui: {\r\n    label: 'SoapUI',\r\n    order: 2,\r\n    group: TechnologyGroupDataEnum.test,\r\n  },\r\n  // Tool\r\n  nodejs: {\r\n    label: 'Node.js',\r\n    order: 0,\r\n    group: TechnologyGroupDataEnum.tool,\r\n  },\r\n  nx: {\r\n    label: 'Nx',\r\n    order: 1,\r\n    group: TechnologyGroupDataEnum.tool,\r\n  },\r\n  docker: {\r\n    label: 'Docker',\r\n    order: 2,\r\n    group: TechnologyGroupDataEnum.tool,\r\n  },\r\n  git: {\r\n    label: 'Git',\r\n    order: 3,\r\n    group: TechnologyGroupDataEnum.tool,\r\n  },\r\n  github: {\r\n    label: 'GitHub',\r\n    order: 4,\r\n    group: TechnologyGroupDataEnum.tool,\r\n  },\r\n  gitlab: {\r\n    label: 'GitLab',\r\n    order: 5,\r\n    group: TechnologyGroupDataEnum.tool,\r\n  },\r\n  npm: {\r\n    label: 'npm',\r\n    order: 6,\r\n    group: TechnologyGroupDataEnum.tool,\r\n  },\r\n  pnpm: {\r\n    label: 'pnpm',\r\n    order: 7,\r\n    group: TechnologyGroupDataEnum.tool,\r\n  },\r\n  eslint: {\r\n    label: 'ESLint',\r\n    order: 8,\r\n    group: TechnologyGroupDataEnum.tool,\r\n  },\r\n  prettier: {\r\n    label: 'Prettier',\r\n    order: 9,\r\n    group: TechnologyGroupDataEnum.tool,\r\n  },\r\n  stylelint: {\r\n    label: 'Stylelint',\r\n    order: 10,\r\n    group: TechnologyGroupDataEnum.tool,\r\n  },\r\n  webstorm: {\r\n    label: 'WebStorm',\r\n    order: 11,\r\n    group: TechnologyGroupDataEnum.tool,\r\n  },\r\n  visualStudioCode: {\r\n    label: 'Visual Studio Code',\r\n    order: 12,\r\n    group: TechnologyGroupDataEnum.tool,\r\n  },\r\n  // Operating System\r\n  windows: {\r\n    label: 'Windows',\r\n    order: 0,\r\n    group: TechnologyGroupDataEnum.operatingSystem,\r\n  },\r\n  linux: {\r\n    label: 'Linux',\r\n    order: 1,\r\n    group: TechnologyGroupDataEnum.operatingSystem,\r\n  },\r\n  // Architecture\r\n  enterpriseArchitect: {\r\n    label: 'Enterprise Architect',\r\n    order: 0,\r\n    group: TechnologyGroupDataEnum.architecture,\r\n  },\r\n  // iPaaS\r\n  snapLogic: {\r\n    label: 'SnapLogic',\r\n    order: 0,\r\n    group: TechnologyGroupDataEnum.ipaas,\r\n  },\r\n  // RPA\r\n  uiPath: {\r\n    label: 'UIPath',\r\n    order: 0,\r\n    group: TechnologyGroupDataEnum.rpa,\r\n  },\r\n  // Document Generation\r\n  goSmartDesigner: {\r\n    label: 'goSmart Designer',\r\n    order: 0,\r\n    group: TechnologyGroupDataEnum.documentGeneration,\r\n  },\r\n}"
                 }
             ],
-            "src/data/technology-group/technology-group-data.const.ts": [
+            "src/app/data/technology-group/technology-group-data.const.ts": [
                 {
                     "name": "technologyGroupDataConst",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/data/technology-group/technology-group-data.const.ts",
+                    "file": "src/app/data/technology-group/technology-group-data.const.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "TechnologyGroupDataModel",
-                    "defaultValue": "{\r\n  frontend: {\r\n    label: 'Frontend',\r\n    order: 0,\r\n  },\r\n  programmingLanguage: {\r\n    label: 'Programming Language',\r\n    order: 1,\r\n  },\r\n  framework: {\r\n    label: 'Framework',\r\n    order: 2,\r\n  },\r\n  library: {\r\n    label: 'Library',\r\n    order: 3,\r\n  },\r\n  database: {\r\n    label: 'Database',\r\n    order: 4,\r\n  },\r\n  test: {\r\n    label: 'Test',\r\n    order: 5,\r\n  },\r\n  tool: {\r\n    label: 'Tool',\r\n    order: 6,\r\n  },\r\n  operatingSystem: {\r\n    label: 'Operating System',\r\n    order: 7,\r\n  },\r\n  architecture: {\r\n    label: 'Architecture',\r\n    order: 8,\r\n  },\r\n  ipaas: {\r\n    label: 'iPaaS',\r\n    order: 9,\r\n  },\r\n  rpa: {\r\n    label: 'RPA',\r\n    order: 10,\r\n  },\r\n  documentGeneration: {\r\n    label: 'Document Generation',\r\n    order: 11,\r\n  },\r\n}"
+                    "defaultValue": "{\r\n  frontend: {\r\n    group: TechnologyGroupDataEnum.frontend,\r\n    label: 'Frontend',\r\n    order: 0,\r\n  },\r\n  programmingLanguage: {\r\n    group: TechnologyGroupDataEnum.programmingLanguage,\r\n    label: 'Programming Language',\r\n    order: 1,\r\n  },\r\n  framework: {\r\n    group: TechnologyGroupDataEnum.framework,\r\n    label: 'Framework',\r\n    order: 2,\r\n  },\r\n  library: {\r\n    group: TechnologyGroupDataEnum.library,\r\n    label: 'Library',\r\n    order: 3,\r\n  },\r\n  database: {\r\n    group: TechnologyGroupDataEnum.database,\r\n    label: 'Database',\r\n    order: 4,\r\n  },\r\n  test: {\r\n    group: TechnologyGroupDataEnum.test,\r\n    label: 'Test',\r\n    order: 5,\r\n  },\r\n  tool: {\r\n    group: TechnologyGroupDataEnum.tool,\r\n    label: 'Tool',\r\n    order: 6,\r\n  },\r\n  operatingSystem: {\r\n    group: TechnologyGroupDataEnum.operatingSystem,\r\n    label: 'Operating System',\r\n    order: 7,\r\n  },\r\n  architecture: {\r\n    group: TechnologyGroupDataEnum.architecture,\r\n    label: 'Architecture',\r\n    order: 8,\r\n  },\r\n  ipaas: {\r\n    group: TechnologyGroupDataEnum.ipaas,\r\n    label: 'iPaaS',\r\n    order: 9,\r\n  },\r\n  rpa: {\r\n    group: TechnologyGroupDataEnum.rpa,\r\n    label: 'RPA',\r\n    order: 10,\r\n  },\r\n  documentGeneration: {\r\n    group: TechnologyGroupDataEnum.documentGeneration,\r\n    label: 'Document Generation',\r\n    order: 11,\r\n  },\r\n}"
                 }
             ]
         },
         "groupedFunctions": {},
         "groupedEnumerations": {
-            "src/data/company/company-data.enum.ts": [
+            "src/app/data/company/company-data.enum.ts": [
                 {
                     "name": "CompanyDataEnum",
                     "childs": [
@@ -3312,10 +3571,10 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
-                    "file": "src/data/company/company-data.enum.ts"
+                    "file": "src/app/data/company/company-data.enum.ts"
                 }
             ],
-            "src/data/group/group-data.enum.ts": [
+            "src/app/data/group/group-data.enum.ts": [
                 {
                     "name": "GroupDataEnum",
                     "childs": [
@@ -3343,13 +3602,19 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
-                    "file": "src/data/group/group-data.enum.ts"
+                    "file": "src/app/data/group/group-data.enum.ts"
                 }
             ],
-            "src/enum/palette.enum.ts": [
+            "src/app/enum/palette.enum.ts": [
                 {
                     "name": "PaletteEnum",
                     "childs": [
+                        {
+                            "name": "none",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "value": "none"
+                        },
                         {
                             "name": "primary",
                             "deprecated": false,
@@ -3361,6 +3626,24 @@
                             "deprecated": false,
                             "deprecationMessage": "",
                             "value": "main"
+                        },
+                        {
+                            "name": "surface",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "value": "surface"
+                        },
+                        {
+                            "name": "secondary",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "value": "secondary"
+                        },
+                        {
+                            "name": "muted",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "value": "muted"
                         }
                     ],
                     "ctype": "miscellaneous",
@@ -3368,10 +3651,10 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
-                    "file": "src/enum/palette.enum.ts"
+                    "file": "src/app/enum/palette.enum.ts"
                 }
             ],
-            "src/data/resume/resume-data.enum.ts": [
+            "src/app/data/resume/resume-data.enum.ts": [
                 {
                     "name": "ResumeLangDataEnum",
                     "childs": [
@@ -3393,10 +3676,10 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
-                    "file": "src/data/resume/resume-data.enum.ts"
+                    "file": "src/app/data/resume/resume-data.enum.ts"
                 }
             ],
-            "src/data/section/section-data.enum.ts": [
+            "src/app/data/section/section-data.enum.ts": [
                 {
                     "name": "SectionDataEnum",
                     "childs": [
@@ -3472,10 +3755,10 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
-                    "file": "src/data/section/section-data.enum.ts"
+                    "file": "src/app/data/section/section-data.enum.ts"
                 }
             ],
-            "src/data/skill/skill-data.enum.ts": [
+            "src/app/data/skill/skill-data.enum.ts": [
                 {
                     "name": "SkillKindDataEnum",
                     "childs": [
@@ -3503,10 +3786,10 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
-                    "file": "src/data/skill/skill-data.enum.ts"
+                    "file": "src/app/data/skill/skill-data.enum.ts"
                 }
             ],
-            "src/data/technology/technology-data.enum.ts": [
+            "src/app/data/technology/technology-data.enum.ts": [
                 {
                     "name": "TechnologyDataEnum",
                     "childs": [
@@ -3720,10 +4003,10 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
-                    "file": "src/data/technology/technology-data.enum.ts"
+                    "file": "src/app/data/technology/technology-data.enum.ts"
                 }
             ],
-            "src/data/technology-group/technology-group-data.enum.ts": [
+            "src/app/data/technology-group/technology-group-data.enum.ts": [
                 {
                     "name": "TechnologyGroupDataEnum",
                     "childs": [
@@ -3805,96 +4088,96 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
-                    "file": "src/data/technology-group/technology-group-data.enum.ts"
+                    "file": "src/app/data/technology-group/technology-group-data.enum.ts"
                 }
             ]
         },
         "groupedTypeAliases": {
-            "src/data/company/company-data.model.ts": [
+            "src/app/data/company/company-data.model.ts": [
                 {
                     "name": "CompanyDataModel",
                     "ctype": "miscellaneous",
                     "subtype": "typealias",
                     "rawtype": "Record<CompanyDataEnum | CompanyModel>",
-                    "file": "src/data/company/company-data.model.ts",
+                    "file": "src/app/data/company/company-data.model.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
                     "kind": 184
                 }
             ],
-            "src/data/education/education-data.model.ts": [
+            "src/app/data/education/education-data.model.ts": [
                 {
                     "name": "EducationDataModel",
                     "ctype": "miscellaneous",
                     "subtype": "typealias",
                     "rawtype": "EducationModel[]",
-                    "file": "src/data/education/education-data.model.ts",
+                    "file": "src/app/data/education/education-data.model.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
                     "kind": 189
                 }
             ],
-            "src/data/experience/experience-data.model.ts": [
+            "src/app/data/experience/experience-data.model.ts": [
                 {
                     "name": "ExperienceDataModel",
                     "ctype": "miscellaneous",
                     "subtype": "typealias",
                     "rawtype": "ExperienceModel[]",
-                    "file": "src/data/experience/experience-data.model.ts",
+                    "file": "src/app/data/experience/experience-data.model.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
                     "kind": 189
                 }
             ],
-            "src/data/group/group-data.model.ts": [
+            "src/app/data/group/group-data.model.ts": [
                 {
                     "name": "GroupDataModel",
                     "ctype": "miscellaneous",
                     "subtype": "typealias",
                     "rawtype": "Record<GroupDataEnum | GroupModel>",
-                    "file": "src/data/group/group-data.model.ts",
+                    "file": "src/app/data/group/group-data.model.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
                     "kind": 184
                 }
             ],
-            "src/component/link/link.type.ts": [
+            "src/app/component/link/link.type.ts": [
                 {
                     "name": "LinkType",
                     "ctype": "miscellaneous",
                     "subtype": "typealias",
                     "rawtype": "\"page\" | \"email\" | \"phone\"",
-                    "file": "src/component/link/link.type.ts",
+                    "file": "src/app/component/link/link.type.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
                     "kind": 193
                 }
             ],
-            "src/data/resume/resume-data.model.ts": [
+            "src/app/data/resume/resume-data.model.ts": [
                 {
                     "name": "ResumeDataModel",
                     "ctype": "miscellaneous",
                     "subtype": "typealias",
                     "rawtype": "ResumeModel[]",
-                    "file": "src/data/resume/resume-data.model.ts",
+                    "file": "src/app/data/resume/resume-data.model.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
                     "kind": 189
                 }
             ],
-            "src/data/section/section-data.model.ts": [
+            "src/app/data/section/section-data.model.ts": [
                 {
                     "name": "SectionDataModel",
                     "ctype": "miscellaneous",
                     "subtype": "typealias",
                     "rawtype": "Record<SectionDataEnum | SectionModel>",
-                    "file": "src/data/section/section-data.model.ts",
+                    "file": "src/app/data/section/section-data.model.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -3905,72 +4188,72 @@
                     "ctype": "miscellaneous",
                     "subtype": "typealias",
                     "rawtype": "RoutableEnabledModel | RoutableDisabledModel",
-                    "file": "src/data/section/section-data.model.ts",
+                    "file": "src/app/data/section/section-data.model.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
                     "kind": 193
                 }
             ],
-            "src/data/skill/skill-data.model.ts": [
+            "src/app/data/skill/skill-data.model.ts": [
                 {
                     "name": "SkillDataModel",
                     "ctype": "miscellaneous",
                     "subtype": "typealias",
                     "rawtype": "Record<SkillKindDataEnum | SkillModel>",
-                    "file": "src/data/skill/skill-data.model.ts",
+                    "file": "src/app/data/skill/skill-data.model.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
                     "kind": 184
                 }
             ],
-            "src/store/store.type.ts": [
+            "src/app/store/store.type.ts": [
                 {
                     "name": "StoreType",
                     "ctype": "miscellaneous",
                     "subtype": "typealias",
                     "rawtype": "literal type",
-                    "file": "src/store/store.type.ts",
+                    "file": "src/app/store/store.type.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
                     "kind": 188
                 }
             ],
-            "src/data/technology/technology-data.model.ts": [
+            "src/app/data/technology/technology-data.model.ts": [
                 {
                     "name": "TechnologyDataModel",
                     "ctype": "miscellaneous",
                     "subtype": "typealias",
                     "rawtype": "Record<TechnologyDataEnum | TechnologyModel>",
-                    "file": "src/data/technology/technology-data.model.ts",
+                    "file": "src/app/data/technology/technology-data.model.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
                     "kind": 184
                 }
             ],
-            "src/data/technology-group/technology-group-data.model.ts": [
+            "src/app/data/technology-group/technology-group-data.model.ts": [
                 {
                     "name": "TechnologyGroupDataModel",
                     "ctype": "miscellaneous",
                     "subtype": "typealias",
                     "rawtype": "Record<TechnologyGroupDataEnum | TechnologyGroupModel>",
-                    "file": "src/data/technology-group/technology-group-data.model.ts",
+                    "file": "src/app/data/technology-group/technology-group-data.model.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
                     "kind": 184
                 }
             ],
-            "src/component/text/text.type.ts": [
+            "src/app/component/text/text.type.ts": [
                 {
                     "name": "TextType",
                     "ctype": "miscellaneous",
                     "subtype": "typealias",
-                    "rawtype": "\"p\" | \"h1\" | \"h2\" | \"h3\"",
-                    "file": "src/component/text/text.type.ts",
+                    "rawtype": "\"small\" | \"p\" | \"h1\" | \"h2\" | \"h3\"",
+                    "file": "src/app/component/text/text.type.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -3989,7 +4272,7 @@
         "status": "low",
         "files": [
             {
-                "filePath": "src/component/link/link.component.ts",
+                "filePath": "src/app/component/link/link.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "LinkComponent",
@@ -3998,7 +4281,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/component/link/link.type.ts",
+                "filePath": "src/app/component/link/link.type.ts",
                 "type": "type alias",
                 "linktype": "miscellaneous",
                 "linksubtype": "typealias",
@@ -4008,7 +4291,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/component/section/section.component.ts",
+                "filePath": "src/app/component/section/section.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "SectionComponent",
@@ -4017,16 +4300,16 @@
                 "status": "low"
             },
             {
-                "filePath": "src/component/text/text.component.ts",
+                "filePath": "src/app/component/text/text.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "TextComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/3",
+                "coverageCount": "0/5",
                 "status": "low"
             },
             {
-                "filePath": "src/component/text/text.type.ts",
+                "filePath": "src/app/component/text/text.type.ts",
                 "type": "type alias",
                 "linktype": "miscellaneous",
                 "linksubtype": "typealias",
@@ -4036,7 +4319,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/config/config.ts",
+                "filePath": "src/app/config/config.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -4046,7 +4329,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/data/about-me/about-me-data.const.ts",
+                "filePath": "src/app/data/about-me/about-me-data.const.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -4056,7 +4339,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/data/about-me/about-me-data.model.ts",
+                "filePath": "src/app/data/about-me/about-me-data.model.ts",
                 "type": "interface",
                 "linktype": "interface",
                 "name": "AboutMeDataModel",
@@ -4065,7 +4348,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/data/company/company-data.const.ts",
+                "filePath": "src/app/data/company/company-data.const.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -4075,7 +4358,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/data/company/company-data.model.ts",
+                "filePath": "src/app/data/company/company-data.model.ts",
                 "type": "interface",
                 "linktype": "interface",
                 "name": "CompanyModel",
@@ -4084,7 +4367,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/data/company/company-data.model.ts",
+                "filePath": "src/app/data/company/company-data.model.ts",
                 "type": "type alias",
                 "linktype": "miscellaneous",
                 "linksubtype": "typealias",
@@ -4094,7 +4377,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/data/education/education-data.const.ts",
+                "filePath": "src/app/data/education/education-data.const.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -4104,7 +4387,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/data/education/education-data.model.ts",
+                "filePath": "src/app/data/education/education-data.model.ts",
                 "type": "interface",
                 "linktype": "interface",
                 "name": "EducationModel",
@@ -4113,7 +4396,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/data/education/education-data.model.ts",
+                "filePath": "src/app/data/education/education-data.model.ts",
                 "type": "type alias",
                 "linktype": "miscellaneous",
                 "linksubtype": "typealias",
@@ -4123,7 +4406,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/data/experience/experience-data.const.ts",
+                "filePath": "src/app/data/experience/experience-data.const.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -4133,7 +4416,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/data/experience/experience-data.model.ts",
+                "filePath": "src/app/data/experience/experience-data.model.ts",
                 "type": "interface",
                 "linktype": "interface",
                 "name": "ExperienceModel",
@@ -4142,7 +4425,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/data/experience/experience-data.model.ts",
+                "filePath": "src/app/data/experience/experience-data.model.ts",
                 "type": "type alias",
                 "linktype": "miscellaneous",
                 "linksubtype": "typealias",
@@ -4152,7 +4435,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/data/group/group-data.const.ts",
+                "filePath": "src/app/data/group/group-data.const.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -4162,7 +4445,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/data/group/group-data.model.ts",
+                "filePath": "src/app/data/group/group-data.model.ts",
                 "type": "interface",
                 "linktype": "interface",
                 "name": "GroupModel",
@@ -4171,7 +4454,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/data/group/group-data.model.ts",
+                "filePath": "src/app/data/group/group-data.model.ts",
                 "type": "type alias",
                 "linktype": "miscellaneous",
                 "linksubtype": "typealias",
@@ -4181,7 +4464,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/data/home/home-data.const.ts",
+                "filePath": "src/app/data/home/home-data.const.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -4191,7 +4474,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/data/home/home-data.model.ts",
+                "filePath": "src/app/data/home/home-data.model.ts",
                 "type": "interface",
                 "linktype": "interface",
                 "name": "HomeDataModel",
@@ -4200,7 +4483,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/data/personal/personal-data.const.ts",
+                "filePath": "src/app/data/personal/personal-data.const.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -4210,7 +4493,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/data/personal/personal-data.model.ts",
+                "filePath": "src/app/data/personal/personal-data.model.ts",
                 "type": "interface",
                 "linktype": "interface",
                 "name": "PersonalDataModel",
@@ -4219,7 +4502,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/data/personal/personal-data.model.ts",
+                "filePath": "src/app/data/personal/personal-data.model.ts",
                 "type": "interface",
                 "linktype": "interface",
                 "name": "SocialMediaModel",
@@ -4228,7 +4511,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/data/resume/resume-data.const.ts",
+                "filePath": "src/app/data/resume/resume-data.const.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -4238,7 +4521,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/data/resume/resume-data.model.ts",
+                "filePath": "src/app/data/resume/resume-data.model.ts",
                 "type": "interface",
                 "linktype": "interface",
                 "name": "ResumeModel",
@@ -4247,7 +4530,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/data/resume/resume-data.model.ts",
+                "filePath": "src/app/data/resume/resume-data.model.ts",
                 "type": "type alias",
                 "linktype": "miscellaneous",
                 "linksubtype": "typealias",
@@ -4257,7 +4540,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/data/section/section-data.const.ts",
+                "filePath": "src/app/data/section/section-data.const.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -4267,16 +4550,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/data/section/section-data.model.ts",
-                "type": "interface",
-                "linktype": "interface",
-                "name": "HeaderModel",
-                "coveragePercent": 0,
-                "coverageCount": "0/3",
-                "status": "low"
-            },
-            {
-                "filePath": "src/data/section/section-data.model.ts",
+                "filePath": "src/app/data/section/section-data.model.ts",
                 "type": "interface",
                 "linktype": "interface",
                 "name": "RoutableDisabledModel",
@@ -4285,7 +4559,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/data/section/section-data.model.ts",
+                "filePath": "src/app/data/section/section-data.model.ts",
                 "type": "interface",
                 "linktype": "interface",
                 "name": "RoutableEnabledModel",
@@ -4294,16 +4568,16 @@
                 "status": "low"
             },
             {
-                "filePath": "src/data/section/section-data.model.ts",
+                "filePath": "src/app/data/section/section-data.model.ts",
                 "type": "interface",
                 "linktype": "interface",
                 "name": "SectionModel",
                 "coveragePercent": 0,
-                "coverageCount": "0/9",
+                "coverageCount": "0/10",
                 "status": "low"
             },
             {
-                "filePath": "src/data/section/section-data.model.ts",
+                "filePath": "src/app/data/section/section-data.model.ts",
                 "type": "interface",
                 "linktype": "interface",
                 "name": "StyleModel",
@@ -4312,7 +4586,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/data/section/section-data.model.ts",
+                "filePath": "src/app/data/section/section-data.model.ts",
                 "type": "type alias",
                 "linktype": "miscellaneous",
                 "linksubtype": "typealias",
@@ -4322,7 +4596,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/data/section/section-data.model.ts",
+                "filePath": "src/app/data/section/section-data.model.ts",
                 "type": "type alias",
                 "linktype": "miscellaneous",
                 "linksubtype": "typealias",
@@ -4332,7 +4606,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/data/skill/skill-data.const.ts",
+                "filePath": "src/app/data/skill/skill-data.const.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -4342,7 +4616,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/data/skill/skill-data.model.ts",
+                "filePath": "src/app/data/skill/skill-data.model.ts",
                 "type": "interface",
                 "linktype": "interface",
                 "name": "SkillModel",
@@ -4351,7 +4625,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/data/skill/skill-data.model.ts",
+                "filePath": "src/app/data/skill/skill-data.model.ts",
                 "type": "type alias",
                 "linktype": "miscellaneous",
                 "linksubtype": "typealias",
@@ -4361,7 +4635,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/data/technology-group/technology-group-data.const.ts",
+                "filePath": "src/app/data/technology-group/technology-group-data.const.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -4371,16 +4645,16 @@
                 "status": "low"
             },
             {
-                "filePath": "src/data/technology-group/technology-group-data.model.ts",
+                "filePath": "src/app/data/technology-group/technology-group-data.model.ts",
                 "type": "interface",
                 "linktype": "interface",
                 "name": "TechnologyGroupModel",
                 "coveragePercent": 0,
-                "coverageCount": "0/3",
+                "coverageCount": "0/4",
                 "status": "low"
             },
             {
-                "filePath": "src/data/technology-group/technology-group-data.model.ts",
+                "filePath": "src/app/data/technology-group/technology-group-data.model.ts",
                 "type": "type alias",
                 "linktype": "miscellaneous",
                 "linksubtype": "typealias",
@@ -4390,7 +4664,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/data/technology/technology-data.const.ts",
+                "filePath": "src/app/data/technology/technology-data.const.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -4400,7 +4674,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/data/technology/technology-data.model.ts",
+                "filePath": "src/app/data/technology/technology-data.model.ts",
                 "type": "interface",
                 "linktype": "interface",
                 "name": "TechnologyModel",
@@ -4409,7 +4683,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/data/technology/technology-data.model.ts",
+                "filePath": "src/app/data/technology/technology-data.model.ts",
                 "type": "type alias",
                 "linktype": "miscellaneous",
                 "linksubtype": "typealias",
@@ -4419,7 +4693,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/store/store.core.ts",
+                "filePath": "src/app/store/store.core.ts",
                 "type": "class",
                 "linktype": "classe",
                 "name": "StoreCore",
@@ -4428,7 +4702,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/store/store.reducer.ts",
+                "filePath": "src/app/store/store.reducer.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -4438,7 +4712,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/store/store.reducer.ts",
+                "filePath": "src/app/store/store.reducer.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -4448,7 +4722,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/store/store.reducer.ts",
+                "filePath": "src/app/store/store.reducer.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -4458,7 +4732,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/store/store.reducer.ts",
+                "filePath": "src/app/store/store.reducer.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -4468,7 +4742,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/store/store.reducer.ts",
+                "filePath": "src/app/store/store.reducer.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -4478,7 +4752,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/store/store.reducer.ts",
+                "filePath": "src/app/store/store.reducer.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -4488,7 +4762,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/store/store.reducer.ts",
+                "filePath": "src/app/store/store.reducer.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -4498,7 +4772,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/store/store.reducer.ts",
+                "filePath": "src/app/store/store.reducer.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -4508,7 +4782,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/store/store.reducer.ts",
+                "filePath": "src/app/store/store.reducer.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -4518,7 +4792,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/store/store.reducer.ts",
+                "filePath": "src/app/store/store.reducer.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -4528,7 +4802,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/store/store.reducer.ts",
+                "filePath": "src/app/store/store.reducer.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -4538,7 +4812,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/store/store.reducer.ts",
+                "filePath": "src/app/store/store.reducer.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -4548,7 +4822,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/store/store.type.ts",
+                "filePath": "src/app/store/store.type.ts",
                 "type": "type alias",
                 "linktype": "miscellaneous",
                 "linksubtype": "typealias",
@@ -4558,7 +4832,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/util/bem.util.ts",
+                "filePath": "src/app/util/bem.util.ts",
                 "type": "injectable",
                 "linktype": "injectable",
                 "name": "BemUtil",
@@ -4567,7 +4841,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/util/date.util.ts",
+                "filePath": "src/app/util/date.util.ts",
                 "type": "injectable",
                 "linktype": "injectable",
                 "name": "DateUtil",
@@ -4576,7 +4850,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/util/storybook.util.ts",
+                "filePath": "src/app/util/storybook.util.ts",
                 "type": "injectable",
                 "linktype": "injectable",
                 "name": "StorybookUtil",
@@ -4585,7 +4859,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/view/footer/contact/contact.view.ts",
+                "filePath": "src/app/view/footer/contact/contact.view.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "ContactView",
@@ -4594,7 +4868,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/view/footer/copyright/copyright.view.ts",
+                "filePath": "src/app/view/footer/copyright/copyright.view.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "CopyrightView",
@@ -4603,7 +4877,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/view/footer/footer.view.ts",
+                "filePath": "src/app/view/footer/footer.view.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "FooterView",
@@ -4612,7 +4886,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/view/header/header.view.ts",
+                "filePath": "src/app/view/header/header.view.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "HeaderView",
@@ -4621,7 +4895,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/view/header/home/home.view.ts",
+                "filePath": "src/app/view/header/home/home.view.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "HomeView",
@@ -4630,25 +4904,25 @@
                 "status": "low"
             },
             {
-                "filePath": "src/view/header/navigation/navigation.view.ts",
+                "filePath": "src/app/view/header/navigation/navigation.view.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "NavigationView",
                 "coveragePercent": 0,
-                "coverageCount": "0/1",
+                "coverageCount": "0/8",
                 "status": "low"
             },
             {
-                "filePath": "src/view/main/about-me/about-me.view.ts",
+                "filePath": "src/app/view/main/about-me/about-me.view.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "AboutMeView",
                 "coveragePercent": 0,
-                "coverageCount": "0/1",
+                "coverageCount": "0/3",
                 "status": "low"
             },
             {
-                "filePath": "src/view/main/education/education.view.ts",
+                "filePath": "src/app/view/main/education/education.view.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "EducationView",
@@ -4657,7 +4931,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/view/main/experience/experience.view.ts",
+                "filePath": "src/app/view/main/experience/experience.view.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "ExperienceView",
@@ -4666,7 +4940,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/view/main/main.view.ts",
+                "filePath": "src/app/view/main/main.view.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "MainView",
@@ -4675,7 +4949,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/view/main/projects/projects.view.ts",
+                "filePath": "src/app/view/main/projects/projects.view.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "ProjectsView",
@@ -4684,7 +4958,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/view/main/resume/resume.view.ts",
+                "filePath": "src/app/view/main/resume/resume.view.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "ResumeView",
@@ -4693,25 +4967,25 @@
                 "status": "low"
             },
             {
-                "filePath": "src/view/main/skills/skills.view.ts",
+                "filePath": "src/app/view/main/skills/skills.view.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "SkillsView",
                 "coveragePercent": 0,
-                "coverageCount": "0/1",
+                "coverageCount": "0/3",
                 "status": "low"
             },
             {
-                "filePath": "src/view/main/technologies/technologies.view.ts",
+                "filePath": "src/app/view/main/technologies/technologies.view.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "TechnologiesView",
                 "coveragePercent": 0,
-                "coverageCount": "0/1",
+                "coverageCount": "0/3",
                 "status": "low"
             },
             {
-                "filePath": "src/view/view.ts",
+                "filePath": "src/app/view/view.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "View",
