@@ -2,9 +2,16 @@
   <header class="navigation__header">
     <text-component type="h2" value="Jakub Olejarczyk"></text-component>
   </header>
-  <div class="navigation__hamburger">
+  <div class="navigation__hamburger" (click)="onClick()">
     <div class="navigation__line"></div>
     <div class="navigation__line"></div>
     <div class="navigation__line"></div>
   </div>
+  @if (isMenu || isMobile) {
+    <div class="navigation__menu">
+      @for (section of sections(); track section) {
+        <text-component type="p" [value]="section.label"></text-component>
+      }
+    </div>
+  }
 </div>
