@@ -12,6 +12,7 @@ export class FooterView extends StoreCore {
   sections = this.store.selectSignal((state) => {
     return Object.values(state.section)
       .filter((section) => section.group === GroupDataEnum.footer)
+      .filter((section) => section.enabled)
       .sort((prev, next) => prev.order - next.order);
   });
 }

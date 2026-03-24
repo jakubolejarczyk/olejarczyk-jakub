@@ -25,6 +25,7 @@ interface SectionModel {
   view: any;
   style: StyleModel;
   order: number;
+  enabled: boolean;
 }
 
 export type SectionDataModel = Record<SectionDataEnum, SectionModel>;

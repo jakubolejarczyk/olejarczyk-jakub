@@ -26,6 +26,7 @@ export const sectionDataConst: SectionDataModel = {
     style: {
       palette: PaletteEnum.primary,
     },
+    enabled: false,
     order: 0,
   },
   home: {
@@ -40,6 +41,7 @@ export const sectionDataConst: SectionDataModel = {
     style: {
       palette: PaletteEnum.primary,
     },
+    enabled: false,
     order: 1,
   },
   aboutMe: {
@@ -52,8 +54,9 @@ export const sectionDataConst: SectionDataModel = {
     group: GroupDataEnum.main,
     view: AboutMeView,
     style: {
-      palette: PaletteEnum.surface,
+      palette: PaletteEnum.main,
     },
+    enabled: true,
     order: 0,
   },
   technologies: {
@@ -66,8 +69,9 @@ export const sectionDataConst: SectionDataModel = {
     group: GroupDataEnum.main,
     view: TechnologiesView,
     style: {
-      palette: PaletteEnum.main,
+      palette: PaletteEnum.surface,
     },
+    enabled: true,
     order: 1,
   },
   skills: {
@@ -80,8 +84,9 @@ export const sectionDataConst: SectionDataModel = {
     group: GroupDataEnum.main,
     view: SkillsView,
     style: {
-      palette: PaletteEnum.main,
+      palette: PaletteEnum.surface,
     },
+    enabled: true,
     order: 2,
   },
   experience: {
@@ -96,6 +101,7 @@ export const sectionDataConst: SectionDataModel = {
     style: {
       palette: PaletteEnum.main,
     },
+    enabled: false,
     order: 3,
   },
   resume: {
@@ -110,6 +116,7 @@ export const sectionDataConst: SectionDataModel = {
     style: {
       palette: PaletteEnum.main,
     },
+    enabled: false,
     order: 4,
   },
   projects: {
@@ -124,6 +131,7 @@ export const sectionDataConst: SectionDataModel = {
     style: {
       palette: PaletteEnum.main,
     },
+    enabled: false,
     order: 5,
   },
   education: {
@@ -137,6 +145,7 @@ export const sectionDataConst: SectionDataModel = {
     style: {
       palette: PaletteEnum.main,
     },
+    enabled: true,
     view: EducationView,
     order: 6,
   },
@@ -152,6 +161,7 @@ export const sectionDataConst: SectionDataModel = {
     style: {
       palette: PaletteEnum.primary,
     },
+    enabled: true,
     order: 0,
   },
   copyright: {
@@ -165,6 +175,7 @@ export const sectionDataConst: SectionDataModel = {
     style: {
       palette: PaletteEnum.primary,
     },
+    enabled: true,
     order: 1,
   },
 };
