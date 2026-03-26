@@ -272,6 +272,41 @@
             "extends": []
         },
         {
+            "name": "NodeModel",
+            "id": "interface-NodeModel-714a0d4d66fe68ce9f49775c6d9075b7063ed7198beef276ff9ece3f7a159726daeb7115a70f4896376b9d21f7131c6f1914c99e283d04f2426eeedc09ea24b0",
+            "file": "src/core/model/node.model.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "export interface NodeModel {\r\n  component: any;\r\n  children?: NodeModel[];\r\n}\r\n",
+            "properties": [
+                {
+                    "name": "children",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "NodeModel[]",
+                    "indexKey": "",
+                    "optional": true,
+                    "description": "",
+                    "line": 3
+                },
+                {
+                    "name": "component",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 2
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 172,
+            "methods": [],
+            "extends": []
+        },
+        {
             "name": "PersonalDataModel",
             "id": "interface-PersonalDataModel-8480e348d95543966e215ac9c44d529efa684a3a81aa8e8c45a697c27f2a0c2e5f4cf35c359523d51269e22822e3c5715151eed85be4a875eace31f231ba1370",
             "file": "src/app/data/personal/personal-data.model.ts",
@@ -1294,6 +1329,44 @@
             "templateData": "<text-component type=\"p\" value=\"experience-view works!\"></text-component>\r\n"
         },
         {
+            "name": "FooterComponent",
+            "id": "component-FooterComponent-850ec8031d60c75319c3ff521e064d68261213d9dfa1a6aa868d289b084b7ae22be1d8b57ee7a31697aaab7cfb3676f5245fdde8c90119a9b82350d3b8ca3a1f",
+            "file": "src/generator/component/footer/footer.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "footer-component",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./footer.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'footer-component',\r\n  templateUrl: './footer.component.html',\r\n  styleUrl: './footer.component.scss',\r\n})\r\nexport class FooterComponent {}\r\n",
+            "styleUrl": "./footer.component.scss",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<p>footer component works!</p>\r\n"
+        },
+        {
             "name": "FooterView",
             "id": "component-FooterView-9d1306269de41b852f9a0ff90aa58d20f15f7f0163a4f8c9942ad209eb14271734b729fe172a3628ffc84ee9b34a0066abe2faa33343665bf8c96060b9150779",
             "file": "src/app/view/footer/footer.view.ts",
@@ -1366,6 +1439,99 @@
                 "StoreCore"
             ],
             "templateData": "<footer>\r\n  @for (section of sections(); track section) {\r\n    <section-component [section]=\"section\"></section-component>\r\n  }\r\n</footer>\r\n"
+        },
+        {
+            "name": "GeneratorComponent",
+            "id": "component-GeneratorComponent-1674200607c9a066f7e2609038a18992b9c0cb72b804bd0def452925456eee104bcff70b5c4576a881826e4f79a453614d2b2b7bcea3395cf14462681ff3680f",
+            "file": "src/component/generator/generator.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "generator-component",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./generator.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "tree",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "TreeModel",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 11,
+                    "required": false
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, input } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { TreeModel } from '../../core/model/tree.model';\r\n\r\n@Component({\r\n  selector: 'generator-component',\r\n  templateUrl: './generator.component.html',\r\n  imports: [CommonModule],\r\n})\r\nexport class GeneratorComponent {\r\n  tree = input<TreeModel>([]);\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "@for (node of tree(); track node) {\r\n  <ng-container *ngComponentOutlet=\"node.component; inputs: { tree: node.children }\"></ng-container>\r\n}\r\n"
+        },
+        {
+            "name": "HeaderComponent",
+            "id": "component-HeaderComponent-dc33421d91b732d0353e0498ea99f03d3c4c9bcdfced9479b8786dbb3ffda364a04dd0173d7576f4eac9eeccf87cd37b3ad0d7fd155cc24f3e59d821904f55ec",
+            "file": "src/generator/component/header/header.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "header-component",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./header.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'header-component',\r\n  templateUrl: './header.component.html',\r\n  styleUrl: './header.component.scss',\r\n})\r\nexport class HeaderComponent {}\r\n",
+            "styleUrl": "./header.component.scss",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<p>header component works!</p>\r\n"
         },
         {
             "name": "HeaderView",
@@ -1606,6 +1772,44 @@
             "stylesData": "",
             "extends": [],
             "templateData": "@if (external()) {\r\n  <a class=\"link\" [ngClass]=\"buildSectionClassList()\" [href]=\"buildHref()\" target=\"_blank\">\r\n    <text-component type=\"p\" [value]=\"label()\"></text-component>\r\n  </a>\r\n}\r\n"
+        },
+        {
+            "name": "MainComponent",
+            "id": "component-MainComponent-1aea1689ecfb8053d9a8aaa6f3fc30c1490623ab32c45d4b9c460d0574168e976c557affeee2a1f8791361c8c48c94eebaf28c72e295f10488e581202a4cd0c2",
+            "file": "src/generator/component/main/main.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "main-component",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./main.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'main-component',\r\n  templateUrl: './main.component.html',\r\n  styleUrl: './main.component.scss',\r\n})\r\nexport class MainComponent {}\r\n",
+            "styleUrl": "./main.component.scss",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<p>main component works!</p>\r\n"
         },
         {
             "name": "MainView",
@@ -1935,6 +2139,62 @@
             "templateData": "<text-component type=\"p\" value=\"resume-view works!\"></text-component>\r\n"
         },
         {
+            "name": "RootViewComponent",
+            "id": "component-RootViewComponent-b5436acd729347a398701d50209076bec73f74583efb97858044010b95e206943a3a829f47fea56aff097fdb21601c32f8a539d0817369d4ed6cb5d363fc4472",
+            "file": "src/component/view/root/root-view.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "root-view-component",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./root-view.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "tree",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "TreeModel",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 12,
+                    "required": false
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [
+                {
+                    "name": "GeneratorComponent",
+                    "type": "component"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, input } from '@angular/core';\r\nimport { TreeModel } from '../../../core/model/tree.model';\r\nimport { GeneratorComponent } from '../../generator/generator.component';\r\n\r\n@Component({\r\n  selector: 'root-view-component',\r\n  templateUrl: './root-view.component.html',\r\n  styleUrl: './root-view.component.scss',\r\n  imports: [GeneratorComponent],\r\n})\r\nexport class RootViewComponent {\r\n  tree = input<TreeModel>([]);\r\n}\r\n",
+            "styleUrl": "./root-view.component.scss",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<div class=\"root\">\r\n  <p>root-view component works!</p>\r\n  <generator-component [tree]=\"tree()\"></generator-component>\r\n</div>\r\n"
+        },
+        {
             "name": "SectionComponent",
             "id": "component-SectionComponent-e56e5c679992c7875b0c81bfba756d0a629929ba7c043ad6d1c2529ddb63e9b23e27cdbf4e32ba5242d1cbc396cc20d0161bccbf9a547bacd73fc861a74eb428",
             "file": "src/app/component/section/section.component.ts",
@@ -2024,6 +2284,47 @@
                 "StoreCore"
             ],
             "templateData": "<section class=\"section\" [ngClass]=\"buildSectionClassList()\">\r\n  <div class=\"section__content\">\r\n    <ng-container *ngComponentOutlet=\"section().view\"></ng-container>\r\n  </div>\r\n</section>\r\n"
+        },
+        {
+            "name": "SectionComponent",
+            "id": "component-SectionComponent-2bd339a99df1cc016fc01cfadc5d28b86c785305045d26a66e3222573a14d375b119e7d9d128af6ed90bf94b3f0bc23a7802fd53679f5ca265e429314a6c65d4-1",
+            "file": "src/generator/component/section/section.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "section-component",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./section.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'section-component',\r\n  templateUrl: './section.component.html',\r\n  styleUrl: './section.component.scss',\r\n})\r\nexport class SectionComponent {}\r\n",
+            "styleUrl": "./section.component.scss",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "isDuplicate": true,
+            "duplicateId": 1,
+            "duplicateName": "SectionComponent-1",
+            "templateData": "<p>section component works!</p>\r\n"
         },
         {
             "name": "SkillsView",
@@ -2266,7 +2567,7 @@
         },
         {
             "name": "View",
-            "id": "component-View-49bfeaac648461c98c6e71bd7d7229c4072d9fcef1acb4705710a04ecd2eedf847d27b3c2e71ab6a1db7d99af757245b49ed8c703ed65c9de9d25ac6cf8bf99b",
+            "id": "component-View-9a07cf72d4faca66166673d0169484334d50b01deeba3e8cd6cac0f40a050b4201bd163d45584e92ab84ce83424ddec6f0c575bbe94976f584dad3b34b06230f",
             "file": "src/app/view/view.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -2285,15 +2586,15 @@
             "outputsClass": [],
             "propertiesClass": [
                 {
-                    "name": "views",
-                    "defaultValue": "this.store.selectSignal((state) => {\r\n    return Object.values(state.group)\r\n      .sort((prev, next) => prev.order - next.order)\r\n      .map((item) => item.view);\r\n  })",
+                    "name": "tree",
+                    "defaultValue": "[\r\n    {\r\n      component: RootViewComponent,\r\n      children: [\r\n        {\r\n          component: RootViewComponent,\r\n          children: [\r\n            {\r\n              component: RootViewComponent,\r\n              children: [],\r\n            },\r\n          ],\r\n        },\r\n        {\r\n          component: RootViewComponent,\r\n          children: [],\r\n        },\r\n      ],\r\n    },\r\n    {\r\n      component: RootViewComponent,\r\n      children: [\r\n        {\r\n          component: RootViewComponent,\r\n          children: [],\r\n        },\r\n        {\r\n          component: RootViewComponent,\r\n          children: [],\r\n        },\r\n      ],\r\n    },\r\n    {\r\n      component: RootViewComponent,\r\n      children: [\r\n        {\r\n          component: RootViewComponent,\r\n          children: [\r\n            {\r\n              component: RootViewComponent,\r\n              children: [\r\n                {\r\n                  component: RootViewComponent,\r\n                  children: [],\r\n                },\r\n              ],\r\n            },\r\n          ],\r\n        },\r\n      ],\r\n    },\r\n    {\r\n      component: RootViewComponent,\r\n      children: [],\r\n    },\r\n  ]",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "unknown",
+                    "type": "TreeModel",
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 11
+                    "line": 13
                 },
                 {
                     "name": "store",
@@ -2322,21 +2623,21 @@
             "standalone": false,
             "imports": [
                 {
-                    "name": "NgComponentOutlet",
+                    "name": "GeneratorComponent",
                     "type": "component"
                 }
             ],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { NgComponentOutlet } from '@angular/common';\r\nimport { Component } from '@angular/core';\r\nimport { StoreCore } from '../store/store.core';\r\n\r\n@Component({\r\n  selector: 'view',\r\n  templateUrl: './view.html',\r\n  imports: [NgComponentOutlet],\r\n})\r\nexport class View extends StoreCore {\r\n  views = this.store.selectSignal((state) => {\r\n    return Object.values(state.group)\r\n      .sort((prev, next) => prev.order - next.order)\r\n      .map((item) => item.view);\r\n  });\r\n}\r\n",
+            "sourceCode": "import { Component } from '@angular/core';\r\nimport { StoreCore } from '../store/store.core';\r\nimport { GeneratorComponent } from '../../component/generator/generator.component';\r\nimport { TreeModel } from '../../core/model/tree.model';\r\nimport { RootViewComponent } from '../../component/view/root/root-view.component';\r\n\r\n@Component({\r\n  selector: 'view',\r\n  templateUrl: './view.html',\r\n  imports: [GeneratorComponent],\r\n})\r\nexport class View extends StoreCore {\r\n  tree: TreeModel = [\r\n    {\r\n      component: RootViewComponent,\r\n      children: [\r\n        {\r\n          component: RootViewComponent,\r\n          children: [\r\n            {\r\n              component: RootViewComponent,\r\n              children: [],\r\n            },\r\n          ],\r\n        },\r\n        {\r\n          component: RootViewComponent,\r\n          children: [],\r\n        },\r\n      ],\r\n    },\r\n    {\r\n      component: RootViewComponent,\r\n      children: [\r\n        {\r\n          component: RootViewComponent,\r\n          children: [],\r\n        },\r\n        {\r\n          component: RootViewComponent,\r\n          children: [],\r\n        },\r\n      ],\r\n    },\r\n    {\r\n      component: RootViewComponent,\r\n      children: [\r\n        {\r\n          component: RootViewComponent,\r\n          children: [\r\n            {\r\n              component: RootViewComponent,\r\n              children: [\r\n                {\r\n                  component: RootViewComponent,\r\n                  children: [],\r\n                },\r\n              ],\r\n            },\r\n          ],\r\n        },\r\n      ],\r\n    },\r\n    {\r\n      component: RootViewComponent,\r\n      children: [],\r\n    },\r\n  ];\r\n\r\n  // views = this.store.selectSignal((state) => {\r\n  //   return Object.values(state.group)\r\n  //     .sort((prev, next) => prev.order - next.order)\r\n  //     .map((item) => item.view);\r\n  // });\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [
                 "StoreCore"
             ],
-            "templateData": "@for (view of views(); track view) {\r\n  <ng-container *ngComponentOutlet=\"view\"></ng-container>\r\n}\r\n"
+            "templateData": "<generator-component [tree]=\"tree\"></generator-component>\r\n\r\n<!-- @for (view of views(); track view) {\r\n  <ng-container *ngComponentOutlet=\"view\"></ng-container>\r\n} -->\r\n"
         }
     ],
     "modules": [],
@@ -2737,6 +3038,17 @@
                 "deprecationMessage": "",
                 "description": "",
                 "kind": 193
+            },
+            {
+                "name": "TreeModel",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "NodeModel[]",
+                "file": "src/core/model/tree.model.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 189
             }
         ],
         "enumerations": [
@@ -4259,6 +4571,19 @@
                     "description": "",
                     "kind": 193
                 }
+            ],
+            "src/core/model/tree.model.ts": [
+                {
+                    "name": "TreeModel",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "NodeModel[]",
+                    "file": "src/core/model/tree.model.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 189
+                }
             ]
         }
     },
@@ -4991,6 +5316,79 @@
                 "name": "View",
                 "coveragePercent": 0,
                 "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/component/generator/generator.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "GeneratorComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/component/view/root/root-view.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "RootViewComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/core/model/node.model.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "NodeModel",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/core/model/tree.model.ts",
+                "type": "type alias",
+                "linktype": "miscellaneous",
+                "linksubtype": "typealias",
+                "name": "TreeModel",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/generator/component/footer/footer.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "FooterComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/generator/component/header/header.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "HeaderComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/generator/component/main/main.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "MainComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/generator/component/section/section.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "SectionComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
                 "status": "low"
             }
         ]
