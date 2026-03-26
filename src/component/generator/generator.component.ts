@@ -1,6 +1,6 @@
 import { Component, input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TreeModel } from '../../core/model/tree.model';
+// import { TreeModel } from '../../core/model/tree.model';
 
 @Component({
   selector: 'generator-component',
@@ -8,5 +8,5 @@ import { TreeModel } from '../../core/model/tree.model';
   imports: [CommonModule],
 })
 export class GeneratorComponent {
-  tree = input<TreeModel>([]);
+  tree = input<any>([]);
 }
