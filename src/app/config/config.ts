@@ -15,6 +15,7 @@ import {
   technologyGroupReducer,
   technologyReducer,
 } from '../store/store.reducer';
+import { generatorInit } from '../../generator/init/generator.init';
 
 export const config: ApplicationConfig = {
   providers: [
@@ -41,5 +42,6 @@ export const config: ApplicationConfig = {
       },
     ),
     provideStoreDevtools({ maxAge: 25, logOnly: !isDevMode() }),
+    generatorInit(),
   ],
 };
