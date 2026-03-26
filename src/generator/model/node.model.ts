@@ -1,6 +1,5 @@
-import { NodeKindEnum } from '../enum/node-kind.enum';
+import { ComponentModel } from './component.model';
 
-export interface NodeModel {
-  kind: NodeKindEnum;
+export interface NodeModel extends ComponentModel {
   children: NodeModel[];
 }
