@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { RegisterComponentUi } from '../../decorator/component-ui.decorator';
+import { ComponentUiKindEnum } from '../../enum/component-ui-kind.enum';
 
 @Component({
   selector: 'footer-ui-component',
@@ -6,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrl: './footer-ui.component.scss',
   // imports: [Generator],
 })
-// @RegisterComponent(ComponentKindEnum.footer)
+@RegisterComponentUi(ComponentUiKindEnum.footer)
 export class FooterUiComponent {} // extends BaseGenerator {}

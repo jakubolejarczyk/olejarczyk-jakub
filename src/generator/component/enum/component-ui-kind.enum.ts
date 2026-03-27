@@ -1,4 +1,4 @@
-export enum ComponentKindEnum {
+export enum ComponentUiKindEnum {
   copyright = 'copyright',
   footer = 'footer',
   header = 'header',

@@ -1,7 +1,7 @@
 import { CommonModule, NgComponentOutlet } from '@angular/common';
 import { Component, input } from '@angular/core';
 import { TreeModel } from '../model/tree.model';
-import { getComponent } from '../decorator/component.decorator';
+import { getComponent } from '../component/decorator/component-ui.decorator';
 import { NodeModel } from '../model/node.model';
 import { BaseGenerator } from '../base/base-generator';
 
