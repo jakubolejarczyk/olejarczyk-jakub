@@ -4,5 +4,4 @@ export enum ComponentUiKindEnum {
   header = 'header',
   main = 'main',
   section = 'section',
-  generator = 'generator',
 }

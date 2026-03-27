@@ -1,4 +1,4 @@
-import '../component/index';
+import '../component/ui/index';
 
 export const generatorInit = () => {
   return {

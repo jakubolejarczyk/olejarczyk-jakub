@@ -3,6 +3,7 @@ import { RegisterComponentUi } from '../../decorator/component-ui.decorator';
 import { ComponentUiKindEnum } from '../../enum/component-ui-kind.enum';
 import { GeneratorCore } from '../../../generator/generator-core';
 import { Generator } from '../../../generator/generator';
+import { FooterDataModel } from '../../../data/footer-data.model';
 
 @Component({
   selector: 'footer-ui-component',
@@ -11,4 +12,4 @@ import { Generator } from '../../../generator/generator';
   imports: [Generator],
 })
 @RegisterComponentUi(ComponentUiKindEnum.footer)
-export class FooterUiComponent extends GeneratorCore {}
+export class FooterUiComponent extends GeneratorCore<FooterDataModel> {}

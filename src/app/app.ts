@@ -1,28 +1,35 @@
 import { Component } from '@angular/core';
 import { Generator } from '../generator/generator/generator';
-import { TreeModel } from '../generator/model/tree.model';
-import { ComponentKindEnum } from '../generator/enum/component-kind.enum';
+import { NodeModel } from '../generator/model/node.model';
+import { ComponentUiKindEnum } from '../generator/component/enum/component-ui-kind.enum';
 
 @Component({
   selector: 'app',
-  template: '<generator [tree]="tree"></generator>',
+  template: '<generator [nodes]="nodes"></generator>',
   imports: [Generator],
 })
 export class App {
-  tree: TreeModel = [
+  nodes: NodeModel[] = [
     {
-      kind: ComponentKindEnum.footer,
+      data: {
+        kind: ComponentUiKindEnum.footer,
+        value: {},
+      },
       children: [
         {
-          kind: ComponentKindEnum.section,
-        },
-        {
-          kind: ComponentKindEnum.section,
-          children: [
-            {
-              kind: ComponentKindEnum.copyright,
+          data: {
+            kind: ComponentUiKindEnum.copyright,
+            value: {
+              symbol: '©',
+              year: {
+                kind: 'range',
+                from: 2026,
+                to: 'current',
+              },
+              ownerName: 'Jakub Olejarczyk',
+              rightsStatement: 'All Rights Reserved.',
             },
-          ],
+          },
         },
       ],
     },

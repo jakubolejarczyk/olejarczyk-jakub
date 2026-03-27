@@ -7,6 +7,8 @@ import { NodeModel } from '../model/node.model';
   template: '',
   imports: [CommonModule],
 })
-export class GeneratorCore {
+export class GeneratorCore<TData> {
   nodes = input<NodeModel[]>([]);
+
+  data = input.required<TData>();
 }

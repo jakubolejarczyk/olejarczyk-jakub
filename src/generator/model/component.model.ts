@@ -1,5 +1,5 @@
-import { ComponentKindEnum } from '../enum/component-kind.enum';
+import { DataModel } from '../data/data.model';
 
 export interface ComponentModel {
-  kind: ComponentKindEnum;
+  data: DataModel;
 }

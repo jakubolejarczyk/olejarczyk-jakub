@@ -1,6 +1,5 @@
 import { NgComponentOutlet } from '@angular/common';
-import { Component } from '@angular/core';
-import { GeneratorCore } from './generator-core';
+import { Component, input } from '@angular/core';
 import { NodeModel } from '../model/node.model';
 import { getComponentUi } from '../component/decorator/component-ui.decorator';
 
@@ -9,14 +8,17 @@ import { getComponentUi } from '../component/decorator/component-ui.decorator';
   templateUrl: './generator.html',
   imports: [NgComponentOutlet],
 })
-export class Generator extends GeneratorCore {
+export class Generator {
+  nodes = input<NodeModel[]>([]);
+
   buildComponent(node: NodeModel) {
-    return getComponentUi(node.kind);
+    return getComponentUi(node.data.kind);
   }
 
   buildInputs(node: NodeModel) {
     return {
       nodes: node.children,
+      data: node.data.value,
     };
   }
 }

@@ -3,6 +3,7 @@ import { RegisterComponentUi } from '../../decorator/component-ui.decorator';
 import { ComponentUiKindEnum } from '../../enum/component-ui-kind.enum';
 import { GeneratorCore } from '../../../generator/generator-core';
 import { Generator } from '../../../generator/generator';
+import { CopyrightDataModel } from '../../../data/copyright-data.model';
 
 @Component({
   selector: 'copyright-ui-component',
@@ -11,4 +12,4 @@ import { Generator } from '../../../generator/generator';
   imports: [Generator],
 })
 @RegisterComponentUi(ComponentUiKindEnum.copyright)
-export class CopyrightUiComponent extends GeneratorCore {}
+export class CopyrightUiComponent extends GeneratorCore<CopyrightDataModel> {}

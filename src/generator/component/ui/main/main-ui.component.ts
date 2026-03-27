@@ -3,6 +3,7 @@ import { RegisterComponentUi } from '../../decorator/component-ui.decorator';
 import { ComponentUiKindEnum } from '../../enum/component-ui-kind.enum';
 import { GeneratorCore } from '../../../generator/generator-core';
 import { Generator } from '../../../generator/generator';
+import { MainDataModel } from '../../../data/main-data.model';
 
 @Component({
   selector: 'main-ui-component',
@@ -11,4 +12,4 @@ import { Generator } from '../../../generator/generator';
   imports: [Generator],
 })
 @RegisterComponentUi(ComponentUiKindEnum.main)
-export class MainUiComponent extends GeneratorCore {}
+export class MainUiComponent extends GeneratorCore<MainDataModel> {}
