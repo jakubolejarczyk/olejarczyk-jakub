@@ -1,5 +1,4 @@
 import { TComponentKind } from '../model/type/component-kind.type';
-import { TComponent } from '../model/type/component.type';
 import { componentStore } from '../store/component.store';
 
 export const getComponent = (kind: TComponentKind) => {
@@ -10,7 +9,7 @@ export const getComponent = (kind: TComponentKind) => {
 };
 
 export const RegisterComponent = (kind: TComponentKind) => {
-  return (component: TComponent) => {
+  return (component: any) => {
     if (componentStore.has(kind)) {
       throw new Error(`Element: ${kind} is already registered in the componentStore store!`);
     }
