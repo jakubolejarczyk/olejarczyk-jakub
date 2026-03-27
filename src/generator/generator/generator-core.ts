@@ -1,12 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { Component, input } from '@angular/core';
-import { TreeModel } from '../model/tree.model';
+import { NodeModel } from '../model/node.model';
 
 @Component({
-  selector: 'base-generator',
+  selector: 'generator-core',
   template: '',
   imports: [CommonModule],
 })
-export class BaseGenerator {
-  tree = input<TreeModel>([]);
+export class GeneratorCore {
+  nodes = input<NodeModel[]>([]);
 }

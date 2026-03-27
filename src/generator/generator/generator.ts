@@ -1,23 +1,22 @@
-import { CommonModule, NgComponentOutlet } from '@angular/common';
-import { Component, input } from '@angular/core';
-import { TreeModel } from '../model/tree.model';
-import { getComponent } from '../component/decorator/component-ui.decorator';
+import { NgComponentOutlet } from '@angular/common';
+import { Component } from '@angular/core';
+import { GeneratorCore } from './generator-core';
 import { NodeModel } from '../model/node.model';
-import { BaseGenerator } from '../base/base-generator';
+import { getComponentUi } from '../component/decorator/component-ui.decorator';
 
 @Component({
   selector: 'generator',
   templateUrl: './generator.html',
-  imports: [CommonModule, NgComponentOutlet],
+  imports: [NgComponentOutlet],
 })
-export class Generator extends BaseGenerator {
+export class Generator extends GeneratorCore {
   buildComponent(node: NodeModel) {
-    return getComponent(node.kind);
+    return getComponentUi(node.kind);
   }
 
   buildInputs(node: NodeModel) {
     return {
-      tree: node.children,
+      nodes: node.children,
     };
   }
 }
