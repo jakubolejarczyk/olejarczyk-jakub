@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { RegisterComponentUi } from '../../decorator/component-ui.decorator';
-import { ComponentUiKindEnum } from '../../enum/component-ui-kind.enum';
+import { ComponentUiKindEnum } from '../../../model/type/component-kind.type';
 import { GeneratorCore } from '../../../generator/generator-core';
 import { Generator } from '../../../generator/generator';
-import { MainDataModel } from '../../../data/main-data.model';
+import { MainDataModel } from '../../../model/data/main-data.model';
 
 @Component({
   selector: 'main-ui-component',

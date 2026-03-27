@@ -1,4 +1,4 @@
-import { ComponentUiKindEnum } from '../enum/component-ui-kind.enum';
+import { ComponentUiKindEnum } from '../../model/type/component-kind.type';
 import { componentUiStore } from '../store/component-ui.store';
 import { ComponentUiType } from '../type/component-ui.type';
 

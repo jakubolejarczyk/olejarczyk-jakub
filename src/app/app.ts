@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Generator } from '../generator/generator/generator';
-import { NodeModel } from '../generator/model/node.model';
-import { ComponentUiKindEnum } from '../generator/component/enum/component-ui-kind.enum';
+import { NodeModel } from '../generator/model/node/node.model';
+import { ComponentUiKindEnum } from '../generator/model/type/component-kind.type';
 
 @Component({
   selector: 'app',

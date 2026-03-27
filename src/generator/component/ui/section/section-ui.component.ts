@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { RegisterComponentUi } from '../../decorator/component-ui.decorator';
-import { ComponentUiKindEnum } from '../../enum/component-ui-kind.enum';
+import { ComponentUiKindEnum } from '../../../model/type/component-kind.type';
 import { GeneratorCore } from '../../../generator/generator-core';
 import { Generator } from '../../../generator/generator';
-import { SectionDataModel } from '../../../data/section-data.model';
+import { SectionDataModel } from '../../../model/data/section-data.model';
 
 @Component({
   selector: 'section-ui-component',

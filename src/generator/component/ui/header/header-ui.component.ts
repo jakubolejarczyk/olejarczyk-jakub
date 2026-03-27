@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { RegisterComponentUi } from '../../decorator/component-ui.decorator';
-import { ComponentUiKindEnum } from '../../enum/component-ui-kind.enum';
+import { ComponentUiKindEnum } from '../../../model/type/component-kind.type';
 import { GeneratorCore } from '../../../generator/generator-core';
 import { Generator } from '../../../generator/generator';
-import { HeaderDataModel } from '../../../data/header-data.model';
+import { HeaderDataModel } from '../../../model/data/header-data.model';
 
 @Component({
   selector: 'header-ui-component',

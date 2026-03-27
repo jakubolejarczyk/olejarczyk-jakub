@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { RegisterComponentUi } from '../../decorator/component-ui.decorator';
-import { ComponentUiKindEnum } from '../../enum/component-ui-kind.enum';
+import { ComponentUiKindEnum } from '../../../model/type/component-kind.type';
 import { GeneratorCore } from '../../../generator/generator-core';
 import { Generator } from '../../../generator/generator';
-import { CopyrightDataModel } from '../../../data/copyright-data.model';
+import { CopyrightDataModel } from '../../../model/data/copyright-data.model';
 
 @Component({
   selector: 'copyright-ui-component',
