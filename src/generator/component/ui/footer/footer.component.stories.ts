@@ -2,7 +2,7 @@ import { Meta, StoryObj } from '@storybook/angular';
 import { FooterComponent } from './footer.component';
 
 const meta: Meta<FooterComponent> = {
-  title: 'generator/component/footer',
+  title: 'component/ui/footer',
   component: FooterComponent,
 };
 export default meta;

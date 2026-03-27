@@ -2,7 +2,7 @@ import { Meta, StoryObj } from '@storybook/angular';
 import { SectionComponent } from './section.component';
 
 const meta: Meta<SectionComponent> = {
-  title: 'generator/component/section',
+  title: 'component/ui/section',
   component: SectionComponent,
 };
 export default meta;

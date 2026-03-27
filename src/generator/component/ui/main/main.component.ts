@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import { RegisterComponent } from '../../decorator/component.decorator';
-import { ComponentKindEnum } from '../../enum/component-kind.enum';
-import { BaseGenerator } from '../../base/base-generator';
-import { Generator } from '../../generator/generator';
+import { Generator } from '../../../generator/generator';
+import { BaseGenerator } from '../../../base/base-generator';
+import { RegisterComponent } from '../../../decorator/component.decorator';
+import { ComponentKindEnum } from '../../../enum/component-kind.enum';
 
 @Component({
   selector: 'main-component',
