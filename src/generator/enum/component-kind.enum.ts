@@ -3,4 +3,5 @@ export enum ComponentKindEnum {
   main = 'main',
   footer = 'footer',
   section = 'section',
+  copyright = 'copyright',
 }

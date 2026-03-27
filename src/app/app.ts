@@ -18,6 +18,11 @@ export class App {
         },
         {
           kind: ComponentKindEnum.section,
+          children: [
+            {
+              kind: ComponentKindEnum.copyright,
+            },
+          ],
         },
       ],
     },
