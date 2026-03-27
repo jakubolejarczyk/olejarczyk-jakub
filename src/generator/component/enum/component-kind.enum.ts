@@ -1,7 +1,7 @@
 export enum ComponentKindEnum {
+  copyright = 'copyright',
+  footer = 'footer',
   header = 'header',
   main = 'main',
-  footer = 'footer',
   section = 'section',
-  copyright = 'copyright',
 }
