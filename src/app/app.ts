@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { Generator } from '../generator/generator/generator';
 import { NodeModel } from '../generator/model/node/node.model';
-import { ComponentUiKindEnum } from '../generator/model/type/component-kind.type';
 
 @Component({
   selector: 'app',
@@ -11,24 +10,24 @@ import { ComponentUiKindEnum } from '../generator/model/type/component-kind.type
 export class App {
   nodes: NodeModel[] = [
     {
-      data: {
-        kind: ComponentUiKindEnum.footer,
-        value: {},
+      component: {
+        kind: 'footer',
+        data: {},
+        metadata: {},
       },
       children: [
         {
-          data: {
-            kind: ComponentUiKindEnum.copyright,
-            value: {
+          component: {
+            kind: 'copyright',
+            data: {
               symbol: '©',
               year: {
-                kind: 'range',
-                from: 2026,
-                to: 'current',
+                kind: 'current',
               },
               ownerName: 'Jakub Olejarczyk',
-              rightsStatement: 'All Rights Reserved.',
+              rightsStatements: 'All Rights Reserved.',
             },
+            metadata: {},
           },
         },
       ],

@@ -2,8 +2,9 @@ import { TComponentKind } from '../model/type/component-kind.type';
 import { componentStore } from '../store/component.store';
 
 export const getComponent = (kind: TComponentKind) => {
-  if (componentStore.has(kind)) {
-    return componentStore.get(kind);
+  const component = componentStore.get(kind);
+  if (component) {
+    return component;
   }
   throw new Error(`Not found element: ${kind} in the componentStore store!`);
 };

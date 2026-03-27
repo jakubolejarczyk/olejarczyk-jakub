@@ -1,4 +1,8 @@
-import '../component/ui/index';
+import '../component/copyright/copyright.component';
+import '../component/footer/footer.component';
+import '../component/header/header.component';
+import '../component/main/main.component';
+import '../component/section/section.component';
 
 export const generatorInit = () => {
   return {
