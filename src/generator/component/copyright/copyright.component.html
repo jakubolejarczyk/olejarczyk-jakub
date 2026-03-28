@@ -1,4 +1,4 @@
 <div class="copyright">
-  <p class="copyright__paragraph">{{ buildSymbol() }} {{ buildYear() }} {{ buildOwnerName() }}.</p>
-  <p class="copyright__paragraph">{{ buildRightsStatements() }}.</p>
+  <text-component [value]="buildCopyrightStatement()"></text-component>
+  <text-component [value]="buildRightsStatements()"></text-component>
 </div>

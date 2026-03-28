@@ -4,21 +4,29 @@ import { BaseComponent } from '../../base/base.component';
 import { CopyrightComponentModel } from '../../model/component/copyright-component.model';
 import { DateUtil } from '../../util/date.util';
 import { YearRangeModel } from '../../model/data/copyright-data.model';
+import { TextComponent } from '../text/text.component';
 
 @Component({
   selector: 'copyright-component',
   templateUrl: './copyright.component.html',
   styleUrl: './copyright.component.scss',
+  imports: [TextComponent],
 })
 @RegisterComponent('copyright')
 export class CopyrightComponent extends BaseComponent<CopyrightComponentModel> {
   dateUtil = inject(DateUtil);
 
-  buildSymbol() {
-    return this.component().data.symbol;
+  buildCopyrightStatement() {
+    const { symbol, ownerName } = this.component().data;
+    const year = this.buildYear();
+    return `${symbol} ${year} ${ownerName}.`;
   }
 
-  buildYear() {
+  buildRightsStatements() {
+    return this.component().data.rightsStatements;
+  }
+
+  private buildYear() {
     const { year } = this.component().data;
     switch (year.kind) {
       case 'current':
@@ -28,14 +36,6 @@ export class CopyrightComponent extends BaseComponent<CopyrightComponentModel> {
       default:
         throw new Error('Not supported year kind!');
     }
-  }
-
-  buildOwnerName() {
-    return this.component().data.ownerName;
-  }
-
-  buildRightsStatements() {
-    return this.component().data.rightsStatements;
   }
 
   private buildCurrentYear() {

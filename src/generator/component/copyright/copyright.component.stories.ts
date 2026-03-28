@@ -18,7 +18,7 @@ export const Primary: Story = {
           kind: 'current',
         },
         ownerName: 'Jakub Olejarczyk',
-        rightsStatements: 'All Rights Reserved',
+        rightsStatements: 'All Rights Reserved.',
       },
       metadata: {},
     },

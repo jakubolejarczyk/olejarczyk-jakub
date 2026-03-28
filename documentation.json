@@ -139,12 +139,12 @@
         },
         {
             "name": "CopyrightDataModel",
-            "id": "interface-CopyrightDataModel-00be6c1099c7509e9bb88f330bccffd46f3db0be43d95931b934f2deadf0aacd7a2d63e8496eaa9915e1a0d9367b7f3cb7e6f3c80a79de54b13be3daba128876",
+            "id": "interface-CopyrightDataModel-164e69a6cf50b79e5ec0024660f788cfcc4083f17ed29d4c42a25f1c6f6ca15e348dc6512d6ae8bd000e074ec1382c21642ce69c773c5d29b53cf29262f7f1bd",
             "file": "src/generator/model/data/copyright-data.model.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "import { BaseKindModel } from '../base/base-kind.model';\r\n\r\ntype TYearKind = 'current' | 'range';\r\n\r\ninterface YearCurrentModel extends BaseKindModel<TYearKind, 'current'> {}\r\n\r\ninterface YearRangeModel extends BaseKindModel<TYearKind, 'range'> {\r\n  from: number;\r\n  to: number | 'current';\r\n}\r\n\r\ntype TYear = YearCurrentModel | YearRangeModel;\r\n\r\nexport interface CopyrightDataModel {\r\n  symbol: string;\r\n  year: TYear;\r\n  ownerName: string;\r\n  rightsStatements: string;\r\n}\r\n",
+            "sourceCode": "import { BaseKindModel } from '../base/base-kind.model';\r\n\r\ntype TYearKind = 'current' | 'range';\r\n\r\ninterface YearCurrentModel extends BaseKindModel<TYearKind, 'current'> {}\r\n\r\nexport interface YearRangeModel extends BaseKindModel<TYearKind, 'range'> {\r\n  from: number;\r\n  to: number | 'current';\r\n}\r\n\r\ntype TYear = YearCurrentModel | YearRangeModel;\r\n\r\nexport interface CopyrightDataModel {\r\n  symbol: string;\r\n  year: TYear;\r\n  ownerName: string;\r\n  rightsStatements: string;\r\n}\r\n",
             "properties": [
                 {
                     "name": "ownerName",
@@ -1110,12 +1110,12 @@
         },
         {
             "name": "YearCurrentModel",
-            "id": "interface-YearCurrentModel-00be6c1099c7509e9bb88f330bccffd46f3db0be43d95931b934f2deadf0aacd7a2d63e8496eaa9915e1a0d9367b7f3cb7e6f3c80a79de54b13be3daba128876",
+            "id": "interface-YearCurrentModel-164e69a6cf50b79e5ec0024660f788cfcc4083f17ed29d4c42a25f1c6f6ca15e348dc6512d6ae8bd000e074ec1382c21642ce69c773c5d29b53cf29262f7f1bd",
             "file": "src/generator/model/data/copyright-data.model.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "import { BaseKindModel } from '../base/base-kind.model';\r\n\r\ntype TYearKind = 'current' | 'range';\r\n\r\ninterface YearCurrentModel extends BaseKindModel<TYearKind, 'current'> {}\r\n\r\ninterface YearRangeModel extends BaseKindModel<TYearKind, 'range'> {\r\n  from: number;\r\n  to: number | 'current';\r\n}\r\n\r\ntype TYear = YearCurrentModel | YearRangeModel;\r\n\r\nexport interface CopyrightDataModel {\r\n  symbol: string;\r\n  year: TYear;\r\n  ownerName: string;\r\n  rightsStatements: string;\r\n}\r\n",
+            "sourceCode": "import { BaseKindModel } from '../base/base-kind.model';\r\n\r\ntype TYearKind = 'current' | 'range';\r\n\r\ninterface YearCurrentModel extends BaseKindModel<TYearKind, 'current'> {}\r\n\r\nexport interface YearRangeModel extends BaseKindModel<TYearKind, 'range'> {\r\n  from: number;\r\n  to: number | 'current';\r\n}\r\n\r\ntype TYear = YearCurrentModel | YearRangeModel;\r\n\r\nexport interface CopyrightDataModel {\r\n  symbol: string;\r\n  year: TYear;\r\n  ownerName: string;\r\n  rightsStatements: string;\r\n}\r\n",
             "properties": [],
             "indexSignatures": [],
             "methods": [],
@@ -1125,12 +1125,12 @@
         },
         {
             "name": "YearRangeModel",
-            "id": "interface-YearRangeModel-00be6c1099c7509e9bb88f330bccffd46f3db0be43d95931b934f2deadf0aacd7a2d63e8496eaa9915e1a0d9367b7f3cb7e6f3c80a79de54b13be3daba128876",
+            "id": "interface-YearRangeModel-164e69a6cf50b79e5ec0024660f788cfcc4083f17ed29d4c42a25f1c6f6ca15e348dc6512d6ae8bd000e074ec1382c21642ce69c773c5d29b53cf29262f7f1bd",
             "file": "src/generator/model/data/copyright-data.model.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "import { BaseKindModel } from '../base/base-kind.model';\r\n\r\ntype TYearKind = 'current' | 'range';\r\n\r\ninterface YearCurrentModel extends BaseKindModel<TYearKind, 'current'> {}\r\n\r\ninterface YearRangeModel extends BaseKindModel<TYearKind, 'range'> {\r\n  from: number;\r\n  to: number | 'current';\r\n}\r\n\r\ntype TYear = YearCurrentModel | YearRangeModel;\r\n\r\nexport interface CopyrightDataModel {\r\n  symbol: string;\r\n  year: TYear;\r\n  ownerName: string;\r\n  rightsStatements: string;\r\n}\r\n",
+            "sourceCode": "import { BaseKindModel } from '../base/base-kind.model';\r\n\r\ntype TYearKind = 'current' | 'range';\r\n\r\ninterface YearCurrentModel extends BaseKindModel<TYearKind, 'current'> {}\r\n\r\nexport interface YearRangeModel extends BaseKindModel<TYearKind, 'range'> {\r\n  from: number;\r\n  to: number | 'current';\r\n}\r\n\r\ntype TYear = YearCurrentModel | YearRangeModel;\r\n\r\nexport interface CopyrightDataModel {\r\n  symbol: string;\r\n  year: TYear;\r\n  ownerName: string;\r\n  rightsStatements: string;\r\n}\r\n",
             "properties": [
                 {
                     "name": "from",
@@ -1386,7 +1386,7 @@
     "components": [
         {
             "name": "AboutMeView",
-            "id": "component-AboutMeView-b545842d3128805be299e505e8273f4c3e90e94917116bb279d8b0b0b0aa3dee77a34ebc83abce5c42815b118cb6763730e6ae37d2bbec9214f11a76250f8c42",
+            "id": "component-AboutMeView-f930e78fea259d7f37c8ee3837b7be0f5fbf43f8a1e00de3036bf73dd3d12bb9c591d29b58ef03755872fc2ea4fc188a53ec7fd14b20ded672eb6bc4cc7facfc",
             "file": "src/app/view/main/about-me/about-me.view.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1440,16 +1440,11 @@
             "hostBindings": [],
             "hostListeners": [],
             "standalone": false,
-            "imports": [
-                {
-                    "name": "TextComponent",
-                    "type": "component"
-                }
-            ],
+            "imports": [],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\r\nimport { TextComponent } from '../../../component/text/text.component';\r\nimport { StoreCore } from '../../../store/store.core';\r\n\r\n@Component({\r\n  selector: 'about-me-view',\r\n  templateUrl: './about-me.view.html',\r\n  styleUrl: './about-me.view.scss',\r\n  imports: [TextComponent],\r\n})\r\nexport class AboutMeView extends StoreCore {\r\n  descriptions = this.store.selectSignal((state) => state.aboutMe.description);\r\n}\r\n",
+            "sourceCode": "import { Component } from '@angular/core';\r\n// import { TextComponent } from '../../../../generator/component/text/text.component';\r\nimport { StoreCore } from '../../../store/store.core';\r\n\r\n@Component({\r\n  selector: 'about-me-view',\r\n  templateUrl: './about-me.view.html',\r\n  styleUrl: './about-me.view.scss',\r\n  // imports: [TextComponent],\r\n})\r\nexport class AboutMeView extends StoreCore {\r\n  descriptions = this.store.selectSignal((state) => state.aboutMe.description);\r\n}\r\n",
             "styleUrl": "./about-me.view.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
@@ -1457,7 +1452,7 @@
             "extends": [
                 "StoreCore"
             ],
-            "templateData": "<div class=\"about-me\">\r\n  <header class=\"about-me__header\">\r\n    <text-component type=\"h2\" value=\"About me\"></text-component>\r\n  </header>\r\n  <div class=\"about-me__content\">\r\n    @for (description of descriptions(); track description) {\r\n      <text-component type=\"p\" [value]=\"description\" palette=\"secondary\"></text-component>\r\n    }\r\n  </div>\r\n</div>\r\n"
+            "templateData": "<div class=\"about-me\">\r\n  <header class=\"about-me__header\">\r\n    <!-- <text-component type=\"h2\" value=\"About me\"></text-component> -->\r\n  </header>\r\n  <div class=\"about-me__content\">\r\n    @for (description of descriptions(); track description) {\r\n      <!-- <text-component type=\"p\" [value]=\"description\" palette=\"secondary\"></text-component> -->\r\n    }\r\n  </div>\r\n</div>\r\n"
         },
         {
             "name": "App",
@@ -1571,7 +1566,7 @@
         },
         {
             "name": "ContactView",
-            "id": "component-ContactView-31ea1891c4bc9c0513530a381a9964f37588e1869a17039e7e88e7bd3964e1bc724a8a5d06b9b506065a81c8d2968f4beed89e3fea109e0562ef46a8cc0c3c83",
+            "id": "component-ContactView-f7e92b8f096158fea78b5be061832fc42b52f2cb6f1f969ef9e4aa9f0f546942583ed11c436c0812d6650ad749f67bd707a261146f04a2c53d27ffbef0247765",
             "file": "src/app/view/footer/contact/contact.view.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1627,10 +1622,6 @@
             "standalone": false,
             "imports": [
                 {
-                    "name": "TextComponent",
-                    "type": "component"
-                },
-                {
                     "name": "LinkComponent",
                     "type": "component"
                 }
@@ -1638,7 +1629,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\r\nimport { TextComponent } from '../../../component/text/text.component';\r\nimport { StoreCore } from '../../../store/store.core';\r\nimport { LinkComponent } from '../../../component/link/link.component';\r\n\r\n@Component({\r\n  selector: 'contact-view',\r\n  templateUrl: './contact.view.html',\r\n  styleUrl: './contact.view.scss',\r\n  imports: [TextComponent, LinkComponent],\r\n})\r\nexport class ContactView extends StoreCore {\r\n  contact = this.store.selectSignal((state) => {\r\n    const { firstname, lastname, email, phone, city, country, socialMedias } = state.personal;\r\n    const fullname = `${firstname} ${lastname}`;\r\n    const location = `${country}, ${city}`;\r\n    return {\r\n      fullname,\r\n      email,\r\n      phone,\r\n      location,\r\n      socialMedias,\r\n    };\r\n  });\r\n}\r\n",
+            "sourceCode": "import { Component } from '@angular/core';\r\n// import { TextComponent } from '../../../../generator/component/text/text.component';\r\nimport { StoreCore } from '../../../store/store.core';\r\nimport { LinkComponent } from '../../../component/link/link.component';\r\n\r\n@Component({\r\n  selector: 'contact-view',\r\n  templateUrl: './contact.view.html',\r\n  styleUrl: './contact.view.scss',\r\n  imports: [LinkComponent],\r\n})\r\nexport class ContactView extends StoreCore {\r\n  contact = this.store.selectSignal((state) => {\r\n    const { firstname, lastname, email, phone, city, country, socialMedias } = state.personal;\r\n    const fullname = `${firstname} ${lastname}`;\r\n    const location = `${country}, ${city}`;\r\n    return {\r\n      fullname,\r\n      email,\r\n      phone,\r\n      location,\r\n      socialMedias,\r\n    };\r\n  });\r\n}\r\n",
             "styleUrl": "./contact.view.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
@@ -1646,11 +1637,11 @@
             "extends": [
                 "StoreCore"
             ],
-            "templateData": "<div class=\"contact\">\r\n  <div class=\"contact__column\">\r\n    <text-component type=\"h2\" [value]=\"contact().fullname\"></text-component>\r\n    <div class=\"contact__items\">\r\n      <text-component\r\n        type=\"p\"\r\n        color=\"inverse\"\r\n        value=\"I write code that works today\"\r\n      ></text-component>\r\n      <text-component type=\"p\" color=\"inverse\" value=\"and won't fail tomorrow.\"></text-component>\r\n    </div>\r\n  </div>\r\n  <div class=\"contact__column\">\r\n    <text-component type=\"h3\" value=\"Social media\"></text-component>\r\n    <div class=\"contact__items\">\r\n      @for (socialMedia of contact().socialMedias; track socialMedia.label) {\r\n        <link-component\r\n          [label]=\"socialMedia.label\"\r\n          [href]=\"socialMedia.url\"\r\n          type=\"page\"\r\n          palette=\"primary\"\r\n          [external]=\"true\"\r\n        ></link-component>\r\n      }\r\n    </div>\r\n  </div>\r\n  <div class=\"contact__column\">\r\n    <text-component type=\"h3\" value=\"Contact\"></text-component>\r\n    <div class=\"contact__items\">\r\n      <link-component\r\n        [label]=\"contact().email\"\r\n        [href]=\"contact().email\"\r\n        type=\"email\"\r\n        palette=\"primary\"\r\n        [external]=\"true\"\r\n      ></link-component>\r\n      <link-component\r\n        [label]=\"contact().phone\"\r\n        [href]=\"contact().phone\"\r\n        type=\"phone\"\r\n        palette=\"primary\"\r\n        [external]=\"true\"\r\n      ></link-component>\r\n      <text-component type=\"p\" color=\"inverse\" [value]=\"contact().location\"></text-component>\r\n    </div>\r\n  </div>\r\n</div>\r\n"
+            "templateData": "<div class=\"contact\">\r\n  <div class=\"contact__column\">\r\n    <!-- <text-component type=\"h2\" [value]=\"contact().fullname\"></text-component> -->\r\n    <div class=\"contact__items\">\r\n      <!-- <text-component\r\n        type=\"p\"\r\n        color=\"inverse\"\r\n        value=\"I write code that works today\"\r\n      ></text-component>\r\n      <text-component type=\"p\" color=\"inverse\" value=\"and won't fail tomorrow.\"></text-component> -->\r\n    </div>\r\n  </div>\r\n  <div class=\"contact__column\">\r\n    <!-- <text-component type=\"h3\" value=\"Social media\"></text-component> -->\r\n    <div class=\"contact__items\">\r\n      @for (socialMedia of contact().socialMedias; track socialMedia.label) {\r\n        <link-component\r\n          [label]=\"socialMedia.label\"\r\n          [href]=\"socialMedia.url\"\r\n          type=\"page\"\r\n          palette=\"primary\"\r\n          [external]=\"true\"\r\n        ></link-component>\r\n      }\r\n    </div>\r\n  </div>\r\n  <div class=\"contact__column\">\r\n    <!-- <text-component type=\"h3\" value=\"Contact\"></text-component> -->\r\n    <div class=\"contact__items\">\r\n      <link-component\r\n        [label]=\"contact().email\"\r\n        [href]=\"contact().email\"\r\n        type=\"email\"\r\n        palette=\"primary\"\r\n        [external]=\"true\"\r\n      ></link-component>\r\n      <link-component\r\n        [label]=\"contact().phone\"\r\n        [href]=\"contact().phone\"\r\n        type=\"phone\"\r\n        palette=\"primary\"\r\n        [external]=\"true\"\r\n      ></link-component>\r\n      <!-- <text-component type=\"p\" color=\"inverse\" [value]=\"contact().location\"></text-component> -->\r\n    </div>\r\n  </div>\r\n</div>\r\n"
         },
         {
             "name": "CopyrightComponent",
-            "id": "component-CopyrightComponent-55aea36df43c27fb0d54639c7d3562de495be22256413feb5618f8e22abb070d3fad22df93b8cfb25a67b2f1caad25e9ff8582bc3cd7f1ad40d307e16e36c856",
+            "id": "component-CopyrightComponent-c7ecce06c4670775a6c5333cf9b01d4030221a902abc345e360b0498b2c93a7e05b5bfd2b8de3fcb179f08867902965011b7222d87a42ca3b9aa3953f4280b29",
             "file": "src/generator/component/copyright/copyright.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1707,27 +1698,75 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 14
+                    "line": 17
                 }
             ],
             "methodsClass": [
                 {
-                    "name": "buildOwnerName",
+                    "name": "buildCopyrightStatement",
                     "args": [],
                     "optional": false,
-                    "returnType": "any",
+                    "returnType": "string",
                     "typeParameters": [],
-                    "line": 34,
+                    "line": 19,
                     "deprecated": false,
                     "deprecationMessage": ""
                 },
                 {
-                    "name": "buildSymbol",
+                    "name": "buildCurrentYear",
                     "args": [],
                     "optional": false,
                     "returnType": "any",
                     "typeParameters": [],
-                    "line": 16,
+                    "line": 41,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
+                    "name": "buildRangeYear",
+                    "args": [
+                        {
+                            "name": "year",
+                            "type": "YearRangeModel",
+                            "optional": false,
+                            "dotDotDotToken": false,
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "string",
+                    "typeParameters": [],
+                    "line": 45,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        123
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "year",
+                            "type": "YearRangeModel",
+                            "optional": false,
+                            "dotDotDotToken": false,
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "buildRightsStatements",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "any",
+                    "typeParameters": [],
+                    "line": 25,
                     "deprecated": false,
                     "deprecationMessage": ""
                 },
@@ -1737,17 +1776,7 @@
                     "optional": false,
                     "returnType": "any",
                     "typeParameters": [],
-                    "line": 20,
-                    "deprecated": false,
-                    "deprecationMessage": ""
-                },
-                {
-                    "name": "getData",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "any",
-                    "typeParameters": [],
-                    "line": 38,
+                    "line": 29,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -1760,11 +1789,16 @@
             "hostBindings": [],
             "hostListeners": [],
             "standalone": false,
-            "imports": [],
+            "imports": [
+                {
+                    "name": "TextComponent",
+                    "type": "component"
+                }
+            ],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, inject } from '@angular/core';\r\nimport { RegisterComponent } from '../../decorator/component.decorator';\r\nimport { BaseComponent } from '../../base/base.component';\r\nimport { CopyrightComponentModel } from '../../model/component/copyright-component.model';\r\nimport { DateUtil } from '../../util/date.util';\r\n\r\n@Component({\r\n  selector: 'copyright-component',\r\n  templateUrl: './copyright.component.html',\r\n  styleUrl: './copyright.component.scss',\r\n})\r\n@RegisterComponent('copyright')\r\nexport class CopyrightComponent extends BaseComponent<CopyrightComponentModel> {\r\n  dateUtil = inject(DateUtil);\r\n\r\n  buildSymbol() {\r\n    return this.getData().symbol;\r\n  }\r\n\r\n  buildYear() {\r\n    const { year } = this.getData();\r\n    if (year.kind === 'current') {\r\n      return this.dateUtil.getCurrentYear();\r\n    } else if (year.kind === 'range') {\r\n      const { from, to } = year;\r\n      if (to === 'current') {\r\n        return `${from} - ${this.dateUtil.getCurrentYear()}`;\r\n      }\r\n      return `${from} - ${to}`;\r\n    }\r\n    throw new Error('Not supported year kind!');\r\n  }\r\n\r\n  buildOwnerName() {\r\n    return this.getData().ownerName;\r\n  }\r\n\r\n  private getData() {\r\n    return this.component().data;\r\n  }\r\n}\r\n",
+            "sourceCode": "import { Component, inject } from '@angular/core';\r\nimport { RegisterComponent } from '../../decorator/component.decorator';\r\nimport { BaseComponent } from '../../base/base.component';\r\nimport { CopyrightComponentModel } from '../../model/component/copyright-component.model';\r\nimport { DateUtil } from '../../util/date.util';\r\nimport { YearRangeModel } from '../../model/data/copyright-data.model';\r\nimport { TextComponent } from '../text/text.component';\r\n\r\n@Component({\r\n  selector: 'copyright-component',\r\n  templateUrl: './copyright.component.html',\r\n  styleUrl: './copyright.component.scss',\r\n  imports: [TextComponent],\r\n})\r\n@RegisterComponent('copyright')\r\nexport class CopyrightComponent extends BaseComponent<CopyrightComponentModel> {\r\n  dateUtil = inject(DateUtil);\r\n\r\n  buildCopyrightStatement() {\r\n    const { symbol, ownerName } = this.component().data;\r\n    const year = this.buildYear();\r\n    return `${symbol} ${year} ${ownerName}.`;\r\n  }\r\n\r\n  buildRightsStatements() {\r\n    return this.component().data.rightsStatements;\r\n  }\r\n\r\n  private buildYear() {\r\n    const { year } = this.component().data;\r\n    switch (year.kind) {\r\n      case 'current':\r\n        return this.buildCurrentYear();\r\n      case 'range':\r\n        return this.buildRangeYear(year);\r\n      default:\r\n        throw new Error('Not supported year kind!');\r\n    }\r\n  }\r\n\r\n  private buildCurrentYear() {\r\n    return this.dateUtil.getCurrentYear();\r\n  }\r\n\r\n  private buildRangeYear(year: YearRangeModel) {\r\n    const { from } = year;\r\n    const to = year.to === 'current' ? this.dateUtil.getCurrentYear() : year.to;\r\n    return `${from} - ${to}`;\r\n  }\r\n}\r\n",
             "styleUrl": "./copyright.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
@@ -1772,11 +1806,11 @@
             "extends": [
                 "BaseComponent"
             ],
-            "templateData": "<div class=\"copyright\">\r\n  <p>{{ buildSymbol() }} {{ buildYear() }} {{ buildOwnerName() }}</p>\r\n</div>\r\n"
+            "templateData": "<div class=\"copyright\">\r\n  <text-component [value]=\"buildCopyrightStatement()\"></text-component>\r\n  <text-component [value]=\"buildRightsStatements()\"></text-component>\r\n</div>\r\n"
         },
         {
             "name": "CopyrightView",
-            "id": "component-CopyrightView-1be39537a2697c2cb6181c5d73c3913b439cd10606471caa90a50e750385be53be731f5d2d69c84048076480b27c2d40a7b0ca42b8ae3bc36ecc95c263dd9b45",
+            "id": "component-CopyrightView-396b53c4841c494d3f2198ecad95c01e3deea274b86abe45a358a931c6f56484e0ff72d7efbd09b3a218ea1d91a2d774bb68e0b5411836c733e791a1cdcfbbdd",
             "file": "src/app/view/footer/copyright/copyright.view.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1830,16 +1864,11 @@
             "hostBindings": [],
             "hostListeners": [],
             "standalone": false,
-            "imports": [
-                {
-                    "name": "TextComponent",
-                    "type": "component"
-                }
-            ],
+            "imports": [],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\r\nimport { TextComponent } from '../../../component/text/text.component';\r\nimport { StoreCore } from '../../../store/store.core';\r\nimport { DateUtil } from '../../../util/date.util';\r\n\r\n@Component({\r\n  selector: 'copyright-view',\r\n  templateUrl: './copyright.view.html',\r\n  styleUrl: './copyright.view.scss',\r\n  imports: [TextComponent],\r\n})\r\nexport class CopyrightView extends StoreCore {\r\n  yearAndFullname = this.store.selectSignal((state) => {\r\n    const { firstname, lastname } = state.personal;\r\n    const year = DateUtil.getYear();\r\n    return `${year} ${firstname} ${lastname}`;\r\n  });\r\n}\r\n",
+            "sourceCode": "import { Component } from '@angular/core';\r\n// import { TextComponent } from '../../../../generator/component/text/text.component';\r\nimport { StoreCore } from '../../../store/store.core';\r\nimport { DateUtil } from '../../../util/date.util';\r\n\r\n@Component({\r\n  selector: 'copyright-view',\r\n  templateUrl: './copyright.view.html',\r\n  styleUrl: './copyright.view.scss',\r\n  // imports: [TextComponent],\r\n})\r\nexport class CopyrightView extends StoreCore {\r\n  yearAndFullname = this.store.selectSignal((state) => {\r\n    const { firstname, lastname } = state.personal;\r\n    const year = DateUtil.getYear();\r\n    return `${year} ${firstname} ${lastname}`;\r\n  });\r\n}\r\n",
             "styleUrl": "./copyright.view.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
@@ -1847,11 +1876,11 @@
             "extends": [
                 "StoreCore"
             ],
-            "templateData": "<div class=\"copyright\">\r\n  <text-component type=\"p\" [value]=\"'&copy; ' + yearAndFullname() + '.'\"></text-component>\r\n  <text-component type=\"p\" value=\"All Rights Reserved.\"></text-component>\r\n</div>\r\n"
+            "templateData": "<div class=\"copyright\">\r\n  <!-- <text-component type=\"p\" [value]=\"'&copy; ' + yearAndFullname() + '.'\"></text-component>\r\n  <text-component type=\"p\" value=\"All Rights Reserved.\"></text-component> -->\r\n</div>\r\n"
         },
         {
             "name": "EducationView",
-            "id": "component-EducationView-78a0fca16fd0c9c3575ae0b5dea787985bd929560a1237347c870276aeccf982b7f25d35af4d3a5798d316d71c381a65d3abe3573a37e2c17b4d6589bf3013d4",
+            "id": "component-EducationView-4128a27f213d5496c8039174687e68bb552cde07aeb99d581fcc6a4e3ca86b892adbf02c7c5592e2fe424d9719a3dd3d411e23ffa137c9a4f8f0ac6d640a3983",
             "file": "src/app/view/main/education/education.view.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1905,16 +1934,11 @@
             "hostBindings": [],
             "hostListeners": [],
             "standalone": false,
-            "imports": [
-                {
-                    "name": "TextComponent",
-                    "type": "component"
-                }
-            ],
+            "imports": [],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\r\nimport { TextComponent } from '../../../component/text/text.component';\r\nimport { StoreCore } from '../../../store/store.core';\r\n\r\n@Component({\r\n  selector: 'education-view',\r\n  templateUrl: './education.view.html',\r\n  styleUrl: './education.view.scss',\r\n  imports: [TextComponent],\r\n})\r\nexport class EducationView extends StoreCore {\r\n  educations = this.store.selectSignal((state) => {\r\n    return state.education.sort((prev, next) => next.year - prev.year);\r\n  });\r\n}\r\n",
+            "sourceCode": "import { Component } from '@angular/core';\r\n// import { TextComponent } from '../../../../generator/component/text/text.component';\r\nimport { StoreCore } from '../../../store/store.core';\r\n\r\n@Component({\r\n  selector: 'education-view',\r\n  templateUrl: './education.view.html',\r\n  styleUrl: './education.view.scss',\r\n  // imports: [TextComponent],\r\n})\r\nexport class EducationView extends StoreCore {\r\n  educations = this.store.selectSignal((state) => {\r\n    return state.education.sort((prev, next) => next.year - prev.year);\r\n  });\r\n}\r\n",
             "styleUrl": "./education.view.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
@@ -1922,11 +1946,11 @@
             "extends": [
                 "StoreCore"
             ],
-            "templateData": "<div class=\"education\">\r\n  <header class=\"education__header\">\r\n    <text-component type=\"h2\" value=\"Education\"></text-component>\r\n  </header>\r\n  <div class=\"education__content\">\r\n    @for (education of educations(); track education) {\r\n      <div class=\"education__item\">\r\n        <text-component\r\n          type=\"p\"\r\n          [value]=\"education.year.toString()\"\r\n          palette=\"secondary\"\r\n        ></text-component>\r\n        <text-component type=\"h3\" [value]=\"education.university\"></text-component>\r\n        <text-component type=\"p\" [value]=\"education.major\" palette=\"secondary\"></text-component>\r\n        <text-component type=\"p\" [value]=\"education.degree\" palette=\"secondary\"></text-component>\r\n      </div>\r\n    }\r\n  </div>\r\n</div>\r\n"
+            "templateData": "<div class=\"education\">\r\n  <header class=\"education__header\">\r\n    <!-- <text-component type=\"h2\" value=\"Education\"></text-component> -->\r\n  </header>\r\n  <div class=\"education__content\">\r\n    @for (education of educations(); track education) {\r\n      <div class=\"education__item\">\r\n        <!-- <text-component\r\n          type=\"p\"\r\n          [value]=\"education.year.toString()\"\r\n          palette=\"secondary\"\r\n        ></text-component>\r\n        <text-component type=\"h3\" [value]=\"education.university\"></text-component>\r\n        <text-component type=\"p\" [value]=\"education.major\" palette=\"secondary\"></text-component>\r\n        <text-component type=\"p\" [value]=\"education.degree\" palette=\"secondary\"></text-component> -->\r\n      </div>\r\n    }\r\n  </div>\r\n</div>\r\n"
         },
         {
             "name": "ExperienceView",
-            "id": "component-ExperienceView-f0a801fa6367466fd487a2ff280655a8891deae17771bea9f6ef45bdbfec0923fab96999cfcd10fce06c62f797dfabbb2cd7f693d00125fc9a59186c97730edb",
+            "id": "component-ExperienceView-8434c501f336f1db0d2bbb94479a0ee212cf883ee5152885b0d0e0f4045beabbc70e2b4898eca3906d5ad3e69b0b855f92c2bbf85227a9d125cec4ac264cddda",
             "file": "src/app/view/main/experience/experience.view.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1950,21 +1974,16 @@
             "hostBindings": [],
             "hostListeners": [],
             "standalone": false,
-            "imports": [
-                {
-                    "name": "TextComponent",
-                    "type": "component"
-                }
-            ],
+            "imports": [],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\r\nimport { TextComponent } from '../../../component/text/text.component';\r\n\r\n@Component({\r\n  selector: 'experience-view',\r\n  templateUrl: './experience.view.html',\r\n  imports: [TextComponent],\r\n})\r\nexport class ExperienceView {}\r\n",
+            "sourceCode": "import { Component } from '@angular/core';\r\n// import { TextComponent } from '../../../../generator/component/text/text.component';\r\n\r\n@Component({\r\n  selector: 'experience-view',\r\n  templateUrl: './experience.view.html',\r\n  // imports: [TextComponent],\r\n})\r\nexport class ExperienceView {}\r\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<text-component type=\"p\" value=\"experience-view works!\"></text-component>\r\n"
+            "templateData": "<!-- <text-component type=\"p\" value=\"experience-view works!\"></text-component> -->\r\n"
         },
         {
             "name": "FooterComponent",
@@ -2384,7 +2403,7 @@
         },
         {
             "name": "HomeView",
-            "id": "component-HomeView-63f37cedc69f0b2d9d4737f4d392a7787256b080ca51549ab894949baeb6285a876537332824f73c690bb9c9ffd473a925c3aaff2cfce3ed6108584fccaa5aa4",
+            "id": "component-HomeView-ce1e1c60c8214ca41b995d430caafd5fc8a4a83837e93d5bcd8305db0c73c1294c4c2afa10ff2884d1b80b1d95d7796d6f01941ebe7c863c5321de2d0628d070",
             "file": "src/app/view/header/home/home.view.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -2408,25 +2427,20 @@
             "hostBindings": [],
             "hostListeners": [],
             "standalone": false,
-            "imports": [
-                {
-                    "name": "TextComponent",
-                    "type": "component"
-                }
-            ],
+            "imports": [],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\r\nimport { TextComponent } from '../../../component/text/text.component';\r\n\r\n@Component({\r\n  selector: 'home-view',\r\n  templateUrl: './home.view.html',\r\n  imports: [TextComponent],\r\n})\r\nexport class HomeView {}\r\n",
+            "sourceCode": "import { Component } from '@angular/core';\r\n// import { TextComponent } from '../../../../generator/component/text/text.component';\r\n\r\n@Component({\r\n  selector: 'home-view',\r\n  templateUrl: './home.view.html',\r\n  // imports: [TextComponent],\r\n})\r\nexport class HomeView {}\r\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<text-component type=\"p\" value=\"home-view works!\"></text-component>\r\n"
+            "templateData": "<!-- <text-component type=\"p\" value=\"home-view works!\"></text-component> -->\r\n"
         },
         {
             "name": "LinkComponent",
-            "id": "component-LinkComponent-1ab30256ab271a96571fca1256302974e32f8048bf5ad889997c8c377730a0525545e601f5d036d636e3fe9c1b4c28f5fa659f615503e41a9126d6539ec3e13d",
+            "id": "component-LinkComponent-4e503092e529344c0dbec59ca7b27b5f8ca8dbb44f56b674c4b0fdea4313aadd99ba2e8f3c8b6b29ac34ce9705f10d2a6bfe362bf65ce8346fa06e4b5c941fee",
             "file": "src/app/component/link/link.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -2529,10 +2543,6 @@
             "standalone": false,
             "imports": [
                 {
-                    "name": "TextComponent",
-                    "type": "component"
-                },
-                {
                     "name": "CommonModule",
                     "type": "module"
                 }
@@ -2540,13 +2550,13 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, input } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { LinkType } from './link.type';\r\nimport { TextComponent } from '../text/text.component';\r\nimport { PaletteEnum } from '../../enum/palette.enum';\r\nimport { BemUtil } from '../../util/bem.util';\r\n\r\n@Component({\r\n  selector: 'link-component',\r\n  templateUrl: './link.component.html',\r\n  styleUrl: './link.component.scss',\r\n  imports: [TextComponent, CommonModule],\r\n})\r\nexport class LinkComponent {\r\n  label = input.required<string>();\r\n\r\n  href = input.required<string>();\r\n\r\n  type = input.required<LinkType>();\r\n\r\n  palette = input.required<keyof typeof PaletteEnum>();\r\n\r\n  external = input(true);\r\n\r\n  buildHref() {\r\n    switch (this.type()) {\r\n      case 'page':\r\n        return this.href();\r\n      case 'email':\r\n        return 'mailto:'.concat(this.href());\r\n      case 'phone':\r\n        return 'tel:'.concat(this.href());\r\n    }\r\n  }\r\n\r\n  buildSectionClassList() {\r\n    const textPalette = BemUtil.build('link', 'palette', this.palette());\r\n    return [textPalette];\r\n  }\r\n}\r\n",
+            "sourceCode": "import { Component, input } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { LinkType } from './link.type';\r\n// import { TextComponent } from '../../../generator/component/text/text.component';\r\nimport { PaletteEnum } from '../../enum/palette.enum';\r\nimport { BemUtil } from '../../util/bem.util';\r\n\r\n@Component({\r\n  selector: 'link-component',\r\n  templateUrl: './link.component.html',\r\n  styleUrl: './link.component.scss',\r\n  imports: [CommonModule],\r\n})\r\nexport class LinkComponent {\r\n  label = input.required<string>();\r\n\r\n  href = input.required<string>();\r\n\r\n  type = input.required<LinkType>();\r\n\r\n  palette = input.required<keyof typeof PaletteEnum>();\r\n\r\n  external = input(true);\r\n\r\n  buildHref() {\r\n    switch (this.type()) {\r\n      case 'page':\r\n        return this.href();\r\n      case 'email':\r\n        return 'mailto:'.concat(this.href());\r\n      case 'phone':\r\n        return 'tel:'.concat(this.href());\r\n    }\r\n  }\r\n\r\n  buildSectionClassList() {\r\n    const textPalette = BemUtil.build('link', 'palette', this.palette());\r\n    return [textPalette];\r\n  }\r\n}\r\n",
             "styleUrl": "./link.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "@if (external()) {\r\n  <a class=\"link\" [ngClass]=\"buildSectionClassList()\" [href]=\"buildHref()\" target=\"_blank\">\r\n    <text-component type=\"p\" [value]=\"label()\"></text-component>\r\n  </a>\r\n}\r\n"
+            "templateData": "@if (external()) {\r\n  <a class=\"link\" [ngClass]=\"buildSectionClassList()\" [href]=\"buildHref()\" target=\"_blank\">\r\n    <!-- <text-component type=\"p\" [value]=\"label()\"></text-component> -->\r\n  </a>\r\n}\r\n"
         },
         {
             "name": "MainComponent",
@@ -2698,7 +2708,7 @@
         },
         {
             "name": "NavigationView",
-            "id": "component-NavigationView-1c48c61c686a2ca63a8e2da1f84ae3f5f9eb987f1680370cb2639ca0e5194b78494d427e15b8d741e064494bd451f36f5ddfea2f37bcef4364b6acef796db4b1",
+            "id": "component-NavigationView-baf9be5de126879394ee4e53729ccdae366a826b774fe41da0dadaaf75f5699d6e36093c780523d4c9cce50a87d66291a8aa1a7ed389c1821b8716ae55b1dee6",
             "file": "src/app/view/header/navigation/navigation.view.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -2846,16 +2856,11 @@
                 }
             ],
             "standalone": false,
-            "imports": [
-                {
-                    "name": "TextComponent",
-                    "type": "component"
-                }
-            ],
+            "imports": [],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, HostListener } from '@angular/core';\r\nimport { TextComponent } from '../../../component/text/text.component';\r\nimport { StoreCore } from '../../../store/store.core';\r\n\r\n@Component({\r\n  selector: 'navigation-view',\r\n  templateUrl: './navigation.view.html',\r\n  styleUrl: './navigation.view.scss',\r\n  imports: [TextComponent],\r\n})\r\nexport class NavigationView extends StoreCore {\r\n  sections = this.store.selectSignal((state) => {\r\n    return Object.values(state.section).filter((section) => section.routable.enable);\r\n  });\r\n\r\n  isMenu = false;\r\n\r\n  isMobile = false;\r\n\r\n  onClick() {\r\n    this.isMenu = !this.isMenu;\r\n  }\r\n\r\n  @HostListener('window:resize', ['$event'])\r\n  onResize(event: Event) {\r\n    const screenWidth = window.innerWidth;\r\n    if (screenWidth > 1024) {\r\n      this.isMobile = true;\r\n    } else {\r\n      this.isMobile = false;\r\n    }\r\n  }\r\n}\r\n",
+            "sourceCode": "import { Component, HostListener } from '@angular/core';\r\n// import { TextComponent } from '../../../../generator/component/text/text.component';\r\nimport { StoreCore } from '../../../store/store.core';\r\n\r\n@Component({\r\n  selector: 'navigation-view',\r\n  templateUrl: './navigation.view.html',\r\n  styleUrl: './navigation.view.scss',\r\n  // imports: [TextComponent],\r\n})\r\nexport class NavigationView extends StoreCore {\r\n  sections = this.store.selectSignal((state) => {\r\n    return Object.values(state.section).filter((section) => section.routable.enable);\r\n  });\r\n\r\n  isMenu = false;\r\n\r\n  isMobile = false;\r\n\r\n  onClick() {\r\n    this.isMenu = !this.isMenu;\r\n  }\r\n\r\n  @HostListener('window:resize', ['$event'])\r\n  onResize(event: Event) {\r\n    const screenWidth = window.innerWidth;\r\n    if (screenWidth > 1024) {\r\n      this.isMobile = true;\r\n    } else {\r\n      this.isMobile = false;\r\n    }\r\n  }\r\n}\r\n",
             "styleUrl": "./navigation.view.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
@@ -2863,11 +2868,11 @@
             "extends": [
                 "StoreCore"
             ],
-            "templateData": "<div class=\"navigation\">\r\n  <header class=\"navigation__header\">\r\n    <text-component type=\"h2\" value=\"Jakub Olejarczyk\"></text-component>\r\n  </header>\r\n  <div class=\"navigation__hamburger\" (click)=\"onClick()\">\r\n    <div class=\"navigation__line\"></div>\r\n    <div class=\"navigation__line\"></div>\r\n    <div class=\"navigation__line\"></div>\r\n  </div>\r\n  @if (isMenu || isMobile) {\r\n    <div class=\"navigation__menu\">\r\n      @for (section of sections(); track section) {\r\n        <text-component type=\"p\" [value]=\"section.label\"></text-component>\r\n      }\r\n    </div>\r\n  }\r\n</div>\r\n"
+            "templateData": "<div class=\"navigation\">\r\n  <header class=\"navigation__header\">\r\n    <!-- <text-component type=\"h2\" value=\"Jakub Olejarczyk\"></text-component> -->\r\n  </header>\r\n  <div class=\"navigation__hamburger\" (click)=\"onClick()\">\r\n    <div class=\"navigation__line\"></div>\r\n    <div class=\"navigation__line\"></div>\r\n    <div class=\"navigation__line\"></div>\r\n  </div>\r\n  @if (isMenu || isMobile) {\r\n    <div class=\"navigation__menu\">\r\n      @for (section of sections(); track section) {\r\n        <!-- <text-component type=\"p\" [value]=\"section.label\"></text-component> -->\r\n      }\r\n    </div>\r\n  }\r\n</div>\r\n"
         },
         {
             "name": "ProjectsView",
-            "id": "component-ProjectsView-3226cb1751053e63fb9b2a40635d1b4cac6450dbf8ca2a240b7e4169748258566761b598dde5dd8128a9cd369481c7bcfe986df7efe4b8e9c7f26a17ef5aa717",
+            "id": "component-ProjectsView-bfe7fecae97e156e4d114ce915e64d47ecfdb676bbac48a01550c60e602a7761d9573d0ac32601e830864a89fa36191c3b2b9c2650d64e584840b98cb2cd4764",
             "file": "src/app/view/main/projects/projects.view.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -2891,25 +2896,20 @@
             "hostBindings": [],
             "hostListeners": [],
             "standalone": false,
-            "imports": [
-                {
-                    "name": "TextComponent",
-                    "type": "component"
-                }
-            ],
+            "imports": [],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\r\nimport { TextComponent } from '../../../component/text/text.component';\r\n\r\n@Component({\r\n  selector: 'projects-view',\r\n  templateUrl: './projects.view.html',\r\n  imports: [TextComponent],\r\n})\r\nexport class ProjectsView {}\r\n",
+            "sourceCode": "import { Component } from '@angular/core';\r\n// import { TextComponent } from '../../../../generator/component/text/text.component';\r\n\r\n@Component({\r\n  selector: 'projects-view',\r\n  templateUrl: './projects.view.html',\r\n  // imports: [TextComponent],\r\n})\r\nexport class ProjectsView {}\r\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<text-component type=\"p\" value=\"projects-view works!\"></text-component>\r\n"
+            "templateData": "<!-- <text-component type=\"p\" value=\"projects-view works!\"></text-component> -->\r\n"
         },
         {
             "name": "ResumeView",
-            "id": "component-ResumeView-06f6eac4acbbf613e5f9c3d1049ac9dbac2deb14002de3bac1722a02b579320ed38ff1f5dfb95aa997b61d3a94d1eca225c6d4cda7f546bb1e91f007098d998f",
+            "id": "component-ResumeView-004a90946f3e325152f74904d9208a52d1e7a6221a3327e7b299b9178e4633604426337cd24ba9733a2ab6219f2b6b51a623c4863e4953e65ccba42398b25f82",
             "file": "src/app/view/main/resume/resume.view.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -2933,21 +2933,16 @@
             "hostBindings": [],
             "hostListeners": [],
             "standalone": false,
-            "imports": [
-                {
-                    "name": "TextComponent",
-                    "type": "component"
-                }
-            ],
+            "imports": [],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\r\nimport { TextComponent } from '../../../component/text/text.component';\r\n\r\n@Component({\r\n  selector: 'resume-view',\r\n  templateUrl: './resume.view.html',\r\n  imports: [TextComponent],\r\n})\r\nexport class ResumeView {}\r\n",
+            "sourceCode": "import { Component } from '@angular/core';\r\n// import { TextComponent } from '../../../../generator/component/text/text.component';\r\n\r\n@Component({\r\n  selector: 'resume-view',\r\n  templateUrl: './resume.view.html',\r\n  // imports: [TextComponent],\r\n})\r\nexport class ResumeView {}\r\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<text-component type=\"p\" value=\"resume-view works!\"></text-component>\r\n"
+            "templateData": "<!-- <text-component type=\"p\" value=\"resume-view works!\"></text-component> -->\r\n"
         },
         {
             "name": "SectionComponent",
@@ -3119,7 +3114,7 @@
         },
         {
             "name": "SkillsView",
-            "id": "component-SkillsView-54d00424690d9d2e71ec93eadd3ba996baa9cb906054be564df8109114d02ac3ab8b38320aa602734abeff753b0ea1c8a7674ef0e85942fc0f7b4d3c8213b530",
+            "id": "component-SkillsView-c1864fbf69bc27fb7d293c75dcdc47497cd4d1f4c9efd0e3f1ebfdafbc6de6ec355524036220fa19b5d2099fad82ec2b9d64d719ada29557d987a219614c8e61",
             "file": "src/app/view/main/skills/skills.view.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -3173,16 +3168,11 @@
             "hostBindings": [],
             "hostListeners": [],
             "standalone": false,
-            "imports": [
-                {
-                    "name": "TextComponent",
-                    "type": "component"
-                }
-            ],
+            "imports": [],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\r\nimport { TextComponent } from '../../../component/text/text.component';\r\nimport { StoreCore } from '../../../store/store.core';\r\n\r\n@Component({\r\n  selector: 'skills-view',\r\n  templateUrl: './skills.view.html',\r\n  styleUrl: './skills.view.scss',\r\n  imports: [TextComponent],\r\n})\r\nexport class SkillsView extends StoreCore {\r\n  skills = this.store.selectSignal((state) => {\r\n    return Object.values(state.skill).sort((prev, next) => prev.order - next.order);\r\n  });\r\n}\r\n",
+            "sourceCode": "import { Component } from '@angular/core';\r\n// import { TextComponent } from '../../../../generator/component/text/text.component';\r\nimport { StoreCore } from '../../../store/store.core';\r\n\r\n@Component({\r\n  selector: 'skills-view',\r\n  templateUrl: './skills.view.html',\r\n  styleUrl: './skills.view.scss',\r\n  // imports: [TextComponent],\r\n})\r\nexport class SkillsView extends StoreCore {\r\n  skills = this.store.selectSignal((state) => {\r\n    return Object.values(state.skill).sort((prev, next) => prev.order - next.order);\r\n  });\r\n}\r\n",
             "styleUrl": "./skills.view.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
@@ -3190,11 +3180,11 @@
             "extends": [
                 "StoreCore"
             ],
-            "templateData": "<div class=\"skills\">\r\n  <header class=\"skills__header\">\r\n    <text-component type=\"h2\" value=\"Skills\"></text-component>\r\n  </header>\r\n  <div class=\"skills__content\">\r\n    @for (skill of skills(); track skill) {\r\n      <text-component type=\"p\" [value]=\"skill.label\" palette=\"secondary\"></text-component>\r\n    }\r\n  </div>\r\n</div>\r\n"
+            "templateData": "<div class=\"skills\">\r\n  <header class=\"skills__header\">\r\n    <!-- <text-component type=\"h2\" value=\"Skills\"></text-component> -->\r\n  </header>\r\n  <div class=\"skills__content\">\r\n    @for (skill of skills(); track skill) {\r\n      <!-- <text-component type=\"p\" [value]=\"skill.label\" palette=\"secondary\"></text-component> -->\r\n    }\r\n  </div>\r\n</div>\r\n"
         },
         {
             "name": "TechnologiesView",
-            "id": "component-TechnologiesView-3e2defdbef0389096f3b12b06832e640d2744e238faaf915a9fef4d1a7826d048dc022de23dba8bf30f56fd8383dbd868258434ba3a12fa2cb574b212e9de2ea",
+            "id": "component-TechnologiesView-7ad66e92bad52c52442dd6dd4fb0917a626198f80590b535f051745898f5560a7504d38890cec66af334d762178c825c50a8257468a4dfddddf35750d97c3269",
             "file": "src/app/view/main/technologies/technologies.view.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -3248,16 +3238,11 @@
             "hostBindings": [],
             "hostListeners": [],
             "standalone": false,
-            "imports": [
-                {
-                    "name": "TextComponent",
-                    "type": "component"
-                }
-            ],
+            "imports": [],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\r\nimport { TextComponent } from '../../../component/text/text.component';\r\nimport { StoreCore } from '../../../store/store.core';\r\n\r\n@Component({\r\n  selector: 'technologies-view',\r\n  templateUrl: './technologies.view.html',\r\n  styleUrl: './technologies.view.scss',\r\n  imports: [TextComponent],\r\n})\r\nexport class TechnologiesView extends StoreCore {\r\n  groups = this.store.selectSignal((state) => {\r\n    return Object.values(state.technologyGroup)\r\n      .sort((prev, next) => prev.order - next.order)\r\n      .map((group) => ({\r\n        group,\r\n        technologies: Object.values(state.technology)\r\n          .filter((technology) => technology.group === group.group)\r\n          .sort((prev, next) => prev.order - next.order),\r\n      }));\r\n  });\r\n}\r\n",
+            "sourceCode": "import { Component } from '@angular/core';\r\n// import { TextComponent } from '../../../../generator/component/text/text.component';\r\nimport { StoreCore } from '../../../store/store.core';\r\n\r\n@Component({\r\n  selector: 'technologies-view',\r\n  templateUrl: './technologies.view.html',\r\n  styleUrl: './technologies.view.scss',\r\n  // imports: [TextComponent],\r\n})\r\nexport class TechnologiesView extends StoreCore {\r\n  groups = this.store.selectSignal((state) => {\r\n    return Object.values(state.technologyGroup)\r\n      .sort((prev, next) => prev.order - next.order)\r\n      .map((group) => ({\r\n        group,\r\n        technologies: Object.values(state.technology)\r\n          .filter((technology) => technology.group === group.group)\r\n          .sort((prev, next) => prev.order - next.order),\r\n      }));\r\n  });\r\n}\r\n",
             "styleUrl": "./technologies.view.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
@@ -3265,12 +3250,12 @@
             "extends": [
                 "StoreCore"
             ],
-            "templateData": "<div class=\"technologies\">\r\n  <header class=\"technologies__header\">\r\n    <text-component type=\"h2\" value=\"Technologies\"></text-component>\r\n  </header>\r\n  <div class=\"technologies__content\">\r\n    @for (group of groups(); track group) {\r\n      <div class=\"technologies__group\">\r\n        <text-component type=\"h3\" [value]=\"group.group.label\"></text-component>\r\n        <div class=\"technologies__technologies\">\r\n          @for (technology of group.technologies; track technology) {\r\n            <div class=\"technologies__technology\">\r\n              <text-component\r\n                type=\"small\"\r\n                [value]=\"technology.label\"\r\n                palette=\"main\"\r\n              ></text-component>\r\n            </div>\r\n          }\r\n        </div>\r\n      </div>\r\n    }\r\n  </div>\r\n</div>\r\n"
+            "templateData": "<div class=\"technologies\">\r\n  <header class=\"technologies__header\">\r\n    <!-- <text-component type=\"h2\" value=\"Technologies\"></text-component> -->\r\n  </header>\r\n  <div class=\"technologies__content\">\r\n    @for (group of groups(); track group) {\r\n      <div class=\"technologies__group\">\r\n        <!-- <text-component type=\"h3\" [value]=\"group.group.label\"></text-component> -->\r\n        <div class=\"technologies__technologies\">\r\n          @for (technology of group.technologies; track technology) {\r\n            <div class=\"technologies__technology\">\r\n              <!-- <text-component\r\n                type=\"small\"\r\n                [value]=\"technology.label\"\r\n                palette=\"main\"\r\n              ></text-component> -->\r\n            </div>\r\n          }\r\n        </div>\r\n      </div>\r\n    }\r\n  </div>\r\n</div>\r\n"
         },
         {
             "name": "TextComponent",
-            "id": "component-TextComponent-c5f210ba6d17b8f9e2a0ed25a4a2111759547b562b1ce56b89c9b44fda5aaa000ed1478ab1b1541b6702b7e87c437d913032ac038f5c17f4cf56f85b4e09cbf1",
-            "file": "src/app/component/text/text.component.ts",
+            "id": "component-TextComponent-19d3cec801418a8cff3336175bcd85b10666a7ae2ef9c39aed1bce8e6e652290c7107da877d97d079aefecd523be610e8ae1c8b7b21f6e0d2ed48425dd068a41",
+            "file": "src/generator/component/text/text.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -3286,27 +3271,16 @@
             "hostDirectives": [],
             "inputsClass": [
                 {
-                    "name": "palette",
-                    "defaultValue": "'none'",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "keyof typeof PaletteEnum",
-                    "indexKey": "",
-                    "optional": false,
-                    "description": "",
-                    "line": 18,
-                    "required": false
-                },
-                {
                     "name": "type",
+                    "defaultValue": "'p'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "TextType",
+                    "type": "TText",
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 14,
-                    "required": true
+                    "line": 10,
+                    "required": false
                 },
                 {
                     "name": "value",
@@ -3316,45 +3290,29 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 16,
+                    "line": 12,
                     "required": true
                 }
             ],
             "outputsClass": [],
             "propertiesClass": [],
-            "methodsClass": [
-                {
-                    "name": "buildTextClassList",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "{}",
-                    "typeParameters": [],
-                    "line": 20,
-                    "deprecated": false,
-                    "deprecationMessage": ""
-                }
-            ],
+            "methodsClass": [],
             "deprecated": false,
             "deprecationMessage": "",
             "hostBindings": [],
             "hostListeners": [],
             "standalone": false,
-            "imports": [
-                {
-                    "name": "CommonModule",
-                    "type": "module"
-                }
-            ],
+            "imports": [],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, input } from '@angular/core';\r\nimport { TextType } from './text.type';\r\nimport { PaletteEnum } from '../../enum/palette.enum';\r\nimport { CommonModule } from '@angular/common';\r\nimport { BemUtil } from '../../util/bem.util';\r\n\r\n@Component({\r\n  selector: 'text-component',\r\n  templateUrl: './text.component.html',\r\n  styleUrl: './text.component.scss',\r\n  imports: [CommonModule],\r\n})\r\nexport class TextComponent {\r\n  type = input.required<TextType>();\r\n\r\n  value = input.required<string>();\r\n\r\n  palette = input<keyof typeof PaletteEnum>('none');\r\n\r\n  buildTextClassList() {\r\n    if (this.palette() == 'none') return [];\r\n    const textPalette = BemUtil.build('custom', 'palette', this.palette());\r\n    return [textPalette];\r\n  }\r\n}\r\n",
+            "sourceCode": "import { Component, input } from '@angular/core';\r\nimport { TText } from './text.type';\r\n\r\n@Component({\r\n  selector: 'text-component',\r\n  templateUrl: './text.component.html',\r\n  styleUrl: './text.component.scss',\r\n})\r\nexport class TextComponent {\r\n  type = input<TText>('p');\r\n\r\n  value = input.required<string>();\r\n}\r\n",
             "styleUrl": "./text.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "@switch (type()) {\r\n  @case ('small') {\r\n    <p class=\"text small\" [ngClass]=\"buildTextClassList()\">{{ value() }}</p>\r\n  }\r\n  @case ('p') {\r\n    <p class=\"text paragraph\" [ngClass]=\"buildTextClassList()\">{{ value() }}</p>\r\n  }\r\n  @case ('h1') {\r\n    <h1 class=\"text header header__1\" [ngClass]=\"buildTextClassList()\">{{ value() }}</h1>\r\n  }\r\n  @case ('h2') {\r\n    <h2 class=\"text header header__2\" [ngClass]=\"buildTextClassList()\">{{ value() }}</h2>\r\n  }\r\n  @case ('h3') {\r\n    <h3 class=\"text header header__3\" [ngClass]=\"buildTextClassList()\">{{ value() }}</h3>\r\n  }\r\n}\r\n"
+            "templateData": "@switch (type()) {\r\n  @case ('small') {\r\n    <small class=\"text\">{{ value() }}</small>\r\n  }\r\n  @case ('p') {\r\n    <p class=\"text\">{{ value() }}</p>\r\n  }\r\n  @case ('h1') {\r\n    <h1 class=\"text\">{{ value() }}</h1>\r\n  }\r\n  @case ('h2') {\r\n    <h2 class=\"text\">{{ value() }}</h2>\r\n  }\r\n  @case ('h3') {\r\n    <h3 class=\"text\">{{ value() }}</h3>\r\n  }\r\n}\r\n"
         },
         {
             "name": "View",
@@ -3866,11 +3824,11 @@
                 "kind": 184
             },
             {
-                "name": "TextType",
+                "name": "TText",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
                 "rawtype": "\"small\" | \"p\" | \"h1\" | \"h2\" | \"h3\"",
-                "file": "src/app/component/text/text.type.ts",
+                "file": "src/generator/component/text/text.type.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -5479,13 +5437,13 @@
                     "kind": 184
                 }
             ],
-            "src/app/component/text/text.type.ts": [
+            "src/generator/component/text/text.type.ts": [
                 {
-                    "name": "TextType",
+                    "name": "TText",
                     "ctype": "miscellaneous",
                     "subtype": "typealias",
                     "rawtype": "\"small\" | \"p\" | \"h1\" | \"h2\" | \"h3\"",
-                    "file": "src/app/component/text/text.type.ts",
+                    "file": "src/generator/component/text/text.type.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -5562,25 +5520,6 @@
                 "name": "SectionComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/4",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/component/text/text.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "TextComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/5",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/component/text/text.type.ts",
-                "type": "type alias",
-                "linktype": "miscellaneous",
-                "linksubtype": "typealias",
-                "name": "TextType",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
                 "status": "low"
             },
             {
@@ -6273,7 +6212,7 @@
                 "linktype": "component",
                 "name": "CopyrightComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/8",
+                "coverageCount": "0/9",
                 "status": "low"
             },
             {
@@ -6310,6 +6249,25 @@
                 "name": "SectionComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/generator/component/text/text.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "TextComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/generator/component/text/text.type.ts",
+                "type": "type alias",
+                "linktype": "miscellaneous",
+                "linksubtype": "typealias",
+                "name": "TText",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
                 "status": "low"
             },
             {

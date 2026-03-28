@@ -1,7 +1,7 @@
 import { Component, input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LinkType } from './link.type';
-import { TextComponent } from '../text/text.component';
+// import { TextComponent } from '../../../generator/component/text/text.component';
 import { PaletteEnum } from '../../enum/palette.enum';
 import { BemUtil } from '../../util/bem.util';
 
@@ -9,7 +9,7 @@ import { BemUtil } from '../../util/bem.util';
   selector: 'link-component',
   templateUrl: './link.component.html',
   styleUrl: './link.component.scss',
-  imports: [TextComponent, CommonModule],
+  imports: [CommonModule],
 })
 export class LinkComponent {
   label = input.required<string>();

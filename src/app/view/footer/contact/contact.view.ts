@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { TextComponent } from '../../../component/text/text.component';
+// import { TextComponent } from '../../../../generator/component/text/text.component';
 import { StoreCore } from '../../../store/store.core';
 import { LinkComponent } from '../../../component/link/link.component';
 
@@ -7,7 +7,7 @@ import { LinkComponent } from '../../../component/link/link.component';
   selector: 'contact-view',
   templateUrl: './contact.view.html',
   styleUrl: './contact.view.scss',
-  imports: [TextComponent, LinkComponent],
+  imports: [LinkComponent],
 })
 export class ContactView extends StoreCore {
   contact = this.store.selectSignal((state) => {

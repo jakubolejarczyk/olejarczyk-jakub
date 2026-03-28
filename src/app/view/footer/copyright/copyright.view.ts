@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { TextComponent } from '../../../component/text/text.component';
+// import { TextComponent } from '../../../../generator/component/text/text.component';
 import { StoreCore } from '../../../store/store.core';
 import { DateUtil } from '../../../util/date.util';
 
@@ -7,7 +7,7 @@ import { DateUtil } from '../../../util/date.util';
   selector: 'copyright-view',
   templateUrl: './copyright.view.html',
   styleUrl: './copyright.view.scss',
-  imports: [TextComponent],
+  // imports: [TextComponent],
 })
 export class CopyrightView extends StoreCore {
   yearAndFullname = this.store.selectSignal((state) => {
