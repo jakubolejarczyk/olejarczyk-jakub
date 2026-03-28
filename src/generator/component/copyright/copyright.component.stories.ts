@@ -15,7 +15,9 @@ export const Primary: Story = {
       data: {
         symbol: '©',
         year: {
-          kind: 'current',
+          kind: 'range',
+          from: 2000,
+          to: 2005,
         },
         ownerName: 'Jakub Olejarczyk',
         rightsStatements: 'All Rights Reserved',

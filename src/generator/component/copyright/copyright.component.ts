@@ -45,6 +45,6 @@ export class CopyrightComponent extends BaseComponent<CopyrightComponentModel> {
   private buildRangeYear(year: YearRangeModel) {
     const { from } = year;
     const to = year.to === 'current' ? this.dateUtil.getCurrentYear() : year.to;
-    return ``;
+    return `${from} - ${to}`;
   }
 }
