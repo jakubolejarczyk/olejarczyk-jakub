@@ -1650,7 +1650,7 @@
         },
         {
             "name": "CopyrightComponent",
-            "id": "component-CopyrightComponent-5b6d160695c9662747741120f3fdf3d80814f0b9ce645a0b8c3663c146d3b0e870120fc490bf2b992ce27997f5d7fc3578e3e69eec23b0542854548544a78b32",
+            "id": "component-CopyrightComponent-55aea36df43c27fb0d54639c7d3562de495be22256413feb5618f8e22abb070d3fad22df93b8cfb25a67b2f1caad25e9ff8582bc3cd7f1ad40d307e16e36c856",
             "file": "src/generator/component/copyright/copyright.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1712,6 +1712,16 @@
             ],
             "methodsClass": [
                 {
+                    "name": "buildOwnerName",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "any",
+                    "typeParameters": [],
+                    "line": 34,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
                     "name": "buildSymbol",
                     "args": [],
                     "optional": false,
@@ -1727,7 +1737,7 @@
                     "optional": false,
                     "returnType": "any",
                     "typeParameters": [],
-                    "line": 21,
+                    "line": 20,
                     "deprecated": false,
                     "deprecationMessage": ""
                 },
@@ -1737,7 +1747,7 @@
                     "optional": false,
                     "returnType": "any",
                     "typeParameters": [],
-                    "line": 35,
+                    "line": 38,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -1754,7 +1764,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, inject } from '@angular/core';\r\nimport { RegisterComponent } from '../../decorator/component.decorator';\r\nimport { BaseComponent } from '../../base/base.component';\r\nimport { CopyrightComponentModel } from '../../model/component/copyright-component.model';\r\nimport { DateUtil } from '../../util/date.util';\r\n\r\n@Component({\r\n  selector: 'copyright-component',\r\n  templateUrl: './copyright.component.html',\r\n  styleUrl: './copyright.component.scss',\r\n})\r\n@RegisterComponent('copyright')\r\nexport class CopyrightComponent extends BaseComponent<CopyrightComponentModel> {\r\n  dateUtil = inject(DateUtil);\r\n\r\n  buildSymbol() {\r\n    const { symbol } = this.getData();\r\n    return symbol;\r\n  }\r\n\r\n  buildYear() {\r\n    const { year } = this.getData();\r\n    if (year.kind === 'current') {\r\n      return this.dateUtil.getCurrentYear();\r\n    } else if (year.kind === 'range') {\r\n      const { from, to } = year;\r\n      if (to === 'current') {\r\n        return `${from} - ${this.dateUtil.getCurrentYear()}`;\r\n      }\r\n      return `${from} - ${to}`;\r\n    }\r\n    throw new Error('Not supported year kind!');\r\n  }\r\n\r\n  private getData() {\r\n    return this.component().data;\r\n  }\r\n}\r\n",
+            "sourceCode": "import { Component, inject } from '@angular/core';\r\nimport { RegisterComponent } from '../../decorator/component.decorator';\r\nimport { BaseComponent } from '../../base/base.component';\r\nimport { CopyrightComponentModel } from '../../model/component/copyright-component.model';\r\nimport { DateUtil } from '../../util/date.util';\r\n\r\n@Component({\r\n  selector: 'copyright-component',\r\n  templateUrl: './copyright.component.html',\r\n  styleUrl: './copyright.component.scss',\r\n})\r\n@RegisterComponent('copyright')\r\nexport class CopyrightComponent extends BaseComponent<CopyrightComponentModel> {\r\n  dateUtil = inject(DateUtil);\r\n\r\n  buildSymbol() {\r\n    return this.getData().symbol;\r\n  }\r\n\r\n  buildYear() {\r\n    const { year } = this.getData();\r\n    if (year.kind === 'current') {\r\n      return this.dateUtil.getCurrentYear();\r\n    } else if (year.kind === 'range') {\r\n      const { from, to } = year;\r\n      if (to === 'current') {\r\n        return `${from} - ${this.dateUtil.getCurrentYear()}`;\r\n      }\r\n      return `${from} - ${to}`;\r\n    }\r\n    throw new Error('Not supported year kind!');\r\n  }\r\n\r\n  buildOwnerName() {\r\n    return this.getData().ownerName;\r\n  }\r\n\r\n  private getData() {\r\n    return this.component().data;\r\n  }\r\n}\r\n",
             "styleUrl": "./copyright.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
@@ -1762,7 +1772,7 @@
             "extends": [
                 "BaseComponent"
             ],
-            "templateData": "<div class=\"copyright\">\r\n  <p>{{ buildSymbol() }} {{ buildYear() }}</p>\r\n</div>\r\n"
+            "templateData": "<div class=\"copyright\">\r\n  <p>{{ buildSymbol() }} {{ buildYear() }} {{ buildOwnerName() }}</p>\r\n</div>\r\n"
         },
         {
             "name": "CopyrightView",
@@ -6263,7 +6273,7 @@
                 "linktype": "component",
                 "name": "CopyrightComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/7",
+                "coverageCount": "0/8",
                 "status": "low"
             },
             {

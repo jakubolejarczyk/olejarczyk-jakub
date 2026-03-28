@@ -4,7 +4,7 @@ type TYearKind = 'current' | 'range';
 
 interface YearCurrentModel extends BaseKindModel<TYearKind, 'current'> {}
 
-interface YearRangeModel extends BaseKindModel<TYearKind, 'range'> {
+export interface YearRangeModel extends BaseKindModel<TYearKind, 'range'> {
   from: number;
   to: number | 'current';
 }
