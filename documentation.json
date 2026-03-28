@@ -3312,7 +3312,7 @@
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "@switch (type()) {\r\n  @case ('small') {\r\n    <small class=\"text\">{{ value() }}</small>\r\n  }\r\n  @case ('p') {\r\n    <p class=\"text\">{{ value() }}</p>\r\n  }\r\n  @case ('h1') {\r\n    <h1 class=\"text\">{{ value() }}</h1>\r\n  }\r\n  @case ('h2') {\r\n    <h2 class=\"text\">{{ value() }}</h2>\r\n  }\r\n  @case ('h3') {\r\n    <h3 class=\"text\">{{ value() }}</h3>\r\n  }\r\n}\r\n"
+            "templateData": "@switch (type()) {\r\n  @case ('small') {\r\n    <small class=\"text small\">{{ value() }}</small>\r\n  }\r\n  @case ('p') {\r\n    <p class=\"text p\">{{ value() }}</p>\r\n  }\r\n  @case ('h1') {\r\n    <h1 class=\"text h1\">{{ value() }}</h1>\r\n  }\r\n  @case ('h2') {\r\n    <h2 class=\"text h2\">{{ value() }}</h2>\r\n  }\r\n  @case ('h3') {\r\n    <h3 class=\"text h3\">{{ value() }}</h3>\r\n  }\r\n}\r\n"
         },
         {
             "name": "View",
