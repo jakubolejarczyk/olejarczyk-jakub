@@ -27,6 +27,66 @@
             "extends": []
         },
         {
+            "name": "BaseComponentModel",
+            "id": "interface-BaseComponentModel-c22faf007a76125c8cd32a8f58d705534bc71ef4a06a5bfd0bfa2ddf85c061b00f8905341ddaaa3ef43967addf5e582ad8e210cc7826a676442441855b02d55c",
+            "file": "src/generator/model/base/base-component.model.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "export interface BaseComponentModel<TData, TMetadata> {\r\n  data: TData;\r\n  metadata: TMetadata;\r\n}\r\n",
+            "properties": [
+                {
+                    "name": "data",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "TData",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 2
+                },
+                {
+                    "name": "metadata",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "TMetadata",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 3
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 172,
+            "methods": [],
+            "extends": []
+        },
+        {
+            "name": "BaseKindModel",
+            "id": "interface-BaseKindModel-0e0de1f57875908182226dbad07d72a48b6b2008e791e98e9a8b6cfe1d1b1b27f526670bd224294c31674e0d6c5c04a78c4a9493d7b8bd879740dffa065b08f9",
+            "file": "src/generator/model/base/base-kind.model.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "export interface BaseKindModel<TType, TKind extends TType> {\r\n  kind: TKind;\r\n}\r\n",
+            "properties": [
+                {
+                    "name": "kind",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "TKind",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 2
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 172,
+            "methods": [],
+            "extends": []
+        },
+        {
             "name": "CompanyModel",
             "id": "interface-CompanyModel-e83fa6ae987410d78d5fdaf16c3147ee4a9c0d5047aa78675fd4cfedba17944ba3165de0e581eeb6a8b3d746d21a974be42f712bf628f94fdcd0401805140e91",
             "file": "src/app/data/company/company-data.model.ts",
@@ -58,6 +118,90 @@
             ],
             "indexSignatures": [],
             "kind": 172,
+            "methods": [],
+            "extends": []
+        },
+        {
+            "name": "CopyrightComponentModel",
+            "id": "interface-CopyrightComponentModel-aa41fd964e18c898df589175a40edb0e03955a9751cd22ee58596d3090d69d0a9211b711bfa7a5e3a726a4dac870f705e0fb5e3e2429f8db7995b8e484f88407",
+            "file": "src/generator/model/component/copyright-component.model.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "import { BaseComponentModel } from '../base/base-component.model';\r\nimport { BaseKindModel } from '../base/base-kind.model';\r\nimport { CopyrightDataModel } from '../data/copyright-data.model';\r\nimport { CopyrightMetadataModel } from '../metadata/copyright-metadata.model';\r\nimport { TComponentKind } from '../type/component-kind.type';\r\n\r\nexport interface CopyrightComponentModel\r\n  extends\r\n    BaseKindModel<TComponentKind, 'copyright'>,\r\n    BaseComponentModel<CopyrightDataModel, CopyrightMetadataModel> {}\r\n",
+            "properties": [],
+            "indexSignatures": [],
+            "methods": [],
+            "extends": [
+                "BaseKindModel",
+                "BaseComponentModel"
+            ]
+        },
+        {
+            "name": "CopyrightDataModel",
+            "id": "interface-CopyrightDataModel-00be6c1099c7509e9bb88f330bccffd46f3db0be43d95931b934f2deadf0aacd7a2d63e8496eaa9915e1a0d9367b7f3cb7e6f3c80a79de54b13be3daba128876",
+            "file": "src/generator/model/data/copyright-data.model.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "import { BaseKindModel } from '../base/base-kind.model';\r\n\r\ntype TYearKind = 'current' | 'range';\r\n\r\ninterface YearCurrentModel extends BaseKindModel<TYearKind, 'current'> {}\r\n\r\ninterface YearRangeModel extends BaseKindModel<TYearKind, 'range'> {\r\n  from: number;\r\n  to: number | 'current';\r\n}\r\n\r\ntype TYear = YearCurrentModel | YearRangeModel;\r\n\r\nexport interface CopyrightDataModel {\r\n  symbol: string;\r\n  year: TYear;\r\n  ownerName: string;\r\n  rightsStatements: string;\r\n}\r\n",
+            "properties": [
+                {
+                    "name": "ownerName",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 17
+                },
+                {
+                    "name": "rightsStatements",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 18
+                },
+                {
+                    "name": "symbol",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 15
+                },
+                {
+                    "name": "year",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "TYear",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 16
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 172,
+            "methods": [],
+            "extends": []
+        },
+        {
+            "name": "CopyrightMetadataModel",
+            "id": "interface-CopyrightMetadataModel-4aa7211c8e2b6ac66727963ec86f942507f6dba53c36cb09632a80196bf970c3ee42cf55933333a1f112366f52587135f592f4557363737c70d72687d7f8292c",
+            "file": "src/generator/model/metadata/copyright-metadata.model.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "export interface CopyrightMetadataModel {}\r\n",
+            "properties": [],
+            "indexSignatures": [],
             "methods": [],
             "extends": []
         },
@@ -202,6 +346,48 @@
             "extends": []
         },
         {
+            "name": "FooterComponentModel",
+            "id": "interface-FooterComponentModel-d95085c84764faa57b36cf68df442d73ccc88d523d7915c64aa09e788bb25721053b52a72e3dd6421363ef0a40f692d9d5d0d6cbce09f47129181069969ff50c",
+            "file": "src/generator/model/component/footer-component.model.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "import { BaseComponentModel } from '../base/base-component.model';\r\nimport { BaseKindModel } from '../base/base-kind.model';\r\nimport { FooterDataModel } from '../data/footer-data.model';\r\nimport { FooterMetadataModel } from '../metadata/footer-metadata.model';\r\nimport { TComponentKind } from '../type/component-kind.type';\r\n\r\nexport interface FooterComponentModel\r\n  extends\r\n    BaseKindModel<TComponentKind, 'footer'>,\r\n    BaseComponentModel<FooterDataModel, FooterMetadataModel> {}\r\n",
+            "properties": [],
+            "indexSignatures": [],
+            "methods": [],
+            "extends": [
+                "BaseKindModel",
+                "BaseComponentModel"
+            ]
+        },
+        {
+            "name": "FooterDataModel",
+            "id": "interface-FooterDataModel-03d462a790fa9fa17d9b0b874c49abdee8d098a31c083a08b33074550853409e10de3c3ea7ff259bb8a522861e339a87d70df7e33066dd729d45123ef7c7da65",
+            "file": "src/generator/model/data/footer-data.model.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "export interface FooterDataModel {}\r\n",
+            "properties": [],
+            "indexSignatures": [],
+            "methods": [],
+            "extends": []
+        },
+        {
+            "name": "FooterMetadataModel",
+            "id": "interface-FooterMetadataModel-c931a3f4bf0e538783ee68d9c2bfc0cb1a92a8bacaf38e26301bd8b5ac4cf28675ea0f89ab6487d64ffe5cf96813d5edb3a2c61f30545fd3e0cb8a2367f66213",
+            "file": "src/generator/model/metadata/footer-metadata.model.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "export interface FooterMetadataModel {}\r\n",
+            "properties": [],
+            "indexSignatures": [],
+            "methods": [],
+            "extends": []
+        },
+        {
             "name": "GroupModel",
             "id": "interface-GroupModel-5eb3c0ea5f59e1fd095e5d735da8ae9bfbd3e415b737e84580634a47e8f0b19e0b31605523c1085c356143d6c5bd979ba40364aaa9c9be7341efb00cb0c119e4",
             "file": "src/app/data/group/group-data.model.ts",
@@ -233,6 +419,48 @@
             ],
             "indexSignatures": [],
             "kind": 172,
+            "methods": [],
+            "extends": []
+        },
+        {
+            "name": "HeaderComponentModel",
+            "id": "interface-HeaderComponentModel-b81e09a1feea4ad9c4173a96cf0c86aa313079f522f0d7f7d734672d87abb19eddce1fdade7ccd895e66a9ef1b6805e38bd6e03fad63ff974d1461dba5ae9390",
+            "file": "src/generator/model/component/header-component.model.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "import { BaseComponentModel } from '../base/base-component.model';\r\nimport { BaseKindModel } from '../base/base-kind.model';\r\nimport { HeaderDataModel } from '../data/header-data.model';\r\nimport { HeaderMetadataModel } from '../metadata/header-metadata.model';\r\nimport { TComponentKind } from '../type/component-kind.type';\r\n\r\nexport interface HeaderComponentModel\r\n  extends\r\n    BaseKindModel<TComponentKind, 'header'>,\r\n    BaseComponentModel<HeaderDataModel, HeaderMetadataModel> {}\r\n",
+            "properties": [],
+            "indexSignatures": [],
+            "methods": [],
+            "extends": [
+                "BaseKindModel",
+                "BaseComponentModel"
+            ]
+        },
+        {
+            "name": "HeaderDataModel",
+            "id": "interface-HeaderDataModel-a258c90bd9a002db8fb2e0a8d3431a48320d15167ab915a82abd540769752294cc39f109b2df25dcd51ead0340beca073489c94472c674350ddc99f0da7a98c1",
+            "file": "src/generator/model/data/header-data.model.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "export interface HeaderDataModel {}\r\n",
+            "properties": [],
+            "indexSignatures": [],
+            "methods": [],
+            "extends": []
+        },
+        {
+            "name": "HeaderMetadataModel",
+            "id": "interface-HeaderMetadataModel-dce0d2335cdb947d6685e0f8c42321da285ef7e83e5e921df25009fbb816247c0842e43b93b1009a80a37f07ccd858abc41aaa730c050e2555d4554561f03643",
+            "file": "src/generator/model/metadata/header-metadata.model.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "export interface HeaderMetadataModel {}\r\n",
+            "properties": [],
+            "indexSignatures": [],
             "methods": [],
             "extends": []
         },
@@ -272,13 +500,55 @@
             "extends": []
         },
         {
-            "name": "NodeModel",
-            "id": "interface-NodeModel-714a0d4d66fe68ce9f49775c6d9075b7063ed7198beef276ff9ece3f7a159726daeb7115a70f4896376b9d21f7131c6f1914c99e283d04f2426eeedc09ea24b0",
-            "file": "src/core/model/node.model.ts",
+            "name": "MainComponentModel",
+            "id": "interface-MainComponentModel-5498e7394f50780f5f60898851a16b4b32cc8f9740ad3f8e56b9d838f0a8461f8f614b5c1496f26a74349e87170255fc2526a97de41ebc4a43a791f2e967ad85",
+            "file": "src/generator/model/component/main-component.model.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "export interface NodeModel {\r\n  component: any;\r\n  children?: NodeModel[];\r\n}\r\n",
+            "sourceCode": "import { BaseComponentModel } from '../base/base-component.model';\r\nimport { BaseKindModel } from '../base/base-kind.model';\r\nimport { MainDataModel } from '../data/main-data.model';\r\nimport { MainMetadataModel } from '../metadata/main-metadata.model';\r\nimport { TComponentKind } from '../type/component-kind.type';\r\n\r\nexport interface MainComponentModel\r\n  extends\r\n    BaseKindModel<TComponentKind, 'main'>,\r\n    BaseComponentModel<MainDataModel, MainMetadataModel> {}\r\n",
+            "properties": [],
+            "indexSignatures": [],
+            "methods": [],
+            "extends": [
+                "BaseKindModel",
+                "BaseComponentModel"
+            ]
+        },
+        {
+            "name": "MainDataModel",
+            "id": "interface-MainDataModel-a500b9f574d735c7d2d750734e1d5b2fea76cad8ae353613fb0ba2212444aa07ba45c3bb2044f3939f92eeef07b56eef23ba77cbfc68f2aefa6caafb439e91ea",
+            "file": "src/generator/model/data/main-data.model.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "export interface MainDataModel {}\r\n",
+            "properties": [],
+            "indexSignatures": [],
+            "methods": [],
+            "extends": []
+        },
+        {
+            "name": "MainMetadataModel",
+            "id": "interface-MainMetadataModel-e4393c13e8cebe41df92aed158c18b3be2591fbd4ea7c4667db781730147b83ee82ec4b6beef97542fb1544e1faa662635e7427e679a6d44885cd0194657569b",
+            "file": "src/generator/model/metadata/main-metadata.model.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "export interface MainMetadataModel {}\r\n",
+            "properties": [],
+            "indexSignatures": [],
+            "methods": [],
+            "extends": []
+        },
+        {
+            "name": "NodeModel",
+            "id": "interface-NodeModel-21d4c38f486eb3d378e1f759d1ee16339ded953ee613c07ec648286e9da2ac41d9b866af5d1051307665569d814a01e2bd98a5878bb6f9e8f6df82d0ab868afa",
+            "file": "src/generator/model/node/node.model.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "import { TComponent } from '../type/component.type';\r\n\r\nexport interface NodeModel {\r\n  component: TComponent;\r\n  children?: NodeModel[];\r\n}\r\n",
             "properties": [
                 {
                     "name": "children",
@@ -288,17 +558,17 @@
                     "indexKey": "",
                     "optional": true,
                     "description": "",
-                    "line": 3
+                    "line": 5
                 },
                 {
                     "name": "component",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "any",
+                    "type": "TComponent",
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 2
+                    "line": 4
                 }
             ],
             "indexSignatures": [],
@@ -503,6 +773,48 @@
             ],
             "indexSignatures": [],
             "kind": 172,
+            "methods": [],
+            "extends": []
+        },
+        {
+            "name": "SectionComponentModel",
+            "id": "interface-SectionComponentModel-6e08f3bca5a1c380191879f80e2b00f5f3ef764e063c9ca3be3b1bd86d1930d862fb0a4aea4648b4bd91c75cf7366541d65a5f463df4742209fc65bd7fedb81a",
+            "file": "src/generator/model/component/section-component.model.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "import { SectionDataModel } from '../../../app/data/section/section-data.model';\r\nimport { BaseComponentModel } from '../base/base-component.model';\r\nimport { BaseKindModel } from '../base/base-kind.model';\r\nimport { SectionMetadataModel } from '../metadata/section-metadata.model';\r\nimport { TComponentKind } from '../type/component-kind.type';\r\n\r\nexport interface SectionComponentModel\r\n  extends\r\n    BaseKindModel<TComponentKind, 'section'>,\r\n    BaseComponentModel<SectionDataModel, SectionMetadataModel> {}\r\n",
+            "properties": [],
+            "indexSignatures": [],
+            "methods": [],
+            "extends": [
+                "BaseKindModel",
+                "BaseComponentModel"
+            ]
+        },
+        {
+            "name": "SectionDataModel",
+            "id": "interface-SectionDataModel-63b7b8af33f569ea9cc7c99d534a9d63ddd4fd1117356394b11d1b95541330b5e83143b498655b2d0fc129d953baa5100cd2c94ada0300a6c66533a3701d3b8e",
+            "file": "src/generator/model/data/section-data.model.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "export interface SectionDataModel {}\r\n",
+            "properties": [],
+            "indexSignatures": [],
+            "methods": [],
+            "extends": []
+        },
+        {
+            "name": "SectionMetadataModel",
+            "id": "interface-SectionMetadataModel-5ab3c179668d6d0410835062b0d8a0aaba6684093cd1f0b486c754fcbca5beb99b858bea2333dc77000eedf85be258c3bd549a1cf0028645ce5acc9d0d15cf4e",
+            "file": "src/generator/model/metadata/section-metadata.model.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "export interface SectionMetadataModel {}\r\n",
+            "properties": [],
+            "indexSignatures": [],
             "methods": [],
             "extends": []
         },
@@ -795,6 +1107,58 @@
             "kind": 172,
             "methods": [],
             "extends": []
+        },
+        {
+            "name": "YearCurrentModel",
+            "id": "interface-YearCurrentModel-00be6c1099c7509e9bb88f330bccffd46f3db0be43d95931b934f2deadf0aacd7a2d63e8496eaa9915e1a0d9367b7f3cb7e6f3c80a79de54b13be3daba128876",
+            "file": "src/generator/model/data/copyright-data.model.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "import { BaseKindModel } from '../base/base-kind.model';\r\n\r\ntype TYearKind = 'current' | 'range';\r\n\r\ninterface YearCurrentModel extends BaseKindModel<TYearKind, 'current'> {}\r\n\r\ninterface YearRangeModel extends BaseKindModel<TYearKind, 'range'> {\r\n  from: number;\r\n  to: number | 'current';\r\n}\r\n\r\ntype TYear = YearCurrentModel | YearRangeModel;\r\n\r\nexport interface CopyrightDataModel {\r\n  symbol: string;\r\n  year: TYear;\r\n  ownerName: string;\r\n  rightsStatements: string;\r\n}\r\n",
+            "properties": [],
+            "indexSignatures": [],
+            "methods": [],
+            "extends": [
+                "BaseKindModel"
+            ]
+        },
+        {
+            "name": "YearRangeModel",
+            "id": "interface-YearRangeModel-00be6c1099c7509e9bb88f330bccffd46f3db0be43d95931b934f2deadf0aacd7a2d63e8496eaa9915e1a0d9367b7f3cb7e6f3c80a79de54b13be3daba128876",
+            "file": "src/generator/model/data/copyright-data.model.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "import { BaseKindModel } from '../base/base-kind.model';\r\n\r\ntype TYearKind = 'current' | 'range';\r\n\r\ninterface YearCurrentModel extends BaseKindModel<TYearKind, 'current'> {}\r\n\r\ninterface YearRangeModel extends BaseKindModel<TYearKind, 'range'> {\r\n  from: number;\r\n  to: number | 'current';\r\n}\r\n\r\ntype TYear = YearCurrentModel | YearRangeModel;\r\n\r\nexport interface CopyrightDataModel {\r\n  symbol: string;\r\n  year: TYear;\r\n  ownerName: string;\r\n  rightsStatements: string;\r\n}\r\n",
+            "properties": [
+                {
+                    "name": "from",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 8
+                },
+                {
+                    "name": "to",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number | \"current\"",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 9
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 172,
+            "methods": [],
+            "extends": [
+                "BaseKindModel"
+            ]
         }
     ],
     "injectables": [
@@ -913,6 +1277,44 @@
             "sourceCode": "import { Injectable } from '@angular/core';\r\n\r\n@Injectable({ providedIn: 'root' })\r\nexport class DateUtil {\r\n  static getYear() {\r\n    const currentDate = new Date();\r\n    return currentDate.getFullYear();\r\n  }\r\n}\r\n",
             "extends": [],
             "type": "injectable"
+        },
+        {
+            "name": "DateUtil",
+            "id": "injectable-DateUtil-096cedb1a7cc2a9b48f7b549ba9215d632bd1a2a9148ea58c64a8f1746a5b6c0f3d4a7b34a7bc1badac6edbb050d393b12680c87cef431551a462248d94ad599-1",
+            "file": "src/generator/util/date.util.ts",
+            "properties": [],
+            "methods": [
+                {
+                    "name": "getCurrentYear",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "any",
+                    "typeParameters": [],
+                    "line": 9,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "getDate",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "any",
+                    "typeParameters": [],
+                    "line": 5,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "description": "",
+            "rawdescription": "\n",
+            "sourceCode": "import { Injectable } from '@angular/core';\r\n\r\n@Injectable({ providedIn: 'root' })\r\nexport class DateUtil {\r\n  getDate() {\r\n    return new Date();\r\n  }\r\n\r\n  getCurrentYear() {\r\n    return this.getDate().getFullYear();\r\n  }\r\n}\r\n",
+            "extends": [],
+            "type": "injectable",
+            "isDuplicate": true,
+            "duplicateId": 1,
+            "duplicateName": "DateUtil-1"
         },
         {
             "name": "StorybookUtil",
@@ -1058,6 +1460,116 @@
             "templateData": "<div class=\"about-me\">\r\n  <header class=\"about-me__header\">\r\n    <text-component type=\"h2\" value=\"About me\"></text-component>\r\n  </header>\r\n  <div class=\"about-me__content\">\r\n    @for (description of descriptions(); track description) {\r\n      <text-component type=\"p\" [value]=\"description\" palette=\"secondary\"></text-component>\r\n    }\r\n  </div>\r\n</div>\r\n"
         },
         {
+            "name": "App",
+            "id": "component-App-2c62f8b868c699a7c593d5a6184edaacd8b721b499b394102101b52f70142126549a0fbbf78417185bfbb4969494e5564ca80ca880a229aa9cecafd7fa092886",
+            "file": "src/app/app.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app",
+            "styleUrls": [],
+            "styles": [],
+            "template": "<generator [nodes]=\"nodes\"></generator>",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "nodes",
+                    "defaultValue": "[\r\n    {\r\n      component: {\r\n        kind: 'footer',\r\n        data: {},\r\n        metadata: {},\r\n      },\r\n      children: [\r\n        {\r\n          component: {\r\n            kind: 'copyright',\r\n            data: {\r\n              symbol: '©',\r\n              year: {\r\n                kind: 'current',\r\n              },\r\n              ownerName: 'Jakub Olejarczyk',\r\n              rightsStatements: 'All Rights Reserved.',\r\n            },\r\n            metadata: {},\r\n          },\r\n        },\r\n      ],\r\n    },\r\n  ]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "NodeModel[]",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 11
+                }
+            ],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [
+                {
+                    "name": "Generator"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\r\nimport { Generator } from '../generator/generator/generator';\r\nimport { NodeModel } from '../generator/model/node/node.model';\r\n\r\n@Component({\r\n  selector: 'app',\r\n  template: '<generator [nodes]=\"nodes\"></generator>',\r\n  imports: [Generator],\r\n})\r\nexport class App {\r\n  nodes: NodeModel[] = [\r\n    {\r\n      component: {\r\n        kind: 'footer',\r\n        data: {},\r\n        metadata: {},\r\n      },\r\n      children: [\r\n        {\r\n          component: {\r\n            kind: 'copyright',\r\n            data: {\r\n              symbol: '©',\r\n              year: {\r\n                kind: 'current',\r\n              },\r\n              ownerName: 'Jakub Olejarczyk',\r\n              rightsStatements: 'All Rights Reserved.',\r\n            },\r\n            metadata: {},\r\n          },\r\n        },\r\n      ],\r\n    },\r\n  ];\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": []
+        },
+        {
+            "name": "BaseComponent",
+            "id": "component-BaseComponent-c7037e39da908c7b8aa496da24c70dda3e04f379ab4242a041d259a82567dba7a73cfadc60234737e2b57c28846d86a2fc4eccea424c97414ec8edaa57fcd67a",
+            "file": "src/generator/base/base.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "base-component",
+            "styleUrls": [],
+            "styles": [],
+            "template": "",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "component",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "TBaseComponent",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 10,
+                    "required": true
+                },
+                {
+                    "name": "nodes",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "NodeModel[]",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 12,
+                    "required": false
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, input } from '@angular/core';\r\nimport { TComponent } from '../model/type/component.type';\r\nimport { NodeModel } from '../model/node/node.model';\r\n\r\n@Component({\r\n  selector: 'base-component',\r\n  template: '',\r\n})\r\nexport class BaseComponent<TBaseComponent extends TComponent> {\r\n  component = input.required<TBaseComponent>();\r\n\r\n  nodes = input<NodeModel[]>([]);\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": []
+        },
+        {
             "name": "ContactView",
             "id": "component-ContactView-31ea1891c4bc9c0513530a381a9964f37588e1869a17039e7e88e7bd3964e1bc724a8a5d06b9b506065a81c8d2968f4beed89e3fea109e0562ef46a8cc0c3c83",
             "file": "src/app/view/footer/contact/contact.view.ts",
@@ -1135,6 +1647,122 @@
                 "StoreCore"
             ],
             "templateData": "<div class=\"contact\">\r\n  <div class=\"contact__column\">\r\n    <text-component type=\"h2\" [value]=\"contact().fullname\"></text-component>\r\n    <div class=\"contact__items\">\r\n      <text-component\r\n        type=\"p\"\r\n        color=\"inverse\"\r\n        value=\"I write code that works today\"\r\n      ></text-component>\r\n      <text-component type=\"p\" color=\"inverse\" value=\"and won't fail tomorrow.\"></text-component>\r\n    </div>\r\n  </div>\r\n  <div class=\"contact__column\">\r\n    <text-component type=\"h3\" value=\"Social media\"></text-component>\r\n    <div class=\"contact__items\">\r\n      @for (socialMedia of contact().socialMedias; track socialMedia.label) {\r\n        <link-component\r\n          [label]=\"socialMedia.label\"\r\n          [href]=\"socialMedia.url\"\r\n          type=\"page\"\r\n          palette=\"primary\"\r\n          [external]=\"true\"\r\n        ></link-component>\r\n      }\r\n    </div>\r\n  </div>\r\n  <div class=\"contact__column\">\r\n    <text-component type=\"h3\" value=\"Contact\"></text-component>\r\n    <div class=\"contact__items\">\r\n      <link-component\r\n        [label]=\"contact().email\"\r\n        [href]=\"contact().email\"\r\n        type=\"email\"\r\n        palette=\"primary\"\r\n        [external]=\"true\"\r\n      ></link-component>\r\n      <link-component\r\n        [label]=\"contact().phone\"\r\n        [href]=\"contact().phone\"\r\n        type=\"phone\"\r\n        palette=\"primary\"\r\n        [external]=\"true\"\r\n      ></link-component>\r\n      <text-component type=\"p\" color=\"inverse\" [value]=\"contact().location\"></text-component>\r\n    </div>\r\n  </div>\r\n</div>\r\n"
+        },
+        {
+            "name": "CopyrightComponent",
+            "id": "component-CopyrightComponent-5b6d160695c9662747741120f3fdf3d80814f0b9ce645a0b8c3663c146d3b0e870120fc490bf2b992ce27997f5d7fc3578e3e69eec23b0542854548544a78b32",
+            "file": "src/generator/component/copyright/copyright.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "copyright-component",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./copyright.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "component",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "TBaseComponent",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 10,
+                    "required": true,
+                    "inheritance": {
+                        "file": "BaseComponent"
+                    }
+                },
+                {
+                    "name": "nodes",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "NodeModel[]",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 12,
+                    "required": false,
+                    "inheritance": {
+                        "file": "BaseComponent"
+                    }
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "dateUtil",
+                    "defaultValue": "inject(DateUtil)",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "unknown",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 14
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "buildSymbol",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "any",
+                    "typeParameters": [],
+                    "line": 16,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "buildYear",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "any",
+                    "typeParameters": [],
+                    "line": 21,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "getData",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "any",
+                    "typeParameters": [],
+                    "line": 35,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        123
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, inject } from '@angular/core';\r\nimport { RegisterComponent } from '../../decorator/component.decorator';\r\nimport { BaseComponent } from '../../base/base.component';\r\nimport { CopyrightComponentModel } from '../../model/component/copyright-component.model';\r\nimport { DateUtil } from '../../util/date.util';\r\n\r\n@Component({\r\n  selector: 'copyright-component',\r\n  templateUrl: './copyright.component.html',\r\n  styleUrl: './copyright.component.scss',\r\n})\r\n@RegisterComponent('copyright')\r\nexport class CopyrightComponent extends BaseComponent<CopyrightComponentModel> {\r\n  dateUtil = inject(DateUtil);\r\n\r\n  buildSymbol() {\r\n    const { symbol } = this.getData();\r\n    return symbol;\r\n  }\r\n\r\n  buildYear() {\r\n    const { year } = this.getData();\r\n    if (year.kind === 'current') {\r\n      return this.dateUtil.getCurrentYear();\r\n    } else if (year.kind === 'range') {\r\n      const { from, to } = year;\r\n      if (to === 'current') {\r\n        return `${from} - ${this.dateUtil.getCurrentYear()}`;\r\n      }\r\n      return `${from} - ${to}`;\r\n    }\r\n    throw new Error('Not supported year kind!');\r\n  }\r\n\r\n  private getData() {\r\n    return this.component().data;\r\n  }\r\n}\r\n",
+            "styleUrl": "./copyright.component.scss",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [
+                "BaseComponent"
+            ],
+            "templateData": "<div class=\"copyright\">\r\n  <p>{{ buildSymbol() }} {{ buildYear() }}</p>\r\n</div>\r\n"
         },
         {
             "name": "CopyrightView",
@@ -1330,7 +1958,7 @@
         },
         {
             "name": "FooterComponent",
-            "id": "component-FooterComponent-850ec8031d60c75319c3ff521e064d68261213d9dfa1a6aa868d289b084b7ae22be1d8b57ee7a31697aaab7cfb3676f5245fdde8c90119a9b82350d3b8ca3a1f",
+            "id": "component-FooterComponent-afef7e97f1d01b811739f7d50c558168e897aee8375aa95b3d0b2774544ee54dfcd22810e94e047d9dfa2cd417cf36c14439cb2984f52358f244a3886424be65",
             "file": "src/generator/component/footer/footer.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1345,7 +1973,37 @@
             ],
             "viewProviders": [],
             "hostDirectives": [],
-            "inputsClass": [],
+            "inputsClass": [
+                {
+                    "name": "component",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "TBaseComponent",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 10,
+                    "required": true,
+                    "inheritance": {
+                        "file": "BaseComponent"
+                    }
+                },
+                {
+                    "name": "nodes",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "NodeModel[]",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 12,
+                    "required": false,
+                    "inheritance": {
+                        "file": "BaseComponent"
+                    }
+                }
+            ],
             "outputsClass": [],
             "propertiesClass": [],
             "methodsClass": [],
@@ -1354,17 +2012,23 @@
             "hostBindings": [],
             "hostListeners": [],
             "standalone": false,
-            "imports": [],
+            "imports": [
+                {
+                    "name": "Generator"
+                }
+            ],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'footer-component',\r\n  templateUrl: './footer.component.html',\r\n  styleUrl: './footer.component.scss',\r\n})\r\nexport class FooterComponent {}\r\n",
+            "sourceCode": "import { Component } from '@angular/core';\r\nimport { RegisterComponent } from '../../decorator/component.decorator';\r\nimport { BaseComponent } from '../../base/base.component';\r\nimport { FooterComponentModel } from '../../model/component/footer-component.model';\r\nimport { Generator } from '../../generator/generator';\r\n\r\n@Component({\r\n  selector: 'footer-component',\r\n  templateUrl: './footer.component.html',\r\n  styleUrl: './footer.component.scss',\r\n  imports: [Generator],\r\n})\r\n@RegisterComponent('footer')\r\nexport class FooterComponent extends BaseComponent<FooterComponentModel> {}\r\n",
             "styleUrl": "./footer.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
-            "extends": [],
-            "templateData": "<p>footer component works!</p>\r\n"
+            "extends": [
+                "BaseComponent"
+            ],
+            "templateData": "<div class=\"footer\">\r\n  <p>footer works!</p>\r\n  <generator [nodes]=\"nodes()\"></generator>\r\n</div>\r\n"
         },
         {
             "name": "FooterView",
@@ -1441,39 +2105,104 @@
             "templateData": "<footer>\r\n  @for (section of sections(); track section) {\r\n    <section-component [section]=\"section\"></section-component>\r\n  }\r\n</footer>\r\n"
         },
         {
-            "name": "GeneratorComponent",
-            "id": "component-GeneratorComponent-1674200607c9a066f7e2609038a18992b9c0cb72b804bd0def452925456eee104bcff70b5c4576a881826e4f79a453614d2b2b7bcea3395cf14462681ff3680f",
-            "file": "src/component/generator/generator.component.ts",
+            "name": "Generator",
+            "id": "component-Generator-e8f647b8872189435566ccbbc90fe38fc54055e5762b71381873919ff1b0955f8f7d5e6906caf8df5c5f16d60371a335c56664b0ae83acad34f9688cdb7fb3e3",
+            "file": "src/generator/generator/generator.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
             "providers": [],
-            "selector": "generator-component",
+            "selector": "generator",
             "styleUrls": [],
             "styles": [],
             "templateUrl": [
-                "./generator.component.html"
+                "./generator.html"
             ],
             "viewProviders": [],
             "hostDirectives": [],
             "inputsClass": [
                 {
-                    "name": "tree",
+                    "name": "nodes",
                     "defaultValue": "[]",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "TreeModel",
+                    "type": "NodeModel[]",
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 11,
+                    "line": 12,
                     "required": false
                 }
             ],
             "outputsClass": [],
             "propertiesClass": [],
-            "methodsClass": [],
+            "methodsClass": [
+                {
+                    "name": "buildComponent",
+                    "args": [
+                        {
+                            "name": "node",
+                            "type": "NodeModel",
+                            "optional": false,
+                            "dotDotDotToken": false,
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "any",
+                    "typeParameters": [],
+                    "line": 14,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "node",
+                            "type": "NodeModel",
+                            "optional": false,
+                            "dotDotDotToken": false,
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "buildInputs",
+                    "args": [
+                        {
+                            "name": "node",
+                            "type": "NodeModel",
+                            "optional": false,
+                            "dotDotDotToken": false,
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "{ component: any; nodes: any; }",
+                    "typeParameters": [],
+                    "line": 18,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "node",
+                            "type": "NodeModel",
+                            "optional": false,
+                            "dotDotDotToken": false,
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
             "deprecated": false,
             "deprecationMessage": "",
             "hostBindings": [],
@@ -1481,23 +2210,23 @@
             "standalone": false,
             "imports": [
                 {
-                    "name": "CommonModule",
-                    "type": "module"
+                    "name": "NgComponentOutlet",
+                    "type": "component"
                 }
             ],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, input } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { TreeModel } from '../../core/model/tree.model';\r\n\r\n@Component({\r\n  selector: 'generator-component',\r\n  templateUrl: './generator.component.html',\r\n  imports: [CommonModule],\r\n})\r\nexport class GeneratorComponent {\r\n  tree = input<TreeModel>([]);\r\n}\r\n",
+            "sourceCode": "import { NgComponentOutlet } from '@angular/common';\r\nimport { Component, input } from '@angular/core';\r\nimport { NodeModel } from '../model/node/node.model';\r\nimport { getComponent } from '../decorator/component.decorator';\r\n\r\n@Component({\r\n  selector: 'generator',\r\n  templateUrl: './generator.html',\r\n  imports: [NgComponentOutlet],\r\n})\r\nexport class Generator {\r\n  nodes = input<NodeModel[]>([]);\r\n\r\n  buildComponent(node: NodeModel) {\r\n    return getComponent(node.component.kind);\r\n  }\r\n\r\n  buildInputs(node: NodeModel) {\r\n    return {\r\n      component: node.component,\r\n      nodes: node.children,\r\n    };\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "@for (node of tree(); track node) {\r\n  <ng-container *ngComponentOutlet=\"node.component; inputs: { tree: node.children }\"></ng-container>\r\n}\r\n"
+            "templateData": "@for (node of nodes(); track node) {\r\n  <ng-container *ngComponentOutlet=\"buildComponent(node); inputs: buildInputs(node)\"></ng-container>\r\n}\r\n"
         },
         {
             "name": "HeaderComponent",
-            "id": "component-HeaderComponent-dc33421d91b732d0353e0498ea99f03d3c4c9bcdfced9479b8786dbb3ffda364a04dd0173d7576f4eac9eeccf87cd37b3ad0d7fd155cc24f3e59d821904f55ec",
+            "id": "component-HeaderComponent-5ccf0a6e25d1d8ee79fa22d1070ef2540b633f2fcfbc2fa05c4b90bd617e9d6f92c1a20d9986efddb52a7b981ea36d7fe17860c86271968ff334ed001dff551e",
             "file": "src/generator/component/header/header.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1512,7 +2241,37 @@
             ],
             "viewProviders": [],
             "hostDirectives": [],
-            "inputsClass": [],
+            "inputsClass": [
+                {
+                    "name": "component",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "TBaseComponent",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 10,
+                    "required": true,
+                    "inheritance": {
+                        "file": "BaseComponent"
+                    }
+                },
+                {
+                    "name": "nodes",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "NodeModel[]",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 12,
+                    "required": false,
+                    "inheritance": {
+                        "file": "BaseComponent"
+                    }
+                }
+            ],
             "outputsClass": [],
             "propertiesClass": [],
             "methodsClass": [],
@@ -1521,17 +2280,23 @@
             "hostBindings": [],
             "hostListeners": [],
             "standalone": false,
-            "imports": [],
+            "imports": [
+                {
+                    "name": "Generator"
+                }
+            ],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'header-component',\r\n  templateUrl: './header.component.html',\r\n  styleUrl: './header.component.scss',\r\n})\r\nexport class HeaderComponent {}\r\n",
+            "sourceCode": "import { Component } from '@angular/core';\r\nimport { RegisterComponent } from '../../decorator/component.decorator';\r\nimport { BaseComponent } from '../../base/base.component';\r\nimport { HeaderComponentModel } from '../../model/component/header-component.model';\r\nimport { Generator } from '../../generator/generator';\r\n\r\n@Component({\r\n  selector: 'header-component',\r\n  templateUrl: './header.component.html',\r\n  styleUrl: './header.component.scss',\r\n  imports: [Generator],\r\n})\r\n@RegisterComponent('header')\r\nexport class HeaderComponent extends BaseComponent<HeaderComponentModel> {}\r\n",
             "styleUrl": "./header.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
-            "extends": [],
-            "templateData": "<p>header component works!</p>\r\n"
+            "extends": [
+                "BaseComponent"
+            ],
+            "templateData": "<div class=\"header\">\r\n  <generator [nodes]=\"nodes()\"></generator>\r\n</div>\r\n"
         },
         {
             "name": "HeaderView",
@@ -1775,7 +2540,7 @@
         },
         {
             "name": "MainComponent",
-            "id": "component-MainComponent-1aea1689ecfb8053d9a8aaa6f3fc30c1490623ab32c45d4b9c460d0574168e976c557affeee2a1f8791361c8c48c94eebaf28c72e295f10488e581202a4cd0c2",
+            "id": "component-MainComponent-37d98442944f39a2afd361a9246b331aea81b7d1aa5e37129c00670004afd511fc90b7c8a6c60c584c7e25e34e631d56c4475adfad9825a30282016c0ee80246",
             "file": "src/generator/component/main/main.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1790,7 +2555,37 @@
             ],
             "viewProviders": [],
             "hostDirectives": [],
-            "inputsClass": [],
+            "inputsClass": [
+                {
+                    "name": "component",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "TBaseComponent",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 10,
+                    "required": true,
+                    "inheritance": {
+                        "file": "BaseComponent"
+                    }
+                },
+                {
+                    "name": "nodes",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "NodeModel[]",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 12,
+                    "required": false,
+                    "inheritance": {
+                        "file": "BaseComponent"
+                    }
+                }
+            ],
             "outputsClass": [],
             "propertiesClass": [],
             "methodsClass": [],
@@ -1799,17 +2594,23 @@
             "hostBindings": [],
             "hostListeners": [],
             "standalone": false,
-            "imports": [],
+            "imports": [
+                {
+                    "name": "Generator"
+                }
+            ],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'main-component',\r\n  templateUrl: './main.component.html',\r\n  styleUrl: './main.component.scss',\r\n})\r\nexport class MainComponent {}\r\n",
+            "sourceCode": "import { Component } from '@angular/core';\r\nimport { RegisterComponent } from '../../decorator/component.decorator';\r\nimport { BaseComponent } from '../../base/base.component';\r\nimport { MainComponentModel } from '../../model/component/main-component.model';\r\nimport { Generator } from '../../generator/generator';\r\n\r\n@Component({\r\n  selector: 'main-component',\r\n  templateUrl: './main.component.html',\r\n  styleUrl: './main.component.scss',\r\n  imports: [Generator],\r\n})\r\n@RegisterComponent('main')\r\nexport class MainComponent extends BaseComponent<MainComponentModel> {}\r\n",
             "styleUrl": "./main.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
-            "extends": [],
-            "templateData": "<p>main component works!</p>\r\n"
+            "extends": [
+                "BaseComponent"
+            ],
+            "templateData": "<div class=\"main\">\r\n  <p>main works!</p>\r\n  <generator [nodes]=\"nodes()\"></generator>\r\n</div>\r\n"
         },
         {
             "name": "MainView",
@@ -2139,62 +2940,6 @@
             "templateData": "<text-component type=\"p\" value=\"resume-view works!\"></text-component>\r\n"
         },
         {
-            "name": "RootViewComponent",
-            "id": "component-RootViewComponent-b5436acd729347a398701d50209076bec73f74583efb97858044010b95e206943a3a829f47fea56aff097fdb21601c32f8a539d0817369d4ed6cb5d363fc4472",
-            "file": "src/component/view/root/root-view.component.ts",
-            "encapsulation": [],
-            "entryComponents": [],
-            "inputs": [],
-            "outputs": [],
-            "providers": [],
-            "selector": "root-view-component",
-            "styleUrls": [],
-            "styles": [],
-            "templateUrl": [
-                "./root-view.component.html"
-            ],
-            "viewProviders": [],
-            "hostDirectives": [],
-            "inputsClass": [
-                {
-                    "name": "tree",
-                    "defaultValue": "[]",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "TreeModel",
-                    "indexKey": "",
-                    "optional": false,
-                    "description": "",
-                    "line": 12,
-                    "required": false
-                }
-            ],
-            "outputsClass": [],
-            "propertiesClass": [],
-            "methodsClass": [],
-            "deprecated": false,
-            "deprecationMessage": "",
-            "hostBindings": [],
-            "hostListeners": [],
-            "standalone": false,
-            "imports": [
-                {
-                    "name": "GeneratorComponent",
-                    "type": "component"
-                }
-            ],
-            "description": "",
-            "rawdescription": "\n",
-            "type": "component",
-            "sourceCode": "import { Component, input } from '@angular/core';\r\nimport { TreeModel } from '../../../core/model/tree.model';\r\nimport { GeneratorComponent } from '../../generator/generator.component';\r\n\r\n@Component({\r\n  selector: 'root-view-component',\r\n  templateUrl: './root-view.component.html',\r\n  styleUrl: './root-view.component.scss',\r\n  imports: [GeneratorComponent],\r\n})\r\nexport class RootViewComponent {\r\n  tree = input<TreeModel>([]);\r\n}\r\n",
-            "styleUrl": "./root-view.component.scss",
-            "assetsDirs": [],
-            "styleUrlsData": "",
-            "stylesData": "",
-            "extends": [],
-            "templateData": "<div class=\"root\">\r\n  <p>root-view component works!</p>\r\n  <generator-component [tree]=\"tree()\"></generator-component>\r\n</div>\r\n"
-        },
-        {
             "name": "SectionComponent",
             "id": "component-SectionComponent-e56e5c679992c7875b0c81bfba756d0a629929ba7c043ad6d1c2529ddb63e9b23e27cdbf4e32ba5242d1cbc396cc20d0161bccbf9a547bacd73fc861a74eb428",
             "file": "src/app/component/section/section.component.ts",
@@ -2287,7 +3032,7 @@
         },
         {
             "name": "SectionComponent",
-            "id": "component-SectionComponent-2bd339a99df1cc016fc01cfadc5d28b86c785305045d26a66e3222573a14d375b119e7d9d128af6ed90bf94b3f0bc23a7802fd53679f5ca265e429314a6c65d4-1",
+            "id": "component-SectionComponent-dadb10a4cbdab18eba47cc4e82ea36def902da627318b4b1f9297cc325a62a782d2ee66facf72a7945e2afa905e933f1e3085435e6e0e93d0edc4e5b9d05bd81-1",
             "file": "src/generator/component/section/section.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -2302,7 +3047,37 @@
             ],
             "viewProviders": [],
             "hostDirectives": [],
-            "inputsClass": [],
+            "inputsClass": [
+                {
+                    "name": "component",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "TBaseComponent",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 10,
+                    "required": true,
+                    "inheritance": {
+                        "file": "BaseComponent"
+                    }
+                },
+                {
+                    "name": "nodes",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "NodeModel[]",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 12,
+                    "required": false,
+                    "inheritance": {
+                        "file": "BaseComponent"
+                    }
+                }
+            ],
             "outputsClass": [],
             "propertiesClass": [],
             "methodsClass": [],
@@ -2311,20 +3086,26 @@
             "hostBindings": [],
             "hostListeners": [],
             "standalone": false,
-            "imports": [],
+            "imports": [
+                {
+                    "name": "Generator"
+                }
+            ],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'section-component',\r\n  templateUrl: './section.component.html',\r\n  styleUrl: './section.component.scss',\r\n})\r\nexport class SectionComponent {}\r\n",
+            "sourceCode": "import { Component } from '@angular/core';\r\nimport { RegisterComponent } from '../../decorator/component.decorator';\r\nimport { BaseComponent } from '../../base/base.component';\r\nimport { SectionComponentModel } from '../../model/component/section-component.model';\r\nimport { Generator } from '../../generator/generator';\r\n\r\n@Component({\r\n  selector: 'section-component',\r\n  templateUrl: './section.component.html',\r\n  styleUrl: './section.component.scss',\r\n  imports: [Generator],\r\n})\r\n@RegisterComponent('section')\r\nexport class SectionComponent extends BaseComponent<SectionComponentModel> {}\r\n",
             "styleUrl": "./section.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
-            "extends": [],
+            "extends": [
+                "BaseComponent"
+            ],
             "isDuplicate": true,
             "duplicateId": 1,
             "duplicateName": "SectionComponent-1",
-            "templateData": "<p>section component works!</p>\r\n"
+            "templateData": "<div class=\"section\">\r\n  <p>section works!</p>\r\n  <generator [nodes]=\"nodes()\"></generator>\r\n</div>\r\n"
         },
         {
             "name": "SkillsView",
@@ -2567,7 +3348,7 @@
         },
         {
             "name": "View",
-            "id": "component-View-9a07cf72d4faca66166673d0169484334d50b01deeba3e8cd6cac0f40a050b4201bd163d45584e92ab84ce83424ddec6f0c575bbe94976f584dad3b34b06230f",
+            "id": "component-View-48fc61f3d53e5ee7f95137785c01073efad276e76f99dce04d0060a1d75d461acd6e967d5d1dc81af96daf33640debed3f10b390915b1e56a0fd923ba5e7763b",
             "file": "src/app/view/view.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -2585,17 +3366,6 @@
             "inputsClass": [],
             "outputsClass": [],
             "propertiesClass": [
-                {
-                    "name": "tree",
-                    "defaultValue": "[\r\n    {\r\n      component: RootViewComponent,\r\n      children: [\r\n        {\r\n          component: RootViewComponent,\r\n          children: [\r\n            {\r\n              component: RootViewComponent,\r\n              children: [],\r\n            },\r\n          ],\r\n        },\r\n        {\r\n          component: RootViewComponent,\r\n          children: [],\r\n        },\r\n      ],\r\n    },\r\n    {\r\n      component: RootViewComponent,\r\n      children: [\r\n        {\r\n          component: RootViewComponent,\r\n          children: [],\r\n        },\r\n        {\r\n          component: RootViewComponent,\r\n          children: [],\r\n        },\r\n      ],\r\n    },\r\n    {\r\n      component: RootViewComponent,\r\n      children: [\r\n        {\r\n          component: RootViewComponent,\r\n          children: [\r\n            {\r\n              component: RootViewComponent,\r\n              children: [\r\n                {\r\n                  component: RootViewComponent,\r\n                  children: [],\r\n                },\r\n              ],\r\n            },\r\n          ],\r\n        },\r\n      ],\r\n    },\r\n    {\r\n      component: RootViewComponent,\r\n      children: [],\r\n    },\r\n  ]",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "TreeModel",
-                    "indexKey": "",
-                    "optional": false,
-                    "description": "",
-                    "line": 13
-                },
                 {
                     "name": "store",
                     "defaultValue": "inject(Store)",
@@ -2621,23 +3391,18 @@
             "hostBindings": [],
             "hostListeners": [],
             "standalone": false,
-            "imports": [
-                {
-                    "name": "GeneratorComponent",
-                    "type": "component"
-                }
-            ],
+            "imports": [],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\r\nimport { StoreCore } from '../store/store.core';\r\nimport { GeneratorComponent } from '../../component/generator/generator.component';\r\nimport { TreeModel } from '../../core/model/tree.model';\r\nimport { RootViewComponent } from '../../component/view/root/root-view.component';\r\n\r\n@Component({\r\n  selector: 'view',\r\n  templateUrl: './view.html',\r\n  imports: [GeneratorComponent],\r\n})\r\nexport class View extends StoreCore {\r\n  tree: TreeModel = [\r\n    {\r\n      component: RootViewComponent,\r\n      children: [\r\n        {\r\n          component: RootViewComponent,\r\n          children: [\r\n            {\r\n              component: RootViewComponent,\r\n              children: [],\r\n            },\r\n          ],\r\n        },\r\n        {\r\n          component: RootViewComponent,\r\n          children: [],\r\n        },\r\n      ],\r\n    },\r\n    {\r\n      component: RootViewComponent,\r\n      children: [\r\n        {\r\n          component: RootViewComponent,\r\n          children: [],\r\n        },\r\n        {\r\n          component: RootViewComponent,\r\n          children: [],\r\n        },\r\n      ],\r\n    },\r\n    {\r\n      component: RootViewComponent,\r\n      children: [\r\n        {\r\n          component: RootViewComponent,\r\n          children: [\r\n            {\r\n              component: RootViewComponent,\r\n              children: [\r\n                {\r\n                  component: RootViewComponent,\r\n                  children: [],\r\n                },\r\n              ],\r\n            },\r\n          ],\r\n        },\r\n      ],\r\n    },\r\n    {\r\n      component: RootViewComponent,\r\n      children: [],\r\n    },\r\n  ];\r\n\r\n  // views = this.store.selectSignal((state) => {\r\n  //   return Object.values(state.group)\r\n  //     .sort((prev, next) => prev.order - next.order)\r\n  //     .map((item) => item.view);\r\n  // });\r\n}\r\n",
+            "sourceCode": "import { Component } from '@angular/core';\r\nimport { StoreCore } from '../store/store.core';\r\n\r\n@Component({\r\n  selector: 'view',\r\n  templateUrl: './view.html',\r\n})\r\nexport class View extends StoreCore {}\r\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [
                 "StoreCore"
             ],
-            "templateData": "<generator-component [tree]=\"tree\"></generator-component>\r\n\r\n<!-- @for (view of views(); track view) {\r\n  <ng-container *ngComponentOutlet=\"view\"></ng-container>\r\n} -->\r\n"
+            "templateData": "<!-- @for (view of views(); track view) {\r\n  <ng-container *ngComponentOutlet=\"view\"></ng-container>\r\n} -->\r\n"
         }
     ],
     "modules": [],
@@ -2684,6 +3449,16 @@
                 "defaultValue": "createReducer(companyDataConst)"
             },
             {
+                "name": "componentStore",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/generator/store/component.store.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "unknown",
+                "defaultValue": "new Map<TComponentKind, any>()"
+            },
+            {
                 "name": "config",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -2691,7 +3466,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "ApplicationConfig",
-                "defaultValue": "{\n  providers: [\n    provideBrowserGlobalErrorListeners(),\n    provideStore(\n      {\n        aboutMe: aboutMeReducer,\n        company: companyReducer,\n        education: educationReducer,\n        experience: experienceReducer,\n        home: homeReducer,\n        personal: personalReducer,\n        resume: resumeReducer,\n        group: groupReducer,\n        section: sectionReducer,\n        skill: skillReducer,\n        technologyGroup: technologyGroupReducer,\n        technology: technologyReducer,\n      },\n      {\n        runtimeChecks: {\n          strictStateImmutability: false,\n        },\n      },\n    ),\n    provideStoreDevtools({ maxAge: 25, logOnly: !isDevMode() }),\n  ],\n}"
+                "defaultValue": "{\n  providers: [\n    provideBrowserGlobalErrorListeners(),\n    provideStore(\n      {\n        aboutMe: aboutMeReducer,\n        company: companyReducer,\n        education: educationReducer,\n        experience: experienceReducer,\n        home: homeReducer,\n        personal: personalReducer,\n        resume: resumeReducer,\n        group: groupReducer,\n        section: sectionReducer,\n        skill: skillReducer,\n        technologyGroup: technologyGroupReducer,\n        technology: technologyReducer,\n      },\n      {\n        runtimeChecks: {\n          strictStateImmutability: false,\n        },\n      },\n    ),\n    provideStoreDevtools({ maxAge: 25, logOnly: !isDevMode() }),\n    generatorInit(),\n  ],\n}"
             },
             {
                 "name": "educationDataConst",
@@ -2732,6 +3507,26 @@
                 "deprecationMessage": "",
                 "type": "unknown",
                 "defaultValue": "createReducer(experienceDataConst)"
+            },
+            {
+                "name": "generatorInit",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/generator/init/generator.init.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "unknown",
+                "defaultValue": "() => {\r\n  return {\r\n    provide: 'GENERATOR_INIT',\r\n    useFactory: () => {\r\n      console.log('Generator initialized!');\r\n    },\r\n    multi: true,\r\n  };\r\n}"
+            },
+            {
+                "name": "getComponent",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/generator/decorator/component.decorator.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "unknown",
+                "defaultValue": "(kind: TComponentKind) => {\r\n  const component = componentStore.get(kind);\r\n  if (component) {\r\n    return component;\r\n  }\r\n  throw new Error(`Not found element: ${kind} in the componentStore store!`);\r\n}"
             },
             {
                 "name": "groupDataConst",
@@ -2792,6 +3587,16 @@
                 "deprecationMessage": "",
                 "type": "unknown",
                 "defaultValue": "createReducer(personalDataConst)"
+            },
+            {
+                "name": "RegisterComponent",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/generator/decorator/component.decorator.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "unknown",
+                "defaultValue": "(kind: TComponentKind) => {\r\n  return (component: any) => {\r\n    if (componentStore.has(kind)) {\r\n      throw new Error(`Element: ${kind} is already registered in the componentStore store!`);\r\n    }\r\n    componentStore.set(kind, component);\r\n  };\r\n}"
             },
             {
                 "name": "resumeDataConst",
@@ -3007,6 +3812,28 @@
                 "kind": 188
             },
             {
+                "name": "TComponent",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "CopyrightComponentModel | FooterComponentModel | HeaderComponentModel | MainComponentModel | SectionComponentModel",
+                "file": "src/generator/model/type/component.type.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 193
+            },
+            {
+                "name": "TComponentKind",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "\"copyright\" | \"footer\" | \"header\" | \"main\" | \"section\"",
+                "file": "src/generator/model/type/component-kind.type.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 193
+            },
+            {
                 "name": "TechnologyDataModel",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
@@ -3040,15 +3867,26 @@
                 "kind": 193
             },
             {
-                "name": "TreeModel",
+                "name": "TYear",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "NodeModel[]",
-                "file": "src/core/model/tree.model.ts",
+                "rawtype": "YearCurrentModel | YearRangeModel",
+                "file": "src/generator/model/data/copyright-data.model.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
-                "kind": 189
+                "kind": 193
+            },
+            {
+                "name": "TYearKind",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "\"current\" | \"range\"",
+                "file": "src/generator/model/data/copyright-data.model.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 193
             }
         ],
         "enumerations": [
@@ -3726,6 +4564,18 @@
                     "defaultValue": "{\r\n  aprSystem: {\r\n    name: 'APR System',\r\n    url: 'https://www.apr.pl',\r\n  },\r\n  primaris: {\r\n    name: 'Primaris',\r\n    url: 'https://primaris.eu',\r\n  },\r\n}"
                 }
             ],
+            "src/generator/store/component.store.ts": [
+                {
+                    "name": "componentStore",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/generator/store/component.store.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "unknown",
+                    "defaultValue": "new Map<TComponentKind, any>()"
+                }
+            ],
             "src/app/config/config.ts": [
                 {
                     "name": "config",
@@ -3735,7 +4585,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "ApplicationConfig",
-                    "defaultValue": "{\n  providers: [\n    provideBrowserGlobalErrorListeners(),\n    provideStore(\n      {\n        aboutMe: aboutMeReducer,\n        company: companyReducer,\n        education: educationReducer,\n        experience: experienceReducer,\n        home: homeReducer,\n        personal: personalReducer,\n        resume: resumeReducer,\n        group: groupReducer,\n        section: sectionReducer,\n        skill: skillReducer,\n        technologyGroup: technologyGroupReducer,\n        technology: technologyReducer,\n      },\n      {\n        runtimeChecks: {\n          strictStateImmutability: false,\n        },\n      },\n    ),\n    provideStoreDevtools({ maxAge: 25, logOnly: !isDevMode() }),\n  ],\n}"
+                    "defaultValue": "{\n  providers: [\n    provideBrowserGlobalErrorListeners(),\n    provideStore(\n      {\n        aboutMe: aboutMeReducer,\n        company: companyReducer,\n        education: educationReducer,\n        experience: experienceReducer,\n        home: homeReducer,\n        personal: personalReducer,\n        resume: resumeReducer,\n        group: groupReducer,\n        section: sectionReducer,\n        skill: skillReducer,\n        technologyGroup: technologyGroupReducer,\n        technology: technologyReducer,\n      },\n      {\n        runtimeChecks: {\n          strictStateImmutability: false,\n        },\n      },\n    ),\n    provideStoreDevtools({ maxAge: 25, logOnly: !isDevMode() }),\n    generatorInit(),\n  ],\n}"
                 }
             ],
             "src/app/data/education/education-data.const.ts": [
@@ -3760,6 +4610,40 @@
                     "deprecationMessage": "",
                     "type": "ExperienceDataModel",
                     "defaultValue": "[\r\n  {\r\n    company: CompanyDataEnum.aprSystem,\r\n    startDate: new Date(2020, 8, 1),\r\n    endDate: new Date(2025, 3, 1),\r\n    role: 'Frontend Software Engineer',\r\n    experiences: [\r\n      'Designed, developed, and maintained Angular-based web applications.',\r\n      'Built reusable metadata-driven Angular UI components with dynamic rendering.',\r\n      'Implemented application state management using NGXS, RxJS, and Redux DevTools.',\r\n      'Developed applications within an Nx monorepo architecture supporting a modular project structure.',\r\n      'Enforced code quality standards using ESLint, Prettier, and Stylelint.',\r\n      'Implemented unit testing using Jest.',\r\n      'Integrated REST API communication between frontend and backend services.',\r\n      'Containerized applications using Docker.',\r\n      'Developed internal NPM packages to support workflow automation and CI/CD within the GitLab ecosystem.',\r\n      'Modeled system architecture and business processes using UML.',\r\n    ],\r\n    technologies: [\r\n      TechnologyDataEnum.html,\r\n      TechnologyDataEnum.css,\r\n      TechnologyDataEnum.sass,\r\n      TechnologyDataEnum.storybook,\r\n      TechnologyDataEnum.javascript,\r\n      TechnologyDataEnum.typescript,\r\n      TechnologyDataEnum.angular,\r\n      TechnologyDataEnum.ngrx,\r\n      TechnologyDataEnum.rxjs,\r\n      TechnologyDataEnum.primeng,\r\n      TechnologyDataEnum.jest,\r\n      TechnologyDataEnum.postman,\r\n      TechnologyDataEnum.nodejs,\r\n      TechnologyDataEnum.nx,\r\n      TechnologyDataEnum.docker,\r\n      TechnologyDataEnum.git,\r\n      TechnologyDataEnum.gitlab,\r\n      TechnologyDataEnum.npm,\r\n      TechnologyDataEnum.pnpm,\r\n      TechnologyDataEnum.eslint,\r\n      TechnologyDataEnum.prettier,\r\n      TechnologyDataEnum.stylelint,\r\n      TechnologyDataEnum.webstorm,\r\n      TechnologyDataEnum.visualStudioCode,\r\n      TechnologyDataEnum.windows,\r\n      TechnologyDataEnum.enterpriseArchitect,\r\n    ],\r\n    skills: [\r\n      SkillKindDataEnum.dataStructuresAndAlgorithms,\r\n      SkillKindDataEnum.english,\r\n      SkillKindDataEnum.polish,\r\n    ],\r\n  },\r\n  {\r\n    company: CompanyDataEnum.primaris,\r\n    startDate: new Date(2025, 6, 1),\r\n    endDate: 'Present',\r\n    role: 'Automation Engineer',\r\n    experiences: [\r\n      'Developed robotic process automation (RPA) solutions using UiPath to automate business workflows.',\r\n      'Built data integration pipelines using SnapLogic, utilizing JavaScript for transformation logic.',\r\n      'Queried and managed data using SQL and Microsoft SQL Server (MSSQL).',\r\n      'Provided consulting and implementation support for GoSmart solutions while communicating with stakeholders in English.',\r\n      'Collaborated with cross-functional teams to analyze requirements and deliver automation and integration solutions.',\r\n    ],\r\n    technologies: [\r\n      TechnologyDataEnum.javascript,\r\n      TechnologyDataEnum.sql,\r\n      TechnologyDataEnum.microsoftSqlServer,\r\n      TechnologyDataEnum.soapui,\r\n      TechnologyDataEnum.github,\r\n      TechnologyDataEnum.windows,\r\n      TechnologyDataEnum.snapLogic,\r\n      TechnologyDataEnum.uiPath,\r\n      TechnologyDataEnum.goSmartDesigner,\r\n    ],\r\n    skills: [SkillKindDataEnum.english, SkillKindDataEnum.polish],\r\n  },\r\n]"
+                }
+            ],
+            "src/generator/init/generator.init.ts": [
+                {
+                    "name": "generatorInit",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/generator/init/generator.init.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "unknown",
+                    "defaultValue": "() => {\r\n  return {\r\n    provide: 'GENERATOR_INIT',\r\n    useFactory: () => {\r\n      console.log('Generator initialized!');\r\n    },\r\n    multi: true,\r\n  };\r\n}"
+                }
+            ],
+            "src/generator/decorator/component.decorator.ts": [
+                {
+                    "name": "getComponent",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/generator/decorator/component.decorator.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "unknown",
+                    "defaultValue": "(kind: TComponentKind) => {\r\n  const component = componentStore.get(kind);\r\n  if (component) {\r\n    return component;\r\n  }\r\n  throw new Error(`Not found element: ${kind} in the componentStore store!`);\r\n}"
+                },
+                {
+                    "name": "RegisterComponent",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/generator/decorator/component.decorator.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "unknown",
+                    "defaultValue": "(kind: TComponentKind) => {\r\n  return (component: any) => {\r\n    if (componentStore.has(kind)) {\r\n      throw new Error(`Element: ${kind} is already registered in the componentStore store!`);\r\n    }\r\n    componentStore.set(kind, component);\r\n  };\r\n}"
                 }
             ],
             "src/app/data/group/group-data.const.ts": [
@@ -4533,6 +5417,32 @@
                     "kind": 188
                 }
             ],
+            "src/generator/model/type/component.type.ts": [
+                {
+                    "name": "TComponent",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "CopyrightComponentModel | FooterComponentModel | HeaderComponentModel | MainComponentModel | SectionComponentModel",
+                    "file": "src/generator/model/type/component.type.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 193
+                }
+            ],
+            "src/generator/model/type/component-kind.type.ts": [
+                {
+                    "name": "TComponentKind",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "\"copyright\" | \"footer\" | \"header\" | \"main\" | \"section\"",
+                    "file": "src/generator/model/type/component-kind.type.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 193
+                }
+            ],
             "src/app/data/technology/technology-data.model.ts": [
                 {
                     "name": "TechnologyDataModel",
@@ -4572,17 +5482,28 @@
                     "kind": 193
                 }
             ],
-            "src/core/model/tree.model.ts": [
+            "src/generator/model/data/copyright-data.model.ts": [
                 {
-                    "name": "TreeModel",
+                    "name": "TYear",
                     "ctype": "miscellaneous",
                     "subtype": "typealias",
-                    "rawtype": "NodeModel[]",
-                    "file": "src/core/model/tree.model.ts",
+                    "rawtype": "YearCurrentModel | YearRangeModel",
+                    "file": "src/generator/model/data/copyright-data.model.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
-                    "kind": 189
+                    "kind": 193
+                },
+                {
+                    "name": "TYearKind",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "\"current\" | \"range\"",
+                    "file": "src/generator/model/data/copyright-data.model.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 193
                 }
             ]
         }
@@ -4596,6 +5517,15 @@
         "count": 0,
         "status": "low",
         "files": [
+            {
+                "filePath": "src/app/app.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "App",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
             {
                 "filePath": "src/app/component/link/link.component.ts",
                 "type": "component",
@@ -5315,44 +6245,25 @@
                 "linktype": "component",
                 "name": "View",
                 "coveragePercent": 0,
-                "coverageCount": "0/3",
-                "status": "low"
-            },
-            {
-                "filePath": "src/component/generator/generator.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "GeneratorComponent",
-                "coveragePercent": 0,
                 "coverageCount": "0/2",
                 "status": "low"
             },
             {
-                "filePath": "src/component/view/root/root-view.component.ts",
+                "filePath": "src/generator/base/base.component.ts",
                 "type": "component",
                 "linktype": "component",
-                "name": "RootViewComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/2",
-                "status": "low"
-            },
-            {
-                "filePath": "src/core/model/node.model.ts",
-                "type": "interface",
-                "linktype": "interface",
-                "name": "NodeModel",
+                "name": "BaseComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/3",
                 "status": "low"
             },
             {
-                "filePath": "src/core/model/tree.model.ts",
-                "type": "type alias",
-                "linktype": "miscellaneous",
-                "linksubtype": "typealias",
-                "name": "TreeModel",
+                "filePath": "src/generator/component/copyright/copyright.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "CopyrightComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/1",
+                "coverageCount": "0/7",
                 "status": "low"
             },
             {
@@ -5361,7 +6272,7 @@
                 "linktype": "component",
                 "name": "FooterComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/1",
+                "coverageCount": "0/3",
                 "status": "low"
             },
             {
@@ -5370,7 +6281,7 @@
                 "linktype": "component",
                 "name": "HeaderComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/1",
+                "coverageCount": "0/3",
                 "status": "low"
             },
             {
@@ -5379,7 +6290,7 @@
                 "linktype": "component",
                 "name": "MainComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/1",
+                "coverageCount": "0/3",
                 "status": "low"
             },
             {
@@ -5388,7 +6299,285 @@
                 "linktype": "component",
                 "name": "SectionComponent",
                 "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/generator/decorator/component.decorator.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "getComponent",
+                "coveragePercent": 0,
                 "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/generator/decorator/component.decorator.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "RegisterComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/generator/generator/generator.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "Generator",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/generator/init/generator.init.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "generatorInit",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/generator/model/base/base-component.model.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "BaseComponentModel",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/generator/model/base/base-kind.model.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "BaseKindModel",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/generator/model/component/copyright-component.model.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "CopyrightComponentModel",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/generator/model/component/footer-component.model.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "FooterComponentModel",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/generator/model/component/header-component.model.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "HeaderComponentModel",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/generator/model/component/main-component.model.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "MainComponentModel",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/generator/model/component/section-component.model.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "SectionComponentModel",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/generator/model/data/copyright-data.model.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "CopyrightDataModel",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "src/generator/model/data/copyright-data.model.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "YearCurrentModel",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/generator/model/data/copyright-data.model.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "YearRangeModel",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/generator/model/data/copyright-data.model.ts",
+                "type": "type alias",
+                "linktype": "miscellaneous",
+                "linksubtype": "typealias",
+                "name": "TYear",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/generator/model/data/copyright-data.model.ts",
+                "type": "type alias",
+                "linktype": "miscellaneous",
+                "linksubtype": "typealias",
+                "name": "TYearKind",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/generator/model/data/footer-data.model.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "FooterDataModel",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/generator/model/data/header-data.model.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "HeaderDataModel",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/generator/model/data/main-data.model.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "MainDataModel",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/generator/model/data/section-data.model.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "SectionDataModel",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/generator/model/metadata/copyright-metadata.model.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "CopyrightMetadataModel",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/generator/model/metadata/footer-metadata.model.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "FooterMetadataModel",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/generator/model/metadata/header-metadata.model.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "HeaderMetadataModel",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/generator/model/metadata/main-metadata.model.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "MainMetadataModel",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/generator/model/metadata/section-metadata.model.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "SectionMetadataModel",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/generator/model/node/node.model.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "NodeModel",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/generator/model/type/component-kind.type.ts",
+                "type": "type alias",
+                "linktype": "miscellaneous",
+                "linksubtype": "typealias",
+                "name": "TComponentKind",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/generator/model/type/component.type.ts",
+                "type": "type alias",
+                "linktype": "miscellaneous",
+                "linksubtype": "typealias",
+                "name": "TComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/generator/store/component.store.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "componentStore",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/generator/util/date.util.ts",
+                "type": "injectable",
+                "linktype": "injectable",
+                "name": "DateUtil",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
                 "status": "low"
             }
         ]
