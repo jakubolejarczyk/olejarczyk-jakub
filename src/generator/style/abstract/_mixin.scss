@@ -1,9 +1,0 @@
-@use 'color';
-
-@mixin build-layout() {
-  @include build-palette;
-}
-
-@mixin build-palette() {
-  background-color: color.$color-primary;
-}

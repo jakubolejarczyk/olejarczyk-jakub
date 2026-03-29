@@ -1,0 +1,8 @@
+@use 'color.abstract' as color;
+
+$palettes: (
+  'primary': (
+    'background-color': color.$color-primary,
+    'color': color.$color-text,
+  ),
+);

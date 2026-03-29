@@ -1,4 +1,4 @@
-@use '../abstract/mixin';
+@use '../abstract/mixin.abstract' as mixin;
 
 .copyright {
   @include mixin.build-layout;

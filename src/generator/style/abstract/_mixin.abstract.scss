@@ -1,0 +1,15 @@
+@use 'palette.abstract' as palette;
+
+@mixin build-layout {
+  @include build-palette;
+}
+
+@mixin build-palette {
+  @each $name, $palette in palette.$palettes {
+    &__palette--#{$name} {
+      @each $property, $value in $palette {
+        #{$property}: #{$value};
+      }
+    }
+  }
+}
