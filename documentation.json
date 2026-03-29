@@ -1349,13 +1349,104 @@
     "interceptors": [],
     "classes": [
         {
+            "name": "BemUtility",
+            "id": "class-BemUtility-5401fefaced2faee77137c5a4a7b44f4aa9369e7803831a7817ff14c63e0d97d46929feb13912641d8f497dba7a1e856012e53e6ba47565968064756a363873a",
+            "file": "src/generator/utility/bem.utility.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "class",
+            "sourceCode": "import { StringUtility } from './string.utility';\r\n\r\nexport class BemUtility {\r\n  static build(block: string, element?: string, modifier?: string) {\r\n    if (\r\n      StringUtility.isNotEmpty(block) &&\r\n      StringUtility.isNotEmpty(element) &&\r\n      StringUtility.isNotEmpty(modifier)\r\n    ) {\r\n      return `${block}__${element}--${modifier}`;\r\n    }\r\n    if (\r\n      StringUtility.isNotEmpty(block) &&\r\n      StringUtility.isNotEmpty(element) &&\r\n      StringUtility.isEmpty(modifier)\r\n    ) {\r\n      return `${block}__${element}`;\r\n    }\r\n    if (\r\n      StringUtility.isNotEmpty(block) &&\r\n      StringUtility.isEmpty(element) &&\r\n      StringUtility.isNotEmpty(modifier)\r\n    ) {\r\n      return `${block}--${modifier}`;\r\n    }\r\n    if (\r\n      StringUtility.isNotEmpty(block) &&\r\n      StringUtility.isEmpty(element) &&\r\n      StringUtility.isEmpty(modifier)\r\n    ) {\r\n      return block;\r\n    }\r\n    throw new Error('Failed to build BEM class name!');\r\n  }\r\n}\r\n",
+            "inputsClass": [],
+            "outputsClass": [],
+            "properties": [],
+            "methods": [
+                {
+                    "name": "build",
+                    "args": [
+                        {
+                            "name": "block",
+                            "type": "string",
+                            "optional": false,
+                            "dotDotDotToken": false,
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        },
+                        {
+                            "name": "element",
+                            "type": "string",
+                            "optional": true,
+                            "dotDotDotToken": false,
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        },
+                        {
+                            "name": "modifier",
+                            "type": "string",
+                            "optional": true,
+                            "dotDotDotToken": false,
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "string",
+                    "typeParameters": [],
+                    "line": 4,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        126
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "block",
+                            "type": "string",
+                            "optional": false,
+                            "dotDotDotToken": false,
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "element",
+                            "type": "string",
+                            "optional": true,
+                            "dotDotDotToken": false,
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "modifier",
+                            "type": "string",
+                            "optional": true,
+                            "dotDotDotToken": false,
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "indexSignatures": [],
+            "extends": [],
+            "hostBindings": [],
+            "hostListeners": []
+        },
+        {
             "name": "ComponentBase",
-            "id": "class-ComponentBase-1a9d967022c62db823d43d7ee26b4dae1a56da0a0f504e8020ccef207b5e9331c5ea6371a77006f20c822f600341333c3a80d68dd95a5a4c6dbe22c4815cbe7c",
+            "id": "class-ComponentBase-9c6b934a5e071f5e4447bdf77bb643e4e98170b2c544941fd8a188267df49e6bc1f26c1bdf690fb34ca1c12d61445ce079847ca405e4bdb5d89995c07ec16805",
             "file": "src/generator/base/component.base.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "class",
-            "sourceCode": "export class ComponentBase<Type> {\r\n  constructor(protected type: Type) {\r\n    this.type = type;\r\n  }\r\n\r\n  protected buildMainClassList() {\r\n    return [this.type];\r\n  }\r\n}\r\n",
+            "sourceCode": "import { PaletteEnum } from '../enum/palette.enum';\r\nimport { BemUtility } from '../utility/bem.utility';\r\nimport { StringUtility } from '../utility/string.utility';\r\n\r\nexport class ComponentBase<Type> {\r\n  constructor(protected type: Type) {\r\n    this.type = type;\r\n  }\r\n\r\n  protected buildMainClassList() {\r\n    const block = StringUtility.convertToString(this.type);\r\n    const mainClass = BemUtility.build(block);\r\n    const palettes = Object.values(PaletteEnum).map((palette) => {\r\n      return BemUtility.build(block, 'palette', palette);\r\n    });\r\n    return [mainClass, ...palettes];\r\n  }\r\n}\r\n",
             "constructorObj": {
                 "name": "constructor",
                 "description": "",
@@ -1371,7 +1462,7 @@
                         "deprecationMessage": ""
                     }
                 ],
-                "line": 1,
+                "line": 5,
                 "jsdoctags": [
                     {
                         "name": "type",
@@ -1396,7 +1487,7 @@
                     "optional": false,
                     "returnType": "{}",
                     "typeParameters": [],
-                    "line": 6,
+                    "line": 10,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -1457,7 +1548,7 @@
                     "optional": false,
                     "returnType": "{}",
                     "typeParameters": [],
-                    "line": 6,
+                    "line": 10,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -1503,6 +1594,129 @@
                 }
             ],
             "methods": [],
+            "indexSignatures": [],
+            "extends": [],
+            "hostBindings": [],
+            "hostListeners": []
+        },
+        {
+            "name": "StringUtility",
+            "id": "class-StringUtility-ba35ba8610ffdddd0f3e825360e8c4169b525e9de760de4e64798ba91f68c65c89607666781e4234da8df821d94a1c2e0b285c24ba287f535a8fa8afded5fb96",
+            "file": "src/generator/utility/string.utility.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "class",
+            "sourceCode": "export class StringUtility {\r\n  static isEmpty(value?: string) {\r\n    return value === undefined || value === null || value === '';\r\n  }\r\n\r\n  static isNotEmpty(value?: string) {\r\n    return !this.isEmpty(value);\r\n  }\r\n\r\n  static convertToString(value: any) {\r\n    return this.isEmpty(value) ? '' : value.toString();\r\n  }\r\n}\r\n",
+            "inputsClass": [],
+            "outputsClass": [],
+            "properties": [],
+            "methods": [
+                {
+                    "name": "convertToString",
+                    "args": [
+                        {
+                            "name": "value",
+                            "type": "any",
+                            "optional": false,
+                            "dotDotDotToken": false,
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "any",
+                    "typeParameters": [],
+                    "line": 10,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        126
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "value",
+                            "type": "any",
+                            "optional": false,
+                            "dotDotDotToken": false,
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "isEmpty",
+                    "args": [
+                        {
+                            "name": "value",
+                            "type": "string",
+                            "optional": true,
+                            "dotDotDotToken": false,
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "boolean",
+                    "typeParameters": [],
+                    "line": 2,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        126
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "value",
+                            "type": "string",
+                            "optional": true,
+                            "dotDotDotToken": false,
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "isNotEmpty",
+                    "args": [
+                        {
+                            "name": "value",
+                            "type": "string",
+                            "optional": true,
+                            "dotDotDotToken": false,
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "boolean",
+                    "typeParameters": [],
+                    "line": 6,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        126
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "value",
+                            "type": "string",
+                            "optional": true,
+                            "dotDotDotToken": false,
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
             "indexSignatures": [],
             "extends": [],
             "hostBindings": [],
@@ -1734,7 +1948,7 @@
                     "optional": false,
                     "returnType": "{}",
                     "typeParameters": [],
-                    "line": 6,
+                    "line": 10,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -3810,6 +4024,23 @@
                 "file": "src/app/enum/palette.enum.ts"
             },
             {
+                "name": "PaletteEnum",
+                "childs": [
+                    {
+                        "name": "primary",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "value": "primary"
+                    }
+                ],
+                "ctype": "miscellaneous",
+                "subtype": "enum",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "file": "src/generator/enum/palette.enum.ts"
+            },
+            {
                 "name": "ResumeLangDataEnum",
                 "childs": [
                     {
@@ -4668,6 +4899,25 @@
                     "deprecationMessage": "",
                     "description": "",
                     "file": "src/app/enum/palette.enum.ts"
+                }
+            ],
+            "src/generator/enum/palette.enum.ts": [
+                {
+                    "name": "PaletteEnum",
+                    "childs": [
+                        {
+                            "name": "primary",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "value": "primary"
+                        }
+                    ],
+                    "ctype": "miscellaneous",
+                    "subtype": "enum",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "file": "src/generator/enum/palette.enum.ts"
                 }
             ],
             "src/app/data/resume/resume-data.enum.ts": [
@@ -6430,6 +6680,24 @@
                 "name": "DateUtil",
                 "coveragePercent": 0,
                 "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/generator/utility/bem.utility.ts",
+                "type": "class",
+                "linktype": "classe",
+                "name": "BemUtility",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/generator/utility/string.utility.ts",
+                "type": "class",
+                "linktype": "classe",
+                "name": "StringUtility",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
                 "status": "low"
             }
         ]
