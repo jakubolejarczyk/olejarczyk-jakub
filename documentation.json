@@ -87,6 +87,31 @@
             "extends": []
         },
         {
+            "name": "BaseModel",
+            "id": "interface-BaseModel-1a6e6699bcf0fafc17f9af12fc9eaff67a51b69b61e5ca9fcb7c06e97a1c880a903c895b28773df8691cc76c120a93b91b885a2885776496788afed75f0cbdca",
+            "file": "src/generator/model/base/base.model.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "export interface BaseModel<TBase> {\r\n  base: TBase;\r\n}\r\n",
+            "properties": [
+                {
+                    "name": "base",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "TBase",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 2
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 172,
+            "methods": [],
+            "extends": []
+        },
+        {
             "name": "CompanyModel",
             "id": "interface-CompanyModel-e83fa6ae987410d78d5fdaf16c3147ee4a9c0d5047aa78675fd4cfedba17944ba3165de0e581eeb6a8b3d746d21a974be42f712bf628f94fdcd0401805140e91",
             "file": "src/app/data/company/company-data.model.ts",
@@ -139,32 +164,32 @@
         },
         {
             "name": "CopyrightDataModel",
-            "id": "interface-CopyrightDataModel-21b4ca8cb0094895b1f53f598aaa19a9e61e23e84cf1807c01918bcfc16a6fbda4219f1a6ba9b3ba571090db8205682c6402fc8f5b4550259416f86121180ccd",
+            "id": "interface-CopyrightDataModel-ef4c47efcb81d97e4f0345c0673790a21af6653a708c512a6b471b288f70f5fbdfe61f1269fc7fecdf1bb80ecf174aaf41e9357fee83d4882d958a541dd40e7f",
             "file": "src/generator/model/data/copyright-data.model.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "import { DataBaseModel } from '../base/data-base.model';\r\n\r\nexport interface CopyrightDataModel extends DataBaseModel {}\r\n",
+            "sourceCode": "import { BaseModel } from '../base/base.model';\r\nimport { DataBaseModel } from '../base/data-base.model';\r\n\r\nexport interface CopyrightDataModel extends BaseModel<DataBaseModel> {}\r\n",
             "properties": [],
             "indexSignatures": [],
             "methods": [],
             "extends": [
-                "DataBaseModel"
+                "BaseModel"
             ]
         },
         {
             "name": "CopyrightMetadataModel",
-            "id": "interface-CopyrightMetadataModel-1b614bf004b1406b15d98e9bee53be2c5f050a96857ecdea48a430d6030abdfe3cd46ffcc1cf4e636f476ac4582d153581a7f5ff56923b4d2e484f3d543deef4",
+            "id": "interface-CopyrightMetadataModel-8abe7fbfe6627dbb53428acee6faa95b2aebe7e4e708e6c3cb2fbd12f88dcd9eaef6108e06416b2821e2c9c6085a915e9923c4f02d7331200948d57312fc3041",
             "file": "src/generator/model/metadata/copyright-metadata.model.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "import { MetadataBaseModel } from '../base/metadata-base.model';\r\n\r\nexport interface CopyrightMetadataModel extends MetadataBaseModel {}\r\n",
+            "sourceCode": "import { BaseModel } from '../base/base.model';\r\nimport { MetadataBaseModel } from '../base/metadata-base.model';\r\n\r\nexport interface CopyrightMetadataModel extends BaseModel<MetadataBaseModel> {}\r\n",
             "properties": [],
             "indexSignatures": [],
             "methods": [],
             "extends": [
-                "MetadataBaseModel"
+                "BaseModel"
             ]
         },
         {
@@ -1547,12 +1572,12 @@
     "directives": [
         {
             "name": "ComponentBase",
-            "id": "directive-ComponentBase-b1fbeb1898e7e20389431d66ce336d72902b5f4830d3d726326b8674d37c5c3030b882acb96c75faee66563d480e4c0062c4bf6207c952cdf57c96653d7e1ffa",
+            "id": "directive-ComponentBase-6252d939c559af65f113b6073451687b9452300fe7a69db51840dc3faa5cb83be66f9eb3b8a038afc13ae084a6089819e14e7cfc76c2b8afb68ec107d49e8c20",
             "file": "src/generator/base/component.base.ts",
             "type": "directive",
             "description": "",
             "rawdescription": "\n",
-            "sourceCode": "import { Directive, input } from '@angular/core';\r\nimport { BemUtility } from '../utility/bem.utility';\r\nimport { StringUtility } from '../utility/string.utility';\r\nimport { MetadataBaseModel } from '../model/base/metadata-base.model';\r\nimport { DataBaseModel } from '../model/base/data-base.model';\r\n\r\n@Directive()\r\nexport class ComponentBase<\r\n  TType,\r\n  TDate extends DataBaseModel,\r\n  TMetadata extends MetadataBaseModel,\r\n> {\r\n  data = input.required<TDate>();\r\n\r\n  metadata = input.required<TMetadata>();\r\n\r\n  constructor(protected type: TType) {\r\n    this.type = type;\r\n  }\r\n\r\n  protected buildMainClassList() {\r\n    const block = StringUtility.convertToString(this.type);\r\n    const { palette } = this.metadata();\r\n    const mainClass = BemUtility.build(block);\r\n    const paletteClass = BemUtility.build(block, 'palette', palette);\r\n    return [mainClass, paletteClass];\r\n  }\r\n}\r\n",
+            "sourceCode": "import { Directive, input } from '@angular/core';\r\nimport { BemUtility } from '../utility/bem.utility';\r\nimport { StringUtility } from '../utility/string.utility';\r\nimport { MetadataBaseModel } from '../model/base/metadata-base.model';\r\nimport { DataBaseModel } from '../model/base/data-base.model';\r\nimport { BaseModel } from '../model/base/base.model';\r\n\r\n@Directive()\r\nexport class ComponentBase<\r\n  TType,\r\n  TDate extends BaseModel<DataBaseModel>,\r\n  TMetadata extends BaseModel<MetadataBaseModel>,\r\n> {\r\n  data = input.required<TDate>();\r\n\r\n  metadata = input.required<TMetadata>();\r\n\r\n  constructor(protected type: TType) {\r\n    this.type = type;\r\n  }\r\n\r\n  protected buildMainClassList() {\r\n    const block = StringUtility.convertToString(this.type);\r\n    const { palette } = this.metadata().base;\r\n    const mainClass = BemUtility.build(block);\r\n    const paletteClass = BemUtility.build(block, 'palette', palette);\r\n    return [mainClass, paletteClass];\r\n  }\r\n}\r\n",
             "providers": [],
             "hostDirectives": [],
             "standalone": false,
@@ -1565,7 +1590,7 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 13,
+                    "line": 14,
                     "required": true
                 },
                 {
@@ -1576,7 +1601,7 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 15,
+                    "line": 16,
                     "required": true
                 }
             ],
@@ -1593,7 +1618,7 @@
                     "optional": false,
                     "returnType": "{}",
                     "typeParameters": [],
-                    "line": 21,
+                    "line": 22,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -1617,7 +1642,7 @@
                         "deprecationMessage": ""
                     }
                 ],
-                "line": 15,
+                "line": 16,
                 "jsdoctags": [
                     {
                         "name": "type",
@@ -1635,12 +1660,12 @@
         },
         {
             "name": "LayoutBase",
-            "id": "directive-LayoutBase-b718a78b5fa129ae31f96a3800ba35cfba6f3c3e1710213180b1d6c7a056e03f368881bf90c5c163db28c9fbe583e62f343bf2be0c36b99a0427cdf4aa583bbc",
+            "id": "directive-LayoutBase-c05a66e006220196fc77bd78e0b5cb1d98bdd11265ad2c18078dc108a58afb706cedbacf179961cf464f429c7f067df21817e11ab4610a807033e3b9b935ccbd",
             "file": "src/generator/base/layout.base.ts",
             "type": "directive",
             "description": "",
             "rawdescription": "\n",
-            "sourceCode": "import { Directive } from '@angular/core';\r\nimport { ComponentBase } from './component.base';\r\nimport { LayoutType } from '../type/layout.type';\r\nimport { DataBaseModel } from '../model/base/data-base.model';\r\nimport { MetadataBaseModel } from '../model/base/metadata-base.model';\r\n\r\n@Directive()\r\nexport class LayoutBase<\r\n  TDate extends DataBaseModel,\r\n  TMetadata extends MetadataBaseModel,\r\n> extends ComponentBase<LayoutType, TDate, TMetadata> {\r\n  constructor(protected override type: LayoutType) {\r\n    super(type);\r\n  }\r\n}\r\n",
+            "sourceCode": "import { Directive } from '@angular/core';\r\nimport { ComponentBase } from './component.base';\r\nimport { LayoutType } from '../type/layout.type';\r\nimport { DataBaseModel } from '../model/base/data-base.model';\r\nimport { MetadataBaseModel } from '../model/base/metadata-base.model';\r\nimport { BaseModel } from '../model/base/base.model';\r\n\r\n@Directive()\r\nexport class LayoutBase<\r\n  TDate extends BaseModel<DataBaseModel>,\r\n  TMetadata extends BaseModel<MetadataBaseModel>,\r\n> extends ComponentBase<LayoutType, TDate, TMetadata> {\r\n  constructor(protected override type: LayoutType) {\r\n    super(type);\r\n  }\r\n}\r\n",
             "providers": [],
             "hostDirectives": [],
             "standalone": false,
@@ -1653,7 +1678,7 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 13,
+                    "line": 14,
                     "required": true,
                     "inheritance": {
                         "file": "ComponentBase"
@@ -1667,7 +1692,7 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 15,
+                    "line": 16,
                     "required": true,
                     "inheritance": {
                         "file": "ComponentBase"
@@ -1687,7 +1712,7 @@
                     "optional": false,
                     "returnType": "{}",
                     "typeParameters": [],
-                    "line": 21,
+                    "line": 22,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -1716,7 +1741,7 @@
                         "deprecationMessage": ""
                     }
                 ],
-                "line": 11,
+                "line": 12,
                 "jsdoctags": [
                     {
                         "name": "type",
@@ -1956,7 +1981,7 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 13,
+                    "line": 14,
                     "required": true,
                     "inheritance": {
                         "file": "ComponentBase"
@@ -1970,7 +1995,7 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 15,
+                    "line": 16,
                     "required": true,
                     "inheritance": {
                         "file": "ComponentBase"
@@ -1986,7 +2011,7 @@
                     "optional": false,
                     "returnType": "{}",
                     "typeParameters": [],
-                    "line": 21,
+                    "line": 22,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -6463,6 +6488,15 @@
                 "type": "interface",
                 "linktype": "interface",
                 "name": "BaseKindModel",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/generator/model/base/base.model.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "BaseModel",
                 "coveragePercent": 0,
                 "coverageCount": "0/2",
                 "status": "low"
