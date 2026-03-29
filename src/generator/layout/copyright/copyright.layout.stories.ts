@@ -12,11 +12,20 @@ export const Primary: Story = {
   args: {
     data: {
       base: {},
+      extend: {
+        symbol: '©',
+        year: {
+          kind: 'current',
+        },
+        ownerName: 'Jakub Olejarczyk',
+        rightsStatements: 'All rights reserved.',
+      },
     },
     metadata: {
       base: {
         palette: 'primary',
       },
+      extend: {},
     },
   },
 };

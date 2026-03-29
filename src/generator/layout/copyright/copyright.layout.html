@@ -1,3 +1,5 @@
 <div [ngClass]="buildMainClassList()">
-  <p>copyright layout works!</p>
+  @for (line of buildCopyright(); track line) {
+    <p>{{ line }}</p>
+  }
 </div>

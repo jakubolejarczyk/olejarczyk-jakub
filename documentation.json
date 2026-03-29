@@ -88,12 +88,12 @@
         },
         {
             "name": "BaseModel",
-            "id": "interface-BaseModel-1a6e6699bcf0fafc17f9af12fc9eaff67a51b69b61e5ca9fcb7c06e97a1c880a903c895b28773df8691cc76c120a93b91b885a2885776496788afed75f0cbdca",
+            "id": "interface-BaseModel-7d903575990bb6589bc4e826fe92192102aadd30cc601502fe8c248fb2be24b384646acc0d3c71f293ade7ad290c127e183328780212c8a01f6b1ebf9645c287",
             "file": "src/generator/model/base/base.model.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "export interface BaseModel<TBase> {\r\n  base: TBase;\r\n}\r\n",
+            "sourceCode": "import { UnknownModel } from './unknown.model';\r\n\r\nexport interface BaseModel<TBase, TExtend extends UnknownModel = UnknownModel> {\r\n  base: TBase;\r\n  extend: TExtend;\r\n}\r\n",
             "properties": [
                 {
                     "name": "base",
@@ -103,7 +103,17 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 2
+                    "line": 4
+                },
+                {
+                    "name": "extend",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "TExtend",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 5
                 }
             ],
             "indexSignatures": [],
@@ -164,12 +174,12 @@
         },
         {
             "name": "CopyrightDataModel",
-            "id": "interface-CopyrightDataModel-ef4c47efcb81d97e4f0345c0673790a21af6653a708c512a6b471b288f70f5fbdfe61f1269fc7fecdf1bb80ecf174aaf41e9357fee83d4882d958a541dd40e7f",
+            "id": "interface-CopyrightDataModel-4674e12212ebcb754c8833b36c3dfd08d24ace2b064a5583c3abb130f729d362a913b58aedd730abffc9c7bd2e49dd3f7ee46d86090c27df80f1f220ca44245b",
             "file": "src/generator/model/data/copyright-data.model.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "import { BaseModel } from '../base/base.model';\r\nimport { DataBaseModel } from '../base/data-base.model';\r\n\r\nexport interface CopyrightDataModel extends BaseModel<DataBaseModel> {}\r\n",
+            "sourceCode": "import { BaseKindModel } from '../base/base-kind.model';\r\nimport { BaseModel } from '../base/base.model';\r\nimport { DataBaseModel } from '../base/data-base.model';\r\n\r\ntype YearKindType = 'current' | 'range';\r\n\r\ninterface YearCurrentModel extends BaseKindModel<YearKindType, 'current'> {}\r\n\r\ninterface YearRangeModel extends BaseKindModel<YearKindType, 'range'> {\r\n  from: number;\r\n  to: number | 'current';\r\n}\r\n\r\ntype YearType = YearCurrentModel | YearRangeModel;\r\n\r\ninterface DataModel {\r\n  symbol: string;\r\n  year: YearType;\r\n  ownerName: string;\r\n  rightsStatements: string;\r\n}\r\n\r\nexport interface CopyrightDataModel extends BaseModel<DataBaseModel, DataModel> {}\r\n",
             "properties": [],
             "indexSignatures": [],
             "methods": [],
@@ -179,12 +189,12 @@
         },
         {
             "name": "CopyrightMetadataModel",
-            "id": "interface-CopyrightMetadataModel-8abe7fbfe6627dbb53428acee6faa95b2aebe7e4e708e6c3cb2fbd12f88dcd9eaef6108e06416b2821e2c9c6085a915e9923c4f02d7331200948d57312fc3041",
+            "id": "interface-CopyrightMetadataModel-ab20042cebbd28c4971aa7bc329eb644c5be4faab9d762d1453bb0c1d1f4e38ad24b7e62f659b90215fc0ff936fa8fb3e38fca92905f77b0bc3efca6ec2bdb76",
             "file": "src/generator/model/metadata/copyright-metadata.model.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "import { BaseModel } from '../base/base.model';\r\nimport { MetadataBaseModel } from '../base/metadata-base.model';\r\n\r\nexport interface CopyrightMetadataModel extends BaseModel<MetadataBaseModel> {}\r\n",
+            "sourceCode": "import { BaseModel } from '../base/base.model';\r\nimport { MetadataBaseModel } from '../base/metadata-base.model';\r\n\r\ninterface MetadataModel {}\r\n\r\nexport interface CopyrightMetadataModel extends BaseModel<MetadataBaseModel, MetadataModel> {}\r\n",
             "properties": [],
             "indexSignatures": [],
             "methods": [],
@@ -202,6 +212,61 @@
             "sourceCode": "export interface DataBaseModel {}\r\n",
             "properties": [],
             "indexSignatures": [],
+            "methods": [],
+            "extends": []
+        },
+        {
+            "name": "DataModel",
+            "id": "interface-DataModel-4674e12212ebcb754c8833b36c3dfd08d24ace2b064a5583c3abb130f729d362a913b58aedd730abffc9c7bd2e49dd3f7ee46d86090c27df80f1f220ca44245b",
+            "file": "src/generator/model/data/copyright-data.model.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "import { BaseKindModel } from '../base/base-kind.model';\r\nimport { BaseModel } from '../base/base.model';\r\nimport { DataBaseModel } from '../base/data-base.model';\r\n\r\ntype YearKindType = 'current' | 'range';\r\n\r\ninterface YearCurrentModel extends BaseKindModel<YearKindType, 'current'> {}\r\n\r\ninterface YearRangeModel extends BaseKindModel<YearKindType, 'range'> {\r\n  from: number;\r\n  to: number | 'current';\r\n}\r\n\r\ntype YearType = YearCurrentModel | YearRangeModel;\r\n\r\ninterface DataModel {\r\n  symbol: string;\r\n  year: YearType;\r\n  ownerName: string;\r\n  rightsStatements: string;\r\n}\r\n\r\nexport interface CopyrightDataModel extends BaseModel<DataBaseModel, DataModel> {}\r\n",
+            "properties": [
+                {
+                    "name": "ownerName",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 19
+                },
+                {
+                    "name": "rightsStatements",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 20
+                },
+                {
+                    "name": "symbol",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 17
+                },
+                {
+                    "name": "year",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "YearType",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 18
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 172,
             "methods": [],
             "extends": []
         },
@@ -563,6 +628,19 @@
             ],
             "indexSignatures": [],
             "kind": 172,
+            "methods": [],
+            "extends": []
+        },
+        {
+            "name": "MetadataModel",
+            "id": "interface-MetadataModel-ab20042cebbd28c4971aa7bc329eb644c5be4faab9d762d1453bb0c1d1f4e38ad24b7e62f659b90215fc0ff936fa8fb3e38fca92905f77b0bc3efca6ec2bdb76",
+            "file": "src/generator/model/metadata/copyright-metadata.model.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "import { BaseModel } from '../base/base.model';\r\nimport { MetadataBaseModel } from '../base/metadata-base.model';\r\n\r\ninterface MetadataModel {}\r\n\r\nexport interface CopyrightMetadataModel extends BaseModel<MetadataBaseModel, MetadataModel> {}\r\n",
+            "properties": [],
+            "indexSignatures": [],
             "methods": [],
             "extends": []
         },
@@ -1132,6 +1210,71 @@
             "kind": 172,
             "methods": [],
             "extends": []
+        },
+        {
+            "name": "UnknownModel",
+            "id": "interface-UnknownModel-d5f37c52445e970355ad90343a0c7e7e5851f9cd68f7c3707e4ced1ef90017da667d987aedd165aba4363595bdf1176b5726e5229c50d88daa682f8e8f1c4977",
+            "file": "src/generator/model/base/unknown.model.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "export interface UnknownModel {}\r\n",
+            "properties": [],
+            "indexSignatures": [],
+            "methods": [],
+            "extends": []
+        },
+        {
+            "name": "YearCurrentModel",
+            "id": "interface-YearCurrentModel-4674e12212ebcb754c8833b36c3dfd08d24ace2b064a5583c3abb130f729d362a913b58aedd730abffc9c7bd2e49dd3f7ee46d86090c27df80f1f220ca44245b",
+            "file": "src/generator/model/data/copyright-data.model.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "import { BaseKindModel } from '../base/base-kind.model';\r\nimport { BaseModel } from '../base/base.model';\r\nimport { DataBaseModel } from '../base/data-base.model';\r\n\r\ntype YearKindType = 'current' | 'range';\r\n\r\ninterface YearCurrentModel extends BaseKindModel<YearKindType, 'current'> {}\r\n\r\ninterface YearRangeModel extends BaseKindModel<YearKindType, 'range'> {\r\n  from: number;\r\n  to: number | 'current';\r\n}\r\n\r\ntype YearType = YearCurrentModel | YearRangeModel;\r\n\r\ninterface DataModel {\r\n  symbol: string;\r\n  year: YearType;\r\n  ownerName: string;\r\n  rightsStatements: string;\r\n}\r\n\r\nexport interface CopyrightDataModel extends BaseModel<DataBaseModel, DataModel> {}\r\n",
+            "properties": [],
+            "indexSignatures": [],
+            "methods": [],
+            "extends": [
+                "BaseKindModel"
+            ]
+        },
+        {
+            "name": "YearRangeModel",
+            "id": "interface-YearRangeModel-4674e12212ebcb754c8833b36c3dfd08d24ace2b064a5583c3abb130f729d362a913b58aedd730abffc9c7bd2e49dd3f7ee46d86090c27df80f1f220ca44245b",
+            "file": "src/generator/model/data/copyright-data.model.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "import { BaseKindModel } from '../base/base-kind.model';\r\nimport { BaseModel } from '../base/base.model';\r\nimport { DataBaseModel } from '../base/data-base.model';\r\n\r\ntype YearKindType = 'current' | 'range';\r\n\r\ninterface YearCurrentModel extends BaseKindModel<YearKindType, 'current'> {}\r\n\r\ninterface YearRangeModel extends BaseKindModel<YearKindType, 'range'> {\r\n  from: number;\r\n  to: number | 'current';\r\n}\r\n\r\ntype YearType = YearCurrentModel | YearRangeModel;\r\n\r\ninterface DataModel {\r\n  symbol: string;\r\n  year: YearType;\r\n  ownerName: string;\r\n  rightsStatements: string;\r\n}\r\n\r\nexport interface CopyrightDataModel extends BaseModel<DataBaseModel, DataModel> {}\r\n",
+            "properties": [
+                {
+                    "name": "from",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 10
+                },
+                {
+                    "name": "to",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number | \"current\"",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 11
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 172,
+            "methods": [],
+            "extends": [
+                "BaseKindModel"
+            ]
         }
     ],
     "injectables": [
@@ -1252,44 +1395,6 @@
             "type": "injectable"
         },
         {
-            "name": "DateUtil",
-            "id": "injectable-DateUtil-096cedb1a7cc2a9b48f7b549ba9215d632bd1a2a9148ea58c64a8f1746a5b6c0f3d4a7b34a7bc1badac6edbb050d393b12680c87cef431551a462248d94ad599-1",
-            "file": "src/generator/util/date.util.ts",
-            "properties": [],
-            "methods": [
-                {
-                    "name": "getCurrentYear",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "any",
-                    "typeParameters": [],
-                    "line": 9,
-                    "deprecated": false,
-                    "deprecationMessage": ""
-                },
-                {
-                    "name": "getDate",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "any",
-                    "typeParameters": [],
-                    "line": 5,
-                    "deprecated": false,
-                    "deprecationMessage": ""
-                }
-            ],
-            "deprecated": false,
-            "deprecationMessage": "",
-            "description": "",
-            "rawdescription": "\n",
-            "sourceCode": "import { Injectable } from '@angular/core';\r\n\r\n@Injectable({ providedIn: 'root' })\r\nexport class DateUtil {\r\n  getDate() {\r\n    return new Date();\r\n  }\r\n\r\n  getCurrentYear() {\r\n    return this.getDate().getFullYear();\r\n  }\r\n}\r\n",
-            "extends": [],
-            "type": "injectable",
-            "isDuplicate": true,
-            "duplicateId": 1,
-            "duplicateName": "DateUtil-1"
-        },
-        {
             "name": "StorybookUtil",
             "id": "injectable-StorybookUtil-8eb524ee279a9e54c23e71599ecb2a03d8ef64e20c2bef700c7f8507f45e6f2c5309100dbc0c3918d55995ec17eb4652e6e1261867d10f7c77757c0a54cd0e0a",
             "file": "src/app/util/storybook.util.ts",
@@ -1404,6 +1509,50 @@
                                 "text": "param"
                             }
                         }
+                    ]
+                }
+            ],
+            "indexSignatures": [],
+            "extends": [],
+            "hostBindings": [],
+            "hostListeners": []
+        },
+        {
+            "name": "DateUtility",
+            "id": "class-DateUtility-47c05a9ba03fe4a29f236a50a5ebb03cb3d5f78160cca14c5a57d15fb86e009f136a5682df3c21426e3f00d541d9b9f7e63c80e8af7e8b538c73e222b1ca2fae",
+            "file": "src/generator/utility/date.utility.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "class",
+            "sourceCode": "export class DateUtility {\r\n  static getDate() {\r\n    return new Date();\r\n  }\r\n\r\n  static getCurrentYear() {\r\n    return this.getDate().getFullYear();\r\n  }\r\n}\r\n",
+            "inputsClass": [],
+            "outputsClass": [],
+            "properties": [],
+            "methods": [
+                {
+                    "name": "getCurrentYear",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "any",
+                    "typeParameters": [],
+                    "line": 6,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        126
+                    ]
+                },
+                {
+                    "name": "getDate",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "any",
+                    "typeParameters": [],
+                    "line": 2,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        126
                     ]
                 }
             ],
@@ -1957,7 +2106,7 @@
         },
         {
             "name": "CopyrightComponent",
-            "id": "component-CopyrightComponent-5364665633655815e06870b4c42f40665645d5e89e8ad80479fdeda2f42aff3cb1f4ea432852e3c5dbb8f8a27b20a467a2ec0e47e81d256464c33ebfcdd8d6eb",
+            "id": "component-CopyrightComponent-2a001b56461f20ba52fb7063c7e6557e3629ecae5d0489d52f345e90292a302fe57e51f976a9cef108f7a1cb2e8ac9564f8971c427353ee84f521c00b0265831",
             "file": "src/generator/layout/copyright/copyright.layout.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -2006,6 +2155,29 @@
             "propertiesClass": [],
             "methodsClass": [
                 {
+                    "name": "buildCopyright",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "{}",
+                    "typeParameters": [],
+                    "line": 19,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "buildYear",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "any",
+                    "typeParameters": [],
+                    "line": 27,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
                     "name": "buildMainClassList",
                     "args": [],
                     "optional": false,
@@ -2036,7 +2208,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { CommonModule } from '@angular/common';\r\nimport { Component } from '@angular/core';\r\nimport { LayoutBase } from '../../base/layout.base';\r\nimport { CopyrightDataModel } from '../../model/data/copyright-data.model';\r\nimport { CopyrightMetadataModel } from '../../model/metadata/copyright-metadata.model';\r\n\r\n@Component({\r\n  selector: 'copyright-layout',\r\n  templateUrl: './copyright.layout.html',\r\n  styleUrl: '../../style/layout/copyright.layout.scss',\r\n  imports: [CommonModule],\r\n})\r\nexport class CopyrightComponent extends LayoutBase<CopyrightDataModel, CopyrightMetadataModel> {\r\n  constructor() {\r\n    super('copyright');\r\n  }\r\n}\r\n",
+            "sourceCode": "import { CommonModule } from '@angular/common';\r\nimport { Component } from '@angular/core';\r\nimport { LayoutBase } from '../../base/layout.base';\r\nimport { CopyrightDataModel } from '../../model/data/copyright-data.model';\r\nimport { CopyrightMetadataModel } from '../../model/metadata/copyright-metadata.model';\r\nimport { DateUtility } from '../../utility/date.utility';\r\n\r\n@Component({\r\n  selector: 'copyright-layout',\r\n  templateUrl: './copyright.layout.html',\r\n  styleUrl: '../../style/layout/copyright.layout.scss',\r\n  imports: [CommonModule],\r\n})\r\nexport class CopyrightComponent extends LayoutBase<CopyrightDataModel, CopyrightMetadataModel> {\r\n  constructor() {\r\n    super('copyright');\r\n  }\r\n\r\n  buildCopyright() {\r\n    const { symbol, ownerName, rightsStatements } = this.data().extend;\r\n    const year = this.buildYear();\r\n    const copyrightNotice = `${symbol} ${year} ${ownerName}`;\r\n    const copyrightAllRightsReserved = rightsStatements;\r\n    return [copyrightNotice, copyrightAllRightsReserved];\r\n  }\r\n\r\n  private buildYear() {\r\n    const { year } = this.data().extend;\r\n    if (year.kind === 'current') {\r\n      return DateUtility.getCurrentYear();\r\n    } else if (year.kind === 'range') {\r\n      const { from, to } = year;\r\n      return `${from} - ${to === 'current' ? DateUtility.getCurrentYear() : to}`;\r\n    }\r\n    throw new Error('Invalid year kind');\r\n  }\r\n}\r\n",
             "styleUrl": "../../style/layout/copyright.layout.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
@@ -2047,12 +2219,12 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "args": [],
-                "line": 13
+                "line": 14
             },
             "extends": [
                 "LayoutBase"
             ],
-            "templateData": "<div [ngClass]=\"buildMainClassList()\">\r\n  <p>copyright layout works!</p>\r\n</div>\r\n"
+            "templateData": "<div [ngClass]=\"buildMainClassList()\">\r\n  @for (line of buildCopyright(); track line) {\r\n    <p>{{ line }}</p>\r\n  }\r\n</div>\r\n"
         },
         {
             "name": "CopyrightView",
@@ -3973,6 +4145,28 @@
                 "deprecationMessage": "",
                 "description": "",
                 "kind": 193
+            },
+            {
+                "name": "YearKindType",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "\"current\" | \"range\"",
+                "file": "src/generator/model/data/copyright-data.model.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 193
+            },
+            {
+                "name": "YearType",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "YearCurrentModel | YearRangeModel",
+                "file": "src/generator/model/data/copyright-data.model.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 193
             }
         ],
         "enumerations": [
@@ -5629,6 +5823,30 @@
                     "description": "",
                     "kind": 193
                 }
+            ],
+            "src/generator/model/data/copyright-data.model.ts": [
+                {
+                    "name": "YearKindType",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "\"current\" | \"range\"",
+                    "file": "src/generator/model/data/copyright-data.model.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 193
+                },
+                {
+                    "name": "YearType",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "YearCurrentModel | YearRangeModel",
+                    "file": "src/generator/model/data/copyright-data.model.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 193
+                }
             ]
         }
     },
@@ -6471,7 +6689,7 @@
                 "linktype": "component",
                 "name": "CopyrightComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/5",
+                "coverageCount": "0/7",
                 "status": "low"
             },
             {
@@ -6498,7 +6716,7 @@
                 "linktype": "interface",
                 "name": "BaseModel",
                 "coveragePercent": 0,
-                "coverageCount": "0/2",
+                "coverageCount": "0/3",
                 "status": "low"
             },
             {
@@ -6517,6 +6735,15 @@
                 "name": "MetadataBaseModel",
                 "coveragePercent": 0,
                 "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/generator/model/base/unknown.model.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "UnknownModel",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
                 "status": "low"
             },
             {
@@ -6574,6 +6801,53 @@
                 "status": "low"
             },
             {
+                "filePath": "src/generator/model/data/copyright-data.model.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "DataModel",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "src/generator/model/data/copyright-data.model.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "YearCurrentModel",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/generator/model/data/copyright-data.model.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "YearRangeModel",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/generator/model/data/copyright-data.model.ts",
+                "type": "type alias",
+                "linktype": "miscellaneous",
+                "linksubtype": "typealias",
+                "name": "YearKindType",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/generator/model/data/copyright-data.model.ts",
+                "type": "type alias",
+                "linktype": "miscellaneous",
+                "linksubtype": "typealias",
+                "name": "YearType",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
                 "filePath": "src/generator/model/data/footer-data.model.ts",
                 "type": "interface",
                 "linktype": "interface",
@@ -6614,6 +6888,15 @@
                 "type": "interface",
                 "linktype": "interface",
                 "name": "CopyrightMetadataModel",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/generator/model/metadata/copyright-metadata.model.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "MetadataModel",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -6714,21 +6997,21 @@
                 "status": "low"
             },
             {
-                "filePath": "src/generator/util/date.util.ts",
-                "type": "injectable",
-                "linktype": "injectable",
-                "name": "DateUtil",
-                "coveragePercent": 0,
-                "coverageCount": "0/3",
-                "status": "low"
-            },
-            {
                 "filePath": "src/generator/utility/bem.utility.ts",
                 "type": "class",
                 "linktype": "classe",
                 "name": "BemUtility",
                 "coveragePercent": 0,
                 "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/generator/utility/date.utility.ts",
+                "type": "class",
+                "linktype": "classe",
+                "name": "DateUtility",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
                 "status": "low"
             },
             {
