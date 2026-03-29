@@ -4,6 +4,7 @@ import { StringUtility } from '../utility/string.utility';
 import { MetadataBaseModel } from '../model/base/metadata-base.model';
 import { DataBaseModel } from '../model/base/data-base.model';
 import { BaseModel } from '../model/base/base.model';
+import { NodeModel } from '../model/node/node.model';
 
 @Directive()
 export class ComponentBase<
@@ -14,6 +15,8 @@ export class ComponentBase<
   data = input.required<TDate>();
 
   metadata = input.required<TMetadata>();
+
+  nodes = input<NodeModel[]>([]);
 
   constructor(protected type: TType) {
     this.type = type;

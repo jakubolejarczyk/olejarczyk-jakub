@@ -4,13 +4,16 @@ import { LayoutBase } from '../../base/layout.base';
 import { CopyrightDataModel } from '../../model/data/copyright-data.model';
 import { CopyrightMetadataModel } from '../../model/metadata/copyright-metadata.model';
 import { DateUtility } from '../../utility/date.utility';
+import { RegisterLayout } from '../../decorator/layout.decorator';
+import { Generator } from '../../generator/generator';
 
 @Component({
   selector: 'copyright-layout',
   templateUrl: './copyright.layout.html',
   styleUrl: '../../style/layout/copyright.layout.scss',
-  imports: [CommonModule],
+  imports: [CommonModule, Generator],
 })
+@RegisterLayout('copyright')
 export class CopyrightComponent extends LayoutBase<CopyrightDataModel, CopyrightMetadataModel> {
   constructor() {
     super('copyright');

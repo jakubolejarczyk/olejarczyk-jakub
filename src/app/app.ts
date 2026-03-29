@@ -10,27 +10,27 @@ import { NodeModel } from '../generator/model/node/node.model';
 export class App {
   nodes: NodeModel[] = [
     {
-      component: {
-        kind: 'footer',
-        data: {},
-        metadata: {},
-      },
-      children: [
-        {
-          component: {
-            kind: 'copyright',
-            data: {
-              symbol: '©',
-              year: {
-                kind: 'current',
-              },
-              ownerName: 'Jakub Olejarczyk',
-              rightsStatements: 'All Rights Reserved.',
+      layout: {
+        kind: 'copyright',
+        data: {
+          base: {},
+          extend: {
+            symbol: '©',
+            year: {
+              kind: 'current',
             },
-            metadata: {},
+            ownerName: 'Jakub Olejarczyk',
+            rightsStatements: 'All rights reserved.',
           },
         },
-      ],
+        metadata: {
+          base: {
+            palette: 'primary',
+          },
+          extend: {},
+        },
+      },
+      children: [],
     },
   ];
 }

@@ -1,6 +1,6 @@
-import { TComponent } from '../type/component.type';
+import { LayoutNodeModel } from './layout-node.model';
 
 export interface NodeModel {
-  component: TComponent;
+  layout: LayoutNodeModel;
   children?: NodeModel[];
 }
