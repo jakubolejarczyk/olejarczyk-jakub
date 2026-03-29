@@ -1,0 +1,5 @@
+@use '../abstract/mixin';
+
+.copyright {
+  @include mixin.build-layout;
+}

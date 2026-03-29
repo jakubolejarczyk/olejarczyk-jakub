@@ -1,15 +1,15 @@
 import { Component, inject } from '@angular/core';
-import { RegisterComponent } from '../../decorator/component.decorator';
+import { TextComponent } from '../../component/text/text.component';
 import { BaseComponent } from '../../base/base.component';
+import { RegisterComponent } from '../../decorator/component.decorator';
 import { CopyrightComponentModel } from '../../model/component/copyright-component.model';
-import { DateUtil } from '../../util/date.util';
 import { YearRangeModel } from '../../model/data/copyright-data.model';
-import { TextComponent } from '../text/text.component';
+import { DateUtil } from '../../util/date.util';
 
 @Component({
-  selector: 'copyright-component',
-  templateUrl: './copyright.component.html',
-  styleUrl: './copyright.component.scss',
+  selector: 'copyright-layout',
+  templateUrl: './copyright.layout.html',
+  styleUrl: '../../style/layout/copyright.layout.scss',
   imports: [TextComponent],
 })
 @RegisterComponent('copyright')

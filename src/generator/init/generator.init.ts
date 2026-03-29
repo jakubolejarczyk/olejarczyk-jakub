@@ -1,4 +1,4 @@
-import '../component/copyright/copyright.component';
+import '../layout/copyright/copyright.layout';
 import '../component/footer/footer.component';
 import '../component/header/header.component';
 import '../component/main/main.component';
