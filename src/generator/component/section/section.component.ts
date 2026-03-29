@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { RegisterComponent } from '../../decorator/component.decorator';
-import { BaseComponent } from '../../base/base.component';
-import { SectionComponentModel } from '../../model/component/section-component.model';
+// import { BaseComponent } from '../../base/component.base';
+// import { SectionComponentModel } from '../../model/component/section-component.model';
 import { Generator } from '../../generator/generator';
 
 @Component({
@@ -11,4 +11,4 @@ import { Generator } from '../../generator/generator';
   imports: [Generator],
 })
 @RegisterComponent('section')
-export class SectionComponent extends BaseComponent<SectionComponentModel> {}
+export class SectionComponent {} //extends BaseComponent<SectionComponentModel> {}

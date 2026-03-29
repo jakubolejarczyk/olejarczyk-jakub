@@ -1349,6 +1349,133 @@
     "interceptors": [],
     "classes": [
         {
+            "name": "ComponentBase",
+            "id": "class-ComponentBase-1a9d967022c62db823d43d7ee26b4dae1a56da0a0f504e8020ccef207b5e9331c5ea6371a77006f20c822f600341333c3a80d68dd95a5a4c6dbe22c4815cbe7c",
+            "file": "src/generator/base/component.base.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "class",
+            "sourceCode": "export class ComponentBase<Type> {\r\n  constructor(protected type: Type) {\r\n    this.type = type;\r\n  }\r\n\r\n  protected buildMainClassList() {\r\n    return [this.type];\r\n  }\r\n}\r\n",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "type",
+                        "type": "Type",
+                        "optional": false,
+                        "dotDotDotToken": false,
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 1,
+                "jsdoctags": [
+                    {
+                        "name": "type",
+                        "type": "Type",
+                        "optional": false,
+                        "dotDotDotToken": false,
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "inputsClass": [],
+            "outputsClass": [],
+            "properties": [],
+            "methods": [
+                {
+                    "name": "buildMainClassList",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "{}",
+                    "typeParameters": [],
+                    "line": 6,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        124
+                    ]
+                }
+            ],
+            "indexSignatures": [],
+            "extends": [],
+            "hostBindings": [],
+            "hostListeners": []
+        },
+        {
+            "name": "LayoutBase",
+            "id": "class-LayoutBase-af92bd9f70f5e9fb7e1836e04d6697e07e57e9555215f60eb83c08e71bdbe6068afbddc921ce302810a58507c4760491a7d7c0c1b46d64cff4e0417de651e0a1",
+            "file": "src/generator/base/layout.base.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "class",
+            "sourceCode": "import { ComponentBase } from './component.base';\r\nimport { LayoutType } from '../type/layout.type';\r\n\r\nexport class LayoutBase extends ComponentBase<LayoutType> {\r\n  constructor(protected override type: LayoutType) {\r\n    super(type);\r\n  }\r\n}\r\n",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "type",
+                        "type": "LayoutType",
+                        "optional": false,
+                        "dotDotDotToken": false,
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 4,
+                "jsdoctags": [
+                    {
+                        "name": "type",
+                        "type": "LayoutType",
+                        "optional": false,
+                        "dotDotDotToken": false,
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "inputsClass": [],
+            "outputsClass": [],
+            "properties": [],
+            "methods": [
+                {
+                    "name": "buildMainClassList",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "{}",
+                    "typeParameters": [],
+                    "line": 6,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        124
+                    ],
+                    "inheritance": {
+                        "file": "ComponentBase"
+                    }
+                }
+            ],
+            "indexSignatures": [],
+            "extends": [
+                "ComponentBase"
+            ],
+            "hostBindings": [],
+            "hostListeners": []
+        },
+        {
             "name": "StoreCore",
             "id": "class-StoreCore-9b9d00eb04e9c8f8ec0056a3db331b940e37b0296f05dd5a403fd6dbe295078c7ce68e60c1e68300f2c7b4b4bf5d072933fb9cd01c8af463adddb6a80acf0154",
             "file": "src/app/store/store.core.ts",
@@ -1506,65 +1633,6 @@
             "extends": []
         },
         {
-            "name": "BaseComponent",
-            "id": "component-BaseComponent-c7037e39da908c7b8aa496da24c70dda3e04f379ab4242a041d259a82567dba7a73cfadc60234737e2b57c28846d86a2fc4eccea424c97414ec8edaa57fcd67a",
-            "file": "src/generator/base/base.component.ts",
-            "encapsulation": [],
-            "entryComponents": [],
-            "inputs": [],
-            "outputs": [],
-            "providers": [],
-            "selector": "base-component",
-            "styleUrls": [],
-            "styles": [],
-            "template": "",
-            "templateUrl": [],
-            "viewProviders": [],
-            "hostDirectives": [],
-            "inputsClass": [
-                {
-                    "name": "component",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "TBaseComponent",
-                    "indexKey": "",
-                    "optional": false,
-                    "description": "",
-                    "line": 10,
-                    "required": true
-                },
-                {
-                    "name": "nodes",
-                    "defaultValue": "[]",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "NodeModel[]",
-                    "indexKey": "",
-                    "optional": false,
-                    "description": "",
-                    "line": 12,
-                    "required": false
-                }
-            ],
-            "outputsClass": [],
-            "propertiesClass": [],
-            "methodsClass": [],
-            "deprecated": false,
-            "deprecationMessage": "",
-            "hostBindings": [],
-            "hostListeners": [],
-            "standalone": false,
-            "imports": [],
-            "description": "",
-            "rawdescription": "\n",
-            "type": "component",
-            "sourceCode": "import { Component, input } from '@angular/core';\r\nimport { TComponent } from '../model/type/component.type';\r\nimport { NodeModel } from '../model/node/node.model';\r\n\r\n@Component({\r\n  selector: 'base-component',\r\n  template: '',\r\n})\r\nexport class BaseComponent<TBaseComponent extends TComponent> {\r\n  component = input.required<TBaseComponent>();\r\n\r\n  nodes = input<NodeModel[]>([]);\r\n}\r\n",
-            "assetsDirs": [],
-            "styleUrlsData": "",
-            "stylesData": "",
-            "extends": []
-        },
-        {
             "name": "ContactView",
             "id": "component-ContactView-f7e92b8f096158fea78b5be061832fc42b52f2cb6f1f969ef9e4aa9f0f546942583ed11c436c0812d6650ad749f67bd707a261146f04a2c53d27ffbef0247765",
             "file": "src/app/view/footer/contact/contact.view.ts",
@@ -1641,147 +1709,40 @@
         },
         {
             "name": "CopyrightComponent",
-            "id": "component-CopyrightComponent-ea168abe1e65a4aeb5ec8fd4f4a9d78fc5153d749346d030ef64c479399e954feaa664314ed3b748eef7af69c31e4f4aa88e7c34336ebf2d009aa452c5eeca17",
-            "file": "src/generator/component/copyright/copyright.component.ts",
+            "id": "component-CopyrightComponent-f316ef6bea8c79d700fa0016d58f67a3574382c7cd8c5c03fd7de103189734fab4d1b7e5589fa4d1fe7c1312d7a9ae77df2ab042ad3b9ad868c845abbc586795",
+            "file": "src/generator/layout/copyright/copyright.layout.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
             "providers": [],
-            "selector": "copyright-component",
+            "selector": "copyright-layout",
             "styleUrls": [],
             "styles": [],
             "templateUrl": [
-                "./copyright.component.html"
+                "./copyright.layout.html"
             ],
             "viewProviders": [],
             "hostDirectives": [],
-            "inputsClass": [
-                {
-                    "name": "component",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "TBaseComponent",
-                    "indexKey": "",
-                    "optional": false,
-                    "description": "",
-                    "line": 10,
-                    "required": true,
-                    "inheritance": {
-                        "file": "BaseComponent"
-                    }
-                },
-                {
-                    "name": "nodes",
-                    "defaultValue": "[]",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "NodeModel[]",
-                    "indexKey": "",
-                    "optional": false,
-                    "description": "",
-                    "line": 12,
-                    "required": false,
-                    "inheritance": {
-                        "file": "BaseComponent"
-                    }
-                }
-            ],
+            "inputsClass": [],
             "outputsClass": [],
-            "propertiesClass": [
-                {
-                    "name": "dateUtil",
-                    "defaultValue": "inject(DateUtil)",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "unknown",
-                    "indexKey": "",
-                    "optional": false,
-                    "description": "",
-                    "line": 17
-                }
-            ],
+            "propertiesClass": [],
             "methodsClass": [
                 {
-                    "name": "buildCopyrightStatement",
+                    "name": "buildMainClassList",
                     "args": [],
                     "optional": false,
-                    "returnType": "string",
+                    "returnType": "{}",
                     "typeParameters": [],
-                    "line": 19,
-                    "deprecated": false,
-                    "deprecationMessage": ""
-                },
-                {
-                    "name": "buildCurrentYear",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "any",
-                    "typeParameters": [],
-                    "line": 41,
+                    "line": 6,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
-                        123
-                    ]
-                },
-                {
-                    "name": "buildRangeYear",
-                    "args": [
-                        {
-                            "name": "year",
-                            "type": "YearRangeModel",
-                            "optional": false,
-                            "dotDotDotToken": false,
-                            "deprecated": false,
-                            "deprecationMessage": ""
-                        }
+                        124
                     ],
-                    "optional": false,
-                    "returnType": "string",
-                    "typeParameters": [],
-                    "line": 45,
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "modifierKind": [
-                        123
-                    ],
-                    "jsdoctags": [
-                        {
-                            "name": "year",
-                            "type": "YearRangeModel",
-                            "optional": false,
-                            "dotDotDotToken": false,
-                            "deprecated": false,
-                            "deprecationMessage": "",
-                            "tagName": {
-                                "text": "param"
-                            }
-                        }
-                    ]
-                },
-                {
-                    "name": "buildRightsStatements",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "any",
-                    "typeParameters": [],
-                    "line": 25,
-                    "deprecated": false,
-                    "deprecationMessage": ""
-                },
-                {
-                    "name": "buildYear",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "any",
-                    "typeParameters": [],
-                    "line": 29,
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "modifierKind": [
-                        123
-                    ]
+                    "inheritance": {
+                        "file": "ComponentBase"
+                    }
                 }
             ],
             "deprecated": false,
@@ -1791,22 +1752,30 @@
             "standalone": false,
             "imports": [
                 {
-                    "name": "TextComponent",
-                    "type": "component"
+                    "name": "CommonModule",
+                    "type": "module"
                 }
             ],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, inject } from '@angular/core';\r\nimport { RegisterComponent } from '../../decorator/component.decorator';\r\nimport { BaseComponent } from '../../base/base.component';\r\nimport { CopyrightComponentModel } from '../../model/component/copyright-component.model';\r\nimport { DateUtil } from '../../util/date.util';\r\nimport { YearRangeModel } from '../../model/data/copyright-data.model';\r\nimport { TextComponent } from '../text/text.component';\r\n\r\n@Component({\r\n  selector: 'copyright-component',\r\n  templateUrl: './copyright.component.html',\r\n  styleUrl: '../../style/layout/_copyright.layout.scss',\r\n  imports: [TextComponent],\r\n})\r\n@RegisterComponent('copyright')\r\nexport class CopyrightComponent extends BaseComponent<CopyrightComponentModel> {\r\n  dateUtil = inject(DateUtil);\r\n\r\n  buildCopyrightStatement() {\r\n    const { symbol, ownerName } = this.component().data;\r\n    const year = this.buildYear();\r\n    return `${symbol} ${year} ${ownerName}.`;\r\n  }\r\n\r\n  buildRightsStatements() {\r\n    return this.component().data.rightsStatements;\r\n  }\r\n\r\n  private buildYear() {\r\n    const { year } = this.component().data;\r\n    switch (year.kind) {\r\n      case 'current':\r\n        return this.buildCurrentYear();\r\n      case 'range':\r\n        return this.buildRangeYear(year);\r\n      default:\r\n        throw new Error('Not supported year kind!');\r\n    }\r\n  }\r\n\r\n  private buildCurrentYear() {\r\n    return this.dateUtil.getCurrentYear();\r\n  }\r\n\r\n  private buildRangeYear(year: YearRangeModel) {\r\n    const { from } = year;\r\n    const to = year.to === 'current' ? this.dateUtil.getCurrentYear() : year.to;\r\n    return `${from} - ${to}`;\r\n  }\r\n}\r\n",
-            "styleUrl": "../../style/layout/_copyright.layout.scss",
+            "sourceCode": "import { Component } from '@angular/core';\r\nimport { LayoutBase } from '../../base/layout.base';\r\nimport { CommonModule } from '@angular/common';\r\n\r\n@Component({\r\n  selector: 'copyright-layout',\r\n  templateUrl: './copyright.layout.html',\r\n  styleUrl: '../../style/layout/copyright.layout.scss',\r\n  imports: [CommonModule],\r\n})\r\nexport class CopyrightComponent extends LayoutBase {\r\n  constructor() {\r\n    super('copyright');\r\n  }\r\n}\r\n",
+            "styleUrl": "../../style/layout/copyright.layout.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 11
+            },
             "extends": [
-                "BaseComponent"
+                "LayoutBase"
             ],
-            "templateData": "<div class=\"copyright\">\r\n  <text-component [value]=\"buildCopyrightStatement()\"></text-component>\r\n  <text-component [value]=\"buildRightsStatements()\"></text-component>\r\n</div>\r\n"
+            "templateData": "<div [ngClass]=\"buildMainClassList()\">\r\n  <p>copyright layout works!</p>\r\n</div>\r\n"
         },
         {
             "name": "CopyrightView",
@@ -1987,7 +1956,7 @@
         },
         {
             "name": "FooterComponent",
-            "id": "component-FooterComponent-afef7e97f1d01b811739f7d50c558168e897aee8375aa95b3d0b2774544ee54dfcd22810e94e047d9dfa2cd417cf36c14439cb2984f52358f244a3886424be65",
+            "id": "component-FooterComponent-8b7e5e9b6d79cf55b1979d4c60d40791bbeee80067939c3b0b0f5d87d4f06cbb5b117f65e713c9072d594482c3192e40e08482258e3c20f8905fbc1fcd53d93f",
             "file": "src/generator/component/footer/footer.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -2002,37 +1971,7 @@
             ],
             "viewProviders": [],
             "hostDirectives": [],
-            "inputsClass": [
-                {
-                    "name": "component",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "TBaseComponent",
-                    "indexKey": "",
-                    "optional": false,
-                    "description": "",
-                    "line": 10,
-                    "required": true,
-                    "inheritance": {
-                        "file": "BaseComponent"
-                    }
-                },
-                {
-                    "name": "nodes",
-                    "defaultValue": "[]",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "NodeModel[]",
-                    "indexKey": "",
-                    "optional": false,
-                    "description": "",
-                    "line": 12,
-                    "required": false,
-                    "inheritance": {
-                        "file": "BaseComponent"
-                    }
-                }
-            ],
+            "inputsClass": [],
             "outputsClass": [],
             "propertiesClass": [],
             "methodsClass": [],
@@ -2049,14 +1988,12 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\r\nimport { RegisterComponent } from '../../decorator/component.decorator';\r\nimport { BaseComponent } from '../../base/base.component';\r\nimport { FooterComponentModel } from '../../model/component/footer-component.model';\r\nimport { Generator } from '../../generator/generator';\r\n\r\n@Component({\r\n  selector: 'footer-component',\r\n  templateUrl: './footer.component.html',\r\n  styleUrl: './footer.component.scss',\r\n  imports: [Generator],\r\n})\r\n@RegisterComponent('footer')\r\nexport class FooterComponent extends BaseComponent<FooterComponentModel> {}\r\n",
+            "sourceCode": "import { Component } from '@angular/core';\r\nimport { RegisterComponent } from '../../decorator/component.decorator';\r\n// import { BaseComponent } from '../../base/component.base';\r\n// import { FooterComponentModel } from '../../model/component/footer-component.model';\r\nimport { Generator } from '../../generator/generator';\r\n\r\n@Component({\r\n  selector: 'footer-component',\r\n  templateUrl: './footer.component.html',\r\n  styleUrl: './footer.component.scss',\r\n  imports: [Generator],\r\n})\r\n@RegisterComponent('footer')\r\nexport class FooterComponent {} //extends BaseComponent<FooterComponentModel> {}\r\n",
             "styleUrl": "./footer.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
-            "extends": [
-                "BaseComponent"
-            ],
+            "extends": [],
             "templateData": "<div class=\"footer\">\r\n  <p>footer works!</p>\r\n  <generator [nodes]=\"nodes()\"></generator>\r\n</div>\r\n"
         },
         {
@@ -2255,7 +2192,7 @@
         },
         {
             "name": "HeaderComponent",
-            "id": "component-HeaderComponent-5ccf0a6e25d1d8ee79fa22d1070ef2540b633f2fcfbc2fa05c4b90bd617e9d6f92c1a20d9986efddb52a7b981ea36d7fe17860c86271968ff334ed001dff551e",
+            "id": "component-HeaderComponent-891a9fbcd94cb90c048cd41bc5cb7be0cf9c149d1843866c042355de72d573ece1e4cf9612d92a3c4a4c06919723003a1b9908c76de81635ca5c3fd2fe4ee4d9",
             "file": "src/generator/component/header/header.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -2270,37 +2207,7 @@
             ],
             "viewProviders": [],
             "hostDirectives": [],
-            "inputsClass": [
-                {
-                    "name": "component",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "TBaseComponent",
-                    "indexKey": "",
-                    "optional": false,
-                    "description": "",
-                    "line": 10,
-                    "required": true,
-                    "inheritance": {
-                        "file": "BaseComponent"
-                    }
-                },
-                {
-                    "name": "nodes",
-                    "defaultValue": "[]",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "NodeModel[]",
-                    "indexKey": "",
-                    "optional": false,
-                    "description": "",
-                    "line": 12,
-                    "required": false,
-                    "inheritance": {
-                        "file": "BaseComponent"
-                    }
-                }
-            ],
+            "inputsClass": [],
             "outputsClass": [],
             "propertiesClass": [],
             "methodsClass": [],
@@ -2317,14 +2224,12 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\r\nimport { RegisterComponent } from '../../decorator/component.decorator';\r\nimport { BaseComponent } from '../../base/base.component';\r\nimport { HeaderComponentModel } from '../../model/component/header-component.model';\r\nimport { Generator } from '../../generator/generator';\r\n\r\n@Component({\r\n  selector: 'header-component',\r\n  templateUrl: './header.component.html',\r\n  styleUrl: './header.component.scss',\r\n  imports: [Generator],\r\n})\r\n@RegisterComponent('header')\r\nexport class HeaderComponent extends BaseComponent<HeaderComponentModel> {}\r\n",
+            "sourceCode": "import { Component } from '@angular/core';\r\nimport { RegisterComponent } from '../../decorator/component.decorator';\r\n// import { BaseComponent } from '../../base/component.base';\r\n// import { HeaderComponentModel } from '../../model/component/header-component.model';\r\nimport { Generator } from '../../generator/generator';\r\n\r\n@Component({\r\n  selector: 'header-component',\r\n  templateUrl: './header.component.html',\r\n  styleUrl: './header.component.scss',\r\n  imports: [Generator],\r\n})\r\n@RegisterComponent('header')\r\nexport class HeaderComponent {} //extends BaseComponent<HeaderComponentModel> {}\r\n",
             "styleUrl": "./header.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
-            "extends": [
-                "BaseComponent"
-            ],
+            "extends": [],
             "templateData": "<div class=\"header\">\r\n  <generator [nodes]=\"nodes()\"></generator>\r\n</div>\r\n"
         },
         {
@@ -2560,7 +2465,7 @@
         },
         {
             "name": "MainComponent",
-            "id": "component-MainComponent-37d98442944f39a2afd361a9246b331aea81b7d1aa5e37129c00670004afd511fc90b7c8a6c60c584c7e25e34e631d56c4475adfad9825a30282016c0ee80246",
+            "id": "component-MainComponent-fa2c7b3e8faf3dfa12fe8da91a4cf99858198742649e3a0f8fdd7645fe228be26bd7702058ca45f25626051dde4df2c7ea8f32c43a4f2526874c0c3ba1fecafb",
             "file": "src/generator/component/main/main.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -2575,37 +2480,7 @@
             ],
             "viewProviders": [],
             "hostDirectives": [],
-            "inputsClass": [
-                {
-                    "name": "component",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "TBaseComponent",
-                    "indexKey": "",
-                    "optional": false,
-                    "description": "",
-                    "line": 10,
-                    "required": true,
-                    "inheritance": {
-                        "file": "BaseComponent"
-                    }
-                },
-                {
-                    "name": "nodes",
-                    "defaultValue": "[]",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "NodeModel[]",
-                    "indexKey": "",
-                    "optional": false,
-                    "description": "",
-                    "line": 12,
-                    "required": false,
-                    "inheritance": {
-                        "file": "BaseComponent"
-                    }
-                }
-            ],
+            "inputsClass": [],
             "outputsClass": [],
             "propertiesClass": [],
             "methodsClass": [],
@@ -2622,14 +2497,12 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\r\nimport { RegisterComponent } from '../../decorator/component.decorator';\r\nimport { BaseComponent } from '../../base/base.component';\r\nimport { MainComponentModel } from '../../model/component/main-component.model';\r\nimport { Generator } from '../../generator/generator';\r\n\r\n@Component({\r\n  selector: 'main-component',\r\n  templateUrl: './main.component.html',\r\n  styleUrl: './main.component.scss',\r\n  imports: [Generator],\r\n})\r\n@RegisterComponent('main')\r\nexport class MainComponent extends BaseComponent<MainComponentModel> {}\r\n",
+            "sourceCode": "import { Component } from '@angular/core';\r\nimport { RegisterComponent } from '../../decorator/component.decorator';\r\n// import { BaseComponent } from '../../base/component.base';\r\n// import { MainComponentModel } from '../../model/component/main-component.model';\r\nimport { Generator } from '../../generator/generator';\r\n\r\n@Component({\r\n  selector: 'main-component',\r\n  templateUrl: './main.component.html',\r\n  styleUrl: './main.component.scss',\r\n  imports: [Generator],\r\n})\r\n@RegisterComponent('main')\r\nexport class MainComponent {} // extends BaseComponent<MainComponentModel> {}\r\n",
             "styleUrl": "./main.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
-            "extends": [
-                "BaseComponent"
-            ],
+            "extends": [],
             "templateData": "<div class=\"main\">\r\n  <p>main works!</p>\r\n  <generator [nodes]=\"nodes()\"></generator>\r\n</div>\r\n"
         },
         {
@@ -3037,7 +2910,7 @@
         },
         {
             "name": "SectionComponent",
-            "id": "component-SectionComponent-dadb10a4cbdab18eba47cc4e82ea36def902da627318b4b1f9297cc325a62a782d2ee66facf72a7945e2afa905e933f1e3085435e6e0e93d0edc4e5b9d05bd81-1",
+            "id": "component-SectionComponent-9e04f8b764fc6269eb2abd66838d677b5af5345adf24c8c7ab88bb3a2cc01aaa2fb019f13981e6ea345c4083e6c0528d89ecfb0682e5e1914d757b6b8de8d3bb-1",
             "file": "src/generator/component/section/section.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -3052,37 +2925,7 @@
             ],
             "viewProviders": [],
             "hostDirectives": [],
-            "inputsClass": [
-                {
-                    "name": "component",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "TBaseComponent",
-                    "indexKey": "",
-                    "optional": false,
-                    "description": "",
-                    "line": 10,
-                    "required": true,
-                    "inheritance": {
-                        "file": "BaseComponent"
-                    }
-                },
-                {
-                    "name": "nodes",
-                    "defaultValue": "[]",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "NodeModel[]",
-                    "indexKey": "",
-                    "optional": false,
-                    "description": "",
-                    "line": 12,
-                    "required": false,
-                    "inheritance": {
-                        "file": "BaseComponent"
-                    }
-                }
-            ],
+            "inputsClass": [],
             "outputsClass": [],
             "propertiesClass": [],
             "methodsClass": [],
@@ -3099,14 +2942,12 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\r\nimport { RegisterComponent } from '../../decorator/component.decorator';\r\nimport { BaseComponent } from '../../base/base.component';\r\nimport { SectionComponentModel } from '../../model/component/section-component.model';\r\nimport { Generator } from '../../generator/generator';\r\n\r\n@Component({\r\n  selector: 'section-component',\r\n  templateUrl: './section.component.html',\r\n  styleUrl: './section.component.scss',\r\n  imports: [Generator],\r\n})\r\n@RegisterComponent('section')\r\nexport class SectionComponent extends BaseComponent<SectionComponentModel> {}\r\n",
+            "sourceCode": "import { Component } from '@angular/core';\r\nimport { RegisterComponent } from '../../decorator/component.decorator';\r\n// import { BaseComponent } from '../../base/component.base';\r\n// import { SectionComponentModel } from '../../model/component/section-component.model';\r\nimport { Generator } from '../../generator/generator';\r\n\r\n@Component({\r\n  selector: 'section-component',\r\n  templateUrl: './section.component.html',\r\n  styleUrl: './section.component.scss',\r\n  imports: [Generator],\r\n})\r\n@RegisterComponent('section')\r\nexport class SectionComponent {} //extends BaseComponent<SectionComponentModel> {}\r\n",
             "styleUrl": "./section.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
-            "extends": [
-                "BaseComponent"
-            ],
+            "extends": [],
             "isDuplicate": true,
             "duplicateId": 1,
             "duplicateName": "SectionComponent-1",
@@ -3712,6 +3553,17 @@
                 "deprecationMessage": "",
                 "description": "",
                 "kind": 184
+            },
+            {
+                "name": "LayoutType",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "unknown",
+                "file": "src/generator/type/layout.type.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 202
             },
             {
                 "name": "LinkType",
@@ -5309,6 +5161,19 @@
                     "kind": 184
                 }
             ],
+            "src/generator/type/layout.type.ts": [
+                {
+                    "name": "LayoutType",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "unknown",
+                    "file": "src/generator/type/layout.type.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 202
+                }
+            ],
             "src/app/component/link/link.type.ts": [
                 {
                     "name": "LinkType",
@@ -6198,21 +6063,21 @@
                 "status": "low"
             },
             {
-                "filePath": "src/generator/base/base.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "BaseComponent",
+                "filePath": "src/generator/base/component.base.ts",
+                "type": "class",
+                "linktype": "classe",
+                "name": "ComponentBase",
                 "coveragePercent": 0,
                 "coverageCount": "0/3",
                 "status": "low"
             },
             {
-                "filePath": "src/generator/component/copyright/copyright.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "CopyrightComponent",
+                "filePath": "src/generator/base/layout.base.ts",
+                "type": "class",
+                "linktype": "classe",
+                "name": "LayoutBase",
                 "coveragePercent": 0,
-                "coverageCount": "0/9",
+                "coverageCount": "0/3",
                 "status": "low"
             },
             {
@@ -6221,7 +6086,7 @@
                 "linktype": "component",
                 "name": "FooterComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/3",
+                "coverageCount": "0/1",
                 "status": "low"
             },
             {
@@ -6230,7 +6095,7 @@
                 "linktype": "component",
                 "name": "HeaderComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/3",
+                "coverageCount": "0/1",
                 "status": "low"
             },
             {
@@ -6239,7 +6104,7 @@
                 "linktype": "component",
                 "name": "MainComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/3",
+                "coverageCount": "0/1",
                 "status": "low"
             },
             {
@@ -6248,7 +6113,7 @@
                 "linktype": "component",
                 "name": "SectionComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/3",
+                "coverageCount": "0/1",
                 "status": "low"
             },
             {
@@ -6307,6 +6172,15 @@
                 "name": "generatorInit",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/generator/layout/copyright/copyright.layout.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "CopyrightComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
                 "status": "low"
             },
             {
@@ -6535,6 +6409,16 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "componentStore",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/generator/type/layout.type.ts",
+                "type": "type alias",
+                "linktype": "miscellaneous",
+                "linksubtype": "typealias",
+                "name": "LayoutType",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"

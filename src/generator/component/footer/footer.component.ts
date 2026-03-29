@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { RegisterComponent } from '../../decorator/component.decorator';
-import { BaseComponent } from '../../base/base.component';
-import { FooterComponentModel } from '../../model/component/footer-component.model';
+// import { BaseComponent } from '../../base/component.base';
+// import { FooterComponentModel } from '../../model/component/footer-component.model';
 import { Generator } from '../../generator/generator';
 
 @Component({
@@ -11,4 +11,4 @@ import { Generator } from '../../generator/generator';
   imports: [Generator],
 })
 @RegisterComponent('footer')
-export class FooterComponent extends BaseComponent<FooterComponentModel> {}
+export class FooterComponent {} //extends BaseComponent<FooterComponentModel> {}

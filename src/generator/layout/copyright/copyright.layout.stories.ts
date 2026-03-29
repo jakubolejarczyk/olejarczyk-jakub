@@ -8,19 +8,4 @@ const meta: Meta<CopyrightComponent> = {
 export default meta;
 type Story = StoryObj<CopyrightComponent>;
 
-export const Primary: Story = {
-  args: {
-    component: {
-      kind: 'copyright',
-      data: {
-        symbol: '©',
-        year: {
-          kind: 'current',
-        },
-        ownerName: 'Jakub Olejarczyk',
-        rightsStatements: 'All Rights Reserved.',
-      },
-      metadata: {},
-    },
-  },
-};
+export const Primary: Story = {};

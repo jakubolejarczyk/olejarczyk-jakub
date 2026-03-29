@@ -5,7 +5,7 @@
 }
 
 @mixin build-palette {
-  @each $name, $palette in palette.$palettes {
+  @each $name, $palette in palette.$palette {
     &__palette--#{$name} {
       @each $property, $value in $palette {
         #{$property}: #{$value};
