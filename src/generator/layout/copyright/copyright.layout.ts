@@ -1,6 +1,8 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { LayoutBase } from '../../base/layout.base';
-import { CommonModule } from '@angular/common';
+import { CopyrightDataModel } from '../../model/data/copyright-data.model';
+import { CopyrightMetadataModel } from '../../model/metadata/copyright-metadata.model';
 
 @Component({
   selector: 'copyright-layout',
@@ -8,7 +10,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: '../../style/layout/copyright.layout.scss',
   imports: [CommonModule],
 })
-export class CopyrightComponent extends LayoutBase {
+export class CopyrightComponent extends LayoutBase<CopyrightDataModel, CopyrightMetadataModel> {
   constructor() {
     super('copyright');
   }

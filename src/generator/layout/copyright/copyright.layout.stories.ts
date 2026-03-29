@@ -8,4 +8,15 @@ const meta: Meta<CopyrightComponent> = {
 export default meta;
 type Story = StoryObj<CopyrightComponent>;
 
-export const Primary: Story = {};
+export const Primary: Story = {
+  args: {
+    data: {
+      base: {},
+    },
+    metadata: {
+      base: {
+        palette: 'primary',
+      },
+    },
+  },
+};

@@ -139,67 +139,42 @@
         },
         {
             "name": "CopyrightDataModel",
-            "id": "interface-CopyrightDataModel-164e69a6cf50b79e5ec0024660f788cfcc4083f17ed29d4c42a25f1c6f6ca15e348dc6512d6ae8bd000e074ec1382c21642ce69c773c5d29b53cf29262f7f1bd",
+            "id": "interface-CopyrightDataModel-21b4ca8cb0094895b1f53f598aaa19a9e61e23e84cf1807c01918bcfc16a6fbda4219f1a6ba9b3ba571090db8205682c6402fc8f5b4550259416f86121180ccd",
             "file": "src/generator/model/data/copyright-data.model.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "import { BaseKindModel } from '../base/base-kind.model';\r\n\r\ntype TYearKind = 'current' | 'range';\r\n\r\ninterface YearCurrentModel extends BaseKindModel<TYearKind, 'current'> {}\r\n\r\nexport interface YearRangeModel extends BaseKindModel<TYearKind, 'range'> {\r\n  from: number;\r\n  to: number | 'current';\r\n}\r\n\r\ntype TYear = YearCurrentModel | YearRangeModel;\r\n\r\nexport interface CopyrightDataModel {\r\n  symbol: string;\r\n  year: TYear;\r\n  ownerName: string;\r\n  rightsStatements: string;\r\n}\r\n",
-            "properties": [
-                {
-                    "name": "ownerName",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "string",
-                    "indexKey": "",
-                    "optional": false,
-                    "description": "",
-                    "line": 17
-                },
-                {
-                    "name": "rightsStatements",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "string",
-                    "indexKey": "",
-                    "optional": false,
-                    "description": "",
-                    "line": 18
-                },
-                {
-                    "name": "symbol",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "string",
-                    "indexKey": "",
-                    "optional": false,
-                    "description": "",
-                    "line": 15
-                },
-                {
-                    "name": "year",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "TYear",
-                    "indexKey": "",
-                    "optional": false,
-                    "description": "",
-                    "line": 16
-                }
-            ],
+            "sourceCode": "import { DataBaseModel } from '../base/data-base.model';\r\n\r\nexport interface CopyrightDataModel extends DataBaseModel {}\r\n",
+            "properties": [],
             "indexSignatures": [],
-            "kind": 172,
             "methods": [],
-            "extends": []
+            "extends": [
+                "DataBaseModel"
+            ]
         },
         {
             "name": "CopyrightMetadataModel",
-            "id": "interface-CopyrightMetadataModel-4aa7211c8e2b6ac66727963ec86f942507f6dba53c36cb09632a80196bf970c3ee42cf55933333a1f112366f52587135f592f4557363737c70d72687d7f8292c",
+            "id": "interface-CopyrightMetadataModel-1b614bf004b1406b15d98e9bee53be2c5f050a96857ecdea48a430d6030abdfe3cd46ffcc1cf4e636f476ac4582d153581a7f5ff56923b4d2e484f3d543deef4",
             "file": "src/generator/model/metadata/copyright-metadata.model.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "export interface CopyrightMetadataModel {}\r\n",
+            "sourceCode": "import { MetadataBaseModel } from '../base/metadata-base.model';\r\n\r\nexport interface CopyrightMetadataModel extends MetadataBaseModel {}\r\n",
+            "properties": [],
+            "indexSignatures": [],
+            "methods": [],
+            "extends": [
+                "MetadataBaseModel"
+            ]
+        },
+        {
+            "name": "DataBaseModel",
+            "id": "interface-DataBaseModel-5060ab682ba7d61ca152d71bf19db9923a826c0639819e187ef6c5efb49543da4e4b054924af19da46f305346d3fb5daa105a40f7fdfde16e3249af4d23e872f",
+            "file": "src/generator/model/base/data-base.model.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "export interface DataBaseModel {}\r\n",
             "properties": [],
             "indexSignatures": [],
             "methods": [],
@@ -538,6 +513,31 @@
             "sourceCode": "export interface MainMetadataModel {}\r\n",
             "properties": [],
             "indexSignatures": [],
+            "methods": [],
+            "extends": []
+        },
+        {
+            "name": "MetadataBaseModel",
+            "id": "interface-MetadataBaseModel-6c17217cbd815c9d592c771ac1b3ae8d4942923025b19619f3c31c3003e39c2449a744a901b09b37875cdc500cfe08cd3cbeec1dcd9aad33269518ecbeb8ed5c",
+            "file": "src/generator/model/base/metadata-base.model.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "import { PaletteType } from '../type/palette.type';\r\n\r\nexport interface MetadataBaseModel {\r\n  palette: PaletteType;\r\n}\r\n",
+            "properties": [
+                {
+                    "name": "palette",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "PaletteType",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 4
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 172,
             "methods": [],
             "extends": []
         },
@@ -1107,58 +1107,6 @@
             "kind": 172,
             "methods": [],
             "extends": []
-        },
-        {
-            "name": "YearCurrentModel",
-            "id": "interface-YearCurrentModel-164e69a6cf50b79e5ec0024660f788cfcc4083f17ed29d4c42a25f1c6f6ca15e348dc6512d6ae8bd000e074ec1382c21642ce69c773c5d29b53cf29262f7f1bd",
-            "file": "src/generator/model/data/copyright-data.model.ts",
-            "deprecated": false,
-            "deprecationMessage": "",
-            "type": "interface",
-            "sourceCode": "import { BaseKindModel } from '../base/base-kind.model';\r\n\r\ntype TYearKind = 'current' | 'range';\r\n\r\ninterface YearCurrentModel extends BaseKindModel<TYearKind, 'current'> {}\r\n\r\nexport interface YearRangeModel extends BaseKindModel<TYearKind, 'range'> {\r\n  from: number;\r\n  to: number | 'current';\r\n}\r\n\r\ntype TYear = YearCurrentModel | YearRangeModel;\r\n\r\nexport interface CopyrightDataModel {\r\n  symbol: string;\r\n  year: TYear;\r\n  ownerName: string;\r\n  rightsStatements: string;\r\n}\r\n",
-            "properties": [],
-            "indexSignatures": [],
-            "methods": [],
-            "extends": [
-                "BaseKindModel"
-            ]
-        },
-        {
-            "name": "YearRangeModel",
-            "id": "interface-YearRangeModel-164e69a6cf50b79e5ec0024660f788cfcc4083f17ed29d4c42a25f1c6f6ca15e348dc6512d6ae8bd000e074ec1382c21642ce69c773c5d29b53cf29262f7f1bd",
-            "file": "src/generator/model/data/copyright-data.model.ts",
-            "deprecated": false,
-            "deprecationMessage": "",
-            "type": "interface",
-            "sourceCode": "import { BaseKindModel } from '../base/base-kind.model';\r\n\r\ntype TYearKind = 'current' | 'range';\r\n\r\ninterface YearCurrentModel extends BaseKindModel<TYearKind, 'current'> {}\r\n\r\nexport interface YearRangeModel extends BaseKindModel<TYearKind, 'range'> {\r\n  from: number;\r\n  to: number | 'current';\r\n}\r\n\r\ntype TYear = YearCurrentModel | YearRangeModel;\r\n\r\nexport interface CopyrightDataModel {\r\n  symbol: string;\r\n  year: TYear;\r\n  ownerName: string;\r\n  rightsStatements: string;\r\n}\r\n",
-            "properties": [
-                {
-                    "name": "from",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "number",
-                    "indexKey": "",
-                    "optional": false,
-                    "description": "",
-                    "line": 8
-                },
-                {
-                    "name": "to",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "number | \"current\"",
-                    "indexKey": "",
-                    "optional": false,
-                    "description": "",
-                    "line": 9
-                }
-            ],
-            "indexSignatures": [],
-            "kind": 172,
-            "methods": [],
-            "extends": [
-                "BaseKindModel"
-            ]
         }
     ],
     "injectables": [
@@ -1440,133 +1388,6 @@
             "hostListeners": []
         },
         {
-            "name": "ComponentBase",
-            "id": "class-ComponentBase-9c6b934a5e071f5e4447bdf77bb643e4e98170b2c544941fd8a188267df49e6bc1f26c1bdf690fb34ca1c12d61445ce079847ca405e4bdb5d89995c07ec16805",
-            "file": "src/generator/base/component.base.ts",
-            "deprecated": false,
-            "deprecationMessage": "",
-            "type": "class",
-            "sourceCode": "import { PaletteEnum } from '../enum/palette.enum';\r\nimport { BemUtility } from '../utility/bem.utility';\r\nimport { StringUtility } from '../utility/string.utility';\r\n\r\nexport class ComponentBase<Type> {\r\n  constructor(protected type: Type) {\r\n    this.type = type;\r\n  }\r\n\r\n  protected buildMainClassList() {\r\n    const block = StringUtility.convertToString(this.type);\r\n    const mainClass = BemUtility.build(block);\r\n    const palettes = Object.values(PaletteEnum).map((palette) => {\r\n      return BemUtility.build(block, 'palette', palette);\r\n    });\r\n    return [mainClass, ...palettes];\r\n  }\r\n}\r\n",
-            "constructorObj": {
-                "name": "constructor",
-                "description": "",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "args": [
-                    {
-                        "name": "type",
-                        "type": "Type",
-                        "optional": false,
-                        "dotDotDotToken": false,
-                        "deprecated": false,
-                        "deprecationMessage": ""
-                    }
-                ],
-                "line": 5,
-                "jsdoctags": [
-                    {
-                        "name": "type",
-                        "type": "Type",
-                        "optional": false,
-                        "dotDotDotToken": false,
-                        "deprecated": false,
-                        "deprecationMessage": "",
-                        "tagName": {
-                            "text": "param"
-                        }
-                    }
-                ]
-            },
-            "inputsClass": [],
-            "outputsClass": [],
-            "properties": [],
-            "methods": [
-                {
-                    "name": "buildMainClassList",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "{}",
-                    "typeParameters": [],
-                    "line": 10,
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "modifierKind": [
-                        124
-                    ]
-                }
-            ],
-            "indexSignatures": [],
-            "extends": [],
-            "hostBindings": [],
-            "hostListeners": []
-        },
-        {
-            "name": "LayoutBase",
-            "id": "class-LayoutBase-af92bd9f70f5e9fb7e1836e04d6697e07e57e9555215f60eb83c08e71bdbe6068afbddc921ce302810a58507c4760491a7d7c0c1b46d64cff4e0417de651e0a1",
-            "file": "src/generator/base/layout.base.ts",
-            "deprecated": false,
-            "deprecationMessage": "",
-            "type": "class",
-            "sourceCode": "import { ComponentBase } from './component.base';\r\nimport { LayoutType } from '../type/layout.type';\r\n\r\nexport class LayoutBase extends ComponentBase<LayoutType> {\r\n  constructor(protected override type: LayoutType) {\r\n    super(type);\r\n  }\r\n}\r\n",
-            "constructorObj": {
-                "name": "constructor",
-                "description": "",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "args": [
-                    {
-                        "name": "type",
-                        "type": "LayoutType",
-                        "optional": false,
-                        "dotDotDotToken": false,
-                        "deprecated": false,
-                        "deprecationMessage": ""
-                    }
-                ],
-                "line": 4,
-                "jsdoctags": [
-                    {
-                        "name": "type",
-                        "type": "LayoutType",
-                        "optional": false,
-                        "dotDotDotToken": false,
-                        "deprecated": false,
-                        "deprecationMessage": "",
-                        "tagName": {
-                            "text": "param"
-                        }
-                    }
-                ]
-            },
-            "inputsClass": [],
-            "outputsClass": [],
-            "properties": [],
-            "methods": [
-                {
-                    "name": "buildMainClassList",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "{}",
-                    "typeParameters": [],
-                    "line": 10,
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "modifierKind": [
-                        124
-                    ],
-                    "inheritance": {
-                        "file": "ComponentBase"
-                    }
-                }
-            ],
-            "indexSignatures": [],
-            "extends": [
-                "ComponentBase"
-            ],
-            "hostBindings": [],
-            "hostListeners": []
-        },
-        {
             "name": "StoreCore",
             "id": "class-StoreCore-9b9d00eb04e9c8f8ec0056a3db331b940e37b0296f05dd5a403fd6dbe295078c7ce68e60c1e68300f2c7b4b4bf5d072933fb9cd01c8af463adddb6a80acf0154",
             "file": "src/app/store/store.core.ts",
@@ -1723,7 +1544,195 @@
             "hostListeners": []
         }
     ],
-    "directives": [],
+    "directives": [
+        {
+            "name": "ComponentBase",
+            "id": "directive-ComponentBase-b1fbeb1898e7e20389431d66ce336d72902b5f4830d3d726326b8674d37c5c3030b882acb96c75faee66563d480e4c0062c4bf6207c952cdf57c96653d7e1ffa",
+            "file": "src/generator/base/component.base.ts",
+            "type": "directive",
+            "description": "",
+            "rawdescription": "\n",
+            "sourceCode": "import { Directive, input } from '@angular/core';\r\nimport { BemUtility } from '../utility/bem.utility';\r\nimport { StringUtility } from '../utility/string.utility';\r\nimport { MetadataBaseModel } from '../model/base/metadata-base.model';\r\nimport { DataBaseModel } from '../model/base/data-base.model';\r\n\r\n@Directive()\r\nexport class ComponentBase<\r\n  TType,\r\n  TDate extends DataBaseModel,\r\n  TMetadata extends MetadataBaseModel,\r\n> {\r\n  data = input.required<TDate>();\r\n\r\n  metadata = input.required<TMetadata>();\r\n\r\n  constructor(protected type: TType) {\r\n    this.type = type;\r\n  }\r\n\r\n  protected buildMainClassList() {\r\n    const block = StringUtility.convertToString(this.type);\r\n    const { palette } = this.metadata();\r\n    const mainClass = BemUtility.build(block);\r\n    const paletteClass = BemUtility.build(block, 'palette', palette);\r\n    return [mainClass, paletteClass];\r\n  }\r\n}\r\n",
+            "providers": [],
+            "hostDirectives": [],
+            "standalone": false,
+            "inputsClass": [
+                {
+                    "name": "data",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "TDate",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 13,
+                    "required": true
+                },
+                {
+                    "name": "metadata",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "TMetadata",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 15,
+                    "required": true
+                }
+            ],
+            "outputsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "buildMainClassList",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "{}",
+                    "typeParameters": [],
+                    "line": 21,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        124
+                    ]
+                }
+            ],
+            "extends": [],
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "type",
+                        "type": "TType",
+                        "optional": false,
+                        "dotDotDotToken": false,
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 15,
+                "jsdoctags": [
+                    {
+                        "name": "type",
+                        "type": "TType",
+                        "optional": false,
+                        "dotDotDotToken": false,
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "name": "LayoutBase",
+            "id": "directive-LayoutBase-b718a78b5fa129ae31f96a3800ba35cfba6f3c3e1710213180b1d6c7a056e03f368881bf90c5c163db28c9fbe583e62f343bf2be0c36b99a0427cdf4aa583bbc",
+            "file": "src/generator/base/layout.base.ts",
+            "type": "directive",
+            "description": "",
+            "rawdescription": "\n",
+            "sourceCode": "import { Directive } from '@angular/core';\r\nimport { ComponentBase } from './component.base';\r\nimport { LayoutType } from '../type/layout.type';\r\nimport { DataBaseModel } from '../model/base/data-base.model';\r\nimport { MetadataBaseModel } from '../model/base/metadata-base.model';\r\n\r\n@Directive()\r\nexport class LayoutBase<\r\n  TDate extends DataBaseModel,\r\n  TMetadata extends MetadataBaseModel,\r\n> extends ComponentBase<LayoutType, TDate, TMetadata> {\r\n  constructor(protected override type: LayoutType) {\r\n    super(type);\r\n  }\r\n}\r\n",
+            "providers": [],
+            "hostDirectives": [],
+            "standalone": false,
+            "inputsClass": [
+                {
+                    "name": "data",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "TDate",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 13,
+                    "required": true,
+                    "inheritance": {
+                        "file": "ComponentBase"
+                    }
+                },
+                {
+                    "name": "metadata",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "TMetadata",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 15,
+                    "required": true,
+                    "inheritance": {
+                        "file": "ComponentBase"
+                    }
+                }
+            ],
+            "outputsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "buildMainClassList",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "{}",
+                    "typeParameters": [],
+                    "line": 21,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        124
+                    ],
+                    "inheritance": {
+                        "file": "ComponentBase"
+                    }
+                }
+            ],
+            "extends": [
+                "ComponentBase"
+            ],
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "type",
+                        "type": "LayoutType",
+                        "optional": false,
+                        "dotDotDotToken": false,
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 11,
+                "jsdoctags": [
+                    {
+                        "name": "type",
+                        "type": "LayoutType",
+                        "optional": false,
+                        "dotDotDotToken": false,
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            }
+        }
+    ],
     "components": [
         {
             "name": "AboutMeView",
@@ -1923,7 +1932,7 @@
         },
         {
             "name": "CopyrightComponent",
-            "id": "component-CopyrightComponent-f316ef6bea8c79d700fa0016d58f67a3574382c7cd8c5c03fd7de103189734fab4d1b7e5589fa4d1fe7c1312d7a9ae77df2ab042ad3b9ad868c845abbc586795",
+            "id": "component-CopyrightComponent-5364665633655815e06870b4c42f40665645d5e89e8ad80479fdeda2f42aff3cb1f4ea432852e3c5dbb8f8a27b20a467a2ec0e47e81d256464c33ebfcdd8d6eb",
             "file": "src/generator/layout/copyright/copyright.layout.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1938,7 +1947,36 @@
             ],
             "viewProviders": [],
             "hostDirectives": [],
-            "inputsClass": [],
+            "inputsClass": [
+                {
+                    "name": "data",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "TDate",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 13,
+                    "required": true,
+                    "inheritance": {
+                        "file": "ComponentBase"
+                    }
+                },
+                {
+                    "name": "metadata",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "TMetadata",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 15,
+                    "required": true,
+                    "inheritance": {
+                        "file": "ComponentBase"
+                    }
+                }
+            ],
             "outputsClass": [],
             "propertiesClass": [],
             "methodsClass": [
@@ -1948,7 +1986,7 @@
                     "optional": false,
                     "returnType": "{}",
                     "typeParameters": [],
-                    "line": 10,
+                    "line": 21,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -1973,7 +2011,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\r\nimport { LayoutBase } from '../../base/layout.base';\r\nimport { CommonModule } from '@angular/common';\r\n\r\n@Component({\r\n  selector: 'copyright-layout',\r\n  templateUrl: './copyright.layout.html',\r\n  styleUrl: '../../style/layout/copyright.layout.scss',\r\n  imports: [CommonModule],\r\n})\r\nexport class CopyrightComponent extends LayoutBase {\r\n  constructor() {\r\n    super('copyright');\r\n  }\r\n}\r\n",
+            "sourceCode": "import { CommonModule } from '@angular/common';\r\nimport { Component } from '@angular/core';\r\nimport { LayoutBase } from '../../base/layout.base';\r\nimport { CopyrightDataModel } from '../../model/data/copyright-data.model';\r\nimport { CopyrightMetadataModel } from '../../model/metadata/copyright-metadata.model';\r\n\r\n@Component({\r\n  selector: 'copyright-layout',\r\n  templateUrl: './copyright.layout.html',\r\n  styleUrl: '../../style/layout/copyright.layout.scss',\r\n  imports: [CommonModule],\r\n})\r\nexport class CopyrightComponent extends LayoutBase<CopyrightDataModel, CopyrightMetadataModel> {\r\n  constructor() {\r\n    super('copyright');\r\n  }\r\n}\r\n",
             "styleUrl": "../../style/layout/copyright.layout.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
@@ -1984,7 +2022,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "args": [],
-                "line": 11
+                "line": 13
             },
             "extends": [
                 "LayoutBase"
@@ -3791,6 +3829,17 @@
                 "kind": 193
             },
             {
+                "name": "PaletteType",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "unknown",
+                "file": "src/generator/model/type/palette.type.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 199
+            },
+            {
                 "name": "ResumeDataModel",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
@@ -3895,28 +3944,6 @@
                 "subtype": "typealias",
                 "rawtype": "\"small\" | \"p\" | \"h1\" | \"h2\" | \"h3\"",
                 "file": "src/generator/component/text/text.type.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "description": "",
-                "kind": 193
-            },
-            {
-                "name": "TYear",
-                "ctype": "miscellaneous",
-                "subtype": "typealias",
-                "rawtype": "YearCurrentModel | YearRangeModel",
-                "file": "src/generator/model/data/copyright-data.model.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "description": "",
-                "kind": 193
-            },
-            {
-                "name": "TYearKind",
-                "ctype": "miscellaneous",
-                "subtype": "typealias",
-                "rawtype": "\"current\" | \"range\"",
-                "file": "src/generator/model/data/copyright-data.model.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -5437,6 +5464,19 @@
                     "kind": 193
                 }
             ],
+            "src/generator/model/type/palette.type.ts": [
+                {
+                    "name": "PaletteType",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "unknown",
+                    "file": "src/generator/model/type/palette.type.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 199
+                }
+            ],
             "src/app/data/resume/resume-data.model.ts": [
                 {
                     "name": "ResumeDataModel",
@@ -5559,30 +5599,6 @@
                     "subtype": "typealias",
                     "rawtype": "\"small\" | \"p\" | \"h1\" | \"h2\" | \"h3\"",
                     "file": "src/generator/component/text/text.type.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 193
-                }
-            ],
-            "src/generator/model/data/copyright-data.model.ts": [
-                {
-                    "name": "TYear",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "YearCurrentModel | YearRangeModel",
-                    "file": "src/generator/model/data/copyright-data.model.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 193
-                },
-                {
-                    "name": "TYearKind",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "\"current\" | \"range\"",
-                    "file": "src/generator/model/data/copyright-data.model.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -6314,20 +6330,20 @@
             },
             {
                 "filePath": "src/generator/base/component.base.ts",
-                "type": "class",
-                "linktype": "classe",
+                "type": "directive",
+                "linktype": "directive",
                 "name": "ComponentBase",
                 "coveragePercent": 0,
-                "coverageCount": "0/3",
+                "coverageCount": "0/5",
                 "status": "low"
             },
             {
                 "filePath": "src/generator/base/layout.base.ts",
-                "type": "class",
-                "linktype": "classe",
+                "type": "directive",
+                "linktype": "directive",
                 "name": "LayoutBase",
                 "coveragePercent": 0,
-                "coverageCount": "0/3",
+                "coverageCount": "0/5",
                 "status": "low"
             },
             {
@@ -6430,7 +6446,7 @@
                 "linktype": "component",
                 "name": "CopyrightComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/3",
+                "coverageCount": "0/5",
                 "status": "low"
             },
             {
@@ -6447,6 +6463,24 @@
                 "type": "interface",
                 "linktype": "interface",
                 "name": "BaseKindModel",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/generator/model/base/data-base.model.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "DataBaseModel",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/generator/model/base/metadata-base.model.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "MetadataBaseModel",
                 "coveragePercent": 0,
                 "coverageCount": "0/2",
                 "status": "low"
@@ -6501,44 +6535,6 @@
                 "type": "interface",
                 "linktype": "interface",
                 "name": "CopyrightDataModel",
-                "coveragePercent": 0,
-                "coverageCount": "0/5",
-                "status": "low"
-            },
-            {
-                "filePath": "src/generator/model/data/copyright-data.model.ts",
-                "type": "interface",
-                "linktype": "interface",
-                "name": "YearCurrentModel",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/generator/model/data/copyright-data.model.ts",
-                "type": "interface",
-                "linktype": "interface",
-                "name": "YearRangeModel",
-                "coveragePercent": 0,
-                "coverageCount": "0/3",
-                "status": "low"
-            },
-            {
-                "filePath": "src/generator/model/data/copyright-data.model.ts",
-                "type": "type alias",
-                "linktype": "miscellaneous",
-                "linksubtype": "typealias",
-                "name": "TYear",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/generator/model/data/copyright-data.model.ts",
-                "type": "type alias",
-                "linktype": "miscellaneous",
-                "linksubtype": "typealias",
-                "name": "TYearKind",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -6649,6 +6645,16 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "typealias",
                 "name": "TComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/generator/model/type/palette.type.ts",
+                "type": "type alias",
+                "linktype": "miscellaneous",
+                "linksubtype": "typealias",
+                "name": "PaletteType",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
