@@ -1,5 +1,17 @@
 @use '../abstract/mixin.abstract' as mixin;
+@use '../abstract/constant.abstract' as constant;
 
 .copyright {
   @include mixin.build-layout;
+
+  padding: constant.$size--md;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: constant.$size--xs;
+
+  @media screen and (min-width: constant.$screen__size--tablet) {
+    flex-direction: row;
+  }
 }

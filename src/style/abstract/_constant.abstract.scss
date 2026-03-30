@@ -3,5 +3,23 @@ $font__family: var(--font__family);
 $font__weight--normal: var(--font__weight--normal);
 $font__weight--bold: var(--font__weight--bold);
 
+// Font size
+$font__size--small: clamp(0.75rem, 5vw, 0.875rem);
+$font__size--p: clamp(1rem, 5vw, 1.25rem);
+$font__size--h1: clamp(2rem, 5vw, 3rem);
+$font__size--h2: clamp(1.5rem, 5vw, 2rem);
+$font__size--h3: clamp(1.25rem, 5vw, 1.5rem);
+
 // Screen sizes
 $screen__size--min: 320px;
+$screen__size--tablet: 768px;
+$screen__size--laptop: 1024px;
+$screen__size--tv: 1440px;
+
+// Sizes
+$size--none: 0;
+$size--xs: 0.25rem;
+$size--sm: 0.5rem;
+$size--md: 1rem;
+$size--lg: 2rem;
+$size--xl: 4rem;

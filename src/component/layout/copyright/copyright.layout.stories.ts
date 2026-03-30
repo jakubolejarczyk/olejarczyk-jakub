@@ -1,12 +1,12 @@
 import { Meta, StoryObj } from '@storybook/angular';
-import { CopyrightComponent } from './copyright.layout';
+import { CopyrightLayout } from './copyright.layout';
 
-const meta: Meta<CopyrightComponent> = {
+const meta: Meta<CopyrightLayout> = {
   title: 'layout/copyright',
-  component: CopyrightComponent,
+  component: CopyrightLayout,
 };
 export default meta;
-type Story = StoryObj<CopyrightComponent>;
+type Story = StoryObj<CopyrightLayout>;
 
 export const Primary: Story = {
   args: {

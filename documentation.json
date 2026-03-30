@@ -53,12 +53,12 @@
         },
         {
             "name": "BaseModel",
-            "id": "interface-BaseModel-7d903575990bb6589bc4e826fe92192102aadd30cc601502fe8c248fb2be24b384646acc0d3c71f293ade7ad290c127e183328780212c8a01f6b1ebf9645c287",
-            "file": "src/generator/model/base/base.model.ts",
+            "id": "interface-BaseModel-b92257d3029649cfadbfe8abdae7588ac8c47c3a35977577ff7252d69334b016dc8a4486cf17deb159d7a20b252963a1014a346cb7183a4a99ad5a001f1f956e",
+            "file": "src/component/model/base/base.model.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "import { UnknownModel } from './unknown.model';\r\n\r\nexport interface BaseModel<TBase, TExtend extends UnknownModel = UnknownModel> {\r\n  base: TBase;\r\n  extend: TExtend;\r\n}\r\n",
+            "sourceCode": "export interface BaseModel<TBase, TExtend> {\r\n  base: TBase;\r\n  extend: TExtend;\r\n}\r\n",
             "properties": [
                 {
                     "name": "base",
@@ -68,7 +68,7 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 4
+                    "line": 2
                 },
                 {
                     "name": "extend",
@@ -78,7 +78,7 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 5
+                    "line": 3
                 }
             ],
             "indexSignatures": [],
@@ -123,12 +123,12 @@
         },
         {
             "name": "CopyrightDataModel",
-            "id": "interface-CopyrightDataModel-4674e12212ebcb754c8833b36c3dfd08d24ace2b064a5583c3abb130f729d362a913b58aedd730abffc9c7bd2e49dd3f7ee46d86090c27df80f1f220ca44245b",
-            "file": "src/generator/model/data/copyright-data.model.ts",
+            "id": "interface-CopyrightDataModel-de7364507a20b8267ad95e97dd55886d55eacbf4b8fc037d0094fd398ebe0cee68c82ad9b7faa812657313afc62c18145658431677786e58a42442f66a946190",
+            "file": "src/component/model/data/copyright-data.model.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "import { BaseKindModel } from '../base/base-kind.model';\r\nimport { BaseModel } from '../base/base.model';\r\nimport { DataBaseModel } from '../base/data-base.model';\r\n\r\ntype YearKindType = 'current' | 'range';\r\n\r\ninterface YearCurrentModel extends BaseKindModel<YearKindType, 'current'> {}\r\n\r\ninterface YearRangeModel extends BaseKindModel<YearKindType, 'range'> {\r\n  from: number;\r\n  to: number | 'current';\r\n}\r\n\r\ntype YearType = YearCurrentModel | YearRangeModel;\r\n\r\ninterface DataModel {\r\n  symbol: string;\r\n  year: YearType;\r\n  ownerName: string;\r\n  rightsStatements: string;\r\n}\r\n\r\nexport interface CopyrightDataModel extends BaseModel<DataBaseModel, DataModel> {}\r\n",
+            "sourceCode": "import { BaseKindModel } from '../../../generator/model/base/base-kind.model';\r\nimport { BaseModel } from '../base/base.model';\r\nimport { DataBaseModel } from '../base/data-base.model';\r\n\r\ntype YearKindType = 'current' | 'range';\r\n\r\ninterface YearCurrentModel extends BaseKindModel<YearKindType, 'current'> {}\r\n\r\ninterface YearRangeModel extends BaseKindModel<YearKindType, 'range'> {\r\n  from: number;\r\n  to: number | 'current';\r\n}\r\n\r\ntype YearType = YearCurrentModel | YearRangeModel;\r\n\r\nexport interface CopyrightDataModel extends BaseModel<\r\n  DataBaseModel,\r\n  {\r\n    symbol: string;\r\n    year: YearType;\r\n    ownerName: string;\r\n    rightsStatements: string;\r\n  }\r\n> {}\r\n",
             "properties": [],
             "indexSignatures": [],
             "methods": [],
@@ -138,12 +138,12 @@
         },
         {
             "name": "CopyrightLayoutNodeModel",
-            "id": "interface-CopyrightLayoutNodeModel-69b9a84ef824bcc498ae819a11b9534472e746cf0c1b48bd4803daf8c89e21d34aace362ba4e061c2b95556b570a1e38c5992f402e4adce1b49d8e78d3794fd1",
+            "id": "interface-CopyrightLayoutNodeModel-0d7990f9b44f354bb035e68c06ca0a3bcb863955c3ee0c7c246c64805c629483722ebc5dff04f89326d5d6679a1780dd419946c8c9cf044496d7678f7a618baa",
             "file": "src/generator/model/node/layout-node.model.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "import { BaseKindModel } from '../base/base-kind.model';\r\nimport { CopyrightDataModel } from '../data/copyright-data.model';\r\nimport { CopyrightMetadataModel } from '../metadata/copyright-metadata.model';\r\nimport { LayoutKindType } from '../type/layout-kind.type';\r\n\r\ninterface CopyrightLayoutNodeModel extends BaseKindModel<LayoutKindType, 'copyright'> {\r\n  data: CopyrightDataModel;\r\n  metadata: CopyrightMetadataModel;\r\n}\r\n\r\nexport type LayoutNodeModel = CopyrightLayoutNodeModel;\r\n",
+            "sourceCode": "import { BaseKindModel } from '../base/base-kind.model';\r\nimport { CopyrightDataModel } from '../../../component/model/data/copyright-data.model';\r\nimport { CopyrightMetadataModel } from '../../../component/model/metadata/copyright-metadata.model';\r\nimport { LayoutKindType } from '../type/layout-kind.type';\r\n\r\ninterface CopyrightLayoutNodeModel extends BaseKindModel<LayoutKindType, 'copyright'> {\r\n  data: CopyrightDataModel;\r\n  metadata: CopyrightMetadataModel;\r\n}\r\n\r\nexport type LayoutNodeModel = CopyrightLayoutNodeModel;\r\n",
             "properties": [
                 {
                     "name": "data",
@@ -175,12 +175,12 @@
         },
         {
             "name": "CopyrightMetadataModel",
-            "id": "interface-CopyrightMetadataModel-ab20042cebbd28c4971aa7bc329eb644c5be4faab9d762d1453bb0c1d1f4e38ad24b7e62f659b90215fc0ff936fa8fb3e38fca92905f77b0bc3efca6ec2bdb76",
-            "file": "src/generator/model/metadata/copyright-metadata.model.ts",
+            "id": "interface-CopyrightMetadataModel-b2c5c4072a98b9da1f404ccf02573a7329fd0e90a9464e00f407c27fa4c1b51b1052f558e49f5023c8b4cf49721f6a34cd3ba9b61319d8598088f10d248b3597",
+            "file": "src/component/model/metadata/copyright-metadata.model.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "import { BaseModel } from '../base/base.model';\r\nimport { MetadataBaseModel } from '../base/metadata-base.model';\r\n\r\ninterface MetadataModel {}\r\n\r\nexport interface CopyrightMetadataModel extends BaseModel<MetadataBaseModel, MetadataModel> {}\r\n",
+            "sourceCode": "import { BaseModel } from '../base/base.model';\r\nimport { MetadataBaseModel } from '../base/metadata-base.model';\r\n\r\nexport interface CopyrightMetadataModel extends BaseModel<MetadataBaseModel, {}> {}\r\n",
             "properties": [],
             "indexSignatures": [],
             "methods": [],
@@ -191,68 +191,13 @@
         {
             "name": "DataBaseModel",
             "id": "interface-DataBaseModel-5060ab682ba7d61ca152d71bf19db9923a826c0639819e187ef6c5efb49543da4e4b054924af19da46f305346d3fb5daa105a40f7fdfde16e3249af4d23e872f",
-            "file": "src/generator/model/base/data-base.model.ts",
+            "file": "src/component/model/base/data-base.model.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
             "sourceCode": "export interface DataBaseModel {}\r\n",
             "properties": [],
             "indexSignatures": [],
-            "methods": [],
-            "extends": []
-        },
-        {
-            "name": "DataModel",
-            "id": "interface-DataModel-4674e12212ebcb754c8833b36c3dfd08d24ace2b064a5583c3abb130f729d362a913b58aedd730abffc9c7bd2e49dd3f7ee46d86090c27df80f1f220ca44245b",
-            "file": "src/generator/model/data/copyright-data.model.ts",
-            "deprecated": false,
-            "deprecationMessage": "",
-            "type": "interface",
-            "sourceCode": "import { BaseKindModel } from '../base/base-kind.model';\r\nimport { BaseModel } from '../base/base.model';\r\nimport { DataBaseModel } from '../base/data-base.model';\r\n\r\ntype YearKindType = 'current' | 'range';\r\n\r\ninterface YearCurrentModel extends BaseKindModel<YearKindType, 'current'> {}\r\n\r\ninterface YearRangeModel extends BaseKindModel<YearKindType, 'range'> {\r\n  from: number;\r\n  to: number | 'current';\r\n}\r\n\r\ntype YearType = YearCurrentModel | YearRangeModel;\r\n\r\ninterface DataModel {\r\n  symbol: string;\r\n  year: YearType;\r\n  ownerName: string;\r\n  rightsStatements: string;\r\n}\r\n\r\nexport interface CopyrightDataModel extends BaseModel<DataBaseModel, DataModel> {}\r\n",
-            "properties": [
-                {
-                    "name": "ownerName",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "string",
-                    "indexKey": "",
-                    "optional": false,
-                    "description": "",
-                    "line": 19
-                },
-                {
-                    "name": "rightsStatements",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "string",
-                    "indexKey": "",
-                    "optional": false,
-                    "description": "",
-                    "line": 20
-                },
-                {
-                    "name": "symbol",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "string",
-                    "indexKey": "",
-                    "optional": false,
-                    "description": "",
-                    "line": 17
-                },
-                {
-                    "name": "year",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "YearType",
-                    "indexKey": "",
-                    "optional": false,
-                    "description": "",
-                    "line": 18
-                }
-            ],
-            "indexSignatures": [],
-            "kind": 172,
             "methods": [],
             "extends": []
         },
@@ -468,12 +413,12 @@
         },
         {
             "name": "MetadataBaseModel",
-            "id": "interface-MetadataBaseModel-6c17217cbd815c9d592c771ac1b3ae8d4942923025b19619f3c31c3003e39c2449a744a901b09b37875cdc500cfe08cd3cbeec1dcd9aad33269518ecbeb8ed5c",
-            "file": "src/generator/model/base/metadata-base.model.ts",
+            "id": "interface-MetadataBaseModel-f533a8ddf74e06fae063d6cc1b9b75f70e83ac3480f764630a5bb35a6365ddd61ba66a7261d46ad62be236ea22f9f150c59cbcc4743486bf16fbec412dcf33c8",
+            "file": "src/component/model/base/metadata-base.model.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "import { PaletteType } from '../type/palette.type';\r\n\r\nexport interface MetadataBaseModel {\r\n  palette: PaletteType;\r\n}\r\n",
+            "sourceCode": "import { PaletteType } from '../../../style/type/palette.type';\r\n\r\nexport interface MetadataBaseModel {\r\n  palette: PaletteType;\r\n}\r\n",
             "properties": [
                 {
                     "name": "palette",
@@ -488,19 +433,6 @@
             ],
             "indexSignatures": [],
             "kind": 172,
-            "methods": [],
-            "extends": []
-        },
-        {
-            "name": "MetadataModel",
-            "id": "interface-MetadataModel-ab20042cebbd28c4971aa7bc329eb644c5be4faab9d762d1453bb0c1d1f4e38ad24b7e62f659b90215fc0ff936fa8fb3e38fca92905f77b0bc3efca6ec2bdb76",
-            "file": "src/generator/model/metadata/copyright-metadata.model.ts",
-            "deprecated": false,
-            "deprecationMessage": "",
-            "type": "interface",
-            "sourceCode": "import { BaseModel } from '../base/base.model';\r\nimport { MetadataBaseModel } from '../base/metadata-base.model';\r\n\r\ninterface MetadataModel {}\r\n\r\nexport interface CopyrightMetadataModel extends BaseModel<MetadataBaseModel, MetadataModel> {}\r\n",
-            "properties": [],
-            "indexSignatures": [],
             "methods": [],
             "extends": []
         },
@@ -1044,12 +976,12 @@
         },
         {
             "name": "YearCurrentModel",
-            "id": "interface-YearCurrentModel-4674e12212ebcb754c8833b36c3dfd08d24ace2b064a5583c3abb130f729d362a913b58aedd730abffc9c7bd2e49dd3f7ee46d86090c27df80f1f220ca44245b",
-            "file": "src/generator/model/data/copyright-data.model.ts",
+            "id": "interface-YearCurrentModel-de7364507a20b8267ad95e97dd55886d55eacbf4b8fc037d0094fd398ebe0cee68c82ad9b7faa812657313afc62c18145658431677786e58a42442f66a946190",
+            "file": "src/component/model/data/copyright-data.model.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "import { BaseKindModel } from '../base/base-kind.model';\r\nimport { BaseModel } from '../base/base.model';\r\nimport { DataBaseModel } from '../base/data-base.model';\r\n\r\ntype YearKindType = 'current' | 'range';\r\n\r\ninterface YearCurrentModel extends BaseKindModel<YearKindType, 'current'> {}\r\n\r\ninterface YearRangeModel extends BaseKindModel<YearKindType, 'range'> {\r\n  from: number;\r\n  to: number | 'current';\r\n}\r\n\r\ntype YearType = YearCurrentModel | YearRangeModel;\r\n\r\ninterface DataModel {\r\n  symbol: string;\r\n  year: YearType;\r\n  ownerName: string;\r\n  rightsStatements: string;\r\n}\r\n\r\nexport interface CopyrightDataModel extends BaseModel<DataBaseModel, DataModel> {}\r\n",
+            "sourceCode": "import { BaseKindModel } from '../../../generator/model/base/base-kind.model';\r\nimport { BaseModel } from '../base/base.model';\r\nimport { DataBaseModel } from '../base/data-base.model';\r\n\r\ntype YearKindType = 'current' | 'range';\r\n\r\ninterface YearCurrentModel extends BaseKindModel<YearKindType, 'current'> {}\r\n\r\ninterface YearRangeModel extends BaseKindModel<YearKindType, 'range'> {\r\n  from: number;\r\n  to: number | 'current';\r\n}\r\n\r\ntype YearType = YearCurrentModel | YearRangeModel;\r\n\r\nexport interface CopyrightDataModel extends BaseModel<\r\n  DataBaseModel,\r\n  {\r\n    symbol: string;\r\n    year: YearType;\r\n    ownerName: string;\r\n    rightsStatements: string;\r\n  }\r\n> {}\r\n",
             "properties": [],
             "indexSignatures": [],
             "methods": [],
@@ -1059,12 +991,12 @@
         },
         {
             "name": "YearRangeModel",
-            "id": "interface-YearRangeModel-4674e12212ebcb754c8833b36c3dfd08d24ace2b064a5583c3abb130f729d362a913b58aedd730abffc9c7bd2e49dd3f7ee46d86090c27df80f1f220ca44245b",
-            "file": "src/generator/model/data/copyright-data.model.ts",
+            "id": "interface-YearRangeModel-de7364507a20b8267ad95e97dd55886d55eacbf4b8fc037d0094fd398ebe0cee68c82ad9b7faa812657313afc62c18145658431677786e58a42442f66a946190",
+            "file": "src/component/model/data/copyright-data.model.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "import { BaseKindModel } from '../base/base-kind.model';\r\nimport { BaseModel } from '../base/base.model';\r\nimport { DataBaseModel } from '../base/data-base.model';\r\n\r\ntype YearKindType = 'current' | 'range';\r\n\r\ninterface YearCurrentModel extends BaseKindModel<YearKindType, 'current'> {}\r\n\r\ninterface YearRangeModel extends BaseKindModel<YearKindType, 'range'> {\r\n  from: number;\r\n  to: number | 'current';\r\n}\r\n\r\ntype YearType = YearCurrentModel | YearRangeModel;\r\n\r\ninterface DataModel {\r\n  symbol: string;\r\n  year: YearType;\r\n  ownerName: string;\r\n  rightsStatements: string;\r\n}\r\n\r\nexport interface CopyrightDataModel extends BaseModel<DataBaseModel, DataModel> {}\r\n",
+            "sourceCode": "import { BaseKindModel } from '../../../generator/model/base/base-kind.model';\r\nimport { BaseModel } from '../base/base.model';\r\nimport { DataBaseModel } from '../base/data-base.model';\r\n\r\ntype YearKindType = 'current' | 'range';\r\n\r\ninterface YearCurrentModel extends BaseKindModel<YearKindType, 'current'> {}\r\n\r\ninterface YearRangeModel extends BaseKindModel<YearKindType, 'range'> {\r\n  from: number;\r\n  to: number | 'current';\r\n}\r\n\r\ntype YearType = YearCurrentModel | YearRangeModel;\r\n\r\nexport interface CopyrightDataModel extends BaseModel<\r\n  DataBaseModel,\r\n  {\r\n    symbol: string;\r\n    year: YearType;\r\n    ownerName: string;\r\n    rightsStatements: string;\r\n  }\r\n> {}\r\n",
             "properties": [
                 {
                     "name": "from",
@@ -1185,6 +1117,88 @@
             "type": "injectable"
         },
         {
+            "name": "CopyrightService",
+            "id": "injectable-CopyrightService-fb999489aec89a285c361f57bfcc4876a1fa72563d32de39311840b94e426b19c64bdfe4ab0a01a1015616aec6b3e7b052c4d33ba6a7d2fea673efca6d5fa3ce",
+            "file": "src/component/layout/copyright/copyright.service.ts",
+            "properties": [],
+            "methods": [
+                {
+                    "name": "buildCopyright",
+                    "args": [
+                        {
+                            "name": "data",
+                            "type": "CopyrightDataModel",
+                            "optional": false,
+                            "dotDotDotToken": false,
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "{}",
+                    "typeParameters": [],
+                    "line": 7,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "data",
+                            "type": "CopyrightDataModel",
+                            "optional": false,
+                            "dotDotDotToken": false,
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "buildYear",
+                    "args": [
+                        {
+                            "name": "data",
+                            "type": "CopyrightDataModel",
+                            "optional": false,
+                            "dotDotDotToken": false,
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "any",
+                    "typeParameters": [],
+                    "line": 15,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        123
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "data",
+                            "type": "CopyrightDataModel",
+                            "optional": false,
+                            "dotDotDotToken": false,
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "description": "",
+            "rawdescription": "\n",
+            "sourceCode": "import { Injectable } from '@angular/core';\r\nimport { CopyrightDataModel } from '../../model/data/copyright-data.model';\r\nimport { DateUtility } from '../../../utility/date.utility';\r\n\r\n@Injectable()\r\nexport class CopyrightService {\r\n  buildCopyright(data: CopyrightDataModel) {\r\n    const { symbol, ownerName, rightsStatements } = data.extend;\r\n    const year = this.buildYear(data);\r\n    const copyrightNotice = `${symbol} ${year} ${ownerName}`;\r\n    const copyrightAllRightsReserved = rightsStatements;\r\n    return [copyrightNotice, copyrightAllRightsReserved];\r\n  }\r\n\r\n  private buildYear(data: CopyrightDataModel) {\r\n    const { year } = data.extend;\r\n    if (year.kind === 'current') {\r\n      return DateUtility.getCurrentYear();\r\n    } else if (year.kind === 'range') {\r\n      const { from, to } = year;\r\n      return `${from} - ${to === 'current' ? DateUtility.getCurrentYear() : to}`;\r\n    }\r\n    throw new Error('Invalid year kind');\r\n  }\r\n}\r\n",
+            "extends": [],
+            "type": "injectable"
+        },
+        {
             "name": "DateUtil",
             "id": "injectable-DateUtil-098c2e9778ab832c586e31428cc8cc9a91b4cfcdeac3ecf47f4d661e20d3943ca802c7d8fd0fb6a0edb3998da6852e9353d4b29a46d158de741d81d15e3a9c65",
             "file": "src/app/util/date.util.ts",
@@ -1247,7 +1261,7 @@
         {
             "name": "BemUtility",
             "id": "class-BemUtility-5401fefaced2faee77137c5a4a7b44f4aa9369e7803831a7817ff14c63e0d97d46929feb13912641d8f497dba7a1e856012e53e6ba47565968064756a363873a",
-            "file": "src/generator/utility/bem.utility.ts",
+            "file": "src/utility/bem.utility.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "class",
@@ -1337,31 +1351,18 @@
         },
         {
             "name": "DateUtility",
-            "id": "class-DateUtility-47c05a9ba03fe4a29f236a50a5ebb03cb3d5f78160cca14c5a57d15fb86e009f136a5682df3c21426e3f00d541d9b9f7e63c80e8af7e8b538c73e222b1ca2fae",
-            "file": "src/generator/utility/date.utility.ts",
+            "id": "class-DateUtility-453099942b4ab9d134efd57ec0e258d0e882b61a5e6c43ba63fd05cd0f147ebdf7b26394e55510ad581c00d2964d36aadcc9c0770605d7afa080bd433a1a6841",
+            "file": "src/utility/date.utility.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "class",
-            "sourceCode": "export class DateUtility {\r\n  static getDate() {\r\n    return new Date();\r\n  }\r\n\r\n  static getCurrentYear() {\r\n    return this.getDate().getFullYear();\r\n  }\r\n}\r\n",
+            "sourceCode": "export class DateUtility {\r\n  static getCurrentYear() {\r\n    return new Date().getFullYear();\r\n  }\r\n}\r\n",
             "inputsClass": [],
             "outputsClass": [],
             "properties": [],
             "methods": [
                 {
                     "name": "getCurrentYear",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "any",
-                    "typeParameters": [],
-                    "line": 6,
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "modifierKind": [
-                        126
-                    ]
-                },
-                {
-                    "name": "getDate",
                     "args": [],
                     "optional": false,
                     "returnType": "any",
@@ -1415,7 +1416,7 @@
         {
             "name": "StringUtility",
             "id": "class-StringUtility-ba35ba8610ffdddd0f3e825360e8c4169b525e9de760de4e64798ba91f68c65c89607666781e4234da8df821d94a1c2e0b285c24ba287f535a8fa8afded5fb96",
-            "file": "src/generator/utility/string.utility.ts",
+            "file": "src/utility/string.utility.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "class",
@@ -1539,12 +1540,12 @@
     "directives": [
         {
             "name": "ComponentBase",
-            "id": "directive-ComponentBase-5caedff47fe8c8dc9e06680994b3a619e9fdfe6ff1e0968c42c071a2b41e8392d5351129ecde19750dab223bdbbe00e252f1982ff990b90fc4c51592edb095de",
-            "file": "src/generator/base/component.base.ts",
+            "id": "directive-ComponentBase-c6e6454d67e5c53e4437bb92c58c2dd94ea10abbfc55ac5bbf0586cacc6da0c1fc655b8fb18b27c528213462e9585a53ed7c5e9e40f620c202ad8019bf8278c6",
+            "file": "src/component/base/component.base.ts",
             "type": "directive",
             "description": "",
             "rawdescription": "\n",
-            "sourceCode": "import { Directive, input } from '@angular/core';\r\nimport { BemUtility } from '../utility/bem.utility';\r\nimport { StringUtility } from '../utility/string.utility';\r\nimport { MetadataBaseModel } from '../model/base/metadata-base.model';\r\nimport { DataBaseModel } from '../model/base/data-base.model';\r\nimport { BaseModel } from '../model/base/base.model';\r\nimport { NodeModel } from '../model/node/node.model';\r\n\r\n@Directive()\r\nexport class ComponentBase<\r\n  TType,\r\n  TDate extends BaseModel<DataBaseModel>,\r\n  TMetadata extends BaseModel<MetadataBaseModel>,\r\n> {\r\n  data = input.required<TDate>();\r\n\r\n  metadata = input.required<TMetadata>();\r\n\r\n  nodes = input<NodeModel[]>([]);\r\n\r\n  constructor(protected type: TType) {\r\n    this.type = type;\r\n  }\r\n\r\n  protected buildMainClassList() {\r\n    const block = StringUtility.convertToString(this.type);\r\n    const { palette } = this.metadata().base;\r\n    const mainClass = BemUtility.build(block);\r\n    const paletteClass = BemUtility.build(block, 'palette', palette);\r\n    return [mainClass, paletteClass];\r\n  }\r\n}\r\n",
+            "sourceCode": "import { Directive, input } from '@angular/core';\r\nimport { BaseModel } from '../model/base/base.model';\r\nimport { DataBaseModel } from '../model/base/data-base.model';\r\nimport { MetadataBaseModel } from '../model/base/metadata-base.model';\r\nimport { BemUtility } from '../../utility/bem.utility';\r\n\r\n@Directive()\r\nexport class ComponentBase<\r\n  TType extends string,\r\n  TData extends BaseModel<DataBaseModel, unknown>,\r\n  TMetadata extends BaseModel<MetadataBaseModel, unknown>,\r\n> {\r\n  data = input.required<TData>();\r\n\r\n  metadata = input.required<TMetadata>();\r\n\r\n  constructor(protected type: TType) {\r\n    this.type = type;\r\n  }\r\n\r\n  protected buildMainClassList() {\r\n    const block = this.type;\r\n    const { palette } = this.metadata().base;\r\n    const mainClass = BemUtility.build(block);\r\n    const paletteClass = BemUtility.build(block, 'palette', palette);\r\n    return [mainClass, paletteClass];\r\n  }\r\n}\r\n",
             "providers": [],
             "hostDirectives": [],
             "standalone": false,
@@ -1553,11 +1554,11 @@
                     "name": "data",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "TDate",
+                    "type": "TData",
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 15,
+                    "line": 13,
                     "required": true
                 },
                 {
@@ -1568,20 +1569,8 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 17,
+                    "line": 15,
                     "required": true
-                },
-                {
-                    "name": "nodes",
-                    "defaultValue": "[]",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "NodeModel[]",
-                    "indexKey": "",
-                    "optional": false,
-                    "description": "",
-                    "line": 19,
-                    "required": false
                 }
             ],
             "outputsClass": [],
@@ -1597,7 +1586,7 @@
                     "optional": false,
                     "returnType": "{}",
                     "typeParameters": [],
-                    "line": 25,
+                    "line": 21,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -1621,7 +1610,7 @@
                         "deprecationMessage": ""
                     }
                 ],
-                "line": 19,
+                "line": 15,
                 "jsdoctags": [
                     {
                         "name": "type",
@@ -1639,12 +1628,12 @@
         },
         {
             "name": "LayoutBase",
-            "id": "directive-LayoutBase-c05a66e006220196fc77bd78e0b5cb1d98bdd11265ad2c18078dc108a58afb706cedbacf179961cf464f429c7f067df21817e11ab4610a807033e3b9b935ccbd",
-            "file": "src/generator/base/layout.base.ts",
+            "id": "directive-LayoutBase-ed9f88d3366ce3d31278565fce674436159267ba09621b85b9c30021943a64bf9ee6c41f336301fba6c177a7d44243c27e46bf7353ed87d87126025b8ba5b954",
+            "file": "src/component/base/layout.base.ts",
             "type": "directive",
             "description": "",
             "rawdescription": "\n",
-            "sourceCode": "import { Directive } from '@angular/core';\r\nimport { ComponentBase } from './component.base';\r\nimport { LayoutType } from '../type/layout.type';\r\nimport { DataBaseModel } from '../model/base/data-base.model';\r\nimport { MetadataBaseModel } from '../model/base/metadata-base.model';\r\nimport { BaseModel } from '../model/base/base.model';\r\n\r\n@Directive()\r\nexport class LayoutBase<\r\n  TDate extends BaseModel<DataBaseModel>,\r\n  TMetadata extends BaseModel<MetadataBaseModel>,\r\n> extends ComponentBase<LayoutType, TDate, TMetadata> {\r\n  constructor(protected override type: LayoutType) {\r\n    super(type);\r\n  }\r\n}\r\n",
+            "sourceCode": "import { Directive } from '@angular/core';\r\nimport { BaseModel } from '../model/base/base.model';\r\nimport { DataBaseModel } from '../model/base/data-base.model';\r\nimport { MetadataBaseModel } from '../model/base/metadata-base.model';\r\nimport { ComponentBase } from './component.base';\r\nimport { LayoutType } from '../../style/type/layout.type';\r\n\r\n@Directive()\r\nexport class LayoutBase<\r\n  TDate extends BaseModel<DataBaseModel, unknown>,\r\n  TMetadata extends BaseModel<MetadataBaseModel, unknown>,\r\n> extends ComponentBase<LayoutType, TDate, TMetadata> {\r\n  constructor(protected override type: LayoutType) {\r\n    super(type);\r\n  }\r\n}\r\n",
             "providers": [],
             "hostDirectives": [],
             "standalone": false,
@@ -1653,11 +1642,11 @@
                     "name": "data",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "TDate",
+                    "type": "TData",
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 15,
+                    "line": 13,
                     "required": true,
                     "inheritance": {
                         "file": "ComponentBase"
@@ -1671,23 +1660,8 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 17,
+                    "line": 15,
                     "required": true,
-                    "inheritance": {
-                        "file": "ComponentBase"
-                    }
-                },
-                {
-                    "name": "nodes",
-                    "defaultValue": "[]",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "NodeModel[]",
-                    "indexKey": "",
-                    "optional": false,
-                    "description": "",
-                    "line": 19,
-                    "required": false,
                     "inheritance": {
                         "file": "ComponentBase"
                     }
@@ -1706,7 +1680,7 @@
                     "optional": false,
                     "returnType": "{}",
                     "typeParameters": [],
-                    "line": 25,
+                    "line": 21,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -1973,14 +1947,19 @@
             "templateData": "<div class=\"contact\">\r\n  <div class=\"contact__column\">\r\n    <!-- <text-component type=\"h2\" [value]=\"contact().fullname\"></text-component> -->\r\n    <div class=\"contact__items\">\r\n      <!-- <text-component\r\n        type=\"p\"\r\n        color=\"inverse\"\r\n        value=\"I write code that works today\"\r\n      ></text-component>\r\n      <text-component type=\"p\" color=\"inverse\" value=\"and won't fail tomorrow.\"></text-component> -->\r\n    </div>\r\n  </div>\r\n  <div class=\"contact__column\">\r\n    <!-- <text-component type=\"h3\" value=\"Social media\"></text-component> -->\r\n    <div class=\"contact__items\">\r\n      @for (socialMedia of contact().socialMedias; track socialMedia.label) {\r\n        <link-component\r\n          [label]=\"socialMedia.label\"\r\n          [href]=\"socialMedia.url\"\r\n          type=\"page\"\r\n          palette=\"primary\"\r\n          [external]=\"true\"\r\n        ></link-component>\r\n      }\r\n    </div>\r\n  </div>\r\n  <div class=\"contact__column\">\r\n    <!-- <text-component type=\"h3\" value=\"Contact\"></text-component> -->\r\n    <div class=\"contact__items\">\r\n      <link-component\r\n        [label]=\"contact().email\"\r\n        [href]=\"contact().email\"\r\n        type=\"email\"\r\n        palette=\"primary\"\r\n        [external]=\"true\"\r\n      ></link-component>\r\n      <link-component\r\n        [label]=\"contact().phone\"\r\n        [href]=\"contact().phone\"\r\n        type=\"phone\"\r\n        palette=\"primary\"\r\n        [external]=\"true\"\r\n      ></link-component>\r\n      <!-- <text-component type=\"p\" color=\"inverse\" [value]=\"contact().location\"></text-component> -->\r\n    </div>\r\n  </div>\r\n</div>\r\n"
         },
         {
-            "name": "CopyrightComponent",
-            "id": "component-CopyrightComponent-4f89edfaf93252b2a1216c89769af6da56c2ec6b0c0b9a76d410dd7cdf6ad53b2d16f54856f8ab759b5e79bb2f465683187ee4b1def1ed88deaf50a20c83bdf4",
-            "file": "src/generator/layout/copyright/copyright.layout.ts",
+            "name": "CopyrightLayout",
+            "id": "component-CopyrightLayout-e4fa010b292ddc2479851980f2c3ec676a3a107104744874981be36d3d89d2f2f45427e052e90b828e414fda2eace480e9d3360c2dd116e5ffea24b97be02e7d",
+            "file": "src/component/layout/copyright/copyright.layout.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
-            "providers": [],
+            "providers": [
+                {
+                    "name": "CopyrightService",
+                    "type": "injectable"
+                }
+            ],
             "selector": "copyright-layout",
             "styleUrls": [],
             "styles": [],
@@ -1994,11 +1973,11 @@
                     "name": "data",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "TDate",
+                    "type": "TData",
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 15,
+                    "line": 13,
                     "required": true,
                     "inheritance": {
                         "file": "ComponentBase"
@@ -2012,61 +1991,35 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 17,
+                    "line": 15,
                     "required": true,
-                    "inheritance": {
-                        "file": "ComponentBase"
-                    }
-                },
-                {
-                    "name": "nodes",
-                    "defaultValue": "[]",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "NodeModel[]",
-                    "indexKey": "",
-                    "optional": false,
-                    "description": "",
-                    "line": 19,
-                    "required": false,
                     "inheritance": {
                         "file": "ComponentBase"
                     }
                 }
             ],
             "outputsClass": [],
-            "propertiesClass": [],
-            "methodsClass": [
+            "propertiesClass": [
                 {
-                    "name": "buildCopyright",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "{}",
-                    "typeParameters": [],
-                    "line": 22,
-                    "deprecated": false,
-                    "deprecationMessage": ""
-                },
-                {
-                    "name": "buildYear",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "any",
-                    "typeParameters": [],
-                    "line": 30,
+                    "name": "service",
+                    "defaultValue": "inject(CopyrightService)",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "modifierKind": [
-                        123
-                    ]
-                },
+                    "type": "unknown",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 16
+                }
+            ],
+            "methodsClass": [
                 {
                     "name": "buildMainClassList",
                     "args": [],
                     "optional": false,
                     "returnType": "{}",
                     "typeParameters": [],
-                    "line": 25,
+                    "line": 21,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -2086,15 +2039,12 @@
                 {
                     "name": "CommonModule",
                     "type": "module"
-                },
-                {
-                    "name": "Generator"
                 }
             ],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { CommonModule } from '@angular/common';\r\nimport { Component } from '@angular/core';\r\nimport { LayoutBase } from '../../base/layout.base';\r\nimport { CopyrightDataModel } from '../../model/data/copyright-data.model';\r\nimport { CopyrightMetadataModel } from '../../model/metadata/copyright-metadata.model';\r\nimport { DateUtility } from '../../utility/date.utility';\r\nimport { RegisterLayout } from '../../decorator/layout.decorator';\r\nimport { Generator } from '../../generator/generator';\r\n\r\n@Component({\r\n  selector: 'copyright-layout',\r\n  templateUrl: './copyright.layout.html',\r\n  styleUrl: '../../../style/layout/copyright.layout.scss',\r\n  imports: [CommonModule, Generator],\r\n})\r\n@RegisterLayout('copyright')\r\nexport class CopyrightComponent extends LayoutBase<CopyrightDataModel, CopyrightMetadataModel> {\r\n  constructor() {\r\n    super('copyright');\r\n  }\r\n\r\n  buildCopyright() {\r\n    const { symbol, ownerName, rightsStatements } = this.data().extend;\r\n    const year = this.buildYear();\r\n    const copyrightNotice = `${symbol} ${year} ${ownerName}`;\r\n    const copyrightAllRightsReserved = rightsStatements;\r\n    return [copyrightNotice, copyrightAllRightsReserved];\r\n  }\r\n\r\n  private buildYear() {\r\n    const { year } = this.data().extend;\r\n    if (year.kind === 'current') {\r\n      return DateUtility.getCurrentYear();\r\n    } else if (year.kind === 'range') {\r\n      const { from, to } = year;\r\n      return `${from} - ${to === 'current' ? DateUtility.getCurrentYear() : to}`;\r\n    }\r\n    throw new Error('Invalid year kind');\r\n  }\r\n}\r\n",
+            "sourceCode": "import { Component, inject } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { LayoutBase } from '../../base/layout.base';\r\nimport { CopyrightDataModel } from '../../model/data/copyright-data.model';\r\nimport { CopyrightMetadataModel } from '../../model/metadata/copyright-metadata.model';\r\nimport { CopyrightService } from './copyright.service';\r\n\r\n@Component({\r\n  selector: 'copyright-layout',\r\n  templateUrl: './copyright.layout.html',\r\n  styleUrl: '../../../style/layout/copyright.layout.scss',\r\n  imports: [CommonModule],\r\n  providers: [CopyrightService],\r\n})\r\nexport class CopyrightLayout extends LayoutBase<CopyrightDataModel, CopyrightMetadataModel> {\r\n  service = inject(CopyrightService);\r\n\r\n  constructor() {\r\n    super('copyright');\r\n  }\r\n}\r\n",
             "styleUrl": "../../../style/layout/copyright.layout.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
@@ -2105,12 +2055,12 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "args": [],
-                "line": 17
+                "line": 16
             },
             "extends": [
                 "LayoutBase"
             ],
-            "templateData": "<div [ngClass]=\"buildMainClassList()\">\r\n  @for (line of buildCopyright(); track line) {\r\n    <p>{{ line }}</p>\r\n  }\r\n  <generator [nodes]=\"nodes()\"></generator>\r\n</div>\r\n"
+            "templateData": "<div [ngClass]=\"buildMainClassList()\">\r\n  @for (line of service.buildCopyright(this.data()); track line) {\r\n    <p>{{ line }}</p>\r\n  }\r\n</div>\r\n"
         },
         {
             "name": "CopyrightView",
@@ -3683,7 +3633,7 @@
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
                 "rawtype": "unknown",
-                "file": "src/generator/type/layout.type.ts",
+                "file": "src/style/type/layout.type.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -3705,7 +3655,7 @@
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
                 "rawtype": "unknown",
-                "file": "src/generator/model/type/palette.type.ts",
+                "file": "src/style/type/palette.type.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -3804,7 +3754,7 @@
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
                 "rawtype": "\"current\" | \"range\"",
-                "file": "src/generator/model/data/copyright-data.model.ts",
+                "file": "src/component/model/data/copyright-data.model.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -3815,7 +3765,7 @@
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
                 "rawtype": "YearCurrentModel | YearRangeModel",
-                "file": "src/generator/model/data/copyright-data.model.ts",
+                "file": "src/component/model/data/copyright-data.model.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -3937,7 +3887,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
-                "file": "src/generator/enum/palette.enum.ts"
+                "file": "src/style/enum/pallete.enum.ts"
             },
             {
                 "name": "ResumeLangDataEnum",
@@ -4800,7 +4750,7 @@
                     "file": "src/app/enum/palette.enum.ts"
                 }
             ],
-            "src/generator/enum/palette.enum.ts": [
+            "src/style/enum/pallete.enum.ts": [
                 {
                     "name": "PaletteEnum",
                     "childs": [
@@ -4816,7 +4766,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
-                    "file": "src/generator/enum/palette.enum.ts"
+                    "file": "src/style/enum/pallete.enum.ts"
                 }
             ],
             "src/app/data/resume/resume-data.enum.ts": [
@@ -5336,13 +5286,13 @@
                     "kind": 184
                 }
             ],
-            "src/generator/type/layout.type.ts": [
+            "src/style/type/layout.type.ts": [
                 {
                     "name": "LayoutType",
                     "ctype": "miscellaneous",
                     "subtype": "typealias",
                     "rawtype": "unknown",
-                    "file": "src/generator/type/layout.type.ts",
+                    "file": "src/style/type/layout.type.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -5362,13 +5312,13 @@
                     "kind": 193
                 }
             ],
-            "src/generator/model/type/palette.type.ts": [
+            "src/style/type/palette.type.ts": [
                 {
                     "name": "PaletteType",
                     "ctype": "miscellaneous",
                     "subtype": "typealias",
                     "rawtype": "unknown",
-                    "file": "src/generator/model/type/palette.type.ts",
+                    "file": "src/style/type/palette.type.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -5477,13 +5427,13 @@
                     "kind": 184
                 }
             ],
-            "src/generator/model/data/copyright-data.model.ts": [
+            "src/component/model/data/copyright-data.model.ts": [
                 {
                     "name": "YearKindType",
                     "ctype": "miscellaneous",
                     "subtype": "typealias",
                     "rawtype": "\"current\" | \"range\"",
-                    "file": "src/generator/model/data/copyright-data.model.ts",
+                    "file": "src/component/model/data/copyright-data.model.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -5494,7 +5444,7 @@
                     "ctype": "miscellaneous",
                     "subtype": "typealias",
                     "rawtype": "YearCurrentModel | YearRangeModel",
-                    "file": "src/generator/model/data/copyright-data.model.ts",
+                    "file": "src/component/model/data/copyright-data.model.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -6225,6 +6175,125 @@
                 "status": "low"
             },
             {
+                "filePath": "src/component/base/component.base.ts",
+                "type": "directive",
+                "linktype": "directive",
+                "name": "ComponentBase",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "src/component/base/layout.base.ts",
+                "type": "directive",
+                "linktype": "directive",
+                "name": "LayoutBase",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "src/component/layout/copyright/copyright.layout.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "CopyrightLayout",
+                "coveragePercent": 0,
+                "coverageCount": "0/6",
+                "status": "low"
+            },
+            {
+                "filePath": "src/component/layout/copyright/copyright.service.ts",
+                "type": "injectable",
+                "linktype": "injectable",
+                "name": "CopyrightService",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/component/model/base/base.model.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "BaseModel",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/component/model/base/data-base.model.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "DataBaseModel",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/component/model/base/metadata-base.model.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "MetadataBaseModel",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/component/model/data/copyright-data.model.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "CopyrightDataModel",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/component/model/data/copyright-data.model.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "YearCurrentModel",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/component/model/data/copyright-data.model.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "YearRangeModel",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/component/model/data/copyright-data.model.ts",
+                "type": "type alias",
+                "linktype": "miscellaneous",
+                "linksubtype": "typealias",
+                "name": "YearKindType",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/component/model/data/copyright-data.model.ts",
+                "type": "type alias",
+                "linktype": "miscellaneous",
+                "linksubtype": "typealias",
+                "name": "YearType",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/component/model/metadata/copyright-metadata.model.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "CopyrightMetadataModel",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
                 "filePath": "src/generator/api/angular-generator.ts",
                 "type": "component",
                 "linktype": "component",
@@ -6241,24 +6310,6 @@
                 "name": "initAngularGenerator",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/generator/base/component.base.ts",
-                "type": "directive",
-                "linktype": "directive",
-                "name": "ComponentBase",
-                "coveragePercent": 0,
-                "coverageCount": "0/6",
-                "status": "low"
-            },
-            {
-                "filePath": "src/generator/base/layout.base.ts",
-                "type": "directive",
-                "linktype": "directive",
-                "name": "LayoutBase",
-                "coveragePercent": 0,
-                "coverageCount": "0/6",
                 "status": "low"
             },
             {
@@ -6291,15 +6342,6 @@
                 "status": "low"
             },
             {
-                "filePath": "src/generator/layout/copyright/copyright.layout.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "CopyrightComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/8",
-                "status": "low"
-            },
-            {
                 "filePath": "src/generator/model/base/base-kind.model.ts",
                 "type": "interface",
                 "linktype": "interface",
@@ -6309,111 +6351,10 @@
                 "status": "low"
             },
             {
-                "filePath": "src/generator/model/base/base.model.ts",
-                "type": "interface",
-                "linktype": "interface",
-                "name": "BaseModel",
-                "coveragePercent": 0,
-                "coverageCount": "0/3",
-                "status": "low"
-            },
-            {
-                "filePath": "src/generator/model/base/data-base.model.ts",
-                "type": "interface",
-                "linktype": "interface",
-                "name": "DataBaseModel",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/generator/model/base/metadata-base.model.ts",
-                "type": "interface",
-                "linktype": "interface",
-                "name": "MetadataBaseModel",
-                "coveragePercent": 0,
-                "coverageCount": "0/2",
-                "status": "low"
-            },
-            {
                 "filePath": "src/generator/model/base/unknown.model.ts",
                 "type": "interface",
                 "linktype": "interface",
                 "name": "UnknownModel",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/generator/model/data/copyright-data.model.ts",
-                "type": "interface",
-                "linktype": "interface",
-                "name": "CopyrightDataModel",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/generator/model/data/copyright-data.model.ts",
-                "type": "interface",
-                "linktype": "interface",
-                "name": "DataModel",
-                "coveragePercent": 0,
-                "coverageCount": "0/5",
-                "status": "low"
-            },
-            {
-                "filePath": "src/generator/model/data/copyright-data.model.ts",
-                "type": "interface",
-                "linktype": "interface",
-                "name": "YearCurrentModel",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/generator/model/data/copyright-data.model.ts",
-                "type": "interface",
-                "linktype": "interface",
-                "name": "YearRangeModel",
-                "coveragePercent": 0,
-                "coverageCount": "0/3",
-                "status": "low"
-            },
-            {
-                "filePath": "src/generator/model/data/copyright-data.model.ts",
-                "type": "type alias",
-                "linktype": "miscellaneous",
-                "linksubtype": "typealias",
-                "name": "YearKindType",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/generator/model/data/copyright-data.model.ts",
-                "type": "type alias",
-                "linktype": "miscellaneous",
-                "linksubtype": "typealias",
-                "name": "YearType",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/generator/model/metadata/copyright-metadata.model.ts",
-                "type": "interface",
-                "linktype": "interface",
-                "name": "CopyrightMetadataModel",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/generator/model/metadata/copyright-metadata.model.ts",
-                "type": "interface",
-                "linktype": "interface",
-                "name": "MetadataModel",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -6457,16 +6398,6 @@
                 "status": "low"
             },
             {
-                "filePath": "src/generator/model/type/palette.type.ts",
-                "type": "type alias",
-                "linktype": "miscellaneous",
-                "linksubtype": "typealias",
-                "name": "PaletteType",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
                 "filePath": "src/generator/model/variable/variable.model.ts",
                 "type": "type alias",
                 "linktype": "miscellaneous",
@@ -6487,7 +6418,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/generator/type/layout.type.ts",
+                "filePath": "src/style/type/layout.type.ts",
                 "type": "type alias",
                 "linktype": "miscellaneous",
                 "linksubtype": "typealias",
@@ -6497,7 +6428,17 @@
                 "status": "low"
             },
             {
-                "filePath": "src/generator/utility/bem.utility.ts",
+                "filePath": "src/style/type/palette.type.ts",
+                "type": "type alias",
+                "linktype": "miscellaneous",
+                "linksubtype": "typealias",
+                "name": "PaletteType",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/utility/bem.utility.ts",
                 "type": "class",
                 "linktype": "classe",
                 "name": "BemUtility",
@@ -6506,16 +6447,16 @@
                 "status": "low"
             },
             {
-                "filePath": "src/generator/utility/date.utility.ts",
+                "filePath": "src/utility/date.utility.ts",
                 "type": "class",
                 "linktype": "classe",
                 "name": "DateUtility",
                 "coveragePercent": 0,
-                "coverageCount": "0/3",
+                "coverageCount": "0/2",
                 "status": "low"
             },
             {
-                "filePath": "src/generator/utility/string.utility.ts",
+                "filePath": "src/utility/string.utility.ts",
                 "type": "class",
                 "linktype": "classe",
                 "name": "StringUtility",

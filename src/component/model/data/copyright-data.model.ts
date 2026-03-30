@@ -1,4 +1,4 @@
-import { BaseKindModel } from '../base/base-kind.model';
+import { BaseKindModel } from '../../../generator/model/base/base-kind.model';
 import { BaseModel } from '../base/base.model';
 import { DataBaseModel } from '../base/data-base.model';
 
@@ -13,11 +13,12 @@ interface YearRangeModel extends BaseKindModel<YearKindType, 'range'> {
 
 type YearType = YearCurrentModel | YearRangeModel;
 
-interface DataModel {
-  symbol: string;
-  year: YearType;
-  ownerName: string;
-  rightsStatements: string;
-}
-
-export interface CopyrightDataModel extends BaseModel<DataBaseModel, DataModel> {}
+export interface CopyrightDataModel extends BaseModel<
+  DataBaseModel,
+  {
+    symbol: string;
+    year: YearType;
+    ownerName: string;
+    rightsStatements: string;
+  }
+> {}
