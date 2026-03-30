@@ -1,36 +1,43 @@
 import { Component } from '@angular/core';
 import { Generator } from '../generator/generator/generator';
-import { NodeModel } from '../generator/model/node/node.model';
+import { GeneratorApi } from '../generator/api/generator.api';
 
 @Component({
   selector: 'app',
-  template: '<generator [nodes]="nodes"></generator>',
+  template: '<generator [nodes]="[]"></generator>',
   imports: [Generator],
 })
 export class App {
-  nodes: NodeModel[] = [
-    {
-      layout: {
-        kind: 'copyright',
-        data: {
-          base: {},
-          extend: {
-            symbol: '©',
-            year: {
-              kind: 'current',
+  constructor() {
+    GeneratorApi.buildVariables({
+      personal: {
+        firstname: 'Jakub',
+        lastname: 'Olejarczyk',
+      },
+    });
+    GeneratorApi.buildStructure([
+      {
+        layout: {
+          kind: 'copyright',
+          data: {
+            base: {},
+            extend: {
+              symbol: '©',
+              year: {
+                kind: 'current',
+              },
+              ownerName: '%personal.firstname% %personal.lastname%',
+              rightsStatements: 'All rights reserved.',
             },
-            ownerName: 'Jakub Olejarczyk',
-            rightsStatements: 'All rights reserved.',
           },
-        },
-        metadata: {
-          base: {
-            palette: 'primary',
+          metadata: {
+            base: {
+              palette: 'primary',
+            },
+            extend: {},
           },
-          extend: {},
         },
       },
-      children: [],
-    },
-  ];
+    ]);
+  }
 }
