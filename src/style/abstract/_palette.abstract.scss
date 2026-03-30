@@ -1,0 +1,8 @@
+@use 'color.abstract' as color;
+
+$palette: (
+  'primary': (
+    'background-color': color.$color__base--primary,
+    'color': color.$color__text--inverse,
+  ),
+);

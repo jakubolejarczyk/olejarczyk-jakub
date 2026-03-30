@@ -10,7 +10,7 @@ import { Generator } from '../../generator/generator';
 @Component({
   selector: 'copyright-layout',
   templateUrl: './copyright.layout.html',
-  styleUrl: '../../style/layout/copyright.layout.scss',
+  styleUrl: '../../../style/layout/copyright.layout.scss',
   imports: [CommonModule, Generator],
 })
 @RegisterLayout('copyright')

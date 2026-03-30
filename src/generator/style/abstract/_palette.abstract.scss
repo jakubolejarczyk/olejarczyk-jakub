@@ -1,8 +1,0 @@
-@use 'color.abstract' as color;
-
-$palette: (
-  'primary': (
-    'background-color': color.$color-primary,
-    'color': color.$color-text,
-  ),
-);

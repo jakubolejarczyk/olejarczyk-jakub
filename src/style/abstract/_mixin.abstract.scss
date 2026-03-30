@@ -1,7 +1,15 @@
 @use 'palette.abstract' as palette;
+@use 'constant.abstract' as constant;
 
 @mixin build-layout {
+  @include build-typography;
   @include build-palette;
+}
+
+@mixin build-typography {
+  font-family: constant.$font__family;
+  font-weight: constant.$font__weight--normal;
+  font-style: normal;
 }
 
 @mixin build-palette {

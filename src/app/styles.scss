@@ -1,4 +1,10 @@
 :root {
-  --color-primary: #5409da;
-  --color-text: #f8f9fc;
+  // Base colors
+  --color__base--primary: #5409da;
+  // Text colors
+  --color__text--inverse: #f8f9fc;
+  // Font family
+  --font__family: 'Lato', sans-serif;
+  --font__weight--normal: 400;
+  --font__weight--bold: 700;
 }
