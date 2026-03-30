@@ -15,7 +15,9 @@ import {
   technologyGroupReducer,
   technologyReducer,
 } from '../store/store.reducer';
-import { generatorInit } from '../../generator/init/generator.init';
+import { initAngularGenerator } from '../../generator/api/init-angular-generator';
+
+initAngularGenerator();
 
 export const config: ApplicationConfig = {
   providers: [
@@ -42,6 +44,5 @@ export const config: ApplicationConfig = {
       },
     ),
     provideStoreDevtools({ maxAge: 25, logOnly: !isDevMode() }),
-    generatorInit(),
   ],
 };
