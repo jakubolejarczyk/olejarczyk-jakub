@@ -2,7 +2,20 @@
 
 $palette: (
   'primary': (
-    'background-color': color.$color__base--primary,
-    'color': color.$color__text--inverse,
+    (
+      'tag': '.',
+      'property': 'background-color',
+      'value': color.$color__base--primary,
+    ),
+    (
+      'tag': '.',
+      'property': 'color',
+      'value': color.$color__text--inverse,
+    ),
+    (
+      'tag': 'a',
+      'property': 'color',
+      'value': color.$color__text--inverse-secondary,
+    ),
   ),
 );

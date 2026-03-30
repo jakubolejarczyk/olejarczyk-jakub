@@ -1,3 +1,4 @@
+@use 'sass:map';
 @use 'palette.abstract' as palette;
 @use 'constant.abstract' as constant;
 
@@ -13,10 +14,21 @@
 }
 
 @mixin build-palette {
-  @each $name, $palette in palette.$palette {
-    &__palette--#{$name} {
-      @each $property, $value in $palette {
-        #{$property}: #{$value};
+  @each $palette-name, $palette in palette.$palette {
+    &__palette--#{$palette-name} {
+      @each $obj in $palette {
+        $tag: map.get($obj, 'tag');
+        @if ($tag == '.') {
+          $property: map.get($obj, 'property');
+          $value: map.get($obj, 'value');
+          #{$property}: #{$value};
+        } @else {
+          #{$tag} {
+            $property: map.get($obj, 'property');
+            $value: map.get($obj, 'value');
+            #{$property}: #{$value};
+          }
+        }
       }
     }
   }

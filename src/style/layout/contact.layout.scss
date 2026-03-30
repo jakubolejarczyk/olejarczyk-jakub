@@ -1,0 +1,60 @@
+@use '../abstract/mixin.abstract' as mixin;
+@use '../abstract/constant.abstract' as constant;
+
+.contact {
+  @include mixin.build-layout;
+
+  padding: constant.$size--xl constant.$size--lg;
+
+  &_wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: constant.$size--lg;
+  }
+
+  &__column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: constant.$size--md;
+  }
+
+  &__items {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: constant.$size--sm;
+  }
+
+  @media screen and (min-width: constant.$screen__size--tablet) {
+    &_wrapper {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    &__column:first-child {
+      flex: 0 0 100%;
+    }
+  }
+
+  @media screen and (min-width: constant.$screen__size--laptop) {
+    &__column {
+      flex: 0 0 200px;
+
+      &:first-child {
+        flex: 3;
+      }
+    }
+  }
+
+  @media screen and (min-width: constant.$screen__size--tv) {
+    &_wrapper {
+      margin: auto;
+      max-width: 80vw;
+    }
+  }
+}

@@ -1,5 +1,7 @@
 // Base colors
 $color__base--primary: var(--color__base--primary);
+$color__base--primary-darker: color-mix(in srgb, var(--color__base--primary) 90%, black 10%);
 
 // Text colors
 $color__text--inverse: var(--color__text--inverse);
+$color__text--inverse-secondary: var(--color__text--inverse-secondary);
