@@ -9,24 +9,3 @@
 body {
   min-width: constant.$screen__size--min;
 }
-
-small {
-  font-size: constant.$font__size--small;
-}
-
-a,
-p {
-  font-size: constant.$font__size--p;
-}
-
-h3 {
-  font-size: constant.$font__size--h3;
-}
-
-h2 {
-  font-size: constant.$font__size--h2;
-}
-
-h1 {
-  font-size: constant.$font__size--h1;
-}

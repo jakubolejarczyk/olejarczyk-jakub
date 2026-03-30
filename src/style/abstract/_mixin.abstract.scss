@@ -2,6 +2,18 @@
 @use 'palette.abstract' as palette;
 @use 'constant.abstract' as constant;
 
+@mixin build-styles-from-map($entities) {
+  @each $tag, $styles in $entities {
+    &__#{$tag} {
+      @each $property, $value in $styles {
+        #{$property}: #{$value};
+      }
+    }
+  }
+}
+
+// TODO: I am here
+
 @mixin build-layout {
   @include build-typography;
   @include build-palette;
