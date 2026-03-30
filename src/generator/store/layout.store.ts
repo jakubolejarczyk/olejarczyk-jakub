@@ -1,3 +1,3 @@
-import { LayoutKindType } from '../model/type/layout-kind.type';
+import { LayoutType } from '../../style/type/layout.type';
 
-export const layoutStore = new Map<LayoutKindType, any>();
+export const layoutStore = new Map<LayoutType, any>();

@@ -1,6 +1,5 @@
 import { PaletteEnum } from '../../enum/palette.enum';
 import { ContactView } from '../../view/footer/contact/contact.view';
-import { CopyrightView } from '../../view/footer/copyright/copyright.view';
 import { HomeView } from '../../view/header/home/home.view';
 import { NavigationView } from '../../view/header/navigation/navigation.view';
 import { AboutMeView } from '../../view/main/about-me/about-me.view';
@@ -173,20 +172,5 @@ export const sectionDataConst: SectionDataModel = {
     enabled: true,
     label: 'Contact',
     order: 0,
-  },
-  copyright: {
-    id: 'copyright',
-    type: SectionDataEnum.copyright,
-    routable: {
-      enable: false,
-    },
-    group: GroupDataEnum.footer,
-    view: CopyrightView,
-    style: {
-      palette: PaletteEnum.primary,
-    },
-    enabled: true,
-    label: 'Copyright',
-    order: 1,
   },
 };

@@ -15,9 +15,8 @@ import {
   technologyGroupReducer,
   technologyReducer,
 } from '../store/store.reducer';
-import { initAngularGenerator } from '../../generator/api/init-angular-generator';
 
-initAngularGenerator();
+import '../../component';
 
 export const config: ApplicationConfig = {
   providers: [

@@ -4,6 +4,7 @@ import { LayoutBase } from '../../base/layout.base';
 import { CopyrightDataModel } from '../../model/data/copyright-data.model';
 import { CopyrightMetadataModel } from '../../model/metadata/copyright-metadata.model';
 import { CopyrightService } from './copyright.service';
+import { RegisterLayout } from '../../../generator/decorator/layout.decorator';
 
 @Component({
   selector: 'copyright-layout',
@@ -12,6 +13,7 @@ import { CopyrightService } from './copyright.service';
   imports: [CommonModule],
   providers: [CopyrightService],
 })
+@RegisterLayout('copyright')
 export class CopyrightLayout extends LayoutBase<CopyrightDataModel, CopyrightMetadataModel> {
   service = inject(CopyrightService);
 

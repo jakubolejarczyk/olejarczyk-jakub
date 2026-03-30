@@ -9,5 +9,4 @@ export enum SectionDataEnum {
   projects = 'projects',
   education = 'education',
   contact = 'contact',
-  copyright = 'copyright',
 }

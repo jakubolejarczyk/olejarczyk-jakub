@@ -19,7 +19,6 @@ export class Generator {
     return {
       data: node.layout.data,
       metadata: node.layout.metadata,
-      nodes: node.children,
     };
   }
 }
