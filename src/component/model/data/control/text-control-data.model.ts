@@ -6,5 +6,3 @@ interface DataModel {
 }
 
 export interface TextControlDataModel extends BaseModel<DataBaseModel, DataModel> {}
-
-// TODO: I am here

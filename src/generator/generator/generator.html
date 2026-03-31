@@ -1,3 +1,3 @@
 @for (node of nodes(); track node) {
-  <ng-container *ngComponentOutlet="buildLayout(node); inputs: buildInputs(node)"></ng-container>
+  <ng-container *ngComponentOutlet="buildComponent(node); inputs: buildInputs(node)"></ng-container>
 }

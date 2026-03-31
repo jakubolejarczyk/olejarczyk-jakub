@@ -1,3 +1,17 @@
-<p [ngClass]="buildExtraMainClassList()">{{ data().extend.value }}</p>
-
-<!-- TODO: I am here -->
+@switch (metadata().extend.type) {
+  @case ('small') {
+    <small [ngClass]="buildMainClassList()">{{ data().extend.value }}</small>
+  }
+  @case ('p') {
+    <p [ngClass]="buildMainClassList()">{{ data().extend.value }}</p>
+  }
+  @case ('h3') {
+    <h3 [ngClass]="buildMainClassList()">{{ data().extend.value }}</h3>
+  }
+  @case ('h2') {
+    <h2 [ngClass]="buildMainClassList()">{{ data().extend.value }}</h2>
+  }
+  @case ('h1') {
+    <h1 [ngClass]="buildMainClassList()">{{ data().extend.value }}</h1>
+  }
+}

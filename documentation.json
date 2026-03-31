@@ -270,12 +270,12 @@
         },
         {
             "name": "DataModel",
-            "id": "interface-DataModel-8227ec95efac34547a5826103312b538d530e5a4f63776a2a4b5e33e1db948af9cbe7a405250c1b2ae5e3782ed420a52a5a705609e7107ed8027948ce67273d0",
+            "id": "interface-DataModel-166e9550f25f4a4cbe44685d5a63dd38bd1a9cdc879c60729a5c560916a92aa33756a362351b09be05742a0ba02b43befa7678cf95766e77f70263441fde532d",
             "file": "src/component/model/data/control/text-control-data.model.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "import { BaseModel } from '../../base/base.model';\r\nimport { DataBaseModel } from '../../base/data-base.model';\r\n\r\ninterface DataModel {\r\n  value: string;\r\n}\r\n\r\nexport interface TextControlDataModel extends BaseModel<DataBaseModel, DataModel> {}\r\n\r\n// TODO: I am here\r\n",
+            "sourceCode": "import { BaseModel } from '../../base/base.model';\r\nimport { DataBaseModel } from '../../base/data-base.model';\r\n\r\ninterface DataModel {\r\n  value: string;\r\n}\r\n\r\nexport interface TextControlDataModel extends BaseModel<DataBaseModel, DataModel> {}\r\n",
             "properties": [
                 {
                     "name": "value",
@@ -530,12 +530,12 @@
         },
         {
             "name": "MetadataModel",
-            "id": "interface-MetadataModel-ce2434b8a9c1a989b3e0d52959d5bc2427dc9aa71791b9b1a8ab9e913f5fa0be9981c5142f1fc462fb5cba30c2e2b2190a81a515c611f088de2b44d5b94e3dcf",
+            "id": "interface-MetadataModel-7d823f63e54d9e6bc477c1c39c2241b530726661ed941176ac343920d6366ccad2c372295f252e67920ffd81494806cd6576426efd27f9af9194199e6198b870",
             "file": "src/component/model/metadata/control/text-control-metadata.model.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "import { TextType } from '../../../../style/type/text.type';\r\nimport { BaseModel } from '../../base/base.model';\r\nimport { MetadataBaseModel } from '../../base/metadata-base.model';\r\n\r\ninterface MetadataModel {\r\n  type: TextType;\r\n}\r\n\r\nexport interface TextControlMetadataModel extends BaseModel<MetadataBaseModel, MetadataModel> {}\r\n\r\n// TODO: I am here\r\n",
+            "sourceCode": "import { TextType } from '../../../../style/type/text.type';\r\nimport { BaseModel } from '../../base/base.model';\r\nimport { MetadataBaseModel } from '../../base/metadata-base.model';\r\n\r\ninterface MetadataModel {\r\n  type: TextType;\r\n}\r\n\r\nexport interface TextControlMetadataModel extends BaseModel<MetadataBaseModel, MetadataModel> {}\r\n",
             "properties": [
                 {
                     "name": "type",
@@ -1115,12 +1115,12 @@
         },
         {
             "name": "TextControlDataModel",
-            "id": "interface-TextControlDataModel-8227ec95efac34547a5826103312b538d530e5a4f63776a2a4b5e33e1db948af9cbe7a405250c1b2ae5e3782ed420a52a5a705609e7107ed8027948ce67273d0",
+            "id": "interface-TextControlDataModel-166e9550f25f4a4cbe44685d5a63dd38bd1a9cdc879c60729a5c560916a92aa33756a362351b09be05742a0ba02b43befa7678cf95766e77f70263441fde532d",
             "file": "src/component/model/data/control/text-control-data.model.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "import { BaseModel } from '../../base/base.model';\r\nimport { DataBaseModel } from '../../base/data-base.model';\r\n\r\ninterface DataModel {\r\n  value: string;\r\n}\r\n\r\nexport interface TextControlDataModel extends BaseModel<DataBaseModel, DataModel> {}\r\n\r\n// TODO: I am here\r\n",
+            "sourceCode": "import { BaseModel } from '../../base/base.model';\r\nimport { DataBaseModel } from '../../base/data-base.model';\r\n\r\ninterface DataModel {\r\n  value: string;\r\n}\r\n\r\nexport interface TextControlDataModel extends BaseModel<DataBaseModel, DataModel> {}\r\n",
             "properties": [],
             "indexSignatures": [],
             "methods": [],
@@ -1130,12 +1130,12 @@
         },
         {
             "name": "TextControlMetadataModel",
-            "id": "interface-TextControlMetadataModel-ce2434b8a9c1a989b3e0d52959d5bc2427dc9aa71791b9b1a8ab9e913f5fa0be9981c5142f1fc462fb5cba30c2e2b2190a81a515c611f088de2b44d5b94e3dcf",
+            "id": "interface-TextControlMetadataModel-7d823f63e54d9e6bc477c1c39c2241b530726661ed941176ac343920d6366ccad2c372295f252e67920ffd81494806cd6576426efd27f9af9194199e6198b870",
             "file": "src/component/model/metadata/control/text-control-metadata.model.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "import { TextType } from '../../../../style/type/text.type';\r\nimport { BaseModel } from '../../base/base.model';\r\nimport { MetadataBaseModel } from '../../base/metadata-base.model';\r\n\r\ninterface MetadataModel {\r\n  type: TextType;\r\n}\r\n\r\nexport interface TextControlMetadataModel extends BaseModel<MetadataBaseModel, MetadataModel> {}\r\n\r\n// TODO: I am here\r\n",
+            "sourceCode": "import { TextType } from '../../../../style/type/text.type';\r\nimport { BaseModel } from '../../base/base.model';\r\nimport { MetadataBaseModel } from '../../base/metadata-base.model';\r\n\r\ninterface MetadataModel {\r\n  type: TextType;\r\n}\r\n\r\nexport interface TextControlMetadataModel extends BaseModel<MetadataBaseModel, MetadataModel> {}\r\n",
             "properties": [],
             "indexSignatures": [],
             "methods": [],
@@ -1709,12 +1709,12 @@
     "directives": [
         {
             "name": "ComponentBase",
-            "id": "directive-ComponentBase-c6e6454d67e5c53e4437bb92c58c2dd94ea10abbfc55ac5bbf0586cacc6da0c1fc655b8fb18b27c528213462e9585a53ed7c5e9e40f620c202ad8019bf8278c6",
+            "id": "directive-ComponentBase-4e2c78b79741c11f6eb0f8c5beb61d1bc9111e4365479cde91c5f6d8c57b25c8912ca63beb2b264f5cd4e997bbc522ebad219db509f4413feeac749a604cb27a",
             "file": "src/component/base/component.base.ts",
             "type": "directive",
             "description": "",
             "rawdescription": "\n",
-            "sourceCode": "import { Directive, input } from '@angular/core';\r\nimport { BaseModel } from '../model/base/base.model';\r\nimport { DataBaseModel } from '../model/base/data-base.model';\r\nimport { MetadataBaseModel } from '../model/base/metadata-base.model';\r\nimport { BemUtility } from '../../utility/bem.utility';\r\n\r\n@Directive()\r\nexport class ComponentBase<\r\n  TType extends string,\r\n  TData extends BaseModel<DataBaseModel, unknown>,\r\n  TMetadata extends BaseModel<MetadataBaseModel, unknown>,\r\n> {\r\n  data = input.required<TData>();\r\n\r\n  metadata = input.required<TMetadata>();\r\n\r\n  constructor(protected type: TType) {\r\n    this.type = type;\r\n  }\r\n\r\n  protected buildMainClassList() {\r\n    const block = this.type;\r\n    const { palette } = this.metadata().base;\r\n    const mainClass = BemUtility.build(block);\r\n    const paletteClass = BemUtility.build(block, 'palette', palette);\r\n    return [mainClass, paletteClass];\r\n  }\r\n}\r\n",
+            "sourceCode": "import { Directive, input } from '@angular/core';\r\nimport { BaseModel } from '../model/base/base.model';\r\nimport { DataBaseModel } from '../model/base/data-base.model';\r\nimport { MetadataBaseModel } from '../model/base/metadata-base.model';\r\nimport { BemUtility } from '../../utility/bem.utility';\r\n\r\n@Directive()\r\nexport class ComponentBase<\r\n  TType extends string,\r\n  TData extends BaseModel<DataBaseModel, unknown>,\r\n  TMetadata extends BaseModel<MetadataBaseModel, unknown>,\r\n> {\r\n  data = input.required<TData>();\r\n\r\n  metadata = input.required<TMetadata>();\r\n\r\n  constructor(protected type: TType) {\r\n    this.type = type;\r\n  }\r\n}\r\n",
             "providers": [],
             "hostDirectives": [],
             "standalone": false,
@@ -1748,21 +1748,7 @@
             "hostBindings": [],
             "hostListeners": [],
             "propertiesClass": [],
-            "methodsClass": [
-                {
-                    "name": "buildMainClassList",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "{}",
-                    "typeParameters": [],
-                    "line": 21,
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "modifierKind": [
-                        124
-                    ]
-                }
-            ],
+            "methodsClass": [],
             "extends": [],
             "constructorObj": {
                 "name": "constructor",
@@ -1842,24 +1828,7 @@
             "hostBindings": [],
             "hostListeners": [],
             "propertiesClass": [],
-            "methodsClass": [
-                {
-                    "name": "buildMainClassList",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "{}",
-                    "typeParameters": [],
-                    "line": 21,
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "modifierKind": [
-                        124
-                    ],
-                    "inheritance": {
-                        "file": "ComponentBase"
-                    }
-                }
-            ],
+            "methodsClass": [],
             "extends": [
                 "ComponentBase"
             ],
@@ -1941,24 +1910,7 @@
             "hostBindings": [],
             "hostListeners": [],
             "propertiesClass": [],
-            "methodsClass": [
-                {
-                    "name": "buildMainClassList",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "{}",
-                    "typeParameters": [],
-                    "line": 21,
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "modifierKind": [
-                        124
-                    ],
-                    "inheritance": {
-                        "file": "ComponentBase"
-                    }
-                }
-            ],
+            "methodsClass": [],
             "extends": [
                 "ComponentBase"
             ],
@@ -2165,24 +2117,7 @@
             ],
             "outputsClass": [],
             "propertiesClass": [],
-            "methodsClass": [
-                {
-                    "name": "buildMainClassList",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "{}",
-                    "typeParameters": [],
-                    "line": 21,
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "modifierKind": [
-                        124
-                    ],
-                    "inheritance": {
-                        "file": "ComponentBase"
-                    }
-                }
-            ],
+            "methodsClass": [],
             "deprecated": false,
             "deprecationMessage": "",
             "hostBindings": [],
@@ -2356,24 +2291,7 @@
                     "line": 18
                 }
             ],
-            "methodsClass": [
-                {
-                    "name": "buildMainClassList",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "{}",
-                    "typeParameters": [],
-                    "line": 21,
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "modifierKind": [
-                        124
-                    ],
-                    "inheritance": {
-                        "file": "ComponentBase"
-                    }
-                }
-            ],
+            "methodsClass": [],
             "deprecated": false,
             "deprecationMessage": "",
             "hostBindings": [],
@@ -3483,7 +3401,7 @@
         },
         {
             "name": "TextControl",
-            "id": "component-TextControl-c0465e8397838b5d2d8da7fb6005d1b9aaee57586f4a155aacad9d1d4b09036d85f25d487db9efcaad637c883311734649f16f72f895eca0acd8ffa58d2589ec",
+            "id": "component-TextControl-336e754580a51fcccd21a215f33df921bad1d15f12888945d81a7d38332b30ee3469a9ab55d6aa5068b85c573a453f890ae12a82d9c1911206f2ebd715d21432",
             "file": "src/component/control/text/text.control.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -3532,30 +3450,17 @@
             "propertiesClass": [],
             "methodsClass": [
                 {
-                    "name": "buildExtraMainClassList",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "{}",
-                    "typeParameters": [],
-                    "line": 20,
-                    "deprecated": false,
-                    "deprecationMessage": ""
-                },
-                {
                     "name": "buildMainClassList",
                     "args": [],
                     "optional": false,
                     "returnType": "{}",
                     "typeParameters": [],
-                    "line": 21,
+                    "line": 19,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
                         124
-                    ],
-                    "inheritance": {
-                        "file": "ComponentBase"
-                    }
+                    ]
                 }
             ],
             "deprecated": false,
@@ -3572,8 +3477,8 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { CommonModule } from '@angular/common';\r\nimport { Component } from '@angular/core';\r\nimport { ControlBase } from '../../base/control.base';\r\nimport { TextControlDataModel } from '../../model/data/control/text-control-data.model';\r\nimport { TextControlMetadataModel } from '../../model/metadata/control/text-control-metadata.model';\r\nimport { BemUtility } from '../../../utility/bem.utility';\r\n\r\n@Component({\r\n  selector: 'text-control',\r\n  templateUrl: './text.control.html',\r\n  styleUrl: '../../../style/control/text.control.scss',\r\n  imports: [CommonModule],\r\n})\r\n// @RegisterLayout('contact')\r\nexport class TextControl extends ControlBase<TextControlDataModel, TextControlMetadataModel> {\r\n  constructor() {\r\n    super('text');\r\n  }\r\n\r\n  buildExtraMainClassList() {\r\n    const block = this.type;\r\n    const { type } = this.metadata().extend;\r\n    const textClass = BemUtility.build(block, 'text', type);\r\n    return [...this.buildMainClassList(), textClass];\r\n  }\r\n}\r\n\r\n// TODO: I am here\r\n",
-            "styleUrl": "../../../style/control/text.control.scss",
+            "sourceCode": "import { Component } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { ControlBase } from '../../base/control.base';\r\nimport { TextControlDataModel } from '../../model/data/control/text-control-data.model';\r\nimport { TextControlMetadataModel } from '../../model/metadata/control/text-control-metadata.model';\r\nimport { BemUtility } from '../../../utility/bem.utility';\r\n\r\n@Component({\r\n  selector: 'text-control',\r\n  templateUrl: './text.control.html',\r\n  styleUrl: '../../../style/control/_text.control.scss',\r\n  imports: [CommonModule],\r\n})\r\nexport class TextControl extends ControlBase<TextControlDataModel, TextControlMetadataModel> {\r\n  constructor() {\r\n    super('text');\r\n  }\r\n\r\n  protected buildMainClassList() {\r\n    const block = this.type;\r\n    const { type } = this.metadata().extend;\r\n    const mainClass = BemUtility.build(block);\r\n    const typeClass = BemUtility.build(block, type);\r\n    return [mainClass, typeClass];\r\n  }\r\n}\r\n",
+            "styleUrl": "../../../style/control/_text.control.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
@@ -3583,12 +3488,12 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "args": [],
-                "line": 15
+                "line": 14
             },
             "extends": [
                 "ControlBase"
             ],
-            "templateData": "<p [ngClass]=\"buildMainClassList()\">{{ data().extend.value }}</p>\r\n\r\n<!-- TODO: I am here -->\r\n"
+            "templateData": "@switch (metadata().extend.type) {\r\n  @case ('small') {\r\n    <small [ngClass]=\"buildMainClassList()\">{{ data().extend.value }}</small>\r\n  }\r\n  @case ('p') {\r\n    <p [ngClass]=\"buildMainClassList()\">{{ data().extend.value }}</p>\r\n  }\r\n  @case ('h3') {\r\n    <h3 [ngClass]=\"buildMainClassList()\">{{ data().extend.value }}</h3>\r\n  }\r\n  @case ('h2') {\r\n    <h2 [ngClass]=\"buildMainClassList()\">{{ data().extend.value }}</h2>\r\n  }\r\n  @case ('h1') {\r\n    <h1 [ngClass]=\"buildMainClassList()\">{{ data().extend.value }}</h1>\r\n  }\r\n}\r\n"
         },
         {
             "name": "View",
@@ -6604,7 +6509,7 @@
                 "linktype": "directive",
                 "name": "ComponentBase",
                 "coveragePercent": 0,
-                "coverageCount": "0/5",
+                "coverageCount": "0/4",
                 "status": "low"
             },
             {
@@ -6613,7 +6518,7 @@
                 "linktype": "directive",
                 "name": "ControlBase",
                 "coveragePercent": 0,
-                "coverageCount": "0/5",
+                "coverageCount": "0/4",
                 "status": "low"
             },
             {
@@ -6622,7 +6527,7 @@
                 "linktype": "directive",
                 "name": "LayoutBase",
                 "coveragePercent": 0,
-                "coverageCount": "0/5",
+                "coverageCount": "0/4",
                 "status": "low"
             },
             {
@@ -6631,7 +6536,7 @@
                 "linktype": "component",
                 "name": "TextControl",
                 "coveragePercent": 0,
-                "coverageCount": "0/6",
+                "coverageCount": "0/5",
                 "status": "low"
             },
             {
@@ -6640,7 +6545,7 @@
                 "linktype": "component",
                 "name": "ContactLayout",
                 "coveragePercent": 0,
-                "coverageCount": "0/5",
+                "coverageCount": "0/4",
                 "status": "low"
             },
             {
@@ -6649,7 +6554,7 @@
                 "linktype": "component",
                 "name": "CopyrightLayout",
                 "coveragePercent": 0,
-                "coverageCount": "0/6",
+                "coverageCount": "0/5",
                 "status": "low"
             },
             {

@@ -7,5 +7,3 @@ interface MetadataModel {
 }
 
 export interface TextControlMetadataModel extends BaseModel<MetadataBaseModel, MetadataModel> {}
-
-// TODO: I am here

@@ -1,7 +1,7 @@
 import { NgComponentOutlet } from '@angular/common';
 import { Component, input } from '@angular/core';
 import { NodeModel } from '../model/node/node.model';
-import { getLayout } from '../decorator/layout.decorator';
+import { getComponent } from '../decorator/component.decorator';
 
 @Component({
   selector: 'generator',
@@ -11,14 +11,14 @@ import { getLayout } from '../decorator/layout.decorator';
 export class Generator {
   nodes = input<NodeModel[]>([]);
 
-  buildLayout(node: NodeModel) {
-    return getLayout(node.layout.kind);
+  buildComponent(node: NodeModel) {
+    return getComponent(node.component.kind);
   }
 
   buildInputs(node: NodeModel) {
     return {
-      data: node.layout.data,
-      metadata: node.layout.metadata,
+      data: node.component.data,
+      metadata: node.component.metadata,
     };
   }
 }

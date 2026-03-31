@@ -1,6 +1,6 @@
-import { LayoutNodeModel } from './layout-node.model';
+import { ComponentNodeModel } from './component-node.model';
 
 export interface NodeModel {
-  layout: LayoutNodeModel;
+  component: ComponentNodeModel;
   children?: NodeModel[];
 }
