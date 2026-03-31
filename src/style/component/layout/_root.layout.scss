@@ -1,0 +1,10 @@
+.root {
+  margin: 1rem;
+  height: calc(100vh - 2rem);
+  border: 1px dashed #000;
+  overflow: auto;
+
+  &__content {
+    min-width: 320px;
+  }
+}

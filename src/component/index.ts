@@ -1,4 +1,8 @@
 import './control/text/text.control';
 import './layout/root/root.layout';
+import './layout/main/main.layout';
+import './layout/footer/footer.layout';
+import './layout/flex/flex.layout';
+import './layout/flex-item/flex-item.layout';
 import './layout/contact/contact.layout';
 import './layout/copyright/copyright.layout';

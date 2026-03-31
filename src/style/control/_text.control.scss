@@ -1,6 +1,9 @@
 @use '../abstract/const/font.const' as font;
 
 .text {
+  border: 1px dashed #000;
+  margin: 1rem;
+
   font-family: font.$font-family;
 
   &__small,
