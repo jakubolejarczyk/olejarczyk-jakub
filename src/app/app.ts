@@ -11,6 +11,21 @@ export class App {
   nodes: NodeModel[] = [
     {
       component: {
+        kind: 'root',
+        data: {
+          base: {},
+          extend: {},
+        },
+        metadata: {
+          base: {
+            palette: 'primary',
+          },
+          extend: {},
+        },
+      },
+    },
+    {
+      component: {
         kind: 'text',
         data: {
           base: {},

@@ -1,1 +1,1 @@
-export type LayoutType = 'copyright' | 'contact';
+export type LayoutType = 'root' | 'copyright' | 'contact';

@@ -7,28 +7,28 @@
 }
 
 @mixin build-typography {
-  font-family: constant.$font__family;
-  font-weight: constant.$font__weight--normal;
-  font-style: normal;
+  // font-family: constant.$font__family;
+  // font-weight: constant.$font__weight--normal;
+  // font-style: normal;
 }
 
 @mixin build-palette {
-  @each $palette-name, $palette in palette.$palette {
-    &__palette--#{$palette-name} {
-      @each $obj in $palette {
-        $tag: map.get($obj, 'tag');
-        @if ($tag == '.') {
-          $property: map.get($obj, 'property');
-          $value: map.get($obj, 'value');
-          #{$property}: #{$value};
-        } @else {
-          #{$tag} {
-            $property: map.get($obj, 'property');
-            $value: map.get($obj, 'value');
-            #{$property}: #{$value};
-          }
-        }
-      }
-    }
-  }
+  // @each $palette-name, $palette in palette.$palette {
+  //   &__palette--#{$palette-name} {
+  //     @each $obj in $palette {
+  //       $tag: map.get($obj, 'tag');
+  //       @if ($tag == '.') {
+  //         $property: map.get($obj, 'property');
+  //         $value: map.get($obj, 'value');
+  //         #{$property}: #{$value};
+  //       } @else {
+  //         #{$tag} {
+  //           $property: map.get($obj, 'property');
+  //           $value: map.get($obj, 'value');
+  //           #{$property}: #{$value};
+  //         }
+  //       }
+  //     }
+  //   }
+  // }
 }
