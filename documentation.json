@@ -27,38 +27,13 @@
             "extends": []
         },
         {
-            "name": "BaseKindModel",
-            "id": "interface-BaseKindModel-0e0de1f57875908182226dbad07d72a48b6b2008e791e98e9a8b6cfe1d1b1b27f526670bd224294c31674e0d6c5c04a78c4a9493d7b8bd879740dffa065b08f9",
-            "file": "src/generator/model/base/base-kind.model.ts",
-            "deprecated": false,
-            "deprecationMessage": "",
-            "type": "interface",
-            "sourceCode": "export interface BaseKindModel<TType, TKind extends TType> {\r\n  kind: TKind;\r\n}\r\n",
-            "properties": [
-                {
-                    "name": "kind",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "TKind",
-                    "indexKey": "",
-                    "optional": false,
-                    "description": "",
-                    "line": 2
-                }
-            ],
-            "indexSignatures": [],
-            "kind": 172,
-            "methods": [],
-            "extends": []
-        },
-        {
             "name": "BaseModel",
-            "id": "interface-BaseModel-b92257d3029649cfadbfe8abdae7588ac8c47c3a35977577ff7252d69334b016dc8a4486cf17deb159d7a20b252963a1014a346cb7183a4a99ad5a001f1f956e",
+            "id": "interface-BaseModel-e170888db5fe1db7af6fba78a2d7ac7db06ba612cd4c732600e0e24217f51649b05ee2820d38f58dcdcb0be8c58803bf70bb60871ac5cc3002afd2af84a9958e",
             "file": "src/component/model/base/base.model.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "export interface BaseModel<TBase, TExtend> {\r\n  base: TBase;\r\n  extend: TExtend;\r\n}\r\n",
+            "sourceCode": "import { EmptyModel } from '../../../core/model/empty.model';\r\n\r\nexport interface BaseModel<TBase, TExtend = EmptyModel> {\r\n  base: TBase;\r\n  extend: TExtend;\r\n}\r\n",
             "properties": [
                 {
                     "name": "base",
@@ -68,7 +43,7 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 2
+                    "line": 4
                 },
                 {
                     "name": "extend",
@@ -78,7 +53,7 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 3
+                    "line": 5
                 }
             ],
             "indexSignatures": [],
@@ -122,6 +97,44 @@
             "extends": []
         },
         {
+            "name": "ContactComponentNodeModel",
+            "id": "interface-ContactComponentNodeModel-2fbae9fd7467309ecf03c369ce23f79bdcee3ce7dea954f724c7957408c62702346965348ebd38d701995b2837fb7d0c67e1a3eae076e9c545251dee4221d0dc",
+            "file": "src/generator/model/node/component-node.model.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "import { ContactDataModel } from '../../../component/model/data/contact-data.model';\r\nimport { TextControlDataModel } from '../../../component/model/data/control/text-control-data.model';\r\nimport { CopyrightDataModel } from '../../../component/model/data/copyright-data.model';\r\nimport { FlexDataModel } from '../../../component/model/data/layout/flex-data.model';\r\nimport { FlexItemDataModel } from '../../../component/model/data/layout/flex-item-data.model';\r\nimport { FooterDataModel } from '../../../component/model/data/layout/footer-data.model';\r\nimport { MainDataModel } from '../../../component/model/data/layout/main-data.model';\r\nimport { RootLayoutDataModel } from '../../../component/model/data/layout/root-layout-data.model';\r\nimport { ContactMetadataModel } from '../../../component/model/metadata/contact-metadata.model';\r\nimport { TextControlMetadataModel } from '../../../component/model/metadata/control/text-control-metadata.model';\r\nimport { CopyrightMetadataModel } from '../../../component/model/metadata/copyright-metadata.model';\r\nimport { FlexItemMetadataModel } from '../../../component/model/metadata/layout/flex-item-metadata.model';\r\nimport { FlexMetadataModel } from '../../../component/model/metadata/layout/flex-metadata.model';\r\nimport { FooterMetadataModel } from '../../../component/model/metadata/layout/footer-metadata.model';\r\nimport { MainMetadataModel } from '../../../component/model/metadata/layout/main-metadata.model';\r\nimport { RootLayoutMetadataModel } from '../../../component/model/metadata/layout/root-layout-metadata.model';\r\nimport { ComponentType } from '../../../style/type/component.type';\r\nimport { ControlKindBaseModel } from '../base/control-kind-base.model';\r\nimport { KindBaseModel } from '../base/kind-base.model';\r\nimport { LayoutKindBaseModel } from '../base/layout-kind-base.model';\r\n\r\ninterface RootComponentNodeModel\r\n  extends KindBaseModel<ComponentType, 'layout'>, LayoutKindBaseModel<'root'> {\r\n  data: RootLayoutDataModel;\r\n  metadata: RootLayoutMetadataModel;\r\n}\r\n\r\ninterface MainComponentNodeModel\r\n  extends KindBaseModel<ComponentType, 'layout'>, LayoutKindBaseModel<'main'> {\r\n  data: MainDataModel;\r\n  metadata: MainMetadataModel;\r\n}\r\n\r\ninterface FooterComponentNodeModel\r\n  extends KindBaseModel<ComponentType, 'layout'>, LayoutKindBaseModel<'footer'> {\r\n  data: FooterDataModel;\r\n  metadata: FooterMetadataModel;\r\n}\r\n\r\ninterface FlexComponentNodeModel\r\n  extends KindBaseModel<ComponentType, 'layout'>, LayoutKindBaseModel<'flex'> {\r\n  data: FlexDataModel;\r\n  metadata: FlexMetadataModel;\r\n}\r\n\r\ninterface FlexItemComponentNodeModel\r\n  extends KindBaseModel<ComponentType, 'layout'>, LayoutKindBaseModel<'flex-item'> {\r\n  data: FlexItemDataModel;\r\n  metadata: FlexItemMetadataModel;\r\n}\r\n\r\ninterface ContactComponentNodeModel\r\n  extends KindBaseModel<ComponentType, 'layout'>, LayoutKindBaseModel<'contact'> {\r\n  data: ContactDataModel;\r\n  metadata: ContactMetadataModel;\r\n}\r\n\r\ninterface CopyrightComponentNodeModel\r\n  extends KindBaseModel<ComponentType, 'layout'>, LayoutKindBaseModel<'copyright'> {\r\n  data: CopyrightDataModel;\r\n  metadata: CopyrightMetadataModel;\r\n}\r\n\r\ninterface TextComponentNodeModel\r\n  extends KindBaseModel<ComponentType, 'control'>, ControlKindBaseModel<'text'> {\r\n  data: TextControlDataModel;\r\n  metadata: TextControlMetadataModel;\r\n}\r\n\r\nexport type ComponentNodeModel =\r\n  | RootComponentNodeModel\r\n  | MainComponentNodeModel\r\n  | FooterComponentNodeModel\r\n  | FlexComponentNodeModel\r\n  | FlexItemComponentNodeModel\r\n  | ContactComponentNodeModel\r\n  | CopyrightComponentNodeModel\r\n  | TextComponentNodeModel;\r\n",
+            "properties": [
+                {
+                    "name": "data",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "ContactDataModel",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 54
+                },
+                {
+                    "name": "metadata",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "ContactMetadataModel",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 55
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 172,
+            "methods": [],
+            "extends": [
+                "KindBaseModel",
+                "LayoutKindBaseModel"
+            ]
+        },
+        {
             "name": "ContactDataModel",
             "id": "interface-ContactDataModel-58e29aa6d36729613b848b37aaf1170791166cf13c087c9a7257e0e736b5ffcd0d12bde0d7d4ff75e5157a3c47f1454bc52e4e1174be6ef6fe7da522cc2f2dd0",
             "file": "src/component/model/data/contact-data.model.ts",
@@ -134,43 +147,6 @@
             "methods": [],
             "extends": [
                 "BaseModel"
-            ]
-        },
-        {
-            "name": "ContactLayoutNodeModel",
-            "id": "interface-ContactLayoutNodeModel-804a46501b746390b6ef87b441ac8c58df79fecefad23f6dfdf017bad9fb6899b8b6d8b6ed51ab8cde533e32a37bb3a9062e7be1e87eaec3c62f36b41f70e760",
-            "file": "src/generator/model/node/layout-node.model.ts",
-            "deprecated": false,
-            "deprecationMessage": "",
-            "type": "interface",
-            "sourceCode": "import { ContactDataModel } from '../../../component/model/data/contact-data.model';\r\nimport { CopyrightDataModel } from '../../../component/model/data/copyright-data.model';\r\nimport { ContactMetadataModel } from '../../../component/model/metadata/contact-metadata.model';\r\nimport { CopyrightMetadataModel } from '../../../component/model/metadata/copyright-metadata.model';\r\nimport { LayoutType } from '../../../style/type/layout.type';\r\nimport { BaseKindModel } from '../base/base-kind.model';\r\n\r\ninterface ContactLayoutNodeModel extends BaseKindModel<LayoutType, 'contact'> {\r\n  data: ContactDataModel;\r\n  metadata: ContactMetadataModel;\r\n}\r\n\r\ninterface CopyrightLayoutNodeModel extends BaseKindModel<LayoutType, 'copyright'> {\r\n  data: CopyrightDataModel;\r\n  metadata: CopyrightMetadataModel;\r\n}\r\n\r\nexport type LayoutNodeModel = ContactLayoutNodeModel | CopyrightLayoutNodeModel;\r\n",
-            "properties": [
-                {
-                    "name": "data",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "ContactDataModel",
-                    "indexKey": "",
-                    "optional": false,
-                    "description": "",
-                    "line": 9
-                },
-                {
-                    "name": "metadata",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "ContactMetadataModel",
-                    "indexKey": "",
-                    "optional": false,
-                    "description": "",
-                    "line": 10
-                }
-            ],
-            "indexSignatures": [],
-            "kind": 172,
-            "methods": [],
-            "extends": [
-                "BaseKindModel"
             ]
         },
         {
@@ -189,28 +165,65 @@
             ]
         },
         {
-            "name": "CopyrightDataModel",
-            "id": "interface-CopyrightDataModel-de7364507a20b8267ad95e97dd55886d55eacbf4b8fc037d0094fd398ebe0cee68c82ad9b7faa812657313afc62c18145658431677786e58a42442f66a946190",
-            "file": "src/component/model/data/copyright-data.model.ts",
+            "name": "ControlDecoratorModel",
+            "id": "interface-ControlDecoratorModel-e243ad18223902001ec83e98feb3d4b3aa8ad2180820f67052889aec5a8b2dcb3b3943d744b3f147502bd7d5c79165bfd496a17f63098cdbee875792a21f0b70",
+            "file": "src/generator/model/decorator/decorator.model.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "import { BaseKindModel } from '../../../generator/model/base/base-kind.model';\r\nimport { BaseModel } from '../base/base.model';\r\nimport { DataBaseModel } from '../base/data-base.model';\r\n\r\ntype YearKindType = 'current' | 'range';\r\n\r\ninterface YearCurrentModel extends BaseKindModel<YearKindType, 'current'> {}\r\n\r\ninterface YearRangeModel extends BaseKindModel<YearKindType, 'range'> {\r\n  from: number;\r\n  to: number | 'current';\r\n}\r\n\r\ntype YearType = YearCurrentModel | YearRangeModel;\r\n\r\nexport interface CopyrightDataModel extends BaseModel<\r\n  DataBaseModel,\r\n  {\r\n    symbol: string;\r\n    year: YearType;\r\n    ownerName: string;\r\n    rightsStatements: string;\r\n  }\r\n> {}\r\n",
-            "properties": [],
+            "sourceCode": "import { ComponentType } from '../../../style/type/component.type';\r\nimport { ControlType } from '../../../style/type/control.type';\r\nimport { LayoutType } from '../../../style/type/layout.type';\r\nimport { KindBaseModel } from '../base/kind-base.model';\r\n\r\ninterface ControlDecoratorModel extends KindBaseModel<ComponentType, 'control'> {\r\n  control: ControlType;\r\n}\r\n\r\ninterface LayoutDecoratorModel extends KindBaseModel<ComponentType, 'layout'> {\r\n  layout: LayoutType;\r\n}\r\n\r\nexport type DecoratorModel = ControlDecoratorModel | LayoutDecoratorModel;\r\n",
+            "properties": [
+                {
+                    "name": "control",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "ControlType",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 7
+                }
+            ],
             "indexSignatures": [],
+            "kind": 172,
             "methods": [],
             "extends": [
-                "BaseModel"
+                "KindBaseModel"
             ]
         },
         {
-            "name": "CopyrightLayoutNodeModel",
-            "id": "interface-CopyrightLayoutNodeModel-804a46501b746390b6ef87b441ac8c58df79fecefad23f6dfdf017bad9fb6899b8b6d8b6ed51ab8cde533e32a37bb3a9062e7be1e87eaec3c62f36b41f70e760",
-            "file": "src/generator/model/node/layout-node.model.ts",
+            "name": "ControlKindBaseModel",
+            "id": "interface-ControlKindBaseModel-59fbf7f9893e30c242ec833dd698f632088f9d8d179ac5e9e124161a91964a3dce231aac379fe4bbb968fdbead27f455da2bc202299b0b4cc736c4c4627d9080",
+            "file": "src/generator/model/base/control-kind-base.model.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "import { ContactDataModel } from '../../../component/model/data/contact-data.model';\r\nimport { CopyrightDataModel } from '../../../component/model/data/copyright-data.model';\r\nimport { ContactMetadataModel } from '../../../component/model/metadata/contact-metadata.model';\r\nimport { CopyrightMetadataModel } from '../../../component/model/metadata/copyright-metadata.model';\r\nimport { LayoutType } from '../../../style/type/layout.type';\r\nimport { BaseKindModel } from '../base/base-kind.model';\r\n\r\ninterface ContactLayoutNodeModel extends BaseKindModel<LayoutType, 'contact'> {\r\n  data: ContactDataModel;\r\n  metadata: ContactMetadataModel;\r\n}\r\n\r\ninterface CopyrightLayoutNodeModel extends BaseKindModel<LayoutType, 'copyright'> {\r\n  data: CopyrightDataModel;\r\n  metadata: CopyrightMetadataModel;\r\n}\r\n\r\nexport type LayoutNodeModel = ContactLayoutNodeModel | CopyrightLayoutNodeModel;\r\n",
+            "sourceCode": "import { ControlType } from '../../../style/type/control.type';\r\n\r\nexport interface ControlKindBaseModel<TType extends ControlType> {\r\n  control: TType;\r\n}\r\n",
+            "properties": [
+                {
+                    "name": "control",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "TType",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 4
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 172,
+            "methods": [],
+            "extends": []
+        },
+        {
+            "name": "CopyrightComponentNodeModel",
+            "id": "interface-CopyrightComponentNodeModel-2fbae9fd7467309ecf03c369ce23f79bdcee3ce7dea954f724c7957408c62702346965348ebd38d701995b2837fb7d0c67e1a3eae076e9c545251dee4221d0dc",
+            "file": "src/generator/model/node/component-node.model.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "import { ContactDataModel } from '../../../component/model/data/contact-data.model';\r\nimport { TextControlDataModel } from '../../../component/model/data/control/text-control-data.model';\r\nimport { CopyrightDataModel } from '../../../component/model/data/copyright-data.model';\r\nimport { FlexDataModel } from '../../../component/model/data/layout/flex-data.model';\r\nimport { FlexItemDataModel } from '../../../component/model/data/layout/flex-item-data.model';\r\nimport { FooterDataModel } from '../../../component/model/data/layout/footer-data.model';\r\nimport { MainDataModel } from '../../../component/model/data/layout/main-data.model';\r\nimport { RootLayoutDataModel } from '../../../component/model/data/layout/root-layout-data.model';\r\nimport { ContactMetadataModel } from '../../../component/model/metadata/contact-metadata.model';\r\nimport { TextControlMetadataModel } from '../../../component/model/metadata/control/text-control-metadata.model';\r\nimport { CopyrightMetadataModel } from '../../../component/model/metadata/copyright-metadata.model';\r\nimport { FlexItemMetadataModel } from '../../../component/model/metadata/layout/flex-item-metadata.model';\r\nimport { FlexMetadataModel } from '../../../component/model/metadata/layout/flex-metadata.model';\r\nimport { FooterMetadataModel } from '../../../component/model/metadata/layout/footer-metadata.model';\r\nimport { MainMetadataModel } from '../../../component/model/metadata/layout/main-metadata.model';\r\nimport { RootLayoutMetadataModel } from '../../../component/model/metadata/layout/root-layout-metadata.model';\r\nimport { ComponentType } from '../../../style/type/component.type';\r\nimport { ControlKindBaseModel } from '../base/control-kind-base.model';\r\nimport { KindBaseModel } from '../base/kind-base.model';\r\nimport { LayoutKindBaseModel } from '../base/layout-kind-base.model';\r\n\r\ninterface RootComponentNodeModel\r\n  extends KindBaseModel<ComponentType, 'layout'>, LayoutKindBaseModel<'root'> {\r\n  data: RootLayoutDataModel;\r\n  metadata: RootLayoutMetadataModel;\r\n}\r\n\r\ninterface MainComponentNodeModel\r\n  extends KindBaseModel<ComponentType, 'layout'>, LayoutKindBaseModel<'main'> {\r\n  data: MainDataModel;\r\n  metadata: MainMetadataModel;\r\n}\r\n\r\ninterface FooterComponentNodeModel\r\n  extends KindBaseModel<ComponentType, 'layout'>, LayoutKindBaseModel<'footer'> {\r\n  data: FooterDataModel;\r\n  metadata: FooterMetadataModel;\r\n}\r\n\r\ninterface FlexComponentNodeModel\r\n  extends KindBaseModel<ComponentType, 'layout'>, LayoutKindBaseModel<'flex'> {\r\n  data: FlexDataModel;\r\n  metadata: FlexMetadataModel;\r\n}\r\n\r\ninterface FlexItemComponentNodeModel\r\n  extends KindBaseModel<ComponentType, 'layout'>, LayoutKindBaseModel<'flex-item'> {\r\n  data: FlexItemDataModel;\r\n  metadata: FlexItemMetadataModel;\r\n}\r\n\r\ninterface ContactComponentNodeModel\r\n  extends KindBaseModel<ComponentType, 'layout'>, LayoutKindBaseModel<'contact'> {\r\n  data: ContactDataModel;\r\n  metadata: ContactMetadataModel;\r\n}\r\n\r\ninterface CopyrightComponentNodeModel\r\n  extends KindBaseModel<ComponentType, 'layout'>, LayoutKindBaseModel<'copyright'> {\r\n  data: CopyrightDataModel;\r\n  metadata: CopyrightMetadataModel;\r\n}\r\n\r\ninterface TextComponentNodeModel\r\n  extends KindBaseModel<ComponentType, 'control'>, ControlKindBaseModel<'text'> {\r\n  data: TextControlDataModel;\r\n  metadata: TextControlMetadataModel;\r\n}\r\n\r\nexport type ComponentNodeModel =\r\n  | RootComponentNodeModel\r\n  | MainComponentNodeModel\r\n  | FooterComponentNodeModel\r\n  | FlexComponentNodeModel\r\n  | FlexItemComponentNodeModel\r\n  | ContactComponentNodeModel\r\n  | CopyrightComponentNodeModel\r\n  | TextComponentNodeModel;\r\n",
             "properties": [
                 {
                     "name": "data",
@@ -220,7 +233,7 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 14
+                    "line": 60
                 },
                 {
                     "name": "metadata",
@@ -230,14 +243,30 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 15
+                    "line": 61
                 }
             ],
             "indexSignatures": [],
             "kind": 172,
             "methods": [],
             "extends": [
-                "BaseKindModel"
+                "KindBaseModel",
+                "LayoutKindBaseModel"
+            ]
+        },
+        {
+            "name": "CopyrightDataModel",
+            "id": "interface-CopyrightDataModel-61728be15f5fabe9888f9f35e99e96537de5f69d8e013ea1b37372b3dc5fdab873268ac8e256448462608a9486da5c57a5daa18a94011809879d8d90c8576acd",
+            "file": "src/component/model/data/copyright-data.model.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "import { KindBaseModel } from '../../../generator/model/base/kind-base.model';\r\nimport { BaseModel } from '../base/base.model';\r\nimport { DataBaseModel } from '../base/data-base.model';\r\n\r\ntype YearKindType = 'current' | 'range';\r\n\r\ninterface YearCurrentModel extends KindBaseModel<YearKindType, 'current'> {}\r\n\r\ninterface YearRangeModel extends KindBaseModel<YearKindType, 'range'> {\r\n  from: number;\r\n  to: number | 'current';\r\n}\r\n\r\ntype YearType = YearCurrentModel | YearRangeModel;\r\n\r\nexport interface CopyrightDataModel extends BaseModel<\r\n  DataBaseModel,\r\n  {\r\n    symbol: string;\r\n    year: YearType;\r\n    ownerName: string;\r\n    rightsStatements: string;\r\n  }\r\n> {}\r\n",
+            "properties": [],
+            "indexSignatures": [],
+            "methods": [],
+            "extends": [
+                "BaseModel"
             ]
         },
         {
@@ -349,6 +378,19 @@
             "extends": []
         },
         {
+            "name": "EmptyModel",
+            "id": "interface-EmptyModel-dd5e0f5a29cfe8e1a57403e4658c3b0b11435ea3c2c39c3ef6ee089888a105e6da8b12f8678cd5dafdd15f404e8ddc05e87657f4a5e88391f697915d80c47f37",
+            "file": "src/core/model/empty.model.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "export interface EmptyModel {}\r\n",
+            "properties": [],
+            "indexSignatures": [],
+            "methods": [],
+            "extends": []
+        },
+        {
             "name": "ExperienceModel",
             "id": "interface-ExperienceModel-712eaae7a5af6f3eba2382d1340bead59df6348d2f3c0dce73ff86f238148dc8234a83cf2406faa597ca793c659abce01e3d48d4adc126963ac2f6e9aa54a449",
             "file": "src/app/data/experience/experience-data.model.ts",
@@ -434,6 +476,210 @@
             "extends": []
         },
         {
+            "name": "FlexComponentNodeModel",
+            "id": "interface-FlexComponentNodeModel-2fbae9fd7467309ecf03c369ce23f79bdcee3ce7dea954f724c7957408c62702346965348ebd38d701995b2837fb7d0c67e1a3eae076e9c545251dee4221d0dc",
+            "file": "src/generator/model/node/component-node.model.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "import { ContactDataModel } from '../../../component/model/data/contact-data.model';\r\nimport { TextControlDataModel } from '../../../component/model/data/control/text-control-data.model';\r\nimport { CopyrightDataModel } from '../../../component/model/data/copyright-data.model';\r\nimport { FlexDataModel } from '../../../component/model/data/layout/flex-data.model';\r\nimport { FlexItemDataModel } from '../../../component/model/data/layout/flex-item-data.model';\r\nimport { FooterDataModel } from '../../../component/model/data/layout/footer-data.model';\r\nimport { MainDataModel } from '../../../component/model/data/layout/main-data.model';\r\nimport { RootLayoutDataModel } from '../../../component/model/data/layout/root-layout-data.model';\r\nimport { ContactMetadataModel } from '../../../component/model/metadata/contact-metadata.model';\r\nimport { TextControlMetadataModel } from '../../../component/model/metadata/control/text-control-metadata.model';\r\nimport { CopyrightMetadataModel } from '../../../component/model/metadata/copyright-metadata.model';\r\nimport { FlexItemMetadataModel } from '../../../component/model/metadata/layout/flex-item-metadata.model';\r\nimport { FlexMetadataModel } from '../../../component/model/metadata/layout/flex-metadata.model';\r\nimport { FooterMetadataModel } from '../../../component/model/metadata/layout/footer-metadata.model';\r\nimport { MainMetadataModel } from '../../../component/model/metadata/layout/main-metadata.model';\r\nimport { RootLayoutMetadataModel } from '../../../component/model/metadata/layout/root-layout-metadata.model';\r\nimport { ComponentType } from '../../../style/type/component.type';\r\nimport { ControlKindBaseModel } from '../base/control-kind-base.model';\r\nimport { KindBaseModel } from '../base/kind-base.model';\r\nimport { LayoutKindBaseModel } from '../base/layout-kind-base.model';\r\n\r\ninterface RootComponentNodeModel\r\n  extends KindBaseModel<ComponentType, 'layout'>, LayoutKindBaseModel<'root'> {\r\n  data: RootLayoutDataModel;\r\n  metadata: RootLayoutMetadataModel;\r\n}\r\n\r\ninterface MainComponentNodeModel\r\n  extends KindBaseModel<ComponentType, 'layout'>, LayoutKindBaseModel<'main'> {\r\n  data: MainDataModel;\r\n  metadata: MainMetadataModel;\r\n}\r\n\r\ninterface FooterComponentNodeModel\r\n  extends KindBaseModel<ComponentType, 'layout'>, LayoutKindBaseModel<'footer'> {\r\n  data: FooterDataModel;\r\n  metadata: FooterMetadataModel;\r\n}\r\n\r\ninterface FlexComponentNodeModel\r\n  extends KindBaseModel<ComponentType, 'layout'>, LayoutKindBaseModel<'flex'> {\r\n  data: FlexDataModel;\r\n  metadata: FlexMetadataModel;\r\n}\r\n\r\ninterface FlexItemComponentNodeModel\r\n  extends KindBaseModel<ComponentType, 'layout'>, LayoutKindBaseModel<'flex-item'> {\r\n  data: FlexItemDataModel;\r\n  metadata: FlexItemMetadataModel;\r\n}\r\n\r\ninterface ContactComponentNodeModel\r\n  extends KindBaseModel<ComponentType, 'layout'>, LayoutKindBaseModel<'contact'> {\r\n  data: ContactDataModel;\r\n  metadata: ContactMetadataModel;\r\n}\r\n\r\ninterface CopyrightComponentNodeModel\r\n  extends KindBaseModel<ComponentType, 'layout'>, LayoutKindBaseModel<'copyright'> {\r\n  data: CopyrightDataModel;\r\n  metadata: CopyrightMetadataModel;\r\n}\r\n\r\ninterface TextComponentNodeModel\r\n  extends KindBaseModel<ComponentType, 'control'>, ControlKindBaseModel<'text'> {\r\n  data: TextControlDataModel;\r\n  metadata: TextControlMetadataModel;\r\n}\r\n\r\nexport type ComponentNodeModel =\r\n  | RootComponentNodeModel\r\n  | MainComponentNodeModel\r\n  | FooterComponentNodeModel\r\n  | FlexComponentNodeModel\r\n  | FlexItemComponentNodeModel\r\n  | ContactComponentNodeModel\r\n  | CopyrightComponentNodeModel\r\n  | TextComponentNodeModel;\r\n",
+            "properties": [
+                {
+                    "name": "data",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "FlexDataModel",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 42
+                },
+                {
+                    "name": "metadata",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "FlexMetadataModel",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 43
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 172,
+            "methods": [],
+            "extends": [
+                "KindBaseModel",
+                "LayoutKindBaseModel"
+            ]
+        },
+        {
+            "name": "FlexDataModel",
+            "id": "interface-FlexDataModel-28d09f4aed40b9ce3e8de28c74f124f8ee3736d5ed67a13c191877309cbabf1e9c3969ada74a8ba52229c5381751cd912258a3a7433bfcfb3cdf02d05287b3ac",
+            "file": "src/component/model/data/layout/flex-data.model.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "import { BaseModel } from '../../base/base.model';\r\nimport { DataBaseModel } from '../../base/data-base.model';\r\n\r\nexport interface FlexDataModel extends BaseModel<DataBaseModel, {}> {}\r\n",
+            "properties": [],
+            "indexSignatures": [],
+            "methods": [],
+            "extends": [
+                "BaseModel"
+            ]
+        },
+        {
+            "name": "FlexItemComponentNodeModel",
+            "id": "interface-FlexItemComponentNodeModel-2fbae9fd7467309ecf03c369ce23f79bdcee3ce7dea954f724c7957408c62702346965348ebd38d701995b2837fb7d0c67e1a3eae076e9c545251dee4221d0dc",
+            "file": "src/generator/model/node/component-node.model.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "import { ContactDataModel } from '../../../component/model/data/contact-data.model';\r\nimport { TextControlDataModel } from '../../../component/model/data/control/text-control-data.model';\r\nimport { CopyrightDataModel } from '../../../component/model/data/copyright-data.model';\r\nimport { FlexDataModel } from '../../../component/model/data/layout/flex-data.model';\r\nimport { FlexItemDataModel } from '../../../component/model/data/layout/flex-item-data.model';\r\nimport { FooterDataModel } from '../../../component/model/data/layout/footer-data.model';\r\nimport { MainDataModel } from '../../../component/model/data/layout/main-data.model';\r\nimport { RootLayoutDataModel } from '../../../component/model/data/layout/root-layout-data.model';\r\nimport { ContactMetadataModel } from '../../../component/model/metadata/contact-metadata.model';\r\nimport { TextControlMetadataModel } from '../../../component/model/metadata/control/text-control-metadata.model';\r\nimport { CopyrightMetadataModel } from '../../../component/model/metadata/copyright-metadata.model';\r\nimport { FlexItemMetadataModel } from '../../../component/model/metadata/layout/flex-item-metadata.model';\r\nimport { FlexMetadataModel } from '../../../component/model/metadata/layout/flex-metadata.model';\r\nimport { FooterMetadataModel } from '../../../component/model/metadata/layout/footer-metadata.model';\r\nimport { MainMetadataModel } from '../../../component/model/metadata/layout/main-metadata.model';\r\nimport { RootLayoutMetadataModel } from '../../../component/model/metadata/layout/root-layout-metadata.model';\r\nimport { ComponentType } from '../../../style/type/component.type';\r\nimport { ControlKindBaseModel } from '../base/control-kind-base.model';\r\nimport { KindBaseModel } from '../base/kind-base.model';\r\nimport { LayoutKindBaseModel } from '../base/layout-kind-base.model';\r\n\r\ninterface RootComponentNodeModel\r\n  extends KindBaseModel<ComponentType, 'layout'>, LayoutKindBaseModel<'root'> {\r\n  data: RootLayoutDataModel;\r\n  metadata: RootLayoutMetadataModel;\r\n}\r\n\r\ninterface MainComponentNodeModel\r\n  extends KindBaseModel<ComponentType, 'layout'>, LayoutKindBaseModel<'main'> {\r\n  data: MainDataModel;\r\n  metadata: MainMetadataModel;\r\n}\r\n\r\ninterface FooterComponentNodeModel\r\n  extends KindBaseModel<ComponentType, 'layout'>, LayoutKindBaseModel<'footer'> {\r\n  data: FooterDataModel;\r\n  metadata: FooterMetadataModel;\r\n}\r\n\r\ninterface FlexComponentNodeModel\r\n  extends KindBaseModel<ComponentType, 'layout'>, LayoutKindBaseModel<'flex'> {\r\n  data: FlexDataModel;\r\n  metadata: FlexMetadataModel;\r\n}\r\n\r\ninterface FlexItemComponentNodeModel\r\n  extends KindBaseModel<ComponentType, 'layout'>, LayoutKindBaseModel<'flex-item'> {\r\n  data: FlexItemDataModel;\r\n  metadata: FlexItemMetadataModel;\r\n}\r\n\r\ninterface ContactComponentNodeModel\r\n  extends KindBaseModel<ComponentType, 'layout'>, LayoutKindBaseModel<'contact'> {\r\n  data: ContactDataModel;\r\n  metadata: ContactMetadataModel;\r\n}\r\n\r\ninterface CopyrightComponentNodeModel\r\n  extends KindBaseModel<ComponentType, 'layout'>, LayoutKindBaseModel<'copyright'> {\r\n  data: CopyrightDataModel;\r\n  metadata: CopyrightMetadataModel;\r\n}\r\n\r\ninterface TextComponentNodeModel\r\n  extends KindBaseModel<ComponentType, 'control'>, ControlKindBaseModel<'text'> {\r\n  data: TextControlDataModel;\r\n  metadata: TextControlMetadataModel;\r\n}\r\n\r\nexport type ComponentNodeModel =\r\n  | RootComponentNodeModel\r\n  | MainComponentNodeModel\r\n  | FooterComponentNodeModel\r\n  | FlexComponentNodeModel\r\n  | FlexItemComponentNodeModel\r\n  | ContactComponentNodeModel\r\n  | CopyrightComponentNodeModel\r\n  | TextComponentNodeModel;\r\n",
+            "properties": [
+                {
+                    "name": "data",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "FlexItemDataModel",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 48
+                },
+                {
+                    "name": "metadata",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "FlexItemMetadataModel",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 49
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 172,
+            "methods": [],
+            "extends": [
+                "KindBaseModel",
+                "LayoutKindBaseModel"
+            ]
+        },
+        {
+            "name": "FlexItemDataModel",
+            "id": "interface-FlexItemDataModel-a038e0f9992db0a666f7adac87a6bec48a20e7c6cd14844aec14c3b6373b28e4b52c44d0fa1432388b97fa44b153e885a06727144793d1679ba59fc038521949",
+            "file": "src/component/model/data/layout/flex-item-data.model.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "import { BaseModel } from '../../base/base.model';\r\nimport { DataBaseModel } from '../../base/data-base.model';\r\n\r\nexport interface FlexItemDataModel extends BaseModel<DataBaseModel, {}> {}\r\n",
+            "properties": [],
+            "indexSignatures": [],
+            "methods": [],
+            "extends": [
+                "BaseModel"
+            ]
+        },
+        {
+            "name": "FlexItemMetadataModel",
+            "id": "interface-FlexItemMetadataModel-ffb8f05bed16adc5d7bb1b42321ae4937a460df6321ad5edcec342e36e582514c38bb9f53a7c69e86e6fc4737c4ac2028310506be2f94552a9d2166991f6d88a",
+            "file": "src/component/model/metadata/layout/flex-item-metadata.model.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "import { BaseModel } from '../../base/base.model';\r\nimport { MetadataBaseModel } from '../../base/metadata-base.model';\r\n\r\nexport interface FlexItemMetadataModel extends BaseModel<MetadataBaseModel, {}> {}\r\n",
+            "properties": [],
+            "indexSignatures": [],
+            "methods": [],
+            "extends": [
+                "BaseModel"
+            ]
+        },
+        {
+            "name": "FlexMetadataModel",
+            "id": "interface-FlexMetadataModel-bfe4f61548902ca32ef4430c37bda868c7db78ec4df4326bd98feab7c72fec8f1fc7f4dc2e8f708436343dd8a9ac7de6e0b98647d2250f825bd4edba52d923ae",
+            "file": "src/component/model/metadata/layout/flex-metadata.model.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "import { BaseModel } from '../../base/base.model';\r\nimport { MetadataBaseModel } from '../../base/metadata-base.model';\r\n\r\nexport interface FlexMetadataModel extends BaseModel<MetadataBaseModel, {}> {}\r\n",
+            "properties": [],
+            "indexSignatures": [],
+            "methods": [],
+            "extends": [
+                "BaseModel"
+            ]
+        },
+        {
+            "name": "FooterComponentNodeModel",
+            "id": "interface-FooterComponentNodeModel-2fbae9fd7467309ecf03c369ce23f79bdcee3ce7dea954f724c7957408c62702346965348ebd38d701995b2837fb7d0c67e1a3eae076e9c545251dee4221d0dc",
+            "file": "src/generator/model/node/component-node.model.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "import { ContactDataModel } from '../../../component/model/data/contact-data.model';\r\nimport { TextControlDataModel } from '../../../component/model/data/control/text-control-data.model';\r\nimport { CopyrightDataModel } from '../../../component/model/data/copyright-data.model';\r\nimport { FlexDataModel } from '../../../component/model/data/layout/flex-data.model';\r\nimport { FlexItemDataModel } from '../../../component/model/data/layout/flex-item-data.model';\r\nimport { FooterDataModel } from '../../../component/model/data/layout/footer-data.model';\r\nimport { MainDataModel } from '../../../component/model/data/layout/main-data.model';\r\nimport { RootLayoutDataModel } from '../../../component/model/data/layout/root-layout-data.model';\r\nimport { ContactMetadataModel } from '../../../component/model/metadata/contact-metadata.model';\r\nimport { TextControlMetadataModel } from '../../../component/model/metadata/control/text-control-metadata.model';\r\nimport { CopyrightMetadataModel } from '../../../component/model/metadata/copyright-metadata.model';\r\nimport { FlexItemMetadataModel } from '../../../component/model/metadata/layout/flex-item-metadata.model';\r\nimport { FlexMetadataModel } from '../../../component/model/metadata/layout/flex-metadata.model';\r\nimport { FooterMetadataModel } from '../../../component/model/metadata/layout/footer-metadata.model';\r\nimport { MainMetadataModel } from '../../../component/model/metadata/layout/main-metadata.model';\r\nimport { RootLayoutMetadataModel } from '../../../component/model/metadata/layout/root-layout-metadata.model';\r\nimport { ComponentType } from '../../../style/type/component.type';\r\nimport { ControlKindBaseModel } from '../base/control-kind-base.model';\r\nimport { KindBaseModel } from '../base/kind-base.model';\r\nimport { LayoutKindBaseModel } from '../base/layout-kind-base.model';\r\n\r\ninterface RootComponentNodeModel\r\n  extends KindBaseModel<ComponentType, 'layout'>, LayoutKindBaseModel<'root'> {\r\n  data: RootLayoutDataModel;\r\n  metadata: RootLayoutMetadataModel;\r\n}\r\n\r\ninterface MainComponentNodeModel\r\n  extends KindBaseModel<ComponentType, 'layout'>, LayoutKindBaseModel<'main'> {\r\n  data: MainDataModel;\r\n  metadata: MainMetadataModel;\r\n}\r\n\r\ninterface FooterComponentNodeModel\r\n  extends KindBaseModel<ComponentType, 'layout'>, LayoutKindBaseModel<'footer'> {\r\n  data: FooterDataModel;\r\n  metadata: FooterMetadataModel;\r\n}\r\n\r\ninterface FlexComponentNodeModel\r\n  extends KindBaseModel<ComponentType, 'layout'>, LayoutKindBaseModel<'flex'> {\r\n  data: FlexDataModel;\r\n  metadata: FlexMetadataModel;\r\n}\r\n\r\ninterface FlexItemComponentNodeModel\r\n  extends KindBaseModel<ComponentType, 'layout'>, LayoutKindBaseModel<'flex-item'> {\r\n  data: FlexItemDataModel;\r\n  metadata: FlexItemMetadataModel;\r\n}\r\n\r\ninterface ContactComponentNodeModel\r\n  extends KindBaseModel<ComponentType, 'layout'>, LayoutKindBaseModel<'contact'> {\r\n  data: ContactDataModel;\r\n  metadata: ContactMetadataModel;\r\n}\r\n\r\ninterface CopyrightComponentNodeModel\r\n  extends KindBaseModel<ComponentType, 'layout'>, LayoutKindBaseModel<'copyright'> {\r\n  data: CopyrightDataModel;\r\n  metadata: CopyrightMetadataModel;\r\n}\r\n\r\ninterface TextComponentNodeModel\r\n  extends KindBaseModel<ComponentType, 'control'>, ControlKindBaseModel<'text'> {\r\n  data: TextControlDataModel;\r\n  metadata: TextControlMetadataModel;\r\n}\r\n\r\nexport type ComponentNodeModel =\r\n  | RootComponentNodeModel\r\n  | MainComponentNodeModel\r\n  | FooterComponentNodeModel\r\n  | FlexComponentNodeModel\r\n  | FlexItemComponentNodeModel\r\n  | ContactComponentNodeModel\r\n  | CopyrightComponentNodeModel\r\n  | TextComponentNodeModel;\r\n",
+            "properties": [
+                {
+                    "name": "data",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "FooterDataModel",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 36
+                },
+                {
+                    "name": "metadata",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "FooterMetadataModel",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 37
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 172,
+            "methods": [],
+            "extends": [
+                "KindBaseModel",
+                "LayoutKindBaseModel"
+            ]
+        },
+        {
+            "name": "FooterDataModel",
+            "id": "interface-FooterDataModel-c87be9083cd26febbd9794e0929a45c0645fade6564babe7bf4a14bae3adcfd557b4da387d4004f43db0ac06e6a42821dc132f6fbef506f20713d4b7e6505c02",
+            "file": "src/component/model/data/layout/footer-data.model.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "import { BaseModel } from '../../base/base.model';\r\nimport { DataBaseModel } from '../../base/data-base.model';\r\n\r\nexport interface FooterDataModel extends BaseModel<DataBaseModel, {}> {}\r\n",
+            "properties": [],
+            "indexSignatures": [],
+            "methods": [],
+            "extends": [
+                "BaseModel"
+            ]
+        },
+        {
+            "name": "FooterMetadataModel",
+            "id": "interface-FooterMetadataModel-f8bbb6becbcfdcd4e747e015e136ee895f4a33929187303ce498783f6a8434e61147a7c33aafc8fdee41dedac2fde64f19072f2d203687caaabdb1b327d588d9",
+            "file": "src/component/model/metadata/layout/footer-metadata.model.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "import { BaseModel } from '../../base/base.model';\r\nimport { MetadataBaseModel } from '../../base/metadata-base.model';\r\n\r\nexport interface FooterMetadataModel extends BaseModel<MetadataBaseModel, {}> {}\r\n",
+            "properties": [],
+            "indexSignatures": [],
+            "methods": [],
+            "extends": [
+                "BaseModel"
+            ]
+        },
+        {
             "name": "GroupModel",
             "id": "interface-GroupModel-5eb3c0ea5f59e1fd095e5d735da8ae9bfbd3e415b737e84580634a47e8f0b19e0b31605523c1085c356143d6c5bd979ba40364aaa9c9be7341efb00cb0c119e4",
             "file": "src/app/data/group/group-data.model.ts",
@@ -504,6 +750,151 @@
             "extends": []
         },
         {
+            "name": "KindBaseModel",
+            "id": "interface-KindBaseModel-5d388cd864e8be6d78ba4e015d7a519687adf93c8963dbd6b308bc97fbf5abd4cf86fec43aa1bec7631a9d7ae43e4c5dd39c272837bca692e94ecb4b5c7a081c",
+            "file": "src/generator/model/base/kind-base.model.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "export interface KindBaseModel<TType, TKind extends TType> {\r\n  kind: TKind;\r\n}\r\n",
+            "properties": [
+                {
+                    "name": "kind",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "TKind",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 2
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 172,
+            "methods": [],
+            "extends": []
+        },
+        {
+            "name": "LayoutDecoratorModel",
+            "id": "interface-LayoutDecoratorModel-e243ad18223902001ec83e98feb3d4b3aa8ad2180820f67052889aec5a8b2dcb3b3943d744b3f147502bd7d5c79165bfd496a17f63098cdbee875792a21f0b70",
+            "file": "src/generator/model/decorator/decorator.model.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "import { ComponentType } from '../../../style/type/component.type';\r\nimport { ControlType } from '../../../style/type/control.type';\r\nimport { LayoutType } from '../../../style/type/layout.type';\r\nimport { KindBaseModel } from '../base/kind-base.model';\r\n\r\ninterface ControlDecoratorModel extends KindBaseModel<ComponentType, 'control'> {\r\n  control: ControlType;\r\n}\r\n\r\ninterface LayoutDecoratorModel extends KindBaseModel<ComponentType, 'layout'> {\r\n  layout: LayoutType;\r\n}\r\n\r\nexport type DecoratorModel = ControlDecoratorModel | LayoutDecoratorModel;\r\n",
+            "properties": [
+                {
+                    "name": "layout",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "LayoutType",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 11
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 172,
+            "methods": [],
+            "extends": [
+                "KindBaseModel"
+            ]
+        },
+        {
+            "name": "LayoutKindBaseModel",
+            "id": "interface-LayoutKindBaseModel-22a4fe69fa7a260bf22dcaa3afbc726ffe45019a850df9598b12139c07fa9625669c7832957015d189dfd417ccdb534c4c6c7698bcf8e61ef2a636e86f595b07",
+            "file": "src/generator/model/base/layout-kind-base.model.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "import { LayoutType } from '../../../style/type/layout.type';\r\n\r\nexport interface LayoutKindBaseModel<TType extends LayoutType> {\r\n  layout: TType;\r\n}\r\n",
+            "properties": [
+                {
+                    "name": "layout",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "TType",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 4
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 172,
+            "methods": [],
+            "extends": []
+        },
+        {
+            "name": "MainComponentNodeModel",
+            "id": "interface-MainComponentNodeModel-2fbae9fd7467309ecf03c369ce23f79bdcee3ce7dea954f724c7957408c62702346965348ebd38d701995b2837fb7d0c67e1a3eae076e9c545251dee4221d0dc",
+            "file": "src/generator/model/node/component-node.model.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "import { ContactDataModel } from '../../../component/model/data/contact-data.model';\r\nimport { TextControlDataModel } from '../../../component/model/data/control/text-control-data.model';\r\nimport { CopyrightDataModel } from '../../../component/model/data/copyright-data.model';\r\nimport { FlexDataModel } from '../../../component/model/data/layout/flex-data.model';\r\nimport { FlexItemDataModel } from '../../../component/model/data/layout/flex-item-data.model';\r\nimport { FooterDataModel } from '../../../component/model/data/layout/footer-data.model';\r\nimport { MainDataModel } from '../../../component/model/data/layout/main-data.model';\r\nimport { RootLayoutDataModel } from '../../../component/model/data/layout/root-layout-data.model';\r\nimport { ContactMetadataModel } from '../../../component/model/metadata/contact-metadata.model';\r\nimport { TextControlMetadataModel } from '../../../component/model/metadata/control/text-control-metadata.model';\r\nimport { CopyrightMetadataModel } from '../../../component/model/metadata/copyright-metadata.model';\r\nimport { FlexItemMetadataModel } from '../../../component/model/metadata/layout/flex-item-metadata.model';\r\nimport { FlexMetadataModel } from '../../../component/model/metadata/layout/flex-metadata.model';\r\nimport { FooterMetadataModel } from '../../../component/model/metadata/layout/footer-metadata.model';\r\nimport { MainMetadataModel } from '../../../component/model/metadata/layout/main-metadata.model';\r\nimport { RootLayoutMetadataModel } from '../../../component/model/metadata/layout/root-layout-metadata.model';\r\nimport { ComponentType } from '../../../style/type/component.type';\r\nimport { ControlKindBaseModel } from '../base/control-kind-base.model';\r\nimport { KindBaseModel } from '../base/kind-base.model';\r\nimport { LayoutKindBaseModel } from '../base/layout-kind-base.model';\r\n\r\ninterface RootComponentNodeModel\r\n  extends KindBaseModel<ComponentType, 'layout'>, LayoutKindBaseModel<'root'> {\r\n  data: RootLayoutDataModel;\r\n  metadata: RootLayoutMetadataModel;\r\n}\r\n\r\ninterface MainComponentNodeModel\r\n  extends KindBaseModel<ComponentType, 'layout'>, LayoutKindBaseModel<'main'> {\r\n  data: MainDataModel;\r\n  metadata: MainMetadataModel;\r\n}\r\n\r\ninterface FooterComponentNodeModel\r\n  extends KindBaseModel<ComponentType, 'layout'>, LayoutKindBaseModel<'footer'> {\r\n  data: FooterDataModel;\r\n  metadata: FooterMetadataModel;\r\n}\r\n\r\ninterface FlexComponentNodeModel\r\n  extends KindBaseModel<ComponentType, 'layout'>, LayoutKindBaseModel<'flex'> {\r\n  data: FlexDataModel;\r\n  metadata: FlexMetadataModel;\r\n}\r\n\r\ninterface FlexItemComponentNodeModel\r\n  extends KindBaseModel<ComponentType, 'layout'>, LayoutKindBaseModel<'flex-item'> {\r\n  data: FlexItemDataModel;\r\n  metadata: FlexItemMetadataModel;\r\n}\r\n\r\ninterface ContactComponentNodeModel\r\n  extends KindBaseModel<ComponentType, 'layout'>, LayoutKindBaseModel<'contact'> {\r\n  data: ContactDataModel;\r\n  metadata: ContactMetadataModel;\r\n}\r\n\r\ninterface CopyrightComponentNodeModel\r\n  extends KindBaseModel<ComponentType, 'layout'>, LayoutKindBaseModel<'copyright'> {\r\n  data: CopyrightDataModel;\r\n  metadata: CopyrightMetadataModel;\r\n}\r\n\r\ninterface TextComponentNodeModel\r\n  extends KindBaseModel<ComponentType, 'control'>, ControlKindBaseModel<'text'> {\r\n  data: TextControlDataModel;\r\n  metadata: TextControlMetadataModel;\r\n}\r\n\r\nexport type ComponentNodeModel =\r\n  | RootComponentNodeModel\r\n  | MainComponentNodeModel\r\n  | FooterComponentNodeModel\r\n  | FlexComponentNodeModel\r\n  | FlexItemComponentNodeModel\r\n  | ContactComponentNodeModel\r\n  | CopyrightComponentNodeModel\r\n  | TextComponentNodeModel;\r\n",
+            "properties": [
+                {
+                    "name": "data",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "MainDataModel",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 30
+                },
+                {
+                    "name": "metadata",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "MainMetadataModel",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 31
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 172,
+            "methods": [],
+            "extends": [
+                "KindBaseModel",
+                "LayoutKindBaseModel"
+            ]
+        },
+        {
+            "name": "MainDataModel",
+            "id": "interface-MainDataModel-fc7562f9b304178fe7c9f5692787f3745636d547957c0e130fd81081f07b87d039426dc449008ea0cc7da362aff0a4df4698c15d081f638e6196a30156d88d5d",
+            "file": "src/component/model/data/layout/main-data.model.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "import { BaseModel } from '../../base/base.model';\r\nimport { DataBaseModel } from '../../base/data-base.model';\r\n\r\nexport interface MainDataModel extends BaseModel<DataBaseModel, {}> {}\r\n",
+            "properties": [],
+            "indexSignatures": [],
+            "methods": [],
+            "extends": [
+                "BaseModel"
+            ]
+        },
+        {
+            "name": "MainMetadataModel",
+            "id": "interface-MainMetadataModel-995c5d3498d2eaf7f54d180345d8790803c827266c25c1badbf14322395497c61aab668da7dbe1c9f89c686eeb6d704b09348717332e2373b787d22289021490",
+            "file": "src/component/model/metadata/layout/main-metadata.model.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "import { BaseModel } from '../../base/base.model';\r\nimport { MetadataBaseModel } from '../../base/metadata-base.model';\r\n\r\nexport interface MainMetadataModel extends BaseModel<MetadataBaseModel, {}> {}\r\n",
+            "properties": [],
+            "indexSignatures": [],
+            "methods": [],
+            "extends": [
+                "BaseModel"
+            ]
+        },
+        {
             "name": "MetadataBaseModel",
             "id": "interface-MetadataBaseModel-f533a8ddf74e06fae063d6cc1b9b75f70e83ac3480f764630a5bb35a6365ddd61ba66a7261d46ad62be236ea22f9f150c59cbcc4743486bf16fbec412dcf33c8",
             "file": "src/component/model/base/metadata-base.model.ts",
@@ -555,12 +946,12 @@
         },
         {
             "name": "NodeModel",
-            "id": "interface-NodeModel-44bd950a4d2e2c792eb4a510ab9da2e3536d352a07e2a664a67d215a6881acf9d36742347ddc422ad11d9ca719ce0ecddee08b97c613e39d90a324f84a4176a1",
+            "id": "interface-NodeModel-b80001134b87eee4746e46a581246016b74caa5ff822e4bb3d2f0da51f478cfb020da58b76f3a0bcdd25682a3a99ca79c3e6748eb99f39edb24f4c334539d486",
             "file": "src/generator/model/node/node.model.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "import { LayoutNodeModel } from './layout-node.model';\r\n\r\nexport interface NodeModel {\r\n  layout: LayoutNodeModel;\r\n  children?: NodeModel[];\r\n}\r\n",
+            "sourceCode": "import { ComponentNodeModel } from './component-node.model';\r\n\r\nexport interface NodeModel {\r\n  component: ComponentNodeModel;\r\n  children?: NodeModel[];\r\n}\r\n",
             "properties": [
                 {
                     "name": "children",
@@ -573,10 +964,10 @@
                     "line": 5
                 },
                 {
-                    "name": "layout",
+                    "name": "component",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "LayoutNodeModel",
+                    "type": "ComponentNodeModel",
                     "indexKey": "",
                     "optional": false,
                     "description": "",
@@ -727,6 +1118,74 @@
             "kind": 172,
             "methods": [],
             "extends": []
+        },
+        {
+            "name": "RootComponentNodeModel",
+            "id": "interface-RootComponentNodeModel-2fbae9fd7467309ecf03c369ce23f79bdcee3ce7dea954f724c7957408c62702346965348ebd38d701995b2837fb7d0c67e1a3eae076e9c545251dee4221d0dc",
+            "file": "src/generator/model/node/component-node.model.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "import { ContactDataModel } from '../../../component/model/data/contact-data.model';\r\nimport { TextControlDataModel } from '../../../component/model/data/control/text-control-data.model';\r\nimport { CopyrightDataModel } from '../../../component/model/data/copyright-data.model';\r\nimport { FlexDataModel } from '../../../component/model/data/layout/flex-data.model';\r\nimport { FlexItemDataModel } from '../../../component/model/data/layout/flex-item-data.model';\r\nimport { FooterDataModel } from '../../../component/model/data/layout/footer-data.model';\r\nimport { MainDataModel } from '../../../component/model/data/layout/main-data.model';\r\nimport { RootLayoutDataModel } from '../../../component/model/data/layout/root-layout-data.model';\r\nimport { ContactMetadataModel } from '../../../component/model/metadata/contact-metadata.model';\r\nimport { TextControlMetadataModel } from '../../../component/model/metadata/control/text-control-metadata.model';\r\nimport { CopyrightMetadataModel } from '../../../component/model/metadata/copyright-metadata.model';\r\nimport { FlexItemMetadataModel } from '../../../component/model/metadata/layout/flex-item-metadata.model';\r\nimport { FlexMetadataModel } from '../../../component/model/metadata/layout/flex-metadata.model';\r\nimport { FooterMetadataModel } from '../../../component/model/metadata/layout/footer-metadata.model';\r\nimport { MainMetadataModel } from '../../../component/model/metadata/layout/main-metadata.model';\r\nimport { RootLayoutMetadataModel } from '../../../component/model/metadata/layout/root-layout-metadata.model';\r\nimport { ComponentType } from '../../../style/type/component.type';\r\nimport { ControlKindBaseModel } from '../base/control-kind-base.model';\r\nimport { KindBaseModel } from '../base/kind-base.model';\r\nimport { LayoutKindBaseModel } from '../base/layout-kind-base.model';\r\n\r\ninterface RootComponentNodeModel\r\n  extends KindBaseModel<ComponentType, 'layout'>, LayoutKindBaseModel<'root'> {\r\n  data: RootLayoutDataModel;\r\n  metadata: RootLayoutMetadataModel;\r\n}\r\n\r\ninterface MainComponentNodeModel\r\n  extends KindBaseModel<ComponentType, 'layout'>, LayoutKindBaseModel<'main'> {\r\n  data: MainDataModel;\r\n  metadata: MainMetadataModel;\r\n}\r\n\r\ninterface FooterComponentNodeModel\r\n  extends KindBaseModel<ComponentType, 'layout'>, LayoutKindBaseModel<'footer'> {\r\n  data: FooterDataModel;\r\n  metadata: FooterMetadataModel;\r\n}\r\n\r\ninterface FlexComponentNodeModel\r\n  extends KindBaseModel<ComponentType, 'layout'>, LayoutKindBaseModel<'flex'> {\r\n  data: FlexDataModel;\r\n  metadata: FlexMetadataModel;\r\n}\r\n\r\ninterface FlexItemComponentNodeModel\r\n  extends KindBaseModel<ComponentType, 'layout'>, LayoutKindBaseModel<'flex-item'> {\r\n  data: FlexItemDataModel;\r\n  metadata: FlexItemMetadataModel;\r\n}\r\n\r\ninterface ContactComponentNodeModel\r\n  extends KindBaseModel<ComponentType, 'layout'>, LayoutKindBaseModel<'contact'> {\r\n  data: ContactDataModel;\r\n  metadata: ContactMetadataModel;\r\n}\r\n\r\ninterface CopyrightComponentNodeModel\r\n  extends KindBaseModel<ComponentType, 'layout'>, LayoutKindBaseModel<'copyright'> {\r\n  data: CopyrightDataModel;\r\n  metadata: CopyrightMetadataModel;\r\n}\r\n\r\ninterface TextComponentNodeModel\r\n  extends KindBaseModel<ComponentType, 'control'>, ControlKindBaseModel<'text'> {\r\n  data: TextControlDataModel;\r\n  metadata: TextControlMetadataModel;\r\n}\r\n\r\nexport type ComponentNodeModel =\r\n  | RootComponentNodeModel\r\n  | MainComponentNodeModel\r\n  | FooterComponentNodeModel\r\n  | FlexComponentNodeModel\r\n  | FlexItemComponentNodeModel\r\n  | ContactComponentNodeModel\r\n  | CopyrightComponentNodeModel\r\n  | TextComponentNodeModel;\r\n",
+            "properties": [
+                {
+                    "name": "data",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "RootLayoutDataModel",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 24
+                },
+                {
+                    "name": "metadata",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "RootLayoutMetadataModel",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 25
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 172,
+            "methods": [],
+            "extends": [
+                "KindBaseModel",
+                "LayoutKindBaseModel"
+            ]
+        },
+        {
+            "name": "RootLayoutDataModel",
+            "id": "interface-RootLayoutDataModel-eb37c4c06d1e3d2e3e3989a49a2d5bbc2622371c15c52214b186689a27c01504c970edc79579be59033617ff0891185d066aba9c40b9febc79ec6984b0f40361",
+            "file": "src/component/model/data/layout/root-layout-data.model.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "import { BaseModel } from '../../base/base.model';\r\nimport { DataBaseModel } from '../../base/data-base.model';\r\n\r\nexport interface RootLayoutDataModel extends BaseModel<DataBaseModel> {}\r\n",
+            "properties": [],
+            "indexSignatures": [],
+            "methods": [],
+            "extends": [
+                "BaseModel"
+            ]
+        },
+        {
+            "name": "RootLayoutMetadataModel",
+            "id": "interface-RootLayoutMetadataModel-d74c789027806ab3a79278e0131a6dfda6819d48f6a2589f829f399fab48ba4b41db36f38c95d8792d74422ef5c26f25cc2c7a936cc08656cb3fd724aa0b217a",
+            "file": "src/component/model/metadata/layout/root-layout-metadata.model.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "import { BaseModel } from '../../base/base.model';\r\nimport { MetadataBaseModel } from '../../base/metadata-base.model';\r\n\r\nexport interface RootLayoutMetadataModel extends BaseModel<MetadataBaseModel> {}\r\n",
+            "properties": [],
+            "indexSignatures": [],
+            "methods": [],
+            "extends": [
+                "BaseModel"
+            ]
         },
         {
             "name": "RoutableDisabledModel",
@@ -1114,6 +1573,44 @@
             "extends": []
         },
         {
+            "name": "TextComponentNodeModel",
+            "id": "interface-TextComponentNodeModel-2fbae9fd7467309ecf03c369ce23f79bdcee3ce7dea954f724c7957408c62702346965348ebd38d701995b2837fb7d0c67e1a3eae076e9c545251dee4221d0dc",
+            "file": "src/generator/model/node/component-node.model.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "import { ContactDataModel } from '../../../component/model/data/contact-data.model';\r\nimport { TextControlDataModel } from '../../../component/model/data/control/text-control-data.model';\r\nimport { CopyrightDataModel } from '../../../component/model/data/copyright-data.model';\r\nimport { FlexDataModel } from '../../../component/model/data/layout/flex-data.model';\r\nimport { FlexItemDataModel } from '../../../component/model/data/layout/flex-item-data.model';\r\nimport { FooterDataModel } from '../../../component/model/data/layout/footer-data.model';\r\nimport { MainDataModel } from '../../../component/model/data/layout/main-data.model';\r\nimport { RootLayoutDataModel } from '../../../component/model/data/layout/root-layout-data.model';\r\nimport { ContactMetadataModel } from '../../../component/model/metadata/contact-metadata.model';\r\nimport { TextControlMetadataModel } from '../../../component/model/metadata/control/text-control-metadata.model';\r\nimport { CopyrightMetadataModel } from '../../../component/model/metadata/copyright-metadata.model';\r\nimport { FlexItemMetadataModel } from '../../../component/model/metadata/layout/flex-item-metadata.model';\r\nimport { FlexMetadataModel } from '../../../component/model/metadata/layout/flex-metadata.model';\r\nimport { FooterMetadataModel } from '../../../component/model/metadata/layout/footer-metadata.model';\r\nimport { MainMetadataModel } from '../../../component/model/metadata/layout/main-metadata.model';\r\nimport { RootLayoutMetadataModel } from '../../../component/model/metadata/layout/root-layout-metadata.model';\r\nimport { ComponentType } from '../../../style/type/component.type';\r\nimport { ControlKindBaseModel } from '../base/control-kind-base.model';\r\nimport { KindBaseModel } from '../base/kind-base.model';\r\nimport { LayoutKindBaseModel } from '../base/layout-kind-base.model';\r\n\r\ninterface RootComponentNodeModel\r\n  extends KindBaseModel<ComponentType, 'layout'>, LayoutKindBaseModel<'root'> {\r\n  data: RootLayoutDataModel;\r\n  metadata: RootLayoutMetadataModel;\r\n}\r\n\r\ninterface MainComponentNodeModel\r\n  extends KindBaseModel<ComponentType, 'layout'>, LayoutKindBaseModel<'main'> {\r\n  data: MainDataModel;\r\n  metadata: MainMetadataModel;\r\n}\r\n\r\ninterface FooterComponentNodeModel\r\n  extends KindBaseModel<ComponentType, 'layout'>, LayoutKindBaseModel<'footer'> {\r\n  data: FooterDataModel;\r\n  metadata: FooterMetadataModel;\r\n}\r\n\r\ninterface FlexComponentNodeModel\r\n  extends KindBaseModel<ComponentType, 'layout'>, LayoutKindBaseModel<'flex'> {\r\n  data: FlexDataModel;\r\n  metadata: FlexMetadataModel;\r\n}\r\n\r\ninterface FlexItemComponentNodeModel\r\n  extends KindBaseModel<ComponentType, 'layout'>, LayoutKindBaseModel<'flex-item'> {\r\n  data: FlexItemDataModel;\r\n  metadata: FlexItemMetadataModel;\r\n}\r\n\r\ninterface ContactComponentNodeModel\r\n  extends KindBaseModel<ComponentType, 'layout'>, LayoutKindBaseModel<'contact'> {\r\n  data: ContactDataModel;\r\n  metadata: ContactMetadataModel;\r\n}\r\n\r\ninterface CopyrightComponentNodeModel\r\n  extends KindBaseModel<ComponentType, 'layout'>, LayoutKindBaseModel<'copyright'> {\r\n  data: CopyrightDataModel;\r\n  metadata: CopyrightMetadataModel;\r\n}\r\n\r\ninterface TextComponentNodeModel\r\n  extends KindBaseModel<ComponentType, 'control'>, ControlKindBaseModel<'text'> {\r\n  data: TextControlDataModel;\r\n  metadata: TextControlMetadataModel;\r\n}\r\n\r\nexport type ComponentNodeModel =\r\n  | RootComponentNodeModel\r\n  | MainComponentNodeModel\r\n  | FooterComponentNodeModel\r\n  | FlexComponentNodeModel\r\n  | FlexItemComponentNodeModel\r\n  | ContactComponentNodeModel\r\n  | CopyrightComponentNodeModel\r\n  | TextComponentNodeModel;\r\n",
+            "properties": [
+                {
+                    "name": "data",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "TextControlDataModel",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 66
+                },
+                {
+                    "name": "metadata",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "TextControlMetadataModel",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 67
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 172,
+            "methods": [],
+            "extends": [
+                "KindBaseModel",
+                "ControlKindBaseModel"
+            ]
+        },
+        {
             "name": "TextControlDataModel",
             "id": "interface-TextControlDataModel-166e9550f25f4a4cbe44685d5a63dd38bd1a9cdc879c60729a5c560916a92aa33756a362351b09be05742a0ba02b43befa7678cf95766e77f70263441fde532d",
             "file": "src/component/model/data/control/text-control-data.model.ts",
@@ -1145,27 +1642,27 @@
         },
         {
             "name": "YearCurrentModel",
-            "id": "interface-YearCurrentModel-de7364507a20b8267ad95e97dd55886d55eacbf4b8fc037d0094fd398ebe0cee68c82ad9b7faa812657313afc62c18145658431677786e58a42442f66a946190",
+            "id": "interface-YearCurrentModel-61728be15f5fabe9888f9f35e99e96537de5f69d8e013ea1b37372b3dc5fdab873268ac8e256448462608a9486da5c57a5daa18a94011809879d8d90c8576acd",
             "file": "src/component/model/data/copyright-data.model.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "import { BaseKindModel } from '../../../generator/model/base/base-kind.model';\r\nimport { BaseModel } from '../base/base.model';\r\nimport { DataBaseModel } from '../base/data-base.model';\r\n\r\ntype YearKindType = 'current' | 'range';\r\n\r\ninterface YearCurrentModel extends BaseKindModel<YearKindType, 'current'> {}\r\n\r\ninterface YearRangeModel extends BaseKindModel<YearKindType, 'range'> {\r\n  from: number;\r\n  to: number | 'current';\r\n}\r\n\r\ntype YearType = YearCurrentModel | YearRangeModel;\r\n\r\nexport interface CopyrightDataModel extends BaseModel<\r\n  DataBaseModel,\r\n  {\r\n    symbol: string;\r\n    year: YearType;\r\n    ownerName: string;\r\n    rightsStatements: string;\r\n  }\r\n> {}\r\n",
+            "sourceCode": "import { KindBaseModel } from '../../../generator/model/base/kind-base.model';\r\nimport { BaseModel } from '../base/base.model';\r\nimport { DataBaseModel } from '../base/data-base.model';\r\n\r\ntype YearKindType = 'current' | 'range';\r\n\r\ninterface YearCurrentModel extends KindBaseModel<YearKindType, 'current'> {}\r\n\r\ninterface YearRangeModel extends KindBaseModel<YearKindType, 'range'> {\r\n  from: number;\r\n  to: number | 'current';\r\n}\r\n\r\ntype YearType = YearCurrentModel | YearRangeModel;\r\n\r\nexport interface CopyrightDataModel extends BaseModel<\r\n  DataBaseModel,\r\n  {\r\n    symbol: string;\r\n    year: YearType;\r\n    ownerName: string;\r\n    rightsStatements: string;\r\n  }\r\n> {}\r\n",
             "properties": [],
             "indexSignatures": [],
             "methods": [],
             "extends": [
-                "BaseKindModel"
+                "KindBaseModel"
             ]
         },
         {
             "name": "YearRangeModel",
-            "id": "interface-YearRangeModel-de7364507a20b8267ad95e97dd55886d55eacbf4b8fc037d0094fd398ebe0cee68c82ad9b7faa812657313afc62c18145658431677786e58a42442f66a946190",
+            "id": "interface-YearRangeModel-61728be15f5fabe9888f9f35e99e96537de5f69d8e013ea1b37372b3dc5fdab873268ac8e256448462608a9486da5c57a5daa18a94011809879d8d90c8576acd",
             "file": "src/component/model/data/copyright-data.model.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "import { BaseKindModel } from '../../../generator/model/base/base-kind.model';\r\nimport { BaseModel } from '../base/base.model';\r\nimport { DataBaseModel } from '../base/data-base.model';\r\n\r\ntype YearKindType = 'current' | 'range';\r\n\r\ninterface YearCurrentModel extends BaseKindModel<YearKindType, 'current'> {}\r\n\r\ninterface YearRangeModel extends BaseKindModel<YearKindType, 'range'> {\r\n  from: number;\r\n  to: number | 'current';\r\n}\r\n\r\ntype YearType = YearCurrentModel | YearRangeModel;\r\n\r\nexport interface CopyrightDataModel extends BaseModel<\r\n  DataBaseModel,\r\n  {\r\n    symbol: string;\r\n    year: YearType;\r\n    ownerName: string;\r\n    rightsStatements: string;\r\n  }\r\n> {}\r\n",
+            "sourceCode": "import { KindBaseModel } from '../../../generator/model/base/kind-base.model';\r\nimport { BaseModel } from '../base/base.model';\r\nimport { DataBaseModel } from '../base/data-base.model';\r\n\r\ntype YearKindType = 'current' | 'range';\r\n\r\ninterface YearCurrentModel extends KindBaseModel<YearKindType, 'current'> {}\r\n\r\ninterface YearRangeModel extends KindBaseModel<YearKindType, 'range'> {\r\n  from: number;\r\n  to: number | 'current';\r\n}\r\n\r\ntype YearType = YearCurrentModel | YearRangeModel;\r\n\r\nexport interface CopyrightDataModel extends BaseModel<\r\n  DataBaseModel,\r\n  {\r\n    symbol: string;\r\n    year: YearType;\r\n    ownerName: string;\r\n    rightsStatements: string;\r\n  }\r\n> {}\r\n",
             "properties": [
                 {
                     "name": "from",
@@ -1192,7 +1689,7 @@
             "kind": 172,
             "methods": [],
             "extends": [
-                "BaseKindModel"
+                "KindBaseModel"
             ]
         }
     ],
@@ -1709,12 +2206,12 @@
     "directives": [
         {
             "name": "ComponentBase",
-            "id": "directive-ComponentBase-4e2c78b79741c11f6eb0f8c5beb61d1bc9111e4365479cde91c5f6d8c57b25c8912ca63beb2b264f5cd4e997bbc522ebad219db509f4413feeac749a604cb27a",
+            "id": "directive-ComponentBase-c04f6db03b7b693117a523935ee6985b9a88090f33e50cb3647b6958f0a51501c18a18e52f32bd42bac86404d50f1e0c54a919f08f6716cfb1ba53129cc9147c",
             "file": "src/component/base/component.base.ts",
             "type": "directive",
             "description": "",
             "rawdescription": "\n",
-            "sourceCode": "import { Directive, input } from '@angular/core';\r\nimport { BaseModel } from '../model/base/base.model';\r\nimport { DataBaseModel } from '../model/base/data-base.model';\r\nimport { MetadataBaseModel } from '../model/base/metadata-base.model';\r\nimport { BemUtility } from '../../utility/bem.utility';\r\n\r\n@Directive()\r\nexport class ComponentBase<\r\n  TType extends string,\r\n  TData extends BaseModel<DataBaseModel, unknown>,\r\n  TMetadata extends BaseModel<MetadataBaseModel, unknown>,\r\n> {\r\n  data = input.required<TData>();\r\n\r\n  metadata = input.required<TMetadata>();\r\n\r\n  constructor(protected type: TType) {\r\n    this.type = type;\r\n  }\r\n}\r\n",
+            "sourceCode": "import { Directive, input } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { BaseModel } from '../model/base/base.model';\r\nimport { DataBaseModel } from '../model/base/data-base.model';\r\nimport { MetadataBaseModel } from '../model/base/metadata-base.model';\r\n\r\n@Directive()\r\nexport class ComponentBase<\r\n  TType extends string,\r\n  TData extends BaseModel<DataBaseModel, unknown>,\r\n  TMetadata extends BaseModel<MetadataBaseModel, unknown>,\r\n> {\r\n  data = input.required<TData>();\r\n\r\n  metadata = input.required<TMetadata>();\r\n\r\n  constructor(protected readonly type: TType) {\r\n    this.type = type;\r\n  }\r\n\r\n  protected static buildImports(): any[] {\r\n    return [CommonModule];\r\n  }\r\n\r\n  protected buildMainClassList() {\r\n    return [];\r\n  }\r\n}\r\n",
             "providers": [],
             "hostDirectives": [],
             "standalone": false,
@@ -1748,7 +2245,35 @@
             "hostBindings": [],
             "hostListeners": [],
             "propertiesClass": [],
-            "methodsClass": [],
+            "methodsClass": [
+                {
+                    "name": "buildImports",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "any[]",
+                    "typeParameters": [],
+                    "line": 21,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        124,
+                        126
+                    ]
+                },
+                {
+                    "name": "buildMainClassList",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "{}",
+                    "typeParameters": [],
+                    "line": 25,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        124
+                    ]
+                }
+            ],
             "extends": [],
             "constructorObj": {
                 "name": "constructor",
@@ -1783,12 +2308,12 @@
         },
         {
             "name": "ControlBase",
-            "id": "directive-ControlBase-eb859c2bf33f794689db3b6a162b8920bea3ff754a7a0ea87a7944fff18a79f647ef62e073b368beede700cfb7712351a769aaed1150f69d4359e3a3be15dcc9",
+            "id": "directive-ControlBase-260162a1f9ae3db7b6ba86b22352317a111f27be4bf259c35e7e16b9205e44656ed1fb3cd7173b9ce6e0ef113f8d6c865a2e2acf2fc570832d47c9f0e0083985",
             "file": "src/component/base/control.base.ts",
             "type": "directive",
             "description": "",
             "rawdescription": "\n",
-            "sourceCode": "import { Directive } from '@angular/core';\r\nimport { BaseModel } from '../model/base/base.model';\r\nimport { DataBaseModel } from '../model/base/data-base.model';\r\nimport { MetadataBaseModel } from '../model/base/metadata-base.model';\r\nimport { ComponentBase } from './component.base';\r\nimport { ControlType } from '../../style/type/control.type';\r\n\r\n@Directive()\r\nexport class ControlBase<\r\n  TDate extends BaseModel<DataBaseModel, unknown>,\r\n  TMetadata extends BaseModel<MetadataBaseModel, unknown>,\r\n> extends ComponentBase<ControlType, TDate, TMetadata> {\r\n  constructor(protected override type: ControlType) {\r\n    super(type);\r\n  }\r\n}\r\n\r\n// TODO: I am here\r\n",
+            "sourceCode": "import { Directive } from '@angular/core';\r\nimport { BaseModel } from '../model/base/base.model';\r\nimport { DataBaseModel } from '../model/base/data-base.model';\r\nimport { MetadataBaseModel } from '../model/base/metadata-base.model';\r\nimport { ComponentBase } from './component.base';\r\nimport { ControlType } from '../../style/type/control.type';\r\n\r\n@Directive()\r\nexport class ControlBase<\r\n  TDate extends BaseModel<DataBaseModel, unknown>,\r\n  TMetadata extends BaseModel<MetadataBaseModel, unknown>,\r\n> extends ComponentBase<ControlType, TDate, TMetadata> {\r\n  constructor(protected override type: ControlType) {\r\n    super(type);\r\n  }\r\n}\r\n",
             "providers": [],
             "hostDirectives": [],
             "standalone": false,
@@ -1828,7 +2353,41 @@
             "hostBindings": [],
             "hostListeners": [],
             "propertiesClass": [],
-            "methodsClass": [],
+            "methodsClass": [
+                {
+                    "name": "buildImports",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "any[]",
+                    "typeParameters": [],
+                    "line": 21,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        124,
+                        126
+                    ],
+                    "inheritance": {
+                        "file": "ComponentBase"
+                    }
+                },
+                {
+                    "name": "buildMainClassList",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "{}",
+                    "typeParameters": [],
+                    "line": 25,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        124
+                    ],
+                    "inheritance": {
+                        "file": "ComponentBase"
+                    }
+                }
+            ],
             "extends": [
                 "ComponentBase"
             ],
@@ -1865,16 +2424,28 @@
         },
         {
             "name": "LayoutBase",
-            "id": "directive-LayoutBase-ed9f88d3366ce3d31278565fce674436159267ba09621b85b9c30021943a64bf9ee6c41f336301fba6c177a7d44243c27e46bf7353ed87d87126025b8ba5b954",
+            "id": "directive-LayoutBase-86e498963384c054f04c5d149162a735a661a873f01520525b319afacd6d64229c6bc8260329dd57ad77b95298de1fd119d4332f10f446ef9934c8c44ade9e9f",
             "file": "src/component/base/layout.base.ts",
             "type": "directive",
             "description": "",
             "rawdescription": "\n",
-            "sourceCode": "import { Directive } from '@angular/core';\r\nimport { BaseModel } from '../model/base/base.model';\r\nimport { DataBaseModel } from '../model/base/data-base.model';\r\nimport { MetadataBaseModel } from '../model/base/metadata-base.model';\r\nimport { ComponentBase } from './component.base';\r\nimport { LayoutType } from '../../style/type/layout.type';\r\n\r\n@Directive()\r\nexport class LayoutBase<\r\n  TDate extends BaseModel<DataBaseModel, unknown>,\r\n  TMetadata extends BaseModel<MetadataBaseModel, unknown>,\r\n> extends ComponentBase<LayoutType, TDate, TMetadata> {\r\n  constructor(protected override type: LayoutType) {\r\n    super(type);\r\n  }\r\n}\r\n",
+            "sourceCode": "import { Directive, input } from '@angular/core';\r\nimport { BaseModel } from '../model/base/base.model';\r\nimport { DataBaseModel } from '../model/base/data-base.model';\r\nimport { MetadataBaseModel } from '../model/base/metadata-base.model';\r\nimport { ComponentBase } from './component.base';\r\nimport { LayoutType } from '../../style/type/layout.type';\r\nimport { Generator } from '../../generator/generator/generator';\r\nimport { NodeModel } from '../../generator/model/node/node.model';\r\n\r\n@Directive()\r\nexport class LayoutBase<\r\n  TDate extends BaseModel<DataBaseModel, unknown>,\r\n  TMetadata extends BaseModel<MetadataBaseModel, unknown>,\r\n> extends ComponentBase<LayoutType, TDate, TMetadata> {\r\n  nodes = input<NodeModel[]>([]);\r\n\r\n  constructor(protected override type: LayoutType) {\r\n    super(type);\r\n  }\r\n\r\n  protected static override buildImports(): any[] {\r\n    return [...ComponentBase.buildImports(), Generator];\r\n  }\r\n}\r\n",
             "providers": [],
             "hostDirectives": [],
             "standalone": false,
             "inputsClass": [
+                {
+                    "name": "nodes",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "NodeModel[]",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 15,
+                    "required": false
+                },
                 {
                     "name": "data",
                     "deprecated": false,
@@ -1910,7 +2481,42 @@
             "hostBindings": [],
             "hostListeners": [],
             "propertiesClass": [],
-            "methodsClass": [],
+            "methodsClass": [
+                {
+                    "name": "buildImports",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "any[]",
+                    "typeParameters": [],
+                    "line": 21,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        124,
+                        126,
+                        164
+                    ],
+                    "inheritance": {
+                        "file": "ComponentBase"
+                    }
+                },
+                {
+                    "name": "buildMainClassList",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "{}",
+                    "typeParameters": [],
+                    "line": 25,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        124
+                    ],
+                    "inheritance": {
+                        "file": "ComponentBase"
+                    }
+                }
+            ],
             "extends": [
                 "ComponentBase"
             ],
@@ -1929,7 +2535,7 @@
                         "deprecationMessage": ""
                     }
                 ],
-                "line": 12,
+                "line": 15,
                 "jsdoctags": [
                     {
                         "name": "type",
@@ -2019,7 +2625,7 @@
         },
         {
             "name": "App",
-            "id": "component-App-08af76a64ef4cc3fd57899114e5e6b7feaf7c76c5308cab41e20ed8f4f8046076a3781f9a3481870e41f482dbd96933269c40e2493667003c664a615e6ac59aa",
+            "id": "component-App-72a69a2750b623d94259b9bc5c6835d36233cdda7fa130cdd5739ba51ace0f67a98e1744c4980b07340d14c2803e4a76538851c7a51d62804db54f17228eef9e",
             "file": "src/app/app.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -2038,7 +2644,7 @@
             "propertiesClass": [
                 {
                     "name": "nodes",
-                    "defaultValue": "[\r\n    {\r\n      layout: {\r\n        kind: 'contact',\r\n        data: {\r\n          base: {},\r\n          extend: {\r\n            firstName: 'Jakub',\r\n            lastName: 'Olejarczyk',\r\n            motto: ['I write code that works today', 'and will not fail tomorrow.'],\r\n            socialMedias: [\r\n              {\r\n                label: 'LinkedIn',\r\n                url: 'https://www.linkedin.com/in/jakub-olejarczyk',\r\n              },\r\n              {\r\n                label: 'GitHub',\r\n                url: 'https://github.com/jakubolejarczyk',\r\n              },\r\n              {\r\n                label: 'LeetCode',\r\n                url: 'https://leetcode.com/u/JakubOlejarczyk',\r\n              },\r\n            ],\r\n            email: 'jakub.olejarczyk@outlook.com',\r\n            phone: '+48 501 007 197',\r\n            country: 'Poland',\r\n            city: 'Kielce',\r\n          },\r\n        },\r\n        metadata: {\r\n          base: {\r\n            palette: 'primary',\r\n          },\r\n          extend: {},\r\n        },\r\n      },\r\n    },\r\n    {\r\n      layout: {\r\n        kind: 'copyright',\r\n        data: {\r\n          base: {},\r\n          extend: {\r\n            symbol: '©',\r\n            year: {\r\n              kind: 'current',\r\n            },\r\n            ownerName: 'Jakub Olejarczyk',\r\n            rightsStatements: 'All rights reserved.',\r\n          },\r\n        },\r\n        metadata: {\r\n          base: {\r\n            palette: 'primary',\r\n          },\r\n          extend: {},\r\n        },\r\n      },\r\n      children: [],\r\n    },\r\n  ]",
+                    "defaultValue": "[\r\n    {\r\n      component: {\r\n        kind: 'layout',\r\n        layout: 'root',\r\n        data: {\r\n          base: {},\r\n          extend: {},\r\n        },\r\n        metadata: {\r\n          base: {\r\n            palette: 'primary',\r\n          },\r\n          extend: {},\r\n        },\r\n      },\r\n      children: [\r\n        {\r\n          component: {\r\n            kind: 'layout',\r\n            layout: 'main',\r\n            data: {\r\n              base: {},\r\n              extend: {},\r\n            },\r\n            metadata: {\r\n              base: {\r\n                palette: 'primary',\r\n              },\r\n              extend: {},\r\n            },\r\n          },\r\n          children: [\r\n            {\r\n              component: {\r\n                kind: 'layout',\r\n                layout: 'flex',\r\n                data: {\r\n                  base: {},\r\n                  extend: {},\r\n                },\r\n                metadata: {\r\n                  base: {\r\n                    palette: 'primary',\r\n                  },\r\n                  extend: {},\r\n                },\r\n              },\r\n              children: [\r\n                {\r\n                  component: {\r\n                    kind: 'layout',\r\n                    layout: 'flex-item',\r\n                    data: {\r\n                      base: {},\r\n                      extend: {},\r\n                    },\r\n                    metadata: {\r\n                      base: {\r\n                        palette: 'primary',\r\n                      },\r\n                      extend: {},\r\n                    },\r\n                  },\r\n                  children: [\r\n                    {\r\n                      component: {\r\n                        kind: 'control',\r\n                        control: 'text',\r\n                        data: {\r\n                          base: {},\r\n                          extend: {\r\n                            value:\r\n                              'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent et magna sit amet justo ullamcorper ultricies. Vestibulum varius aliquam nibh vitae bibendum. Vestibulum fringilla eros dui, quis tempus diam tempus non. Aenean laoreet sem eu molestie fringilla. Suspendisse malesuada id orci quis consequat. Aenean maximus orci condimentum, gravida est eleifend, faucibus velit. Nam dignissim ipsum finibus, dapibus turpis et, elementum ipsum. Suspendisse tempus molestie est hendrerit lacinia. Donec rutrum dignissim magna, ut viverra ipsum feugiat ultrices. Nulla facilisi. Curabitur id urna ut diam placerat auctor. Nullam laoreet tellus dictum orci aliquet rhoncus. Nunc gravida ultricies nulla, non faucibus sapien consectetur ac. Proin fermentum ut augue et tempus. Nam pharetra ex nec metus mollis vulputate id sit amet tortor.',\r\n                          },\r\n                        },\r\n                        metadata: {\r\n                          base: {\r\n                            palette: 'primary',\r\n                          },\r\n                          extend: {\r\n                            type: 'p',\r\n                          },\r\n                        },\r\n                      },\r\n                    },\r\n                  ],\r\n                },\r\n                {\r\n                  component: {\r\n                    kind: 'layout',\r\n                    layout: 'flex-item',\r\n                    data: {\r\n                      base: {},\r\n                      extend: {},\r\n                    },\r\n                    metadata: {\r\n                      base: {\r\n                        palette: 'primary',\r\n                      },\r\n                      extend: {},\r\n                    },\r\n                  },\r\n                  children: [\r\n                    {\r\n                      component: {\r\n                        kind: 'control',\r\n                        control: 'text',\r\n                        data: {\r\n                          base: {},\r\n                          extend: {\r\n                            value:\r\n                              'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent et magna sit amet justo ullamcorper ultricies. Vestibulum varius aliquam nibh vitae bibendum. Vestibulum fringilla eros dui, quis tempus diam tempus non. Aenean laoreet sem eu molestie fringilla. Suspendisse malesuada id orci quis consequat. Aenean maximus orci condimentum, gravida est eleifend, faucibus velit. Nam dignissim ipsum finibus, dapibus turpis et, elementum ipsum. Suspendisse tempus molestie est hendrerit lacinia. Donec rutrum dignissim magna, ut viverra ipsum feugiat ultrices. Nulla facilisi. Curabitur id urna ut diam placerat auctor. Nullam laoreet tellus dictum orci aliquet rhoncus. Nunc gravida ultricies nulla, non faucibus sapien consectetur ac. Proin fermentum ut augue et tempus. Nam pharetra ex nec metus mollis vulputate id sit amet tortor.',\r\n                          },\r\n                        },\r\n                        metadata: {\r\n                          base: {\r\n                            palette: 'primary',\r\n                          },\r\n                          extend: {\r\n                            type: 'p',\r\n                          },\r\n                        },\r\n                      },\r\n                    },\r\n                  ],\r\n                },\r\n                {\r\n                  component: {\r\n                    kind: 'layout',\r\n                    layout: 'flex-item',\r\n                    data: {\r\n                      base: {},\r\n                      extend: {},\r\n                    },\r\n                    metadata: {\r\n                      base: {\r\n                        palette: 'primary',\r\n                      },\r\n                      extend: {},\r\n                    },\r\n                  },\r\n                  children: [\r\n                    {\r\n                      component: {\r\n                        kind: 'control',\r\n                        control: 'text',\r\n                        data: {\r\n                          base: {},\r\n                          extend: {\r\n                            value:\r\n                              'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent et magna sit amet justo ullamcorper ultricies. Vestibulum varius aliquam nibh vitae bibendum. Vestibulum fringilla eros dui, quis tempus diam tempus non. Aenean laoreet sem eu molestie fringilla. Suspendisse malesuada id orci quis consequat. Aenean maximus orci condimentum, gravida est eleifend, faucibus velit. Nam dignissim ipsum finibus, dapibus turpis et, elementum ipsum. Suspendisse tempus molestie est hendrerit lacinia. Donec rutrum dignissim magna, ut viverra ipsum feugiat ultrices. Nulla facilisi. Curabitur id urna ut diam placerat auctor. Nullam laoreet tellus dictum orci aliquet rhoncus. Nunc gravida ultricies nulla, non faucibus sapien consectetur ac. Proin fermentum ut augue et tempus. Nam pharetra ex nec metus mollis vulputate id sit amet tortor.',\r\n                          },\r\n                        },\r\n                        metadata: {\r\n                          base: {\r\n                            palette: 'primary',\r\n                          },\r\n                          extend: {\r\n                            type: 'p',\r\n                          },\r\n                        },\r\n                      },\r\n                    },\r\n                  ],\r\n                },\r\n              ],\r\n            },\r\n          ],\r\n        },\r\n        {\r\n          component: {\r\n            kind: 'layout',\r\n            layout: 'footer',\r\n            data: {\r\n              base: {},\r\n              extend: {},\r\n            },\r\n            metadata: {\r\n              base: {\r\n                palette: 'primary',\r\n              },\r\n              extend: {},\r\n            },\r\n          },\r\n          children: [\r\n            {\r\n              component: {\r\n                kind: 'layout',\r\n                layout: 'contact',\r\n                data: {\r\n                  base: {},\r\n                  extend: {\r\n                    firstName: 'Jakub',\r\n                    lastName: 'Olejarczyk',\r\n                    motto: ['I write code that works today', 'and will not fail tomorrow.'],\r\n                    socialMedias: [\r\n                      {\r\n                        label: 'LinkedIn',\r\n                        url: 'https://www.linkedin.com/in/jakub-olejarczyk',\r\n                      },\r\n                      {\r\n                        label: 'GitHub',\r\n                        url: 'https://github.com/jakubolejarczyk',\r\n                      },\r\n                      {\r\n                        label: 'LeetCode',\r\n                        url: 'https://leetcode.com/u/JakubOlejarczyk',\r\n                      },\r\n                    ],\r\n                    email: 'jakub.olejarczyk@outlook.com',\r\n                    phone: '+48 501 007 197',\r\n                    country: 'Poland',\r\n                    city: 'Kielce',\r\n                  },\r\n                },\r\n                metadata: {\r\n                  base: {\r\n                    palette: 'primary',\r\n                  },\r\n                  extend: {},\r\n                },\r\n              },\r\n            },\r\n            {\r\n              component: {\r\n                kind: 'layout',\r\n                layout: 'copyright',\r\n                data: {\r\n                  base: {},\r\n                  extend: {\r\n                    symbol: '©',\r\n                    year: {\r\n                      kind: 'current',\r\n                    },\r\n                    ownerName: 'Jakub Olejarczyk',\r\n                    rightsStatements: 'All rights reserved.',\r\n                  },\r\n                },\r\n                metadata: {\r\n                  base: {\r\n                    palette: 'primary',\r\n                  },\r\n                  extend: {},\r\n                },\r\n              },\r\n              children: [],\r\n            },\r\n          ],\r\n        },\r\n      ],\r\n    },\r\n  ]",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "NodeModel[]",
@@ -2062,7 +2668,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\r\nimport { Generator } from '../generator/generator/generator';\r\nimport { NodeModel } from '../generator/model/node/node.model';\r\n\r\n@Component({\r\n  selector: 'app',\r\n  template: '<generator [nodes]=\"nodes\"></generator>',\r\n  imports: [Generator],\r\n})\r\nexport class App {\r\n  nodes: NodeModel[] = [\r\n    {\r\n      layout: {\r\n        kind: 'contact',\r\n        data: {\r\n          base: {},\r\n          extend: {\r\n            firstName: 'Jakub',\r\n            lastName: 'Olejarczyk',\r\n            motto: ['I write code that works today', 'and will not fail tomorrow.'],\r\n            socialMedias: [\r\n              {\r\n                label: 'LinkedIn',\r\n                url: 'https://www.linkedin.com/in/jakub-olejarczyk',\r\n              },\r\n              {\r\n                label: 'GitHub',\r\n                url: 'https://github.com/jakubolejarczyk',\r\n              },\r\n              {\r\n                label: 'LeetCode',\r\n                url: 'https://leetcode.com/u/JakubOlejarczyk',\r\n              },\r\n            ],\r\n            email: 'jakub.olejarczyk@outlook.com',\r\n            phone: '+48 501 007 197',\r\n            country: 'Poland',\r\n            city: 'Kielce',\r\n          },\r\n        },\r\n        metadata: {\r\n          base: {\r\n            palette: 'primary',\r\n          },\r\n          extend: {},\r\n        },\r\n      },\r\n    },\r\n    {\r\n      layout: {\r\n        kind: 'copyright',\r\n        data: {\r\n          base: {},\r\n          extend: {\r\n            symbol: '©',\r\n            year: {\r\n              kind: 'current',\r\n            },\r\n            ownerName: 'Jakub Olejarczyk',\r\n            rightsStatements: 'All rights reserved.',\r\n          },\r\n        },\r\n        metadata: {\r\n          base: {\r\n            palette: 'primary',\r\n          },\r\n          extend: {},\r\n        },\r\n      },\r\n      children: [],\r\n    },\r\n  ];\r\n}\r\n",
+            "sourceCode": "import { Component } from '@angular/core';\r\nimport { Generator } from '../generator/generator/generator';\r\nimport { NodeModel } from '../generator/model/node/node.model';\r\n\r\n@Component({\r\n  selector: 'app',\r\n  template: '<generator [nodes]=\"nodes\"></generator>',\r\n  imports: [Generator],\r\n})\r\nexport class App {\r\n  nodes: NodeModel[] = [\r\n    {\r\n      component: {\r\n        kind: 'layout',\r\n        layout: 'root',\r\n        data: {\r\n          base: {},\r\n          extend: {},\r\n        },\r\n        metadata: {\r\n          base: {\r\n            palette: 'primary',\r\n          },\r\n          extend: {},\r\n        },\r\n      },\r\n      children: [\r\n        {\r\n          component: {\r\n            kind: 'layout',\r\n            layout: 'main',\r\n            data: {\r\n              base: {},\r\n              extend: {},\r\n            },\r\n            metadata: {\r\n              base: {\r\n                palette: 'primary',\r\n              },\r\n              extend: {},\r\n            },\r\n          },\r\n          children: [\r\n            {\r\n              component: {\r\n                kind: 'layout',\r\n                layout: 'flex',\r\n                data: {\r\n                  base: {},\r\n                  extend: {},\r\n                },\r\n                metadata: {\r\n                  base: {\r\n                    palette: 'primary',\r\n                  },\r\n                  extend: {},\r\n                },\r\n              },\r\n              children: [\r\n                {\r\n                  component: {\r\n                    kind: 'layout',\r\n                    layout: 'flex-item',\r\n                    data: {\r\n                      base: {},\r\n                      extend: {},\r\n                    },\r\n                    metadata: {\r\n                      base: {\r\n                        palette: 'primary',\r\n                      },\r\n                      extend: {},\r\n                    },\r\n                  },\r\n                  children: [\r\n                    {\r\n                      component: {\r\n                        kind: 'control',\r\n                        control: 'text',\r\n                        data: {\r\n                          base: {},\r\n                          extend: {\r\n                            value:\r\n                              'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent et magna sit amet justo ullamcorper ultricies. Vestibulum varius aliquam nibh vitae bibendum. Vestibulum fringilla eros dui, quis tempus diam tempus non. Aenean laoreet sem eu molestie fringilla. Suspendisse malesuada id orci quis consequat. Aenean maximus orci condimentum, gravida est eleifend, faucibus velit. Nam dignissim ipsum finibus, dapibus turpis et, elementum ipsum. Suspendisse tempus molestie est hendrerit lacinia. Donec rutrum dignissim magna, ut viverra ipsum feugiat ultrices. Nulla facilisi. Curabitur id urna ut diam placerat auctor. Nullam laoreet tellus dictum orci aliquet rhoncus. Nunc gravida ultricies nulla, non faucibus sapien consectetur ac. Proin fermentum ut augue et tempus. Nam pharetra ex nec metus mollis vulputate id sit amet tortor.',\r\n                          },\r\n                        },\r\n                        metadata: {\r\n                          base: {\r\n                            palette: 'primary',\r\n                          },\r\n                          extend: {\r\n                            type: 'p',\r\n                          },\r\n                        },\r\n                      },\r\n                    },\r\n                  ],\r\n                },\r\n                {\r\n                  component: {\r\n                    kind: 'layout',\r\n                    layout: 'flex-item',\r\n                    data: {\r\n                      base: {},\r\n                      extend: {},\r\n                    },\r\n                    metadata: {\r\n                      base: {\r\n                        palette: 'primary',\r\n                      },\r\n                      extend: {},\r\n                    },\r\n                  },\r\n                  children: [\r\n                    {\r\n                      component: {\r\n                        kind: 'control',\r\n                        control: 'text',\r\n                        data: {\r\n                          base: {},\r\n                          extend: {\r\n                            value:\r\n                              'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent et magna sit amet justo ullamcorper ultricies. Vestibulum varius aliquam nibh vitae bibendum. Vestibulum fringilla eros dui, quis tempus diam tempus non. Aenean laoreet sem eu molestie fringilla. Suspendisse malesuada id orci quis consequat. Aenean maximus orci condimentum, gravida est eleifend, faucibus velit. Nam dignissim ipsum finibus, dapibus turpis et, elementum ipsum. Suspendisse tempus molestie est hendrerit lacinia. Donec rutrum dignissim magna, ut viverra ipsum feugiat ultrices. Nulla facilisi. Curabitur id urna ut diam placerat auctor. Nullam laoreet tellus dictum orci aliquet rhoncus. Nunc gravida ultricies nulla, non faucibus sapien consectetur ac. Proin fermentum ut augue et tempus. Nam pharetra ex nec metus mollis vulputate id sit amet tortor.',\r\n                          },\r\n                        },\r\n                        metadata: {\r\n                          base: {\r\n                            palette: 'primary',\r\n                          },\r\n                          extend: {\r\n                            type: 'p',\r\n                          },\r\n                        },\r\n                      },\r\n                    },\r\n                  ],\r\n                },\r\n                {\r\n                  component: {\r\n                    kind: 'layout',\r\n                    layout: 'flex-item',\r\n                    data: {\r\n                      base: {},\r\n                      extend: {},\r\n                    },\r\n                    metadata: {\r\n                      base: {\r\n                        palette: 'primary',\r\n                      },\r\n                      extend: {},\r\n                    },\r\n                  },\r\n                  children: [\r\n                    {\r\n                      component: {\r\n                        kind: 'control',\r\n                        control: 'text',\r\n                        data: {\r\n                          base: {},\r\n                          extend: {\r\n                            value:\r\n                              'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent et magna sit amet justo ullamcorper ultricies. Vestibulum varius aliquam nibh vitae bibendum. Vestibulum fringilla eros dui, quis tempus diam tempus non. Aenean laoreet sem eu molestie fringilla. Suspendisse malesuada id orci quis consequat. Aenean maximus orci condimentum, gravida est eleifend, faucibus velit. Nam dignissim ipsum finibus, dapibus turpis et, elementum ipsum. Suspendisse tempus molestie est hendrerit lacinia. Donec rutrum dignissim magna, ut viverra ipsum feugiat ultrices. Nulla facilisi. Curabitur id urna ut diam placerat auctor. Nullam laoreet tellus dictum orci aliquet rhoncus. Nunc gravida ultricies nulla, non faucibus sapien consectetur ac. Proin fermentum ut augue et tempus. Nam pharetra ex nec metus mollis vulputate id sit amet tortor.',\r\n                          },\r\n                        },\r\n                        metadata: {\r\n                          base: {\r\n                            palette: 'primary',\r\n                          },\r\n                          extend: {\r\n                            type: 'p',\r\n                          },\r\n                        },\r\n                      },\r\n                    },\r\n                  ],\r\n                },\r\n              ],\r\n            },\r\n          ],\r\n        },\r\n        {\r\n          component: {\r\n            kind: 'layout',\r\n            layout: 'footer',\r\n            data: {\r\n              base: {},\r\n              extend: {},\r\n            },\r\n            metadata: {\r\n              base: {\r\n                palette: 'primary',\r\n              },\r\n              extend: {},\r\n            },\r\n          },\r\n          children: [\r\n            {\r\n              component: {\r\n                kind: 'layout',\r\n                layout: 'contact',\r\n                data: {\r\n                  base: {},\r\n                  extend: {\r\n                    firstName: 'Jakub',\r\n                    lastName: 'Olejarczyk',\r\n                    motto: ['I write code that works today', 'and will not fail tomorrow.'],\r\n                    socialMedias: [\r\n                      {\r\n                        label: 'LinkedIn',\r\n                        url: 'https://www.linkedin.com/in/jakub-olejarczyk',\r\n                      },\r\n                      {\r\n                        label: 'GitHub',\r\n                        url: 'https://github.com/jakubolejarczyk',\r\n                      },\r\n                      {\r\n                        label: 'LeetCode',\r\n                        url: 'https://leetcode.com/u/JakubOlejarczyk',\r\n                      },\r\n                    ],\r\n                    email: 'jakub.olejarczyk@outlook.com',\r\n                    phone: '+48 501 007 197',\r\n                    country: 'Poland',\r\n                    city: 'Kielce',\r\n                  },\r\n                },\r\n                metadata: {\r\n                  base: {\r\n                    palette: 'primary',\r\n                  },\r\n                  extend: {},\r\n                },\r\n              },\r\n            },\r\n            {\r\n              component: {\r\n                kind: 'layout',\r\n                layout: 'copyright',\r\n                data: {\r\n                  base: {},\r\n                  extend: {\r\n                    symbol: '©',\r\n                    year: {\r\n                      kind: 'current',\r\n                    },\r\n                    ownerName: 'Jakub Olejarczyk',\r\n                    rightsStatements: 'All rights reserved.',\r\n                  },\r\n                },\r\n                metadata: {\r\n                  base: {\r\n                    palette: 'primary',\r\n                  },\r\n                  extend: {},\r\n                },\r\n              },\r\n              children: [],\r\n            },\r\n          ],\r\n        },\r\n      ],\r\n    },\r\n  ];\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
@@ -2070,7 +2676,7 @@
         },
         {
             "name": "ContactLayout",
-            "id": "component-ContactLayout-73c8b166fcc5d8ad090f92a15eacd38b1088bedc801371705ef536522c18d63c3211e7dcb730aa24f82e8d119ea3dd317c50d27c46cd740054fe9f84621641f5",
+            "id": "component-ContactLayout-0e8df256edf5f0951e51f6dd938cde654f1bb4db047e53a5d76ad07a1657d9a44a04e1a5c9c23e26cd994381a77cc5faada2188f7f9d1659b56099e47cb00f1a",
             "file": "src/component/layout/contact/contact.layout.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -2086,6 +2692,21 @@
             "viewProviders": [],
             "hostDirectives": [],
             "inputsClass": [
+                {
+                    "name": "nodes",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "NodeModel[]",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 15,
+                    "required": false,
+                    "inheritance": {
+                        "file": "LayoutBase"
+                    }
+                },
                 {
                     "name": "data",
                     "deprecated": false,
@@ -2117,7 +2738,42 @@
             ],
             "outputsClass": [],
             "propertiesClass": [],
-            "methodsClass": [],
+            "methodsClass": [
+                {
+                    "name": "buildImports",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "any[]",
+                    "typeParameters": [],
+                    "line": 21,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        124,
+                        126,
+                        164
+                    ],
+                    "inheritance": {
+                        "file": "ComponentBase"
+                    }
+                },
+                {
+                    "name": "buildMainClassList",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "{}",
+                    "typeParameters": [],
+                    "line": 25,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        124
+                    ],
+                    "inheritance": {
+                        "file": "ComponentBase"
+                    }
+                }
+            ],
             "deprecated": false,
             "deprecationMessage": "",
             "hostBindings": [],
@@ -2132,7 +2788,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { LayoutBase } from '../../base/layout.base';\r\nimport { RegisterLayout } from '../../../generator/decorator/layout.decorator';\r\nimport { ContactDataModel } from '../../model/data/contact-data.model';\r\nimport { ContactMetadataModel } from '../../model/metadata/contact-metadata.model';\r\n\r\n@Component({\r\n  selector: 'contact-layout',\r\n  templateUrl: './contact.layout.html',\r\n  styleUrl: '../../../style/layout/contact.layout.scss',\r\n  imports: [CommonModule],\r\n})\r\n@RegisterLayout('contact')\r\nexport class ContactLayout extends LayoutBase<ContactDataModel, ContactMetadataModel> {\r\n  constructor() {\r\n    super('contact');\r\n  }\r\n}\r\n",
+            "sourceCode": "import { Component } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { LayoutBase } from '../../base/layout.base';\r\nimport { ContactDataModel } from '../../model/data/contact-data.model';\r\nimport { ContactMetadataModel } from '../../model/metadata/contact-metadata.model';\r\nimport { RegisterComponent } from '../../../generator/decorator/component.decorator';\r\n\r\n@Component({\r\n  selector: 'contact-layout',\r\n  templateUrl: './contact.layout.html',\r\n  styleUrl: '../../../style/layout/contact.layout.scss',\r\n  imports: [CommonModule],\r\n})\r\n@RegisterComponent({ kind: 'layout', layout: 'contact' })\r\nexport class ContactLayout extends LayoutBase<ContactDataModel, ContactMetadataModel> {\r\n  constructor() {\r\n    super('contact');\r\n  }\r\n}\r\n",
             "styleUrl": "../../../style/layout/contact.layout.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
@@ -2227,7 +2883,7 @@
         },
         {
             "name": "CopyrightLayout",
-            "id": "component-CopyrightLayout-27a26ab57d39eb9cc1b633d281fdf3dc0455be233c2a7517e2d500c4f3c10c4625202d7dd8460cde7a522943fa93a30ee18605e9b5e1a45662b78fce5c67c4f4",
+            "id": "component-CopyrightLayout-579bb3b334006347383f7cfdb273953efb886ec05fc276fd54874dbb717cde36a98586f9b2083f616e535cab53de3b22e3861fef6884ad571819759b7f02de69",
             "file": "src/component/layout/copyright/copyright.layout.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -2248,6 +2904,21 @@
             "viewProviders": [],
             "hostDirectives": [],
             "inputsClass": [
+                {
+                    "name": "nodes",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "NodeModel[]",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 15,
+                    "required": false,
+                    "inheritance": {
+                        "file": "LayoutBase"
+                    }
+                },
                 {
                     "name": "data",
                     "deprecated": false,
@@ -2291,7 +2962,42 @@
                     "line": 18
                 }
             ],
-            "methodsClass": [],
+            "methodsClass": [
+                {
+                    "name": "buildImports",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "any[]",
+                    "typeParameters": [],
+                    "line": 21,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        124,
+                        126,
+                        164
+                    ],
+                    "inheritance": {
+                        "file": "ComponentBase"
+                    }
+                },
+                {
+                    "name": "buildMainClassList",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "{}",
+                    "typeParameters": [],
+                    "line": 25,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        124
+                    ],
+                    "inheritance": {
+                        "file": "ComponentBase"
+                    }
+                }
+            ],
             "deprecated": false,
             "deprecationMessage": "",
             "hostBindings": [],
@@ -2306,7 +3012,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, inject } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { LayoutBase } from '../../base/layout.base';\r\nimport { CopyrightDataModel } from '../../model/data/copyright-data.model';\r\nimport { CopyrightMetadataModel } from '../../model/metadata/copyright-metadata.model';\r\nimport { CopyrightService } from './copyright.service';\r\nimport { RegisterLayout } from '../../../generator/decorator/layout.decorator';\r\n\r\n@Component({\r\n  selector: 'copyright-layout',\r\n  templateUrl: './copyright.layout.html',\r\n  styleUrl: '../../../style/layout/copyright.layout.scss',\r\n  imports: [CommonModule],\r\n  providers: [CopyrightService],\r\n})\r\n@RegisterLayout('copyright')\r\nexport class CopyrightLayout extends LayoutBase<CopyrightDataModel, CopyrightMetadataModel> {\r\n  service = inject(CopyrightService);\r\n\r\n  constructor() {\r\n    super('copyright');\r\n  }\r\n}\r\n",
+            "sourceCode": "import { Component, inject } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { LayoutBase } from '../../base/layout.base';\r\nimport { CopyrightDataModel } from '../../model/data/copyright-data.model';\r\nimport { CopyrightMetadataModel } from '../../model/metadata/copyright-metadata.model';\r\nimport { CopyrightService } from './copyright.service';\r\nimport { RegisterComponent } from '../../../generator/decorator/component.decorator';\r\n\r\n@Component({\r\n  selector: 'copyright-layout',\r\n  templateUrl: './copyright.layout.html',\r\n  styleUrl: '../../../style/layout/copyright.layout.scss',\r\n  imports: [CommonModule],\r\n  providers: [CopyrightService],\r\n})\r\n@RegisterComponent({ kind: 'layout', layout: 'copyright' })\r\nexport class CopyrightLayout extends LayoutBase<CopyrightDataModel, CopyrightMetadataModel> {\r\n  service = inject(CopyrightService);\r\n\r\n  constructor() {\r\n    super('copyright');\r\n  }\r\n}\r\n",
             "styleUrl": "../../../style/layout/copyright.layout.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
@@ -2432,6 +3138,411 @@
             "templateData": "<!-- <text-component type=\"p\" value=\"experience-view works!\"></text-component> -->\r\n"
         },
         {
+            "name": "FlexItemLayout",
+            "id": "component-FlexItemLayout-fe71ecb8a03ae6be1d2c6b0f42d9effa956041fca977ea1f935b371d118d36952d35a6a00ebc86da009f30cadbcfcb0cd6496e46d74daaf98af74379fa72bd50",
+            "file": "src/component/layout/flex-item/flex-item.layout.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "flex-item-layout",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./flex-item.layout.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "nodes",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "NodeModel[]",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 15,
+                    "required": false,
+                    "inheritance": {
+                        "file": "LayoutBase"
+                    }
+                },
+                {
+                    "name": "data",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "TData",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 13,
+                    "required": true,
+                    "inheritance": {
+                        "file": "ComponentBase"
+                    }
+                },
+                {
+                    "name": "metadata",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "TMetadata",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 15,
+                    "required": true,
+                    "inheritance": {
+                        "file": "ComponentBase"
+                    }
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "buildImports",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "any[]",
+                    "typeParameters": [],
+                    "line": 21,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        124,
+                        126,
+                        164
+                    ],
+                    "inheritance": {
+                        "file": "ComponentBase"
+                    }
+                },
+                {
+                    "name": "buildMainClassList",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "{}",
+                    "typeParameters": [],
+                    "line": 25,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        124
+                    ],
+                    "inheritance": {
+                        "file": "ComponentBase"
+                    }
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                },
+                {
+                    "name": "Generator"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { CommonModule } from '@angular/common';\r\nimport { Component } from '@angular/core';\r\nimport { RegisterComponent } from '../../../generator/decorator/component.decorator';\r\nimport { Generator } from '../../../generator/generator/generator';\r\nimport { LayoutBase } from '../../base/layout.base';\r\nimport { FlexItemDataModel } from '../../model/data/layout/flex-item-data.model';\r\nimport { FlexItemMetadataModel } from '../../model/metadata/layout/flex-item-metadata.model';\r\n\r\n@Component({\r\n  selector: 'flex-item-layout',\r\n  templateUrl: './flex-item.layout.html',\r\n  styleUrl: '../../../style/component/layout/_flex-item.layout.scss',\r\n  imports: [CommonModule, Generator],\r\n})\r\n@RegisterComponent({ kind: 'layout', layout: 'flex-item' })\r\nexport class FlexItemLayout extends LayoutBase<FlexItemDataModel, FlexItemMetadataModel> {\r\n  constructor() {\r\n    super('flex-item');\r\n  }\r\n}\r\n",
+            "styleUrl": "../../../style/component/layout/_flex-item.layout.scss",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 16
+            },
+            "extends": [
+                "LayoutBase"
+            ],
+            "templateData": "<div class=\"flex-item\">\r\n  <generator [nodes]=\"nodes()\"></generator>\r\n</div>\r\n"
+        },
+        {
+            "name": "FlexLayout",
+            "id": "component-FlexLayout-d6d4ce9bac107216bac71437d1cd3357d4c95a8461e32c32282bbb50bf217ea4889babf39a56c41555c37583c65e106339230f169af90f5c05d0a426a96ba47f",
+            "file": "src/component/layout/flex/flex.layout.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "flex-layout",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./flex.layout.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "nodes",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "NodeModel[]",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 15,
+                    "required": false,
+                    "inheritance": {
+                        "file": "LayoutBase"
+                    }
+                },
+                {
+                    "name": "data",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "TData",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 13,
+                    "required": true,
+                    "inheritance": {
+                        "file": "ComponentBase"
+                    }
+                },
+                {
+                    "name": "metadata",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "TMetadata",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 15,
+                    "required": true,
+                    "inheritance": {
+                        "file": "ComponentBase"
+                    }
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "buildImports",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "any[]",
+                    "typeParameters": [],
+                    "line": 21,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        124,
+                        126,
+                        164
+                    ],
+                    "inheritance": {
+                        "file": "ComponentBase"
+                    }
+                },
+                {
+                    "name": "buildMainClassList",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "{}",
+                    "typeParameters": [],
+                    "line": 25,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        124
+                    ],
+                    "inheritance": {
+                        "file": "ComponentBase"
+                    }
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                },
+                {
+                    "name": "Generator"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { CommonModule } from '@angular/common';\r\nimport { Component } from '@angular/core';\r\nimport { RegisterComponent } from '../../../generator/decorator/component.decorator';\r\nimport { Generator } from '../../../generator/generator/generator';\r\nimport { LayoutBase } from '../../base/layout.base';\r\nimport { FlexDataModel } from '../../model/data/layout/flex-data.model';\r\nimport { FlexMetadataModel } from '../../model/metadata/layout/flex-metadata.model';\r\n\r\n@Component({\r\n  selector: 'flex-layout',\r\n  templateUrl: './flex.layout.html',\r\n  styleUrl: '../../../style/component/layout/_flex.layout.scss',\r\n  imports: [CommonModule, Generator],\r\n})\r\n@RegisterComponent({ kind: 'layout', layout: 'flex' })\r\nexport class FlexLayout extends LayoutBase<FlexDataModel, FlexMetadataModel> {\r\n  constructor() {\r\n    super('flex');\r\n  }\r\n}\r\n",
+            "styleUrl": "../../../style/component/layout/_flex.layout.scss",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 16
+            },
+            "extends": [
+                "LayoutBase"
+            ],
+            "templateData": "<div class=\"flex\">\r\n  <generator [nodes]=\"nodes()\"></generator>\r\n</div>\r\n"
+        },
+        {
+            "name": "FooterLayout",
+            "id": "component-FooterLayout-1108a4ebfb7c97bcb496b59c43ed58cf2338c3862b72910017f790509c57f512056aae04684419a4a108f1dc660c57ef3637aa45b7bce1d5230cb304933a2e4f",
+            "file": "src/component/layout/footer/footer.layout.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "footer-layout",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./footer.layout.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "nodes",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "NodeModel[]",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 15,
+                    "required": false,
+                    "inheritance": {
+                        "file": "LayoutBase"
+                    }
+                },
+                {
+                    "name": "data",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "TData",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 13,
+                    "required": true,
+                    "inheritance": {
+                        "file": "ComponentBase"
+                    }
+                },
+                {
+                    "name": "metadata",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "TMetadata",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 15,
+                    "required": true,
+                    "inheritance": {
+                        "file": "ComponentBase"
+                    }
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "buildImports",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "any[]",
+                    "typeParameters": [],
+                    "line": 21,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        124,
+                        126,
+                        164
+                    ],
+                    "inheritance": {
+                        "file": "ComponentBase"
+                    }
+                },
+                {
+                    "name": "buildMainClassList",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "{}",
+                    "typeParameters": [],
+                    "line": 25,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        124
+                    ],
+                    "inheritance": {
+                        "file": "ComponentBase"
+                    }
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                },
+                {
+                    "name": "Generator"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { CommonModule } from '@angular/common';\r\nimport { Component } from '@angular/core';\r\nimport { RegisterComponent } from '../../../generator/decorator/component.decorator';\r\nimport { Generator } from '../../../generator/generator/generator';\r\nimport { LayoutBase } from '../../base/layout.base';\r\nimport { FooterDataModel } from '../../model/data/layout/footer-data.model';\r\nimport { FooterMetadataModel } from '../../model/metadata/layout/footer-metadata.model';\r\n\r\n@Component({\r\n  selector: 'footer-layout',\r\n  templateUrl: './footer.layout.html',\r\n  styleUrl: '../../../style/component/layout/_footer.layout.scss',\r\n  imports: [CommonModule, Generator],\r\n})\r\n@RegisterComponent({ kind: 'layout', layout: 'footer' })\r\nexport class FooterLayout extends LayoutBase<FooterDataModel, FooterMetadataModel> {\r\n  constructor() {\r\n    super('footer');\r\n  }\r\n}\r\n",
+            "styleUrl": "../../../style/component/layout/_footer.layout.scss",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 16
+            },
+            "extends": [
+                "LayoutBase"
+            ],
+            "templateData": "<footer class=\"footer\">\r\n  <generator [nodes]=\"nodes()\"></generator>\r\n</footer>\r\n"
+        },
+        {
             "name": "FooterView",
             "id": "component-FooterView-9d1306269de41b852f9a0ff90aa58d20f15f7f0163a4f8c9942ad209eb14271734b729fe172a3628ffc84ee9b34a0066abe2faa33343665bf8c96060b9150779",
             "file": "src/app/view/footer/footer.view.ts",
@@ -2507,7 +3618,7 @@
         },
         {
             "name": "Generator",
-            "id": "component-Generator-e05584010b26d59b7d901ff275b470ef8eda21cee4c66142d56c69c940b8abfa4ce4d1bd9dff513695e885f3cc8b5c76f50df545aa4aed6ae45417dcb6fa97f1",
+            "id": "component-Generator-1bb32c6bb893b0dca48515817c6e34957b9b940b35a4724445a4a73a2c76921669dedc4458e638901f36e4982816e66c619090bcab2dd66d98848d51b41b4b16",
             "file": "src/generator/generator/generator.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -2532,7 +3643,7 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 12,
+                    "line": 13,
                     "required": false
                 }
             ],
@@ -2540,7 +3651,7 @@
             "propertiesClass": [],
             "methodsClass": [
                 {
-                    "name": "buildInputs",
+                    "name": "buildComponent",
                     "args": [
                         {
                             "name": "node",
@@ -2552,9 +3663,9 @@
                         }
                     ],
                     "optional": false,
-                    "returnType": "{ data: any; metadata: any; }",
+                    "returnType": "any",
                     "typeParameters": [],
-                    "line": 18,
+                    "line": 15,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -2572,7 +3683,7 @@
                     ]
                 },
                 {
-                    "name": "buildLayout",
+                    "name": "buildInputs",
                     "args": [
                         {
                             "name": "node",
@@ -2584,9 +3695,9 @@
                         }
                     ],
                     "optional": false,
-                    "returnType": "any",
+                    "returnType": "{ data: any; metadata: any; nodes: any; }",
                     "typeParameters": [],
-                    "line": 14,
+                    "line": 27,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -2618,12 +3729,13 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { NgComponentOutlet } from '@angular/common';\r\nimport { Component, input } from '@angular/core';\r\nimport { NodeModel } from '../model/node/node.model';\r\nimport { getLayout } from '../decorator/layout.decorator';\r\n\r\n@Component({\r\n  selector: 'generator',\r\n  templateUrl: './generator.html',\r\n  imports: [NgComponentOutlet],\r\n})\r\nexport class Generator {\r\n  nodes = input<NodeModel[]>([]);\r\n\r\n  buildLayout(node: NodeModel) {\r\n    return getLayout(node.layout.kind);\r\n  }\r\n\r\n  buildInputs(node: NodeModel) {\r\n    return {\r\n      data: node.layout.data,\r\n      metadata: node.layout.metadata,\r\n    };\r\n  }\r\n}\r\n",
+            "sourceCode": "import { NgComponentOutlet } from '@angular/common';\r\nimport { Component, input } from '@angular/core';\r\nimport { NodeModel } from '../model/node/node.model';\r\nimport { getComponent } from '../decorator/component.decorator';\r\n\r\n@Component({\r\n  selector: 'generator',\r\n  templateUrl: './generator.html',\r\n  styleUrl: './generator.scss',\r\n  imports: [NgComponentOutlet],\r\n})\r\nexport class Generator {\r\n  nodes = input<NodeModel[]>([]);\r\n\r\n  buildComponent(node: NodeModel) {\r\n    const { kind } = node.component;\r\n    if (kind === 'control') {\r\n      const { control } = node.component;\r\n      return getComponent({ kind, control });\r\n    }\r\n    if (kind === 'layout') {\r\n      const { layout } = node.component;\r\n      return getComponent({ kind, layout });\r\n    }\r\n  }\r\n\r\n  buildInputs(node: NodeModel) {\r\n    return {\r\n      data: node.component.data,\r\n      metadata: node.component.metadata,\r\n      nodes: node.children,\r\n    };\r\n  }\r\n}\r\n",
+            "styleUrl": "./generator.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "@for (node of nodes(); track node) {\r\n  <ng-container *ngComponentOutlet=\"buildLayout(node); inputs: buildInputs(node)\"></ng-container>\r\n}\r\n"
+            "templateData": "@for (node of nodes(); track node) {\r\n  <ng-container *ngComponentOutlet=\"buildComponent(node); inputs: buildInputs(node)\"></ng-container>\r\n}\r\n"
         },
         {
             "name": "HeaderView",
@@ -2855,6 +3967,141 @@
             "stylesData": "",
             "extends": [],
             "templateData": "@if (external()) {\r\n  <a class=\"link\" [ngClass]=\"buildSectionClassList()\" [href]=\"buildHref()\" target=\"_blank\">\r\n    <!-- <text-component type=\"p\" [value]=\"label()\"></text-component> -->\r\n  </a>\r\n}\r\n"
+        },
+        {
+            "name": "MainLayout",
+            "id": "component-MainLayout-906560db8f3879e01b702b1fbf923a379794657fb6d205bcf41cbc255c1de776e5d8a0731964ce460f06cdb2ef6aa6f608d3c51e022c8427de982264077ed53e",
+            "file": "src/component/layout/main/main.layout.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "main-layout",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./main.layout.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "nodes",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "NodeModel[]",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 15,
+                    "required": false,
+                    "inheritance": {
+                        "file": "LayoutBase"
+                    }
+                },
+                {
+                    "name": "data",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "TData",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 13,
+                    "required": true,
+                    "inheritance": {
+                        "file": "ComponentBase"
+                    }
+                },
+                {
+                    "name": "metadata",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "TMetadata",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 15,
+                    "required": true,
+                    "inheritance": {
+                        "file": "ComponentBase"
+                    }
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "buildImports",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "any[]",
+                    "typeParameters": [],
+                    "line": 21,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        124,
+                        126,
+                        164
+                    ],
+                    "inheritance": {
+                        "file": "ComponentBase"
+                    }
+                },
+                {
+                    "name": "buildMainClassList",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "{}",
+                    "typeParameters": [],
+                    "line": 25,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        124
+                    ],
+                    "inheritance": {
+                        "file": "ComponentBase"
+                    }
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                },
+                {
+                    "name": "Generator"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { CommonModule } from '@angular/common';\r\nimport { Component } from '@angular/core';\r\nimport { RegisterComponent } from '../../../generator/decorator/component.decorator';\r\nimport { Generator } from '../../../generator/generator/generator';\r\nimport { LayoutBase } from '../../base/layout.base';\r\nimport { MainDataModel } from '../../model/data/layout/main-data.model';\r\nimport { MainMetadataModel } from '../../model/metadata/layout/main-metadata.model';\r\n\r\n@Component({\r\n  selector: 'main-layout',\r\n  templateUrl: './main.layout.html',\r\n  styleUrl: '../../../style/component/layout/_main.layout.scss',\r\n  imports: [CommonModule, Generator],\r\n})\r\n@RegisterComponent({ kind: 'layout', layout: 'main' })\r\nexport class MainLayout extends LayoutBase<MainDataModel, MainMetadataModel> {\r\n  constructor() {\r\n    super('main');\r\n  }\r\n}\r\n",
+            "styleUrl": "../../../style/component/layout/_main.layout.scss",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 16
+            },
+            "extends": [
+                "LayoutBase"
+            ],
+            "templateData": "<main class=\"main\">\r\n  <generator [nodes]=\"nodes()\"></generator>\r\n</main>\r\n"
         },
         {
             "name": "MainView",
@@ -3169,6 +4416,133 @@
             "templateData": "<!-- <text-component type=\"p\" value=\"resume-view works!\"></text-component> -->\r\n"
         },
         {
+            "name": "RootLayout",
+            "id": "component-RootLayout-1cf58b3a7827fa83051f2fa40114bdb6ee97cdde8727a09b665a04e017ac5107aa9720713ade912609e8af42518b96c173176b7198f6edf96e208911cf396cdc",
+            "file": "src/component/layout/root/root.layout.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "root-layout",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./root.layout.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "nodes",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "NodeModel[]",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 15,
+                    "required": false,
+                    "inheritance": {
+                        "file": "LayoutBase"
+                    }
+                },
+                {
+                    "name": "data",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "TData",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 13,
+                    "required": true,
+                    "inheritance": {
+                        "file": "ComponentBase"
+                    }
+                },
+                {
+                    "name": "metadata",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "TMetadata",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 15,
+                    "required": true,
+                    "inheritance": {
+                        "file": "ComponentBase"
+                    }
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "buildImports",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "any[]",
+                    "typeParameters": [],
+                    "line": 21,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        124,
+                        126,
+                        164
+                    ],
+                    "inheritance": {
+                        "file": "ComponentBase"
+                    }
+                },
+                {
+                    "name": "buildMainClassList",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "{}",
+                    "typeParameters": [],
+                    "line": 25,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        124
+                    ],
+                    "inheritance": {
+                        "file": "ComponentBase"
+                    }
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\r\nimport { LayoutBase } from '../../base/layout.base';\r\nimport { RegisterComponent } from '../../../generator/decorator/component.decorator';\r\nimport { RootLayoutDataModel } from '../../model/data/layout/root-layout-data.model';\r\nimport { RootLayoutMetadataModel } from '../../model/metadata/layout/root-layout-metadata.model';\r\n\r\n@Component({\r\n  selector: 'root-layout',\r\n  templateUrl: './root.layout.html',\r\n  styleUrl: '../../../style/component/layout/_root.layout.scss',\r\n  imports: LayoutBase.buildImports(),\r\n})\r\n@RegisterComponent({ kind: 'layout', layout: 'root' })\r\nexport class RootLayout extends LayoutBase<RootLayoutDataModel, RootLayoutMetadataModel> {\r\n  constructor() {\r\n    super('root');\r\n  }\r\n}\r\n",
+            "styleUrl": "../../../style/component/layout/_root.layout.scss",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 14
+            },
+            "extends": [
+                "LayoutBase"
+            ],
+            "templateData": "<div class=\"root\">\r\n  <div class=\"root_content\">\r\n    <generator [nodes]=\"nodes()\"></generator>\r\n  </div>\r\n</div>\r\n"
+        },
+        {
             "name": "SectionComponent",
             "id": "component-SectionComponent-e56e5c679992c7875b0c81bfba756d0a629929ba7c043ad6d1c2529ddb63e9b23e27cdbf4e32ba5242d1cbc396cc20d0161bccbf9a547bacd73fc861a74eb428",
             "file": "src/app/component/section/section.component.ts",
@@ -3401,7 +4775,7 @@
         },
         {
             "name": "TextControl",
-            "id": "component-TextControl-336e754580a51fcccd21a215f33df921bad1d15f12888945d81a7d38332b30ee3469a9ab55d6aa5068b85c573a453f890ae12a82d9c1911206f2ebd715d21432",
+            "id": "component-TextControl-d7881f8f882c1c6572bdb9a696fca98795f99390da65715140b89adadde8bc573c469347478eb775406ecfbe1b17216ca32e03b9fcbe64e054709ab892649365",
             "file": "src/component/control/text/text.control.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -3450,17 +4824,37 @@
             "propertiesClass": [],
             "methodsClass": [
                 {
+                    "name": "buildImports",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "any[]",
+                    "typeParameters": [],
+                    "line": 21,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        124,
+                        126
+                    ],
+                    "inheritance": {
+                        "file": "ComponentBase"
+                    }
+                },
+                {
                     "name": "buildMainClassList",
                     "args": [],
                     "optional": false,
                     "returnType": "{}",
                     "typeParameters": [],
-                    "line": 19,
+                    "line": 25,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
                         124
-                    ]
+                    ],
+                    "inheritance": {
+                        "file": "ComponentBase"
+                    }
                 }
             ],
             "deprecated": false,
@@ -3477,7 +4871,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { ControlBase } from '../../base/control.base';\r\nimport { TextControlDataModel } from '../../model/data/control/text-control-data.model';\r\nimport { TextControlMetadataModel } from '../../model/metadata/control/text-control-metadata.model';\r\nimport { BemUtility } from '../../../utility/bem.utility';\r\n\r\n@Component({\r\n  selector: 'text-control',\r\n  templateUrl: './text.control.html',\r\n  styleUrl: '../../../style/control/_text.control.scss',\r\n  imports: [CommonModule],\r\n})\r\nexport class TextControl extends ControlBase<TextControlDataModel, TextControlMetadataModel> {\r\n  constructor() {\r\n    super('text');\r\n  }\r\n\r\n  protected buildMainClassList() {\r\n    const block = this.type;\r\n    const { type } = this.metadata().extend;\r\n    const mainClass = BemUtility.build(block);\r\n    const typeClass = BemUtility.build(block, type);\r\n    return [mainClass, typeClass];\r\n  }\r\n}\r\n",
+            "sourceCode": "import { Component } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { ControlBase } from '../../base/control.base';\r\nimport { TextControlDataModel } from '../../model/data/control/text-control-data.model';\r\nimport { TextControlMetadataModel } from '../../model/metadata/control/text-control-metadata.model';\r\nimport { RegisterComponent } from '../../../generator/decorator/component.decorator';\r\n\r\n@Component({\r\n  selector: 'text-control',\r\n  templateUrl: './text.control.html',\r\n  styleUrl: '../../../style/control/_text.control.scss',\r\n  imports: [CommonModule],\r\n})\r\n@RegisterComponent({ kind: 'control', control: 'text' })\r\nexport class TextControl extends ControlBase<TextControlDataModel, TextControlMetadataModel> {\r\n  constructor() {\r\n    super('text');\r\n  }\r\n}\r\n",
             "styleUrl": "../../../style/control/_text.control.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
@@ -3488,12 +4882,12 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "args": [],
-                "line": 14
+                "line": 15
             },
             "extends": [
                 "ControlBase"
             ],
-            "templateData": "@switch (metadata().extend.type) {\r\n  @case ('small') {\r\n    <small [ngClass]=\"buildMainClassList()\">{{ data().extend.value }}</small>\r\n  }\r\n  @case ('p') {\r\n    <p [ngClass]=\"buildMainClassList()\">{{ data().extend.value }}</p>\r\n  }\r\n  @case ('h3') {\r\n    <h3 [ngClass]=\"buildMainClassList()\">{{ data().extend.value }}</h3>\r\n  }\r\n  @case ('h2') {\r\n    <h2 [ngClass]=\"buildMainClassList()\">{{ data().extend.value }}</h2>\r\n  }\r\n  @case ('h1') {\r\n    <h1 [ngClass]=\"buildMainClassList()\">{{ data().extend.value }}</h1>\r\n  }\r\n}\r\n"
+            "templateData": "@switch (metadata().extend.type) {\r\n  @case ('small') {\r\n    <small>{{ data().extend.value }}</small>\r\n  }\r\n  @case ('p') {\r\n    <p>{{ data().extend.value }}</p>\r\n  }\r\n  @case ('h3') {\r\n    <h3>{{ data().extend.value }}</h3>\r\n  }\r\n  @case ('h2') {\r\n    <h2>{{ data().extend.value }}</h2>\r\n  }\r\n  @case ('h1') {\r\n    <h1>{{ data().extend.value }}</h1>\r\n  }\r\n}\r\n"
         },
         {
             "name": "View",
@@ -3608,6 +5002,16 @@
                 "defaultValue": "{\n  providers: [\n    provideBrowserGlobalErrorListeners(),\n    provideStore(\n      {\n        aboutMe: aboutMeReducer,\n        company: companyReducer,\n        education: educationReducer,\n        experience: experienceReducer,\n        home: homeReducer,\n        personal: personalReducer,\n        resume: resumeReducer,\n        group: groupReducer,\n        section: sectionReducer,\n        skill: skillReducer,\n        technologyGroup: technologyGroupReducer,\n        technology: technologyReducer,\n      },\n      {\n        runtimeChecks: {\n          strictStateImmutability: false,\n        },\n      },\n    ),\n    provideStoreDevtools({ maxAge: 25, logOnly: !isDevMode() }),\n  ],\n}"
             },
             {
+                "name": "controlStore",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/generator/store/component.store.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "unknown",
+                "defaultValue": "new Map<ControlType, any>()"
+            },
+            {
                 "name": "educationDataConst",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -3648,14 +5052,14 @@
                 "defaultValue": "createReducer(experienceDataConst)"
             },
             {
-                "name": "getLayout",
+                "name": "getComponent",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/generator/decorator/layout.decorator.ts",
+                "file": "src/generator/decorator/component.decorator.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "unknown",
-                "defaultValue": "(kind: LayoutType) => {\r\n  const layout = layoutStore.get(kind);\r\n  if (layout) {\r\n    return layout;\r\n  }\r\n  throw new Error(`Not found element: ${kind} in the layoutStore store!`);\r\n}"
+                "defaultValue": "(model: DecoratorModel) => {\r\n  const { kind } = model;\r\n  if (kind === 'control') {\r\n    const control = controlStore.get(model.control);\r\n    if (control) {\r\n      return control;\r\n    }\r\n  }\r\n  if (kind === 'layout') {\r\n    const layout = layoutStore.get(model.layout);\r\n    if (layout) {\r\n      return layout;\r\n    }\r\n  }\r\n  throw new Error(`Not found component: ${kind} in the store!`);\r\n}"
             },
             {
                 "name": "groupDataConst",
@@ -3701,7 +5105,7 @@
                 "name": "layoutStore",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/generator/store/layout.store.ts",
+                "file": "src/generator/store/component.store.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "unknown",
@@ -3728,14 +5132,14 @@
                 "defaultValue": "createReducer(personalDataConst)"
             },
             {
-                "name": "RegisterLayout",
+                "name": "RegisterComponent",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/generator/decorator/layout.decorator.ts",
+                "file": "src/generator/decorator/component.decorator.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "unknown",
-                "defaultValue": "(kind: LayoutType) => {\r\n  return (layout: any) => {\r\n    if (layoutStore.has(kind)) {\r\n      throw new Error(`Element: ${kind} is already registered in the layoutStore store!`);\r\n    }\r\n    layoutStore.set(kind, layout);\r\n  };\r\n}"
+                "defaultValue": "(model: DecoratorModel) => {\r\n  return (component: any) => {\r\n    const { kind } = model;\r\n    if (kind === 'control') {\r\n      const { control } = model;\r\n      if (controlStore.has(control)) {\r\n        throw new Error(`Element: ${control} is already registered in the store!`);\r\n      }\r\n      controlStore.set(control, component);\r\n    }\r\n    if (kind === 'layout') {\r\n      const { layout } = model;\r\n      if (layoutStore.has(layout)) {\r\n        throw new Error(`Element: ${layout} is already registered in the store!`);\r\n      }\r\n      layoutStore.set(layout, component);\r\n    }\r\n  };\r\n}"
             },
             {
                 "name": "resumeDataConst",
@@ -3852,6 +5256,28 @@
                 "kind": 184
             },
             {
+                "name": "ComponentNodeModel",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "RootComponentNodeModel | MainComponentNodeModel | FooterComponentNodeModel | FlexComponentNodeModel | FlexItemComponentNodeModel | ContactComponentNodeModel | CopyrightComponentNodeModel | TextComponentNodeModel",
+                "file": "src/generator/model/node/component-node.model.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 193
+            },
+            {
+                "name": "ComponentType",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "\"control\" | \"layout\"",
+                "file": "src/style/type/component.type.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 193
+            },
+            {
                 "name": "ControlType",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
@@ -3861,6 +5287,17 @@
                 "deprecationMessage": "",
                 "description": "",
                 "kind": 202
+            },
+            {
+                "name": "DecoratorModel",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "ControlDecoratorModel | LayoutDecoratorModel",
+                "file": "src/generator/model/decorator/decorator.model.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 193
             },
             {
                 "name": "EducationDataModel",
@@ -3896,21 +5333,10 @@
                 "kind": 184
             },
             {
-                "name": "LayoutNodeModel",
-                "ctype": "miscellaneous",
-                "subtype": "typealias",
-                "rawtype": "ContactLayoutNodeModel | CopyrightLayoutNodeModel",
-                "file": "src/generator/model/node/layout-node.model.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "description": "",
-                "kind": 193
-            },
-            {
                 "name": "LayoutType",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "\"copyright\" | \"contact\"",
+                "rawtype": "\"root\" | \"main\" | \"footer\" | \"flex\" | \"flex-item\" | \"copyright\" | \"contact\"",
                 "file": "src/style/type/layout.type.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -4789,6 +6215,28 @@
                     "defaultValue": "{\n  providers: [\n    provideBrowserGlobalErrorListeners(),\n    provideStore(\n      {\n        aboutMe: aboutMeReducer,\n        company: companyReducer,\n        education: educationReducer,\n        experience: experienceReducer,\n        home: homeReducer,\n        personal: personalReducer,\n        resume: resumeReducer,\n        group: groupReducer,\n        section: sectionReducer,\n        skill: skillReducer,\n        technologyGroup: technologyGroupReducer,\n        technology: technologyReducer,\n      },\n      {\n        runtimeChecks: {\n          strictStateImmutability: false,\n        },\n      },\n    ),\n    provideStoreDevtools({ maxAge: 25, logOnly: !isDevMode() }),\n  ],\n}"
                 }
             ],
+            "src/generator/store/component.store.ts": [
+                {
+                    "name": "controlStore",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/generator/store/component.store.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "unknown",
+                    "defaultValue": "new Map<ControlType, any>()"
+                },
+                {
+                    "name": "layoutStore",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/generator/store/component.store.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "unknown",
+                    "defaultValue": "new Map<LayoutType, any>()"
+                }
+            ],
             "src/app/data/education/education-data.const.ts": [
                 {
                     "name": "educationDataConst",
@@ -4813,26 +6261,26 @@
                     "defaultValue": "[\r\n  {\r\n    company: CompanyDataEnum.aprSystem,\r\n    startDate: new Date(2020, 8, 1),\r\n    endDate: new Date(2025, 3, 1),\r\n    role: 'Frontend Software Engineer',\r\n    experiences: [\r\n      'Designed, developed, and maintained Angular-based web applications.',\r\n      'Built reusable metadata-driven Angular UI components with dynamic rendering.',\r\n      'Implemented application state management using NGXS, RxJS, and Redux DevTools.',\r\n      'Developed applications within an Nx monorepo architecture supporting a modular project structure.',\r\n      'Enforced code quality standards using ESLint, Prettier, and Stylelint.',\r\n      'Implemented unit testing using Jest.',\r\n      'Integrated REST API communication between frontend and backend services.',\r\n      'Containerized applications using Docker.',\r\n      'Developed internal NPM packages to support workflow automation and CI/CD within the GitLab ecosystem.',\r\n      'Modeled system architecture and business processes using UML.',\r\n    ],\r\n    technologies: [\r\n      TechnologyDataEnum.html,\r\n      TechnologyDataEnum.css,\r\n      TechnologyDataEnum.sass,\r\n      TechnologyDataEnum.storybook,\r\n      TechnologyDataEnum.javascript,\r\n      TechnologyDataEnum.typescript,\r\n      TechnologyDataEnum.angular,\r\n      TechnologyDataEnum.ngrx,\r\n      TechnologyDataEnum.rxjs,\r\n      TechnologyDataEnum.primeng,\r\n      TechnologyDataEnum.jest,\r\n      TechnologyDataEnum.postman,\r\n      TechnologyDataEnum.nodejs,\r\n      TechnologyDataEnum.nx,\r\n      TechnologyDataEnum.docker,\r\n      TechnologyDataEnum.git,\r\n      TechnologyDataEnum.gitlab,\r\n      TechnologyDataEnum.npm,\r\n      TechnologyDataEnum.pnpm,\r\n      TechnologyDataEnum.eslint,\r\n      TechnologyDataEnum.prettier,\r\n      TechnologyDataEnum.stylelint,\r\n      TechnologyDataEnum.webstorm,\r\n      TechnologyDataEnum.visualStudioCode,\r\n      TechnologyDataEnum.windows,\r\n      TechnologyDataEnum.enterpriseArchitect,\r\n    ],\r\n    skills: [\r\n      SkillKindDataEnum.dataStructuresAndAlgorithms,\r\n      SkillKindDataEnum.english,\r\n      SkillKindDataEnum.polish,\r\n    ],\r\n  },\r\n  {\r\n    company: CompanyDataEnum.primaris,\r\n    startDate: new Date(2025, 6, 1),\r\n    endDate: 'Present',\r\n    role: 'Automation Engineer',\r\n    experiences: [\r\n      'Developed robotic process automation (RPA) solutions using UiPath to automate business workflows.',\r\n      'Built data integration pipelines using SnapLogic, utilizing JavaScript for transformation logic.',\r\n      'Queried and managed data using SQL and Microsoft SQL Server (MSSQL).',\r\n      'Provided consulting and implementation support for GoSmart solutions while communicating with stakeholders in English.',\r\n      'Collaborated with cross-functional teams to analyze requirements and deliver automation and integration solutions.',\r\n    ],\r\n    technologies: [\r\n      TechnologyDataEnum.javascript,\r\n      TechnologyDataEnum.sql,\r\n      TechnologyDataEnum.microsoftSqlServer,\r\n      TechnologyDataEnum.soapui,\r\n      TechnologyDataEnum.github,\r\n      TechnologyDataEnum.windows,\r\n      TechnologyDataEnum.snapLogic,\r\n      TechnologyDataEnum.uiPath,\r\n      TechnologyDataEnum.goSmartDesigner,\r\n    ],\r\n    skills: [SkillKindDataEnum.english, SkillKindDataEnum.polish],\r\n  },\r\n]"
                 }
             ],
-            "src/generator/decorator/layout.decorator.ts": [
+            "src/generator/decorator/component.decorator.ts": [
                 {
-                    "name": "getLayout",
+                    "name": "getComponent",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/generator/decorator/layout.decorator.ts",
+                    "file": "src/generator/decorator/component.decorator.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "unknown",
-                    "defaultValue": "(kind: LayoutType) => {\r\n  const layout = layoutStore.get(kind);\r\n  if (layout) {\r\n    return layout;\r\n  }\r\n  throw new Error(`Not found element: ${kind} in the layoutStore store!`);\r\n}"
+                    "defaultValue": "(model: DecoratorModel) => {\r\n  const { kind } = model;\r\n  if (kind === 'control') {\r\n    const control = controlStore.get(model.control);\r\n    if (control) {\r\n      return control;\r\n    }\r\n  }\r\n  if (kind === 'layout') {\r\n    const layout = layoutStore.get(model.layout);\r\n    if (layout) {\r\n      return layout;\r\n    }\r\n  }\r\n  throw new Error(`Not found component: ${kind} in the store!`);\r\n}"
                 },
                 {
-                    "name": "RegisterLayout",
+                    "name": "RegisterComponent",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/generator/decorator/layout.decorator.ts",
+                    "file": "src/generator/decorator/component.decorator.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "unknown",
-                    "defaultValue": "(kind: LayoutType) => {\r\n  return (layout: any) => {\r\n    if (layoutStore.has(kind)) {\r\n      throw new Error(`Element: ${kind} is already registered in the layoutStore store!`);\r\n    }\r\n    layoutStore.set(kind, layout);\r\n  };\r\n}"
+                    "defaultValue": "(model: DecoratorModel) => {\r\n  return (component: any) => {\r\n    const { kind } = model;\r\n    if (kind === 'control') {\r\n      const { control } = model;\r\n      if (controlStore.has(control)) {\r\n        throw new Error(`Element: ${control} is already registered in the store!`);\r\n      }\r\n      controlStore.set(control, component);\r\n    }\r\n    if (kind === 'layout') {\r\n      const { layout } = model;\r\n      if (layoutStore.has(layout)) {\r\n        throw new Error(`Element: ${layout} is already registered in the store!`);\r\n      }\r\n      layoutStore.set(layout, component);\r\n    }\r\n  };\r\n}"
                 }
             ],
             "src/app/data/group/group-data.const.ts": [
@@ -4857,18 +6305,6 @@
                     "deprecationMessage": "",
                     "type": "HomeDataModel",
                     "defaultValue": "{\r\n  motto:\r\n    'Hi, I am Jakub Olejarczyk, a Software Engineer building modern software and constantly exploring new technologies to create efficient and scalable solutions.',\r\n  profilePhoto: 'assets/images/olejarczyk_jakub.jpg',\r\n}"
-                }
-            ],
-            "src/generator/store/layout.store.ts": [
-                {
-                    "name": "layoutStore",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/generator/store/layout.store.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "unknown",
-                    "defaultValue": "new Map<LayoutType, any>()"
                 }
             ],
             "src/app/data/personal/personal-data.const.ts": [
@@ -5559,6 +6995,32 @@
                     "kind": 184
                 }
             ],
+            "src/generator/model/node/component-node.model.ts": [
+                {
+                    "name": "ComponentNodeModel",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "RootComponentNodeModel | MainComponentNodeModel | FooterComponentNodeModel | FlexComponentNodeModel | FlexItemComponentNodeModel | ContactComponentNodeModel | CopyrightComponentNodeModel | TextComponentNodeModel",
+                    "file": "src/generator/model/node/component-node.model.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 193
+                }
+            ],
+            "src/style/type/component.type.ts": [
+                {
+                    "name": "ComponentType",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "\"control\" | \"layout\"",
+                    "file": "src/style/type/component.type.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 193
+                }
+            ],
             "src/style/type/control.type.ts": [
                 {
                     "name": "ControlType",
@@ -5570,6 +7032,19 @@
                     "deprecationMessage": "",
                     "description": "",
                     "kind": 202
+                }
+            ],
+            "src/generator/model/decorator/decorator.model.ts": [
+                {
+                    "name": "DecoratorModel",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "ControlDecoratorModel | LayoutDecoratorModel",
+                    "file": "src/generator/model/decorator/decorator.model.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 193
                 }
             ],
             "src/app/data/education/education-data.model.ts": [
@@ -5611,25 +7086,12 @@
                     "kind": 184
                 }
             ],
-            "src/generator/model/node/layout-node.model.ts": [
-                {
-                    "name": "LayoutNodeModel",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "ContactLayoutNodeModel | CopyrightLayoutNodeModel",
-                    "file": "src/generator/model/node/layout-node.model.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 193
-                }
-            ],
             "src/style/type/layout.type.ts": [
                 {
                     "name": "LayoutType",
                     "ctype": "miscellaneous",
                     "subtype": "typealias",
-                    "rawtype": "\"copyright\" | \"contact\"",
+                    "rawtype": "\"root\" | \"main\" | \"footer\" | \"flex\" | \"flex-item\" | \"copyright\" | \"contact\"",
                     "file": "src/style/type/layout.type.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
@@ -6509,7 +7971,7 @@
                 "linktype": "directive",
                 "name": "ComponentBase",
                 "coveragePercent": 0,
-                "coverageCount": "0/4",
+                "coverageCount": "0/6",
                 "status": "low"
             },
             {
@@ -6518,7 +7980,7 @@
                 "linktype": "directive",
                 "name": "ControlBase",
                 "coveragePercent": 0,
-                "coverageCount": "0/4",
+                "coverageCount": "0/6",
                 "status": "low"
             },
             {
@@ -6527,7 +7989,7 @@
                 "linktype": "directive",
                 "name": "LayoutBase",
                 "coveragePercent": 0,
-                "coverageCount": "0/4",
+                "coverageCount": "0/7",
                 "status": "low"
             },
             {
@@ -6536,7 +7998,7 @@
                 "linktype": "component",
                 "name": "TextControl",
                 "coveragePercent": 0,
-                "coverageCount": "0/5",
+                "coverageCount": "0/6",
                 "status": "low"
             },
             {
@@ -6545,7 +8007,7 @@
                 "linktype": "component",
                 "name": "ContactLayout",
                 "coveragePercent": 0,
-                "coverageCount": "0/4",
+                "coverageCount": "0/7",
                 "status": "low"
             },
             {
@@ -6554,7 +8016,7 @@
                 "linktype": "component",
                 "name": "CopyrightLayout",
                 "coveragePercent": 0,
-                "coverageCount": "0/5",
+                "coverageCount": "0/8",
                 "status": "low"
             },
             {
@@ -6564,6 +8026,51 @@
                 "name": "CopyrightService",
                 "coveragePercent": 0,
                 "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/component/layout/flex-item/flex-item.layout.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "FlexItemLayout",
+                "coveragePercent": 0,
+                "coverageCount": "0/7",
+                "status": "low"
+            },
+            {
+                "filePath": "src/component/layout/flex/flex.layout.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "FlexLayout",
+                "coveragePercent": 0,
+                "coverageCount": "0/7",
+                "status": "low"
+            },
+            {
+                "filePath": "src/component/layout/footer/footer.layout.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "FooterLayout",
+                "coveragePercent": 0,
+                "coverageCount": "0/7",
+                "status": "low"
+            },
+            {
+                "filePath": "src/component/layout/main/main.layout.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "MainLayout",
+                "coveragePercent": 0,
+                "coverageCount": "0/7",
+                "status": "low"
+            },
+            {
+                "filePath": "src/component/layout/root/root.layout.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "RootLayout",
+                "coveragePercent": 0,
+                "coverageCount": "0/7",
                 "status": "low"
             },
             {
@@ -6677,6 +8184,51 @@
                 "status": "low"
             },
             {
+                "filePath": "src/component/model/data/layout/flex-data.model.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "FlexDataModel",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/component/model/data/layout/flex-item-data.model.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "FlexItemDataModel",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/component/model/data/layout/footer-data.model.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "FooterDataModel",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/component/model/data/layout/main-data.model.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "MainDataModel",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/component/model/data/layout/root-layout-data.model.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "RootLayoutDataModel",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
                 "filePath": "src/component/model/metadata/contact-metadata.model.ts",
                 "type": "interface",
                 "linktype": "interface",
@@ -6713,21 +8265,75 @@
                 "status": "low"
             },
             {
-                "filePath": "src/generator/decorator/layout.decorator.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "getLayout",
+                "filePath": "src/component/model/metadata/layout/flex-item-metadata.model.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "FlexItemMetadataModel",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
             },
             {
-                "filePath": "src/generator/decorator/layout.decorator.ts",
+                "filePath": "src/component/model/metadata/layout/flex-metadata.model.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "FlexMetadataModel",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/component/model/metadata/layout/footer-metadata.model.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "FooterMetadataModel",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/component/model/metadata/layout/main-metadata.model.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "MainMetadataModel",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/component/model/metadata/layout/root-layout-metadata.model.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "RootLayoutMetadataModel",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/core/model/empty.model.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "EmptyModel",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/generator/decorator/component.decorator.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "RegisterLayout",
+                "name": "getComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/generator/decorator/component.decorator.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "RegisterComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -6742,38 +8348,138 @@
                 "status": "low"
             },
             {
-                "filePath": "src/generator/model/base/base-kind.model.ts",
+                "filePath": "src/generator/model/base/control-kind-base.model.ts",
                 "type": "interface",
                 "linktype": "interface",
-                "name": "BaseKindModel",
+                "name": "ControlKindBaseModel",
                 "coveragePercent": 0,
                 "coverageCount": "0/2",
                 "status": "low"
             },
             {
-                "filePath": "src/generator/model/node/layout-node.model.ts",
+                "filePath": "src/generator/model/base/kind-base.model.ts",
                 "type": "interface",
                 "linktype": "interface",
-                "name": "ContactLayoutNodeModel",
+                "name": "KindBaseModel",
                 "coveragePercent": 0,
-                "coverageCount": "0/3",
+                "coverageCount": "0/2",
                 "status": "low"
             },
             {
-                "filePath": "src/generator/model/node/layout-node.model.ts",
+                "filePath": "src/generator/model/base/layout-kind-base.model.ts",
                 "type": "interface",
                 "linktype": "interface",
-                "name": "CopyrightLayoutNodeModel",
+                "name": "LayoutKindBaseModel",
                 "coveragePercent": 0,
-                "coverageCount": "0/3",
+                "coverageCount": "0/2",
                 "status": "low"
             },
             {
-                "filePath": "src/generator/model/node/layout-node.model.ts",
+                "filePath": "src/generator/model/decorator/decorator.model.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "ControlDecoratorModel",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/generator/model/decorator/decorator.model.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "LayoutDecoratorModel",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/generator/model/decorator/decorator.model.ts",
                 "type": "type alias",
                 "linktype": "miscellaneous",
                 "linksubtype": "typealias",
-                "name": "LayoutNodeModel",
+                "name": "DecoratorModel",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/generator/model/node/component-node.model.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "ContactComponentNodeModel",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/generator/model/node/component-node.model.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "CopyrightComponentNodeModel",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/generator/model/node/component-node.model.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "FlexComponentNodeModel",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/generator/model/node/component-node.model.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "FlexItemComponentNodeModel",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/generator/model/node/component-node.model.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "FooterComponentNodeModel",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/generator/model/node/component-node.model.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "MainComponentNodeModel",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/generator/model/node/component-node.model.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "RootComponentNodeModel",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/generator/model/node/component-node.model.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "TextComponentNodeModel",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/generator/model/node/component-node.model.ts",
+                "type": "type alias",
+                "linktype": "miscellaneous",
+                "linksubtype": "typealias",
+                "name": "ComponentNodeModel",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -6788,11 +8494,31 @@
                 "status": "low"
             },
             {
-                "filePath": "src/generator/store/layout.store.ts",
+                "filePath": "src/generator/store/component.store.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "controlStore",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/generator/store/component.store.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "layoutStore",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/style/type/component.type.ts",
+                "type": "type alias",
+                "linktype": "miscellaneous",
+                "linksubtype": "typealias",
+                "name": "ComponentType",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"

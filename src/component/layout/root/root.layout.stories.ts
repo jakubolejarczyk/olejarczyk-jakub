@@ -4,6 +4,9 @@ import { RootLayout } from './root.layout';
 const meta: Meta<RootLayout> = {
   title: 'layout/root',
   component: RootLayout,
+  parameters: {
+    layout: 'fullscreen',
+  },
 };
 export default meta;
 type Story = StoryObj<RootLayout>;

@@ -1,7 +1,7 @@
 .root {
   border: 1px dashed black;
   margin: 1rem;
-  height: calc(100vh - 2rem);
+  height: calc(100vh - 2rem - 2px);
   overflow: auto;
 
   &__content {
