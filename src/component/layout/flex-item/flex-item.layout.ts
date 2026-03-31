@@ -12,7 +12,7 @@ import { FlexItemMetadataModel } from '../../model/metadata/layout/flex-item-met
   styleUrl: '../../../style/component/layout/_flex-item.layout.scss',
   imports: [CommonModule, Generator],
 })
-@RegisterComponent('flex-item')
+@RegisterComponent({ kind: 'layout', layout: 'flex-item' })
 export class FlexItemLayout extends LayoutBase<FlexItemDataModel, FlexItemMetadataModel> {
   constructor() {
     super('flex-item');

@@ -1,19 +1,39 @@
-import { ComponentType } from '../../style/type/component.type';
-import { componentStore } from '../store/component.store';
+import { DecoratorModel } from '../model/decorator/decorator.model';
+import { controlStore, layoutStore } from '../store/component.store';
 
-export const getComponent = (kind: ComponentType) => {
-  const component = componentStore.get(kind);
-  if (component) {
-    return component;
+export const getComponent = (model: DecoratorModel) => {
+  const { kind } = model;
+  if (kind === 'control') {
+    const control = controlStore.get(model.control);
+    if (control) {
+      return control;
+    }
   }
-  throw new Error(`Not found component: ${kind} in the componentStore store!`);
+  if (kind === 'layout') {
+    const layout = layoutStore.get(model.layout);
+    if (layout) {
+      return layout;
+    }
+  }
+  throw new Error(`Not found component: ${kind} in the store!`);
 };
 
-export const RegisterComponent = (kind: ComponentType) => {
+export const RegisterComponent = (model: DecoratorModel) => {
   return (component: any) => {
-    if (componentStore.has(kind)) {
-      throw new Error(`Element: ${kind} is already registered in the layoutStore store!`);
+    const { kind } = model;
+    if (kind === 'control') {
+      const { control } = model;
+      if (controlStore.has(control)) {
+        throw new Error(`Element: ${control} is already registered in the store!`);
+      }
+      controlStore.set(control, component);
     }
-    componentStore.set(kind, component);
+    if (kind === 'layout') {
+      const { layout } = model;
+      if (layoutStore.has(layout)) {
+        throw new Error(`Element: ${layout} is already registered in the store!`);
+      }
+      layoutStore.set(layout, component);
+    }
   };
 };

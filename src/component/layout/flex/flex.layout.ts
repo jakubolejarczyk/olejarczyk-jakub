@@ -12,7 +12,7 @@ import { FlexMetadataModel } from '../../model/metadata/layout/flex-metadata.mod
   styleUrl: '../../../style/component/layout/_flex.layout.scss',
   imports: [CommonModule, Generator],
 })
-@RegisterComponent('flex')
+@RegisterComponent({ kind: 'layout', layout: 'flex' })
 export class FlexLayout extends LayoutBase<FlexDataModel, FlexMetadataModel> {
   constructor() {
     super('flex');

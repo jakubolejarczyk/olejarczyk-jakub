@@ -13,7 +13,7 @@ import { RegisterComponent } from '../../../generator/decorator/component.decora
   imports: [CommonModule],
   providers: [CopyrightService],
 })
-@RegisterComponent('copyright')
+@RegisterComponent({ kind: 'layout', layout: 'copyright' })
 export class CopyrightLayout extends LayoutBase<CopyrightDataModel, CopyrightMetadataModel> {
   service = inject(CopyrightService);
 

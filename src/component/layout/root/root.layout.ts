@@ -1,19 +1,17 @@
-import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { RegisterComponent } from '../../../generator/decorator/component.decorator';
-import { Generator } from '../../../generator/generator/generator';
 import { LayoutBase } from '../../base/layout.base';
-import { RootDataModel } from '../../model/data/layout/root-data.model';
-import { RootMetadataModel } from '../../model/metadata/layout/root-metadata.model';
+import { RegisterComponent } from '../../../generator/decorator/component.decorator';
+import { RootLayoutDataModel } from '../../model/data/layout/root-layout-data.model';
+import { RootLayoutMetadataModel } from '../../model/metadata/layout/root-layout-metadata.model';
 
 @Component({
   selector: 'root-layout',
   templateUrl: './root.layout.html',
   styleUrl: '../../../style/component/layout/_root.layout.scss',
-  imports: [CommonModule, Generator],
+  imports: LayoutBase.buildImports(),
 })
-@RegisterComponent('root')
-export class RootLayout extends LayoutBase<RootDataModel, RootMetadataModel> {
+@RegisterComponent({ kind: 'layout', layout: 'root' })
+export class RootLayout extends LayoutBase<RootLayoutDataModel, RootLayoutMetadataModel> {
   constructor() {
     super('root');
   }

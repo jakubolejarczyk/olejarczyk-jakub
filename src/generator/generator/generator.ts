@@ -13,7 +13,15 @@ export class Generator {
   nodes = input<NodeModel[]>([]);
 
   buildComponent(node: NodeModel) {
-    return getComponent(node.component.kind);
+    const { kind } = node.component;
+    if (kind === 'control') {
+      const { control } = node.component;
+      return getComponent({ kind, control });
+    }
+    if (kind === 'layout') {
+      const { layout } = node.component;
+      return getComponent({ kind, layout });
+    }
   }
 
   buildInputs(node: NodeModel) {

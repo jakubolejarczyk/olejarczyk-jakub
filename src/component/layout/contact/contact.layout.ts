@@ -11,7 +11,7 @@ import { RegisterComponent } from '../../../generator/decorator/component.decora
   styleUrl: '../../../style/layout/contact.layout.scss',
   imports: [CommonModule],
 })
-@RegisterComponent('contact')
+@RegisterComponent({ kind: 'layout', layout: 'contact' })
 export class ContactLayout extends LayoutBase<ContactDataModel, ContactMetadataModel> {
   constructor() {
     super('contact');

@@ -1,12 +1,12 @@
-import { BaseKindModel } from '../../../generator/model/base/base-kind.model';
+import { KindBaseModel } from '../../../generator/model/base/kind-base.model';
 import { BaseModel } from '../base/base.model';
 import { DataBaseModel } from '../base/data-base.model';
 
 type YearKindType = 'current' | 'range';
 
-interface YearCurrentModel extends BaseKindModel<YearKindType, 'current'> {}
+interface YearCurrentModel extends KindBaseModel<YearKindType, 'current'> {}
 
-interface YearRangeModel extends BaseKindModel<YearKindType, 'range'> {
+interface YearRangeModel extends KindBaseModel<YearKindType, 'range'> {
   from: number;
   to: number | 'current';
 }

@@ -11,7 +11,8 @@ export class App {
   nodes: NodeModel[] = [
     {
       component: {
-        kind: 'root',
+        kind: 'layout',
+        layout: 'root',
         data: {
           base: {},
           extend: {},
@@ -26,7 +27,8 @@ export class App {
       children: [
         {
           component: {
-            kind: 'main',
+            kind: 'layout',
+            layout: 'main',
             data: {
               base: {},
               extend: {},
@@ -41,7 +43,8 @@ export class App {
           children: [
             {
               component: {
-                kind: 'flex',
+                kind: 'layout',
+                layout: 'flex',
                 data: {
                   base: {},
                   extend: {},
@@ -56,7 +59,8 @@ export class App {
               children: [
                 {
                   component: {
-                    kind: 'flex-item',
+                    kind: 'layout',
+                    layout: 'flex-item',
                     data: {
                       base: {},
                       extend: {},
@@ -71,7 +75,8 @@ export class App {
                   children: [
                     {
                       component: {
-                        kind: 'text',
+                        kind: 'control',
+                        control: 'text',
                         data: {
                           base: {},
                           extend: {
@@ -93,7 +98,8 @@ export class App {
                 },
                 {
                   component: {
-                    kind: 'flex-item',
+                    kind: 'layout',
+                    layout: 'flex-item',
                     data: {
                       base: {},
                       extend: {},
@@ -108,7 +114,8 @@ export class App {
                   children: [
                     {
                       component: {
-                        kind: 'text',
+                        kind: 'control',
+                        control: 'text',
                         data: {
                           base: {},
                           extend: {
@@ -130,7 +137,8 @@ export class App {
                 },
                 {
                   component: {
-                    kind: 'flex-item',
+                    kind: 'layout',
+                    layout: 'flex-item',
                     data: {
                       base: {},
                       extend: {},
@@ -145,7 +153,8 @@ export class App {
                   children: [
                     {
                       component: {
-                        kind: 'text',
+                        kind: 'control',
+                        control: 'text',
                         data: {
                           base: {},
                           extend: {
@@ -171,7 +180,8 @@ export class App {
         },
         {
           component: {
-            kind: 'footer',
+            kind: 'layout',
+            layout: 'footer',
             data: {
               base: {},
               extend: {},
@@ -186,7 +196,8 @@ export class App {
           children: [
             {
               component: {
-                kind: 'contact',
+                kind: 'layout',
+                layout: 'contact',
                 data: {
                   base: {},
                   extend: {
@@ -223,7 +234,8 @@ export class App {
             },
             {
               component: {
-                kind: 'copyright',
+                kind: 'layout',
+                layout: 'copyright',
                 data: {
                   base: {},
                   extend: {

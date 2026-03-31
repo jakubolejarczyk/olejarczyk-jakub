@@ -1,9 +1,8 @@
 import { Directive, input } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { BaseModel } from '../model/base/base.model';
 import { DataBaseModel } from '../model/base/data-base.model';
 import { MetadataBaseModel } from '../model/base/metadata-base.model';
-import { BemUtility } from '../../utility/bem.utility';
-import { NodeModel } from '../../generator/model/node/node.model';
 
 @Directive()
 export class ComponentBase<
@@ -15,17 +14,15 @@ export class ComponentBase<
 
   metadata = input.required<TMetadata>();
 
-  nodes = input<NodeModel[]>([]);
-
-  constructor(protected type: TType) {
+  constructor(protected readonly type: TType) {
     this.type = type;
   }
 
+  protected static buildImports(): any[] {
+    return [CommonModule];
+  }
+
   protected buildMainClassList() {
-    const block = this.type;
-    const { palette } = this.metadata().base;
-    const mainClass = BemUtility.build(block);
-    const paletteClass = BemUtility.build(block, 'palette', palette);
-    return [mainClass, paletteClass];
+    return [];
   }
 }

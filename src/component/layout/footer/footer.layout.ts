@@ -12,7 +12,7 @@ import { FooterMetadataModel } from '../../model/metadata/layout/footer-metadata
   styleUrl: '../../../style/component/layout/_footer.layout.scss',
   imports: [CommonModule, Generator],
 })
-@RegisterComponent('footer')
+@RegisterComponent({ kind: 'layout', layout: 'footer' })
 export class FooterLayout extends LayoutBase<FooterDataModel, FooterMetadataModel> {
   constructor() {
     super('footer');

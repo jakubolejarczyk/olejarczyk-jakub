@@ -12,7 +12,7 @@ import { MainMetadataModel } from '../../model/metadata/layout/main-metadata.mod
   styleUrl: '../../../style/component/layout/_main.layout.scss',
   imports: [CommonModule, Generator],
 })
-@RegisterComponent('main')
+@RegisterComponent({ kind: 'layout', layout: 'main' })
 export class MainLayout extends LayoutBase<MainDataModel, MainMetadataModel> {
   constructor() {
     super('main');

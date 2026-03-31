@@ -5,7 +5,7 @@ import { FlexDataModel } from '../../../component/model/data/layout/flex-data.mo
 import { FlexItemDataModel } from '../../../component/model/data/layout/flex-item-data.model';
 import { FooterDataModel } from '../../../component/model/data/layout/footer-data.model';
 import { MainDataModel } from '../../../component/model/data/layout/main-data.model';
-import { RootDataModel } from '../../../component/model/data/layout/root-data.model';
+import { RootLayoutDataModel } from '../../../component/model/data/layout/root-layout-data.model';
 import { ContactMetadataModel } from '../../../component/model/metadata/contact-metadata.model';
 import { TextControlMetadataModel } from '../../../component/model/metadata/control/text-control-metadata.model';
 import { CopyrightMetadataModel } from '../../../component/model/metadata/copyright-metadata.model';
@@ -13,46 +13,56 @@ import { FlexItemMetadataModel } from '../../../component/model/metadata/layout/
 import { FlexMetadataModel } from '../../../component/model/metadata/layout/flex-metadata.model';
 import { FooterMetadataModel } from '../../../component/model/metadata/layout/footer-metadata.model';
 import { MainMetadataModel } from '../../../component/model/metadata/layout/main-metadata.model';
-import { RootMetadataModel } from '../../../component/model/metadata/layout/root-metadata.model';
+import { RootLayoutMetadataModel } from '../../../component/model/metadata/layout/root-layout-metadata.model';
 import { ComponentType } from '../../../style/type/component.type';
-import { BaseKindModel } from '../base/base-kind.model';
+import { ControlKindBaseModel } from '../base/control-kind-base.model';
+import { KindBaseModel } from '../base/kind-base.model';
+import { LayoutKindBaseModel } from '../base/layout-kind-base.model';
 
-interface RootComponentNodeModel extends BaseKindModel<ComponentType, 'root'> {
-  data: RootDataModel;
-  metadata: RootMetadataModel;
+interface RootComponentNodeModel
+  extends KindBaseModel<ComponentType, 'layout'>, LayoutKindBaseModel<'root'> {
+  data: RootLayoutDataModel;
+  metadata: RootLayoutMetadataModel;
 }
 
-interface MainComponentNodeModel extends BaseKindModel<ComponentType, 'main'> {
+interface MainComponentNodeModel
+  extends KindBaseModel<ComponentType, 'layout'>, LayoutKindBaseModel<'main'> {
   data: MainDataModel;
   metadata: MainMetadataModel;
 }
 
-interface FooterComponentNodeModel extends BaseKindModel<ComponentType, 'footer'> {
+interface FooterComponentNodeModel
+  extends KindBaseModel<ComponentType, 'layout'>, LayoutKindBaseModel<'footer'> {
   data: FooterDataModel;
   metadata: FooterMetadataModel;
 }
 
-interface FlexComponentNodeModel extends BaseKindModel<ComponentType, 'flex'> {
+interface FlexComponentNodeModel
+  extends KindBaseModel<ComponentType, 'layout'>, LayoutKindBaseModel<'flex'> {
   data: FlexDataModel;
   metadata: FlexMetadataModel;
 }
 
-interface FlexItemComponentNodeModel extends BaseKindModel<ComponentType, 'flex-item'> {
+interface FlexItemComponentNodeModel
+  extends KindBaseModel<ComponentType, 'layout'>, LayoutKindBaseModel<'flex-item'> {
   data: FlexItemDataModel;
   metadata: FlexItemMetadataModel;
 }
 
-interface ContactComponentNodeModel extends BaseKindModel<ComponentType, 'contact'> {
+interface ContactComponentNodeModel
+  extends KindBaseModel<ComponentType, 'layout'>, LayoutKindBaseModel<'contact'> {
   data: ContactDataModel;
   metadata: ContactMetadataModel;
 }
 
-interface CopyrightComponentNodeModel extends BaseKindModel<ComponentType, 'copyright'> {
+interface CopyrightComponentNodeModel
+  extends KindBaseModel<ComponentType, 'layout'>, LayoutKindBaseModel<'copyright'> {
   data: CopyrightDataModel;
   metadata: CopyrightMetadataModel;
 }
 
-interface TextComponentNodeModel extends BaseKindModel<ComponentType, 'text'> {
+interface TextComponentNodeModel
+  extends KindBaseModel<ComponentType, 'control'>, ControlKindBaseModel<'text'> {
   data: TextControlDataModel;
   metadata: TextControlMetadataModel;
 }

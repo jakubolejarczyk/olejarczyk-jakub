@@ -1,3 +1,6 @@
-import { ComponentType } from '../../style/type/component.type';
+import { ControlType } from '../../style/type/control.type';
+import { LayoutType } from '../../style/type/layout.type';
 
-export const componentStore = new Map<ComponentType, any>();
+export const controlStore = new Map<ControlType, any>();
+
+export const layoutStore = new Map<LayoutType, any>();
