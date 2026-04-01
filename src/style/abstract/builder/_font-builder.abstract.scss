@@ -1,0 +1,3 @@
+@function build-font-size($min, $vw, $max, $base: 0.5rem) {
+  @return clamp(#{$min}, #{$vw} + #{$base}, #{$max});
+}

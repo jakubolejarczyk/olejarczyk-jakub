@@ -1,3 +1,5 @@
-import { PaletteEnum } from '../enum/pallete.enum';
+export enum PaletteEnum {
+  primary = 'primary',
+}
 
 export type PaletteType = keyof typeof PaletteEnum;
