@@ -1,19 +1,17 @@
-import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { RegisterComponent } from '../../../generator/decorator/component.decorator';
-import { Generator } from '../../../generator/generator/generator';
 import { LayoutBase } from '../../base/layout.base';
-import { FooterDataModel } from '../../model/data/layout/footer-data.model';
-import { FooterMetadataModel } from '../../model/metadata/layout/footer-metadata.model';
+import { RegisterComponent } from '../../../generator/decorator/component.decorator';
+import { FooterLayoutDataModel } from '../../model/data/layout/footer-layout-data.model';
+import { FooterLayoutMetadataModel } from '../../model/metadata/layout/footer-layout-metadata.model';
 
 @Component({
   selector: 'footer-layout',
   templateUrl: './footer.layout.html',
   styleUrl: '../../../style/component/layout/_footer.layout.scss',
-  imports: [CommonModule, Generator],
+  imports: LayoutBase.buildImports(),
 })
 @RegisterComponent({ kind: 'layout', layout: 'footer' })
-export class FooterLayout extends LayoutBase<FooterDataModel, FooterMetadataModel> {
+export class FooterLayout extends LayoutBase<FooterLayoutDataModel, FooterLayoutMetadataModel> {
   constructor() {
     super('footer');
   }

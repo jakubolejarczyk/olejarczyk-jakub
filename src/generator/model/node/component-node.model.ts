@@ -3,7 +3,7 @@ import { TextControlDataModel } from '../../../component/model/data/control/text
 import { CopyrightDataModel } from '../../../component/model/data/copyright-data.model';
 import { FlexDataModel } from '../../../component/model/data/layout/flex-data.model';
 import { FlexItemDataModel } from '../../../component/model/data/layout/flex-item-data.model';
-import { FooterDataModel } from '../../../component/model/data/layout/footer-data.model';
+import { FooterLayoutDataModel } from '../../../component/model/data/layout/footer-layout-data.model';
 import { HeaderLayoutDataModel } from '../../../component/model/data/layout/header-layout-data.model';
 import { MainLayoutDataModel } from '../../../component/model/data/layout/main-layout-data.model';
 import { RootLayoutDataModel } from '../../../component/model/data/layout/root-layout-data.model';
@@ -12,7 +12,7 @@ import { TextControlMetadataModel } from '../../../component/model/metadata/cont
 import { CopyrightMetadataModel } from '../../../component/model/metadata/copyright-metadata.model';
 import { FlexItemMetadataModel } from '../../../component/model/metadata/layout/flex-item-metadata.model';
 import { FlexMetadataModel } from '../../../component/model/metadata/layout/flex-metadata.model';
-import { FooterMetadataModel } from '../../../component/model/metadata/layout/footer-metadata.model';
+import { FooterLayoutMetadataModel } from '../../../component/model/metadata/layout/footer-layout-metadata.model';
 import { HeaderLayoutMetadataModel } from '../../../component/model/metadata/layout/header-layout-metadata.model';
 import { MainLayoutMetadataModel } from '../../../component/model/metadata/layout/main-layout-metadata.model';
 import { RootLayoutMetadataModel } from '../../../component/model/metadata/layout/root-layout-metadata.model';
@@ -41,8 +41,8 @@ interface MainComponentNodeModel
 
 interface FooterComponentNodeModel
   extends KindBaseModel<ComponentType, 'layout'>, LayoutKindBaseModel<'footer'> {
-  data: FooterDataModel;
-  metadata: FooterMetadataModel;
+  data: FooterLayoutDataModel;
+  metadata: FooterLayoutMetadataModel;
 }
 
 interface FlexComponentNodeModel
