@@ -7,6 +7,7 @@ import { FooterLayoutDataModel } from '../../../component/model/data/layout/foot
 import { HeaderLayoutDataModel } from '../../../component/model/data/layout/header-layout-data.model';
 import { MainLayoutDataModel } from '../../../component/model/data/layout/main-layout-data.model';
 import { RootLayoutDataModel } from '../../../component/model/data/layout/root-layout-data.model';
+import { SectionLayoutDataModel } from '../../../component/model/data/layout/section-layout-data.model';
 import { ContactMetadataModel } from '../../../component/model/metadata/contact-metadata.model';
 import { TextControlMetadataModel } from '../../../component/model/metadata/control/text-control-metadata.model';
 import { CopyrightMetadataModel } from '../../../component/model/metadata/copyright-metadata.model';
@@ -16,6 +17,7 @@ import { FooterLayoutMetadataModel } from '../../../component/model/metadata/lay
 import { HeaderLayoutMetadataModel } from '../../../component/model/metadata/layout/header-layout-metadata.model';
 import { MainLayoutMetadataModel } from '../../../component/model/metadata/layout/main-layout-metadata.model';
 import { RootLayoutMetadataModel } from '../../../component/model/metadata/layout/root-layout-metadata.model';
+import { SectionLayoutMetadataModel } from '../../../component/model/metadata/layout/section-layout-metadata.model';
 import { ComponentType } from '../../../style/type/component.type';
 import { ControlKindBaseModel } from '../base/control-kind-base.model';
 import { KindBaseModel } from '../base/kind-base.model';
@@ -43,6 +45,12 @@ interface FooterComponentNodeModel
   extends KindBaseModel<ComponentType, 'layout'>, LayoutKindBaseModel<'footer'> {
   data: FooterLayoutDataModel;
   metadata: FooterLayoutMetadataModel;
+}
+
+interface SectionComponentNodeModel
+  extends KindBaseModel<ComponentType, 'layout'>, LayoutKindBaseModel<'section'> {
+  data: SectionLayoutDataModel;
+  metadata: SectionLayoutMetadataModel;
 }
 
 interface FlexComponentNodeModel
@@ -80,6 +88,7 @@ export type ComponentNodeModel =
   | HeaderComponentNodeModel
   | MainComponentNodeModel
   | FooterComponentNodeModel
+  | SectionComponentNodeModel
   | FlexComponentNodeModel
   | FlexItemComponentNodeModel
   | ContactComponentNodeModel

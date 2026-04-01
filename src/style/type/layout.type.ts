@@ -3,6 +3,7 @@ export type LayoutType =
   | 'header'
   | 'main'
   | 'footer'
+  | 'section'
   | 'flex'
   | 'flex-item'
   | 'copyright'

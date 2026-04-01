@@ -2,6 +2,7 @@ import './layout/header/header.layout';
 import './layout/root/root.layout';
 import './layout/main/main.layout';
 import './layout/footer/footer.layout';
+import './layout/section/section.layout';
 import './control/text/text.control';
 import './layout/flex/flex.layout';
 import './layout/flex-item/flex-item.layout';
