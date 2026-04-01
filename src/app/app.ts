@@ -28,6 +28,22 @@ export class App {
         {
           component: {
             kind: 'layout',
+            layout: 'header',
+            data: {
+              base: {},
+              extend: {},
+            },
+            metadata: {
+              base: {
+                palette: 'primary',
+              },
+              extend: {},
+            },
+          },
+        },
+        {
+          component: {
+            kind: 'layout',
             layout: 'main',
             data: {
               base: {},

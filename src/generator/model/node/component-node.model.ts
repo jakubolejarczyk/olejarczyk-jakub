@@ -4,6 +4,7 @@ import { CopyrightDataModel } from '../../../component/model/data/copyright-data
 import { FlexDataModel } from '../../../component/model/data/layout/flex-data.model';
 import { FlexItemDataModel } from '../../../component/model/data/layout/flex-item-data.model';
 import { FooterDataModel } from '../../../component/model/data/layout/footer-data.model';
+import { HeaderLayoutDataModel } from '../../../component/model/data/layout/header-layout-data.model';
 import { MainDataModel } from '../../../component/model/data/layout/main-data.model';
 import { RootLayoutDataModel } from '../../../component/model/data/layout/root-layout-data.model';
 import { ContactMetadataModel } from '../../../component/model/metadata/contact-metadata.model';
@@ -12,6 +13,7 @@ import { CopyrightMetadataModel } from '../../../component/model/metadata/copyri
 import { FlexItemMetadataModel } from '../../../component/model/metadata/layout/flex-item-metadata.model';
 import { FlexMetadataModel } from '../../../component/model/metadata/layout/flex-metadata.model';
 import { FooterMetadataModel } from '../../../component/model/metadata/layout/footer-metadata.model';
+import { HeaderLayoutMetadataModel } from '../../../component/model/metadata/layout/header-layout-metadata.model';
 import { MainMetadataModel } from '../../../component/model/metadata/layout/main-metadata.model';
 import { RootLayoutMetadataModel } from '../../../component/model/metadata/layout/root-layout-metadata.model';
 import { ComponentType } from '../../../style/type/component.type';
@@ -23,6 +25,12 @@ interface RootComponentNodeModel
   extends KindBaseModel<ComponentType, 'layout'>, LayoutKindBaseModel<'root'> {
   data: RootLayoutDataModel;
   metadata: RootLayoutMetadataModel;
+}
+
+interface HeaderComponentNodeModel
+  extends KindBaseModel<ComponentType, 'layout'>, LayoutKindBaseModel<'header'> {
+  data: HeaderLayoutDataModel;
+  metadata: HeaderLayoutMetadataModel;
 }
 
 interface MainComponentNodeModel
@@ -69,6 +77,7 @@ interface TextComponentNodeModel
 
 export type ComponentNodeModel =
   | RootComponentNodeModel
+  | HeaderComponentNodeModel
   | MainComponentNodeModel
   | FooterComponentNodeModel
   | FlexComponentNodeModel

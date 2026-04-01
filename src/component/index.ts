@@ -1,5 +1,6 @@
-import './control/text/text.control';
+import './layout/header/header.layout';
 import './layout/root/root.layout';
+import './control/text/text.control';
 import './layout/main/main.layout';
 import './layout/footer/footer.layout';
 import './layout/flex/flex.layout';
