@@ -8,7 +8,7 @@ import { RegisterComponent } from '../../../generator/decorator/component.decora
 @Component({
   selector: 'text-control',
   templateUrl: './text.control.html',
-  styleUrl: '../../../style/control/_text.control.scss',
+  styleUrl: '../../../style/component/control/_text.control.scss',
   imports: [CommonModule],
 })
 @RegisterComponent({ kind: 'control', control: 'text' })
