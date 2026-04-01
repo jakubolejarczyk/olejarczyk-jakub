@@ -5,7 +5,7 @@ import { FlexDataModel } from '../../../component/model/data/layout/flex-data.mo
 import { FlexItemDataModel } from '../../../component/model/data/layout/flex-item-data.model';
 import { FooterDataModel } from '../../../component/model/data/layout/footer-data.model';
 import { HeaderLayoutDataModel } from '../../../component/model/data/layout/header-layout-data.model';
-import { MainDataModel } from '../../../component/model/data/layout/main-data.model';
+import { MainLayoutDataModel } from '../../../component/model/data/layout/main-layout-data.model';
 import { RootLayoutDataModel } from '../../../component/model/data/layout/root-layout-data.model';
 import { ContactMetadataModel } from '../../../component/model/metadata/contact-metadata.model';
 import { TextControlMetadataModel } from '../../../component/model/metadata/control/text-control-metadata.model';
@@ -14,7 +14,7 @@ import { FlexItemMetadataModel } from '../../../component/model/metadata/layout/
 import { FlexMetadataModel } from '../../../component/model/metadata/layout/flex-metadata.model';
 import { FooterMetadataModel } from '../../../component/model/metadata/layout/footer-metadata.model';
 import { HeaderLayoutMetadataModel } from '../../../component/model/metadata/layout/header-layout-metadata.model';
-import { MainMetadataModel } from '../../../component/model/metadata/layout/main-metadata.model';
+import { MainLayoutMetadataModel } from '../../../component/model/metadata/layout/main-layout-metadata.model';
 import { RootLayoutMetadataModel } from '../../../component/model/metadata/layout/root-layout-metadata.model';
 import { ComponentType } from '../../../style/type/component.type';
 import { ControlKindBaseModel } from '../base/control-kind-base.model';
@@ -35,8 +35,8 @@ interface HeaderComponentNodeModel
 
 interface MainComponentNodeModel
   extends KindBaseModel<ComponentType, 'layout'>, LayoutKindBaseModel<'main'> {
-  data: MainDataModel;
-  metadata: MainMetadataModel;
+  data: MainLayoutDataModel;
+  metadata: MainLayoutMetadataModel;
 }
 
 interface FooterComponentNodeModel
