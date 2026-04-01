@@ -8,7 +8,7 @@ import { RegisterComponent } from '../../../generator/decorator/component.decora
 @Component({
   selector: 'contact-layout',
   templateUrl: './contact.layout.html',
-  styleUrl: '../../../style/layout/contact.layout.scss',
+  // styleUrl: '../../../style/layout/contact.layout.scss',
   imports: [CommonModule],
 })
 @RegisterComponent({ kind: 'layout', layout: 'contact' })

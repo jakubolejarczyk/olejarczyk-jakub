@@ -1,8 +1,8 @@
-@use '../abstract/constant.abstract' as constant;
+@use '../abstract/constant';
 
 * {
-  margin: 0;
-  padding: 0;
+  margin: constant.$size--none;
+  padding: constant.$size--none;
   box-sizing: border-box;
 }
 

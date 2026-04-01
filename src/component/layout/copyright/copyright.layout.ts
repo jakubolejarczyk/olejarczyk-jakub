@@ -9,7 +9,7 @@ import { RegisterComponent } from '../../../generator/decorator/component.decora
 @Component({
   selector: 'copyright-layout',
   templateUrl: './copyright.layout.html',
-  styleUrl: '../../../style/layout/copyright.layout.scss',
+  // styleUrl: '../../../style/layout/copyright.layout.scss',
   imports: [CommonModule],
   providers: [CopyrightService],
 })
