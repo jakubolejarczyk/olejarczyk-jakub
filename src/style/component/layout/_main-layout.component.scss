@@ -1,0 +1,5 @@
+@use '../../abstract/builder';
+
+.main {
+  @include builder.build-debug;
+}

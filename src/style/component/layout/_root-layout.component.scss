@@ -1,0 +1,14 @@
+@use '../../abstract/builder';
+@use '../../abstract/constant';
+
+.root {
+  @include builder.build-debug;
+  // TODO: Add correct height
+  // height: calc(100dvh - 2rem);
+
+  overflow: auto;
+
+  &__content {
+    min-width: constant.$screen__size--min;
+  }
+}

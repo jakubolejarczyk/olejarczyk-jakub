@@ -1,0 +1,5 @@
+@use '../../abstract/builder';
+
+.footer {
+  @include builder.build-debug;
+}
