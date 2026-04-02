@@ -1,13 +1,13 @@
-@use '../../abstract/builder';
-@use '../../abstract/constant';
+@use '../../abstract/builder/debug-builder.abstract' as debug-builder;
+@use '../../abstract/constant/screen-constant.abstract' as screen-constant;
 
 .root {
-  @include builder.build-debug;
+  @include debug-builder.build-debug;
 
-  height: constant.$screen__size--full-height;
+  height: screen-constant.$screen__size--full-height;
   overflow: auto;
 
   &__content {
-    min-width: constant.$screen__size--min;
+    min-width: screen-constant.$screen__size--min;
   }
 }

@@ -1,26 +1,26 @@
-// import { Meta, StoryObj } from '@storybook/angular';
-// import { SectionLayout } from './section.layout';
+import { Meta, StoryObj } from '@storybook/angular';
+import { SectionLayoutComponent } from './section-layout.component';
 
-// const meta: Meta<SectionLayout> = {
-//   title: 'layout/section',
-//   component: SectionLayout,
-// };
-// export default meta;
-// type Story = StoryObj<SectionLayout>;
+const meta: Meta<SectionLayoutComponent> = {
+  title: 'component/layout/section',
+  component: SectionLayoutComponent,
+};
+export default meta;
+type Story = StoryObj<SectionLayoutComponent>;
 
-// export const Primary: Story = {
-//   args: {
-//     data: {
-//       base: {},
-//       extend: {},
-//     },
-//     metadata: {
-//       base: {
-//         palette: 'primary',
-//       },
-//       extend: {
-//         id: 'hello',
-//       },
-//     },
-//   },
-// };
+export const Primary: Story = {
+  args: {
+    data: {
+      base: {},
+      extend: {},
+    },
+    metadata: {
+      base: {
+        palette: 'primary',
+      },
+      extend: {
+        id: 'hello',
+      },
+    },
+  },
+};

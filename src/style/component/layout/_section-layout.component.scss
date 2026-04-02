@@ -1,5 +1,5 @@
-@use '../../abstract/builder';
+@use '../../abstract/builder/debug-builder.abstract' as debug-builder;
 
 .section {
-  @include builder.build-debug;
+  @include debug-builder.build-debug;
 }

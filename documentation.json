@@ -441,12 +441,12 @@
         },
         {
             "name": "HeaderDataLayoutModel",
-            "id": "interface-HeaderDataLayoutModel-a7ef0ccc5ab7ea8308f7e41c5f5a1dcc8ad908a49407d71870831ff5f3c9128264983072a488acc41071ca0229b37b0c134f4f7db83b094fbbd94c94c5658eb7",
+            "id": "interface-HeaderDataLayoutModel-44f51e9e7cf932449098a05195ca716dd2787d8d7eefbb3ef94938ea3c8ee1cd9f114c0d6f51785b941dc06fa1121de84f708823fbcaeff19a3af7c36466901a",
             "file": "src/core/model/layout/header/header-data-layout.model.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "import { ComponentBaseModel } from '../../base/component-base.model';\r\nimport { MetadataBaseModel } from '../../base/metadata-base.model';\r\n\r\nexport interface HeaderDataLayoutModel extends ComponentBaseModel<MetadataBaseModel> {}\r\n",
+            "sourceCode": "import { ComponentBaseModel } from '../../base/component-base.model';\r\nimport { DataBaseModel } from '../../base/data-base.model';\r\n\r\nexport interface HeaderDataLayoutModel extends ComponentBaseModel<DataBaseModel> {}\r\n",
             "properties": [],
             "indexSignatures": [],
             "methods": [],
@@ -456,12 +456,12 @@
         },
         {
             "name": "HeaderMetadataLayoutModel",
-            "id": "interface-HeaderMetadataLayoutModel-034f28fcb53786b0c8b2bc5d68a805254af87401eb3ed6eebd3f8cb3f70fc581e258e23fc46dbdbccae3f294325073001b002f16393a20073e082c4bc0f4ddaf",
+            "id": "interface-HeaderMetadataLayoutModel-9b220fff270073e3e231590a9f277217578303fdc8dfb1a8ca7e589fde4bbfeb081b817c7f3fdbc3a529f1debd2a27b5fbb178cc5730d230a1ebf7d518186ae7",
             "file": "src/core/model/layout/header/header-metadata-layout.model.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "import { ComponentBaseModel } from '../../base/component-base.model';\r\nimport { DataBaseModel } from '../../base/data-base.model';\r\n\r\nexport interface HeaderMetadataLayoutModel extends ComponentBaseModel<DataBaseModel> {}\r\n",
+            "sourceCode": "import { ComponentBaseModel } from '../../base/component-base.model';\r\nimport { MetadataBaseModel } from '../../base/metadata-base.model';\r\n\r\nexport interface HeaderMetadataLayoutModel extends ComponentBaseModel<MetadataBaseModel> {}\r\n",
             "properties": [],
             "indexSignatures": [],
             "methods": [],
@@ -2903,6 +2903,115 @@
             "templateData": "<!-- <text-component type=\"p\" value=\"experience-view works!\"></text-component> -->\r\n"
         },
         {
+            "name": "FooterLayoutComponent",
+            "id": "component-FooterLayoutComponent-10c14dd4a4b9c278a255b07108a05f65df29b19d89523f9dc1469ecaee8cc53ac34c034bea545b58b3d4e7c551483b6a251d9f3964726e16be5bfddaed7906cb",
+            "file": "src/component/layout/footer/footer-layout.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "footer-layout-component",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./footer-layout.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "nodes",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "NodeModel[]",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 16,
+                    "required": true,
+                    "inheritance": {
+                        "file": "LayoutBase"
+                    }
+                },
+                {
+                    "name": "data",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "TData",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 14,
+                    "required": true,
+                    "inheritance": {
+                        "file": "ComponentBase"
+                    }
+                },
+                {
+                    "name": "metadata",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "TMetadata",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 16,
+                    "required": true,
+                    "inheritance": {
+                        "file": "ComponentBase"
+                    }
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "buildImports",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "AnyUtilityModel",
+                    "typeParameters": [],
+                    "line": 22,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        126,
+                        164
+                    ],
+                    "inheritance": {
+                        "file": "ComponentBase"
+                    }
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\r\nimport { LayoutBase } from '../../base/layout.base';\r\nimport { RegisterComponent } from '../../../generator/decorator/component.decorator';\r\nimport { FooterDataLayoutModel } from '../../../core/model/layout/footer/footer-data-layout.model';\r\nimport { FooterMetadataLayoutModel } from '../../../core/model/layout/footer/footer-metadata-layout.model';\r\n\r\n@Component({\r\n  selector: 'footer-layout-component',\r\n  templateUrl: './footer-layout.component.html',\r\n  styleUrl: '../../../style/component/layout/_footer-layout.component.scss',\r\n  imports: LayoutBase.buildImports(),\r\n})\r\n@RegisterComponent({ kind: 'layout', layout: 'footer' })\r\nexport class FooterLayoutComponent extends LayoutBase<\r\n  FooterDataLayoutModel,\r\n  FooterMetadataLayoutModel\r\n> {\r\n  constructor() {\r\n    super('footer');\r\n  }\r\n}\r\n",
+            "styleUrl": "../../../style/component/layout/_footer-layout.component.scss",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 17
+            },
+            "extends": [
+                "LayoutBase"
+            ],
+            "templateData": "<footer class=\"footer\">\r\n  <generator [nodes]=\"nodes()\"></generator>\r\n</footer>\r\n"
+        },
+        {
             "name": "FooterView",
             "id": "component-FooterView-9d1306269de41b852f9a0ff90aa58d20f15f7f0163a4f8c9942ad209eb14271734b729fe172a3628ffc84ee9b34a0066abe2faa33343665bf8c96060b9150779",
             "file": "src/app/view/footer/footer.view.ts",
@@ -3096,6 +3205,115 @@
             "stylesData": "",
             "extends": [],
             "templateData": "@for (node of nodes(); track node) {\r\n  <ng-container *ngComponentOutlet=\"buildComponent(node); inputs: buildInputs(node)\"></ng-container>\r\n}\r\n"
+        },
+        {
+            "name": "HeaderLayoutComponent",
+            "id": "component-HeaderLayoutComponent-c62e3b6a9b64ed3f2f8f6df943af7d4119a438b49121cb30259555cbe72b1603cb014ce7f1e6216aa12567771f904fbfad3e7a2ca18015d2909a2d9ad01b455c",
+            "file": "src/component/layout/header/header-layout.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "header-layout-component",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./header-layout.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "nodes",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "NodeModel[]",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 16,
+                    "required": true,
+                    "inheritance": {
+                        "file": "LayoutBase"
+                    }
+                },
+                {
+                    "name": "data",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "TData",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 14,
+                    "required": true,
+                    "inheritance": {
+                        "file": "ComponentBase"
+                    }
+                },
+                {
+                    "name": "metadata",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "TMetadata",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 16,
+                    "required": true,
+                    "inheritance": {
+                        "file": "ComponentBase"
+                    }
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "buildImports",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "AnyUtilityModel",
+                    "typeParameters": [],
+                    "line": 22,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        126,
+                        164
+                    ],
+                    "inheritance": {
+                        "file": "ComponentBase"
+                    }
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\r\nimport { LayoutBase } from '../../base/layout.base';\r\nimport { RegisterComponent } from '../../../generator/decorator/component.decorator';\r\nimport { HeaderDataLayoutModel } from '../../../core/model/layout/header/header-data-layout.model';\r\nimport { HeaderMetadataLayoutModel } from '../../../core/model/layout/header/header-metadata-layout.model';\r\n\r\n@Component({\r\n  selector: 'header-layout-component',\r\n  templateUrl: './header-layout.component.html',\r\n  styleUrl: '../../../style/component/layout/_header-layout.component.scss',\r\n  imports: LayoutBase.buildImports(),\r\n})\r\n@RegisterComponent({ kind: 'layout', layout: 'header' })\r\nexport class HeaderLayoutComponent extends LayoutBase<\r\n  HeaderDataLayoutModel,\r\n  HeaderMetadataLayoutModel\r\n> {\r\n  constructor() {\r\n    super('header');\r\n  }\r\n}\r\n",
+            "styleUrl": "../../../style/component/layout/_header-layout.component.scss",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 17
+            },
+            "extends": [
+                "LayoutBase"
+            ],
+            "templateData": "<header class=\"header\">\r\n  <generator [nodes]=\"nodes()\"></generator>\r\n</header>\r\n"
         },
         {
             "name": "HeaderView",
@@ -3327,6 +3545,115 @@
             "stylesData": "",
             "extends": [],
             "templateData": "@if (external()) {\r\n  <a class=\"link\" [ngClass]=\"buildSectionClassList()\" [href]=\"buildHref()\" target=\"_blank\">\r\n    <!-- <text-component type=\"p\" [value]=\"label()\"></text-component> -->\r\n  </a>\r\n}\r\n"
+        },
+        {
+            "name": "MainLayoutComponent",
+            "id": "component-MainLayoutComponent-cf0c0fd4bea44e15216a492a4728e35b4f62d9c177454636aa45274b6c43a798d59a8152fa45d473e9986590307aaf96a362d1ca45658b8e68cc4a9c0aa11888",
+            "file": "src/component/layout/main/main-layout.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "main-layout-component",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./main-layout.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "nodes",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "NodeModel[]",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 16,
+                    "required": true,
+                    "inheritance": {
+                        "file": "LayoutBase"
+                    }
+                },
+                {
+                    "name": "data",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "TData",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 14,
+                    "required": true,
+                    "inheritance": {
+                        "file": "ComponentBase"
+                    }
+                },
+                {
+                    "name": "metadata",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "TMetadata",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 16,
+                    "required": true,
+                    "inheritance": {
+                        "file": "ComponentBase"
+                    }
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "buildImports",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "AnyUtilityModel",
+                    "typeParameters": [],
+                    "line": 22,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        126,
+                        164
+                    ],
+                    "inheritance": {
+                        "file": "ComponentBase"
+                    }
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\r\nimport { LayoutBase } from '../../base/layout.base';\r\nimport { RegisterComponent } from '../../../generator/decorator/component.decorator';\r\nimport { MainDataLayoutModel } from '../../../core/model/layout/main/main-data-layout.model';\r\nimport { MainMetadataLayoutModel } from '../../../core/model/layout/main/main-metadata-layout.model';\r\n\r\n@Component({\r\n  selector: 'main-layout-component',\r\n  templateUrl: './main-layout.component.html',\r\n  styleUrl: '../../../style/component/layout/_main-layout.component.scss',\r\n  imports: LayoutBase.buildImports(),\r\n})\r\n@RegisterComponent({ kind: 'layout', layout: 'main' })\r\nexport class MainLayoutComponent extends LayoutBase<MainDataLayoutModel, MainMetadataLayoutModel> {\r\n  constructor() {\r\n    super('main');\r\n  }\r\n}\r\n",
+            "styleUrl": "../../../style/component/layout/_main-layout.component.scss",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 14
+            },
+            "extends": [
+                "LayoutBase"
+            ],
+            "templateData": "<main class=\"main\">\r\n  <generator [nodes]=\"nodes()\"></generator>\r\n</main>\r\n"
         },
         {
             "name": "MainView",
@@ -3641,6 +3968,115 @@
             "templateData": "<!-- <text-component type=\"p\" value=\"resume-view works!\"></text-component> -->\r\n"
         },
         {
+            "name": "RootLayoutComponent",
+            "id": "component-RootLayoutComponent-669e4cdfd147f057e89fb524a6da7597ebbe03682cc9c68795099aada820d6f715295a937b9e6bee82ee96b1fd528c9f9a576745cb4f712eb6ca8b4b73b3bfb9",
+            "file": "src/component/layout/root/root-layout.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "root-layout-component",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./root-layout.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "nodes",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "NodeModel[]",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 16,
+                    "required": true,
+                    "inheritance": {
+                        "file": "LayoutBase"
+                    }
+                },
+                {
+                    "name": "data",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "TData",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 14,
+                    "required": true,
+                    "inheritance": {
+                        "file": "ComponentBase"
+                    }
+                },
+                {
+                    "name": "metadata",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "TMetadata",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 16,
+                    "required": true,
+                    "inheritance": {
+                        "file": "ComponentBase"
+                    }
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "buildImports",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "AnyUtilityModel",
+                    "typeParameters": [],
+                    "line": 22,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        126,
+                        164
+                    ],
+                    "inheritance": {
+                        "file": "ComponentBase"
+                    }
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\r\nimport { LayoutBase } from '../../base/layout.base';\r\nimport { RegisterComponent } from '../../../generator/decorator/component.decorator';\r\nimport { RootDataLayoutModel } from '../../../core/model/layout/root/root-data-layout.model';\r\nimport { RootMetadataLayoutModel } from '../../../core/model/layout/root/root-metadata-layout.model';\r\n\r\n@Component({\r\n  selector: 'root-layout-component',\r\n  templateUrl: './root-layout.component.html',\r\n  styleUrl: '../../../style/component/layout/_root-layout.component.scss',\r\n  imports: LayoutBase.buildImports(),\r\n})\r\n@RegisterComponent({ kind: 'layout', layout: 'root' })\r\nexport class RootLayoutComponent extends LayoutBase<RootDataLayoutModel, RootMetadataLayoutModel> {\r\n  constructor() {\r\n    super('root');\r\n  }\r\n}\r\n",
+            "styleUrl": "../../../style/component/layout/_root-layout.component.scss",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 14
+            },
+            "extends": [
+                "LayoutBase"
+            ],
+            "templateData": "<div class=\"root\">\r\n  <div class=\"root__content\">\r\n    <generator [nodes]=\"nodes()\"></generator>\r\n  </div>\r\n</div>\r\n"
+        },
+        {
             "name": "SectionComponent",
             "id": "component-SectionComponent-e56e5c679992c7875b0c81bfba756d0a629929ba7c043ad6d1c2529ddb63e9b23e27cdbf4e32ba5242d1cbc396cc20d0161bccbf9a547bacd73fc861a74eb428",
             "file": "src/app/component/section/section.component.ts",
@@ -3730,6 +4166,115 @@
                 "StoreCore"
             ],
             "templateData": "<section class=\"section\" [ngClass]=\"buildSectionClassList()\">\r\n  <div class=\"section__content\">\r\n    <ng-container *ngComponentOutlet=\"section().view\"></ng-container>\r\n  </div>\r\n</section>\r\n"
+        },
+        {
+            "name": "SectionLayoutComponent",
+            "id": "component-SectionLayoutComponent-59a48accb1e288cc2cf11e7b09add9f87452f124e154213aedd8f0a97b95f19d9d083b04bf2642fbec01f661a5880a2ed7902b07c1d5b66ccce67717764e8fe0",
+            "file": "src/component/layout/section/section-layout.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "section-layout-component",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./section-layout.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "nodes",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "NodeModel[]",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 16,
+                    "required": true,
+                    "inheritance": {
+                        "file": "LayoutBase"
+                    }
+                },
+                {
+                    "name": "data",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "TData",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 14,
+                    "required": true,
+                    "inheritance": {
+                        "file": "ComponentBase"
+                    }
+                },
+                {
+                    "name": "metadata",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "TMetadata",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 16,
+                    "required": true,
+                    "inheritance": {
+                        "file": "ComponentBase"
+                    }
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "buildImports",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "AnyUtilityModel",
+                    "typeParameters": [],
+                    "line": 22,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        126,
+                        164
+                    ],
+                    "inheritance": {
+                        "file": "ComponentBase"
+                    }
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\r\nimport { LayoutBase } from '../../base/layout.base';\r\nimport { RegisterComponent } from '../../../generator/decorator/component.decorator';\r\nimport { SectionDataLayoutModel } from '../../../core/model/layout/section/section-data-layout.model';\r\nimport { SectionMetadataLayoutModel } from '../../../core/model/layout/section/section-metadata-layout.model';\r\n\r\n@Component({\r\n  selector: 'section-layout-component',\r\n  templateUrl: './section-layout.component.html',\r\n  styleUrl: '../../../style/component/layout/_section-layout.component.scss',\r\n  imports: LayoutBase.buildImports(),\r\n})\r\n@RegisterComponent({ kind: 'layout', layout: 'section' })\r\nexport class SectionLayoutComponent extends LayoutBase<\r\n  SectionDataLayoutModel,\r\n  SectionMetadataLayoutModel\r\n> {\r\n  constructor() {\r\n    super('section');\r\n  }\r\n}\r\n",
+            "styleUrl": "../../../style/component/layout/_section-layout.component.scss",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 17
+            },
+            "extends": [
+                "LayoutBase"
+            ],
+            "templateData": "<section [id]=\"metadata().extend.id\" class=\"section\">\r\n  <generator [nodes]=\"nodes()\"></generator>\r\n</section>\r\n"
         },
         {
             "name": "SkillsView",
@@ -6954,6 +7499,51 @@
                 "type": "component",
                 "linktype": "component",
                 "name": "TextControlComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/6",
+                "status": "low"
+            },
+            {
+                "filePath": "src/component/layout/footer/footer-layout.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "FooterLayoutComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/6",
+                "status": "low"
+            },
+            {
+                "filePath": "src/component/layout/header/header-layout.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "HeaderLayoutComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/6",
+                "status": "low"
+            },
+            {
+                "filePath": "src/component/layout/main/main-layout.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "MainLayoutComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/6",
+                "status": "low"
+            },
+            {
+                "filePath": "src/component/layout/root/root-layout.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "RootLayoutComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/6",
+                "status": "low"
+            },
+            {
+                "filePath": "src/component/layout/section/section-layout.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "SectionLayoutComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/6",
                 "status": "low"
