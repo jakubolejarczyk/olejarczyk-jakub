@@ -10,7 +10,7 @@ import { RootMetadataLayoutModel } from '../../../core/model/layout/root/root-me
   styleUrl: '../../../style/component/layout/_root-layout.component.scss',
   imports: LayoutBase.buildImports(),
 })
-@RegisterComponent({ kind: 'layout', layout: 'root' })
+@RegisterComponent({ component: 'layout', kind: 'root' })
 export class RootLayoutComponent extends LayoutBase<RootDataLayoutModel, RootMetadataLayoutModel> {
   constructor() {
     super('root');

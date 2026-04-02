@@ -11,7 +11,7 @@ import { BemLogicUtility } from '../../../utility/logic/bem-logic.utility';
   styleUrl: '../../../style/component/control/_text-control.component.scss',
   imports: ControlBase.buildImports(),
 })
-@RegisterComponent({ kind: 'control', control: 'text' })
+@RegisterComponent({ component: 'control', kind: 'text' })
 export class TextControlComponent extends ControlBase<
   TextDataControlModel,
   TextMetadataControlModel

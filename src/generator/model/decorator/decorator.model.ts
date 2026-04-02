@@ -2,18 +2,24 @@ import { ComponentType } from '../../../core/type/component.type';
 import { ControlType } from '../../../core/type/control.type';
 import { LayoutType } from '../../../core/type/layout.type';
 import { UtilityType } from '../../../core/type/utility.type';
-import { KindBaseModel } from '../base/kind-base.model';
 
-interface ControlDecoratorModel extends KindBaseModel<ComponentType, 'control'> {
-  control: ControlType;
+interface BaseDecorator<TComponent, TKind, TC extends TComponent> {
+  component: TC;
+  kind: TKind;
 }
 
-interface LayoutDecoratorModel extends KindBaseModel<ComponentType, 'layout'> {
-  layout: LayoutType;
-}
+export interface ControlDecoratorModel extends BaseDecorator<
+  ComponentType,
+  ControlType,
+  'control'
+> {}
 
-interface UtilityDecoratorModel extends KindBaseModel<ComponentType, 'utility'> {
-  utility: UtilityType;
-}
+export interface LayoutDecoratorModel extends BaseDecorator<ComponentType, LayoutType, 'layout'> {}
+
+export interface UtilityDecoratorModel extends BaseDecorator<
+  ComponentType,
+  UtilityType,
+  'utility'
+> {}
 
 export type DecoratorModel = ControlDecoratorModel | LayoutDecoratorModel | UtilityDecoratorModel;

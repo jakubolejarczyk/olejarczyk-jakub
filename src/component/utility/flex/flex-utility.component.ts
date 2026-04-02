@@ -10,7 +10,7 @@ import { FlexMetadataUtilityModel } from '../../../core/model/utility/flex/flex-
   styleUrl: '../../../style/component/utility/_flex-utility.component.scss',
   imports: UtilityBase.buildImports(),
 })
-@RegisterComponent({ kind: 'utility', utility: 'flex' })
+@RegisterComponent({ component: 'utility', kind: 'flex' })
 export class FlexUtilityComponent extends UtilityBase<
   FlexDataUtilityModel,
   FlexMetadataUtilityModel

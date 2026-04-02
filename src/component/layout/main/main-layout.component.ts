@@ -10,7 +10,7 @@ import { MainMetadataLayoutModel } from '../../../core/model/layout/main/main-me
   styleUrl: '../../../style/component/layout/_main-layout.component.scss',
   imports: LayoutBase.buildImports(),
 })
-@RegisterComponent({ kind: 'layout', layout: 'main' })
+@RegisterComponent({ component: 'layout', kind: 'main' })
 export class MainLayoutComponent extends LayoutBase<MainDataLayoutModel, MainMetadataLayoutModel> {
   constructor() {
     super('main');

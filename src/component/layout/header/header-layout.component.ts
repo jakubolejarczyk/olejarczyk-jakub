@@ -10,7 +10,7 @@ import { HeaderMetadataLayoutModel } from '../../../core/model/layout/header/hea
   styleUrl: '../../../style/component/layout/_header-layout.component.scss',
   imports: LayoutBase.buildImports(),
 })
-@RegisterComponent({ kind: 'layout', layout: 'header' })
+@RegisterComponent({ component: 'layout', kind: 'header' })
 export class HeaderLayoutComponent extends LayoutBase<
   HeaderDataLayoutModel,
   HeaderMetadataLayoutModel

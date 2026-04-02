@@ -10,7 +10,7 @@ import { FooterMetadataLayoutModel } from '../../../core/model/layout/footer/foo
   styleUrl: '../../../style/component/layout/_footer-layout.component.scss',
   imports: LayoutBase.buildImports(),
 })
-@RegisterComponent({ kind: 'layout', layout: 'footer' })
+@RegisterComponent({ component: 'layout', kind: 'footer' })
 export class FooterLayoutComponent extends LayoutBase<
   FooterDataLayoutModel,
   FooterMetadataLayoutModel

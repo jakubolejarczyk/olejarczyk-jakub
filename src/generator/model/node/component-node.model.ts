@@ -1,96 +1,85 @@
-// import { ContactDataModel } from '../../../component/model/data/contact-data.model';
-// import { TextControlDataModel } from '../../../component/model/data/control/text-control-data.model';
-// import { CopyrightDataModel } from '../../../component/model/data/copyright-data.model';
-// import { FlexDataModel } from '../../../component/model/data/layout/flex-data.model';
-// import { FlexItemDataModel } from '../../../component/model/data/layout/flex-item-data.model';
-// import { FooterLayoutDataModel } from '../../../core/model/layout/footer/footer-data-layout.model';
-// import { HeaderLayoutDataModel } from '../../../core/model/layout/header/header-metadata-layout.model';
-// import { MainLayoutDataModel } from '../../../core/model/layout/main/main-data-layout.model';
-// import { RootLayoutDataModel } from '../../../core/model/layout/root/root-data-layout.model';
-// import { SectionLayoutDataModel } from '../../../core/model/layout/section/section-data-layout.model';
-// import { ContactMetadataModel } from '../../../component/model/metadata/contact-metadata.model';
-// import { TextControlMetadataModel } from '../../../component/model/metadata/control/text-control-metadata.model';
-// import { CopyrightMetadataModel } from '../../../component/model/metadata/copyright-metadata.model';
-// import { FlexItemMetadataModel } from '../../../component/model/metadata/layout/flex-item-metadata.model';
-// import { FlexMetadataModel } from '../../../component/model/metadata/layout/flex-metadata.model';
-// import { FooterLayoutMetadataModel } from '../../../core/model/layout/footer/footer-metadata-layout.model';
-// import { HeaderLayoutMetadataModel } from '../../../core/model/layout/header/header-data-layout.model';
-// import { MainLayoutMetadataModel } from '../../../core/model/layout/main/main-metadata-layout.model';
-// import { RootLayoutMetadataModel } from '../../../core/model/layout/root/root-metadata-layout.model';
-// import { SectionLayoutMetadataModel } from '../../../core/model/layout/section/section-metadata-layout.model';
-// import { ComponentType } from '../../../core/type/component.type';
-// import { ControlKindBaseModel } from '../base/control-kind-base.model';
-// import { KindBaseModel } from '../base/kind-base.model';
-// import { LayoutKindBaseModel } from '../base/layout-kind-base.model';
+import { TextDataControlModel } from '../../../core/model/control/text/text-data-control.model';
+import { TextMetadataControlModel } from '../../../core/model/control/text/text-metadata-control.model';
+import { FooterDataLayoutModel } from '../../../core/model/layout/footer/footer-data-layout.model';
+import { FooterMetadataLayoutModel } from '../../../core/model/layout/footer/footer-metadata-layout.model';
+import { HeaderDataLayoutModel } from '../../../core/model/layout/header/header-data-layout.model';
+import { HeaderMetadataLayoutModel } from '../../../core/model/layout/header/header-metadata-layout.model';
+import { MainDataLayoutModel } from '../../../core/model/layout/main/main-data-layout.model';
+import { MainMetadataLayoutModel } from '../../../core/model/layout/main/main-metadata-layout.model';
+import { RootDataLayoutModel } from '../../../core/model/layout/root/root-data-layout.model';
+import { RootMetadataLayoutModel } from '../../../core/model/layout/root/root-metadata-layout.model';
+import { SectionDataLayoutModel } from '../../../core/model/layout/section/section-data-layout.model';
+import { SectionMetadataLayoutModel } from '../../../core/model/layout/section/section-metadata-layout.model';
+import { FlexItemDataUtilityModel } from '../../../core/model/utility/flex-item/flex-item-data-utility.model';
+import { FlexItemMetadataUtilityModel } from '../../../core/model/utility/flex-item/flex-item-metadata-utility.model';
+import { FlexDataUtilityModel } from '../../../core/model/utility/flex/flex-data-utility.model';
+import { FlexMetadataUtilityModel } from '../../../core/model/utility/flex/flex-metadata-utility.model';
+import {
+  ControlDecoratorModel,
+  LayoutDecoratorModel,
+  UtilityDecoratorModel,
+} from '../decorator/decorator.model';
 
-// interface RootComponentNodeModel
-//   extends KindBaseModel<ComponentType, 'layout'>, LayoutKindBaseModel<'root'> {
-//   data: RootLayoutDataModel;
-//   metadata: RootLayoutMetadataModel;
-// }
+interface BaseComponentNodeModel<TData, TMetadata> {
+  data: TData;
+  metadata: TMetadata;
+}
 
-// interface HeaderComponentNodeModel
-//   extends KindBaseModel<ComponentType, 'layout'>, LayoutKindBaseModel<'header'> {
-//   data: HeaderLayoutDataModel;
-//   metadata: HeaderLayoutMetadataModel;
-// }
+interface BaseControlComponentNodeModel<TData, TMetadata>
+  extends ControlDecoratorModel, BaseComponentNodeModel<TData, TMetadata> {}
 
-// interface MainComponentNodeModel
-//   extends KindBaseModel<ComponentType, 'layout'>, LayoutKindBaseModel<'main'> {
-//   data: MainLayoutDataModel;
-//   metadata: MainLayoutMetadataModel;
-// }
+interface BaseLayoutComponentNodeModel<TData, TMetadata>
+  extends LayoutDecoratorModel, BaseComponentNodeModel<TData, TMetadata> {}
 
-// interface FooterComponentNodeModel
-//   extends KindBaseModel<ComponentType, 'layout'>, LayoutKindBaseModel<'footer'> {
-//   data: FooterLayoutDataModel;
-//   metadata: FooterLayoutMetadataModel;
-// }
+interface BaseUtilityComponentNodeModel<TData, TMetadata>
+  extends UtilityDecoratorModel, BaseComponentNodeModel<TData, TMetadata> {}
 
-// interface SectionComponentNodeModel
-//   extends KindBaseModel<ComponentType, 'layout'>, LayoutKindBaseModel<'section'> {
-//   data: SectionLayoutDataModel;
-//   metadata: SectionLayoutMetadataModel;
-// }
+interface TextControlComponentNodeModel extends BaseControlComponentNodeModel<
+  TextDataControlModel,
+  TextMetadataControlModel
+> {}
 
-// interface FlexComponentNodeModel
-//   extends KindBaseModel<ComponentType, 'layout'>, LayoutKindBaseModel<'flex'> {
-//   data: FlexDataModel;
-//   metadata: FlexMetadataModel;
-// }
+interface FooterLayoutComponentNodeModel extends BaseLayoutComponentNodeModel<
+  FooterDataLayoutModel,
+  FooterMetadataLayoutModel
+> {}
 
-// interface FlexItemComponentNodeModel
-//   extends KindBaseModel<ComponentType, 'layout'>, LayoutKindBaseModel<'flex-item'> {
-//   data: FlexItemDataModel;
-//   metadata: FlexItemMetadataModel;
-// }
+interface HeaderLayoutComponentNodeModel extends BaseLayoutComponentNodeModel<
+  HeaderDataLayoutModel,
+  HeaderMetadataLayoutModel
+> {}
 
-// interface ContactComponentNodeModel
-//   extends KindBaseModel<ComponentType, 'layout'>, LayoutKindBaseModel<'contact'> {
-//   data: ContactDataModel;
-//   metadata: ContactMetadataModel;
-// }
+interface MainLayoutComponentNodeModel extends BaseLayoutComponentNodeModel<
+  MainDataLayoutModel,
+  MainMetadataLayoutModel
+> {}
 
-// interface CopyrightComponentNodeModel
-//   extends KindBaseModel<ComponentType, 'layout'>, LayoutKindBaseModel<'copyright'> {
-//   data: CopyrightDataModel;
-//   metadata: CopyrightMetadataModel;
-// }
+interface RootLayoutComponentNodeModel extends BaseLayoutComponentNodeModel<
+  RootDataLayoutModel,
+  RootMetadataLayoutModel
+> {}
 
-// interface TextComponentNodeModel
-//   extends KindBaseModel<ComponentType, 'control'>, ControlKindBaseModel<'text'> {
-//   data: TextControlDataModel;
-//   metadata: TextControlMetadataModel;
-// }
+interface SectionLayoutComponentNodeModel extends BaseLayoutComponentNodeModel<
+  SectionDataLayoutModel,
+  SectionMetadataLayoutModel
+> {}
 
-// export type ComponentNodeModel =
-//   | RootComponentNodeModel
-//   | HeaderComponentNodeModel
-//   | MainComponentNodeModel
-//   | FooterComponentNodeModel
-//   | SectionComponentNodeModel
-//   | FlexComponentNodeModel
-//   | FlexItemComponentNodeModel
-//   | ContactComponentNodeModel
-//   | CopyrightComponentNodeModel
-//   | TextComponentNodeModel;
+interface FlexUtilityComponentNodeModel extends BaseUtilityComponentNodeModel<
+  FlexDataUtilityModel,
+  FlexMetadataUtilityModel
+> {}
+
+interface FlexItemUtilityComponentNodeModel extends BaseUtilityComponentNodeModel<
+  FlexItemDataUtilityModel,
+  FlexItemMetadataUtilityModel
+> {}
+
+export type ComponentNodeModel =
+  | TextControlComponentNodeModel
+  | FooterLayoutComponentNodeModel
+  | HeaderLayoutComponentNodeModel
+  | MainLayoutComponentNodeModel
+  | RootLayoutComponentNodeModel
+  | SectionLayoutComponentNodeModel
+  | FlexUtilityComponentNodeModel
+  | FlexItemUtilityComponentNodeModel;

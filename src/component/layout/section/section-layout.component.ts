@@ -10,7 +10,7 @@ import { SectionMetadataLayoutModel } from '../../../core/model/layout/section/s
   styleUrl: '../../../style/component/layout/_section-layout.component.scss',
   imports: LayoutBase.buildImports(),
 })
-@RegisterComponent({ kind: 'layout', layout: 'section' })
+@RegisterComponent({ component: 'layout', kind: 'section' })
 export class SectionLayoutComponent extends LayoutBase<
   SectionDataLayoutModel,
   SectionMetadataLayoutModel

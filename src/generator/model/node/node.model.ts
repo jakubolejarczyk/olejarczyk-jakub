@@ -1,6 +1,6 @@
-// import { ComponentNodeModel } from './component-node.model';
+import { ComponentNodeModel } from './component-node.model';
 
 export interface NodeModel {
-  component: any;
+  componentNode: ComponentNodeModel;
   children?: NodeModel[];
 }
