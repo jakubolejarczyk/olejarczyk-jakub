@@ -3,9 +3,8 @@
 
 .root {
   @include builder.build-debug;
-  // TODO: Add correct height
-  // height: calc(100dvh - 2rem);
 
+  height: constant.$screen__size--full-height;
   overflow: auto;
 
   &__content {

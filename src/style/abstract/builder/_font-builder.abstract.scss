@@ -1,4 +1,5 @@
-// TODO: Use the constants instead of values
-@function build-font-size($min, $vw, $max, $base: 0.5rem) {
+@use '../constant';
+
+@function build-font-size($min, $vw, $max, $base: constant.$size--sm) {
   @return clamp(#{$min}, #{$vw} + #{$base}, #{$max});
 }
