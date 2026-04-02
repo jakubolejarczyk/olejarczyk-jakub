@@ -3,15 +3,15 @@ import { ComponentBaseModel } from '../../core/model/base/component-base.model';
 import { DataBaseModel } from '../../core/model/base/data-base.model';
 import { MetadataBaseModel } from '../../core/model/base/metadata-base.model';
 import { ComponentBase } from './component.base';
-import { ControlType } from '../../core/type/control.type';
+import { UtilityType } from '../../core/type/utility.type';
 import { AnyUtilityModel } from '../../utility/model/any-utility.model';
 
 @Directive()
-export class ControlBase<
+export class UtilityBase<
   TData extends ComponentBaseModel<DataBaseModel>,
   TMetadata extends ComponentBaseModel<MetadataBaseModel>,
-> extends ComponentBase<ControlType, TData, TMetadata> {
-  constructor(protected override type: ControlType) {
+> extends ComponentBase<UtilityType, TData, TMetadata> {
+  constructor(protected override type: UtilityType) {
     super(type);
   }
 

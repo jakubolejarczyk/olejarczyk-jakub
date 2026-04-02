@@ -1,0 +1,1 @@
+export type AnyUtilityModel = any;

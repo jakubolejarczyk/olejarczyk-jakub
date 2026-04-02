@@ -1,14 +1,15 @@
 import { Directive, input } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { BaseModel } from '../../core/model/base/component-base.model';
 import { DataBaseModel } from '../../core/model/base/data-base.model';
 import { MetadataBaseModel } from '../../core/model/base/metadata-base.model';
+import { ComponentBaseModel } from '../../core/model/base/component-base.model';
+import { CommonModule } from '@angular/common';
+import { AnyUtilityModel } from '../../utility/model/any-utility.model';
 
 @Directive()
 export class ComponentBase<
   TType extends string,
-  TData extends BaseModel<DataBaseModel, unknown>,
-  TMetadata extends BaseModel<MetadataBaseModel, unknown>,
+  TData extends ComponentBaseModel<DataBaseModel>,
+  TMetadata extends ComponentBaseModel<MetadataBaseModel>,
 > {
   data = input.required<TData>();
 
@@ -18,11 +19,7 @@ export class ComponentBase<
     this.type = type;
   }
 
-  protected static buildImports(): any[] {
+  static buildImports(): AnyUtilityModel {
     return [CommonModule];
-  }
-
-  protected buildMainClassList() {
-    return [];
   }
 }

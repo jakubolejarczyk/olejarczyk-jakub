@@ -1,24 +1,25 @@
 import { Directive, input } from '@angular/core';
-import { BaseModel } from '../../core/model/base/component-base.model';
+import { ComponentBaseModel } from '../../core/model/base/component-base.model';
 import { DataBaseModel } from '../../core/model/base/data-base.model';
 import { MetadataBaseModel } from '../../core/model/base/metadata-base.model';
 import { ComponentBase } from './component.base';
 import { LayoutType } from '../../core/type/layout.type';
+import { AnyUtilityModel } from '../../utility/model/any-utility.model';
 import { Generator } from '../../generator/generator/generator';
 import { NodeModel } from '../../generator/model/node/node.model';
 
 @Directive()
 export class LayoutBase<
-  TDate extends BaseModel<DataBaseModel, unknown>,
-  TMetadata extends BaseModel<MetadataBaseModel, unknown>,
-> extends ComponentBase<LayoutType, TDate, TMetadata> {
-  nodes = input<NodeModel[]>([]);
+  TData extends ComponentBaseModel<DataBaseModel>,
+  TMetadata extends ComponentBaseModel<MetadataBaseModel>,
+> extends ComponentBase<LayoutType, TData, TMetadata> {
+  nodes = input.required<NodeModel[]>();
 
   constructor(protected override type: LayoutType) {
     super(type);
   }
 
-  protected static override buildImports(): any[] {
+  static override buildImports(): AnyUtilityModel {
     return [...ComponentBase.buildImports(), Generator];
   }
 }
