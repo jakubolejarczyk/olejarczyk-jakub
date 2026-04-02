@@ -20,7 +20,7 @@ export class TextControlComponent extends ControlBase<
     super('text');
   }
 
-  buildClassNames() {
+  protected buildClassNames() {
     const block = this.type;
     const textType = this.metadata().extend.type;
     const main = BemLogicUtility.build(block);

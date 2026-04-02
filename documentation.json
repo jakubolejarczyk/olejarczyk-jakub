@@ -3873,7 +3873,7 @@
         },
         {
             "name": "TextControlComponent",
-            "id": "component-TextControlComponent-b2a45a89878462cc8591ffd5b1717af7359ae38b3ef3a98c4cdcb0bece8bc65a399cbd046eee07ce0859a2934f2bee1bd16641d16fe559e6448669717f473795",
+            "id": "component-TextControlComponent-32933caacd4dbfdb93a73b765416a2e51a2f640a9aab092c5b6a8384a2b4556f114ab8b1ecc4fab6b9079d577799b5b97919ebfba117bd4fbd90eaeaca225f9c",
             "file": "src/component/control/text/text-control.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -3929,7 +3929,10 @@
                     "typeParameters": [],
                     "line": 23,
                     "deprecated": false,
-                    "deprecationMessage": ""
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        124
+                    ]
                 },
                 {
                     "name": "buildImports",
@@ -3958,7 +3961,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\r\nimport { ControlBase } from '../../base/control.base';\r\nimport { RegisterComponent } from '../../../generator/decorator/component.decorator';\r\nimport { TextDataControlModel } from '../../../core/model/control/text/text-data-control.model';\r\nimport { TextMetadataControlModel } from '../../../core/model/control/text/text-metadata-control.model';\r\nimport { BemLogicUtility } from '../../../utility/logic/bem-logic.utility';\r\n\r\n@Component({\r\n  selector: 'text-control-component',\r\n  templateUrl: './text-control.component.html',\r\n  styleUrl: '../../../style/component/control/_text-control.component.scss',\r\n  imports: ControlBase.buildImports(),\r\n})\r\n@RegisterComponent({ kind: 'control', control: 'text' })\r\nexport class TextControlComponent extends ControlBase<\r\n  TextDataControlModel,\r\n  TextMetadataControlModel\r\n> {\r\n  constructor() {\r\n    super('text');\r\n  }\r\n\r\n  buildClassNames() {\r\n    const block = this.type;\r\n    const textType = this.metadata().extend.type;\r\n    const main = BemLogicUtility.build(block);\r\n    const mainTextType = BemLogicUtility.build(block, textType);\r\n    return [main, mainTextType];\r\n  }\r\n}\r\n",
+            "sourceCode": "import { Component } from '@angular/core';\r\nimport { ControlBase } from '../../base/control.base';\r\nimport { RegisterComponent } from '../../../generator/decorator/component.decorator';\r\nimport { TextDataControlModel } from '../../../core/model/control/text/text-data-control.model';\r\nimport { TextMetadataControlModel } from '../../../core/model/control/text/text-metadata-control.model';\r\nimport { BemLogicUtility } from '../../../utility/logic/bem-logic.utility';\r\n\r\n@Component({\r\n  selector: 'text-control-component',\r\n  templateUrl: './text-control.component.html',\r\n  styleUrl: '../../../style/component/control/_text-control.component.scss',\r\n  imports: ControlBase.buildImports(),\r\n})\r\n@RegisterComponent({ kind: 'control', control: 'text' })\r\nexport class TextControlComponent extends ControlBase<\r\n  TextDataControlModel,\r\n  TextMetadataControlModel\r\n> {\r\n  constructor() {\r\n    super('text');\r\n  }\r\n\r\n  protected buildClassNames() {\r\n    const block = this.type;\r\n    const textType = this.metadata().extend.type;\r\n    const main = BemLogicUtility.build(block);\r\n    const mainTextType = BemLogicUtility.build(block, textType);\r\n    return [main, mainTextType];\r\n  }\r\n}\r\n",
             "styleUrl": "../../../style/component/control/_text-control.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
