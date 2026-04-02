@@ -1,1 +1,1 @@
-export type ComponentType = 'control' | 'layout';
+export type ComponentType = 'control' | 'layout' | 'utility';

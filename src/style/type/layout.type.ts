@@ -1,10 +1,1 @@
-export type LayoutType =
-  | 'root'
-  | 'header'
-  | 'main'
-  | 'footer'
-  | 'section'
-  | 'flex'
-  | 'flex-item'
-  | 'copyright'
-  | 'contact';
+export type LayoutType = 'footer' | 'header' | 'main' | 'root' | 'section';
