@@ -6,29 +6,30 @@ import { getComponent } from '../decorator/component.decorator';
 @Component({
   selector: 'generator',
   templateUrl: './generator.html',
-  styleUrl: './generator.scss',
+  styleUrl: '../../style/generator/_generator.scss',
   imports: [NgComponentOutlet],
 })
 export class Generator {
   nodes = input<NodeModel[]>([]);
 
   buildComponent(node: NodeModel) {
-    const { kind } = node.component;
-    if (kind === 'control') {
-      const { control } = node.component;
-      return getComponent({ kind, control });
+    const { component, kind } = node.componentNode;
+    if (component === 'control') {
+      return getComponent({ component, kind });
     }
-    if (kind === 'layout') {
-      const { layout } = node.component;
-      return getComponent({ kind, layout });
+    if (component === 'layout') {
+      return getComponent({ component, kind });
+    }
+    if (component === 'utility') {
+      return getComponent({ component, kind });
     }
   }
 
   buildInputs(node: NodeModel) {
     return {
-      data: node.component.data,
-      metadata: node.component.metadata,
-      nodes: node.children,
+      data: node.componentNode.data,
+      metadata: node.componentNode.metadata,
+      nodes: node.componentNode.component === 'control' ? [] : node.children,
     };
   }
 }
