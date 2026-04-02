@@ -2,8 +2,6 @@
 @use '../../abstract/constant/font-constant.abstract' as font-constant;
 
 .text {
-  @include debug-builder.build-debug;
-
   font-family: font-constant.$font__family;
 
   &__small,
