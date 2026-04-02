@@ -1,13 +1,12 @@
-import { PaletteType } from '../../../core/type/palette.type';
 import { TextType } from '../../../core/type/text.type';
 import { NodeModel } from '../../model/node/node.model';
 
 export class TextControlBuilder {
-  static build(palette: PaletteType, value: string, type: TextType): NodeModel {
+  static build(type: TextType, value: string): NodeModel {
     return {
-      component: {
-        kind: 'control',
-        control: 'text',
+      componentNode: {
+        component: 'control',
+        kind: 'text',
         data: {
           base: {},
           extend: {
@@ -16,13 +15,14 @@ export class TextControlBuilder {
         },
         metadata: {
           base: {
-            palette,
+            palette: 'primary',
           },
           extend: {
             type,
           },
         },
       },
+      children: [],
     };
   }
 }

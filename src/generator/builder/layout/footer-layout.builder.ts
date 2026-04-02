@@ -1,19 +1,18 @@
-import { PaletteType } from '../../../core/type/palette.type';
 import { NodeModel } from '../../model/node/node.model';
 
 export class FooterLayoutBuilder {
-  static build(palette: PaletteType, children: NodeModel[]): NodeModel {
+  static build(children: NodeModel[]): NodeModel {
     return {
-      component: {
-        kind: 'layout',
-        layout: 'footer',
+      componentNode: {
+        component: 'layout',
+        kind: 'footer',
         data: {
           base: {},
           extend: {},
         },
         metadata: {
           base: {
-            palette,
+            palette: 'primary',
           },
           extend: {},
         },

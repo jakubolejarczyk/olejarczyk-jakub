@@ -1,11 +1,11 @@
 import { NodeModel } from '../../model/node/node.model';
 
-export class MainLayoutBuilder {
+export class FlexUtilityBuilder {
   static build(children: NodeModel[]): NodeModel {
     return {
       componentNode: {
-        component: 'layout',
-        kind: 'main',
+        component: 'utility',
+        kind: 'flex',
         data: {
           base: {},
           extend: {},

@@ -1,19 +1,18 @@
-import { PaletteType } from '../../../core/type/palette.type';
 import { NodeModel } from '../../model/node/node.model';
 
 export class SectionLayoutBuilder {
-  static build(palette: PaletteType, id: string, children: NodeModel[]): NodeModel {
+  static build(id: string, children: NodeModel[]): NodeModel {
     return {
-      component: {
-        kind: 'layout',
-        layout: 'section',
+      componentNode: {
+        component: 'layout',
+        kind: 'section',
         data: {
           base: {},
           extend: {},
         },
         metadata: {
           base: {
-            palette,
+            palette: 'primary',
           },
           extend: {
             id,
