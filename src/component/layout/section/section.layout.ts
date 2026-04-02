@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { LayoutBase } from '../../base/layout.base';
 import { RegisterComponent } from '../../../generator/decorator/component.decorator';
-import { SectionLayoutDataModel } from '../../model/data/layout/section-layout-data.model';
-import { SectionLayoutMetadataModel } from '../../model/metadata/layout/section-layout-metadata.model';
+import { SectionLayoutDataModel } from '../../../core/model/layout/section/section-data-layout.model';
+import { SectionLayoutMetadataModel } from '../../../core/model/layout/section/section-metadata-layout.model';
 
 @Component({
   selector: 'section-layout',

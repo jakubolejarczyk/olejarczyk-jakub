@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { LayoutBase } from '../../base/layout.base';
 import { RegisterComponent } from '../../../generator/decorator/component.decorator';
-import { MainLayoutDataModel } from '../../model/data/layout/main-layout-data.model';
-import { MainLayoutMetadataModel } from '../../model/metadata/layout/main-layout-metadata.model';
+import { MainLayoutDataModel } from '../../../core/model/layout/main/main-data-layout.model';
+import { MainLayoutMetadataModel } from '../../../core/model/layout/main/main-metadata-layout.model';
 
 @Component({
   selector: 'main-layout',
