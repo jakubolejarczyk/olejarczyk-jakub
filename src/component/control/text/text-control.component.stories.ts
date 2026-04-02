@@ -1,12 +1,12 @@
 import { Meta, StoryObj } from '@storybook/angular';
-import { TextControl } from './text.control';
+import { TextControlComponent } from './text-control.component';
 
-const meta: Meta<TextControl> = {
-  title: 'control/text',
-  component: TextControl,
+const meta: Meta<TextControlComponent> = {
+  title: 'component/control/text',
+  component: TextControlComponent,
 };
 export default meta;
-type Story = StoryObj<TextControl>;
+type Story = StoryObj<TextControlComponent>;
 
 export const Small: Story = {
   args: {

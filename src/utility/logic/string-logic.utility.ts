@@ -1,4 +1,4 @@
-export class StringUtility {
+export class StringLogicUtility {
   static isEmpty(value?: string) {
     return value === undefined || value === null || value === '';
   }

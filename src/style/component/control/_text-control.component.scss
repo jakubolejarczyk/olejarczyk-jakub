@@ -1,39 +1,39 @@
-@use '../../abstract/builder';
-@use '../../abstract/constant';
+@use '../../abstract/builder/debug-builder.abstract' as debug-builder;
+@use '../../abstract/constant/font-constant.abstract' as font-constant;
 
 .text {
-  @include builder.build-debug;
+  @include debug-builder.build-debug;
 
-  font-family: constant.$font__family;
+  font-family: font-constant.$font__family;
 
   &__small,
   &__p {
-    font-weight: constant.$font__weight--normal;
+    font-weight: font-constant.$font__weight--normal;
   }
 
   &__h3,
   &__h2,
   &__h1 {
-    font-weight: constant.$font__weight--bold;
+    font-weight: font-constant.$font__weight--bold;
   }
 
   &__small {
-    font-size: constant.$font__size--xs;
+    font-size: font-constant.$font__size--xs;
   }
 
   &__p {
-    font-size: constant.$font__size--sm;
+    font-size: font-constant.$font__size--sm;
   }
 
   &__h3 {
-    font-size: constant.$font__size--md;
+    font-size: font-constant.$font__size--md;
   }
 
   &__h2 {
-    font-size: constant.$font__size--lg;
+    font-size: font-constant.$font__size--lg;
   }
 
   &__h1 {
-    font-size: constant.$font__size--xl;
+    font-size: font-constant.$font__size--xl;
   }
 }
