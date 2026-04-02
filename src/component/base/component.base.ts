@@ -1,8 +1,8 @@
 import { Directive, input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { BaseModel } from '../model/base/base.model';
-import { DataBaseModel } from '../model/base/data-base.model';
-import { MetadataBaseModel } from '../model/base/metadata-base.model';
+import { BaseModel } from '../../core/model/base/component-base.model';
+import { DataBaseModel } from '../../core/model/base/data-base.model';
+import { MetadataBaseModel } from '../../core/model/base/metadata-base.model';
 
 @Directive()
 export class ComponentBase<

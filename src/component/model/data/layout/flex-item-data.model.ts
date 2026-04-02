@@ -1,4 +1,4 @@
-import { BaseModel } from '../../base/base.model';
-import { DataBaseModel } from '../../base/data-base.model';
+import { BaseModel } from '../../../../core/model/base/component-base.model';
+import { DataBaseModel } from '../../../../core/model/base/data-base.model';
 
 export interface FlexItemDataModel extends BaseModel<DataBaseModel, {}> {}

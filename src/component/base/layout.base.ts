@@ -1,7 +1,7 @@
 import { Directive, input } from '@angular/core';
-import { BaseModel } from '../model/base/base.model';
-import { DataBaseModel } from '../model/base/data-base.model';
-import { MetadataBaseModel } from '../model/base/metadata-base.model';
+import { BaseModel } from '../../core/model/base/component-base.model';
+import { DataBaseModel } from '../../core/model/base/data-base.model';
+import { MetadataBaseModel } from '../../core/model/base/metadata-base.model';
 import { ComponentBase } from './component.base';
 import { LayoutType } from '../../core/type/layout.type';
 import { Generator } from '../../generator/generator/generator';

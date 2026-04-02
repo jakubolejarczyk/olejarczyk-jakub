@@ -1,4 +1,4 @@
-import { BaseModel } from '../../base/base.model';
-import { MetadataBaseModel } from '../../base/metadata-base.model';
+import { BaseModel } from '../../../../core/model/base/component-base.model';
+import { MetadataBaseModel } from '../../../../core/model/base/metadata-base.model';
 
 export interface RootLayoutMetadataModel extends BaseModel<MetadataBaseModel> {}
