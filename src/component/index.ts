@@ -1,10 +1,8 @@
-// import './layout/header/header.layout';
-// import './layout/root/root.layout';
-// import './layout/main/main.layout';
-// import './layout/footer/footer.layout';
-// import './layout/section/section.layout';
-// import './control/text/text.control';
-// import './utility/flex/flex.layout';
-// import './utility/flex-item/flex-item.layout';
-// import './layout/contact/contact.layout';
-// import './layout/copyright/copyright.layout';
+import './control/text/text-control.component';
+import './layout/footer/footer-layout.component';
+import './layout/header/header-layout.component';
+import './layout/main/main-layout.component';
+import './layout/root/root-layout.component';
+import './layout/section/section-layout.component';
+import './utility/flex/flex-utility.component';
+import './utility/flex-item/flex-item-utility.component';
