@@ -1,5 +1,5 @@
-import { PaletteType } from '../../../style/type/palette.type';
-import { TextType } from '../../../style/type/text.type';
+import { PaletteType } from '../../../core/type/palette.type';
+import { TextType } from '../../../core/type/text.type';
 import { NodeModel } from '../../model/node/node.model';
 
 export class TextControlBuilder {

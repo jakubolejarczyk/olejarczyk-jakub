@@ -1,4 +1,4 @@
-import { PaletteType } from '../../../style/type/palette.type';
+import { PaletteType } from '../../../core/type/palette.type';
 import { NodeModel } from '../../model/node/node.model';
 
 export class SectionLayoutBuilder {

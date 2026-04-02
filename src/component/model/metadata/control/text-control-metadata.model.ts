@@ -1,4 +1,4 @@
-import { TextType } from '../../../../style/type/text.type';
+import { TextType } from '../../../../core/type/text.type';
 import { BaseModel } from '../../base/base.model';
 import { MetadataBaseModel } from '../../base/metadata-base.model';
 

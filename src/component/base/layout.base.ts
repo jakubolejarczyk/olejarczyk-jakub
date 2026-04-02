@@ -3,7 +3,7 @@ import { BaseModel } from '../model/base/base.model';
 import { DataBaseModel } from '../model/base/data-base.model';
 import { MetadataBaseModel } from '../model/base/metadata-base.model';
 import { ComponentBase } from './component.base';
-import { LayoutType } from '../../style/type/layout.type';
+import { LayoutType } from '../../core/type/layout.type';
 import { Generator } from '../../generator/generator/generator';
 import { NodeModel } from '../../generator/model/node/node.model';
 

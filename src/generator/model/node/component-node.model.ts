@@ -18,7 +18,7 @@ import { HeaderLayoutMetadataModel } from '../../../component/model/metadata/lay
 import { MainLayoutMetadataModel } from '../../../component/model/metadata/layout/main-layout-metadata.model';
 import { RootLayoutMetadataModel } from '../../../component/model/metadata/layout/root-layout-metadata.model';
 import { SectionLayoutMetadataModel } from '../../../component/model/metadata/layout/section-layout-metadata.model';
-import { ComponentType } from '../../../style/type/component.type';
+import { ComponentType } from '../../../core/type/component.type';
 import { ControlKindBaseModel } from '../base/control-kind-base.model';
 import { KindBaseModel } from '../base/kind-base.model';
 import { LayoutKindBaseModel } from '../base/layout-kind-base.model';
