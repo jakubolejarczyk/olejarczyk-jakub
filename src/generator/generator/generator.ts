@@ -26,10 +26,18 @@ export class Generator {
   }
 
   buildInputs(node: NodeModel) {
-    return {
-      data: node.componentNode.data,
-      metadata: node.componentNode.metadata,
-      nodes: node.componentNode.component === 'control' ? [] : node.children,
-    };
+    const { component } = node.componentNode;
+    if (component === 'control') {
+      return {
+        data: node.componentNode.data,
+        metadata: node.componentNode.metadata,
+      };
+    } else {
+      return {
+        data: node.componentNode.data,
+        metadata: node.componentNode.metadata,
+        nodes: node.children,
+      };
+    }
   }
 }
