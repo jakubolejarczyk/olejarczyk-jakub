@@ -1,7 +1,12 @@
+import { PositionType } from '../../../core/type/position.type';
 import { NodeModel } from '../../model/node/node.model';
 
 export class FlexUtilityBuilder {
-  static build(children: NodeModel[]): NodeModel {
+  static build(
+    alignItems: PositionType,
+    justifyContent: PositionType,
+    children: NodeModel[],
+  ): NodeModel {
     return {
       componentNode: {
         component: 'utility',
@@ -14,7 +19,10 @@ export class FlexUtilityBuilder {
           base: {
             palette: 'primary',
           },
-          extend: {},
+          extend: {
+            alignItems,
+            justifyContent,
+          },
         },
       },
       children,

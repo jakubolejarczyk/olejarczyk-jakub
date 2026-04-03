@@ -3,6 +3,7 @@ import { UtilityBase } from '../../base/utility.base';
 import { RegisterComponent } from '../../../generator/decorator/component.decorator';
 import { FlexDataUtilityModel } from '../../../core/model/utility/flex/flex-data-utility.model';
 import { FlexMetadataUtilityModel } from '../../../core/model/utility/flex/flex-metadata-utility.model';
+import { BemLogicUtility } from '../../../utility/logic/bem-logic.utility';
 
 @Component({
   selector: 'flex-utility-component',
@@ -17,5 +18,14 @@ export class FlexUtilityComponent extends UtilityBase<
 > {
   constructor() {
     super('flex');
+  }
+
+  buildClassNames() {
+    const block = this.type;
+    const { alignItems, justifyContent } = this.metadata().extend;
+    const main = BemLogicUtility.build(block);
+    const mainAlignItems = BemLogicUtility.build(block, 'align-items', alignItems);
+    const mainJustifyContent = BemLogicUtility.build(block, 'justify-content', justifyContent);
+    return [main, mainAlignItems, mainJustifyContent];
   }
 }

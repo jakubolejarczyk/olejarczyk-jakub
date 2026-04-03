@@ -12,7 +12,7 @@ export class CopyrightView extends StoreCore {
 
   build(): NodeModel {
     return SectionLayoutBuilder.build('copyright', [
-      FlexUtilityBuilder.build([
+      FlexUtilityBuilder.build('center', 'center', [
         TextControlBuilder.build('p', '© 2026', this.firstname(), this.lastname()),
         TextControlBuilder.build('p', 'All rights reserved.'),
       ]),
