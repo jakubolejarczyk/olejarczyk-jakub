@@ -2,11 +2,32 @@ import { PositionType } from '../../../core/type/position.type';
 import { NodeModel } from '../../model/node/node.model';
 
 export class FlexUtilityBuilder {
-  static build(
-    alignItems: PositionType,
-    justifyContent: PositionType,
-    children: NodeModel[],
-  ): NodeModel {
+  private alignItems: PositionType = 'left';
+
+  private justifyContent: PositionType = 'left';
+
+  private children: NodeModel[] = [];
+
+  static builder() {
+    return new FlexUtilityBuilder();
+  }
+
+  setAlignItems(alignItems: PositionType) {
+    this.alignItems = alignItems;
+    return this;
+  }
+
+  setJustifyContent(justifyContent: PositionType) {
+    this.justifyContent = justifyContent;
+    return this;
+  }
+
+  setChildren(children: NodeModel[]) {
+    this.children = children;
+    return this;
+  }
+
+  build(): NodeModel {
     return {
       componentNode: {
         component: 'utility',
@@ -20,12 +41,12 @@ export class FlexUtilityBuilder {
             palette: 'primary',
           },
           extend: {
-            alignItems,
-            justifyContent,
+            alignItems: this.alignItems,
+            justifyContent: this.justifyContent,
           },
         },
       },
-      children,
+      children: this.children,
     };
   }
 }

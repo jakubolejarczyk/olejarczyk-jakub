@@ -6,9 +6,12 @@ import { SectionLayoutBuilder } from '../../../generator/builder/layout/section-
 @Injectable({ providedIn: 'root' })
 export class ProjectsView {
   buildNodes(): NodeModel {
-    return SectionLayoutBuilder.build('projects', [
-      TextControlBuilder.build('h3', 'Header 3'),
-      TextControlBuilder.build('p', 'Projects'),
-    ]);
+    return SectionLayoutBuilder.builder()
+      .setId('projects')
+      .setChildren([
+        TextControlBuilder.builder().addText('Header 3').build('h3'),
+        TextControlBuilder.builder().addText('Projects').build('p'),
+      ])
+      .build();
   }
 }

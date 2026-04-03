@@ -6,9 +6,12 @@ import { SectionLayoutBuilder } from '../../../generator/builder/layout/section-
 @Injectable({ providedIn: 'root' })
 export class ContactView {
   build(): NodeModel {
-    return SectionLayoutBuilder.build('contact', [
-      TextControlBuilder.build('h3', 'Header 3'),
-      TextControlBuilder.build('p', 'Contact'),
-    ]);
+    return SectionLayoutBuilder.builder()
+      .setId('contact')
+      .setChildren([
+        TextControlBuilder.builder().addText('Header 3').build('h3'),
+        TextControlBuilder.builder().addText('Contact').build('p'),
+      ])
+      .build();
   }
 }

@@ -1,7 +1,18 @@
 import { NodeModel } from '../../model/node/node.model';
 
-export class FlexItemUtilityBuilder {
-  static build(children: NodeModel[]): NodeModel {
+export class FlexItemLayoutBuilder {
+  private children: NodeModel[] = [];
+
+  static builder() {
+    return new FlexItemLayoutBuilder();
+  }
+
+  setChildren(children: NodeModel[]) {
+    this.children = children;
+    return this;
+  }
+
+  build(children: NodeModel[]): NodeModel {
     return {
       componentNode: {
         component: 'utility',
@@ -17,7 +28,7 @@ export class FlexItemUtilityBuilder {
           extend: {},
         },
       },
-      children,
+      children: this.children,
     };
   }
 }

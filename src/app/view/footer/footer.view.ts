@@ -10,6 +10,8 @@ export class FooterView {
   copyright = inject(CopyrightView);
 
   buildNodes(): NodeModel {
-    return FooterLayoutBuilder.build([this.contact.build(), this.copyright.build()]);
+    return FooterLayoutBuilder.builder()
+      .setChildren([this.contact.build(), this.copyright.build()])
+      .build();
   }
 }

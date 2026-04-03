@@ -6,9 +6,12 @@ import { SectionLayoutBuilder } from '../../../generator/builder/layout/section-
 @Injectable({ providedIn: 'root' })
 export class TechnologiesView {
   buildNodes(): NodeModel {
-    return SectionLayoutBuilder.build('technologies', [
-      TextControlBuilder.build('h3', 'Header 3'),
-      TextControlBuilder.build('p', 'Technologies'),
-    ]);
+    return SectionLayoutBuilder.builder()
+      .setId('technologies')
+      .setChildren([
+        TextControlBuilder.builder().addText('Header 3').build('h3'),
+        TextControlBuilder.builder().addText('Technologies').build('p'),
+      ])
+      .build();
   }
 }

@@ -1,7 +1,25 @@
 import { NodeModel } from '../../model/node/node.model';
 
 export class SectionLayoutBuilder {
-  static build(id: string, children: NodeModel[]): NodeModel {
+  private id: string = '';
+
+  private children: NodeModel[] = [];
+
+  static builder() {
+    return new SectionLayoutBuilder();
+  }
+
+  setId(id: string) {
+    this.id = id;
+    return this;
+  }
+
+  setChildren(children: NodeModel[]) {
+    this.children = children;
+    return this;
+  }
+
+  build(): NodeModel {
     return {
       componentNode: {
         component: 'layout',
@@ -15,11 +33,11 @@ export class SectionLayoutBuilder {
             palette: 'primary',
           },
           extend: {
-            id,
+            id: this.id,
           },
         },
       },
-      children,
+      children: this.children,
     };
   }
 }

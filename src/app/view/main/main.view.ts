@@ -20,14 +20,16 @@ export class MainView {
   education = inject(EducationView);
 
   buildNodes(): NodeModel {
-    return MainLayoutBuilder.build([
-      this.aboutMe.buildNodes(),
-      this.technologies.buildNodes(),
-      this.skills.buildNodes(),
-      this.experience.buildNodes(),
-      this.resume.buildNodes(),
-      this.projects.buildNodes(),
-      this.education.buildNodes(),
-    ]);
+    return MainLayoutBuilder.builder()
+      .setChildren([
+        this.aboutMe.buildNodes(),
+        this.technologies.buildNodes(),
+        this.skills.buildNodes(),
+        this.experience.buildNodes(),
+        this.resume.buildNodes(),
+        this.projects.buildNodes(),
+        this.education.buildNodes(),
+      ])
+      .build();
   }
 }

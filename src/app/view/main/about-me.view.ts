@@ -6,9 +6,12 @@ import { SectionLayoutBuilder } from '../../../generator/builder/layout/section-
 @Injectable({ providedIn: 'root' })
 export class AboutMeView {
   buildNodes(): NodeModel {
-    return SectionLayoutBuilder.build('about-me', [
-      TextControlBuilder.build('h3', 'Header 3'),
-      TextControlBuilder.build('p', 'About me'),
-    ]);
+    return SectionLayoutBuilder.builder()
+      .setId('about-me')
+      .setChildren([
+        TextControlBuilder.builder().addText('Header 3').build('h3'),
+        TextControlBuilder.builder().addText('About me').build('p'),
+      ])
+      .build();
   }
 }

@@ -17,10 +17,8 @@ export class App {
   footer = inject(FooterView);
 
   nodes: NodeModel[] = [
-    RootLayoutBuilder.build([
-      this.header.buildNodes(),
-      this.main.buildNodes(),
-      this.footer.buildNodes(),
-    ]),
+    RootLayoutBuilder.builder()
+      .setChildren([this.header.buildNodes(), this.main.buildNodes(), this.footer.buildNodes()])
+      .build(),
   ];
 }

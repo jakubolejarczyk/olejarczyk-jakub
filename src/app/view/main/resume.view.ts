@@ -6,9 +6,12 @@ import { SectionLayoutBuilder } from '../../../generator/builder/layout/section-
 @Injectable({ providedIn: 'root' })
 export class ResumeView {
   buildNodes(): NodeModel {
-    return SectionLayoutBuilder.build('resume', [
-      TextControlBuilder.build('h3', 'Header 3'),
-      TextControlBuilder.build('p', 'Resume'),
-    ]);
+    return SectionLayoutBuilder.builder()
+      .setId('resume')
+      .setChildren([
+        TextControlBuilder.builder().addText('Header 3').build('h3'),
+        TextControlBuilder.builder().addText('Resume').build('p'),
+      ])
+      .build();
   }
 }

@@ -2,7 +2,18 @@ import { TextType } from '../../../core/type/text.type';
 import { NodeModel } from '../../model/node/node.model';
 
 export class TextControlBuilder {
-  static build(type: TextType, ...values: string[]): NodeModel {
+  private values: string[] = [];
+
+  static builder() {
+    return new TextControlBuilder();
+  }
+
+  addText(value: string) {
+    this.values.push(value);
+    return this;
+  }
+
+  build(type: TextType): NodeModel {
     return {
       componentNode: {
         component: 'control',
@@ -10,7 +21,7 @@ export class TextControlBuilder {
         data: {
           base: {},
           extend: {
-            values,
+            values: this.values,
           },
         },
         metadata: {

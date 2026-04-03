@@ -11,11 +11,22 @@ export class CopyrightView extends StoreCore {
   lastname = this.store.selectSignal((state) => state.personal.lastname);
 
   build(): NodeModel {
-    return SectionLayoutBuilder.build('copyright', [
-      FlexUtilityBuilder.build('center', 'center', [
-        TextControlBuilder.build('p', '© 2026', this.firstname(), this.lastname()),
-        TextControlBuilder.build('p', 'All rights reserved.'),
-      ]),
-    ]);
+    return SectionLayoutBuilder.builder()
+      .setId('copyright')
+      .setChildren([
+        FlexUtilityBuilder.builder()
+          .setAlignItems('center')
+          .setJustifyContent('center')
+          .setChildren([
+            TextControlBuilder.builder()
+              .addText('© 2026')
+              .addText(this.firstname())
+              .addText(this.lastname())
+              .build('p'),
+            TextControlBuilder.builder().addText('All rights reserved.').build('p'),
+          ])
+          .build(),
+      ])
+      .build();
   }
 }

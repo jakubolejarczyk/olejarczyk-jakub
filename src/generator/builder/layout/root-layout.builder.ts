@@ -1,7 +1,18 @@
 import { NodeModel } from '../../model/node/node.model';
 
 export class RootLayoutBuilder {
-  static build(children: NodeModel[]): NodeModel {
+  private children: NodeModel[] = [];
+
+  static builder() {
+    return new RootLayoutBuilder();
+  }
+
+  setChildren(children: NodeModel[]) {
+    this.children = children;
+    return this;
+  }
+
+  build(): NodeModel {
     return {
       componentNode: {
         component: 'layout',
@@ -17,7 +28,7 @@ export class RootLayoutBuilder {
           extend: {},
         },
       },
-      children,
+      children: this.children,
     };
   }
 }

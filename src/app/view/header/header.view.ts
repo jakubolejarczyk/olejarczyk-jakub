@@ -10,6 +10,8 @@ export class HeaderView {
   home = inject(HomeView);
 
   buildNodes(): NodeModel {
-    return HeaderLayoutBuilder.build([this.navigation.build(), this.home.build()]);
+    return HeaderLayoutBuilder.builder()
+      .setChildren([this.navigation.build(), this.home.build()])
+      .build();
   }
 }

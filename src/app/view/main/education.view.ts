@@ -6,9 +6,12 @@ import { SectionLayoutBuilder } from '../../../generator/builder/layout/section-
 @Injectable({ providedIn: 'root' })
 export class EducationView {
   buildNodes(): NodeModel {
-    return SectionLayoutBuilder.build('education', [
-      TextControlBuilder.build('h3', 'Header 3'),
-      TextControlBuilder.build('p', 'Education'),
-    ]);
+    return SectionLayoutBuilder.builder()
+      .setId('education')
+      .setChildren([
+        TextControlBuilder.builder().addText('Header 3').build('h3'),
+        TextControlBuilder.builder().addText('Education').build('p'),
+      ])
+      .build();
   }
 }

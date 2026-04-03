@@ -6,9 +6,12 @@ import { SectionLayoutBuilder } from '../../../generator/builder/layout/section-
 @Injectable({ providedIn: 'root' })
 export class ExperienceView {
   buildNodes(): NodeModel {
-    return SectionLayoutBuilder.build('experience', [
-      TextControlBuilder.build('h3', 'Header 3'),
-      TextControlBuilder.build('p', 'Experience'),
-    ]);
+    return SectionLayoutBuilder.builder()
+      .setId('experience')
+      .setChildren([
+        TextControlBuilder.builder().addText('Header 3').build('h3'),
+        TextControlBuilder.builder().addText('Experience').build('p'),
+      ])
+      .build();
   }
 }
