@@ -1,1 +1,1 @@
-export type LayoutType = 'footer' | 'header' | 'main' | 'root' | 'section';
+export type LayoutType = 'footer' | 'header' | 'main' | 'section';

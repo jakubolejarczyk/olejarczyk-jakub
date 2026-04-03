@@ -1,7 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { Generator } from '../generator/generator/generator';
 import { NodeModel } from '../generator/model/node/node.model';
-import { RootLayoutBuilder } from '../generator/builder/layout/root-layout.builder';
 import { HeaderView } from './view/header/header.view';
 import { MainView } from './view/main/main.view';
 import { FooterView } from './view/footer/footer.view';
@@ -16,9 +15,5 @@ export class App {
   main = inject(MainView);
   footer = inject(FooterView);
 
-  nodes: NodeModel[] = [
-    RootLayoutBuilder.builder()
-      .setChildren([this.header.buildNodes(), this.main.buildNodes(), this.footer.buildNodes()])
-      .build(),
-  ];
+  nodes: NodeModel[] = [this.header.buildNodes(), this.main.buildNodes(), this.footer.buildNodes()];
 }

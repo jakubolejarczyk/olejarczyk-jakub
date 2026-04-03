@@ -7,5 +7,5 @@
 }
 
 body {
-  overflow: hidden;
+  min-width: constant.$screen__size--min;
 }

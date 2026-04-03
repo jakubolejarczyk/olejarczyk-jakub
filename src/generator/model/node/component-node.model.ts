@@ -6,8 +6,6 @@ import { HeaderDataLayoutModel } from '../../../core/model/layout/header/header-
 import { HeaderMetadataLayoutModel } from '../../../core/model/layout/header/header-metadata-layout.model';
 import { MainDataLayoutModel } from '../../../core/model/layout/main/main-data-layout.model';
 import { MainMetadataLayoutModel } from '../../../core/model/layout/main/main-metadata-layout.model';
-import { RootDataLayoutModel } from '../../../core/model/layout/root/root-data-layout.model';
-import { RootMetadataLayoutModel } from '../../../core/model/layout/root/root-metadata-layout.model';
 import { SectionDataLayoutModel } from '../../../core/model/layout/section/section-data-layout.model';
 import { SectionMetadataLayoutModel } from '../../../core/model/layout/section/section-metadata-layout.model';
 import { FlexItemDataUtilityModel } from '../../../core/model/utility/flex-item/flex-item-data-utility.model';
@@ -56,11 +54,6 @@ interface MainLayoutComponentNodeModel extends BaseLayoutComponentNodeModel<
   MainMetadataLayoutModel
 > {}
 
-interface RootLayoutComponentNodeModel extends BaseLayoutComponentNodeModel<
-  RootDataLayoutModel,
-  RootMetadataLayoutModel
-> {}
-
 interface SectionLayoutComponentNodeModel extends BaseLayoutComponentNodeModel<
   SectionDataLayoutModel,
   SectionMetadataLayoutModel
@@ -86,7 +79,6 @@ export type ComponentNodeModel =
   | FooterLayoutComponentNodeModel
   | HeaderLayoutComponentNodeModel
   | MainLayoutComponentNodeModel
-  | RootLayoutComponentNodeModel
   | SectionLayoutComponentNodeModel
   | FlexUtilityComponentNodeModel
   | FlexItemUtilityComponentNodeModel
