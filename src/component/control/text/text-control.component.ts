@@ -4,6 +4,7 @@ import { RegisterComponent } from '../../../generator/decorator/component.decora
 import { TextDataControlModel } from '../../../core/model/control/text/text-data-control.model';
 import { TextMetadataControlModel } from '../../../core/model/control/text/text-metadata-control.model';
 import { BemLogicUtility } from '../../../utility/logic/bem-logic.utility';
+import { EMPTY_SPACE } from '../../../core/const/core.const';
 
 @Component({
   selector: 'text-control-component',
@@ -18,6 +19,10 @@ export class TextControlComponent extends ControlBase<
 > {
   constructor() {
     super('text');
+  }
+
+  buildValue() {
+    return this.data().extend.values.join(EMPTY_SPACE);
   }
 
   protected buildClassNames() {

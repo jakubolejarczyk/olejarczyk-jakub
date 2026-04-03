@@ -1,17 +1,17 @@
 @switch (metadata().extend.type) {
   @case ('small') {
-    <small [ngClass]="buildClassNames()">{{ data().extend.value }}</small>
+    <small [ngClass]="buildClassNames()">{{ buildValue() }}</small>
   }
   @case ('p') {
-    <p [ngClass]="buildClassNames()">{{ data().extend.value }}</p>
+    <p [ngClass]="buildClassNames()">{{ buildValue() }}</p>
   }
   @case ('h3') {
-    <h3 [ngClass]="buildClassNames()">{{ data().extend.value }}</h3>
+    <h3 [ngClass]="buildClassNames()">{{ buildValue() }}</h3>
   }
   @case ('h2') {
-    <h2 [ngClass]="buildClassNames()">{{ data().extend.value }}</h2>
+    <h2 [ngClass]="buildClassNames()">{{ buildValue() }}</h2>
   }
   @case ('h1') {
-    <h1 [ngClass]="buildClassNames()">{{ data().extend.value }}</h1>
+    <h1 [ngClass]="buildClassNames()">{{ buildValue() }}</h1>
   }
 }
