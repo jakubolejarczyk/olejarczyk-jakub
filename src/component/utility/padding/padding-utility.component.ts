@@ -24,7 +24,7 @@ export class PaddingUtilityComponent extends UtilityBase<
     const block = this.type;
     const { size } = this.metadata().extend;
     const main = BemLogicUtility.build(block);
-    const mainPadding = BemLogicUtility.build(block, size);
+    const mainPadding = BemLogicUtility.build(block, 'padding', size);
     return [main, mainPadding];
   }
 }

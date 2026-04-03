@@ -32,6 +32,28 @@
     }
   }
 
+  &__gap {
+    &--xs {
+      gap: constant.$size--xs;
+    }
+
+    &--sm {
+      gap: constant.$size--sm;
+    }
+
+    &--md {
+      gap: constant.$size--md;
+    }
+
+    &--lg {
+      gap: constant.$size--lg;
+    }
+
+    &--xl {
+      gap: constant.$size--xl;
+    }
+  }
+
   @media screen and (min-width: constant.$screen__size--tablet) {
     flex-direction: row;
   }

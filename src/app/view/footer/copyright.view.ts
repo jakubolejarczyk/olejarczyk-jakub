@@ -21,11 +21,12 @@ export class CopyrightView extends StoreCore {
             FlexUtilityBuilder.builder()
               .setAlignItems('center')
               .setJustifyContent('center')
+              .setGap('xs')
               .setChildren([
                 TextControlBuilder.builder()
                   .addText('© 2026')
                   .addText(this.firstname())
-                  .addText(this.lastname())
+                  .addText(this.lastname().concat('.'))
                   .build('p'),
                 TextControlBuilder.builder().addText('All rights reserved.').build('p'),
               ])

@@ -22,10 +22,11 @@ export class FlexUtilityComponent extends UtilityBase<
 
   buildClassNames() {
     const block = this.type;
-    const { alignItems, justifyContent } = this.metadata().extend;
+    const { alignItems, justifyContent, gap } = this.metadata().extend;
     const main = BemLogicUtility.build(block);
     const mainAlignItems = BemLogicUtility.build(block, 'align-items', alignItems);
     const mainJustifyContent = BemLogicUtility.build(block, 'justify-content', justifyContent);
-    return [main, mainAlignItems, mainJustifyContent];
+    const mainGap = BemLogicUtility.build(block, 'gap', gap);
+    return [main, mainAlignItems, mainJustifyContent, mainGap];
   }
 }

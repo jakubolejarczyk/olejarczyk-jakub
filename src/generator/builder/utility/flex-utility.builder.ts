@@ -1,10 +1,13 @@
 import { PositionType } from '../../../core/type/position.type';
+import { SizeType } from '../../../core/type/size.type';
 import { NodeModel } from '../../model/node/node.model';
 
 export class FlexUtilityBuilder {
   private alignItems: PositionType = 'left';
 
   private justifyContent: PositionType = 'left';
+
+  private gap: SizeType = 'md';
 
   private children: NodeModel[] = [];
 
@@ -19,6 +22,11 @@ export class FlexUtilityBuilder {
 
   setJustifyContent(justifyContent: PositionType) {
     this.justifyContent = justifyContent;
+    return this;
+  }
+
+  setGap(gap: SizeType) {
+    this.gap = gap;
     return this;
   }
 
@@ -43,6 +51,7 @@ export class FlexUtilityBuilder {
           extend: {
             alignItems: this.alignItems,
             justifyContent: this.justifyContent,
+            gap: this.gap,
           },
         },
       },
