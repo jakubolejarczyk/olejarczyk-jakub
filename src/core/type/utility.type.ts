@@ -1,1 +1,1 @@
-export type UtilityType = 'flex' | 'flex-item';
+export type UtilityType = 'flex' | 'flex-item' | 'padding';

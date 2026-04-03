@@ -4,6 +4,7 @@ import { TextControlBuilder } from '../../../generator/builder/control/text-cont
 import { SectionLayoutBuilder } from '../../../generator/builder/layout/section-layout.builder';
 import { StoreCore } from '../../store/store.core';
 import { FlexUtilityBuilder } from '../../../generator/builder/utility/flex-utility.builder';
+import { PaddingUtilityBuilder } from '../../../generator/builder/utility/padding-utility.builder';
 
 @Injectable({ providedIn: 'root' })
 export class CopyrightView extends StoreCore {
@@ -14,16 +15,21 @@ export class CopyrightView extends StoreCore {
     return SectionLayoutBuilder.builder()
       .setId('copyright')
       .setChildren([
-        FlexUtilityBuilder.builder()
-          .setAlignItems('center')
-          .setJustifyContent('center')
+        PaddingUtilityBuilder.builder()
+          .setSize('md')
           .setChildren([
-            TextControlBuilder.builder()
-              .addText('© 2026')
-              .addText(this.firstname())
-              .addText(this.lastname())
-              .build('p'),
-            TextControlBuilder.builder().addText('All rights reserved.').build('p'),
+            FlexUtilityBuilder.builder()
+              .setAlignItems('center')
+              .setJustifyContent('center')
+              .setChildren([
+                TextControlBuilder.builder()
+                  .addText('© 2026')
+                  .addText(this.firstname())
+                  .addText(this.lastname())
+                  .build('p'),
+                TextControlBuilder.builder().addText('All rights reserved.').build('p'),
+              ])
+              .build(),
           ])
           .build(),
       ])

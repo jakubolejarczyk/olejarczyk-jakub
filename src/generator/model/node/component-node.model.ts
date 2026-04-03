@@ -14,6 +14,8 @@ import { FlexItemDataUtilityModel } from '../../../core/model/utility/flex-item/
 import { FlexItemMetadataUtilityModel } from '../../../core/model/utility/flex-item/flex-item-metadata-utility.model';
 import { FlexDataUtilityModel } from '../../../core/model/utility/flex/flex-data-utility.model';
 import { FlexMetadataUtilityModel } from '../../../core/model/utility/flex/flex-metadata-utility.model';
+import { PaddingDataUtilityModel } from '../../../core/model/utility/padding/padding-data-utility.model';
+import { PaddingMetadataUtilityModel } from '../../../core/model/utility/padding/padding-metadata-utility.model';
 import {
   ControlDecoratorModel,
   LayoutDecoratorModel,
@@ -74,6 +76,11 @@ interface FlexItemUtilityComponentNodeModel extends BaseUtilityComponentNodeMode
   FlexItemMetadataUtilityModel
 > {}
 
+interface PaddingUtilityComponentNodeModel extends BaseUtilityComponentNodeModel<
+  PaddingDataUtilityModel,
+  PaddingMetadataUtilityModel
+> {}
+
 export type ComponentNodeModel =
   | TextControlComponentNodeModel
   | FooterLayoutComponentNodeModel
@@ -82,4 +89,5 @@ export type ComponentNodeModel =
   | RootLayoutComponentNodeModel
   | SectionLayoutComponentNodeModel
   | FlexUtilityComponentNodeModel
-  | FlexItemUtilityComponentNodeModel;
+  | FlexItemUtilityComponentNodeModel
+  | PaddingUtilityComponentNodeModel;

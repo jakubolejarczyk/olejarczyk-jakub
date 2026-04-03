@@ -6,3 +6,4 @@ import './layout/root/root-layout.component';
 import './layout/section/section-layout.component';
 import './utility/flex/flex-utility.component';
 import './utility/flex-item/flex-item-utility.component';
+import './utility/padding/padding-utility.component';

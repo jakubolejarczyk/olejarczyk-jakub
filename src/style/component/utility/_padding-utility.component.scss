@@ -1,0 +1,23 @@
+@use '../../abstract/constant';
+
+.padding {
+  &__xs {
+    padding: constant.$size--xs;
+  }
+
+  &__sm {
+    padding: constant.$size--sm;
+  }
+
+  &__md {
+    padding: constant.$size--md;
+  }
+
+  &__lg {
+    padding: constant.$size--lg;
+  }
+
+  &__xl {
+    padding: constant.$size--xl;
+  }
+}
