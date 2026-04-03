@@ -9,6 +9,10 @@ export class CopyrightView {
     return SectionLayoutBuilder.build('copyright', [
       TextControlBuilder.build('h3', 'Header 3'),
       TextControlBuilder.build('p', 'Copyright'),
+      TextControlBuilder.build('p', 'Copyright'),
+      TextControlBuilder.build('p', 'Copyright'),
+      TextControlBuilder.build('p', 'Copyright'),
+      TextControlBuilder.build('p', 'Copyright'),
     ]);
   }
 }
