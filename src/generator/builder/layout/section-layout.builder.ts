@@ -1,7 +1,10 @@
+import { PaletteType } from '../../../core/type/palette.type';
 import { NodeModel } from '../../model/node/node.model';
 
 export class SectionLayoutBuilder {
   private id: string = '';
+
+  private palette: PaletteType = 'primary';
 
   private children: NodeModel[] = [];
 
@@ -11,6 +14,11 @@ export class SectionLayoutBuilder {
 
   setId(id: string) {
     this.id = id;
+    return this;
+  }
+
+  setPalette(palette: PaletteType) {
+    this.palette = palette;
     return this;
   }
 
@@ -30,7 +38,7 @@ export class SectionLayoutBuilder {
         },
         metadata: {
           base: {
-            palette: 'primary',
+            palette: this.palette,
           },
           extend: {
             id: this.id,

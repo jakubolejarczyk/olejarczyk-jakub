@@ -1,1 +1,1 @@
-export type PaletteType = 'primary';
+export type PaletteType = 'primary' | 'secondary';

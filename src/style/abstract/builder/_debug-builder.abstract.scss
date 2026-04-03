@@ -1,7 +1,0 @@
-@use '../constant';
-
-@mixin build-debug {
-  padding: constant.$size--sm;
-  margin: constant.$size--sm;
-  border: constant.$size--border dashed #000;
-}

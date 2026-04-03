@@ -16,7 +16,7 @@ export class CopyrightView extends StoreCore {
       .setId('copyright')
       .setChildren([
         PaddingUtilityBuilder.builder()
-          .setSize('md')
+          .setSize('lg')
           .setChildren([
             FlexUtilityBuilder.builder()
               .setAlignItems('center')

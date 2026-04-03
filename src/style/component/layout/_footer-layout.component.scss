@@ -1,5 +1,2 @@
-@use '../../abstract/builder/debug-builder.abstract' as debug-builder;
-
 .footer {
-  @include debug-builder.build-debug;
 }

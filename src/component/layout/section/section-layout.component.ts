@@ -3,6 +3,7 @@ import { LayoutBase } from '../../base/layout.base';
 import { RegisterComponent } from '../../../generator/decorator/component.decorator';
 import { SectionDataLayoutModel } from '../../../core/model/layout/section/section-data-layout.model';
 import { SectionMetadataLayoutModel } from '../../../core/model/layout/section/section-metadata-layout.model';
+import { BemLogicUtility } from '../../../utility/logic/bem-logic.utility';
 
 @Component({
   selector: 'section-layout-component',
@@ -17,5 +18,13 @@ export class SectionLayoutComponent extends LayoutBase<
 > {
   constructor() {
     super('section');
+  }
+
+  buildClassNames() {
+    const block = this.type;
+    const { palette } = this.metadata().base;
+    const main = BemLogicUtility.build(block);
+    const mainPalette = BemLogicUtility.build(block, 'palette', palette);
+    return [main, mainPalette];
   }
 }
