@@ -1,4 +1,4 @@
-export interface HomeDataModel {
-  motto: string;
-  profilePhoto: string;
-}
+// export interface HomeDataModel {
+//   motto: string;
+//   profilePhoto: string;
+// }

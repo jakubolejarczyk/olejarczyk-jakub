@@ -8,7 +8,7 @@ export interface PersonalDataModel {
   lastname: string;
   email: string;
   phone: string;
-  city: string;
   country: string;
+  city: string;
   socialMedias: SocialMediaModel[];
 }

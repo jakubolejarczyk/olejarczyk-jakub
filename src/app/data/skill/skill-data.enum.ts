@@ -1,5 +1,5 @@
-export enum SkillKindDataEnum {
-  dataStructuresAndAlgorithms = 'dataStructuresAndAlgorithms',
-  english = 'english',
-  polish = 'polish',
-}
+// export enum SkillKindDataEnum {
+//   dataStructuresAndAlgorithms = 'dataStructuresAndAlgorithms',
+//   english = 'english',
+//   polish = 'polish',
+// }

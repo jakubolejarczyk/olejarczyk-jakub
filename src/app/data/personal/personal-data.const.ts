@@ -5,8 +5,8 @@ export const personalDataConst: PersonalDataModel = {
   lastname: 'Olejarczyk',
   email: 'jakub.olejarczyk@outlook.com',
   phone: '+48 501 007 197',
-  city: 'Kielce',
   country: 'Poland',
+  city: 'Kielce',
   socialMedias: [
     {
       label: 'LinkedIn',

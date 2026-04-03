@@ -1,10 +1,10 @@
-import { ResumeLangDataEnum } from './resume-data.enum';
+// import { ResumeLangDataEnum } from './resume-data.enum';
 
-interface ResumeModel {
-  resumeFile: string;
-  label: string;
-  lang: ResumeLangDataEnum;
-  order: number;
-}
+// interface ResumeModel {
+//   resumeFile: string;
+//   label: string;
+//   lang: ResumeLangDataEnum;
+//   order: number;
+// }
 
-export type ResumeDataModel = ResumeModel[];
+// export type ResumeDataModel = ResumeModel[];

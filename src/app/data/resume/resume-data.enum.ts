@@ -1,4 +1,4 @@
-export enum ResumeLangDataEnum {
-  english = 'english',
-  polish = 'polish',
-}
+// export enum ResumeLangDataEnum {
+//   english = 'english',
+//   polish = 'polish',
+// }

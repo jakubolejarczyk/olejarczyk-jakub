@@ -1,8 +1,8 @@
-interface EducationModel {
-  university: string;
-  major: string;
-  degree: string;
-  year: number;
-}
+// interface EducationModel {
+//   university: string;
+//   major: string;
+//   degree: string;
+//   year: number;
+// }
 
-export type EducationDataModel = EducationModel[];
+// export type EducationDataModel = EducationModel[];

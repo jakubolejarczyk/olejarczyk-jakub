@@ -1,3 +1,3 @@
-export interface AboutMeDataModel {
-  description: string[];
-}
+// export interface AboutMeDataModel {
+//   description: string[];
+// }
