@@ -1,60 +1,19 @@
-// @use '../../abstract/constant';
+@use '../../builder/base.builder' as base-builder;
+@use '../../constant/screen.constant' as screen-constant;
+@use '../../builder/size.builder' as size-builder;
+@use '../../builder/position.builder' as position-builder;
 
-// .flex {
-//   display: flex;
-//   flex-direction: column;
+.flex {
+  @include base-builder.build-base-utility;
 
-//   &__align-items {
-//     &--left {
-//       align-items: flex-start;
-//     }
+  display: flex;
+  flex-direction: column;
 
-//     &--center {
-//       align-items: center;
-//     }
+  @media screen and (min-width: screen-constant.$screen-size-tablet) {
+    flex-direction: row;
+  }
 
-//     &--right {
-//       align-items: flex-end;
-//     }
-//   }
-
-//   &__justify-content {
-//     &--left {
-//       justify-content: flex-start;
-//     }
-
-//     &--center {
-//       justify-content: center;
-//     }
-
-//     &--right {
-//       justify-content: flex-end;
-//     }
-//   }
-
-//   &__gap {
-//     &--xs {
-//       gap: constant.$size--xs;
-//     }
-
-//     &--sm {
-//       gap: constant.$size--sm;
-//     }
-
-//     &--md {
-//       gap: constant.$size--md;
-//     }
-
-//     &--lg {
-//       gap: constant.$size--lg;
-//     }
-
-//     &--xl {
-//       gap: constant.$size--xl;
-//     }
-//   }
-
-//   @media screen and (min-width: constant.$screen__size--tablet) {
-//     flex-direction: row;
-//   }
-// }
+  @include position-builder.build-position('align-items', 'align-items');
+  @include position-builder.build-position('justify-content', 'justify-content');
+  @include size-builder.build-size('gap', 'gap');
+}

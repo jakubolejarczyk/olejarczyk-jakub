@@ -1,3 +1,6 @@
+@use '../../builder/base.builder' as base-builder;
+
 .flex-item {
+  @include base-builder.build-base-utility;
   flex: 1;
 }
