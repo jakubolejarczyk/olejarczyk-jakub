@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { UtilityBase } from '../../base/utility.base';
 import { RegisterComponent } from '../../../generator/decorator/component.decorator';
-import { BemLogicUtility } from '../../../utility/logic/bem-logic.utility';
+import { BemLogicUtility } from '../../../framework/utility/bem.utility';
 import { PaddingDataUtilityModel } from '../../../core/model/utility/padding/padding-data-utility.model';
 import { PaddingMetadataUtilityModel } from '../../../core/model/utility/padding/padding-metadata-utility.model';
 

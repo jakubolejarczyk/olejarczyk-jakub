@@ -3,7 +3,7 @@ import { LayoutBase } from '../../base/layout.base';
 import { RegisterComponent } from '../../../generator/decorator/component.decorator';
 import { SectionDataLayoutModel } from '../../../core/model/layout/section/section-data-layout.model';
 import { SectionMetadataLayoutModel } from '../../../core/model/layout/section/section-metadata-layout.model';
-import { BemLogicUtility } from '../../../utility/logic/bem-logic.utility';
+import { BemLogicUtility } from '../../../framework/utility/bem.utility';
 
 @Component({
   selector: 'section-layout-component',

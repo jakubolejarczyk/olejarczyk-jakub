@@ -3,7 +3,7 @@ import { ControlBase } from '../../base/control.base';
 import { RegisterComponent } from '../../../generator/decorator/component.decorator';
 import { TextDataControlModel } from '../../../core/model/control/text/text-data-control.model';
 import { TextMetadataControlModel } from '../../../core/model/control/text/text-metadata-control.model';
-import { BemLogicUtility } from '../../../utility/logic/bem-logic.utility';
+import { BemLogicUtility } from '../../../framework/utility/bem.utility';
 import { EMPTY_SPACE } from '../../../core/const/core.const';
 
 @Component({

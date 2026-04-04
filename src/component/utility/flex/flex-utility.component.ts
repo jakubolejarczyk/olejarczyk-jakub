@@ -3,7 +3,7 @@ import { UtilityBase } from '../../base/utility.base';
 import { RegisterComponent } from '../../../generator/decorator/component.decorator';
 import { FlexDataUtilityModel } from '../../../core/model/utility/flex/flex-data-utility.model';
 import { FlexMetadataUtilityModel } from '../../../core/model/utility/flex/flex-metadata-utility.model';
-import { BemLogicUtility } from '../../../utility/logic/bem-logic.utility';
+import { BemLogicUtility } from '../../../framework/utility/bem.utility';
 
 @Component({
   selector: 'flex-utility-component',
