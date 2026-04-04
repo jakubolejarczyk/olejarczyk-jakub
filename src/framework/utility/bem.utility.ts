@@ -5,7 +5,6 @@ export class BemUtility {
     const hasBlock = StringUtility.isNotEmpty(block);
     const hasElement = StringUtility.isNotEmpty(element);
     const hasModifier = StringUtility.isNotEmpty(modifier);
-
     if (hasBlock && hasElement && hasModifier) {
       return `${block}__${element}--${modifier}`;
     }
