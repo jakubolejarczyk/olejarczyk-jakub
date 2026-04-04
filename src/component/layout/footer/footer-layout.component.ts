@@ -7,7 +7,7 @@ import { FooterMetadataLayoutModel } from '../../../core/model/layout/footer/foo
 @Component({
   selector: 'footer-layout-component',
   templateUrl: './footer-layout.component.html',
-  styleUrl: '../../../style/component/layout/_footer-layout.component.scss',
+  styleUrl: '../../../framework/style/component/layout/_footer-layout.component.scss',
   imports: LayoutBase.buildImports(),
 })
 @RegisterComponent({ component: 'layout', kind: 'footer' })

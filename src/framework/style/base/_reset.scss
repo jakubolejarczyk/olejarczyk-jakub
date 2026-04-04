@@ -1,11 +1,11 @@
-@use '../abstract/constant';
+// @use '../abstract/constant';
 
-* {
-  margin: constant.$size--none;
-  padding: constant.$size--none;
-  box-sizing: border-box;
-}
+// * {
+//   margin: constant.$size--none;
+//   padding: constant.$size--none;
+//   box-sizing: border-box;
+// }
 
-body {
-  min-width: constant.$screen__size--min;
-}
+// body {
+//   min-width: constant.$screen__size--min;
+// }

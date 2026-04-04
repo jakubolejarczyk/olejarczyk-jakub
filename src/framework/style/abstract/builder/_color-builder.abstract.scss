@@ -1,17 +1,17 @@
-@use '../constant/color-constant.abstract' as color-constant;
+// @use '../constant/color-constant.abstract' as color-constant;
 
-@mixin build-color($property) {
-  &__color {
-    &--primary {
-      #{$property}: color-constant.$color-primary;
-    }
+// @mixin build-color($property) {
+//   &__color {
+//     &--primary {
+//       #{$property}: color-constant.$color-primary;
+//     }
 
-    &--secondary {
-      #{$property}: color-constant.$color-secondary;
-    }
+//     &--secondary {
+//       #{$property}: color-constant.$color-secondary;
+//     }
 
-    &--accent {
-      #{$property}: color-constant.$color-accent;
-    }
-  }
-}
+//     &--accent {
+//       #{$property}: color-constant.$color-accent;
+//     }
+//   }
+// }

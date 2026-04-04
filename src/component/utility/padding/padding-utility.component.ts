@@ -8,7 +8,7 @@ import { PaddingMetadataUtilityModel } from '../../../core/model/utility/padding
 @Component({
   selector: 'padding-utility-component',
   templateUrl: './padding-utility.component.html',
-  styleUrl: '../../../style/component/utility/_padding-utility.component.scss',
+  styleUrl: '../../../framework/style/component/utility/_padding-utility.component.scss',
   imports: UtilityBase.buildImports(),
 })
 @RegisterComponent({ component: 'utility', kind: 'padding' })

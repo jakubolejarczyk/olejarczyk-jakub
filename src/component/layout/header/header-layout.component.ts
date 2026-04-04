@@ -7,7 +7,7 @@ import { HeaderMetadataLayoutModel } from '../../../core/model/layout/header/hea
 @Component({
   selector: 'header-layout-component',
   templateUrl: './header-layout.component.html',
-  styleUrl: '../../../style/component/layout/_header-layout.component.scss',
+  styleUrl: '../../../framework/style/component/layout/_header-layout.component.scss',
   imports: LayoutBase.buildImports(),
 })
 @RegisterComponent({ component: 'layout', kind: 'header' })

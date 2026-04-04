@@ -7,7 +7,7 @@ import { MainMetadataLayoutModel } from '../../../core/model/layout/main/main-me
 @Component({
   selector: 'main-layout-component',
   templateUrl: './main-layout.component.html',
-  styleUrl: '../../../style/component/layout/_main-layout.component.scss',
+  styleUrl: '../../../framework/style/component/layout/_main-layout.component.scss',
   imports: LayoutBase.buildImports(),
 })
 @RegisterComponent({ component: 'layout', kind: 'main' })

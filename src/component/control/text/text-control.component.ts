@@ -9,7 +9,7 @@ import { EMPTY_SPACE } from '../../../core/const/core.const';
 @Component({
   selector: 'text-control-component',
   templateUrl: './text-control.component.html',
-  styleUrl: '../../../style/component/control/_text-control.component.scss',
+  styleUrl: '../../../framework/style/component/control/_text-control.component.scss',
   imports: ControlBase.buildImports(),
 })
 @RegisterComponent({ component: 'control', kind: 'text' })

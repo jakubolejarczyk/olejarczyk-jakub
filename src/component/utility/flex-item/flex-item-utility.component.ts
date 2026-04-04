@@ -7,7 +7,7 @@ import { FlexItemMetadataUtilityModel } from '../../../core/model/utility/flex-i
 @Component({
   selector: 'flex-item-utility-component',
   templateUrl: './flex-item-utility.component.html',
-  styleUrl: '../../../style/component/utility/_flex-item-utility.component.scss',
+  styleUrl: '../../../framework/style/component/utility/_flex-item-utility.component.scss',
   imports: UtilityBase.buildImports(),
 })
 @RegisterComponent({ component: 'utility', kind: 'flex-item' })

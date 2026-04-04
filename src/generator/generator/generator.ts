@@ -6,7 +6,7 @@ import { getComponent } from '../decorator/component.decorator';
 @Component({
   selector: 'generator',
   templateUrl: './generator.html',
-  styleUrl: '../../style/generator/_generator.scss',
+  styleUrl: '../../framework/style/generator/_generator.scss',
   imports: [NgComponentOutlet],
 })
 export class Generator {

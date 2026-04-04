@@ -8,7 +8,7 @@ import { BemLogicUtility } from '../../../utility/logic/bem-logic.utility';
 @Component({
   selector: 'section-layout-component',
   templateUrl: './section-layout.component.html',
-  styleUrl: '../../../style/component/layout/_section-layout.component.scss',
+  styleUrl: '../../../framework/style/component/layout/_section-layout.component.scss',
   imports: LayoutBase.buildImports(),
 })
 @RegisterComponent({ component: 'layout', kind: 'section' })

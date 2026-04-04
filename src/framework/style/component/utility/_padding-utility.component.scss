@@ -1,25 +1,25 @@
-@use '../../abstract/constant';
+// @use '../../abstract/constant';
 
-.padding {
-  &__padding {
-    &--xs {
-      padding: constant.$size--xs;
-    }
+// .padding {
+//   &__padding {
+//     &--xs {
+//       padding: constant.$size--xs;
+//     }
 
-    &--sm {
-      padding: constant.$size--sm;
-    }
+//     &--sm {
+//       padding: constant.$size--sm;
+//     }
 
-    &--md {
-      padding: constant.$size--md;
-    }
+//     &--md {
+//       padding: constant.$size--md;
+//     }
 
-    &--lg {
-      padding: constant.$size--lg;
-    }
+//     &--lg {
+//       padding: constant.$size--lg;
+//     }
 
-    &--xl {
-      padding: constant.$size--xl;
-    }
-  }
-}
+//     &--xl {
+//       padding: constant.$size--xl;
+//     }
+//   }
+// }
