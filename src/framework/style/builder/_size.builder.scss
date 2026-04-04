@@ -1,7 +1,7 @@
 @use '../constant/font.constant' as font-constant;
 
-@mixin build-size($property) {
-  &__size {
+@mixin build-size($element, $property) {
+  &__#{$element} {
     &--small {
       #{$property}: font-constant.$font-size-xs;
     }
