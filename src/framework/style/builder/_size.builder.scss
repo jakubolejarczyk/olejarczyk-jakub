@@ -1,0 +1,25 @@
+@use '../constant/font.constant' as font-constant;
+
+@mixin build-size($property) {
+  &__size {
+    &--small {
+      #{$property}: font-constant.$font-size-xs;
+    }
+
+    &--p {
+      #{$property}: font-constant.$font-size-sm;
+    }
+
+    &--h3 {
+      #{$property}: font-constant.$font-size-md;
+    }
+
+    &--h2 {
+      #{$property}: font-constant.$font-size-lg;
+    }
+
+    &--h1 {
+      #{$property}: font-constant.$font-size-xl;
+    }
+  }
+}

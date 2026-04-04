@@ -1,0 +1,20 @@
+@use '../constant/font.constant' as font-constant;
+
+@mixin build-font-family {
+  font-family: font-constant.$font-family;
+}
+
+@mixin build-font-weight {
+  &__weight {
+    &--small,
+    &--p {
+      font-weight: font-constant.$font-weight-normal;
+    }
+
+    &--h3,
+    &--h2,
+    &--h1 {
+      font-weight: font-constant.$font-weight-bold;
+    }
+  }
+}

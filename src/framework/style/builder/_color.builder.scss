@@ -1,0 +1,17 @@
+@use '../constant/color.constant' as color-constant;
+
+@mixin build-color($property) {
+  &__color {
+    &--primary {
+      #{$property}: color-constant.$color-primary;
+    }
+
+    &--secondary {
+      #{$property}: color-constant.$color-secondary;
+    }
+
+    &--accent {
+      #{$property}: color-constant.$color-accent;
+    }
+  }
+}
