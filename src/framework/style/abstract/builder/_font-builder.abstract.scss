@@ -1,5 +1,0 @@
-@use '../constant/size-constant.abstract' as size-constant;
-
-@function build-font-size($min, $vw, $max, $base: size-constant.$size--sm) {
-  @return clamp(#{$min}, #{$vw} + #{$base}, #{$max});
-}
