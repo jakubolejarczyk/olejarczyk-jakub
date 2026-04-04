@@ -1,8 +1,0 @@
-@use 'size-constant.abstract' as size-constant;
-
-// Screen Size
-$screen__size--min: 320px;
-$screen__size--full-height: calc(100dvh - size-constant.$size--md);
-$screen__size--tablet: 768px;
-$screen__size--laptop: 1024px;
-$screen__size--tv: 1440px;
