@@ -27,9 +27,11 @@ export class TextControlComponent extends ControlBase<
 
   buildClassNames() {
     const block = this.type;
-    const textType = this.metadata().extend.type;
+    const { color } = this.metadata().base;
+    const { type } = this.metadata().extend;
     const main = BemLogicUtility.build(block);
-    const mainTextType = BemLogicUtility.build(block, textType);
-    return [main, mainTextType];
+    const mainColor = BemLogicUtility.build(block, 'color', color);
+    const mainType = BemLogicUtility.build(block, type);
+    return [main, mainColor, mainType];
   }
 }

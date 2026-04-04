@@ -23,7 +23,7 @@ export class FooterLayoutBuilder {
         },
         metadata: {
           base: {
-            palette: 'primary',
+            color: 'primary',
           },
           extend: {},
         },

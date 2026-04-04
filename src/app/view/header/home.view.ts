@@ -13,8 +13,8 @@ export class HomeView {
         PaddingUtilityBuilder.builder()
           .setSize('lg')
           .setChildren([
-            TextControlBuilder.builder().addText('Header 2').build('h2'),
-            TextControlBuilder.builder().addText('Home').build('p'),
+            TextControlBuilder.builder().setColor('secondary').addText('Header 2').build('h2'),
+            TextControlBuilder.builder().setColor('secondary').addText('Home').build('p'),
           ])
           .build(),
       ])

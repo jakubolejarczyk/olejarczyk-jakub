@@ -13,8 +13,8 @@ export class ContactView {
         PaddingUtilityBuilder.builder()
           .setSize('lg')
           .setChildren([
-            TextControlBuilder.builder().addText('Header 3').build('h3'),
-            TextControlBuilder.builder().addText('Contact').build('p'),
+            TextControlBuilder.builder().setColor('secondary').addText('Header 3').build('h3'),
+            TextControlBuilder.builder().setColor('secondary').addText('Contact').build('p'),
           ])
           .build(),
       ])

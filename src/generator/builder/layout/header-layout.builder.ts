@@ -23,7 +23,7 @@ export class HeaderLayoutBuilder {
         },
         metadata: {
           base: {
-            palette: 'primary',
+            color: 'primary',
           },
           extend: {},
         },

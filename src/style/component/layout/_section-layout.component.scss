@@ -1,15 +1,5 @@
-@use '../../abstract/constant/color-constant.abstract' as color-constant;
+@use '../../abstract/builder/color-builder.abstract' as color-builder;
 
 .section {
-  &__palette {
-    &--primary {
-      background-color: color-constant.$color--primary;
-      color: white;
-    }
-
-    &--secondary {
-      background-color: white;
-      color: color-constant.$color--primary;
-    }
-  }
+  @include color-builder.build-color('background-color');
 }

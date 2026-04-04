@@ -1,5 +1,5 @@
-import { PaletteType } from '../../type/palette.type';
+import { ColorType } from '../../type/color.type';
 
 export interface MetadataBaseModel {
-  palette: PaletteType;
+  color: ColorType;
 }

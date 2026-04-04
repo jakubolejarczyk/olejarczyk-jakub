@@ -46,7 +46,7 @@ export class FlexUtilityBuilder {
         },
         metadata: {
           base: {
-            palette: 'primary',
+            color: 'primary',
           },
           extend: {
             alignItems: this.alignItems,

@@ -23,7 +23,7 @@ export class MainLayoutBuilder {
         },
         metadata: {
           base: {
-            palette: 'primary',
+            color: 'primary',
           },
           extend: {},
         },

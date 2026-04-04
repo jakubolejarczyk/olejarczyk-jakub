@@ -31,7 +31,7 @@ export class PaddingUtilityBuilder {
         },
         metadata: {
           base: {
-            palette: 'primary',
+            color: 'primary',
           },
           extend: {
             size: this.size,

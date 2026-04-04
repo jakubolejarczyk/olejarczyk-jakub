@@ -13,8 +13,8 @@ export class NavigationView {
         PaddingUtilityBuilder.builder()
           .setSize('lg')
           .setChildren([
-            TextControlBuilder.builder().addText('Header 1').build('h1'),
-            TextControlBuilder.builder().addText('Navigation').build('p'),
+            TextControlBuilder.builder().setColor('secondary').addText('Header 1').build('h1'),
+            TextControlBuilder.builder().setColor('secondary').addText('Navigation').build('p'),
           ])
           .build(),
       ])

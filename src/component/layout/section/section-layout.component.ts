@@ -22,9 +22,9 @@ export class SectionLayoutComponent extends LayoutBase<
 
   buildClassNames() {
     const block = this.type;
-    const { palette } = this.metadata().base;
+    const { color } = this.metadata().base;
     const main = BemLogicUtility.build(block);
-    const mainPalette = BemLogicUtility.build(block, 'palette', palette);
-    return [main, mainPalette];
+    const mainColor = BemLogicUtility.build(block, 'color', color);
+    return [main, mainColor];
   }
 }

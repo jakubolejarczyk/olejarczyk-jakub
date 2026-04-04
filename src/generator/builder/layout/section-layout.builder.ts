@@ -1,10 +1,10 @@
-import { PaletteType } from '../../../core/type/palette.type';
+import { ColorType } from '../../../core/type/color.type';
 import { NodeModel } from '../../model/node/node.model';
 
 export class SectionLayoutBuilder {
   private id: string = '';
 
-  private palette: PaletteType = 'primary';
+  private color: ColorType = 'primary';
 
   private children: NodeModel[] = [];
 
@@ -17,8 +17,8 @@ export class SectionLayoutBuilder {
     return this;
   }
 
-  setPalette(palette: PaletteType) {
-    this.palette = palette;
+  setColor(color: ColorType) {
+    this.color = color;
     return this;
   }
 
@@ -38,7 +38,7 @@ export class SectionLayoutBuilder {
         },
         metadata: {
           base: {
-            palette: this.palette,
+            color: this.color,
           },
           extend: {
             id: this.id,

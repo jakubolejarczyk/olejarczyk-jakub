@@ -23,7 +23,7 @@ export class FlexItemLayoutBuilder {
         },
         metadata: {
           base: {
-            palette: 'primary',
+            color: 'primary',
           },
           extend: {},
         },

@@ -9,13 +9,13 @@ export class TechnologiesView {
   buildNodes(): NodeModel {
     return SectionLayoutBuilder.builder()
       .setId('technologies')
-      .setPalette('secondary')
+      .setColor('secondary')
       .setChildren([
         PaddingUtilityBuilder.builder()
           .setSize('lg')
           .setChildren([
-            TextControlBuilder.builder().addText('Header 3').build('h3'),
-            TextControlBuilder.builder().addText('Technologies').build('p'),
+            TextControlBuilder.builder().setColor('accent').addText('Header 3').build('h3'),
+            TextControlBuilder.builder().setColor('accent').addText('Technologies').build('p'),
           ])
           .build(),
       ])

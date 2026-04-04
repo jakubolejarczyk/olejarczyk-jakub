@@ -24,6 +24,7 @@ export class CopyrightView extends StoreCore {
               .setGap('xs')
               .setChildren([
                 TextControlBuilder.builder()
+                  .setColor('secondary')
                   .addText('© 2026')
                   .addText(this.firstname())
                   .addText(this.lastname().concat('.'))

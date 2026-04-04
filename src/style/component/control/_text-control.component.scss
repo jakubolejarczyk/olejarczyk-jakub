@@ -1,6 +1,9 @@
 @use '../../abstract/constant/font-constant.abstract' as font-constant;
+@use '../../abstract/builder/color-builder.abstract' as color-builder;
 
 .text {
+  @include color-builder.build-color('color');
+
   font-family: font-constant.$font__family;
 
   &__small,

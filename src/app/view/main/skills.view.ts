@@ -9,13 +9,13 @@ export class SkillsView {
   buildNodes(): NodeModel {
     return SectionLayoutBuilder.builder()
       .setId('skills')
-      .setPalette('secondary')
+      .setColor('secondary')
       .setChildren([
         PaddingUtilityBuilder.builder()
           .setSize('lg')
           .setChildren([
-            TextControlBuilder.builder().addText('Header 3').build('h3'),
-            TextControlBuilder.builder().addText('Skills').build('p'),
+            TextControlBuilder.builder().setColor('accent').addText('Header 3').build('h3'),
+            TextControlBuilder.builder().setColor('accent').addText('Skills').build('p'),
           ])
           .build(),
       ])

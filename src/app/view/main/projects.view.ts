@@ -9,13 +9,13 @@ export class ProjectsView {
   buildNodes(): NodeModel {
     return SectionLayoutBuilder.builder()
       .setId('projects')
-      .setPalette('secondary')
+      .setColor('secondary')
       .setChildren([
         PaddingUtilityBuilder.builder()
           .setSize('lg')
           .setChildren([
-            TextControlBuilder.builder().addText('Header 3').build('h3'),
-            TextControlBuilder.builder().addText('Projects').build('p'),
+            TextControlBuilder.builder().setColor('accent').addText('Header 3').build('h3'),
+            TextControlBuilder.builder().setColor('accent').addText('Projects').build('p'),
           ])
           .build(),
       ])
