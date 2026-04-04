@@ -1,2 +1,5 @@
+@use '../../builder/color.builder' as color-builder;
+
 .footer {
+  @include color-builder.build-color('background-color');
 }

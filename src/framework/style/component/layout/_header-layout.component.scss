@@ -1,2 +1,5 @@
+@use '../../builder/color.builder' as color-builder;
+
 .header {
+  @include color-builder.build-color('background-color');
 }

@@ -1,5 +1,5 @@
-// @use '../../abstract/builder/color-builder.abstract' as color-builder;
+@use '../../builder/color.builder' as color-builder;
 
-// .section {
-//   @include color-builder.build-color('background-color');
-// }
+.section {
+  @include color-builder.build-color('background-color');
+}
