@@ -1,6 +1,8 @@
-$font-family: var(--font-family);
+$font-family-text: var(--font-family-text);
+
 $font-weight-normal: 400;
 $font-weight-bold: 700;
+
 $font-size-xs: clamp(0.75rem, 1vw, 0.875rem);
 $font-size-sm: clamp(1rem, 1vw, 1.125rem);
 $font-size-md: clamp(1.5rem, 2vw, 1.875rem);

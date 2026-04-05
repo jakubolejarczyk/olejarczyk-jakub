@@ -1,5 +1,5 @@
 export enum ColorEnum {
   primary = 'primary',
-  secondary = 'secondary',
+  seconday = 'secondary',
   accent = 'accent',
 }

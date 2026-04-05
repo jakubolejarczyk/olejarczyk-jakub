@@ -1,5 +1,5 @@
-export enum FontEnum {
-  family = 'family',
+export enum FontFamilyEnum {
+  text = 'text',
 }
 
 export enum FontWeightEnum {
