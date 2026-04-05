@@ -1,7 +1,7 @@
 import { StringUtility } from './string.utility';
 
 export class BemUtility {
-  static build(block: string, element: string, modifier: string) {
+  static build(block: string, element?: string, modifier?: string) {
     const hasBlock = StringUtility.isNotEmpty(block);
     const hasElement = StringUtility.isNotEmpty(element);
     const hasModifier = StringUtility.isNotEmpty(modifier);
@@ -17,6 +17,6 @@ export class BemUtility {
     if (hasBlock && !hasElement && !hasModifier) {
       return block;
     }
-    throw new Error('Failed to build BEM class name!');
+    throw new Error('Failed to build bem class name!');
   }
 }
