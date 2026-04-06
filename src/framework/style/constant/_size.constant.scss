@@ -14,6 +14,13 @@ $size-md: 1rem;
 $size-lg: 2rem;
 $size-xl: 4rem;
 
+$flex-size-none: 0;
+$flex-size-xs: 1;
+$flex-size-sm: 2;
+$flex-size-md: 3;
+$flex-size-lg: 4;
+$flex-size-xl: 5;
+
 @function build-font-size-element($property) {
   @return (
     'property': $property,
@@ -42,7 +49,22 @@ $size-xl: 4rem;
   );
 }
 
+@function build-flex-size-element($property) {
+  @return (
+    'property': $property,
+    'modifiers': (
+      'none': $flex-size-none,
+      'xs': $flex-size-xs,
+      'sm': $flex-size-sm,
+      'md': $flex-size-md,
+      'lg': $flex-size-lg,
+      'xl': $flex-size-xl,
+    )
+  );
+}
+
 $elements: (
   'text': build-font-size-element('font-size'),
   'padding': build-size-element('padding'),
+  'flex': build-flex-size-element('flex'),
 );

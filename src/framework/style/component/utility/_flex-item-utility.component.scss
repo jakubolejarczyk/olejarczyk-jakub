@@ -1,6 +1,4 @@
-@use '../../builder/base.builder' as base-builder;
+@use '../../builder/size.builder' as size-builder;
 
-.flex-item {
-  @include base-builder.build-base-utility;
-  flex: 1;
-}
+@include size-builder.build-size('padding');
+@include size-builder.build-size('flex');
