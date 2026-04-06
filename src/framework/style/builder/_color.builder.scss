@@ -2,27 +2,30 @@
 @use '../constant/color.constant' as color-constant;
 
 @mixin build-color($element) {
-  @if map.has-key(color-constant.$color-elements, $element) {
-    $value: map.get(color-constant.$color-elements, $element);
+  @if map.has-key(color-constant.$elements, $element) {
+    $value: map.get(color-constant.$elements, $element);
     $property: map.get($value, 'property');
-    $primary: map.get($value, 'primary');
-    $secondary: map.get($value, 'secondary');
-    $accent: map.get($value, 'accent');
+    $modifiers: map.get($value, 'modifiers');
+    $primary: map.get($modifiers, 'primary');
+    $secondary: map.get($modifiers, 'secondary');
+    $accent: map.get($modifiers, 'accent');
+    $block: color-constant.$block;
+    .#{$block} {
+      &__#{$element} {
+        &--primary {
+          #{$property}: $primary;
+        }
 
-    &__#{$element} {
-      &--primary {
-        #{$property}: $primary;
-      }
+        &--secondary {
+          #{$property}: $secondary;
+        }
 
-      &--secondary {
-        #{$property}: $secondary;
-      }
-
-      &--accent {
-        #{$property}: $accent;
+        &--accent {
+          #{$property}: $accent;
+        }
       }
     }
   } @else {
-    @error "Element #{$element} is not defined in color-constant!";
+    @error "Element #{$element} is not defined in color constant!";
   }
 }
