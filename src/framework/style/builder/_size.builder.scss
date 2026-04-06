@@ -2,42 +2,45 @@
 @use '../constant/size.constant' as size-constant;
 
 @mixin build-size($element) {
-  @if map.has-key(size-constant.$size-elements, $element) {
-    $value: map.get(size-constant.$size-elements, $element);
+  @if map.has-key(size-constant.$elements, $element) {
+    $value: map.get(size-constant.$elements, $element);
     $property: map.get($value, 'property');
-    $none: map.get($value, 'none');
-    $xs: map.get($value, 'xs');
-    $sm: map.get($value, 'sm');
-    $md: map.get($value, 'md');
-    $lg: map.get($value, 'lg');
-    $xl: map.get($value, 'xl');
+    $modifiers: map.get($value, 'modifiers');
+    $none: map.get($modifiers, 'none');
+    $xs: map.get($modifiers, 'xs');
+    $sm: map.get($modifiers, 'sm');
+    $md: map.get($modifiers, 'md');
+    $lg: map.get($modifiers, 'lg');
+    $xl: map.get($modifiers, 'xl');
+    $block: size-constant.$block;
+    .#{$block} {
+      &__#{$element} {
+        &--none {
+          #{$property}: $none;
+        }
 
-    &__#{$element} {
-      &--none {
-        #{$property}: $none;
-      }
+        &--xs {
+          #{$property}: $xs;
+        }
 
-      &--xs {
-        #{$property}: $xs;
-      }
+        &--sm {
+          #{$property}: $sm;
+        }
 
-      &--sm {
-        #{$property}: $sm;
-      }
+        &--md {
+          #{$property}: $md;
+        }
 
-      &--md {
-        #{$property}: $md;
-      }
+        &--lg {
+          #{$property}: $lg;
+        }
 
-      &--lg {
-        #{$property}: $lg;
-      }
-
-      &--xl {
-        #{$property}: $xl;
+        &--xl {
+          #{$property}: $xl;
+        }
       }
     }
   } @else {
-    @error "Element #{$element} is not defined in size-constant!";
+    @error "Element #{$element} is not defined in size constant!";
   }
 }
