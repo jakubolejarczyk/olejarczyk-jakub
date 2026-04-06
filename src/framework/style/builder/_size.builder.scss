@@ -1,25 +1,43 @@
-@use '../constant/font.constant' as font-constant;
+@use 'sass:map';
+@use '../constant/size.constant' as size-constant;
 
-@mixin build-size($element, $property) {
-  &__#{$element} {
-    &--small {
-      #{$property}: font-constant.$font-size-xs;
-    }
+@mixin build-size($element) {
+  @if map.has-key(size-constant.$size-elements, $element) {
+    $value: map.get(size-constant.$size-elements, $element);
+    $property: map.get($value, 'property');
+    $none: map.get($value, 'none');
+    $xs: map.get($value, 'xs');
+    $sm: map.get($value, 'sm');
+    $md: map.get($value, 'md');
+    $lg: map.get($value, 'lg');
+    $xl: map.get($value, 'xl');
 
-    &--p {
-      #{$property}: font-constant.$font-size-sm;
-    }
+    &__#{$element} {
+      &--none {
+        #{$property}: $none;
+      }
 
-    &--h3 {
-      #{$property}: font-constant.$font-size-md;
-    }
+      &--xs {
+        #{$property}: $xs;
+      }
 
-    &--h2 {
-      #{$property}: font-constant.$font-size-lg;
-    }
+      &--sm {
+        #{$property}: $sm;
+      }
 
-    &--h1 {
-      #{$property}: font-constant.$font-size-xl;
+      &--md {
+        #{$property}: $md;
+      }
+
+      &--lg {
+        #{$property}: $lg;
+      }
+
+      &--xl {
+        #{$property}: $xl;
+      }
     }
+  } @else {
+    @error "Element #{$element} is not defined in size-constant!";
   }
 }

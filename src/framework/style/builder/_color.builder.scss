@@ -8,6 +8,7 @@
     $primary: map.get($value, 'primary');
     $secondary: map.get($value, 'secondary');
     $accent: map.get($value, 'accent');
+
     &__#{$element} {
       &--primary {
         #{$property}: $primary;

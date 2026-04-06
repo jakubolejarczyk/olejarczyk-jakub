@@ -1,6 +1,42 @@
+$font-size-none: 0;
+$font-size-xs: clamp(0.75rem, 1vw, 0.875rem);
+$font-size-sm: clamp(1rem, 1vw, 1.125rem);
+$font-size-md: clamp(1.5rem, 2vw, 1.875rem);
+$font-size-lg: clamp(2rem, 2.5vw, 2.5rem);
+$font-size-xl: clamp(2.5rem, 3vw, 3.5rem);
+
 $size-none: 0;
 $size-xs: 0.25rem;
 $size-sm: 0.5rem;
 $size-md: 1rem;
 $size-lg: 2rem;
 $size-xl: 4rem;
+
+@function build-font-size-element($property) {
+  @return (
+    'property': $property,
+    'none': $font-size-none,
+    'xs': $font-size-xs,
+    'sm': $font-size-sm,
+    'md': $font-size-md,
+    'lg': $font-size-lg,
+    'xl': $font-size-xl
+  );
+}
+
+@function build-size-element($property) {
+  @return (
+    'property': $property,
+    'none': $size-none,
+    'xs': $size-xs,
+    'sm': $size-sm,
+    'md': $size-md,
+    'lg': $size-lg,
+    'xl': $size-xl
+  );
+}
+
+$size-elements: (
+  'text': build-font-size-element('text'),
+  'padding': build-size-element('padding'),
+);
