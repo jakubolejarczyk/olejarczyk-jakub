@@ -1,0 +1,16 @@
+$block: 'font';
+
+$font-text: var(--font-text);
+
+@function build-element($property) {
+  @return (
+    'property': $property,
+    'modifiers': (
+      'text': $font-text,
+    )
+  );
+}
+
+$elements: (
+  'text': build-element('font-family'),
+);

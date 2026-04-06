@@ -1,12 +1,10 @@
 @use '../../builder/color.builder' as color-builder;
+@use '../../builder/font.builder' as font-builder;
 @use '../../builder/size.builder' as size-builder;
 @use '../../builder/weight.builder' as weight-builder;
 
 @include color-builder.build-size('text');
+@include font-builder.build-font('text');
+@include size-builder.build-size('padding');
 @include size-builder.build-size('text');
 @include weight-builder.build-weight('text');
-
-// .text {
-//   @include base-builder.build-base-control;
-//   @include font-family-builder.build-font-family;
-// }

@@ -1,0 +1,21 @@
+@use 'sass:map';
+@use '../constant/font.constant' as font-constant;
+
+@mixin build-font($element) {
+  @if map.has-key(font-constant.$elements, $element) {
+    $value: map.get(font-constant.$elements, $element);
+    $property: map.get($value, 'property');
+    $modifiers: map.get($value, 'modifiers');
+    $text: map.get($modifiers, 'text');
+    $block: font-constant.$block;
+    .#{$block} {
+      &__#{$element} {
+        &--text {
+          #{$property}: $text;
+        }
+      }
+    }
+  } @else {
+    @error "Element #{$element} is not defined in font constant!";
+  }
+}
