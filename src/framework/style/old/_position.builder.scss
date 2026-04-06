@@ -1,0 +1,15 @@
+// @mixin build-position($element, $property) {
+//   &__#{$element} {
+//     &--left {
+//       #{$property}: flex-start;
+//     }
+
+//     &--center {
+//       #{$property}: center;
+//     }
+
+//     &--right {
+//       #{$property}: flex-end;
+//     }
+//   }
+// }
