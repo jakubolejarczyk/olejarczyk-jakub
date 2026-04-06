@@ -3,18 +3,22 @@
 
 @mixin build-color($element) {
   @if map.has-key(color-constant.$color-elements, $element) {
-    $property: map.get(color-constant.$color-elements, $element);
+    $value: map.get(color-constant.$color-elements, $element);
+    $property: map.get($value, 'property');
+    $primary: map.get($value, 'primary');
+    $secondary: map.get($value, 'secondary');
+    $accent: map.get($value, 'accent');
     &__#{$element} {
       &--primary {
-        #{$property}: color-constant.$color-primary;
+        #{$property}: $primary;
       }
 
       &--secondary {
-        #{$property}: color-constant.$color-secondary;
+        #{$property}: $secondary;
       }
 
       &--accent {
-        #{$property}: color-constant.$color-accent;
+        #{$property}: $accent;
       }
     }
   } @else {
