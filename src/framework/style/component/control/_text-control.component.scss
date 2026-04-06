@@ -1,12 +1,12 @@
 @use '../../builder/color.builder' as color-builder;
-@use '../../builder/font.builder' as font-builder;
 @use '../../builder/size.builder' as size-builder;
-@use '../../builder/base.builder' as base-builder;
+@use '../../builder/weight.builder' as weight-builder;
 
-.text {
-  @include base-builder.build-base-control;
-  @include font-family-builder.build-font-family;
-  @include font-family-builder.build-font-weight;
-  @include color-builder.build-color('color');
-  @include size-builder.build-size('font-size', 'font-size');
-}
+@include color-builder.build-size('text');
+@include size-builder.build-size('text');
+@include weight-builder.build-weight('text');
+
+// .text {
+//   @include base-builder.build-base-control;
+//   @include font-family-builder.build-font-family;
+// }

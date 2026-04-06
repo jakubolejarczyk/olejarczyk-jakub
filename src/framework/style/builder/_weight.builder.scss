@@ -1,0 +1,26 @@
+@use 'sass:map';
+@use '../constant/weight.constant' as weight-constant;
+
+@mixin build-weight($element) {
+  @if map.has-key(weight-constant.$elements, $element) {
+    $value: map.get(weight-constant.$elements, $element);
+    $property: map.get($value, 'property');
+    $modifiers: map.get($value, 'modifiers');
+    $normal: map.get($modifiers, 'normal');
+    $bold: map.get($modifiers, 'bold');
+    $block: weight-constant.$block;
+    .#{$block} {
+      &__#{$element} {
+        &--normal {
+          #{$property}: $normal;
+        }
+
+        &--bold {
+          #{$property}: $bold;
+        }
+      }
+    }
+  } @else {
+    @error "Element #{$element} is not defined in weight constant!";
+  }
+}
