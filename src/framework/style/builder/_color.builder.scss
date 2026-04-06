@@ -1,17 +1,23 @@
+@use 'sass:map';
 @use '../constant/color.constant' as color-constant;
 
-@mixin build-color($property) {
-  &__color {
-    &--primary {
-      #{$property}: color-constant.$color-primary;
-    }
+@mixin build-color($element) {
+  @if map.has-key(color-constant.$color-elements, $element) {
+    $property: map.get(color-constant.$color-elements, $element);
+    &__#{$element} {
+      &--primary {
+        #{$property}: color-constant.$color-primary;
+      }
 
-    &--secondary {
-      #{$property}: color-constant.$color-secondary;
-    }
+      &--secondary {
+        #{$property}: color-constant.$color-secondary;
+      }
 
-    &--accent {
-      #{$property}: color-constant.$color-accent;
+      &--accent {
+        #{$property}: color-constant.$color-accent;
+      }
     }
+  } @else {
+    @error "Element #{$element} is not defined in color-constant!";
   }
 }
