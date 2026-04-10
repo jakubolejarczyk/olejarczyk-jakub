@@ -1,11 +1,12 @@
-// @use '../abstract/constant';
+@use '../constant/size.constant' as size-constant;
+@use '../constant/screen.constant' as screen-constant;
 
-// * {
-//   margin: constant.$size--none;
-//   padding: constant.$size--none;
-//   box-sizing: border-box;
-// }
+* {
+  margin: size-constant.$size-none;
+  padding: size-constant.$size-none;
+  box-sizing: border-box;
+}
 
-// body {
-//   min-width: constant.$screen__size--min;
-// }
+body {
+  min-width: screen-constant.$screen-mobile-sm;
+}

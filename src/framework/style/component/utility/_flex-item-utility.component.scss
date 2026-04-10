@@ -1,4 +1,0 @@
-@use '../../builder/size.builder' as size-builder;
-
-@include size-builder.build-size('padding');
-@include size-builder.build-size('flex');
