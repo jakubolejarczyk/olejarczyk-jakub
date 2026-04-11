@@ -4,8 +4,8 @@ import { ComponentBaseModel } from '../../base/component-base.model';
 import { MetadataBaseModel } from '../../base/metadata-base.model';
 
 interface ExtendModel {
-  background: ColorModifierType;
-  padding: SizeModifierType;
+  backgroundColor: ColorModifierType;
+  paddingSize: SizeModifierType;
 }
 
 export interface SectionStyleLayoutModel extends ComponentBaseModel<

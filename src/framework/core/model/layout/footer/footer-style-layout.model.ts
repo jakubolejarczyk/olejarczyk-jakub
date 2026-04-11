@@ -4,8 +4,8 @@ import { ComponentBaseModel } from '../../base/component-base.model';
 import { StyleBaseModel } from '../../base/style-base.model';
 
 interface ExtendModel {
-  background: ColorModifierType;
-  padding: SizeModifierType;
+  backgroundColor: ColorModifierType;
+  paddingSize: SizeModifierType;
 }
 
 export interface FooterStyleLayoutModel extends ComponentBaseModel<StyleBaseModel, ExtendModel> {}
