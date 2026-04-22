@@ -1,10 +1,10 @@
-import { NodeModel } from '../../model/node/node.model';
+import { NodeModel } from '../../model/node.model';
 
-export class MainLayoutBuilder {
+export class FooterLayoutBuilder {
   private children: NodeModel[] = [];
 
   static builder() {
-    return new MainLayoutBuilder();
+    return new FooterLayoutBuilder();
   }
 
   setChildren(children: NodeModel[]) {
@@ -16,7 +16,7 @@ export class MainLayoutBuilder {
     return {
       componentNode: {
         component: 'layout',
-        kind: 'main',
+        kind: 'footer',
         data: {
           base: {},
           extend: {},

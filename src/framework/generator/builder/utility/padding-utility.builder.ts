@@ -1,10 +1,18 @@
-import { NodeModel } from '../../model/node/node.model';
+import { SizeType } from '../../../core/type/size.type';
+import { NodeModel } from '../../model/node.model';
 
-export class FlexItemLayoutBuilder {
+export class PaddingUtilityBuilder {
+  private size: SizeType = 'md';
+
   private children: NodeModel[] = [];
 
   static builder() {
-    return new FlexItemLayoutBuilder();
+    return new PaddingUtilityBuilder();
+  }
+
+  setSize(size: SizeType) {
+    this.size = size;
+    return this;
   }
 
   setChildren(children: NodeModel[]) {
@@ -12,11 +20,11 @@ export class FlexItemLayoutBuilder {
     return this;
   }
 
-  build(children: NodeModel[]): NodeModel {
+  build(): NodeModel {
     return {
       componentNode: {
         component: 'utility',
-        kind: 'flex-item',
+        kind: 'padding',
         data: {
           base: {},
           extend: {},
@@ -25,7 +33,9 @@ export class FlexItemLayoutBuilder {
           base: {
             color: 'primary',
           },
-          extend: {},
+          extend: {
+            size: this.size,
+          },
         },
       },
       children: this.children,

@@ -1,6 +1,6 @@
 import { NgComponentOutlet } from '@angular/common';
 import { Component, input } from '@angular/core';
-import { NodeModel } from '../model/node/node.model';
+import { NodeModel } from '../model/node.model';
 import { getComponent } from '../decorator/component.decorator';
 
 @Component({

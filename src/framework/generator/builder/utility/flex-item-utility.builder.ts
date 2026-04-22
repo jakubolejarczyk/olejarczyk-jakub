@@ -1,10 +1,10 @@
-import { NodeModel } from '../../model/node/node.model';
+import { NodeModel } from '../../model/node.model';
 
-export class HeaderLayoutBuilder {
+export class FlexItemLayoutBuilder {
   private children: NodeModel[] = [];
 
   static builder() {
-    return new HeaderLayoutBuilder();
+    return new FlexItemLayoutBuilder();
   }
 
   setChildren(children: NodeModel[]) {
@@ -12,11 +12,11 @@ export class HeaderLayoutBuilder {
     return this;
   }
 
-  build(): NodeModel {
+  build(children: NodeModel[]): NodeModel {
     return {
       componentNode: {
-        component: 'layout',
-        kind: 'header',
+        component: 'utility',
+        kind: 'flex-item',
         data: {
           base: {},
           extend: {},

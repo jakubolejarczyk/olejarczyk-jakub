@@ -1,5 +1,5 @@
 import { ColorType } from '../../../core/type/color.type';
-import { NodeModel } from '../../model/node/node.model';
+import { NodeModel } from '../../model/node.model';
 
 export class SectionLayoutBuilder {
   private id: string = '';

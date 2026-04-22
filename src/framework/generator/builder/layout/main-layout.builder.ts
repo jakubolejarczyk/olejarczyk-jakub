@@ -1,18 +1,10 @@
-import { SizeType } from '../../../core/type/size.type';
-import { NodeModel } from '../../model/node/node.model';
+import { NodeModel } from '../../model/node.model';
 
-export class PaddingUtilityBuilder {
-  private size: SizeType = 'md';
-
+export class MainLayoutBuilder {
   private children: NodeModel[] = [];
 
   static builder() {
-    return new PaddingUtilityBuilder();
-  }
-
-  setSize(size: SizeType) {
-    this.size = size;
-    return this;
+    return new MainLayoutBuilder();
   }
 
   setChildren(children: NodeModel[]) {
@@ -23,8 +15,8 @@ export class PaddingUtilityBuilder {
   build(): NodeModel {
     return {
       componentNode: {
-        component: 'utility',
-        kind: 'padding',
+        component: 'layout',
+        kind: 'main',
         data: {
           base: {},
           extend: {},
@@ -33,9 +25,7 @@ export class PaddingUtilityBuilder {
           base: {
             color: 'primary',
           },
-          extend: {
-            size: this.size,
-          },
+          extend: {},
         },
       },
       children: this.children,

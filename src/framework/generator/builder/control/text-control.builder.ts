@@ -1,6 +1,6 @@
 import { ColorType } from '../../../core/type/color.type';
 import { TextType } from '../../../core/type/text.type';
-import { NodeModel } from '../../model/node/node.model';
+import { NodeModel } from '../../model/node.model';
 
 export class TextControlBuilder {
   private values: string[] = [];

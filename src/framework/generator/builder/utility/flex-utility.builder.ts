@@ -1,6 +1,6 @@
 import { PositionType } from '../../../core/type/position.type';
 import { SizeType } from '../../../core/type/size.type';
-import { NodeModel } from '../../model/node/node.model';
+import { NodeModel } from '../../model/node.model';
 
 export class FlexUtilityBuilder {
   private alignItems: PositionType = 'left';
