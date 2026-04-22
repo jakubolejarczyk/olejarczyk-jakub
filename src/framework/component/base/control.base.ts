@@ -8,10 +8,12 @@ import { ControlType } from '../../core/type/control.type';
 
 @Directive()
 export class ControlBase<
-  TData extends ComponentBaseModel<DataBaseModel>,
-  TMetadata extends ComponentBaseModel<MetadataBaseModel>,
-  TStyle extends ComponentBaseModel<StyleBaseModel>,
-> extends ComponentBase<ControlType, TData, TMetadata, TStyle> {
+  TComplex extends ComplexBaseModel<
+    ComponentBaseModel<DataBaseModel>,
+    ComponentBaseModel<MetadataBaseModel>,
+    ComponentBaseModel<StyleBaseModel>
+  >,
+> extends ComponentBase<ControlType, TComplex> {
   constructor(protected override type: ControlType) {
     super(type);
   }

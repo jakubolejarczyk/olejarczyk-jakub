@@ -11,25 +11,25 @@ import { SectionDataLayoutModel } from '../layout/section/section-data-layout.mo
 import { SectionMetadataLayoutModel } from '../layout/section/section-metadata-layout.model';
 import { SectionStyleLayoutModel } from '../layout/section/section-style-layout.model';
 
-interface FooterComplexModel extends BaseComplexModel<
+interface FooterComplexModel extends ComplexBaseModel<
   FooterDataLayoutModel,
   FooterMetadataLayoutModel,
   FooterStyleLayoutModel
 > {}
 
-interface HeaderComplexModel extends BaseComplexModel<
+interface HeaderComplexModel extends ComplexBaseModel<
   HeaderDataLayoutModel,
   HeaderMetadataLayoutModel,
   HeaderStyleLayoutModel
 > {}
 
-interface MainComplexModel extends BaseComplexModel<
+interface MainComplexModel extends ComplexBaseModel<
   MainDataLayoutModel,
   MainMetadataLayoutModel,
   MainStyleLayoutModel
 > {}
 
-interface SectionComplexModel extends BaseComplexModel<
+interface SectionComplexModel extends ComplexBaseModel<
   SectionDataLayoutModel,
   SectionMetadataLayoutModel,
   SectionStyleLayoutModel

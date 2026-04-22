@@ -8,15 +8,13 @@ import { StyleBaseModel } from '../../core/model/base/style-base.model';
 @Directive()
 export class ComponentBase<
   TType extends string,
-  TData extends ComponentBaseModel<DataBaseModel>,
-  TMetadata extends ComponentBaseModel<MetadataBaseModel>,
-  TStyle extends ComponentBaseModel<StyleBaseModel>,
+  TComplex extends ComplexBaseModel<
+    ComponentBaseModel<DataBaseModel>,
+    ComponentBaseModel<MetadataBaseModel>,
+    ComponentBaseModel<StyleBaseModel>
+  >,
 > {
-  data = input.required<TData>();
-
-  metadata = input.required<TMetadata>();
-
-  style = input.required<TStyle>();
+  complex = input.required<TComplex>();
 
   constructor(protected readonly type: TType) {
     this.type = type;

@@ -1,4 +1,4 @@
-interface BaseComplexModel<TData, TMetadata, TStyle> {
+interface ComplexBaseModel<TData, TMetadata, TStyle> {
   data: TData;
   metadata: TMetadata;
   style: TStyle;
