@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { LayoutBase } from '../../base/layout.base';
-import { RegisterComponent } from '../../../generator/decorator/component.decorator';
+import { RegisterComponent } from '../../../decorator/component.decorator';
 import { SectionDataLayoutModel } from '../../../core/model/layout/section/section-data-layout.model';
 import { SectionMetadataLayoutModel } from '../../../core/model/layout/section/section-metadata-layout.model';
 import { BemLogicUtility } from '../../../framework/utility/bem.utility';

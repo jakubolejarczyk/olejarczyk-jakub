@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { LayoutBase } from '../../base/layout.base';
-import { RegisterComponent } from '../../../generator/decorator/component.decorator';
+import { RegisterComponent } from '../../../decorator/component.decorator';
 import { FooterDataLayoutModel } from '../../../core/model/layout/footer/footer-data-layout.model';
 import { FooterMetadataLayoutModel } from '../../../core/model/layout/footer/footer-metadata-layout.model';
 

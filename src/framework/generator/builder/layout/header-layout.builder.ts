@@ -1,34 +1,34 @@
-import { NodeModel } from '../../model/node.model';
+// import { NodeModel } from '../../model/node.model';
 
-export class HeaderLayoutBuilder {
-  private children: NodeModel[] = [];
+// export class HeaderLayoutBuilder {
+//   private children: NodeModel[] = [];
 
-  static builder() {
-    return new HeaderLayoutBuilder();
-  }
+//   static builder() {
+//     return new HeaderLayoutBuilder();
+//   }
 
-  setChildren(children: NodeModel[]) {
-    this.children = children;
-    return this;
-  }
+//   setChildren(children: NodeModel[]) {
+//     this.children = children;
+//     return this;
+//   }
 
-  build(): NodeModel {
-    return {
-      componentNode: {
-        component: 'layout',
-        kind: 'header',
-        data: {
-          base: {},
-          extend: {},
-        },
-        metadata: {
-          base: {
-            color: 'primary',
-          },
-          extend: {},
-        },
-      },
-      children: this.children,
-    };
-  }
-}
+//   build(): NodeModel {
+//     return {
+//       componentNode: {
+//         component: 'layout',
+//         kind: 'header',
+//         data: {
+//           base: {},
+//           extend: {},
+//         },
+//         metadata: {
+//           base: {
+//             color: 'primary',
+//           },
+//           extend: {},
+//         },
+//       },
+//       children: this.children,
+//     };
+//   }
+// }

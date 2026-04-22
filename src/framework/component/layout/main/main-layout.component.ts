@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { LayoutBase } from '../../base/layout.base';
-import { RegisterComponent } from '../../../generator/decorator/component.decorator';
+import { RegisterComponent } from '../../../decorator/component.decorator';
 import { MainDataLayoutModel } from '../../../core/model/layout/main/main-data-layout.model';
 import { MainMetadataLayoutModel } from '../../../core/model/layout/main/main-metadata-layout.model';
 

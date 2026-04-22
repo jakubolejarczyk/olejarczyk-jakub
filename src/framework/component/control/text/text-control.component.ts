@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ControlBase } from '../../base/control.base';
-import { RegisterComponent } from '../../../generator/decorator/component.decorator';
+import { RegisterComponent } from '../../../decorator/component.decorator';
 import { TextDataControlModel } from '../../../core/model/control/text/text-data-control.model';
 import { TextMetadataControlModel } from '../../../core/model/control/text/text-metadata-control.model';
 import { BemLogicUtility } from '../../../framework/utility/bem.utility';
