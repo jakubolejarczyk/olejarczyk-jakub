@@ -1,22 +1,3 @@
-$block: 'color';
-
 $color-primary: var(--color-primary);
 $color-secondary: var(--color-secondary);
 $color-accent: var(--color-accent);
-
-@function build-element($property) {
-  @return (
-    'property': $property,
-    'modifiers': (
-      'primary': $color-primary,
-      'secondary': $color-secondary,
-      'accent': $color-accent,
-    )
-  );
-}
-
-$elements: (
-  'background': build-element('background-color'),
-  'text': build-element('color'),
-  'border': build-element('border-color'),
-);
